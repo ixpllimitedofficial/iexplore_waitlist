@@ -4,7 +4,7 @@ import React from "react";
 const page = () => {
   return (
     <>
-      <Link href="/onboarding">Login</Link>
+      <h1 className='p-5'>Home</h1>
     </>
   );
 };
