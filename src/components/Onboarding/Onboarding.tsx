@@ -5,8 +5,10 @@ import { useSearchParams } from "next/navigation";
 import Login from "./Login/Login";
 import Signup from "./Signup/Signup";
 
+type FlowType = "signup" | "login"
+
 const Onboarding = () => {
-  const flowParams = useSearchParams().get("flow");
+  const flowParams = useSearchParams().get("flow") as FlowType;
 
   // links style
   const activeLinkStyle: string =
