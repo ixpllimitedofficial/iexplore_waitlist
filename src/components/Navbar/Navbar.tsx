@@ -26,10 +26,13 @@ const Navbar = () => {
       </nav>
 
       <nav className="flex items-center gap-7">
-        <Link href="/onboarding" className="text-[#212121]">
+        <Link href="/onboarding?flow=login" className="text-[#212121]">
           Login
         </Link>
-        <Link href="/onboarding" className="bg-[#212121] text-[#E1BD8A] px-4 py-2 rounded-xl font-extrabold">
+        <Link
+          href="/onboarding?flow=signup"
+          className="bg-[#212121] text-[#E1BD8A] px-4 py-2 rounded-xl font-extrabold"
+        >
           Signup
         </Link>
       </nav>
