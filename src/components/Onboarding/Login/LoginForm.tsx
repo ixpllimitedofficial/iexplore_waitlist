@@ -4,8 +4,8 @@ import React from "react";
 const LoginForm = () => {
   return (
     <section className="flex flex-col gap-7 ">
-      <AppInput />
-      <AppInput />
+      <AppInput label="Email address" placeholder="Maxxconnect127@gmail.com" />
+      <AppInput label="Password" placeholder="***********************" />
     </section>
   );
 };

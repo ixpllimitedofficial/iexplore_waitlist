@@ -12,7 +12,7 @@ const Login = () => {
         Forgot Password
       </Link>
 
-      <AppButton />
+      <AppButton text="Login" />
 
       {/* divider */}
       <div className="flex items-center">
