@@ -4,8 +4,9 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import Login from "./Login/Login";
 import Signup from "./Signup/Signup";
+import Confirmation from "./Confirmation/Confirmation";
 
-type FlowType = "signup" | "login"
+type FlowType = "signup" | "login" | "confirmation";
 
 const Onboarding = () => {
   const flowParams = useSearchParams().get("flow") as FlowType;
@@ -21,25 +22,34 @@ const Onboarding = () => {
   return (
     <section className="w-5/6">
       {/* links */}
-      <div className="bg-[#E1BD8A] p-2 flex items-center justify-around rounded-xl">
-        <Link
-          href="/onboarding?flow=login"
-          className={flowParams === "login" ? activeLinkStyle : unactiveLinkStyle}
-        >
-          Login
-        </Link>
+      {flowParams === "confirmation" ? (
+        ""
+      ) : (
+        <div className="bg-[#E1BD8A] p-2 flex items-center justify-around rounded-xl">
+          <Link
+            href="/onboarding?flow=login"
+            className={
+              flowParams === "login" ? activeLinkStyle : unactiveLinkStyle
+            }
+          >
+            Login
+          </Link>
 
-        <Link
-          href="/onboarding?flow=signup"
-          className={flowParams === "signup" ? activeLinkStyle : unactiveLinkStyle}
-        >
-          Signup
-        </Link>
-      </div>
+          <Link
+            href="/onboarding?flow=signup"
+            className={
+              flowParams === "signup" ? activeLinkStyle : unactiveLinkStyle
+            }
+          >
+            Signup
+          </Link>
+        </div>
+      )}
 
       {/* dynamically rendered form */}
       {flowParams === "login" && <Login />}
       {flowParams === "signup" && <Signup />}
+      {flowParams === "confirmation" && <Confirmation />}
     </section>
   );
 };
