@@ -4,9 +4,10 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import Login from "./Login/Login";
 import Signup from "./Signup/Signup";
-import Confirmation from "./Confirmation/Confirmation";
+import AgeConfirmation from "./Confirmation/AgeConfirmation";
+import EmailConfirmation from "./Confirmation/EmailConfirmation";
 
-type FlowType = "signup" | "login" | "confirmation";
+type FlowType = "signup" | "login" | "ageConfirmation" | "emailConfirmation";
 
 const Onboarding = () => {
   const flowParams = useSearchParams().get("flow") as FlowType;
@@ -22,7 +23,8 @@ const Onboarding = () => {
   return (
     <section className="w-5/6">
       {/* links */}
-      {flowParams === "confirmation" ? (
+      {flowParams !== "login" &&
+      flowParams !== "signup" ? (
         ""
       ) : (
         <div className="bg-[#E1BD8A] p-2 flex items-center justify-around rounded-xl">
@@ -49,7 +51,8 @@ const Onboarding = () => {
       {/* dynamically rendered form */}
       {flowParams === "login" && <Login />}
       {flowParams === "signup" && <Signup />}
-      {flowParams === "confirmation" && <Confirmation />}
+      {flowParams === "ageConfirmation" && <AgeConfirmation />}
+      {flowParams === "emailConfirmation" && <EmailConfirmation />}
     </section>
   );
 };

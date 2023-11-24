@@ -20,7 +20,7 @@ const AppInput = ({
   return (
     <div className="flex flex-col gap-2">
       <label htmlFor={label} className="text-[#FAE0BA] ">
-        {label}:
+        {label}
       </label>
       <input
         id={label}

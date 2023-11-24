@@ -1,4 +1,5 @@
 import AppButton from "@/components/UI/Button/AppButton";
+import Link from "next/link";
 import React from "react";
 
 const Confirmation = () => {
@@ -16,7 +17,9 @@ const Confirmation = () => {
         age displayed below is correct and you are of legal drinking age.
       </p>
 
-      <AppButton text="Yes, I confirm" className="px-20 rounded-2xl" />
+      <Link href="/onboarding?flow=emailConfirmation">
+        <AppButton text="Yes, I confirm" className="px-20 rounded-2xl" />
+      </Link>
     </section>
   );
 };
