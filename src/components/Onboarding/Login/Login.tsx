@@ -12,7 +12,10 @@ const Login = () => {
       {/* form */}
       <LoginForm />
 
-      <Link href="#" className=" text-[#E1BD8A] text-end font-medium">
+      <Link
+        href="/onboarding?flow=forgotpassword"
+        className=" text-[#E1BD8A] text-end font-medium"
+      >
         Forgot Password
       </Link>
 
@@ -36,10 +39,12 @@ const Login = () => {
         <button>Continue with Apple</button>
       </div>
 
-      <p className="text-[#F7D098] text-center">
-        Yet to create an account?{" "}
-        <span className="underline font-bold"> Sign up</span>
-      </p>
+      <div className="flex items-center justify-center gap-1">
+        <p className="text-[##FBE9D0] text-center">
+          Yet to create an account?{" "}
+        </p>
+        <Link href="/onboarding?flow=signup" className="text-[#F7D098] underline font-semibold"> Sign up</Link>
+      </div>
     </section>
   );
 };
