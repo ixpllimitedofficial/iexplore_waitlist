@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const ForgotPassword = () => {
   return (
-    <section className="h-full flex flex-col gap-10 justify-center">
+    <section className="h-full flex flex-col gap-8 justify-center">
       <h1 className="text-[#FBE9D0] text-3xl w-[50%] text-center leading-snug self-center">
         Forgot Password?
       </h1>
@@ -19,9 +19,6 @@ const ForgotPassword = () => {
         className="px-7"
       />
 
-      {/* <p className="text-[#E1BD8A] text-xl w-[50%] text-center leading-snug self-center">
-        Resend code <span className="text-[#FBE9D0]"> 00:30</span>
-      </p> */}
 
       <Link href="/onboarding?flow=resetcode" className="self-center">
         <AppButton text="Send code" className="px-20 rounded-2xl " />

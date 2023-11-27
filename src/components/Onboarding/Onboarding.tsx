@@ -8,8 +8,9 @@ import AgeConfirmation from "./Confirmation/AgeConfirmation";
 import EmailConfirmation from "./Confirmation/EmailConfirmation";
 import ForgotPassword from "./ForgotPassword/ForgotPassword";
 import ResetCode from "./ForgotPassword/ResetCode";
+import ResetPassword from "./ForgotPassword/ResetPassword";
 
-type FlowType = "signup" | "login" | "ageConfirmation" | "emailConfirmation" | "forgotpassword" | "resetcode";
+type FlowType = "signup" | "login" | "ageConfirmation" | "emailConfirmation" | "forgotpassword" | "resetcode" | "resetpassword";
 
 const Onboarding = () => {
   const flowParams = useSearchParams().get("flow") as FlowType;
@@ -57,6 +58,8 @@ const Onboarding = () => {
       {flowParams === "emailConfirmation" && <EmailConfirmation />}
       {flowParams === "forgotpassword" && <ForgotPassword />}
       {flowParams === "resetcode" && <ResetCode />}
+      {flowParams === "resetpassword" && <ResetPassword />}
+
 
 
   
