@@ -9,7 +9,7 @@ const Signup = () => {
       <SignupForm />
 
       <div className="flex items-start gap-2">
-        <input type="checkbox" className="mt-2" />
+        <input type="checkbox" aria-label="Check box" className="mt-2" />
         <p className="text-[#E1BD8A]">
           By creating an account, I verify that i’m over 18 years of age and
           accept the{" "}
