@@ -43,7 +43,13 @@ const Login = () => {
         <p className="text-[##FBE9D0] text-center">
           Yet to create an account?{" "}
         </p>
-        <Link href="/onboarding?flow=signup" className="text-[#F7D098] underline font-semibold"> Sign up</Link>
+        <Link
+          href="/onboarding?flow=signup"
+          className="text-[#F7D098] underline font-semibold"
+        >
+          {" "}
+          Sign up
+        </Link>
       </div>
     </section>
   );
