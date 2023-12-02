@@ -1,10 +1,36 @@
+"use state";
+import { useState } from "react";
+
 import AppButton from "@/components/UI/Button/AppButton";
 import AppInput from "@/components/UI/Inputs/AppInput";
 import React from "react";
+import Modal from "@/components/UI/Modal/Modal";
+
+import PartyPopperIcon from "@/assets/img/PartyPopper.png";
+import Image from "next/image";
 
 const EmailConfirmation = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleShowModal = () => {
+    setShowModal(!showModal);
+  };
+
   return (
-    <section className="h-full flex flex-col gap-10 items-center justify-center">
+    <section className="relative h-full flex flex-col gap-10 items-center justify-center">
+      {/* modal */}
+      {showModal && (
+        <Modal handleShowModal={handleShowModal}>
+          <Image src={PartyPopperIcon} alt="PartyPopperIcon" />
+
+          <h1 className="text-[#F7D098] font-bold text-3xl">Congratulations</h1>
+          <p className="text-[#FBE9D0] text-2xl w-1/4 text-center">
+            You are now an explorer, and you have been gifted a bottle of drink
+            at the nearest bar
+          </p>
+        </Modal>
+      )}
+
       <h1 className="text-[#FBE9D0] text-3xl w-[50%] text-center leading-snug">
         Enter the code sent to{" "}
         <span className="text-[#E1BD8A]"> Your email address:</span>
@@ -16,7 +42,11 @@ const EmailConfirmation = () => {
         Resend code <span className="text-[#FBE9D0]"> 00:30</span>
       </p>
 
-      <AppButton text="Confirm Email Address" className="px-20 rounded-2xl" />
+      <AppButton
+        text="Confirm Email Address"
+        className="px-20 rounded-2xl"
+        handleClick={handleShowModal}
+      />
     </section>
   );
 };
