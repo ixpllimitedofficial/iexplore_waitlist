@@ -1,7 +1,6 @@
-"use state";
 import { useState } from "react";
 import Image from "next/image";
-import { useRouter } from 'next/navigation'
+import { useRouter } from "next/navigation";
 
 import AppButton from "@/components/UI/Button/AppButton";
 import AppInput from "@/components/UI/Inputs/AppInput";
@@ -11,15 +10,23 @@ import PartyPopperIcon from "@/assets/img/PartyPopper.png";
 
 const EmailConfirmation = () => {
   const [showModal, setShowModal] = useState(false);
-  const router = useRouter()
+  const router = useRouter();
 
   const handleModal = () => {
-    router.push('/')
+    router.push("/");
+
+    // Unsets Background Scrolling to use when SideDrawer/Modal is closed
+    document.body.style.overflow = "unset";
   };
 
   const handleShowModal = () => {
-    setShowModal(true)
-  }
+    setShowModal(true);
+
+    // Disables Background Scrolling whilst the SideDrawer/Modal is open
+    if (typeof window != "undefined" && window.document) {
+      document.body.style.overflow = "hidden";
+    }
+  };
 
   return (
     <section className="relative h-full flex flex-col gap-10 items-center justify-center">

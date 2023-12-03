@@ -1,10 +1,50 @@
-import AppButton from "@/components/UI/Button/AppButton";
-import AppInput from "@/components/UI/Inputs/AppInput";
 import Link from "next/link";
 
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import AppButton from "@/components/UI/Button/AppButton";
+import AppInput from "@/components/UI/Inputs/AppInput";
+import Modal from "@/components/UI/Modal/Modal";
+
+import PasswordChangeIcon from "@/assets/img/PasswordChangeIcon.png";
+import Image from "next/image";
+
 const ResetPassword = () => {
+  const [showModal, setShowModal] = useState(false);
+  const router = useRouter();
+
+  const handleModal = () => {
+    router.push("/onboarding?flow=login");
+
+    // Unsets Background Scrolling to use when SideDrawer/Modal is closed
+    document.body.style.overflow = "unset";
+  };
+
+  const handleShowModal = () => {
+    setShowModal(true);
+
+    // Disables Background Scrolling whilst the SideDrawer/Modal is open
+    if (typeof window != "undefined" && window.document) {
+      document.body.style.overflow = "hidden";
+    }
+  };
+
   return (
     <section className="h-full flex flex-col gap-8 justify-center">
+      {/* modal */}
+      {showModal && (
+        <Modal handleModal={handleModal} btnText="Back to login">
+          <Image src={PasswordChangeIcon} alt="PasswordChangeIcon" />
+
+          <h1 className="text-[#F7D098] font-bold text-3xl">
+            Password changed
+          </h1>
+          <p className="text-[#FBE9D0] text-2xl w-1/4 text-center">
+            Your password has been changed successfully!
+          </p>
+        </Modal>
+      )}
+
       <h1 className="text-[#E1BD8A] text-3xl w-[50%] text-center leading-snug self-center">
         Reset password?
       </h1>
@@ -13,12 +53,24 @@ const ResetPassword = () => {
         Create a new password you’ll easily remember
       </h1>
 
-      <AppInput label="New password:" placeholder="Must be 8 characters" className="px-7" />
-      <AppInput label="Confirm new password:" placeholder="Repeat password" className="px-7" />
+      <AppInput
+        label="New password:"
+        placeholder="Must be 8 characters"
+        className="px-7"
+      />
+      <AppInput
+        label="Confirm new password:"
+        placeholder="Repeat password"
+        className="px-7"
+      />
 
-      <Link href="/onboarding?flow=login" className="self-center">
-        <AppButton text="Reset password" className="px-20 rounded-2xl " />
-      </Link>
+      {/* <Link href="/onboarding?flow=login" className="self-center"> */}
+      <AppButton
+        text="Reset password"
+        className="px-20 rounded-2xl self-center"
+        handleClick={handleShowModal}
+      />
+      {/* </Link> */}
     </section>
   );
 };
