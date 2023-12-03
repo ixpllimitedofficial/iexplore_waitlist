@@ -1,26 +1,31 @@
 "use state";
 import { useState } from "react";
+import Image from "next/image";
+import { useRouter } from 'next/navigation'
 
 import AppButton from "@/components/UI/Button/AppButton";
 import AppInput from "@/components/UI/Inputs/AppInput";
-import React from "react";
 import Modal from "@/components/UI/Modal/Modal";
 
 import PartyPopperIcon from "@/assets/img/PartyPopper.png";
-import Image from "next/image";
 
 const EmailConfirmation = () => {
   const [showModal, setShowModal] = useState(false);
+  const router = useRouter()
+
+  const handleModal = () => {
+    router.push('/')
+  };
 
   const handleShowModal = () => {
-    setShowModal(!showModal);
-  };
+    setShowModal(true)
+  }
 
   return (
     <section className="relative h-full flex flex-col gap-10 items-center justify-center">
       {/* modal */}
       {showModal && (
-        <Modal handleShowModal={handleShowModal}>
+        <Modal handleModal={handleModal} btnText="Let's Go!">
           <Image src={PartyPopperIcon} alt="PartyPopperIcon" />
 
           <h1 className="text-[#F7D098] font-bold text-3xl">Congratulations</h1>
