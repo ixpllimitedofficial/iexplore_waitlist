@@ -1,7 +1,6 @@
 import Image from "next/image";
 import OnboardingBgImage from "@/assets/img/OnboardingBgImage.png";
 import Onboarding from "@/components/Onboarding/Onboarding";
-import Modal from "@/components/UI/Modal/Modal"
 
 const page = () => {
   return (

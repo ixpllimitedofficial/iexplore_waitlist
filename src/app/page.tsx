@@ -1,11 +1,8 @@
-import Link from "next/link";
-import React from "react";
+import Home from "@/components/Home/Home";
 
 const page = () => {
   return (
-    <>
-      <h1 className='p-5'>Home</h1>
-    </>
+    <Home />
   );
 };
 
