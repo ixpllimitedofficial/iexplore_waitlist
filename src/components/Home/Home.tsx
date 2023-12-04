@@ -2,6 +2,7 @@ import Image from "next/image";
 import HomeImage from "@/assets/img/HomeImage.png";
 import FilterButton from "../UI/Button/FilterButton";
 import Clubs from "./Clubs/Clubs";
+import Recommendations from "./Recommendations/Recommendations";
 
 const Home = () => {
   return (
@@ -20,6 +21,9 @@ const Home = () => {
 
       {/* clubs */}
       <Clubs />
+
+      {/* recommendations */}
+      <Recommendations />
     </main>
   );
 };
