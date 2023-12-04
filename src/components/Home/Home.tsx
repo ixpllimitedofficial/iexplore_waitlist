@@ -3,6 +3,7 @@ import HomeImage from "@/assets/img/HomeImage.png";
 import FilterButton from "../UI/Button/FilterButton";
 import Clubs from "./Clubs/Clubs";
 import Recommendations from "./Recommendations/Recommendations";
+import FriendlySpots from "./FriendlySpots/FriendlySpots";
 
 const Home = () => {
   return (
@@ -24,6 +25,10 @@ const Home = () => {
 
       {/* recommendations */}
       <Recommendations />
+
+      {/* FriendlySpots */}
+      <FriendlySpots />
+
     </main>
   );
 };
