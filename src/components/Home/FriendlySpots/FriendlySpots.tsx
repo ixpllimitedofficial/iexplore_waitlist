@@ -9,7 +9,7 @@ const FriendlySpots = () => {
       <Image
         src={FriendlySpotImage}
         alt="FriendlySpots"
-        className="mt-10 mb-10 w-full opacity-70"
+        className="mt-10 w-full opacity-70"
       />
 
       <div className="absolute left-20 top-20">

@@ -7,7 +7,7 @@ import FriendlySpots from "./FriendlySpots/FriendlySpots";
 
 const Home = () => {
   return (
-    <main className="pt-8 pb-12">
+    <main className="pt-8">
       <Image
         src={HomeImage}
         alt="home image"
