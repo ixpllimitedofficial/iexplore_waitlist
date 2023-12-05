@@ -6,6 +6,7 @@ import Recommendations from "./Recommendations/Recommendations";
 import FriendlySpots from "./FriendlySpots/FriendlySpots";
 import Category from "./Category/Category";
 import Location from "./Location/Location";
+import Ratings from "./Ratings/Ratings";
 
 const Home = () => {
   return (
@@ -22,11 +23,14 @@ const Home = () => {
         <FilterButton btnText="Ratings" />
       </section>
 
-{/* category */}
+      {/* category */}
       <Category />
 
       {/* location */}
       <Location />
+
+      {/* ratings */}
+      <Ratings />
 
       {/* clubs */}
       <Clubs />
@@ -36,7 +40,6 @@ const Home = () => {
 
       {/* FriendlySpots */}
       <FriendlySpots />
-
     </main>
   );
 };

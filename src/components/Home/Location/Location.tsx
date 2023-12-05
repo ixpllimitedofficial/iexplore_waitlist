@@ -15,7 +15,7 @@ const Location = () => {
         <div className="flex flex-col gap-5">
           {/* location 1 */}
           <div className="flex items-center gap-2">
-            <Image src={LocationIcon} alt="location icon" />
+            <Image src={LocationIcon} alt="location icon" height={40} />
 
             <div>
               <h1 className="font-medium text-2xl text-[#E1BD8A]">
@@ -30,7 +30,7 @@ const Location = () => {
 
           {/* lcoation 2 */}
           <div className="flex items-center gap-2">
-            <Image src={LocationIcon} alt="location icon" />
+            <Image src={LocationIcon} alt="location icon" height={40} />
 
             <div>
               <h1 className="font-medium text-2xl text-[#E1BD8A]">
