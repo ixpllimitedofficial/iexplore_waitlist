@@ -1,4 +1,3 @@
-import React from "react";
 import FriendlySpotImage from "@/assets/img/FriendlySpots.png";
 import Image from "next/image";
 import AppButton from "@/components/UI/Button/AppButton";
