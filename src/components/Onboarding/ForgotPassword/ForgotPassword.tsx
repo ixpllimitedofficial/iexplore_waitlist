@@ -21,7 +21,7 @@ const ForgotPassword = () => {
 
 
       <Link href="/onboarding?flow=resetcode" className="self-center">
-        <AppButton text="Send code" className="px-20 rounded-2xl " />
+        <AppButton btnText="Send code" className="px-20 rounded-2xl " />
       </Link>
 
       <div className="flex items-center justify-center gap-1">

@@ -18,7 +18,7 @@ const Confirmation = () => {
       </p>
 
       <Link href="/onboarding?flow=emailConfirmation">
-        <AppButton text="Yes, I confirm" className="px-20 rounded-2xl" />
+        <AppButton btnText="Yes, I confirm" className="px-20 rounded-2xl" />
       </Link>
     </section>
   );

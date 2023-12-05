@@ -4,7 +4,7 @@ import AppButton from "../Button/AppButton";
 type ModalProps = {
   children?: React.ReactNode;
   handleModal?: () => void;
-  btnText?: string
+  btnText?: string;
 };
 
 const Modal = ({ children, handleModal, btnText }: ModalProps) => {
@@ -12,7 +12,11 @@ const Modal = ({ children, handleModal, btnText }: ModalProps) => {
     <section className="fixed h-screen w-screen top-[0px] left-[0px] overflow-hidden flex flex-col gap-5 justify-center items-center bg-[#212121bb] z-10">
       {children}
 
-      <AppButton text={btnText} handleClick={handleModal} className="px-20" />
+      <AppButton
+        btnText={btnText}
+        handleClick={handleModal}
+        className="px-20"
+      />
     </section>
   );
 };

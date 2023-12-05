@@ -1,12 +1,12 @@
 import Image from "next/image";
 import HomeImage from "@/assets/img/HomeImage.png";
-import FilterButton from "../UI/Button/FilterButton";
 import Clubs from "./Clubs/Clubs";
 import Recommendations from "./Recommendations/Recommendations";
 import FriendlySpots from "./FriendlySpots/FriendlySpots";
 import Category from "./Category/Category";
 import Location from "./Location/Location";
 import Ratings from "./Ratings/Ratings";
+import Filtering from "./Filtering/Filtering";
 
 const Home = () => {
   return (
@@ -17,20 +17,7 @@ const Home = () => {
         className="mb-12 w-[90vw] h-auto mx-auto"
       />
 
-      <section className="flex gap-10 justify-center mx-10">
-        <FilterButton btnText="Category" />
-        <FilterButton btnText="Location" />
-        <FilterButton btnText="Ratings" />
-      </section>
-
-      {/* category */}
-      <Category />
-
-      {/* location */}
-      <Location />
-
-      {/* ratings */}
-      <Ratings />
+      <Filtering />
 
       {/* clubs */}
       <Clubs />

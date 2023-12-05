@@ -17,7 +17,7 @@ const ResetCode = () => {
       <AppInput placeholder="" className="px-7" />
 
       <Link href="/onboarding?flow=resetpassword" className="self-center">
-        <AppButton text="Confirm code" className="px-20 rounded-2xl " />
+        <AppButton btnText="Confirm code" className="px-20 rounded-2xl " />
       </Link>
 
       <p className="text-[#E1BD8A] text-xl w-[50%] text-center leading-snug self-center">

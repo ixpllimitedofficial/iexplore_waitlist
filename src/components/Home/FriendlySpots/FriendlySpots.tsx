@@ -21,7 +21,7 @@ const FriendlySpots = () => {
           chill with friendly budget in Lagos
         </p>
 
-        <AppButton text="Read more" />
+        <AppButton btnText="Read more" />
       </div>
     </section>
   );

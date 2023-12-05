@@ -55,7 +55,7 @@ const EmailConfirmation = () => {
       </p>
 
       <AppButton
-        text="Confirm Email Address"
+        btnText="Confirm Email Address"
         className="px-20 rounded-2xl"
         handleClick={handleShowModal}
       />
