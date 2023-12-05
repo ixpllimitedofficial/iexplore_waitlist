@@ -4,6 +4,7 @@ import FilterButton from "../UI/Button/FilterButton";
 import Clubs from "./Clubs/Clubs";
 import Recommendations from "./Recommendations/Recommendations";
 import FriendlySpots from "./FriendlySpots/FriendlySpots";
+import Category from "./Category/Category";
 
 const Home = () => {
   return (
@@ -19,6 +20,8 @@ const Home = () => {
         <FilterButton btnText="Location" />
         <FilterButton btnText="Ratings" />
       </section>
+
+      <Category />
 
       {/* clubs */}
       <Clubs />
