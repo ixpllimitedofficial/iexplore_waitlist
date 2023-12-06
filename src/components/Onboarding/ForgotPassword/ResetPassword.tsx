@@ -66,7 +66,7 @@ const ResetPassword = () => {
 
       {/* <Link href="/onboarding?flow=login" className="self-center"> */}
       <AppButton
-        text="Reset password"
+        btnText="Reset password"
         className="px-20 rounded-2xl self-center"
         handleClick={handleShowModal}
       />
