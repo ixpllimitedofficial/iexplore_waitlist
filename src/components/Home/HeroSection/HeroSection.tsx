@@ -7,7 +7,7 @@ const HeroSection = () => {
   return (
     <section
       style={{ backgroundImage: `url(${HomeImage.src})` }}
-      className="relative flex items-center justify-center h-[600px] w-[85vw] rounded-3xl bg-no-repeat bg-cover bg-center mx-auto mb-10"
+      className="relative flex items-center justify-center h-[600px] w-[85vw] mx-auto mb-10 rounded-3xl bg-no-repeat bg-cover bg-center "
     >
       <div className="absolute w-[70%] bottom-16 text-center">
         <h1 className=" font-bold text-7xl text-center">

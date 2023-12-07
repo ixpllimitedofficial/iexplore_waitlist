@@ -3,6 +3,7 @@ import Recommendations from "./Recommendations/Recommendations";
 import FriendlySpots from "./FriendlySpots/FriendlySpots";
 import Filtering from "./Filtering/Filtering";
 import HeroSection from "./HeroSection/HeroSection";
+import GetApp from "./GetApp/GetApp";
 
 const Home = () => {
   return (
@@ -18,6 +19,12 @@ const Home = () => {
 
       {/* recommendations */}
       <Recommendations />
+
+      {/* get app */}
+      <GetApp />
+
+      {/* clubs */}
+      <Clubs />
 
       {/* FriendlySpots */}
       <FriendlySpots />
