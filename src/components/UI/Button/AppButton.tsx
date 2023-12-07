@@ -1,11 +1,25 @@
-type ButtonProps = {
-  btnText?: string,
-  className?: string,
-  handleClick?: () => void
-}
+import Image from "next/image";
 
-const AppButton = ({btnText, className, handleClick}: ButtonProps) => {
-  return <button className={`${className} bg-[#F7D098] text-[#212121] text-lg py-3 px-7 rounded-3xl font-bold`} onClick={handleClick}>{btnText} </button>;
+type ButtonProps = {
+  btnText?: string;
+  className?: string;
+  handleClick?: () => void;
+  leftIcon?: string
+  rightIcon?: string
+
+};
+
+const AppButton = ({ btnText, className, handleClick, leftIcon, rightIcon }: ButtonProps) => {
+  return (
+    <button
+      className={`${className} bg-[#F7D098] text-[#212121] text-lg py-2 px-5 rounded-3xl font-bold flex items-center justify-center gap-2`}
+      onClick={handleClick}
+    >
+      {leftIcon && <Image src={leftIcon} alt="leftIcon" height={25} />}
+      <p>{btnText}</p>{" "}
+      {rightIcon && <Image src={rightIcon} alt="rightIcon" height={12} />}
+    </button>
+  );
 };
 
 export default AppButton;

@@ -4,6 +4,7 @@ import FriendlySpots from "./FriendlySpots/FriendlySpots";
 import Filtering from "./Filtering/Filtering";
 import HeroSection from "./HeroSection/HeroSection";
 import GetApp from "./GetApp/GetApp";
+import AddLocation from "./AddLocation/AddLocation";
 
 const Home = () => {
   return (
@@ -28,6 +29,9 @@ const Home = () => {
 
       {/* FriendlySpots */}
       <FriendlySpots />
+
+      {/* add location */}
+      <AddLocation />
     </main>
   );
 };
