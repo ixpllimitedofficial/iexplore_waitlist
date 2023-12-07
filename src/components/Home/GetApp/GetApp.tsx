@@ -15,7 +15,7 @@ const GetApp = () => {
       className="relative flex items-center justify-center h-[600px] bg-no-repeat bg-cover bg-center my-36 w-[90vw] mx-auto rounded-3xl"
     >
       <div className="absolute left-8 w-[60%]">
-        <h1 className="text-7xl">
+        <h1 className="text-6xl">
           GET YOUR FRIENDS IN! <br />
           <span className="text-[#E1BD8A] italic font-bold">
             GET EVERYONE
