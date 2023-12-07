@@ -1,17 +1,13 @@
+"use client"
+
 import FriendlySpotImage from "@/assets/img/FriendlySpots.png";
-import Image from "next/image";
 import AppButton from "@/components/UI/Button/AppButton";
 
 const FriendlySpots = () => {
   return (
-    <section className="relative">
-      <Image
-        src={FriendlySpotImage}
-        alt="FriendlySpots"
-        className="mt-10 w-full opacity-70"
-      />
+    <section style={{ backgroundImage: `url(${FriendlySpotImage.src})` }} className="relative flex items-center justify-center h-[600px] bg-no-repeat bg-cover bg-center mt-10">
 
-      <div className="absolute left-20 top-20">
+      <div className="absolute left-20">
         <h1 className="text-7xl">
           Top 15 <span className="text-[#E1BD8A] italic font-bold">budget</span>  <br /> friendly <span className="text-[#E1BD8A] italic font-bold">spots</span>  to spend <br /> your evening in
           Lagos island
@@ -21,7 +17,7 @@ const FriendlySpots = () => {
           chill with friendly budget in Lagos
         </p>
 
-        <AppButton btnText="Read more" />
+        <AppButton btnText="Read more" handleClick={() => alert("Read more!")} />
       </div>
     </section>
   );

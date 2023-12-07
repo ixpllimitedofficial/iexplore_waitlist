@@ -5,7 +5,7 @@ import AppButton from "@/components/UI/Button/AppButton";
 
 const HeroSection = () => {
   return (
-    <div
+    <section
       style={{ backgroundImage: `url(${HomeImage.src})` }}
       className="relative flex items-center justify-center h-[600px] w-[85vw] rounded-3xl bg-no-repeat bg-cover bg-center mx-auto mb-10"
     >
@@ -21,7 +21,7 @@ const HeroSection = () => {
           handleClick={() => alert("Find event!")}
         />
       </div>
-    </div>
+    </section>
   );
 };
 
