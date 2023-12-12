@@ -4,9 +4,6 @@ import AppButton from "@/components/UI/Button/AppButton";
 import AddLocationImage from "@/assets/img/AddLocationImage.png";
 import LocationIconBlack from "@/assets/svg/LocationIconBlack.svg";
 
-
-
-
 const AddLocation = () => {
     return (
     <section
