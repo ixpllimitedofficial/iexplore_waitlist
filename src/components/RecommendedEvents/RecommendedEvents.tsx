@@ -1,3 +1,4 @@
+import GetApp from "../Home/GetApp/GetApp";
 import RecommendedEventsCard from "../UI/Cards/RecommendedEvents/RecommendedEventsCard";
 
 const RecommendedEvents = () => {
@@ -10,6 +11,8 @@ const RecommendedEvents = () => {
       {[1, 2, 3].map((card) => {
         return <RecommendedEventsCard key={card} />;
       })}
+
+      <GetApp />
     </section>
   );
 };

@@ -40,8 +40,8 @@ const SpotFeatures = () => {
         </div>
       </div>
 
-      <Link href="#">
-        <p className="mt-10 text-xl text-[#E1BD8A] border-2 border-[#E1BD8A] rounded-2xl py-3 px-5">
+      <Link href="#" className="mt-10">
+        <p className=" text-xl text-[#E1BD8A] border-2 border-[#E1BD8A] rounded-2xl py-3 px-5">
           See all features
         </p>
       </Link>

@@ -1,9 +1,14 @@
-import SpotDetails from '@/components/SpotDetails/SpotDetails'
+import SpotDetails from "@/components/SpotDetails/SpotDetails";
+import Footer from "@/components/UI/Footer/Footer";
 
 const page = () => {
   return (
-    <SpotDetails />
-  )
-}
+    <>
+      <SpotDetails />
 
-export default page
+      <Footer />
+    </>
+  );
+};
+
+export default page;

@@ -4,6 +4,10 @@ import BookmarkIcon from "@/assets/svg/SpotDetailsSvg/BookmarkIconSvg.svg";
 
 import SpotDetailsImage from "@/assets/img/SpotDetails/SpotDetailsImage.png";
 import SpotFeatures from "./SpotFeatures";
+import Clubs from "../Home/Clubs/Clubs";
+import GetDirections from "./GetDirections";
+import SpotRatings from "./SpotRatings";
+import Reviews from "./Reviews";
 
 const SpotDetails = () => {
   return (
@@ -47,6 +51,18 @@ const SpotDetails = () => {
 
       {/* spot features */}
       <SpotFeatures />
+
+      {/* get directions */}
+      <GetDirections />
+
+      {/* ratings */}
+      <SpotRatings />
+
+      {/* reviews */}
+      <Reviews />
+
+      {/* clubs */}
+      <Clubs />
     </section>
   );
 };
