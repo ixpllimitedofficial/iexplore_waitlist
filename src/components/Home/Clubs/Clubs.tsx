@@ -5,8 +5,8 @@ import Link from "next/link";
 
 const Clubs = () => {
   return (
-    <section className="mt-10">
-      <div className="flex items-center justify-between mb-7 mx-10">
+    <section className="mx-10 mt-10">
+      <div className="flex items-center justify-between mb-7 mr-10">
         <h1 className="text-[#E1BD8A] text-3xl font-bold">Clubs</h1>
         <Link href="/clubs">
         <AppButton
@@ -17,7 +17,7 @@ const Clubs = () => {
         </Link>
       </div>
 
-      <div className="flex gap-5 overflow-x-scroll no-scrollbar whitespace-nowrap ml-10">
+      <div className="flex gap-5 overflow-x-scroll no-scrollbar whitespace-nowrap">
         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((card) => {
           return <ClubCard key={card} />;
         })}

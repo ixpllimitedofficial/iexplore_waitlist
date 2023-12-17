@@ -8,6 +8,7 @@ import Clubs from "../Home/Clubs/Clubs";
 import GetDirections from "./GetDirections";
 import SpotRatings from "./SpotRatings";
 import Reviews from "./Reviews";
+import Contribute from "./Contribute";
 
 const SpotDetails = () => {
   return (
@@ -60,6 +61,9 @@ const SpotDetails = () => {
 
       {/* reviews */}
       <Reviews />
+
+      {/* contribute */}
+      <Contribute />
 
       {/* clubs */}
       <Clubs />

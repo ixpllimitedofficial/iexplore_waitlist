@@ -4,7 +4,7 @@ import ThumbsDownIcon from "@/assets/svg/SpotDetailsSvg/ThumbsDownIconSvg.svg";
 
 const SingleReview = () => {
   return (
-    <section className="p-7">
+    <section className="py-7">
       <div className="flex gap-3">
         <h3 className="bg-[#E1BD8A] text-[#212121] text-2xl font-bold py-3 px-4 rounded-full grid place-items-center">
           M
