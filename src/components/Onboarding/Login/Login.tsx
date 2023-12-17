@@ -23,9 +23,9 @@ const Login = () => {
 
       {/* divider */}
       <div className="flex items-center">
-        <div className="border-t-2 border-[##F9D9AD] flex-grow"></div>
+        <div className="border-t-2 border-[#F9D9AD] flex-grow"></div>
         <div className="px-5 text-[#F9D9AD] text-xl font-bold">or</div>
-        <div className="border-t-2 border-[##F9D9AD] flex-grow"></div>
+        <div className="border-t-2 border-[#F9D9AD] flex-grow"></div>
       </div>
 
       {/* continue with buttons */}

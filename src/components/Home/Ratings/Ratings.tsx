@@ -1,5 +1,4 @@
 import Image from "next/image";
-
 import RadioCircleIcon from "@/assets/svg/RadioCircleIcon.svg";
 
 const Ratings = () => {
@@ -25,7 +24,7 @@ const Ratings = () => {
       </div>
 
       {/* divider */}
-      <div className="border-t-2 border-[##F9D9AD] flex-grow"></div>
+      <div className="border-t-2 border-[#F9D9AD] flex-grow"></div>
 
       {/* second rating */}
       <div className="flex items-center gap-3 opacity-25">

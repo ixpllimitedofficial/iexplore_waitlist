@@ -45,8 +45,8 @@ const SpotDetails = () => {
         </p>
 
         <div className="text-right">
-            <p className="text-2xl">Open now</p>
-            <p className="text-xl text-[#E1BD8A]">6:00pm - 4:00am</p>
+          <p className="text-2xl">Open now</p>
+          <p className="text-xl text-[#E1BD8A]">6:00pm - 4:00am</p>
         </div>
       </div>
 

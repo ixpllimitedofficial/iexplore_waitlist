@@ -26,7 +26,7 @@ const Location = () => {
           </div>
 
           {/* divider */}
-          <div className="border-t-2 border-[##F9D9AD] flex-grow"></div>
+          <div className="border-t-2 border-[#F9D9AD] flex-grow"></div>
 
           {/* lcoation 2 */}
           <div className="flex items-center gap-2">
