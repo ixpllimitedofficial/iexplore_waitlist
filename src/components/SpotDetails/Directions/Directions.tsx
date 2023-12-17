@@ -25,7 +25,7 @@ const Directions = () => {
       </section>
 
       {/* get app */}
-      <GetApp />
+      <GetApp /> 
     </>
   );
 };

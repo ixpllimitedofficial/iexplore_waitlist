@@ -1,10 +1,21 @@
+"use client";
+import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import ClubImage from "@/assets/img/ClubImage.png";
 import BookmarkIcon from "@/assets/svg/BookmarkIcon.svg";
 
 const ClubCard = () => {
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push("spot-details")
+  }
+
   return (
-    <div className="bg-[#333333] p-2 rounded-3xl">
+    <div
+      onClick={() => handleClick()}
+      className="bg-[#333333] p-2 rounded-3xl"
+    >
       <Image src={ClubImage} alt="club image" />
 
       <div className="flex items-center justify-between mt-4 mb-2 px-2">
