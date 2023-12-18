@@ -12,7 +12,7 @@ type ButtonProps = {
 const AppButton = ({ btnText, className, handleClick, leftIcon, rightIcon }: ButtonProps) => {
   return (
     <button
-      className={`${className} bg-[#F7D098] text-[#212121] text-lg py-2 px-5 rounded-3xl font-bold flex items-center justify-center gap-2`}
+      className={`${className} bg-[#F7D098] text-[#212121] text-lg py-2 px-5 rounded-xl font-bold flex items-center justify-center gap-2`}
       onClick={handleClick}
     >
       {leftIcon && <Image src={leftIcon} alt="leftIcon" height={25} />}

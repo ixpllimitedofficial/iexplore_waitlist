@@ -12,7 +12,7 @@ const ClubsPage = () => {
       <AppInput
         type="search"
         placeholder="Search"
-        inputClass="rounded- w-[60%] mx-auto mt-5"
+        inputClass="w-[60%] mx-auto mt-5"
       />
 
       <div className="flex flex-wrap justify-around mt-14 w-[80vw] mx-auto gap-5">

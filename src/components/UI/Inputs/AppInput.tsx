@@ -7,7 +7,7 @@ type InputType = {
   value?: string;
   onChange?: () => void;
   inputClass?: string;
-  className?: string
+  className?: string;
 };
 
 const AppInput = ({
@@ -17,20 +17,22 @@ const AppInput = ({
   value,
   onChange,
   inputClass,
-  className
+  className,
 }: InputType) => {
   return (
     <div className={`${className} flex flex-col gap-2`}>
-      <label htmlFor={label} className="text-[#FAE0BA] ">
-        {label}
-      </label>
+      {label && (
+        <label htmlFor={label} className="text-[#FAE0BA] ">
+          {label}
+        </label>
+      )}
       <input
         id={label}
         type={type}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        className={`${inputClass} bg-[#424242] px-3 py-4 rounded-xl text-[#E1BD8A] border-2 border-[#E1BD8A] focus:outline-none  focus:ring-1 focus:ring-[#E1BD8A] `}
+        className={`${inputClass} bg-[#424242] px-3 py-4 rounded-xl text-[#E1BD8A] border-2 border-[#E1BD8A] focus:outline-none  focus:ring-1 focus:ring-[#E1BD8A] placeholder:text-lg`}
       />
     </div>
   );

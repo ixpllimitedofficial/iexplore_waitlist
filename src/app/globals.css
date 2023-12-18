@@ -27,9 +27,12 @@
 }
 
 @layer components {
-  /* topchartsalbum.js */
   .footerIcon {
     @apply bg-[#212121] p-4 rounded-full w-[50px] h-[50px] flex place-items-center;
+  }
+
+  .spotCategorySelection {
+    @apply flex gap-2 border-2 rounded-3xl border-[#F9D9AD] px-5 py-3 text-xl text-[#F9D9AD]
   }
 }
 
