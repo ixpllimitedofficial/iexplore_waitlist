@@ -9,7 +9,7 @@ import LinkedInIcon from "@/assets/svg/LinkedInIcon.svg";
 const Footer = () => {
   return (
     <footer className=" bg-[#E1BD8A] text-black p-14">
-      <div className="flex justify-between">
+      <div className="flex flex-col md:flex-row justify-between">
         <div className="flex flex-col gap-6 w-[35%]">
           {/* logo */}
           <Image src={ExploreDarkLogo} alt="logo" height={70} />
@@ -85,7 +85,7 @@ const Footer = () => {
       </div>
 
       {/* bottom line */}
-      <div className="mt-10 border-t-4 pt-5 flex justify-between w-[95%] mx-auto">
+      <div className="mt-10 border-t-4 pt-5 flex flex-col md:flex-row justify-between w-[95%] mx-auto">
         <p className="text-xl">
           Copyright 2023. iexplore@mail.com. All Rights Reserved.
         </p>

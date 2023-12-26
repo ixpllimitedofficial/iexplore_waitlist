@@ -27,7 +27,7 @@ const GetApp = () => {
           <span className="font-bold italic">ease!</span>
         </p>
 
-        <div className="flex gap-3 cursor-pointer">
+        <div className="flex flex-col md:flex-row gap-3 cursor-pointer">
           <Image src={AppStoreImage} alt="AppStoreImage" />
           <Image src={GooglePlayImage} alt="GooglePlayImage" />
         </div>

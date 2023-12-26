@@ -7,11 +7,11 @@ const Clubs = () => {
   return (
     <section className="mx-3 md:mx-10 mt-10">
       <div className="flex items-center justify-between mb-7">
-        <h1 className="text-[#E1BD8A] text-2xl md:text-3xl font-bold">Clubs</h1>
+        <h1 className="text-[#E1BD8A] text-[22px] md:text-3xl font-bold">Clubs</h1>
         <Link href="/clubs">
         <AppButton
           btnText="See all"
-          className="border-2 border-[#887254] text-base justify-between px-10"
+          className="border-2 border-[#887254] text-[15px] md:text-lg justify-between px-10"
           rightIcon={ArrowButtonRight}
         />
         </Link>

@@ -28,12 +28,12 @@ const MobileNav = () => {
 
       {/* navbar */}
       <nav
-        className={`fixed top-0 h-screen z-[100] bg-[#E1BD8A] w-full p-28 flex flex-col items-center gap-10 duration-700 ${
-          showNavState ? "right-[0px]" : "right-[-100vw]"
+        className={`fixed top-0 h-screen w-screen z-[100] bg-[#E1BD8A] p-28 flex flex-col items-center gap-10 duration-700 ${
+          showNavState ? "right-0" : "right-[-100vw]"
         }`}
       >
         {/* to close nav */}
-        <div className="absolute top-5 z-[120] cursor-pointer noSelect flex w-[80vw] justify-between">
+        <div className="absolute top-5 z-[120] cursor-pointer noSelect flex w-[80%] justify-between">
           {/* logo */}
           <Image src={iExploreTextLogo} alt="iExploreTextLogo" />
 
