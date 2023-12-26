@@ -5,13 +5,13 @@ import Link from "next/link";
 
 const Clubs = () => {
   return (
-    <section className="mx-10 mt-10">
-      <div className="flex items-center justify-between mb-7 mr-10">
-        <h1 className="text-[#E1BD8A] text-3xl font-bold">Clubs</h1>
+    <section className="mx-3 md:mx-10 mt-10">
+      <div className="flex items-center justify-between mb-7">
+        <h1 className="text-[#E1BD8A] text-2xl md:text-3xl font-bold">Clubs</h1>
         <Link href="/clubs">
         <AppButton
-          btnText="See All"
-          className="border-2 border-[#887254]"
+          btnText="See all"
+          className="border-2 border-[#887254] text-base justify-between px-10"
           rightIcon={ArrowButtonRight}
         />
         </Link>

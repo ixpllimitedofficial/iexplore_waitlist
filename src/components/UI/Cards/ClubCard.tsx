@@ -19,12 +19,12 @@ const ClubCard = () => {
       <Image src={ClubImage} alt="club image" />
 
       <div className="flex items-center justify-between mt-4 mb-2 px-2">
-        <h1 className="text-2xl">Club Quilox</h1>
+        <h1 className="text-xl md:text-2xl">Club Quilox</h1>
 
         <Image src={BookmarkIcon} alt="bookmark" height={30} />
       </div>
 
-      <div className="text-lg text-[#999999] flex mb-3 px-2">
+      <div className="text-base md:text-lg text-[#999999] flex mb-3 px-2">
         <p>Club & Bar</p>
         <p className="mx-2">|</p>
         <p>7pm-4am</p>
