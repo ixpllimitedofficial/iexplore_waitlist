@@ -17,7 +17,7 @@ const HeroSection = () => {
 
         <AppButton
           btnText="Find an event"
-          className="relative mt-3 lg:mt-5 text-xs md:text-xl lg:text-2xl"
+          className="relative mt-3 lg:mt-5 text-sm md:text-xl"
           handleClick={() => alert("Find event!")}
         />
       </div>

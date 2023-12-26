@@ -22,11 +22,11 @@ const Filtering = () => {
 
   return (
     <>
-      <section className="flex gap-10 justify-center mx-10">
+      <section className="flex gap-3 md:gap-10 justify-center mx-10">
         <FilterButton
           btnText="Category"
           handleClick={() => handleFilter("category")}
-          className={`${
+          className={` ${
             filterParams === "category" && "text-black bg-[#E1BD8A] border-none"
           }`}
         />
