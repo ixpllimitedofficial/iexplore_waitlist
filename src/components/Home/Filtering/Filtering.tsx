@@ -1,9 +1,9 @@
 "use client";
 import { useRouter, useSearchParams } from "next/navigation";
 import FilterButton from "@/components/UI/Button/FilterButton";
-import Location from "../Location/Location";
-import Ratings from "../Ratings/Ratings";
-import Category from "../Category/Category";
+import Location from "./Location/Location";
+import Ratings from "./Ratings/Ratings";
+import Category from "./Category/Category";
 
 type FilterType = "category" | "location" | "ratings";
 

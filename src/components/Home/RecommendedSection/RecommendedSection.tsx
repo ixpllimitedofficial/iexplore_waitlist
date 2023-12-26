@@ -1,9 +1,9 @@
-import AppButton from "@/components/UI/Button/AppButton";
-import RecommendationsCard from "@/components/UI/Cards/RecommendationsCard";
-import ArrowButtonRight from "@/assets/svg/ArrowButtonRight.svg";
 import Link from "next/link";
+import AppButton from "@/components/UI/Button/AppButton";
+import RecommendationsCard from "@/components/UI/Cards/RecommendedSectionCard";
+import ArrowButtonRight from "@/assets/svg/ArrowButtonRight.svg";
 
-const Recommendations = () => {
+const RecommendedSection = () => {
   return (
     <section className="mt-10">
       <div className="flex items-center justify-between mb-7 mx-10">
@@ -28,4 +28,4 @@ const Recommendations = () => {
   );
 };
 
-export default Recommendations;
+export default RecommendedSection;

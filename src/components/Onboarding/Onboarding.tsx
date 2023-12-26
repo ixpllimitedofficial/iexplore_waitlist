@@ -10,7 +10,7 @@ import ForgotPassword from "./ForgotPassword/ForgotPassword";
 import ResetCode from "./ForgotPassword/ResetCode";
 import ResetPassword from "./ForgotPassword/ResetPassword";
 
-type FlowType = "signup" | "login" | "ageConfirmation" | "emailConfirmation" | "forgotpassword" | "resetcode" | "resetpassword";
+type FlowType = "signup" | "login" | "ageConfirmation" | "emailConfirmation" | "forgotPassword" | "resetCode" | "resetPassword";
 
 const Onboarding = () => {
   const flowParams = useSearchParams().get("flow") as FlowType;
@@ -56,13 +56,9 @@ const Onboarding = () => {
       {flowParams === "signup" && <Signup />}
       {flowParams === "ageConfirmation" && <AgeConfirmation />}
       {flowParams === "emailConfirmation" && <EmailConfirmation />}
-      {flowParams === "forgotpassword" && <ForgotPassword />}
-      {flowParams === "resetcode" && <ResetCode />}
-      {flowParams === "resetpassword" && <ResetPassword />}
-
-
-
-  
+      {flowParams === "forgotPassword" && <ForgotPassword />}
+      {flowParams === "resetCode" && <ResetCode />}
+      {flowParams === "resetPassword" && <ResetPassword />}
     </section>
   );
 };

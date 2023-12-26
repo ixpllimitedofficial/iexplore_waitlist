@@ -4,12 +4,17 @@ type ButtonProps = {
   btnText?: string;
   className?: string;
   handleClick?: () => void;
-  leftIcon?: string
-  rightIcon?: string
-
+  leftIcon?: string;
+  rightIcon?: string;
 };
 
-const AppButton = ({ btnText, className, handleClick, leftIcon, rightIcon }: ButtonProps) => {
+const AppButton = ({
+  btnText,
+  className,
+  handleClick,
+  leftIcon,
+  rightIcon,
+}: ButtonProps) => {
   return (
     <button
       className={`${className} bg-[#F7D098] text-[#212121] text-lg py-2 px-5 rounded-xl font-bold flex items-center justify-center gap-2`}

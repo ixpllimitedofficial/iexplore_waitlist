@@ -1,7 +1,7 @@
 import Image from "next/image";
 import RecommendationImage from "@/assets/img/RecommendationImage.png";
 
-const RecommendationsCard = () => {
+const RecommendedSectionCard = () => {
   return (
     <div className="relative">
       <div className="w-[320px]">
@@ -23,4 +23,4 @@ const RecommendationsCard = () => {
   );
 };
 
-export default RecommendationsCard;
+export default RecommendedSectionCard;
