@@ -20,6 +20,8 @@ const HeroSection = () => {
           className="relative mt-3 lg:mt-5 text-sm md:text-xl"
           handleClick={() => alert("Find event!")}
         />
+
+        <h1></h1>
       </div>
     </section>
   );

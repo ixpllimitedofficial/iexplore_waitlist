@@ -12,24 +12,24 @@ const GetApp = () => {
   return (
     <section
       style={{ backgroundImage: `url(${GetAppImage.src})` }}
-      className="relative flex items-center justify-center h-[600px] bg-no-repeat bg-cover bg-center my-36 w-[90vw] mx-auto rounded-3xl"
+      className="relative flex items-center justify-center h-[250px] md:h-[400px] lg:h-[600px] w-[90vw] md:w-[85vw] bg-no-repeat bg-cover bg-center my-10 lg:my-36 mx-auto rounded-3xl"
     >
-      <div className="absolute left-8 w-[60%]">
-        <h1 className="text-6xl">
+      <div className="absolute left-5 md:left-8 lg:w-[60%]">
+        <h1 className="font-bold text-2xl md:text-5xl lg:text-6xl">
           GET YOUR FRIENDS IN! <br />
           <span className="text-[#E1BD8A] italic font-bold">
             GET EVERYONE
           </span>{" "}
           IN!
         </h1>
-        <p className="text-3xl w-[70%] my-10">
+        <p className="md:text-lg lg:text-2xl lg:w-[70%] my-2 lg:my-8">
           Download and enjoy our app with your friends with{" "}
           <span className="font-bold italic">ease!</span>
         </p>
 
-        <div className="flex flex-col md:flex-row gap-3 cursor-pointer">
-          <Image src={AppStoreImage} alt="AppStoreImage" />
-          <Image src={GooglePlayImage} alt="GooglePlayImage" />
+        <div className="flex gap-3 cursor-pointer">
+          <Image src={AppStoreImage} alt="AppStoreImage" className="h-8 w-auto md:h-14" />
+          <Image src={GooglePlayImage} alt="GooglePlayImage" className="h-8 w-auto md:h-14" />
         </div>
       </div>
 
@@ -37,7 +37,7 @@ const GetApp = () => {
       <Image
         src={GetAppPhoneImage}
         alt="GetAppPhoneImage"
-        className="absolute right-10"
+        className="absolute right-10 hidden lg:block"
       />
     </section>
   );

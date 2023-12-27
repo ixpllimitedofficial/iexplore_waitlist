@@ -11,7 +11,7 @@ const Clubs = () => {
         <Link href="/clubs">
         <AppButton
           btnText="See all"
-          className="border-2 border-[#887254] text-[15px] md:text-lg justify-between px-10"
+          className="border-2 border-[#887254] text-sm md:text-xl"
           rightIcon={ArrowButtonRight}
         />
         </Link>
