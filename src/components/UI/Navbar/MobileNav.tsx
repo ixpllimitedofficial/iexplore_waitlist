@@ -41,19 +41,19 @@ const MobileNav = () => {
           <Image src={CloseIconSvg} alt="CloseIconSvg" onClick={showNav} />
         </div>
 
-        <Link href="/" className="text-[#212121] text-[18px] font-medium">
+        <Link href="/" className="text-[#212121] text-[18px] font-medium" onClick={showNav}>
           Home
         </Link>
-        <Link href="/" className="text-[#212121] text-[18px] font-medium">
+        <Link href="/" className="text-[#212121] text-[18px] font-medium" onClick={showNav}>
           Explore
         </Link>
-        <Link href="/" className="text-[#212121] text-[18px] font-medium">
+        <Link href="/" className="text-[#212121] text-[18px] font-medium" onClick={showNav}>
           Saved
         </Link>
-        <Link href="/" className="text-[#212121] text-[18px] font-medium">
+        <Link href="/" className="text-[#212121] text-[18px] font-medium" onClick={showNav}>
           Feed
         </Link>
-        <Link href="/" className="text-[#212121] text-[18px] font-medium">
+        <Link href="/" className="text-[#212121] text-[18px] font-medium" onClick={showNav}>
           Drinks
         </Link>
 
@@ -63,12 +63,14 @@ const MobileNav = () => {
         <div className="flex flex-col items-center gap-7">
           <Link
             href="/onboarding?flow=login"
+            onClick={showNav}
             className="text-[#212121] text-[18px] font-medium"
           >
             Login
           </Link>
           <Link
             href="/onboarding?flow=signup"
+            onClick={showNav}
             className="bg-[#212121] text-[#E1BD8A] text-[18px] px-4 py-2 rounded-xl font-extrabold"
           >
             Signup

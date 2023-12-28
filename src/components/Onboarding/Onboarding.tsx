@@ -24,7 +24,7 @@ const Onboarding = () => {
 
   // returned component
   return (
-    <section className="w-5/6">
+    <section className="w-[95vw] lg:w-3/6">
       {/* links */}
       {flowParams !== "login" &&
       flowParams !== "signup" ? (

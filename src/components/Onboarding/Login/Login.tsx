@@ -12,15 +12,6 @@ const Login = () => {
       {/* form */}
       <LoginForm />
 
-      <Link
-        href="/onboarding?flow=forgotpassword"
-        className=" text-[#E1BD8A] text-end font-medium"
-      >
-        Forgot Password
-      </Link>
-
-      <AppButton btnText="Login" />
-
       {/* divider */}
       <div className="flex items-center">
         <div className="border-t-2 border-[#F9D9AD] flex-grow"></div>

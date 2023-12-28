@@ -1,15 +1,19 @@
 import SignupForm from "./SignupForm";
 import Link from "next/link";
 import AppButton from "@/components/UI/Button/AppButton";
+import AppInput from "@/components/UI/Inputs/AppInput";
 
 const Signup = () => {
   return (
-    <section className="mt-7 flex flex-col gap-5">
-      {/* form */}
-      <SignupForm />
+    <form className="mt-7 flex flex-col gap-7">
+      <AppInput label="Full Name:" placeholder="Max Smith" />
+      <AppInput label="Max Smith:" placeholder="Maxxconnect127@gmail.com" />
+      <AppInput label="Age (28 years old):" placeholder="February 18, 1995" />
+      <AppInput label="Phone number:" placeholder="09012345678" />
+      <AppInput label="Password:" placeholder="************" />
 
       <div className="flex items-start gap-2">
-        <input type="checkbox" aria-label="Check box" className="mt-2" />
+        <input type="checkbox" aria-label="Check box" className="mt-1" />
         <p className="text-[#E1BD8A]">
           By creating an account, I verify that i’m over 18 years of age and
           accept the{" "}
@@ -22,10 +26,10 @@ const Signup = () => {
       <Link href="/onboarding?flow=ageConfirmation">
         <AppButton
           btnText="Create Account"
-          className="w-full bg-[#111111] text-black"
+          className="w-full text-[15px] md:text-lg"
         />
       </Link>
-    </section>
+    </form>
   );
 };
 

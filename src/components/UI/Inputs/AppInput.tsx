@@ -22,7 +22,7 @@ const AppInput = ({
   return (
     <div className={`${className} flex flex-col gap-2`}>
       {label && (
-        <label htmlFor={label} className="text-[#FAE0BA] ">
+        <label htmlFor={label} className="text-[#FAE0BA] text-lg font-medium">
           {label}
         </label>
       )}
