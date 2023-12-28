@@ -5,7 +5,7 @@ import Footer from "@/components/UI/Footer/Footer";
 
 const page = () => {
   return (
-    <>
+    <section className="mt-28">
       <ClubsPage />
 
       <FriendlySpots />
@@ -13,7 +13,7 @@ const page = () => {
       <AddLocation />
 
       <Footer />
-    </>
+    </section>
   );
 };
 

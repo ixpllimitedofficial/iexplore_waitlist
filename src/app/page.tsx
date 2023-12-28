@@ -9,7 +9,7 @@ import Footer from "@/components/UI/Footer/Footer";
 
 const page = () => {
   return (
-    <main className="mt-8">
+    <main className="mt-28">
       <HeroSection />
       <Filtering />
       <Clubs />

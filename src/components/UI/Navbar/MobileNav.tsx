@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -18,8 +18,18 @@ const MobileNav = () => {
     setshowNavState(!showNavState);
   };
 
+  useEffect(() => {
+    // Disables Background Scrolling whilst the navbar is open
+    if (showNavState == true) {
+      document.body.style.overflow = "hidden";
+    } else {
+      // Unsets Background Scrolling to use when navbar is closed
+      document.body.style.overflow = "unset";
+    }
+  }, [showNavState]);
+
   return (
-    <header className="lg:hidden flex items-center justify-between px-10 py-5 bg-[#E1BD8A]">
+    <header className="fixed top-0 w-screen z-50 lg:hidden flex items-center justify-between px-10 py-5 bg-[#E1BD8A]">
       {/* logo */}
       <Image src={iExploreTextLogo} alt="iExploreTextLogo" />
 
@@ -28,7 +38,7 @@ const MobileNav = () => {
 
       {/* navbar */}
       <nav
-        className={`fixed top-0 h-screen w-screen z-[100] bg-[#E1BD8A] p-28 flex flex-col items-center gap-10 duration-700 ${
+        className={`fixed top-0 h-screen w-screen z-[100] bg-[#E1BD8A] p-28 flex flex-col items-center gap-8 duration-700 ${
           showNavState ? "right-0" : "right-[-100vw]"
         }`}
       >
@@ -41,19 +51,39 @@ const MobileNav = () => {
           <Image src={CloseIconSvg} alt="CloseIconSvg" onClick={showNav} />
         </div>
 
-        <Link href="/" className="text-[#212121] text-[18px] font-medium" onClick={showNav}>
+        <Link
+          href="/"
+          className="text-[#212121] text-[18px] font-medium"
+          onClick={showNav}
+        >
           Home
         </Link>
-        <Link href="/" className="text-[#212121] text-[18px] font-medium" onClick={showNav}>
+        <Link
+          href="/"
+          className="text-[#212121] text-[18px] font-medium"
+          onClick={showNav}
+        >
           Explore
         </Link>
-        <Link href="/" className="text-[#212121] text-[18px] font-medium" onClick={showNav}>
+        <Link
+          href="/"
+          className="text-[#212121] text-[18px] font-medium"
+          onClick={showNav}
+        >
           Saved
         </Link>
-        <Link href="/" className="text-[#212121] text-[18px] font-medium" onClick={showNav}>
+        <Link
+          href="/"
+          className="text-[#212121] text-[18px] font-medium"
+          onClick={showNav}
+        >
           Feed
         </Link>
-        <Link href="/" className="text-[#212121] text-[18px] font-medium" onClick={showNav}>
+        <Link
+          href="/"
+          className="text-[#212121] text-[18px] font-medium"
+          onClick={showNav}
+        >
           Drinks
         </Link>
 

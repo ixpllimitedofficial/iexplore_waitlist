@@ -16,7 +16,7 @@ const SingleReview = () => {
         </div>
       </div>
 
-      <p className="mt-5 text-2xl text-[#E1BD8A] w-[70%]">
+      <p className="mt-5 text-xl md:text-2xl text-[#E1BD8A]">
         Best place to enjoy nightlife in Lagos. Sound is perfect security is on
         point and there was no problem with finding a parking space. <br />{" "}
         <br /> Got to see and had some premium drinks there, definitely can’t
@@ -24,10 +24,10 @@ const SingleReview = () => {
       </p>
 
       <div className="mt-5 flex gap-4 items-center">
-        <p className="text-2xl text-[#E1BD8A]">Was this review helpful?</p>
+        <p className="text-xl md:text-2xl text-[#E1BD8A]">Was this review helpful?</p>
 
-        <Image src={ThumbsUpIcon} alt="ThumbsUpIcon" height={40}/>
-        <Image src={ThumbsDownIcon} alt="ThumbsDownIcon" height={40}/>
+        <Image src={ThumbsUpIcon} alt="ThumbsUpIcon" height={30}/>
+        <Image src={ThumbsDownIcon} alt="ThumbsDownIcon" height={30}/>
       </div>
     </section>
   );

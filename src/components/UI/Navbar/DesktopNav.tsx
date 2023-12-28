@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const DesktopNav = () => {
   return (
-    <header className="hidden lg:flex items-center justify-between px-20 py-4 bg-[#E1BD8A] ">
+    <header className="fixed top-0 w-screen z-50 hidden lg:flex items-center justify-between px-20 py-4 bg-[#E1BD8A] ">
       <Image src={ExploreLogo} alt="iExploreLogo.png" height={60} width={60} />
 
       <nav className="flex items-center gap-10">
