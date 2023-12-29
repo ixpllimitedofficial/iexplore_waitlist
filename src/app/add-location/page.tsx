@@ -4,7 +4,7 @@ import HeroSection from "@/components/Home/HeroSection/HeroSection";
 
 const page = () => {
   return (
-    <main className="p-10">
+    <main className="mt-28">
       <HeroSection />
 
       <AddLocation />

@@ -8,7 +8,7 @@ type ModalProps = {
 
 const Modal = ({ children, handleModal, btnText }: ModalProps) => {
   return (
-    <section className="fixed h-screen w-screen top-[0px] left-[0px] overflow-hidden flex flex-col gap-4 justify-center items-center bg-[#212121bb] z-10">
+    <section className="fixed h-screen w-screen top-[0px] left-[0px] overflow-hidden flex flex-col gap-4 justify-center items-center bg-[#212121bb] z-[60]">
       {children}
 
       <AppButton

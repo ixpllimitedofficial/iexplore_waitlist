@@ -5,7 +5,14 @@ import Link from "next/link";
 const DesktopNav = () => {
   return (
     <header className="fixed top-0 w-screen z-50 hidden lg:flex items-center justify-between px-20 py-4 bg-[#E1BD8A] ">
-      <Image src={ExploreLogo} alt="iExploreLogo.png" height={60} width={60} />
+      <Link href="/">
+        <Image
+          src={ExploreLogo}
+          alt="iExploreLogo.png"
+          height={60}
+          width={60}
+        />
+      </Link>
 
       <nav className="flex items-center gap-10">
         <Link href="/" className="text-[#212121] text-[18px] font-medium">
@@ -26,7 +33,10 @@ const DesktopNav = () => {
       </nav>
 
       <nav className="flex items-center gap-7">
-        <Link href="/onboarding?flow=login" className="text-[#212121] text-[18px] font-medium">
+        <Link
+          href="/onboarding?flow=login"
+          className="text-[#212121] text-[18px] font-medium"
+        >
           Login
         </Link>
         <Link

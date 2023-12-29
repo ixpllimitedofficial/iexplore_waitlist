@@ -1,12 +1,12 @@
-import Features from '@/components/SpotDetails/Features/Features'
-import React from 'react'
+import Features from "@/components/SpotDetails/Features/Features";
+import React from "react";
 
 const page = () => {
   return (
-    <>
-        <Features />
-    </>
-  )
-}
+    <section className="mt-28">
+      <Features />
+    </section>
+  );
+};
 
-export default page
+export default page;

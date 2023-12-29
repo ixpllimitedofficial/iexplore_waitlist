@@ -8,37 +8,37 @@ const Details = () => {
   return (
     <>
       {/* divider */}
-      <div className="my-12 border-t-2 border-[#F9D9AD] flex-grow"></div>
+      <div className="my-8 border-t-2 border-[#F9D9AD] flex-grow"></div>
 
       {/* details */}
       <section className="flex flex-col flex-gap gap-10">
         {/* location */}
-        <div className="flex items-center gap-5">
-          <Image src={LocationIcon} alt="LocationIcon" height={40} />
-          <p className="text-2xl">
+        <div className="flex gap-5">
+          <Image src={LocationIcon} alt="LocationIcon" height={35} />
+          <p className="text-xl md:text-[22px]">
             873 Ozumba Mbadiwe Ave, Victoria Island <br /> 106104, Lagos state.
             Nigeria.
           </p>
         </div>
 
         {/* time */}
-        <div className="flex items-center gap-5">
-          <Image src={TimeIconSvg} alt="TimeIconSvg" height={40} />
-          <p className="text-2xl">01 924 4386</p>
+        <div className="flex gap-5">
+          <Image src={TimeIconSvg} alt="TimeIconSvg" height={35} />
+          <p className="text-xl md:text-[22px]">01 924 4386</p>
         </div>
 
         {/* time */}
-        <div className="flex items-center gap-5">
-          <Image src={TelephoneIconSvg} alt="TimeIconSvg" height={40} />
-          <p className="text-2xl">
+        <div className="flex gap-5">
+          <Image src={TelephoneIconSvg} alt="TimeIconSvg" height={35} />
+          <p className="text-xl md:text-[22px]">
             Open time: 6:00am <br /> Close time: 6:00pm
           </p>
         </div>
 
         {/* time */}
-        <div className="flex items-center gap-5">
-          <Image src={WebsiteIconSvg} alt="WebsiteIconSvg" height={40} />
-          <p className="text-2xl">www.clubquilox.com</p>
+        <div className="flex gap-5">
+          <Image src={WebsiteIconSvg} alt="WebsiteIconSvg" height={35} />
+          <p className="text-xl md:text-[22px]">www.clubquilox.com</p>
         </div>
       </section>
     </>

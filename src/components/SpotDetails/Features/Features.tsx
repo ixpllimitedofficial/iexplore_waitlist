@@ -9,10 +9,10 @@ import FriendlySpots from "@/components/Home/FriendlySpots/FriendlySpots";
 const Features = () => {
   return (
     <>
-      <section className="p-12">
+      <section className="px-5 md:px-12">
         {/* title and icons */}
         <div className="flex items-center justify-between mb-5">
-          <h1 className="text-[#E1BD8A] text-3xl font-bold w-[90vw] mx-auto">
+          <h1 className="text-[#E1BD8A] text-3xl font-bold">
             Club Quilox
           </h1>
 
@@ -23,10 +23,10 @@ const Features = () => {
         </div>
 
         {/* about */}
-        <div className="mt-16">
+        <div className="mt-10">
           <h1 className="text-3xl font-bold mb-3">About</h1>
 
-          <p className="text-2xl leading-loose">
+          <p className="text-xl md:text-[22px] leading-loose">
             Located at the heart of Lagos is the King of entertainment and
             nightlife in the city. Experience the thrill of Lagos nightlife
             here. <br />

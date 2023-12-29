@@ -1,9 +1,10 @@
 import Image from "next/image";
 import RecommendationImage from "@/assets/img/RecommendationImage.png";
+import Link from "next/link";
 
 const RecommendedSectionCard = () => {
   return (
-    <div className="relative">
+    <Link href="/spot-details" className="relative">
       <div className="w-[320px]">
         <Image src={RecommendationImage} alt="recommendation image" />
       </div>
@@ -19,7 +20,7 @@ const RecommendedSectionCard = () => {
           Live at Eko Atlantic. 12th Dec 2023.
         </p>
       </div>
-    </div>
+    </Link>
   );
 };
 

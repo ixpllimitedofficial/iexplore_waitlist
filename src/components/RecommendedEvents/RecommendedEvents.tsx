@@ -3,8 +3,8 @@ import RecommendedEventsCard from "../UI/Cards/RecommendedEvents/RecommendedEven
 
 const RecommendedEvents = () => {
   return (
-    <section className="py-10">
-      <h1 className="text-[#E1BD8A] text-3xl font-bold w-[85vw] mx-auto">
+    <section>
+      <h1 className="text-[#E1BD8A] text-2xl md:text-3xl font-bold pl-6">
         Recommended events
       </h1>
 

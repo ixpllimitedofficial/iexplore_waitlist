@@ -6,10 +6,10 @@ import GetApp from "../Home/GetApp/GetApp";
 const SpotCategory = () => {
   return (
     <>
-      <section>
+      <section className="mt-10 px-5 md:px-10">
         {/* spot category */}
         <h4 className="text-2xl font-bold ">Spot Category</h4>
-        <div className="mt-7 flex flex-wrap gap-4">
+        <div className="mt-7 flex flex-wrap gap-4 ">
           <p className="spotCategorySelection">Clubs</p>
 
           <p className="spotCategorySelection">Restaurants</p>
@@ -24,7 +24,7 @@ const SpotCategory = () => {
         </div>
 
         {/* Are you the proud owner */}
-        <h4 className="text-2xl mt-14 ">
+        <h4 className="text-xl mt-14 ">
           Are you the proud owner, one of the awesome team members, or the
           official ambassador for this location?
         </h4>
@@ -95,14 +95,14 @@ const SpotCategory = () => {
         <div className="mt-4">
           <p className="text-[#8E8E8E] text-lg mb-3">Telephone</p>
 
-          <div className="flex gap-5 ">
+          <div className="flex gap-2">
             <FilterButton
               btnText="+234"
               className="border-2 border-[#E1BD8A]"
             />
             <AppInput
-              placeholder="12B Love street, Ikeja Lagos."
-              className="w-full"
+              placeholder="09090909090"
+              type="number"
             />
           </div>
         </div>

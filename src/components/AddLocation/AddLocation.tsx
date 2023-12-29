@@ -2,11 +2,11 @@ import React from "react";
 
 const AddLocation = () => {
   return (
-    <section>
+    <section className="px-5">
       <h4 className="text-2xl font-bold text-center">
         Add a location to iexplore
       </h4>
-      <p className="mt-5 text-[22px] text-center w-[50%] mx-auto leading-relaxed">
+      <p className="mt-2 text-lg md:text-[22px] text-center md:w-[70%] lg:w-[50%] mx-auto leading-relaxed">
         Thank you for joining us to grow the iexplore community by telling us
         about a new place to list on iexplore. Kindly tell us more about this
         cool spot.

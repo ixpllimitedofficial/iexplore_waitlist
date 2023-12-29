@@ -32,7 +32,7 @@
   }
 
   .spotCategorySelection {
-    @apply flex gap-2 border-2 rounded-3xl border-[#F9D9AD] px-5 py-3 text-xl text-[#F9D9AD]
+    @apply flex gap-2 border-2 rounded-3xl border-[#F9D9AD] px-5 py-3 text-lg md:text-xl text-[#F9D9AD]
   }
 }
 

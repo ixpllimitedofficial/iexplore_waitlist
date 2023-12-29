@@ -31,7 +31,9 @@ const MobileNav = () => {
   return (
     <header className="fixed top-0 w-screen z-50 lg:hidden flex items-center justify-between px-10 py-5 bg-[#E1BD8A]">
       {/* logo */}
-      <Image src={iExploreTextLogo} alt="iExploreTextLogo" />
+      <Link href="/">
+        <Image src={iExploreTextLogo} alt="iExploreTextLogo" />
+      </Link>
 
       {/* hamburger */}
       <Image src={HamburgerIconSvg} alt="HamburgerIconSvg" onClick={showNav} />
