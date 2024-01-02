@@ -1,5 +1,3 @@
-"use client";
-
 import LandingPageBgImage from "@/assets/img/LandingPage/LandingPageBgImage.png";
 import LandingPagePhoneImage from "@/assets/img/LandingPage/LandingPagePhoneImage.png";
 import LandingPageSpiralsImage from "@/assets/img/LandingPage/LandingPageSpiralsImage.png";
