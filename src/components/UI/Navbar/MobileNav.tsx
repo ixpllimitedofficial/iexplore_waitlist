@@ -31,7 +31,7 @@ const MobileNav = () => {
   return (
     <header className="fixed top-0 w-screen z-50 lg:hidden flex items-center justify-between px-10 py-5 bg-[#E1BD8A]">
       {/* logo */}
-      <Link href="/">
+      <Link href="/new-home/">
         <Image src={iExploreTextLogo} alt="iExploreTextLogo" />
       </Link>
 
@@ -94,14 +94,14 @@ const MobileNav = () => {
 
         <div className="flex flex-col items-center gap-7">
           <Link
-            href="/onboarding?flow=login"
+            href="/new-home/onboarding?flow=login"
             onClick={showNav}
             className="text-[#212121] text-lg font-medium"
           >
             Login
           </Link>
           <Link
-            href="/onboarding?flow=signup"
+            href="/new-home/onboarding?flow=signup"
             onClick={showNav}
             className="bg-[#212121] text-[#E1BD8A] text-lg px-4 py-2 rounded-xl font-extrabold"
           >

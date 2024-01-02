@@ -10,7 +10,14 @@ import ForgotPassword from "./ForgotPassword/ForgotPassword";
 import ResetCode from "./ForgotPassword/ResetCode";
 import ResetPassword from "./ForgotPassword/ResetPassword";
 
-type FlowType = "signup" | "login" | "ageConfirmation" | "emailConfirmation" | "forgotPassword" | "resetCode" | "resetPassword";
+type FlowType =
+  | "signup"
+  | "login"
+  | "ageConfirmation"
+  | "emailConfirmation"
+  | "forgotPassword"
+  | "resetCode"
+  | "resetPassword";
 
 const Onboarding = () => {
   const flowParams = useSearchParams().get("flow") as FlowType;
@@ -26,13 +33,12 @@ const Onboarding = () => {
   return (
     <section className="w-[95vw] pb-14 lg:md-0 lg:w-3/6">
       {/* links */}
-      {flowParams !== "login" &&
-      flowParams !== "signup" ? (
+      {flowParams !== "login" && flowParams !== "signup" ? (
         ""
       ) : (
         <div className="bg-[#E1BD8A] p-2 flex items-center justify-around rounded-xl">
           <Link
-            href="/onboarding?flow=login"
+            href="/new-home/onboarding?flow=login"
             className={
               flowParams === "login" ? activeLinkStyle : unactiveLinkStyle
             }
@@ -41,7 +47,7 @@ const Onboarding = () => {
           </Link>
 
           <Link
-            href="/onboarding?flow=signup"
+            href="/new-home/onboarding?flow=signup"
             className={
               flowParams === "signup" ? activeLinkStyle : unactiveLinkStyle
             }

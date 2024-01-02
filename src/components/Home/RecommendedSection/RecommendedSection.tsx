@@ -10,7 +10,7 @@ const RecommendedSection = () => {
         <h1 className="text-[#E1BD8A] text-[22px] md:text-3xl font-bold">
           Events
         </h1>
-        <Link href="/recommended">
+        <Link href="/new-home/recommended">
           <AppButton
             btnText="See all"
             className="border-2 border-[#887254] text-sm md:text-xl"

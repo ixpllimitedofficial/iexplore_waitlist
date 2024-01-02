@@ -7,7 +7,7 @@ const LoginForm = () => {
   const router = useRouter();
 
   const handleLogin = () => {
-    router.push("/");
+    router.push("/new-home");
   };
 
   return (
@@ -16,7 +16,7 @@ const LoginForm = () => {
       <AppInput label="Password:" placeholder="***********************" />
 
       <Link
-        href="/onboarding?flow=forgotPassword"
+        href="/new-home/onboarding?flow=forgotPassword"
         className=" text-[#E1BD8A] text-end font-medium"
       >
         Forgot Password

@@ -13,7 +13,7 @@ const EmailConfirmation = () => {
   const router = useRouter();
 
   const handleModal = () => {
-    router.push("/");
+    router.push("/new-home");
 
     // Unsets Background Scrolling to use when SideDrawer/Modal is closed
     document.body.style.overflow = "unset";

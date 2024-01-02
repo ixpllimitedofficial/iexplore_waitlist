@@ -13,20 +13,16 @@ const ForgotPassword = () => {
         Please enter email associated with your password
       </p>
 
-      <AppInput
-        placeholder="Maxxconnect@gmail.com"
-        className="px-7"
-      />
+      <AppInput placeholder="Maxxconnect@gmail.com" className="px-7" />
 
-
-      <Link href="/onboarding?flow=resetCode" className="self-center">
+      <Link href="/new-home/onboarding?flow=resetCode" className="self-center">
         <AppButton btnText="Send code" className="text-[15px] md:text-lg" />
       </Link>
 
       <div className="flex items-center justify-center gap-1 text-lg">
         <p className="text-[##FBE9D0] text-center">Remember password?</p>
         <Link
-          href="/onboarding?flow=login"
+          href="/new-home/onboarding?flow=login"
           className="text-[#F7D098] underline font-semibold"
         >
           {" "}

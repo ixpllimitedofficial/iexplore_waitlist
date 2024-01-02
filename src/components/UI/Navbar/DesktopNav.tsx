@@ -5,7 +5,7 @@ import Link from "next/link";
 const DesktopNav = () => {
   return (
     <header className="fixed top-0 w-screen z-50 hidden lg:flex items-center justify-between px-20 py-4 bg-[#E1BD8A] ">
-      <Link href="/">
+      <Link href="/new-home/">
         <Image
           src={ExploreLogo}
           alt="iExploreLogo.png"
@@ -15,32 +15,32 @@ const DesktopNav = () => {
       </Link>
 
       <nav className="flex items-center gap-10">
-        <Link href="/" className="text-[#212121] text-lg font-medium">
+        <Link href="/new-home/" className="text-[#212121] text-lg font-medium">
           Home
         </Link>
-        <Link href="/" className="text-[#212121] text-lg font-medium">
+        <Link href="/new-home/" className="text-[#212121] text-lg font-medium">
           Explore
         </Link>
-        <Link href="/" className="text-[#212121] text-lg font-medium">
+        <Link href="/new-home/" className="text-[#212121] text-lg font-medium">
           Saved
         </Link>
-        <Link href="/" className="text-[#212121] text-lg font-medium">
+        <Link href="/new-home/" className="text-[#212121] text-lg font-medium">
           Feed
         </Link>
-        <Link href="/" className="text-[#212121] text-lg font-medium">
+        <Link href="/new-home/" className="text-[#212121] text-lg font-medium">
           Drinks
         </Link>
       </nav>
 
       <nav className="flex items-center gap-7">
         <Link
-          href="/onboarding?flow=login"
+          href="/new-home/onboarding?flow=login"
           className="text-[#212121] text-lg font-medium"
         >
           Login
         </Link>
         <Link
-          href="/onboarding?flow=signup"
+          href="/new-home/onboarding?flow=signup"
           className="bg-[#212121] text-[#E1BD8A] text-lg px-4 py-2 rounded-xl font-extrabold"
         >
           Signup

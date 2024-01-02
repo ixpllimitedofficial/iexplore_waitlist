@@ -21,7 +21,7 @@ const AddLocation = () => {
         <AppButton
           btnText="Add a location to iexplore"
           className="relative mt-3 lg:mt-5 text-sm md:text-xl"
-          handleClick={() => router.push("/add-location")}
+          handleClick={() => router.push("/new-home/add-location")}
           leftIcon={LocationIconBlack}
         />
       </div>

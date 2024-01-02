@@ -4,13 +4,15 @@ import Link from "next/link";
 
 const RecommendedSectionCard = () => {
   return (
-    <Link href="/spot-details" className="relative">
+    <Link href="/new-home/spot-details" className="relative">
       <div className="w-[320px]">
         <Image src={RecommendationImage} alt="recommendation image" />
       </div>
 
       {/* badge */}
-      <h1 className="absolute bg-[#F7D098] text-black text-lg font-medium px-4 py-1 rounded-3xl right-4 top-4">Hot 🔥</h1>
+      <h1 className="absolute bg-[#F7D098] text-black text-lg font-medium px-4 py-1 rounded-3xl right-4 top-4">
+        Hot 🔥
+      </h1>
 
       {/* text */}
       <div className="absolute left-5 bottom-5 flex flex-col justify-between">

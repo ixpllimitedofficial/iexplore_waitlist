@@ -8,7 +8,7 @@ const ClubCard = () => {
   const router = useRouter();
 
   const handleClick = () => {
-    router.push("spot-details")
+    router.push("/new-home/spot-details")
   }
 
   return (
