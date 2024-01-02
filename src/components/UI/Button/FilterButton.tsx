@@ -19,8 +19,12 @@ const FilterButton = ({
       className={`bg-[#333333] py-2 md:py-3 px-4 md:px-7 border-2 rounded-lg flex justify-around items-center gap-2 font-medium ${className}`}
       onClick={handleClick}
     >
-      <p className={`text-sm md:text-[18px] ${btnTextClass} `}>{btnText}</p>
-      <Image src={ArrowButtonDownWhite} alt="arrow button down" className="h-[7px]" />
+      <p className={`text-sm md:text-lg ${btnTextClass} `}>{btnText}</p>
+      <Image
+        src={ArrowButtonDownWhite}
+        alt="arrow button down"
+        className="h-[7px]"
+      />
     </button>
   );
 };

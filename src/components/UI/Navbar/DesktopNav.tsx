@@ -15,19 +15,19 @@ const DesktopNav = () => {
       </Link>
 
       <nav className="flex items-center gap-10">
-        <Link href="/" className="text-[#212121] text-[18px] font-medium">
+        <Link href="/" className="text-[#212121] text-lg font-medium">
           Home
         </Link>
-        <Link href="/" className="text-[#212121] text-[18px] font-medium">
+        <Link href="/" className="text-[#212121] text-lg font-medium">
           Explore
         </Link>
-        <Link href="/" className="text-[#212121] text-[18px] font-medium">
+        <Link href="/" className="text-[#212121] text-lg font-medium">
           Saved
         </Link>
-        <Link href="/" className="text-[#212121] text-[18px] font-medium">
+        <Link href="/" className="text-[#212121] text-lg font-medium">
           Feed
         </Link>
-        <Link href="/" className="text-[#212121] text-[18px] font-medium">
+        <Link href="/" className="text-[#212121] text-lg font-medium">
           Drinks
         </Link>
       </nav>
@@ -35,13 +35,13 @@ const DesktopNav = () => {
       <nav className="flex items-center gap-7">
         <Link
           href="/onboarding?flow=login"
-          className="text-[#212121] text-[18px] font-medium"
+          className="text-[#212121] text-lg font-medium"
         >
           Login
         </Link>
         <Link
           href="/onboarding?flow=signup"
-          className="bg-[#212121] text-[#E1BD8A] text-[18px] px-4 py-2 rounded-xl font-extrabold"
+          className="bg-[#212121] text-[#E1BD8A] text-lg px-4 py-2 rounded-xl font-extrabold"
         >
           Signup
         </Link>

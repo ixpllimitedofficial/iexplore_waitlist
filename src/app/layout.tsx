@@ -71,7 +71,7 @@ export default function RootLayout({
         <link rel="icon" href="/icon.svg" />
       </head>
       <body>
-        <Navbar />
+        {/* <Navbar /> */}
         {children}
       </body>
     </html>
