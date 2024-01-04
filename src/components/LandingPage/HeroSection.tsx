@@ -1,12 +1,11 @@
+import Image from "next/image";
+import DesktopNavLP from "../UI/Navbar/LandingPageNavbar/DesktopNavLP";
 import LandingPageBgImage from "@/assets/img/LandingPage/LandingPageBgImage.png";
 import LandingPagePhoneImage from "@/assets/img/LandingPage/LandingPagePhoneImage.png";
 import LandingPageSpiralsImage from "@/assets/img/LandingPage/LandingPageSpiralsImage.png";
-
 import AppStoreImage from "@/assets/img/AppStoreImage.png";
 import GooglePlayImage from "@/assets/img/GooglePlayImage.png";
-
-import Image from "next/image";
-import DesktopNav from "../UI/Navbar/LandingPageNavbar/DesktopNav";
+import NavbarLP from "../UI/Navbar/LandingPageNavbar/NavbarLP";
 
 const HeroSection = () => {
   return (
@@ -14,7 +13,7 @@ const HeroSection = () => {
       style={{ backgroundImage: `url(${LandingPageBgImage.src})` }}
       className="relative flex items-center justify-around bg-no-repeat bg-cover bg-center overflow-hidden"
     >
-      <DesktopNav />
+      <NavbarLP />
       <div className="relative bottom-[-80px] z-50">
         <h1 className="font-bold text-2xl md:text-5xl lg:text-6xl">
           FIND SOMETHING <br />

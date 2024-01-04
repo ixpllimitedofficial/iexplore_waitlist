@@ -2,7 +2,7 @@ import Image from "next/image";
 import ExploreLogo from "@/assets/svg/NavbarSvg/iExploreLogoSvg.svg";
 import Link from "next/link";
 
-const DesktopNav = () => {
+const DesktopNavApp = () => {
   return (
     <header className="fixed top-0 w-screen z-50 hidden lg:flex items-center justify-between px-20 py-4 bg-[#E1BD8A] ">
       <Link href="/new-home/">
@@ -50,4 +50,4 @@ const DesktopNav = () => {
   );
 };
 
-export default DesktopNav;
+export default DesktopNavApp;

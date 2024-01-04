@@ -8,7 +8,7 @@ import iExploreTextLogo from "@/assets/svg/NavbarSvg/iExploreTextLogoSvg.svg";
 import HamburgerIconSvg from "@/assets/svg/NavbarSvg/HamburgerIconSvg.svg";
 import CloseIconSvg from "@/assets/svg/NavbarSvg/CloseIconSvg.svg";
 
-const MobileNav = () => {
+const MobileNavApp = () => {
   // router
   const router = useRouter();
 
@@ -113,4 +113,4 @@ const MobileNav = () => {
   );
 };
 
-export default MobileNav;
+export default MobileNavApp;
