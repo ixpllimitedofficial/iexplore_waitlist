@@ -6,36 +6,36 @@ import AppButton from "@/components/UI/Button/AppButton";
 
 const index = () => {
   return (
-    <section className="relative flex items-center justify-between px-10 gap-10 w-[85vw] bg-[#FEFAF5] py-10 mt-28 text-black mb-10 mx-auto rounded-3xl">
-      <div className="flex flex-col gap-7 w-[45%]">
-        <h1 className="text-4xl">
+    <section className="relative flex flex-col lg:flex-row items-center justify-between px-5 md:px-10 gap-10 w-[85vw] bg-[#FEFAF5] py-10 mt-28 text-black mb-10 mx-auto rounded-3xl">
+      <div className="flex flex-col gap-7 lg:w-[45%]">
+        <h1 className="text-2xl md:text-3xl">
           Get in touch, we will love to hear from you{" "}
           <span className="font-bold">Anytime.</span>
         </h1>
-        <p className="text-2xl font-semibold">
+        <p className="text-lg md:text-2xl font-semibold">
           No 13b, Aroyewun street, Ramat Estate, Ogudu GRA. Lagos, Nigeria.
         </p>
 
         <div className="flex items-center gap-3">
           <Image src={MailSvg} alt="MailSvg" />
-          <p className="text-2xl font-semibold">support@explore.com</p>
+          <p className="text-lg md:text-2xl font-semibold">support@explore.com</p>
         </div>
 
         <div className="flex items-center gap-3">
           <Image src={PhoneSvg} alt="PhoneSvg" />
-          <p className="text-2xl font-semibold">08122384172</p>
+          <p className="text-lg md:text-2xl font-semibold">08122384172</p>
         </div>
 
         <div className="flex items-center gap-3">
-          <p className="text-2xl font-semibold">
+          <Image src={WhatsappSvg} alt="WhatsappSvg" />
+          <p className="text-lg md:text-2xl font-semibold">
             Click here to chat with us on WhatsApp
           </p>
-          <Image src={WhatsappSvg} alt="WhatsappSvg" />
         </div>
       </div>
 
       {/* phone image */}
-      <div className="bg-white p-5 flex flex-col gap-5 w-[45%] rounded-3xl shadow-xl relative -top-20">
+      <div className="bg-white p-5 flex flex-col gap-5 w-full lg:w-[45%] rounded-3xl shadow-xl relative lg:-top-20">
         <input
           type="text"
           placeholder="Your Name"
@@ -53,7 +53,7 @@ const index = () => {
           placeholder="Message"
         />
 
-        <AppButton btnText="Send Message" className="text-white bg-[#E1BD8A]" />
+        <AppButton btnText="Send Message" className="text-black bg-[#E1BD8A]" />
       </div>
     </section>
   );
