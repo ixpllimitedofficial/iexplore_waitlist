@@ -1,15 +1,15 @@
 import Image from "next/image";
 import AboutAppYellowBg from "@/assets/img/LandingPage/AboutAppYellowBg.png";
 import DrinksPhoneImage from "@/assets/img/LandingPage/DrinksPhoneImage.png";
-import ExploreTextIxon from "@/assets/svg/LandingPageSvg/ExploreTextIxon.svg"
+import ExploreTextIxon from "@/assets/svg/LandingPageSvg/ExploreTextIxon.svg";
 
 const DrinksSection = () => {
   return (
     <section
       style={{ backgroundImage: `url(${AboutAppYellowBg.src})` }}
-      className="relative flex items-center justify-between gap-10 px-10 h-[520px] w-[90vw] bg-no-repeat bg-cover bg-center my-10 mx-auto rounded-3xl overflow-hidden"
+      className="relative flex flex-col md:flex-row items-center justify-between gap-10 px-10 h-[600px] md:h-[350px] lg:h-[520px] w-[90%] md:w-[90vw] mx-auto bg-no-repeat bg-cover bg-center my-10 rounded-3xl overflow-hidden pt-10"
     >
-      <div className="w-[45%]">
+      <div className="md:w-[45%]">
         <div>
           <Image src={ExploreTextIxon} alt="ExploreTextIxon" />
           <h1 className="font-bold text-3xl text-black">Drinks</h1>
@@ -24,7 +24,7 @@ const DrinksSection = () => {
       <Image
         src={DrinksPhoneImage}
         alt="DrinksPhoneImage"
-        className="relative bottom-[-230px] hidden lg:block"
+        className="relative h-[600px] lg:h-auto w-auto md:bottom-[-150px] lg:bottom-[-230px]"
       />
     </section>
   );
