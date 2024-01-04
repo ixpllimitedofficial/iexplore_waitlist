@@ -4,7 +4,7 @@ import MobileNavLP from "./MobileNavLP";
 const NavbarLP = () => {
   return (
     <>
-      <DesktopNavLP />;
+      <DesktopNavLP />
       <MobileNavLP />
     </>
   );

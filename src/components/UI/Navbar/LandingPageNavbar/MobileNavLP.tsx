@@ -30,7 +30,7 @@ const MobileNavLP = () => {
   }, [showNavState]);
 
   return (
-    <header className="absolute top-0 w-screen z-[60px] lg:hidden flex items-center justify-between px-10 py-5 bg-transparent">
+    <header className="absolute top-0 w-screen z-[60] lg:hidden flex items-center justify-between px-10 py-5 bg-transparent">
       {/* logo */}
       <Link href="/">
         <Image src={ExploreLogo} alt="iExploreTextLogo" height={50} />
