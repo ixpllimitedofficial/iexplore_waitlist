@@ -17,7 +17,7 @@ const ExploreSection = () => {
           />
           <h1 className="font-bold text-3xl text-black">Explore</h1>
         </div>
-        <p className="md:text-lg lg:text-2xl mt-8 text-black">
+        <p className="text-lg lg:text-2xl mt-5 text-black">
           Fuel your inner adventurer by exploring hidden spots and places that
           makes you explore and relax at different spots suggested to you based
           on your preference

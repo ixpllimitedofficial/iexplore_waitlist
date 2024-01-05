@@ -14,7 +14,7 @@ const DesktopNavLP = () => {
         />
       </Link>
 
-      <nav className="flex items-center gap-20">
+      <nav className="flex items-center gap-16">
         <Link
           href="/"
           className="text-[#E1BD8A] text-xl font-medium border-b-2 border-[#E1BD8A]"
@@ -32,6 +32,15 @@ const DesktopNavLP = () => {
         </Link>
         <Link href="/" className="text-[#E1BD8A] text-xl font-light">
           Contact Us
+        </Link>
+      </nav>
+
+      <nav className="flex items-center gap-7">
+        <Link
+          href="/new-home/onboarding?flow=signup"
+          className="bg-[#E1BD8A] text-[#212121] text-lg px-4 py-2 rounded-xl font-bold"
+        >
+          Register
         </Link>
       </nav>
     </header>

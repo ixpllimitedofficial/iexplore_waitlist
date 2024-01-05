@@ -15,7 +15,7 @@ const FeedSection = () => {
           <Image src={SpotDetailsTextIcon} alt="SpotDetailsTextIcon" />
           <h1 className="font-bold text-3xl text-black">Feed</h1>
         </div>
-        <p className="md:text-lg lg:text-2xl mt-8 text-black">
+        <p className="text-lg lg:text-2xl mt-5 text-black">
           Share and view post by friends using the iExplore app at different
           spots and events.
         </p>

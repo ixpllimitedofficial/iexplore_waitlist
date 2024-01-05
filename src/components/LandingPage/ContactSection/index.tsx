@@ -7,8 +7,8 @@ import AppButton from "@/components/UI/Button/AppButton";
 const index = () => {
   return (
     <section className="relative flex flex-col lg:flex-row items-center justify-between px-5 md:px-10 gap-10 w-[85vw] bg-[#FEFAF5] py-10 mt-28 text-black mb-10 mx-auto rounded-3xl">
-      <div className="flex flex-col gap-7 lg:w-[45%]">
-        <h1 className="text-2xl md:text-3xl">
+      <div className="flex flex-col gap-5 lg:w-[45%]">
+        <h1 className="text-xl md:text-3xl">
           Get in touch, we will love to hear from you{" "}
           <span className="font-bold">Anytime.</span>
         </h1>
@@ -16,17 +16,17 @@ const index = () => {
           No 13b, Aroyewun street, Ramat Estate, Ogudu GRA. Lagos, Nigeria.
         </p>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-1">
           <Image src={MailSvg} alt="MailSvg" />
           <p className="text-lg md:text-2xl font-semibold">support@explore.com</p>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-1">
           <Image src={PhoneSvg} alt="PhoneSvg" />
           <p className="text-lg md:text-2xl font-semibold">08122384172</p>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-1">
           <Image src={WhatsappSvg} alt="WhatsappSvg" />
           <p className="text-lg md:text-2xl font-semibold">
             Click here to chat with us on WhatsApp

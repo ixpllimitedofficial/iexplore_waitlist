@@ -15,7 +15,7 @@ const SpotDetailsSection = () => {
           <Image src={SpotDetailsTextIcon} alt="SpotDetailsTextIcon" />
           <h1 className="font-bold text-3xl text-black">Spot details</h1>
         </div>
-        <p className="md:text-lg lg:text-2xl mt-8 text-black">
+        <p className="text-lg lg:text-2xl mt-5 text-black">
           Get accurate details about the spot you’re interested on going which
           also includes directions to your desired spot.
         </p>

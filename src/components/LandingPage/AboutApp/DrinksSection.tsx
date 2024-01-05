@@ -14,7 +14,7 @@ const DrinksSection = () => {
           <Image src={ExploreTextIxon} alt="ExploreTextIxon" />
           <h1 className="font-bold text-3xl text-black">Drinks</h1>
         </div>
-        <p className="md:text-lg lg:text-2xl mt-8 text-black">
+        <p className="text-lg lg:text-2xl mt-5 text-black">
           Book and get your preferred drinks at chosen the spot chosen by you
           with ease.
         </p>
