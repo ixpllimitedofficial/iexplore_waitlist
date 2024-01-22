@@ -4,7 +4,7 @@ import ExploreLogo from "@/assets/svg/NavbarSvg/iExploreLogoSvg.svg";
 
 const DesktopNavLP = () => {
   return (
-    <header className="absolute top-0 w-screen z-50 hidden lg:flex items-center justify-between px-20 pt-8 bg-transparent ">
+    <header className="absolute top-0 w-screen z-50 hidden lg:flex items-center justify-between px-20 pt-6 bg-transparent ">
       <Link href="/">
         <Image
           src={ExploreLogo}
@@ -21,7 +21,7 @@ const DesktopNavLP = () => {
         >
           Home
         </Link>
-        <Link href="/" className="text-[#E1BD8A] text-xl font-light">
+        <Link href="/about-us" className="text-[#E1BD8A] text-xl font-light">
           About Us
         </Link>
         <Link href="/" className="text-[#E1BD8A] text-xl font-light">
