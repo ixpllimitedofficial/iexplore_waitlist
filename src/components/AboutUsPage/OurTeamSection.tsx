@@ -1,8 +1,8 @@
 import React from "react";
 
-const TeamSection = () => {
+const OurTeamSection = () => {
   return (
-    <section className="flex flex-col items-center mt-10 gap-7 bg-[#3C3C3C] py-12">
+    <section className="flex flex-col items-center gap-7 bg-[#3C3C3C] py-12">
       <h3 className="font-bold text-xl bg-[#E1BD8A] text-black py-2 px-4 rounded-2xl">
         Our Team:
       </h3>
@@ -29,4 +29,4 @@ const TeamSection = () => {
   );
 };
 
-export default TeamSection;
+export default OurTeamSection;
