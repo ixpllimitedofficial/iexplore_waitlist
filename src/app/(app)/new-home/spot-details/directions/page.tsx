@@ -1,4 +1,4 @@
-import Directions from "@/components/SpotDetails/Directions/Directions";
+import Directions from "@/components/App/SpotDetails/Directions/Directions";
 
 const page = () => {
   return (

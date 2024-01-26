@@ -1,6 +1,6 @@
 import ClubsPage from "@/components/ClubsPage/ClubsPage";
-import AddLocation from "@/components/Home/AddLocation/AddLocation";
-import FriendlySpots from "@/components/Home/FriendlySpots/FriendlySpots";
+import AddLocation from "@/components/App/Home/AddLocation/AddLocation";
+import FriendlySpots from "@/components/App/Home/FriendlySpots/FriendlySpots";
 import Footer from "@/components/UI/Footer/Footer";
 
 const page = () => {

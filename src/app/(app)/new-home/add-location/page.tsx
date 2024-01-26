@@ -1,6 +1,6 @@
-import AddLocation from "@/components/AddLocation/AddLocation";
-import SpotCategory from "@/components/AddLocation/SpotCategory";
-import HeroSection from "@/components/Home/HeroSection/HeroSection";
+import AddLocation from "@/components/App/AddLocation/AddLocation";
+import SpotCategory from "@/components/App/AddLocation/SpotCategory";
+import HeroSection from "@/components/App/Home/HeroSection/HeroSection";
 
 const page = () => {
   return (

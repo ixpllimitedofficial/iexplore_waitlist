@@ -4,7 +4,7 @@ import BookmarkIcon from "@/assets/svg/SpotDetailsSvg/BookmarkIconSvg.svg";
 import FeaturesDetails from "./FeaturesDetails";
 import AllFeatures from "./AllFeatures";
 import Offers from "./Offers";
-import FriendlySpots from "@/components/Home/FriendlySpots/FriendlySpots";
+import FriendlySpots from "@/components/App/Home/FriendlySpots/FriendlySpots";
 
 const Features = () => {
   return (
@@ -12,9 +12,7 @@ const Features = () => {
       <section className="px-5 md:px-12">
         {/* title and icons */}
         <div className="flex items-center justify-between mb-5">
-          <h1 className="text-[#E1BD8A] text-3xl font-bold">
-            Club Quilox
-          </h1>
+          <h1 className="text-[#E1BD8A] text-3xl font-bold">Club Quilox</h1>
 
           <div className="flex gap-2">
             <Image src={ShareIcon} alt="ShareIcon" height={45} />

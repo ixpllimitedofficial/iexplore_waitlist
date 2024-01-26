@@ -1,10 +1,10 @@
-import HeroSection from "@/components/Home/HeroSection/HeroSection";
-import Filtering from "@/components/Home/Filtering/Filtering";
-import Clubs from "@/components/Home/Clubs/Clubs";
-import RecommendedSection from "@/components/Home/RecommendedSection/RecommendedSection";
-import GetApp from "@/components/Home/GetApp/GetApp";
-import FriendlySpots from "@/components/Home/FriendlySpots/FriendlySpots";
-import AddLocation from "@/components/Home/AddLocation/AddLocation";
+import HeroSection from "@/components/App/Home/HeroSection/HeroSection";
+import Filtering from "@/components/App/Home/Filtering/Filtering";
+import Clubs from "@/components/App/Home/Clubs/Clubs";
+import RecommendedSection from "@/components/App/Home/RecommendedSection/RecommendedSection";
+import GetApp from "@/components/App/Home/GetApp/GetApp";
+import FriendlySpots from "@/components/App/Home/FriendlySpots/FriendlySpots";
+import AddLocation from "@/components/App/Home/AddLocation/AddLocation";
 import Footer from "@/components/UI/Footer/Footer";
 
 const page = () => {

@@ -1,4 +1,4 @@
-import SpotDetails from "@/components/SpotDetails/SpotDetails";
+import SpotDetails from "@/components/App/SpotDetails/SpotDetails";
 
 const page = () => {
   return (

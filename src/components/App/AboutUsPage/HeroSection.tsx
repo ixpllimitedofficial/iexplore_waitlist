@@ -1,6 +1,6 @@
 import Image from "next/image";
 import HeroSectionBgImage from "@/assets/img/LandingPage/AboutUsPage/HeroSectionBgImage.png";
-import NavbarLP from "../UI/Navbar/LandingPageNavbar/NavbarLP";
+import NavbarLP from "../../UI/Navbar/LandingPageNavbar/NavbarLP";
 
 const HeroSection = () => {
   return (

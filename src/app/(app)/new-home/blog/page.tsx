@@ -1,5 +1,5 @@
 import BlogPage from "@/components/BlogPage/BlogPage";
-import HeroSection from "@/components/Home/HeroSection/HeroSection";
+import HeroSection from "@/components/App/Home/HeroSection/HeroSection";
 import Footer from "@/components/UI/Footer/Footer";
 
 const page = () => {

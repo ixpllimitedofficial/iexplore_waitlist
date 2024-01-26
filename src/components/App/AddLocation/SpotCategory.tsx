@@ -1,7 +1,7 @@
-import AppInput from "../UI/Inputs/AppInput";
-import FilterButton from "../UI/Button/FilterButton";
-import AppButton from "../UI/Button/AppButton";
-import GetApp from "../Home/GetApp/GetApp";
+import AppInput from "../../UI/Inputs/AppInput";
+import FilterButton from "../../UI/Button/FilterButton";
+import AppButton from "../../UI/Button/AppButton";
+import GetApp from "../../Home/GetApp/GetApp";
 
 const SpotCategory = () => {
   return (
@@ -100,10 +100,7 @@ const SpotCategory = () => {
               btnText="+234"
               className="border-2 border-[#E1BD8A]"
             />
-            <AppInput
-              placeholder="09090909090"
-              type="number"
-            />
+            <AppInput placeholder="09090909090" type="number" />
           </div>
         </div>
 
