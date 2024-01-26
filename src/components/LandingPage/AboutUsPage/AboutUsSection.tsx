@@ -7,8 +7,8 @@ const AboutUsSection = () => {
         About Us
       </h3>
 
-      <div className="flex justify-between gap-7">
-        <p className="font-bold text-2xl w-[70%]">
+      <div className="flex flex-col lg:flex-row justify-between gap-7">
+        <p className="font-bold text-2xl lg:w-[70%]">
           <span className="text-[#E1BD8A]">Introduction</span>
            {" "}to the BEST ENTERTAINMENT AGENCY
         </p>

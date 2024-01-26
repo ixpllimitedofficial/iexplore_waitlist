@@ -2,16 +2,16 @@ import React from "react";
 
 const OurTeamSection = () => {
   return (
-    <section className="flex flex-col items-center gap-7 bg-[#3C3C3C] py-12">
+    <section className="flex flex-col items-center gap-5 bg-[#3C3C3C] py-12">
       <h3 className="font-bold text-xl bg-[#E1BD8A] text-black py-2 px-4 rounded-2xl">
         Our Team:
       </h3>
 
       <div className="text-center">
-        <h3 className="font-bold text-3xl">
+        <h3 className="font-bold text-2xl md:text-3xl">
           Meet the <span className="text-[#E1BD8A]">iExplore</span> team
         </h3>
-        <p className="text-lg mt-2">A Group Of Seasoned Team Of Workers</p>
+        <p className="text-lg mt-1">A Group Of Seasoned Team Of Workers</p>
       </div>
 
       {/* team photos */}

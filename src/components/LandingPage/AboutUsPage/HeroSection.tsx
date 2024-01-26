@@ -6,7 +6,7 @@ const HeroSection = () => {
   return (
     <section
       style={{ backgroundImage: `url(${HeroSectionBgImage.src})` }}
-      className="relative flex items-center justify-center bg-no-repeat bg-cover bg-center overflow-hidden h-[500px] w-screen lg:w-auto"
+      className="relative flex items-center justify-center bg-no-repeat bg-cover bg-center overflow-hidden h-[500px] lg:w-auto"
     >
       <NavbarLP />
 

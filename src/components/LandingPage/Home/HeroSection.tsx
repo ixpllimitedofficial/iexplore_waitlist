@@ -1,17 +1,17 @@
 import Image from "next/image";
-import DesktopNavLP from "../UI/Navbar/LandingPageNavbar/DesktopNavLP";
+import DesktopNavLP from "../../UI/Navbar/LandingPageNavbar/DesktopNavLP";
 import LandingPageBgImage from "@/assets/img/LandingPage/LandingPageBgImage.png";
 import LandingPagePhoneImage from "@/assets/img/LandingPage/LandingPagePhoneImage.png";
 import LandingPageSpiralsImage from "@/assets/img/LandingPage/LandingPageSpiralsImage.png";
 import AppStoreImage from "@/assets/img/AppStoreImage.png";
 import GooglePlayImage from "@/assets/img/GooglePlayImage.png";
-import NavbarLP from "../UI/Navbar/LandingPageNavbar/NavbarLP";
+import NavbarLP from "../../UI/Navbar/LandingPageNavbar/NavbarLP";
 
 const HeroSection = () => {
   return (
     <section
       style={{ backgroundImage: `url(${LandingPageBgImage.src})` }}
-      className="relative flex flex-col md:flex-row items-center justify-center md:justify-between bg-no-repeat bg-cover bg-center overflow-hidden h-[580px] w-screen md:h-[450px] lg:h-auto lg:w-auto"
+      className="relative flex flex-col md:flex-row items-center justify-center md:justify-between bg-no-repeat bg-cover bg-center overflow-hidden h-[580px] md:h-[450px] lg:h-auto lg:w-auto"
     >
       <NavbarLP />
       <div className="relative lg:left-5 bottom-[-100px] md:bottom-[-50px] lg:bottom-[-80px] z-50 w-[90vw] md:w-[50%] md:mx-auto text-center md:text-start">
