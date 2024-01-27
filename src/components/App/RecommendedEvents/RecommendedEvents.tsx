@@ -1,5 +1,5 @@
 import GetApp from "../Home/GetApp/GetApp";
-import RecommendedEventsCard from "../UI/Cards/RecommendedEvents/RecommendedEventsCard";
+import RecommendedEventsCard from "@/components/UI/Cards/RecommendedEvents/RecommendedEventsCard";
 
 const RecommendedEvents = () => {
   return (

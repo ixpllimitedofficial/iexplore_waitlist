@@ -1,7 +1,5 @@
-import React from "react";
-import AppInput from "../UI/Inputs/AppInput";
-import ClubCard from "../UI/Cards/ClubCard";
-import AppSearchInput from "../UI/Inputs/AppSearchInput";
+import ClubCard from "@/components/UI/Cards/ClubCard";
+import AppSearchInput from "@/components/UI/Inputs/AppSearchInput";
 
 const ClubsPage = () => {
   return (
