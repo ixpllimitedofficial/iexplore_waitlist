@@ -62,7 +62,7 @@ const MobileNavLP = () => {
           Home
         </Link>
         <Link
-          href="/"
+          href="/about-us"
           className="text-[#212121] text-lg font-medium"
           onClick={showNav}
         >
