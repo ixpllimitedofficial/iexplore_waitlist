@@ -1,4 +1,4 @@
-import RecommendedEvents from "@/components/RecommendedEvents/RecommendedEvents";
+import RecommendedEvents from "@/components/App/RecommendedEvents/RecommendedEvents";
 import Footer from "@/components/UI/Footer/Footer";
 
 const page = () => {

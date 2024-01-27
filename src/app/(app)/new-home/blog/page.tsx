@@ -1,4 +1,4 @@
-import BlogPage from "@/components/BlogPage/BlogPage";
+import BlogPage from "@/components/App/BlogPage/BlogPage";
 import HeroSection from "@/components/App/Home/HeroSection/HeroSection";
 import Footer from "@/components/UI/Footer/Footer";
 

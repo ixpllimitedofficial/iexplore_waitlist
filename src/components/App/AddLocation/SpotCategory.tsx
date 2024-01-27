@@ -1,7 +1,7 @@
 import AppInput from "../../UI/Inputs/AppInput";
 import FilterButton from "../../UI/Button/FilterButton";
 import AppButton from "../../UI/Button/AppButton";
-import GetApp from "../../Home/GetApp/GetApp";
+import GetApp from "../Home/GetApp/GetApp";
 
 const SpotCategory = () => {
   return (
