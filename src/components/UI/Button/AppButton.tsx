@@ -3,7 +3,7 @@ import Image from "next/image";
 type ButtonProps = {
   btnText?: string;
   className?: string;
-  handleClick?: () => void;
+  handleClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   leftIcon?: string;
   rightIcon?: string;
   type?: "submit" | "button" | "reset";
