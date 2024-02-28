@@ -10,7 +10,7 @@ const Clubs = () => {
         <h1 className="text-[#E1BD8A] text-[22px] md:text-3xl font-bold">
           Clubs
         </h1>
-        <Link href="/new-home/clubs">
+        <Link href="/user/clubs">
           <AppButton
             btnText="See all"
             className="border-2 border-[#887254] text-sm md:text-xl"

@@ -29,7 +29,7 @@ const LoginForm = () => {
   };
 
   const handleLogin = () => {
-    router.push("/new-home");
+    router.push("/user");
   };
 
   const handleBtnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -61,7 +61,7 @@ const LoginForm = () => {
       />
 
       <Link
-        href="/new-home/onboarding?flow=forgotPassword"
+        href="/user/onboarding?flow=forgotPassword"
         className=" text-[#E1BD8A] text-end font-medium"
       >
         Forgot Password

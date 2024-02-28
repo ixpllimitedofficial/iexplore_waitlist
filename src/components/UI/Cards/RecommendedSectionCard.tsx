@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const RecommendedSectionCard = () => {
   return (
-    <Link href="/new-home/spot-details" className="relative">
+    <Link href="/user/spot-details" className="relative">
       <div className="w-[320px]">
         <Image src={RecommendationImage} alt="recommendation image" />
       </div>

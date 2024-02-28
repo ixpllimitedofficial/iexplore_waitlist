@@ -14,9 +14,9 @@ const Filtering = () => {
 
   const handleFilter = (filter: string) => {
     if (filterParams !== filter) {
-      router.push(`/new-home/?filter=${filter}`, { scroll: false });
+      router.push(`/user/?filter=${filter}`, { scroll: false });
     } else {
-      router.push("/new-home", { scroll: false });
+      router.push("/user", { scroll: false });
     }
   };
 

@@ -6,7 +6,7 @@ import LocationIconBlack from "@/assets/svg/LocationIconBlack.svg";
 
 const AddLocation = () => {
   const router = useRouter();
-  
+
   return (
     <section
       style={{ backgroundImage: `url(${AddLocationImage.src})` }}
@@ -21,7 +21,7 @@ const AddLocation = () => {
         <AppButton
           btnText="Add a location to iexplore"
           className="relative mt-3 lg:mt-5 text-sm md:text-xl"
-          handleClick={() => router.push("/new-home/add-location")}
+          handleClick={() => router.push("/user/add-location")}
           leftIcon={LocationIconBlack}
         />
       </div>

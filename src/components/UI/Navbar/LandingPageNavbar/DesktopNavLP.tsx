@@ -31,7 +31,9 @@ const DesktopNavLP = () => {
         <Link
           href="/about-us"
           className={`text-[#E1BD8A] text-xl ${
-            pathname === "/about-us" ? "font-medium border-b-2 border-[#E1BD8A]" : ""
+            pathname === "/about-us"
+              ? "font-medium border-b-2 border-[#E1BD8A]"
+              : ""
           }`}
         >
           About Us
@@ -39,7 +41,9 @@ const DesktopNavLP = () => {
         <Link
           href="/user"
           className={`text-[#E1BD8A] text-xl ${
-            pathname === "/user" ? "font-medium border-b-2 border-[#E1BD8A]" : ""
+            pathname === "/user"
+              ? "font-medium border-b-2 border-[#E1BD8A]"
+              : ""
           }`}
         >
           User
@@ -47,7 +51,9 @@ const DesktopNavLP = () => {
         <Link
           href="/vendor"
           className={`text-[#E1BD8A] text-xl ${
-            pathname === "/vendor" ? "font-medium border-b-2 border-[#E1BD8A]" : ""
+            pathname === "/vendor"
+              ? "font-medium border-b-2 border-[#E1BD8A]"
+              : ""
           }`}
         >
           Vendor
@@ -55,7 +61,9 @@ const DesktopNavLP = () => {
         <Link
           href="/contact-us"
           className={`text-[#E1BD8A] text-xl ${
-            pathname === "/contact-us" ? "font-medium border-b-2 border-[#E1BD8A]" : ""
+            pathname === "/contact-us"
+              ? "font-medium border-b-2 border-[#E1BD8A]"
+              : ""
           }`}
         >
           Contact Us
@@ -64,7 +72,7 @@ const DesktopNavLP = () => {
 
       <nav className="flex items-center gap-7">
         <Link
-          href="/new-home/onboarding?flow=signup"
+          href="/user/onboarding?flow=signup"
           className="bg-[#E1BD8A] text-[#212121] text-lg px-4 py-2 rounded-xl font-bold"
         >
           Register

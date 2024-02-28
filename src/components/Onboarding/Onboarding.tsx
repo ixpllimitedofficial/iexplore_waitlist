@@ -38,7 +38,7 @@ const Onboarding = () => {
       ) : (
         <div className="bg-[#E1BD8A] p-2 flex items-center justify-around rounded-xl">
           <Link
-            href="/new-home/onboarding?flow=login"
+            href="/user/onboarding?flow=login"
             className={
               flowParams === "login" ? activeLinkStyle : unactiveLinkStyle
             }
@@ -47,7 +47,7 @@ const Onboarding = () => {
           </Link>
 
           <Link
-            href="/new-home/onboarding?flow=signup"
+            href="/user/onboarding?flow=signup"
             className={
               flowParams === "signup" ? activeLinkStyle : unactiveLinkStyle
             }

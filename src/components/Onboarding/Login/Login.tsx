@@ -35,7 +35,7 @@ const Login = () => {
           Yet to create an account?{" "}
         </p>
         <Link
-          href="/new-home/onboarding?flow=signup"
+          href="/user/onboarding?flow=signup"
           className="text-[#F7D098] underline font-semibold"
         >
           {" "}

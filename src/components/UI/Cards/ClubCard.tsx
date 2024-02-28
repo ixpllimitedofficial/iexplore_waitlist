@@ -8,14 +8,11 @@ const ClubCard = () => {
   const router = useRouter();
 
   const handleClick = () => {
-    router.push("/new-home/spot-details")
-  }
+    router.push("/user/spot-details");
+  };
 
   return (
-    <div
-      onClick={() => handleClick()}
-      className="bg-[#333333] p-2 rounded-3xl"
-    >
+    <div onClick={() => handleClick()} className="bg-[#333333] p-2 rounded-3xl">
       <Image src={ClubImage} alt="club image" />
 
       <div className="flex items-center justify-between mt-4 mb-2 px-2">

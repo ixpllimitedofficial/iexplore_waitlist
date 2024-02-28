@@ -63,7 +63,7 @@ const RecommendedEventsCard = () => {
       </div>
 
       {/* location full details button */}
-      <Link href="/new-home/spot-details">
+      <Link href="/user/spot-details">
         <p className="mt-14 text-lg md:text-xl text-[#F9D9AD] underline text-center">
           Location details
         </p>

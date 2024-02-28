@@ -18,7 +18,7 @@ const Confirmation = () => {
         age displayed below is correct and you are of legal drinking age.
       </p>
 
-      <Link href="/new-home/onboarding?flow=emailConfirmation">
+      <Link href="/user/onboarding?flow=emailConfirmation">
         <AppButton
           btnText="Yes, I confirm"
           className="text-[15px] md:text-lg"
