@@ -2,7 +2,7 @@ import React from "react";
 
 const Analytics = () => {
   return (
-    <section className="p-10">
+    <section className="p-14">
       {/* heading */}
       <div className=" flex justify-between">
         <h1 className="text-[22px] md:text-3xl font-bold">Analytics</h1>
