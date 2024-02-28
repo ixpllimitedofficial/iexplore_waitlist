@@ -7,7 +7,7 @@ const DesktopNavApp = () => {
     <header className="fixed top-0 w-screen z-50 hidden lg:flex items-center justify-between px-20 py-4 bg-[#E1BD8A] ">
       <Link href="/user/">
         <Image
-          src={ExploreLogo}
+          src={ExploreLogo} 
           alt="iExploreLogo.png"
           height={60}
           width={60}
