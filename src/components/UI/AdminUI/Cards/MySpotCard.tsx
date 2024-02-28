@@ -14,7 +14,7 @@ const MySpotCard = () => {
 
   return (
     <div
-      onClick={() => handleClick()}
+      //   onClick={() => handleClick()}
       className="bg-[#333333] flex gap-5 p-4 rounded-3xl"
     >
       {/* image */}
@@ -64,7 +64,6 @@ const MySpotCard = () => {
           />
         </button>
       </div>
-      
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import Footer from "@/components/UI/Footer/Footer";
 import Analytics from "@/components/admin/Analytics";
+import Drinks from "@/components/admin/Drinks";
 import MySpots from "@/components/admin/MySpots";
 
 const page = () => {
@@ -7,6 +8,7 @@ const page = () => {
     <main className="mt-28">
       <Analytics />
       <MySpots />
+      <Drinks />
       <Footer />
     </main>
   );
