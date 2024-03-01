@@ -22,7 +22,7 @@ const AllUsersTable = () => {
   return (
     <section className="mt-5 bg-[#333333] p-5 rounded-2xl">
       <div className="flex justify-between">
-        <p className="font-bold text-2xl text-[#F7D098]">User Management</p>
+        <p className="font-bold text-2xl text-[#F7D098]">All users</p>
 
         <div className="flex items-center gap-5">
           <AppSearchInput
