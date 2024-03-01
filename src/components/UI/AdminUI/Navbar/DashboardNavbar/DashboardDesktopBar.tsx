@@ -44,10 +44,10 @@ const DashboardDesktopBar = () => {
 
         {/* user */}
         <Link
-          href="/admin/user"
+          href="/admin/dashboard/user-management"
           className={`${
-            pathname === "/admin/user"
-              ? "font-bold bg-[#F7D0984D]"
+            pathname === "/admin/dashboard/user-management"
+              ? "font-bold bg-[#F7D0984D]  rounded-xl"
               : "font-normal"
           } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
         >
@@ -60,7 +60,7 @@ const DashboardDesktopBar = () => {
           href="/admin/vendor"
           className={`${
             pathname === "/admin/vendor"
-              ? "font-bold bg-[#F7D0984D]"
+              ? "font-bold bg-[#F7D0984D]  rounded-xl"
               : "font-normal"
           } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
         >
@@ -73,7 +73,7 @@ const DashboardDesktopBar = () => {
           href="/admin/content"
           className={`${
             pathname === "/admin/content"
-              ? "font-bold bg-[#F7D0984D]"
+              ? "font-bold bg-[#F7D0984D]  rounded-xl"
               : "font-normal"
           } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
         >
@@ -86,7 +86,7 @@ const DashboardDesktopBar = () => {
           href="/admin/referral"
           className={`${
             pathname === "/admin/referral"
-              ? "font-bold bg-[#F7D0984D]"
+              ? "font-bold bg-[#F7D0984D]  rounded-xl"
               : "font-normal"
           } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
         >
@@ -102,7 +102,7 @@ const DashboardDesktopBar = () => {
           href="/admin/notifications"
           className={`${
             pathname === "/admin/notifications"
-              ? "font-bold bg-[#F7D0984D]"
+              ? "font-bold bg-[#F7D0984D]  rounded-xl"
               : "font-normal"
           } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
         >
@@ -115,7 +115,7 @@ const DashboardDesktopBar = () => {
           href="/admin/analytics"
           className={`${
             pathname === "/admin/analytics"
-              ? "font-bold bg-[#F7D0984D]"
+              ? "font-bold bg-[#F7D0984D]  rounded-xl"
               : "font-normal"
           } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
         >
@@ -131,7 +131,7 @@ const DashboardDesktopBar = () => {
           href="/admin/settings"
           className={`${
             pathname === "/admin/settings"
-              ? "font-bold bg-[#F7D0984D]"
+              ? "font-bold bg-[#F7D0984D]  rounded-xl"
               : "font-normal"
           } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
         >
@@ -144,7 +144,7 @@ const DashboardDesktopBar = () => {
           href="/admin/support"
           className={`${
             pathname === "/admin/support"
-              ? "font-bold bg-[#F7D0984D]"
+              ? "font-bold bg-[#F7D0984D]  rounded-xl"
               : "font-normal"
           } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
         >

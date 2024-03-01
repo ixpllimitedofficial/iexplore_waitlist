@@ -7,7 +7,9 @@ const Location = () => {
   return (
     <section>
       {/* search */}
-      <AppSearchInput />
+      <div className="w-[90vw] md:w-[70vw] mx-auto mt-10">
+        <AppSearchInput className="p-1" />
+      </div>
 
       <div className="bg-[#333333] w-[85vw] p-5 mx-auto mt-10 rounded-2xl">
         <div className="flex flex-col gap-5">

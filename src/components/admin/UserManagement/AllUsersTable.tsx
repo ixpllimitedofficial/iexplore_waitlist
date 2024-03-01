@@ -1,0 +1,81 @@
+import React from "react";
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/UI/table";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/UI/select";
+import { Input } from "@/components/UI/input";
+import AppSearchInput from "@/components/UI/Inputs/AppSearchInput";
+
+const AllUsersTable = () => {
+  return (
+    <section className="mt-5 bg-[#333333] p-5 rounded-2xl">
+      <div className="flex justify-between">
+        <p className="font-bold text-2xl text-[#F7D098]">User Management</p>
+
+        <div className="flex items-center gap-5">
+          <AppSearchInput
+            className="bg-[#F7D09866] text-[#F7D098] border-none focus-visible:ring-0"
+            inputClass="placeholder:text-[#F7D098]"
+          />
+
+          <Select>
+            <SelectTrigger className="w-auto bg-[#F7D09866] text-[#F7D098] border-none focus-visible:ring-0">
+              <SelectValue placeholder="Sort by: Newest" />
+            </SelectTrigger>
+            <SelectContent className="">
+              <SelectItem value="newest">Newest</SelectItem>
+              <SelectItem value="oldest">Oldest</SelectItem>
+              <SelectItem value="latest">Latest</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+      </div>
+
+      {/* TABLE */}
+      <Table className="mt-4">
+        <TableCaption className="text-[#B5B7C0]">
+          Showing data 1 to 8 of 256K entries
+        </TableCaption>
+        <TableHeader>
+          <TableRow className="bg-[#424242] border-none">
+            <TableHead className=" text-white">S/N</TableHead>
+            <TableHead className="text-white">NAME</TableHead>
+            <TableHead className="text-white">PHONE NUMBER</TableHead>
+            <TableHead className="text-white">DATE OF BIRTH</TableHead>
+            <TableHead className="text-white">EMAIL</TableHead>
+            <TableHead className="text-center text-white">STATUS</TableHead>
+          </TableRow>
+        </TableHeader>
+
+        {[1, 2, 3, 4, 5, 6, 7].map((table) => {
+          return (
+            <TableBody className="border-b-2 border-[#9797974b]" key={table}>
+              <TableRow className="">
+                <TableCell className="font-medium py-5">{table}</TableCell>
+                <TableCell>Christine Brooks</TableCell>
+                <TableCell>09123456789</TableCell>
+                <TableCell>04 Sep 1973</TableCell>
+                <TableCell>brookschristine.mail.com</TableCell>
+                <TableCell className="text-center">Active</TableCell>
+              </TableRow>
+            </TableBody>
+          );
+        })}
+      </Table>
+    </section>
+  );
+};
+
+export default AllUsersTable;
