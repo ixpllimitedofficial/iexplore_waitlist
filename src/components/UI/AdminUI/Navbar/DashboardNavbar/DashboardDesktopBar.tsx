@@ -47,7 +47,7 @@ const DashboardDesktopBar = () => {
           href="/admin/dashboard/user-management"
           className={`${
             pathname === "/admin/dashboard/user-management"
-              ? "font-bold bg-[#F7D0984D]  rounded-xl"
+              ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
               : "font-normal"
           } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
         >
@@ -57,10 +57,10 @@ const DashboardDesktopBar = () => {
 
         {/* vendor */}
         <Link
-          href="/admin/vendor"
+          href="/admin/dashboard/vendor-management"
           className={`${
-            pathname === "/admin/vendor"
-              ? "font-bold bg-[#F7D0984D]  rounded-xl"
+            pathname === "/admin/dashboard/vendor-management"
+              ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
               : "font-normal"
           } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
         >

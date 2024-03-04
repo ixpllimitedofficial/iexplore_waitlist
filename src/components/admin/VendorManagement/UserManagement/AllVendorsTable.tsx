@@ -21,17 +21,17 @@ import AppSearchInput from "@/components/UI/Inputs/AppSearchInput";
 
 import { useRouter } from "next/navigation";
 
-const AllUsersTable = () => {
+const AllVendorsTable = () => {
   const router = useRouter();
 
   const handleClick = (id: number) => {
-    router.push(`/admin/dashboard/user-management/${id}`);
+    router.push(`/admin/dashboard/vendor-management/${id}`);
   };
 
   return (
     <section className="mt-5 bg-[#333333] p-5 rounded-2xl">
       <div className="flex justify-between">
-        <p className="font-bold text-2xl text-[#F7D098]">All users</p>
+        <p className="font-bold text-2xl text-[#F7D098]">All vendors</p>
 
         <div className="flex items-center gap-5">
           <AppSearchInput
@@ -62,8 +62,9 @@ const AllUsersTable = () => {
             <TableHead className=" text-white">S/N</TableHead>
             <TableHead className="text-white">NAME</TableHead>
             <TableHead className="text-white">PHONE NUMBER</TableHead>
-            <TableHead className="text-white">DATE OF BIRTH</TableHead>
-            <TableHead className="text-white">EMAIL</TableHead>
+            <TableHead className="text-white">BUSINESS NAME</TableHead>
+            <TableHead className="text-white">BUSINESS PHONE NUMBER</TableHead>
+            <TableHead className="text-white">BUSINESS EMAIL</TableHead>
             <TableHead className="text-center text-white">STATUS</TableHead>
           </TableRow>
         </TableHeader>
@@ -79,7 +80,8 @@ const AllUsersTable = () => {
                 <TableCell className="font-medium py-5">{table}</TableCell>
                 <TableCell>Christine Brooks</TableCell>
                 <TableCell>09123456789</TableCell>
-                <TableCell>04 Sep 1973</TableCell>
+                <TableCell>Club 777</TableCell>
+                <TableCell>09123456789</TableCell>
                 <TableCell>brookschristine.mail.com</TableCell>
                 <TableCell className="text-center">
                   <p className="bg-[#00b69b48] text-[#00B69B]  py-1 rounded-md font-semibold m-auto">
@@ -95,4 +97,4 @@ const AllUsersTable = () => {
   );
 };
 
-export default AllUsersTable;
+export default AllVendorsTable;
