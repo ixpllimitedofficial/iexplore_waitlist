@@ -84,8 +84,8 @@ const AllVendorsTable = () => {
                 <TableCell>09123456789</TableCell>
                 <TableCell>brookschristine.mail.com</TableCell>
                 <TableCell className="text-center">
-                  <p className="bg-[#00b69b48] text-[#00B69B]  py-1 rounded-md font-semibold m-auto">
-                    Active
+                  <p className="bg-[#ffec4348] text-[#FFEC43]  py-1 rounded-md font-semibold m-auto">
+                    Pending
                   </p>
                 </TableCell>
               </TableRow>
