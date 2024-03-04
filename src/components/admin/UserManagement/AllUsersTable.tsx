@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import {
   Table,
@@ -15,10 +17,17 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/UI/select";
-import { Input } from "@/components/UI/input";
 import AppSearchInput from "@/components/UI/Inputs/AppSearchInput";
 
+import { useRouter } from "next/navigation";
+
 const AllUsersTable = () => {
+  const router = useRouter();
+
+  const handleClick = (id: number) => {
+    router.push(`/admin/dashboard/user-management/${id}`);
+  };
+
   return (
     <section className="mt-5 bg-[#333333] p-5 rounded-2xl">
       <div className="flex justify-between">
@@ -61,8 +70,12 @@ const AllUsersTable = () => {
 
         {[1, 2, 3, 4, 5, 6, 7].map((table) => {
           return (
-            <TableBody className="border-b-2 border-[#9797974b]" key={table}>
-              <TableRow className="">
+            <TableBody
+              className="border-b-2 border-[#9797974b]"
+              key={table}
+              onClick={() => handleClick(table)}
+            >
+              <TableRow>
                 <TableCell className="font-medium py-5">{table}</TableCell>
                 <TableCell>Christine Brooks</TableCell>
                 <TableCell>09123456789</TableCell>
