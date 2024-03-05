@@ -41,8 +41,6 @@ const page = () => {
           ACTIVE VENDORS
         </div>
       </div>
-
-      <VendorDetails />
     </>
   );
 };

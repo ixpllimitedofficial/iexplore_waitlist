@@ -70,9 +70,9 @@ const DashboardDesktopBar = () => {
 
         {/* content */}
         <Link
-          href="/admin/content"
+          href="/admin/dashboard/content-moderation"
           className={`${
-            pathname === "/admin/content"
+            pathname === "/admin/dashboard/content-moderation"
               ? "font-bold bg-[#F7D0984D]  rounded-xl"
               : "font-normal"
           } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}

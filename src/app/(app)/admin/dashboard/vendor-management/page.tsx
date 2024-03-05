@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import DashboardNotificationsIcon from "@/assets/svg/AdminIconsSvg/DashboardNotificationsIcon.svg";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/UI/avatar";
-import AllVendorsTable from "@/components/admin/VendorManagement/UserManagement/AllVendorsTable";
+import AllVendorsTable from "@/components/admin/VendorManagement/AllVendorsTable";
 
 const page = () => {
   return (
