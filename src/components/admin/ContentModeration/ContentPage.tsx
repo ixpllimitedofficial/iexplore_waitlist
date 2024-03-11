@@ -24,6 +24,7 @@ import {
 } from "@/components/UI/dialog";
 import { Input } from "@/components/UI/input";
 import { Label } from "@/components/UI/label";
+import Image from "next/image";
 
 const ContentPage = () => {
   const handleClick = () => {
@@ -51,8 +52,9 @@ const ContentPage = () => {
 
         <Dialog>
           <DialogTrigger asChild>
-            <Button className="bg-[#776751] text-[#F7D098] ">
-              Add new drink
+            <Button className="bg-[#776751] text-[#F7D098]">
+              <p>Add new drink</p>
+              <Image src={AddIcon} alt="add icon" className="ml-2" />
             </Button>
           </DialogTrigger>
           <DialogContent className="md:max-w-[800px]  bg-[#212121]">
