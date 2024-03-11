@@ -2,18 +2,7 @@ import React from "react";
 import Image from "next/image";
 import DashboardNotificationsIcon from "@/assets/svg/AdminIconsSvg/DashboardNotificationsIcon.svg";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/UI/avatar";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/UI/select";
-
-import AppButton from "@/components/UI/Button/AppButton";
-
-import AddIcon from "@/assets/svg/AdminIconsSvg/AddIconSvg.svg";
-import AllContentsTable from "@/components/admin/ContentModeration/AllContentsTable";
+import ContentPage from "@/components/admin/ContentModeration/ContentPage";
 
 const page = () => {
   return (
@@ -41,24 +30,7 @@ const page = () => {
         </div>
       </header>
 
-      <div className="flex justify-between items-center w-full my-10">
-        <Select>
-          <SelectTrigger className="w-auto bg-[#F7D098] text-[#1A1A1A] border-none focus-visible:ring-0">
-            <SelectValue placeholder="Drinks" className="font-bold" />
-          </SelectTrigger>
-          <SelectContent className="">
-            <SelectItem value="newest" >Newest</SelectItem>
-          </SelectContent>
-        </Select>
-
-        <AppButton
-          className="bg-[#776751] text-[#F7D098] font-medium "
-          btnText="Add new drink"
-          rightIcon={AddIcon}
-        />
-      </div>
-
-      <AllContentsTable />
+      <ContentPage />
     </>
   );
 };
