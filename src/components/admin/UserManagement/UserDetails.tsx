@@ -1,9 +1,16 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import UserMailIcon from "@/assets/svg/AdminIconsSvg/UserMailIconSvg.svg";
 import UserPhoneIcnSvg from "@/assets/svg/AdminIconsSvg/UserPhoneIconSvg.svg";
+import { usePathname } from "next/navigation";
 
 const UserDetails = () => {
+  const pathname = usePathname();
+
+  console.log(pathname);
+
   return (
     <section className="mt-5 bg-[#333333] p-8 rounded-2xl">
       <div className="flex justify-between">

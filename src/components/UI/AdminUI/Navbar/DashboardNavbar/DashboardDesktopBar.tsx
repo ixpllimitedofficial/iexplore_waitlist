@@ -31,7 +31,7 @@ const DashboardDesktopBar = () => {
           href="/admin/dashboard"
           className={`${
             pathname === "/admin/dashboard"
-              ? "font-bold bg-[#F7D0984D] rounded-xl"
+              ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
               : "font-normal"
           } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
         >
@@ -46,7 +46,7 @@ const DashboardDesktopBar = () => {
         <Link
           href="/admin/dashboard/user-management"
           className={`${
-            pathname === "/admin/dashboard/user-management"
+            pathname.includes("user-management")
               ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
               : "font-normal"
           } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
@@ -59,7 +59,7 @@ const DashboardDesktopBar = () => {
         <Link
           href="/admin/dashboard/vendor-management"
           className={`${
-            pathname === "/admin/dashboard/vendor-management"
+            pathname.includes("vendor-management")
               ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
               : "font-normal"
           } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
@@ -72,7 +72,7 @@ const DashboardDesktopBar = () => {
         <Link
           href="/admin/dashboard/content-moderation"
           className={`${
-            pathname === "/admin/dashboard/content-moderation"
+            pathname.includes("content-moderation")
               ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
               : "font-normal"
           } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
@@ -85,7 +85,7 @@ const DashboardDesktopBar = () => {
         <Link
           href="/admin/dashboard/referral"
           className={`${
-            pathname === "/admin/dashboard/referral"
+            pathname.includes("referral")
               ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
               : "font-normal"
           } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
@@ -101,8 +101,8 @@ const DashboardDesktopBar = () => {
         <Link
           href="/admin/notifications"
           className={`${
-            pathname === "/admin/notifications"
-              ? "font-bold bg-[#F7D0984D]  rounded-xl"
+            pathname.includes("notifications")
+              ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
               : "font-normal"
           } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
         >
@@ -114,8 +114,8 @@ const DashboardDesktopBar = () => {
         <Link
           href="/admin/analytics"
           className={`${
-            pathname === "/admin/analytics"
-              ? "font-bold bg-[#F7D0984D]  rounded-xl"
+            pathname.includes("analytics")
+              ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
               : "font-normal"
           } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
         >
@@ -130,7 +130,7 @@ const DashboardDesktopBar = () => {
         <Link
           href="/admin/settings"
           className={`${
-            pathname === "/admin/settings"
+            pathname.includes("settings")
               ? "font-bold bg-[#F7D0984D]  rounded-xl"
               : "font-normal"
           } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
@@ -143,7 +143,7 @@ const DashboardDesktopBar = () => {
         <Link
           href="/admin/support"
           className={`${
-            pathname === "/admin/support"
+            pathname.includes("support")
               ? "font-bold bg-[#F7D0984D]  rounded-xl"
               : "font-normal"
           } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
