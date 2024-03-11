@@ -1,7 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import DashboardNotificationsIcon from "@/assets/svg/AdminIconsSvg/DashboardNotificationsIcon.svg";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/UI/avatar";
 import DrinkImage from "@/assets/img/AdminPageImages/DrinkImage.png";
 import { StarIcon } from "@radix-ui/react-icons";
 import AppButton from "@/components/UI/Button/AppButton";
@@ -9,29 +7,6 @@ import AppButton from "@/components/UI/Button/AppButton";
 const page = () => {
   return (
     <>
-      <header className="flex justify-between">
-        <div>
-          <p className="font-bold text-3xl">Content Moderation</p>
-        </div>
-
-        <div className="bg-[#F7D0984D] p-4 rounded-2xl flex items-center gap-4">
-          <Avatar>
-            <AvatarImage src="https://github.com/shadcn.png" />
-            <AvatarFallback>CN</AvatarFallback>
-          </Avatar>
-
-          <div>
-            <p className="text-[#F7D098] font-bold">Anita Cruz</p>
-            <p className="text-[#F7D098]">anita@commerce.com</p>
-          </div>
-
-          <Image
-            src={DashboardNotificationsIcon}
-            alt="DashboardNotificationsIcon"
-          />
-        </div>
-      </header>
-
       <section className="mt-5 bg-[#333333] p-8 rounded-2xl">
         <p className="font-bold text-2xl text-[#FFFFFF]">Drink details</p>
 
