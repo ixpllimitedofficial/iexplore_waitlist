@@ -16,39 +16,45 @@ import {
   DialogTrigger,
 } from "@/components/UI/dialog";
 
-const AddAffliateDialog = () => {
+const SendNotificationsDialog = () => {
   return (
     <Dialog>
       <DialogTrigger asChild className="col-end-12">
         <Button className="bg-[#776751] text-[#F7D098]">
-          <p>Add new affliates</p>
+          <p>Send notifications</p>
           <Image src={AddIcon} alt="add icon" className="ml-2" />
         </Button>
       </DialogTrigger>
       <DialogContent className="md:max-w-[800px]  bg-[#212121]">
         <DialogHeader>
           <DialogTitle className="text-[#F7D098] text-2xl text-center">
-            Add affiliate details
+            Send notifications
           </DialogTitle>
           {/* <DialogDescription>
           Make changes to your profile here. Click save when you are done.
         </DialogDescription> */}
         </DialogHeader>
         <div className="grid gap-2 py-2">
-          <div className="bg-[#33333399] border-2 border-[#F7D098] border-dotted p-2 rounded-xl text-center text-[#F7D098] font-semibold">
-            Personal Information
+          <div className="bg-[#33333399] border-2 border-[#F7D098] p-2 rounded-xl text-center text-[#F7D098] font-semibold">
+            Notification Type*
           </div>
         </div>
 
         <div className="grid gap-2 py-2">
-          <div className="bg-[#33333399] border-2 border-[#F7D098] border-dotted p-2 rounded-xl text-center text-[#F7D098] font-semibold">
-            Payment Methods
+          <div className="bg-[#33333399] border-2 border-[#F7D098] p-2 rounded-xl text-center text-[#F7D098] font-semibold">
+            Notification Subject*
           </div>
         </div>
 
         <div className="grid gap-2 py-2">
-          <div className="bg-[#33333399] border-2 border-[#F7D098] border-dotted p-2 rounded-xl text-center text-[#F7D098] font-semibold">
-            Social media accounts
+          <div className="bg-[#33333399] border-2 border-[#F7D098] p-2 rounded-xl text-center text-[#F7D098] font-semibold">
+            Message ID
+          </div>
+        </div>
+
+        <div className="grid gap-2 py-2">
+          <div className="bg-[#33333399] border-2 border-[#F7D098] p-2 rounded-xl text-center text-[#F7D098] font-semibold">
+            Message*
           </div>
         </div>
 
@@ -57,7 +63,7 @@ const AddAffliateDialog = () => {
             type="submit"
             className="bg-[#333333] text-[#F7D098]  border-2 border-[#F7D098]"
           >
-            Create
+            Save as Draft
           </Button>
         </DialogFooter>
       </DialogContent>
@@ -65,4 +71,4 @@ const AddAffliateDialog = () => {
   );
 };
 
-export default AddAffliateDialog;
+export default SendNotificationsDialog;

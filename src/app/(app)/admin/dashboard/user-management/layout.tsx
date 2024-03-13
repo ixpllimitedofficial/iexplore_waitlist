@@ -7,7 +7,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <>
       <header className="flex items-center justify-between">
         <div>
-          <p className="font-bold text-3xl">User Management</p>
+          <p className="font-bold text-[28px]">User Management</p>
         </div>
 
         <div className="bg-[#F7D0984D] p-4 rounded-2xl flex items-center gap-4">

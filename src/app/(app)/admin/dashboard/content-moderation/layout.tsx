@@ -15,7 +15,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <header className="flex items-center justify-between">
-        <p className="font-bold text-3xl">Content Moderation</p>
+        <p className="font-bold text-[28px]">Content Moderation</p>
 
         <div className="bg-[#F7D0984D] p-4 rounded-2xl flex items-center gap-4">
           <Avatar>

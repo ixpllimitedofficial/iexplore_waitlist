@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import UserPhoneIcnSvg from "@/assets/svg/AdminIconsSvg/UserPhoneIconSvg.svg";
 import EditIconSvg from "@/assets/svg/AdminIconsSvg/EditIconSvg.svg";
 import VerifiedBadgeSvg from "@/assets/svg/AdminIconsSvg/VerifiedBadgeSvg.svg";
 
