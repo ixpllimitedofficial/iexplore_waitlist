@@ -1,7 +1,7 @@
 import Image from "next/image";
 import AboutAppYellowBg from "@/assets/img/LandingPage/AboutAppYellowBg.png";
 import ExplorePhoneImage from "@/assets/img/LandingPage/ExplorePhoneImage.png";
-import ExploreTextIxon from "@/assets/svg/LandingPageSvg/ExploreTextIxon.svg"
+import ExploreTextIxon from "@/assets/svg/LandingPageSvg/ExploreTextIxon.svg";
 
 const ExploreSection = () => {
   return (
@@ -11,10 +11,7 @@ const ExploreSection = () => {
     >
       <div className="md:w-[45%]">
         <div>
-          <Image
-            src={ExploreTextIxon}
-            alt="ExploreTextIxon"
-          />
+          <Image src={ExploreTextIxon} alt="ExploreTextIxon" />
           <h1 className="font-bold text-3xl text-black">Explore</h1>
         </div>
         <p className="text-lg lg:text-2xl mt-5 text-black">

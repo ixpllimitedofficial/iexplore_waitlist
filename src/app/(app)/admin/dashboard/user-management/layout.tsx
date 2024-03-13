@@ -5,7 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/UI/avatar";
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <header className="flex justify-between">
+      <header className="flex items-center justify-between">
         <div>
           <p className="font-bold text-3xl">User Management</p>
         </div>

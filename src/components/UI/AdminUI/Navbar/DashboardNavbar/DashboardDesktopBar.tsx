@@ -99,7 +99,7 @@ const DashboardDesktopBar = () => {
 
         {/* Notifications */}
         <Link
-          href="/admin/notifications"
+          href="/admin/dashboard/notifications"
           className={`${
             pathname.includes("notifications")
               ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
