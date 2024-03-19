@@ -112,7 +112,7 @@ const DashboardDesktopBar = () => {
 
         {/* Analytic & Reporting */}
         <Link
-          href="/admin/analytics"
+          href="/admin/dashboard/analytics"
           className={`${
             pathname.includes("analytics")
               ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
