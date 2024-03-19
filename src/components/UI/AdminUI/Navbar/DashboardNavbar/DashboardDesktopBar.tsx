@@ -128,7 +128,7 @@ const DashboardDesktopBar = () => {
 
         {/* Settings */}
         <Link
-          href="/admin/settings"
+          href="/admin/dashboard/profile"
           className={`${
             pathname.includes("settings")
               ? "font-bold bg-[#F7D0984D]  rounded-xl"
@@ -141,7 +141,7 @@ const DashboardDesktopBar = () => {
 
         {/* Support */}
         <Link
-          href="/admin/support"
+          href="/admin/dashboard/support"
           className={`${
             pathname.includes("support")
               ? "font-bold bg-[#F7D0984D]  rounded-xl"

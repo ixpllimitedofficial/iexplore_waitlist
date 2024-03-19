@@ -60,38 +60,42 @@ const ReferralsDetails = () => {
         <div>
           <p className="font-bold text-2xl mb-2">Details</p>
 
-          <div className="flex gap-2">
-            <p className="text-[#F7D098] font-medium">Phone No:</p>
-            <p className="font-semibold">09123456789</p>
-          </div>
-          <div className="flex gap-2">
-            <p className="text-[#F7D098] font-medium">Email address:</p>
-            <p className="font-semibold">brookschristine.mail.com</p>
-          </div>
-          <div className="flex gap-2">
-            <p className="text-[#F7D098] font-medium">Referral code</p>
-            <p className="font-semibold">2christB</p>
-          </div>
-          <div className="flex gap-2">
-            <p className="text-[#F7D098] font-medium">Country:</p>
-            <p className="font-semibold">Nigeria</p>
+          <div className="flex flex-col gap-2">
+            <div className="flex gap-2">
+              <p className="text-[#F7D098] font-medium">Phone No:</p>
+              <p className="font-semibold">09123456789</p>
+            </div>
+            <div className="flex gap-2">
+              <p className="text-[#F7D098] font-medium">Email address:</p>
+              <p className="font-semibold">brookschristine.mail.com</p>
+            </div>
+            <div className="flex gap-2">
+              <p className="text-[#F7D098] font-medium">Referral code</p>
+              <p className="font-semibold">2christB</p>
+            </div>
+            <div className="flex gap-2">
+              <p className="text-[#F7D098] font-medium">Country:</p>
+              <p className="font-semibold">Nigeria</p>
+            </div>
           </div>
         </div>
 
         <div>
           <p className="font-bold text-2xl mb-2">Affiliate Clubs</p>
 
-          <div className="flex gap-2">
-            <p className="text-[#F7D098] font-medium">Clubs: </p>
-            <p className="font-semibold">Club777, Colony, O2 Arena</p>
-          </div>
-          <div className="flex gap-2">
-            <p className="text-[#F7D098] font-medium">Bars:</p>
-            <p className="font-semibold">Tit4Tat, Shandy, Xclusive</p>
-          </div>
-          <div className="flex gap-2">
-            <p className="text-[#F7D098] font-medium">Lounges:</p>
-            <p className="font-semibold">Refill</p>
+          <div className="flex flex-col gap-2">
+            <div className="flex gap-2">
+              <p className="text-[#F7D098] font-medium">Clubs: </p>
+              <p className="font-semibold">Club777, Colony, O2 Arena</p>
+            </div>
+            <div className="flex gap-2">
+              <p className="text-[#F7D098] font-medium">Bars:</p>
+              <p className="font-semibold">Tit4Tat, Shandy, Xclusive</p>
+            </div>
+            <div className="flex gap-2">
+              <p className="text-[#F7D098] font-medium">Lounges:</p>
+              <p className="font-semibold">Refill</p>
+            </div>
           </div>
         </div>
       </div>
