@@ -3,11 +3,11 @@ import LoginForm from "./LoginForm";
 
 const Login = () => {
   return (
-    <section className="mt-7 flex flex-col gap-5">
+    <section className="lg:mt-7 flex flex-col gap-5">
       {/* form */}
       <LoginForm />
 
-      <div className="flex items-center justify-center gap-1">
+      {/* <div className="flex items-center justify-center gap-1">
         <p className="text-[##FBE9D0] text-center">
           Yet to create an account?{" "}
         </p>
@@ -18,7 +18,7 @@ const Login = () => {
           {" "}
           Sign up
         </Link>
-      </div>
+      </div> */}
     </section>
   );
 };

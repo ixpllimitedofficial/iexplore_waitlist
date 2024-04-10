@@ -4,10 +4,10 @@ import DashboardBody from "@/components/admin/Dashboard/DashboardBody";
 
 const page = () => {
   return (
-    <>
+    <section className="">
       <DashboardHeader />
       <DashboardBody />
-    </>
+    </section>
   );
 };
 

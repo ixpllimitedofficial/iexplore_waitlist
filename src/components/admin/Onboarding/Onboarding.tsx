@@ -24,8 +24,8 @@ const Onboarding = () => {
 
   // returned component
   return (
-    <section className="w-[95vw] pb-14 lg:md-0 lg:w-3/6">
-      <div className="bg-[#E1BD8A] w-[50%] mx-auto p-2 flex items-center justify-around rounded-xl">
+    <section className="w-[95vw] lg:pt-20 lg:md-0 lg:w-3/6">
+      <div className="hidden bg-[#E1BD8A] w-[50%] mx-auto p-2 lg:flex items-center justify-around rounded-xl">
         <p className="bg-[#212121] text-[#F7D098] p-3 w-2/5 rounded-xl text-center font-bold">
           Login
         </p>

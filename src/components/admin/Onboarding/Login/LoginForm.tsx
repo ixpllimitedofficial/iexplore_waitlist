@@ -60,16 +60,16 @@ const LoginForm = () => {
         placeholder="***********************"
       />
 
-      <Link
+      {/* <Link
         href="/user/onboarding?flow=forgotPassword"
         className=" text-[#E1BD8A] text-end font-medium"
       >
         Forgot Password
-      </Link>
+      </Link> */}
 
       <AppButton
         btnText="Login"
-        className="text-[15px] md:text-lg"
+        className="text-[15px] py-4 md:text-lg"
         type="button"
         handleClick={handleLogin}
       />

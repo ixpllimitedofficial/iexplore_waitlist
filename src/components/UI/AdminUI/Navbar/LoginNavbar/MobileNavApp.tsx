@@ -31,12 +31,16 @@ const MobileNavApp = () => {
   return (
     <header className="fixed top-0 w-screen z-50 lg:hidden flex items-center justify-between px-10 py-5 bg-[#E1BD8A]">
       {/* logo */}
-      <Link href="/user/">
+      <Link href="/admin/">
         <Image src={iExploreTextLogo} alt="iExploreTextLogo" />
       </Link>
 
       {/* hamburger */}
-      <Image src={HamburgerIconSvg} alt="HamburgerIconSvg" onClick={showNav} />
+      {/* <Image src={HamburgerIconSvg} alt="HamburgerIconSvg" onClick={showNav} /> */}
+      {/* <nav className="flex items-center gap-7"> */}
+      <p className="bg-[#fff] text-[#212121] text-base px-4 py-2 rounded-xl font-bold">
+        Please log in!
+      </p>
 
       {/* navbar */}
       <nav

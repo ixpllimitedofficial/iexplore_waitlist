@@ -7,7 +7,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <DashboardNavbar />
 
       {/* content */}
-      <div className="relative col-span-12 md:col-span-10 pt-6 p-10">
+      <div className="relative col-span-12 md:col-span-10 pt-28 p-10 ">
         {/* main content */}
         {children}
       </div>
