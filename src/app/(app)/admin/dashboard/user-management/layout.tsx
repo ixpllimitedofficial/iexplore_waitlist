@@ -6,11 +6,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <header className="flex flex-col-reverse gap-7 lg:flex-row items-center justify-between">
-        <div className="self-start">
-          <p className="font-bold text-xl lg:text-[28px]">User Management</p>
-        </div>
+        <p className="self-start lg:self-center font-bold text-2xl lg:text-[28px]">
+          User Management
+        </p>
 
-        <div className="hidden bg-[#F7D0984D] p-4 rounded-2xl lg:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-4 bg-[#F7D0984D] p-4 rounded-2xl">
           <Avatar>
             <AvatarImage src="https://github.com/shadcn.png" />
             <AvatarFallback>CN</AvatarFallback>
@@ -32,7 +32,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="col-span-3 lg:col-span-1 bg-[#333333] p-5 rounded-2xl">
           TOTAL USERS
         </div>
-        <div className="col-span-3 lg:col-span-1 bg-[#333333] p-5 rounded-2xl">NEW USERS</div>
+        <div className="col-span-3 lg:col-span-1 bg-[#333333] p-5 rounded-2xl">
+          NEW USERS
+        </div>
         <div className="col-span-3 lg:col-span-1 bg-[#333333] p-5 rounded-2xl">
           ACTIVE NOW
         </div>

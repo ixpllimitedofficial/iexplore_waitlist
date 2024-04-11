@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header className="flex flex-col-reverse gap-7 lg:flex-row items-center justify-between">
       <div className="self-start">
-        <p className="font-bold text-xl lg:text-3xl">Dashboard</p>
+        <p className="font-bold text-2xl lg:text-3xl">Dashboard</p>
         <p className="text-[#F7D098] text-sm mt-1">
           Hi, Anita. Welcome back to iExplore Admin!
         </p>
@@ -20,8 +20,12 @@ const Header = () => {
         </Avatar>
 
         <div>
-          <p className="text-[#F7D098] text-sm lg:text-base font-bold">Anita Cruz</p>
-          <p className="text-[#F7D098] text-sm lg:text-base">anita@commerce.com</p>
+          <p className="text-[#F7D098] text-sm lg:text-base font-bold">
+            Anita Cruz
+          </p>
+          <p className="text-[#F7D098] text-sm lg:text-base">
+            anita@commerce.com
+          </p>
         </div>
 
         <Image

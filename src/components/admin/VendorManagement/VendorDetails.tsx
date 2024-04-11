@@ -6,53 +6,63 @@ import AppButton from "@/components/UI/Button/AppButton";
 
 const VendorDetails = () => {
   return (
-    <section className="mt-5 bg-[#333333] p-8 rounded-2xl">
-      <p className="font-bold text-3xl text-[#F7D098]">Details submitted</p>
+    <section className="mt-5 bg-[#333333] p-5 lg:p-8 rounded-2xl">
+      <p className="font-bold text-2xl text-[#F7D098]">Details submitted</p>
 
       {/* divider */}
       <div className="border-t-2 border-[#979797] w-full mt-5 mb-8"></div>
 
       <div className="flex justify-between">
         <div>
-          <p className="font-bold text-3xl text-[#F7D098] mb-1">
+          <p className="font-bold text-2xl text-[#F7D098] mb-1">
             Christine Brooks
           </p>
           <p>04 Sep 1973</p>
         </div>
 
         <div>
-          <p className="bg-[#ffec4348] text-[#FFEC43] px-5 py-1 rounded-md font-semibold m-auto">
+          <p className="bg-[#ffec4348] text-[#FFEC43] px-3 lg:px-5 py-1 rounded-md font-semibold m-auto text-sm lg:text-base">
             Pending
           </p>
         </div>
       </div>
 
-      <div className="mt-5 flex gap-20">
+      {/* divider */}
+      <div className="border-t-2 border-[#979797] w-full my-4"></div>
+
+      <div className="mt-5 flex flex-col lg:flex-row gap-5 lg:gap-10">
         <div>
           <p className="font-bold text-2xl text-[#F7D098] mb-2">Details</p>
 
-          <div className="flex gap-2">
-            <Image src={UserMailIcon} alt="user mail icon" />
-            <p>09123456789</p>
-          </div>
-          <div className="flex gap-2">
-            <Image src={UserPhoneIcnSvg} alt="user phone icon" />
-            <p>brookschristine.mail.com</p>
+          <div className="flex flex-col gap-2">
+            <div className="flex gap-2">
+              <Image src={UserMailIcon} alt="user mail icon" />
+              <p>09123456789</p>
+            </div>
+            <div className="flex gap-2">
+              <Image src={UserPhoneIcnSvg} alt="user phone icon" />
+              <p>brookschristine.mail.com</p>
+            </div>
           </div>
         </div>
+
+        {/* divider */}
+        <div className="block lg:hidden border-t-2 border-[#979797] w-full"></div>
 
         <div>
           <p className="font-bold text-2xl text-[#F7D098] mb-2">
             Business Details
           </p>
 
-          <div className="flex gap-2">
-            <Image src={UserMailIcon} alt="user mail icon" />
-            <p>Club 777</p>
-          </div>
-          <div className="flex gap-2">
-            <Image src={UserPhoneIcnSvg} alt="user phone icon" />
-            <p>21, Mokola Road, VI Lekki, Lagos State.</p>
+          <div className="flex flex-col gap-2">
+            <div className="flex gap-2">
+              <Image src={UserMailIcon} alt="user mail icon" />
+              <p>Club 777</p>
+            </div>
+            <div className="flex gap-2">
+              <Image src={UserPhoneIcnSvg} alt="user phone icon" />
+              <p>21, Mokola Road, VI Lekki, Lagos State.</p>
+            </div>
           </div>
         </div>
       </div>

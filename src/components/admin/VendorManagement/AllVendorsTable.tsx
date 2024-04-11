@@ -30,12 +30,12 @@ const AllVendorsTable = () => {
 
   return (
     <section className="mt-5 bg-[#333333] p-5 rounded-2xl">
-      <div className="flex justify-between">
+      <div className="flex flex-col gap-5 lg:gap-0 lg:flex-row justify-between">
         <p className="font-bold text-2xl text-[#F7D098]">All vendors</p>
 
         <div className="flex items-center gap-5">
           <AppSearchInput
-            className="bg-[#F7D09866] text-[#F7D098] border-none focus-visible:ring-0"
+            className="bg-[#F7D09866z] text-[#F7D098] border-none focus-visible:ring-0"
             inputClass="placeholder:text-[#F7D098]"
           />
 
@@ -53,7 +53,7 @@ const AllVendorsTable = () => {
       </div>
 
       {/* TABLE */}
-      <Table className="mt-4">
+      <Table className="mt-4 w-[1000px] lg:w-full">
         <TableCaption className="text-[#B5B7C0]">
           Showing data 1 to 8 of 256K entries
         </TableCaption>
