@@ -30,7 +30,7 @@ const AllUsersTable = () => {
 
   return (
     <section className="mt-5 bg-[#333333] p-5 rounded-2xl">
-      <div className="flex justify-between">
+      <div className="flex flex-col gap-5 lg:gap-0 lg:flex-row justify-between">
         <p className="font-bold text-2xl text-[#F7D098]">All users</p>
 
         <div className="flex items-center gap-5">
@@ -53,7 +53,7 @@ const AllUsersTable = () => {
       </div>
 
       {/* TABLE */}
-      <Table className="mt-4">
+      <Table className="mt-4 w-[1000px] lg:w-full">
         <TableCaption className="text-[#B5B7C0]">
           Showing data 1 to 8 of 256K entries
         </TableCaption>
@@ -71,7 +71,7 @@ const AllUsersTable = () => {
         {[1, 2, 3, 4, 5, 6, 7].map((table) => {
           return (
             <TableBody
-              className="border-b-2 border-[#9797974b]"
+              className="border-b-2 border-[#9797974b] "
               key={table}
               onClick={() => handleClick(table)}
             >

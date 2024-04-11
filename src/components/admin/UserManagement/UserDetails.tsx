@@ -9,27 +9,25 @@ import { usePathname } from "next/navigation";
 const UserDetails = () => {
   const pathname = usePathname();
 
-  console.log(pathname);
-
   return (
-    <section className="mt-5 bg-[#333333] p-8 rounded-2xl">
+    <section className="mt-5 bg-[#333333] p-5 lg:p-8 rounded-2xl">
       <div className="flex justify-between">
         <div>
-          <p className="font-bold text-3xl text-[#F7D098] mb-1">
+          <p className="font-bold text-xl lg:text-3xl text-[#F7D098] mb-1">
             Christine Brooks
           </p>
           <p>04 Sep 1973</p>
         </div>
 
         <div>
-          <p className="bg-[#00b69b48] text-[#00B69B] px-5 py-1 rounded-md font-semibold m-auto">
+          <p className="bg-[#00b69b48] text-[#00B69B] px-3 lg:px-5 py-1 rounded-md font-semibold m-auto text-sm lg:text-base">
             Active
           </p>
         </div>
       </div>
 
       <div className="mt-5">
-        <p className="font-bold text-2xl text-[#F7D098] mb-2">Details</p>
+        <p className="font-bold text-xl lg:text-2xl text-[#F7D098] mb-2">Details</p>
 
         <div className="flex gap-2">
           <Image src={UserMailIcon} alt="user mail icon" />
@@ -45,9 +43,9 @@ const UserDetails = () => {
       <div className="border-t-2 border-[#979797] w-full my-5"></div>
 
       <div className="mt-5">
-        <p className="font-bold text-2xl text-[#F7D098] mb-2">Preference</p>
+        <p className="font-bold text-xl lg:text-2xl text-[#F7D098] mb-2">Preference</p>
 
-        <div className="flex gap-3 mt-3">
+        <div className="flex flex-wrap gap-3 mt-3">
           <p className="border-2 border-[#F7D098] px-4 py-2 rounded-2xl">Bar</p>
           <p className="border-2 border-[#F7D098] px-4 py-2 rounded-2xl">
             Club
@@ -67,9 +65,9 @@ const UserDetails = () => {
       {/* divider */}
       <div className="border-t-2 border-[#979797] w-full mt-10 mb-5"></div>
 
-      <div className="mt-5 flex justify-between gap-20">
+      <div className="mt-5 flex flex-wrap justify-between gap-5 lg:gap-10">
         <div>
-          <p className="font-bold text-2xl text-[#F7D098] mb-2">Interactions</p>
+          <p className="font-bold text-xl lg:text-2xl text-[#F7D098] mb-2">Interactions</p>
 
           <div className="flex flex-wrap gap-6 mt-3">
             {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => {
@@ -82,8 +80,11 @@ const UserDetails = () => {
           </div>
         </div>
 
+              {/* divider */}
+      <div className="border-t-2 border-[#979797] w-full"></div>
+
         <div>
-          <p className="font-bold text-2xl text-[#F7D098] mb-2">
+          <p className="font-bold text-xl lg:text-2xl text-[#F7D098] mb-2">
             Interactions(Events)
           </p>
 
