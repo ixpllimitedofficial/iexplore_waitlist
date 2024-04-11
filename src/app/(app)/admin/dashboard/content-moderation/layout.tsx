@@ -14,10 +14,12 @@ import AddDrinkDialog from "@/components/admin/ContentModeration/AddDrinkDialog"
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <header className="flex items-center justify-between">
-        <p className="font-bold text-[28px]">Content Moderation</p>
+      <header className="flex flex-col-reverse gap-7 lg:flex-row items-center justify-between">
+        <p className="self-start lg:self-center font-bold text-2xl lg:text-[28px]">
+          Content Moderation
+        </p>
 
-        <div className="bg-[#F7D0984D] p-4 rounded-2xl flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-4  bg-[#F7D0984D] p-4 rounded-2xl">
           <Avatar>
             <AvatarImage src="https://github.com/shadcn.png" />
             <AvatarFallback>CN</AvatarFallback>
@@ -41,6 +43,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <SelectValue placeholder="Drinks" className="font-bold" />
           </SelectTrigger>
           <SelectContent className="">
+            <SelectItem value="Drinks">Drinks</SelectItem>
             <SelectItem value="venue">Venue</SelectItem>
           </SelectContent>
         </Select>

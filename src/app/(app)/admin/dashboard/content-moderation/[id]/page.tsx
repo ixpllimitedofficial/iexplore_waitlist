@@ -7,26 +7,25 @@ import AppButton from "@/components/UI/Button/AppButton";
 const page = () => {
   return (
     <>
-      <section className="mt-5 bg-[#333333] p-8 rounded-2xl">
+      <section className="mt-5 bg-[#333333] p-5 lg:p-8 rounded-2xl">
         <p className="font-bold text-2xl text-[#FFFFFF]">Drink details</p>
 
-        <div className="flex justify-between mt-5">
+        <div className="flex flex-col lg:flex-row justify-between mt-5 gap-5">
           <Image src={DrinkImage} alt="drink image" />
 
           <div className="flex flex-col gap-4">
-            <p className="text-[#F7D098] text-3xl font-bold w-[70%]">
+            <p className="text-[#F7D098] text-2xl lg:text-3xl font-bold">
               Martell Davido Limited Edition XO
             </p>
 
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col lg:flex-row lg:items-center gap-4">
               <div className="flex gap-1">
                 {[1, 2, 3, 4, 5].map((icon) => {
                   return (
                     <StarIcon
                       key={icon}
                       color="#F7D098"
-                      height="30"
-                      width="30"
+                      className="h-[24px] w-[24px] lg:h-[27px] lg:w-[27px]"
                     />
                   );
                 })}
@@ -52,11 +51,11 @@ const page = () => {
         </p>
 
         <div className="grid grid-cols-5 gap-3 justify-between">
-          {[1, 2, 3, 4, 5].map((card) => {
+          {[1, 2, 3, 4, 5, 6].map((card) => {
             return (
               <div
                 key={card}
-                className="flex flex-col col-span-1 gap-2 border-2 border-[#424242] rounded-xl pb-3"
+                className="flex flex-col col-span-full lg:col-span-1 gap-2 border-2 border-[#424242] rounded-xl pb-3"
               >
                 <Image
                   src={DrinkImage}
