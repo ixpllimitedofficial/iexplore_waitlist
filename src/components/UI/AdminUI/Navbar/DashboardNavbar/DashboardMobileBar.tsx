@@ -57,7 +57,7 @@ const DashboardMobileBar = () => {
 
       {/* navbar */}
       <nav
-        className={`fixed top-0 h-screen w-screen z-[100] bg-[#3C3C3C] p-14 flex flex-col items-center gap-8 duration-700 ${
+        className={`fixed top-0 h-screen w-screen z-[100] bg-[#3C3C3C] px-10 pt-14 pb-28 flex flex-col items-center gap-8 duration-700 ${
           showNavState ? "left-0" : "left-[-100vw]"
         }`}
       >
