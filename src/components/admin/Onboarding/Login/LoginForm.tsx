@@ -69,7 +69,7 @@ const LoginForm = () => {
 
       <AppButton
         btnText="Login"
-        className="text-[15px] py-4 md:text-lg"
+        className="text-[15px] md:text-lg"
         type="button"
         handleClick={handleLogin}
       />

@@ -1,6 +1,4 @@
 import Image from "next/image";
-
-
 import AddIcon from "@/assets/svg/AdminIconsSvg/AddIconSvg.svg";
 import { Button } from "@/components/UI/button";
 import {
@@ -12,8 +10,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/UI/dialog";
-import { Input } from "@/components/UI/input";
-import { Label } from "@/components/UI/label";
 
 const AddDrinkDialog = () => {
   return (
@@ -24,7 +20,7 @@ const AddDrinkDialog = () => {
           <Image src={AddIcon} alt="add icon" className="ml-2" />
         </Button>
       </DialogTrigger>
-      <DialogContent className="md:max-w-[800px]  bg-[#212121]">
+      <DialogContent className="w-[90%] md:max-w-[800px]  bg-[#212121]">
         <DialogHeader>
           <DialogTitle className="text-[#F7D098] text-2xl text-center">
             Add drink cover:

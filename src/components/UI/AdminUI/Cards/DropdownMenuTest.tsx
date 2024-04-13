@@ -40,7 +40,9 @@ const DropdownMenuTest = () => {
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
 
-        <DropdownMenuItem>Sign out</DropdownMenuItem>
+        <Link href="/admin">
+          <DropdownMenuItem>Sign out</DropdownMenuItem>
+        </Link>
       </DropdownMenuContent>
     </DropdownMenu>
   );
