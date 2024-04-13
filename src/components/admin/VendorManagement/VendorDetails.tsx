@@ -3,6 +3,7 @@ import Image from "next/image";
 import UserMailIcon from "@/assets/svg/AdminIconsSvg/UserMailIconSvg.svg";
 import UserPhoneIcnSvg from "@/assets/svg/AdminIconsSvg/UserPhoneIconSvg.svg";
 import AppButton from "@/components/UI/Button/AppButton";
+import Divider from "@/components/UI/Divider";
 
 const VendorDetails = () => {
   return (
@@ -10,7 +11,7 @@ const VendorDetails = () => {
       <p className="font-bold text-2xl text-[#F7D098]">Details submitted</p>
 
       {/* divider */}
-      <div className="border-t-2 border-[#979797] w-full mt-5 mb-8"></div>
+      <Divider />
 
       <div className="flex justify-between">
         <div>
@@ -28,7 +29,7 @@ const VendorDetails = () => {
       </div>
 
       {/* divider */}
-      <div className="border-t-2 border-[#979797] w-full my-4"></div>
+      <Divider />
 
       <div className="mt-5 flex flex-col lg:flex-row gap-5 lg:gap-10">
         <div>
@@ -46,8 +47,8 @@ const VendorDetails = () => {
           </div>
         </div>
 
-        {/* divider */}
-        <div className="block lg:hidden border-t-2 border-[#979797] w-full"></div>
+      {/* divider */}
+      <Divider className="block lg:hidden" />
 
         <div>
           <p className="font-bold text-2xl text-[#F7D098] mb-2">

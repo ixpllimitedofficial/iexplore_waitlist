@@ -36,7 +36,7 @@ const page = () => {
             <p className="text-2xl font-bold">NGN 232,000.00</p>
           </div>
 
-          <div>
+          <div className="self-start">
             <p className="bg-[#00b69b48] text-[#00B69B] px-3 py-1 rounded-md font-semibold">
               In Stock
             </p>

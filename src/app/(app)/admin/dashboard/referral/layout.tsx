@@ -7,10 +7,12 @@ import AddAffliateDialog from "@/components/admin/ReferralManagement/AddAffliate
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <header className="flex items-center justify-between">
-        <p className="font-bold text-[28px]">Referral Management</p>
+      <header className="flex flex-col-reverse gap-7 lg:flex-row items-center justify-between">
+        <p className="self-start lg:self-center font-bold text-2xl lg:text-[28px]">
+          Referral Management
+        </p>
 
-        <div className="bg-[#F7D0984D] p-4 rounded-2xl flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-4 bg-[#F7D0984D] p-4 rounded-2xl">
           <Avatar>
             <AvatarImage src="https://github.com/shadcn.png" />
             <AvatarFallback>CN</AvatarFallback>
@@ -28,14 +30,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
       </header>
 
-      <div className="grid grid-cols-5 gap-4 mt-5 items-center">
-        <div className="col-span-1 bg-[#333333] p-5 rounded-2xl">
+      <div className="grid grid-cols-4 gap-4 mt-5 items-center">
+        <div className="col-span-2 lg:col-span-1 bg-[#333333] p-5 rounded-2xl">
           TOTAL AFFLIATES
         </div>
-        <div className="col-span-1 bg-[#333333] p-5 rounded-2xl">
+        <div className="col-span-2 lg:col-span-1 bg-[#333333] p-5 rounded-2xl">
           NEW REFERRAL
         </div>
-        <div className="col-span-1 bg-[#333333] p-5 rounded-2xl">
+        <div className="col-span-2 lg:col-span-1 bg-[#333333] p-5 rounded-2xl">
           ACTIVE AFFLIATES
         </div>
 

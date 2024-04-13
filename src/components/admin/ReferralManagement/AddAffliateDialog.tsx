@@ -19,8 +19,8 @@ import {
 const AddAffliateDialog = () => {
   return (
     <Dialog>
-      <DialogTrigger asChild className="col-end-12">
-        <Button className="bg-[#776751] text-[#F7D098]">
+      <DialogTrigger asChild className="">
+        <Button className="col-span-full lg:col-span-1 bg-[#776751] text-[#F7D098]">
           <p>Add new affliates</p>
           <Image src={AddIcon} alt="add icon" className="ml-2" />
         </Button>

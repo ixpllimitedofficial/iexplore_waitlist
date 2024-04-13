@@ -6,12 +6,13 @@ import VerifiedBadgeSvg from "@/assets/svg/AdminIconsSvg/VerifiedBadgeSvg.svg";
 import ProfileImage from "@/assets/img/AdminPageImages/ReferralProfileImage.png";
 
 import TikTokIconSvg from "@/assets/svg/AdminIconsSvg/TikTokIconSvg.svg";
+import Divider from "@/components/UI/Divider";
 
 const ReferralsDetails = () => {
   return (
-    <section className="mt-5 bg-[#333333] p-8 rounded-2xl">
-      <div className="flex justify-between">
-        <div className="flex gap-5 items-center">
+    <section className="mt-5 bg-[#333333] p-5 lg:p-8 rounded-2xl">
+      <div className="flex flex-col lg:flex-row justify-between">
+        <div className="flex flex-col lg:flex-row gap-5 items-center">
           <div className="relative">
             <Image src={ProfileImage} alt="profile image" />
             <Image
@@ -22,7 +23,7 @@ const ReferralsDetails = () => {
           </div>
 
           <div>
-            <div className="flex gap-3 items-center">
+            <div className="flex flex-col lg:flex-row gap-3 items-center">
               <p className="font-bold text-3xl text-[#F7D098] mb-1">
                 Christine Brooks
               </p>
@@ -31,32 +32,38 @@ const ReferralsDetails = () => {
               </p>
             </div>
 
-            <div className="flex justify-around gap-5 mt-2">
-              {[1, 2, 3].map((item) => {
-                return (
-                  <div key={item}>
-                    <p className="font-bold text-3xl">80</p>
-                    <p className="text-[#F7D098]">Referrals</p>
-                  </div>
-                );
-              })}
+            <div className="flex flex-col lg:flex-row justify-around gap-5 mt-2">
+              <div className="flex justify-around gap-5 mt-2">
+                {[1, 2, 3].map((item) => {
+                  return (
+                    <div key={item} className="text-center lg:text-start">
+                      <p className="font-bold text-3xl">80</p>
+                      <p className="text-[#F7D098]">Referrals</p>
+                    </div>
+                  );
+                })}
+              </div>
 
-              <Image src={EditIconSvg} alt={EditIconSvg} className="self-end" />
+              <Image
+                src={EditIconSvg}
+                alt={EditIconSvg}
+                className="self-center  lg:self-end"
+              />
             </div>
           </div>
         </div>
 
-        <div>
-          <p className="bg-[#00b69b48] text-[#00B69B] px-5 py-1 rounded-md font-semibold m-auto">
+        <div className="mt-3 lg:mt-0 self-center lg:self-start">
+          <p className="bg-[#00b69b48] text-[#00B69B] px-5 py-1 rounded-md font-semibold m-auto text-center">
             Active
           </p>
         </div>
       </div>
 
       {/* divider */}
-      <div className="border-t-2 border-[#979797] w-full my-5"></div>
+      <Divider />
 
-      <div className="mt-5 flex gap-40">
+      <div className="mt-5 flex flex-col lg:flex-row lg:gap-40">
         <div>
           <p className="font-bold text-2xl mb-2">Details</p>
 
@@ -65,9 +72,13 @@ const ReferralsDetails = () => {
               <p className="text-[#F7D098] font-medium">Phone No:</p>
               <p className="font-semibold">09123456789</p>
             </div>
-            <div className="flex gap-2">
-              <p className="text-[#F7D098] font-medium">Email address:</p>
-              <p className="font-semibold">brookschristine.mail.com</p>
+            <div className="flex">
+              <p className="text-[#F7D098] font-medium">
+                Email address:{" "}
+                <span className="font-semibold text-white">
+                  brookschristine.mail.com
+                </span>
+              </p>
             </div>
             <div className="flex gap-2">
               <p className="text-[#F7D098] font-medium">Referral code</p>
@@ -79,6 +90,9 @@ const ReferralsDetails = () => {
             </div>
           </div>
         </div>
+
+        {/* divider */}
+        <Divider className="lg:hidden" />
 
         <div>
           <p className="font-bold text-2xl mb-2">Affiliate Clubs</p>
@@ -101,18 +115,18 @@ const ReferralsDetails = () => {
       </div>
 
       {/* divider */}
-      <div className="border-t-2 border-[#979797] w-full my-5"></div>
+      <Divider />
 
-      <div className="mt-5 flex justify-between">
+      <div className="mt-5 flex flex-col  justify-between">
         <div>
           <p className="font-bold text-2xl mb-2">Marketing Channels</p>
 
-          <div className="flex gap-3 mt-3">
+          <div className="grid grid-cols-4 gap-3 mt-3">
             {[1, 2, 3, 4].map((item) => {
               return (
                 <div
                   key={item}
-                  className="bg-[#424242] p-3 rounded-xl border-2 border-[#C1C1C1]"
+                  className="bg-[#424242] col-span-full md:col-span-2 lg:col-span-1 p-3 rounded-xl border-2 border-[#C1C1C1]"
                 >
                   <div className="flex items-center gap-2">
                     <Image src={TikTokIconSvg} alt="TikTokIconSvg" />
@@ -131,6 +145,9 @@ const ReferralsDetails = () => {
           </div>
         </div>
 
+        {/* divider */}
+        <Divider />
+
         <div>
           <p className="font-bold text-2xl mb-3">Payment Methods</p>
 
@@ -146,7 +163,7 @@ const ReferralsDetails = () => {
       </div>
 
       {/* divider */}
-      <div className="border-t-2 border-[#979797] w-full mt-10 mb-5"></div>
+      <Divider />
 
       <div>
         <p className="font-bold text-2xl mb-3">Analytics</p>
