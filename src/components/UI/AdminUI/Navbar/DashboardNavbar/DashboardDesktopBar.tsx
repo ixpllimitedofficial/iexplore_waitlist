@@ -131,7 +131,7 @@ const DashboardDesktopBar = () => {
           href="/admin/dashboard/profile"
           className={`${
             pathname.includes("settings")
-              ? "font-bold bg-[#F7D0984D]  rounded-xl"
+              ? "font-bold bg-[#F7D0984D]  px-3 rounded-xl"
               : "font-normal"
           } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
         >
@@ -144,7 +144,7 @@ const DashboardDesktopBar = () => {
           href="/admin/dashboard/support"
           className={`${
             pathname.includes("support")
-              ? "font-bold bg-[#F7D0984D]  rounded-xl"
+              ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
               : "font-normal"
           } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
         >
