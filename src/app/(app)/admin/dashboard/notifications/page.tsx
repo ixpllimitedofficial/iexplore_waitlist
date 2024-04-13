@@ -6,7 +6,7 @@ import ProfileImage from "@/assets/img/AdminPageImages/ReferralProfileImage.png"
 const page = () => {
   return (
     <section className="grid grid-cols-5 gap-10 mt-5">
-      <div className="col-span-3">
+      <div className="col-span-full lg:col-span-3">
         <div className="flex flex-col gap-4">
           {[1, 2, 3, 4].map((card) => {
             return <NotificationCard key={card} />;
@@ -14,7 +14,7 @@ const page = () => {
         </div>
       </div>
 
-      <div className="col-span-2 flex flex-col gap-3">
+      <div className="col-span-full lg:col-span-2 flex flex-col gap-3">
         <div className="bg-[#333333] p-4 border-2 border-[#F7D098] rounded-2xl flex flex-col gap-3">
           <div className="flex items-center justify-between">
             <p className="font-bold text-lg text-[#F7D098]">
