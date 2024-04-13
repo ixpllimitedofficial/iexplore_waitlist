@@ -4,6 +4,7 @@ import SignOutIconSvg from "@/assets/svg/AdminIconsSvg/SignOutIconSvg.svg";
 import VerifiedBadgeSvg from "@/assets/svg/AdminIconsSvg/VerifiedBadgeSvg.svg";
 import ProfileImage from "@/assets/img/AdminPageImages/ProfileImage.png";
 import AppButton from "@/components/UI/Button/AppButton";
+import Link from "next/link";
 
 const ProfileDetails = () => {
   return (
@@ -67,9 +68,9 @@ const ProfileDetails = () => {
       {/* divider */}
       <div className="border-t-2 border-[#979797] w-full my-5"></div>
 
-      <div className="flex justify-center">
+      <Link href="/admin" className="flex justify-center">
         <AppButton leftIcon={SignOutIconSvg} btnText="Sign Out" />
-      </div>
+      </Link>
     </section>
   );
 };

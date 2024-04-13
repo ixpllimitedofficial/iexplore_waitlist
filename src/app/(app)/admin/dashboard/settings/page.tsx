@@ -6,6 +6,7 @@ import ToggleOnSvg from "@/assets/svg/AdminIconsSvg/ToggleOnSvg.svg";
 import AppButton from "@/components/UI/Button/AppButton";
 import AppInput from "@/components/UI/Inputs/AppInput";
 import Divider from "@/components/UI/Divider";
+import Link from "next/link";
 
 const page = () => {
   return (
@@ -102,9 +103,9 @@ const page = () => {
         </div>
       </div>
 
-      <div className="flex justify-center">
+      <Link href="/admin" className="flex justify-center">
         <AppButton leftIcon={SignOutIconSvg} btnText="Sign Out" />
-      </div>
+      </Link>
     </section>
   );
 };
