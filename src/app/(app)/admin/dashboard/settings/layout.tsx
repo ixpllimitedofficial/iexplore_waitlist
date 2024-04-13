@@ -1,7 +1,4 @@
-import React from "react";
-import Image from "next/image";
-import DashboardNotificationsIcon from "@/assets/svg/AdminIconsSvg/DashboardNotificationsIcon.svg";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/UI/avatar";
+import ProfileCard from "@/components/UI/AdminUI/ProfileCard";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -11,22 +8,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           Settings
         </p>
 
-        <div className="hidden lg:flex items-center gap-4  bg-[#F7D0984D] p-4 rounded-2xl">
-          <Avatar>
-            <AvatarImage src="https://github.com/shadcn.png" />
-            <AvatarFallback>CN</AvatarFallback>
-          </Avatar>
-
-          <div>
-            <p className="text-[#F7D098] font-bold">Anita Cruz</p>
-            <p className="text-[#F7D098]">anita@commerce.com</p>
-          </div>
-
-          <Image
-            src={DashboardNotificationsIcon}
-            alt="DashboardNotificationsIcon"
-          />
-        </div>
+        <ProfileCard />
       </header>
 
       {children}
