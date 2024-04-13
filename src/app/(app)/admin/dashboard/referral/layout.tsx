@@ -1,5 +1,5 @@
 import AddAffliateDialog from "@/components/admin/ReferralManagement/AddAffliateDialog";
-import ProfileCard from "@/components/UI/AdminUI/ProfileCard";
+import ProfileCard from "@/components/UI/AdminUI/Cards/ProfileCard";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (

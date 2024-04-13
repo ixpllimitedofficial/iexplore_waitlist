@@ -18,6 +18,7 @@ import NotificationsIconSvg from "@/assets/svg/AdminIconsSvg/NavbarIcons/Notific
 import AnalyticsIconSvg from "@/assets/svg/AdminIconsSvg/NavbarIcons/AnalyticsIconSvg.svg";
 import SettingsIconSvg from "@/assets/svg/AdminIconsSvg/NavbarIcons/SettingsIconSvg.svg";
 import SupportIconSvg from "@/assets/svg/AdminIconsSvg/NavbarIcons/SupportIconSvg.svg";
+import DropdownMenuTest from "../../Cards/DropdownMenuTest";
 
 const DashboardMobileBar = () => {
   // router
@@ -42,7 +43,7 @@ const DashboardMobileBar = () => {
   }, [showNavState]);
 
   return (
-    <header className="fixed top-0 w-screen z-50 lg:hidden flex items-center justify-between px-10 py-5 bg-[#E1BD8A]">
+    <header className="fixed top-0 w-screen z-50 lg:hidden flex items-center justify-between px-6 py-5 bg-[#E1BD8A]">
       {/* hamburger */}
       <Image
         src={DashboardMenuIcon}
@@ -52,8 +53,10 @@ const DashboardMobileBar = () => {
 
       {/* logo */}
       <Link href="/admin/">
-        <Image src={ExploreLogo} alt="ExploreLogo" height={40} width={40} />
+        <Image src={ExploreLogo} alt="ExploreLogo" height={50} width={50} />
       </Link>
+
+      <DropdownMenuTest />
 
       {/* navbar */}
       <nav
@@ -180,7 +183,7 @@ const DashboardMobileBar = () => {
 
           {/* Settings */}
           <Link
-            href="/admin/dashboard/profile"
+            href="/admin/dashboard/settings"
             onClick={showNav}
             className={`${
               pathname.includes("settings")

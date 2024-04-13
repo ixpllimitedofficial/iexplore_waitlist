@@ -7,9 +7,9 @@ import AppButton from "@/components/UI/Button/AppButton";
 
 const ProfileDetails = () => {
   return (
-    <section className="mt-5 bg-[#333333] p-8 rounded-2xl">
-      <div className="flex justify-between">
-        <div className="flex gap-5 items-center">
+    <section className="mt-5 bg-[#333333] p-5 lg:p-8 rounded-2xl">
+      <div className="flex flex-col lg:flex-row justify-between">
+        <div className="flex flex-col lg:flex-row gap-5 items-center">
           <div className="relative">
             <Image src={ProfileImage} alt="profile image" />
             <Image
@@ -20,7 +20,7 @@ const ProfileDetails = () => {
           </div>
 
           <div>
-            <div className="flex gap-3 items-center">
+            <div className="flex flex-col lg:flex-row gap-3 items-center">
               <p className="font-bold text-3xl text-[#F7D098] mb-1">
                 Anita Cruz
               </p>
@@ -31,8 +31,8 @@ const ProfileDetails = () => {
           </div>
         </div>
 
-        <div>
-          <p className="bg-[#00b69b48] text-[#00B69B] px-5 py-1 rounded-md font-semibold m-auto">
+        <div className="mt-3 lg:mt-0 self-center lg:self-start">
+          <p className="bg-[#00b69b48] text-[#00B69B] px-5 py-1 rounded-md font-semibold m-auto text-center">
             Active
           </p>
         </div>
@@ -50,8 +50,12 @@ const ProfileDetails = () => {
             <p className="font-semibold">09123456789</p>
           </div>
           <div className="flex gap-2">
-            <p className="text-[#F7D098] font-medium">Email address:</p>
-            <p className="font-semibold">brookschristine.mail.com</p>
+            <p className="text-[#F7D098] font-medium">
+              Email address:{" "}
+              <span className="text-white font-semibold">
+                brookschristine.mail.com
+              </span>{" "}
+            </p>
           </div>
           <div className="flex gap-2">
             <p className="text-[#F7D098] font-medium">Country:</p>

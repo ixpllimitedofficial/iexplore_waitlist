@@ -7,7 +7,7 @@ import {
 } from "@/components/UI/select";
 
 import AddDrinkDialog from "@/components/admin/ContentModeration/AddDrinkDialog";
-import ProfileCard from "@/components/UI/AdminUI/ProfileCard";
+import ProfileCard from "@/components/UI/AdminUI/Cards/ProfileCard";
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>

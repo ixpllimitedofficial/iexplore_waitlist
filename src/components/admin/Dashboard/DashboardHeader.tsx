@@ -1,5 +1,5 @@
 import React from "react";
-import ProfileCard from "@/components/UI/AdminUI/ProfileCard";
+import ProfileCard from "@/components/UI/AdminUI/Cards/ProfileCard";
 
 const Header = () => {
   return (
