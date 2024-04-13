@@ -52,9 +52,9 @@ const DashboardMobileBar = () => {
       />
 
       {/* logo */}
-      <Link href="/admin/">
+      {/* <Link href="/admin/"> */}
         <Image src={ExploreLogo} alt="ExploreLogo" height={50} width={50} />
-      </Link>
+      {/* </Link> */}
 
       <DropdownMenuTest />
 

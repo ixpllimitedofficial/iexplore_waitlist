@@ -20,9 +20,9 @@ const DashboardDesktopBar = () => {
   return (
     <div className="hidden bg-[#3C3C3C] lg:col-span-2 sticky overflow-y-scroll no-scrollbar top-0 h-screen py-5 lg:flex flex-col items-center gap-8">
       {/* home icon */}
-      <Link href="/admin">
+      {/* <Link href="/admin"> */}
         <Image src={iExploreLogoSvg} alt="logo" height={70} />
-      </Link>
+      {/* </Link> */}
 
       {/* first part of nav */}
       <nav className="flex flex-col gap-4 justify-center w-[80%]">
