@@ -128,7 +128,7 @@ const DashboardDesktopBar = () => {
 
         {/* Settings */}
         <Link
-          href="/admin/dashboard/profile"
+          href="/admin/dashboard/settings"
           className={`${
             pathname.includes("settings")
               ? "font-bold bg-[#F7D0984D]  px-3 rounded-xl"

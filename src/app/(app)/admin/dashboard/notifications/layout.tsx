@@ -71,7 +71,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <p className="">Unread</p>
             <p className="bg-[#C4C4C4] text-white px-2 rounded-full text-sm">
               4
-            </p>z
+            </p>
           </div>
         </div>
 

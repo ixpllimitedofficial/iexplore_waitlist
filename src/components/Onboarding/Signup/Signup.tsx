@@ -5,9 +5,9 @@ import AppInput from "@/components/UI/Inputs/AppInput";
 
 const Signup = () => {
   return (
-    <form className="mt-7 flex flex-col gap-7">
+    <form className="mt-7 flex flex-col gap-4">
       <AppInput label="Full Name:" placeholder="Max Smith" />
-      <AppInput label="Max Smith:" placeholder="Maxxconnect127@gmail.com" />
+      <AppInput label="Email:" placeholder="Maxxconnect127@gmail.com" />
       <AppInput label="Age (28 years old):" placeholder="February 18, 1995" />
       <AppInput label="Phone number:" placeholder="09012345678" />
       <AppInput label="Password:" placeholder="************" />

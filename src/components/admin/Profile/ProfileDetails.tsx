@@ -2,10 +2,7 @@ import React from "react";
 import Image from "next/image";
 import SignOutIconSvg from "@/assets/svg/AdminIconsSvg/SignOutIconSvg.svg";
 import VerifiedBadgeSvg from "@/assets/svg/AdminIconsSvg/VerifiedBadgeSvg.svg";
-
 import ProfileImage from "@/assets/img/AdminPageImages/ProfileImage.png";
-
-import TikTokIconSvg from "@/assets/svg/AdminIconsSvg/TikTokIconSvg.svg";
 import AppButton from "@/components/UI/Button/AppButton";
 
 const ProfileDetails = () => {
