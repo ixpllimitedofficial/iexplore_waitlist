@@ -10,12 +10,12 @@ const FeedSection = () => {
       className="relative flex flex-col md:flex-row items-center justify-between gap-10 p-10 h-[600px] md:h-[350px] lg:h-[520px] w-[90%] md:w-[85vw] mx-auto bg-no-repeat bg-cover bg-center my-10 rounded-3xl overflow-hidden"
     >
       {/*  */}
-      <div className="md:hidden md:w-[45%]">
+      <div className="md:hidden flex flex-col gap-3">
         <div>
           <Image src={SpotDetailsTextIcon} alt="SpotDetailsTextIcon" />
           <h1 className="font-bold text-3xl text-black">Feed</h1>
         </div>
-        <p className="text-lg lg:text-2xl mt-5 text-black">
+        <p className="text-lg lg:text-2xl text-black font-medium leading-snug">
           Share and view post by friends using the iExplore app at different
           spots and events.
         </p>
@@ -25,16 +25,16 @@ const FeedSection = () => {
       <Image
         src={FeedPhoneImage}
         alt="FeedPhoneImage"
-        className="relative h-[600px] lg:h-auto w-auto md:bottom-[-150px] lg:bottom-[-230px]"
+        className="relative h-[600px]  md:h-[500px] lg:h-auto w-auto md:bottom-[-150px] lg:bottom-[-230px]"
       />
 
       {/*  */}
-      <div className="hidden md:block md:w-[45%] lg:flex flex-col gap-3">
+      <div className="hidden md:w-[45%] md:flex flex-col gap-3">
         <div>
           <Image src={SpotDetailsTextIcon} alt="SpotDetailsTextIcon" />
           <h1 className="font-bold text-3xl text-black">Feed</h1>
         </div>
-        <p className="md:text-lg lg:text-xl text-black">
+        <p className="md:text-lg lg:text-xl text-black font-medium leading-snug">
           Share and view post by friends using the iExplore app at different
           spots and events.
         </p>

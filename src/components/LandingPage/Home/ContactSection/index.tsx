@@ -7,9 +7,9 @@ import AppButton from "@/components/UI/Button/AppButton";
 
 const index = () => {
   return (
-    <section className="relative flex flex-col lg:flex-row items-center justify-between px-5 md:px-10 gap-10 w-[80vw] bg-[#FEFAF5] py-3 mt-36 text-black mb-10 mx-auto rounded-3xl">
+    <section className="relative flex flex-col lg:flex-row items-center justify-between px-5 py-7 md:p-12 lg:py-3 gap-10 w-[80vw] bg-[#FEFAF5] mt-10 md:mt-36 text-black mb-10 mx-auto rounded-3xl">
       <div className="flex flex-col gap-4 lg:w-[45%]">
-        <h1 className="text-xl md:text-2xl">
+        <h1 className="text-lg md:text-2xl">
           Get in touch, we will love to hear from you{" "}
           <span className="font-bold">Anytime.</span>
         </h1>
@@ -19,22 +19,22 @@ const index = () => {
 
         <div className="flex gap-1">
           <Image src={LocationIcon} alt="LocationIcon" height={25} className="self-start" />
-          <p className="text-lg font-semibold">No 13b, Aroyewun street, Ramat Estate, Ogudu GRA. Lagos, Nigeria.</p>
+          <p className="md:text-lg font-semibold">No 13b, Aroyewun street, Ramat Estate, Ogudu GRA. Lagos, Nigeria.</p>
         </div>
 
         <div className="flex items-center gap-1">
-          <Image src={MailSvg} alt="MailSvg" height={25} />
-          <p className="text-lg font-semibold">support@explore.com</p>
+          <Image src={MailSvg} alt="MailSvg" height={25} className="self-start"/>
+          <p className="md:text-lg font-semibold">support@explore.com</p>
         </div>
 
         <div className="flex items-center gap-1">
-          <Image src={PhoneSvg} alt="PhoneSvg" height={25} />
-          <p className="text-lg font-semibold">08122384172</p>
+          <Image src={PhoneSvg} alt="PhoneSvg" height={25} className="self-start"/>
+          <p className="md:text-lg font-semibold">08122384172</p>
         </div>
 
         <div className="flex items-center gap-1">
-          <Image src={WhatsappSvg} alt="WhatsappSvg" height={25} />
-          <p className="text-lg font-semibold">
+          <Image src={WhatsappSvg} alt="WhatsappSvg" height={25} className="self-start"/>
+          <p className="md:text-lg font-semibold">
             Click here to chat with us on WhatsApp
           </p>
         </div>

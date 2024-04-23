@@ -14,7 +14,7 @@ const DrinksSection = () => {
           <Image src={ExploreTextIxon} alt="ExploreTextIxon" />
           <h1 className="font-bold text-3xl text-black">Drinks</h1>
         </div>
-        <p className="text-lg lg:text-xl text-black">
+        <p className="text-lg lg:text-xl text-black font-medium leading-snug">
           Book and get your preferred drinks at chosen the spot chosen by you
           with ease.
         </p>
@@ -24,7 +24,7 @@ const DrinksSection = () => {
       <Image
         src={DrinksPhoneImage}
         alt="DrinksPhoneImage"
-        className="relative h-[600px] lg:h-auto w-auto md:bottom-[-150px] lg:bottom-[-230px]"
+        className="relative h-[600px]  md:h-[500px] lg:h-auto w-auto md:bottom-[-150px] lg:bottom-[-230px]"
       />
     </section>
   );

@@ -14,13 +14,13 @@ const HeroSection = () => {
     >
       <NavbarLP />
 
-      <div className="px-24 flex flex-col md:flex-row items-center justify-center md:justify-between">
-        <div className="relative lg:bottom-[-80px] z-50 text-center md:text-start">
-          <h1 className="font-bold text-3xl md:text-5xl">
+      <div className="px-5 md:px-10 lg:px-24 pt-28 lg:pt-0 flex flex-col md:flex-row items-center justify-center md:justify-between gap-5">
+        <div className="relative md:bottom-[40px] lg:bottom-[-80px] z-50 text-center md:text-start">
+          <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl">
             FIND SOMETHING <br />
             <span className="text-[#E1BD8A] italic font-bold">GREAT</span> TO DO
           </h1>
-          <p className="md:text-lg lg:text-xl w-[90%] mx-auto md:mx-0 lg:w-[70%] my-2 lg:my-5">
+          <p className="md:text-lg lg:text-xl lg:w-[70%] my-2 lg:my-5">
             Download and enjoy our app with your friends with{" "}
             <span className="font-bold italic">ease!</span>
           </p>
@@ -43,7 +43,7 @@ const HeroSection = () => {
         <Image
           src={LandingPagePhoneImage}
           alt="LandingPagePhoneImage"
-          className="relative h-[370px] md:h-[450px] lg:h-[630px] w-auto bottom-[-140px] md:bottom-[-120px] lg:bottom-[-180px] z-50"
+          className="relative h-[370px] md:h-[450px] lg:h-[630px] w-auto bottom-[-30px] md:bottom-[5px] lg:bottom-[-180px] z-50"
         />
       </div>
 

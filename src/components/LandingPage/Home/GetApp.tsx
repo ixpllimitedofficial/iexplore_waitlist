@@ -9,17 +9,17 @@ const GetApp = () => {
   return (
     <section
       style={{ backgroundImage: `url(${GetAppImage.src})` }}
-      className="relative flex flex-col items-center justify-center w-[85vw] bg-no-repeat bg-cover bg-center mb-10 mx-auto rounded-3xl"
+      className="relative flex flex-col items-center justify-center w-[85vw] bg-no-repeat bg-cover bg-center mb-10 mx-auto rounded-3xl pt-10 md:pt-16"
     >
-      <div className="text-center mt-10 flex flex-col gap-6">
-        <h1 className="text-2xl md:text-5xl">
+      <div className="text-center flex flex-col gap-3 lg:gap-6">
+        <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">
           GET YOUR FRIENDS IN! <br />
-          <span className="text-[#E1BD8A] italic font-bold">
+          <span className="text-[#E1BD8A] italic">
             GET EVERYONE
           </span>{" "}
           IN!
         </h1>
-        <p className="md:text-lg lg:text-xl font-bold">
+        <p className="px-10 text-sm md:text-base lg:text-xl font-medium">
           Download and enjoy our app with your friends with{" "}
           <span className="font-bold italic">ease!</span>
         </p>
