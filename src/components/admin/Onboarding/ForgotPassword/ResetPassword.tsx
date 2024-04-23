@@ -12,7 +12,7 @@ const ResetPassword = () => {
   const router = useRouter();
 
   const handleModal = () => {
-    router.push("/user/onboarding?flow=login");
+    router.push("/admin/onboarding");
 
     // Unsets Background Scrolling to use when SideDrawer/Modal is closed
     document.body.style.overflow = "unset";
@@ -28,7 +28,7 @@ const ResetPassword = () => {
   };
 
   return (
-    <section className="h-full flex flex-col gap-8 justify-center mt-10 lg:mt-0">
+    <section className="flex flex-col gap-8 justify-center mt-10 lg:mt-0">
       {/* modal */}
       {showModal && (
         <Modal handleModal={handleModal} btnText="Back to login">

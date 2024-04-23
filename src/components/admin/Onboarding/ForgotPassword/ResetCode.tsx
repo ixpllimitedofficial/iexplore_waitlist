@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const ResetCode = () => {
   return (
-    <section className="h-full flex flex-col gap-8 justify-center mt-10 lg:mt-0">
+    <section className="flex flex-col gap-8 justify-center mt-10 lg:mt-0">
       <h1 className="text-[#E1BD8A] font-bold text-3xl text-center leading-snug self-center">
         Reset password?
       </h1>
@@ -16,7 +16,7 @@ const ResetCode = () => {
 
       <AppInput className="px-7" />
 
-      <Link href="/useronboarding?flow=resetPassword" className="self-center">
+      <Link href="/admin/onboarding?flow=resetPassword" className="self-center">
         <AppButton btnText="Confirm code" className="text-[15px] md:text-lg" />
       </Link>
 

@@ -41,39 +41,47 @@ const LoginForm = () => {
   };
 
   return (
-    <form action={handleLogin} className="flex flex-col gap-5 ">
-      <AppInput
-        handleChange={handleLoginChange}
-        value={loginData.email}
-        type="email"
-        name="email"
-        label="Email address:"
-        placeholder="Maxxconnect127@gmail.com"
-      />
+    <section>
+      <div className="hidden bg-[#E1BD8A] w-[50%] mx-auto p-2 lg:flex items-center justify-around rounded-xl">
+        <p className="bg-[#212121] text-[#F7D098] p-3 w-2/5 rounded-xl text-center font-bold">
+          Login
+        </p>
+      </div>
 
-      <AppInput
-        handleChange={handleLoginChange}
-        value={loginData.password}
-        type="password"
-        name="password"
-        label="Password:"
-        placeholder="***********************"
-      />
+      <form action={handleLogin} className="flex flex-col gap-5 ">
+        <AppInput
+          handleChange={handleLoginChange}
+          value={loginData.email}
+          type="email"
+          name="email"
+          label="Email address:"
+          placeholder="Maxxconnect127@gmail.com"
+        />
 
-      {/* <Link
-        href="/user/onboarding?flow=forgotPassword"
-        className=" text-[#E1BD8A] text-end font-medium"
-      >
-        Forgot Password
-      </Link> */}
+        <AppInput
+          handleChange={handleLoginChange}
+          value={loginData.password}
+          type="password"
+          name="password"
+          label="Password:"
+          placeholder="***********************"
+        />
 
-      <AppButton
-        btnText="Login"
-        className="text-[15px] md:text-lg"
-        type="button"
-        handleClick={handleLogin}
-      />
-    </form>
+        <Link
+          href="/admin/onboarding?flow=forgotPassword"
+          className=" text-[#E1BD8A] text-end font-medium"
+        >
+          Forgot Password
+        </Link>
+
+        <AppButton
+          btnText="Login"
+          className="text-[15px] md:text-lg"
+          type="button"
+          handleClick={handleLogin}
+        />
+      </form>
+    </section>
   );
 };
 
