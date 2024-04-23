@@ -6,22 +6,22 @@ import PhoneIconSvg from "@/assets/svg/LandingPageSvg/AboutUsPage/PhoneIconSvg.s
 
 const AboutUsFeatures = () => {
   return (
-    <section className="flex flex-col md:flex-row justify-between gap-10 px-10 py-16 rounded-3xl mt-14 w-[90vw] mx-auto bg-white">
-      <div className="flex flex-col items-center text-center gap-5">
+    <section className="flex flex-col md:flex-wrap lg:flex-nowrap md:flex-row justify-between md:justify-around lg:justify-between gap-10 px-10 py-16 rounded-3xl mt-14 w-[90vw] mx-auto bg-white">
+      <div className="flex flex-col items-center text-center gap-5 md:w-[30%] lg:w-auto">
         <Image src={ExploreIconSvg} alt="ExploreIconSvg" />
-        <p className="text-black text-lg font-bold">Discover spots & events close to you with ease</p>
+        <p className="text-black text-xl font-bold">Discover spots & events close to you with ease</p>
       </div>
-      <div className="flex flex-col items-center text-center gap-5">
+      <div className="flex flex-col items-center text-center gap-5 md:w-[30%] lg:w-auto">
         <Image src={SearchIconSvg} alt="SearchIconSvg" />
-        <p className="text-black text-lg font-bold">Get necessary info concerning the spot/event of your choice</p>
+        <p className="text-black text-xl font-bold">Get necessary info concerning the spot/event of your choice</p>
       </div>
-      <div className="flex flex-col items-center text-center gap-5">
+      <div className="flex flex-col items-center text-center gap-5 md:w-[30%] lg:w-auto">
         <Image src={DrinksIconSvg} alt="DrinksIconSvg" />
-        <p className="text-black text-lg font-bold">Book and buy drinks at your favorite spots</p>
+        <p className="text-black text-xl font-bold">Book and buy drinks at your favorite spots</p>
       </div>
-      <div className="flex flex-col items-center text-center gap-5">
+      <div className="flex flex-col items-center text-center gap-5 md:w-[30%] lg:w-auto">
         <Image src={PhoneIconSvg} alt="PhoneIconSvg" />
-        <p className="text-black text-lg font-bold">Post & view videos from different spots & events on your feed</p>
+        <p className="text-black text-xl font-bold">Post & view videos from different spots & events on your feed</p>
       </div>
     </section>
   );

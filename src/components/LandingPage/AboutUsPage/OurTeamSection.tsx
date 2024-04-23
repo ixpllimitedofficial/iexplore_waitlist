@@ -11,7 +11,7 @@ const OurTeamSection = () => {
         <h3 className="font-bold text-2xl">
           Meet the <span className="text-[#E1BD8A]">iExplore</span> team
         </h3>
-        <p className="text-lg mt-1">A Group Of Seasoned Team Of Workers</p>
+        <p className="text-lg mt-1 px-5 md:px-0">A Group Of Seasoned Team Of Workers</p>
       </div>
 
       {/* team photos */}

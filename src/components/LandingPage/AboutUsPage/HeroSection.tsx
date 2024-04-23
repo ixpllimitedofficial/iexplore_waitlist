@@ -1,4 +1,3 @@
-import Image from "next/image";
 import HeroSectionBgImage from "@/assets/img/LandingPage/AboutUsPage/HeroSectionBgImage.png";
 import NavbarLP from "../../UI/Navbar/LandingPageNavbar/NavbarLP";
 
@@ -15,13 +14,6 @@ const HeroSection = () => {
           About<span className="text-[#E1BD8A] font-bold">Us</span>
         </h1>
       </div>
-
-      {/* spiral image */}
-      {/* <Image
-        src={LandingPageSpiralsImage}
-        alt="LandingPageSpiralsImage"
-        className=" absolute top-0 left-0"
-      /> */}
     </section>
   );
 };

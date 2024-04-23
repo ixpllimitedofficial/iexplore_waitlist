@@ -46,7 +46,7 @@ const MobileNavLP = () => {
         }`}
       >
         {/* to close nav */}
-        <div className="absolute top-5 z-[120] cursor-pointer noSelect flex w-[80%] justify-between">
+        <div className="absolute top-7 z-[120] cursor-pointer noSelect flex w-[75%] justify-between">
           {/* logo */}
           <Image src={iExploreTextLogo} alt="iExploreTextLogo" />
 
