@@ -6,13 +6,15 @@ const HeroSection = () => {
   return (
     <section
       style={{ backgroundImage: `url(${HeroSectionBgImage.src})` }}
-      className="relative flex items-center justify-center bg-no-repeat bg-cover bg-center overflow-hidden h-[500px] lg:w-auto"
+      className="relative bg-no-repeat bg-cover bg-center overflow-hidden h-[500px] lg:w-auto"
     >
       <NavbarLP />
 
-      <h1 className="font-bold text-3xl md:text-5xl">
-        About<span className="text-[#E1BD8A] font-bold">Us</span>
-      </h1>
+      <div className="h-full w-full flex items-center justify-center">
+        <h1 className="font-bold text-3xl md:text-5xl">
+          About<span className="text-[#E1BD8A] font-bold">Us</span>
+        </h1>
+      </div>
 
       {/* spiral image */}
       {/* <Image

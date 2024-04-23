@@ -14,15 +14,15 @@ const DesktopNavLP = () => {
         <Image
           src={ExploreLogo}
           alt="iExploreLogo.png"
-          height={65}
-          width={65}
+          height={60}
+          width={60}
         />
       </Link>
 
       <nav className="flex items-center gap-16">
         <Link
           href="/"
-          className={`text-[#E1BD8A] text-xl ${
+          className={`text-[#E1BD8A] text-lg ${
             pathname === "/" ? "font-medium border-b-2 border-[#E1BD8A]" : ""
           }`}
         >
@@ -30,7 +30,7 @@ const DesktopNavLP = () => {
         </Link>
         <Link
           href="/about-us"
-          className={`text-[#E1BD8A] text-xl ${
+          className={`text-[#E1BD8A] text-lg ${
             pathname === "/about-us"
               ? "font-medium border-b-2 border-[#E1BD8A]"
               : ""
@@ -40,7 +40,7 @@ const DesktopNavLP = () => {
         </Link>
         <Link
           href="/user"
-          className={`text-[#E1BD8A] text-xl ${
+          className={`text-[#E1BD8A] text-lg ${
             pathname === "/user"
               ? "font-medium border-b-2 border-[#E1BD8A]"
               : ""
@@ -50,7 +50,7 @@ const DesktopNavLP = () => {
         </Link>
         <Link
           href="/vendor"
-          className={`text-[#E1BD8A] text-xl ${
+          className={`text-[#E1BD8A] text-lg ${
             pathname === "/vendor"
               ? "font-medium border-b-2 border-[#E1BD8A]"
               : ""
@@ -60,7 +60,7 @@ const DesktopNavLP = () => {
         </Link>
         <Link
           href="/contact-us"
-          className={`text-[#E1BD8A] text-xl ${
+          className={`text-[#E1BD8A] text-lg ${
             pathname === "/contact-us"
               ? "font-medium border-b-2 border-[#E1BD8A]"
               : ""

@@ -44,7 +44,7 @@ const page = () => {
         </div>
 
         {/* divider */}
-        <div className="border-t-2 border-[#979797] w-full mt-5 mb-5"></div>
+        <div className="border-t-2 border-[#979797] w-full my-5"></div>
 
         <p className="text-[#F7D098] text-xl font-semibold mb-5">
           Spots with drink available
