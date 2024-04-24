@@ -7,25 +7,25 @@ const Location = () => {
   return (
     <section>
       {/* search */}
-      <div className="w-[90vw] md:w-[70vw] mx-auto mt-10">
+      <div className="w-[90vw] md:w-[70vw] mx-auto mt-5">
         <AppSearchInput className="p-1" />
       </div>
 
-      <div className="bg-[#333333] w-[85vw] p-5 mx-auto mt-10 rounded-2xl">
+      <div className="bg-[#333333] w-[85vw] md:w-[70vw] p-5 mx-auto mt-5 rounded-2xl">
         <div className="flex flex-col gap-5">
           {/* location 1 */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center">
             <Image
               src={LocationIcon}
               alt="location icon"
-              className="h-[35px] md:h-[40px]"
+              className="h-[30px]"
             />
 
             <div>
-              <h1 className="font-semibold text-lg text-[#E1BD8A]">
+              <h1 className="font-semibold text-[#E1BD8A]">
                 Lagos night club
               </h1>
-              <p className="mt-1 text-[#FBE9D0]">Ikoyi, Lagos</p>
+              <p className="mt-1 text-[#FBE9D0] text-sm">Ikoyi, Lagos</p>
             </div>
           </div>
 
@@ -33,18 +33,18 @@ const Location = () => {
           <div className="border-t-2 border-[#F9D9AD] flex-grow"></div>
 
           {/* lcoation 2 */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center">
             <Image
               src={LocationIcon}
               alt="location icon"
-              className="h-[35px] md:h-[40px]"
+              className="h-[30px]"
             />
 
             <div>
-              <h1 className="font-semibold text-lg text-[#E1BD8A]">
+              <h1 className="font-semibold text-[#E1BD8A]">
                 Abuja night club
               </h1>
-              <p className="mt-1 text-[#FBE9D0]">Gwagalada, Abuja</p>
+              <p className="mt-1 text-[#FBE9D0] text-sm">Gwagalada, Abuja</p>
             </div>
           </div>
         </div>

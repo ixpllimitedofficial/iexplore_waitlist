@@ -10,17 +10,17 @@ const AddLocation = () => {
   return (
     <section
       style={{ backgroundImage: `url(${AddLocationImage.src})` }}
-      className="relative flex items-center justify-center h-[250px] md:h-[400px] lg:h-[600px] w-[90vw] md:w-[85vw] mx-auto my-10 rounded-3xl bg-no-repeat bg-cover bg-center"
+      className="relative flex items-center justify-center h-[250px] md:h-[400px] lg:h-[500px] w-[90vw] md:w-[85vw] lg:w-[75vw] mx-auto my-10 rounded-3xl bg-no-repeat bg-cover bg-center"
     >
-      <div className="absolute w-[95%] lg:w-[70%] text-center flex flex-col justify-center items-center">
-        <h1 className="font-medium text-2xl md:text-5xl lg:text-7xl text-center">
+      <div className="absolute w-[95%] lg:w-[65%] text-center flex flex-col justify-center items-center">
+        <h1 className="font-medium text-2xl md:text-5xl text-center">
           Looking for a cool place you can’t find on{" "}
-          <span className="text-[#E1BD8A] italic">iExplore</span>
+          <span className="text-[#E1BD8A] italic">iExplore.</span>
         </h1>
 
         <AppButton
-          btnText="Add a location to iexplore"
-          className="relative mt-3 lg:mt-5 text-sm md:text-xl"
+          btnText="Add a location to iExplore"
+          className="relative mt-3 lg:mt-5 text-sm md:text-base"
           handleClick={() => router.push("/user/add-location")}
           leftIcon={LocationIconBlack}
         />

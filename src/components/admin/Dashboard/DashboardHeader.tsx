@@ -24,15 +24,15 @@ const Header = () => {
       <div className="self-start">
         <p className="font-bold text-2xl lg:text-3xl">Dashboard</p>
         <p className="text-[#F7D098] text-sm mt-1">
-          Hi, {userData.name}. Welcome back to iExplore Admin!
+          Hi, Anita Cruz. Welcome back to iExplore Admin!
         </p>
-        <Button
+        {/* <Button
           onClick={fetchExternalData}
           className="mt-4"
           variant="secondary"
         >
           Test button
-        </Button>
+        </Button> */}
       </div>
 
       <ProfileCard />

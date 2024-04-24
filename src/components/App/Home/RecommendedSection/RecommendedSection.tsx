@@ -5,15 +5,15 @@ import ArrowButtonRight from "@/assets/svg/ArrowButtonRight.svg";
 
 const RecommendedSection = () => {
   return (
-    <section className="mx-3 md:mx-10 mt-10">
-      <div className="flex items-center justify-between mb-7">
-        <h1 className="text-[#E1BD8A] text-[22px] md:text-3xl font-bold">
+    <section className="mx-3 md:mx-14 mt-10">
+      <div className="flex items-center justify-between mb-4">
+        <h1 className="text-[#E1BD8A] text-[22px] md:text-2xl font-bold">
           Events
         </h1>
         <Link href="/user/recommended">
           <AppButton
             btnText="See all"
-            className="border-2 border-[#887254] text-sm md:text-xl"
+            className="border-2 border-[#887254] text-sm md:text-lg"
             rightIcon={ArrowButtonRight}
           />
         </Link>
