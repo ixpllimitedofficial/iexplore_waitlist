@@ -6,17 +6,17 @@ const SingleReview = () => {
   return (
     <section className="py-7">
       <div className="flex gap-3">
-        <h3 className="bg-[#E1BD8A] text-[#212121] text-2xl font-bold py-3 px-4 rounded-full grid place-items-center">
+        <h3 className="bg-[#fff] text-[#212121] text-2xl font-bold py-3 px-4 rounded-full grid place-items-center">
           M
         </h3>
 
         <div>
-          <p className="text-2xl text-[#E1BD8A] font-semibold">Max Smith</p>
+          <p className="text-xl text-[#E1BD8A] font-semibold">Max Smith</p>
           <p className="text-[#E1BD8A]">12th Sept 2023</p>
         </div>
       </div>
 
-      <p className="mt-5 text-xl md:text-2xl text-[#E1BD8A]">
+      <p className="mt-5 text-xl text-[#E1BD8A]">
         Best place to enjoy nightlife in Lagos. Sound is perfect security is on
         point and there was no problem with finding a parking space. <br />{" "}
         <br /> Got to see and had some premium drinks there, definitely can’t
@@ -24,7 +24,7 @@ const SingleReview = () => {
       </p>
 
       <div className="mt-5 flex gap-4 items-center">
-        <p className="text-xl md:text-2xl text-[#E1BD8A]">Was this review helpful?</p>
+        <p className="text-lg text-[#E1BD8A]">Was this review helpful?</p>
 
         <Image src={ThumbsUpIcon} alt="ThumbsUpIcon" height={30}/>
         <Image src={ThumbsDownIcon} alt="ThumbsDownIcon" height={30}/>

@@ -8,7 +8,7 @@ const GetDirections = () => {
         href="/userspot-details/directions"
         className="absolute bottom-10 text-center flex flex-col justify-center items-center"
       >
-        <p className="rounded-xl px-3 md:px-10 py-2 bg-[#333333] text-lg md:text-xl text-[#E1BD8A] font-medium">
+        <p className="rounded-xl px-3 md:px-10 py-2 bg-[#333333] text-lg text-[#E1BD8A] font-medium">
           Get directions via maps
         </p>
       </Link>
