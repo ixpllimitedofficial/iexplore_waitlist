@@ -10,7 +10,7 @@ const FriendlySpots = () => {
       className="relative flex items-center justify-center h-[350px] md:h-[450px] lg:h-[600px] bg-no-repeat bg-cover bg-center mt-10"
     >
       <div className="absolute left-5 md:10 lg:left-20 lg:w-[75%] flex flex-col gap-3">
-        <h1 className="text-3xl md:text-5xl font-medium lg:w-[70%]">
+        <h1 className="text-2xl md:text-5xl font-semibold lg:w-[70%]">
           Top 15 <span className="text-[#E1BD8A] italic font-bold">budget</span>{" "}
            friendly{" "}
           <span className="text-[#E1BD8A] italic font-bold">spots</span> to

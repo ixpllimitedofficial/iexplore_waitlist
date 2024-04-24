@@ -25,7 +25,7 @@ const Location = () => {
               <h1 className="font-semibold text-[#E1BD8A]">
                 Lagos night club
               </h1>
-              <p className="mt-1 text-[#FBE9D0] text-sm">Ikoyi, Lagos</p>
+              <p className="text-[#FBE9D0] text-sm">Ikoyi, Lagos</p>
             </div>
           </div>
 
@@ -44,7 +44,7 @@ const Location = () => {
               <h1 className="font-semibold text-[#E1BD8A]">
                 Abuja night club
               </h1>
-              <p className="mt-1 text-[#FBE9D0] text-sm">Gwagalada, Abuja</p>
+              <p className="text-[#FBE9D0] text-sm">Gwagalada, Abuja</p>
             </div>
           </div>
         </div>

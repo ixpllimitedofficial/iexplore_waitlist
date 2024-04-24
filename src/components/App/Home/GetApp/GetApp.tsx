@@ -22,14 +22,14 @@ const GetApp = () => {
           </span>{" "}
           IN!
         </h1>
-        <p className="md:text-lg lg:text-xl lg:w-[70%]">
+        <p className="text-sm md:text-lg lg:text-xl w-[85%] lg:w-[70%]">
           Download and enjoy our app with your friends with{" "}
           <span className="font-bold italic">ease!</span>
         </p>
 
         <div className="flex gap-3 cursor-pointer">
-          <Image src={AppStoreImage} alt="AppStoreImage" className="h-8 w-auto md:h-10" />
-          <Image src={GooglePlayImage} alt="GooglePlayImage" className="h-8 w-auto md:h-10" />
+          <Image src={AppStoreImage} alt="AppStoreImage" className="h-6 w-auto md:h-10" />
+          <Image src={GooglePlayImage} alt="GooglePlayImage" className="h-6 w-auto md:h-10" />
         </div>
       </div>
 
