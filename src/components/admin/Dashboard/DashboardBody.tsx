@@ -1,34 +1,65 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { Calendar } from "@/components/UI/calendar";
+import PeopleIconSvg from "@/assets/svg/AdminIconsSvg/PeopleIconSvg.svg";
+import TotalReferralIcon from "@/assets/svg/AdminIconsSvg/TotalReferralIcon.svg";
+import TotalRevenueIconSvg from "@/assets/svg/AdminIconsSvg/TotalRevenueIconSvg.svg";
+import { Button } from "@/components/UI/button";
 
 const DashboardBody = () => {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
+
+  const divStyle =
+    "col-span-full md:col-span-6 lg:col-span-4 flex items-center justify-between bg-[#333333] p-5 lg:py-0 rounded-2xl text-sm";
 
   return (
     <>
       {/* body 1 */}
       <div className="grid grid-cols-10 gap-4 mt-5">
-        <div className="grid grid-cols-12 gap-4 col-span-full lg:col-span-6">
+        <div className="grid grid-cols-12 gap-4 col-span-full lg:col-span-7">
           <div className="grid grid-cols-12 gap-4 col-span-full">
-            <div className="col-span-6 lg:col-span-4 bg-[#333333] p-5 rounded-2xl text-sm">
-              TOTAL USERS
+            <div className={divStyle}>
+              <div>
+                <p>TOTAL USERS</p>
+                <p className="font-bold text-lg">2,000</p>
+              </div>
+              <Image src={PeopleIconSvg} alt="PeopleIconSvg" />
             </div>
-            <div className="col-span-6 lg:col-span-4 bg-[#333333] p-5 rounded-2xl text-sm">
-              TOTAL VENDORS
+
+            {/*  */}
+            <div className={divStyle}>
+              <div>
+                <p>TOTAL VENDORS</p>
+                <p className="font-bold text-lg">50</p>
+              </div>
             </div>
-            <div className="col-span-6 lg:col-span-4 bg-[#333333] p-5 rounded-2xl text-sm">
-              ACTIVE USERS
+            <div className={divStyle}>
+              <div>
+                <p>ACTIVE USERS</p>
+                <p className="font-bold text-lg">20</p>
+              </div>
             </div>
-            <div className="col-span-6 lg:col-span-4 bg-[#333333] p-5 rounded-2xl text-sm">
-              TOTAL REFERRAL
+            <div className={divStyle}>
+              <div>
+                <p>TOTAL REFERRAL</p>
+                <p className="font-bold text-lg">200</p>
+              </div>
+              <Image src={TotalReferralIcon} alt="TotalReferralIcon" />
             </div>
-            <div className="col-span-6 lg:col-span-4 bg-[#333333] p-5 rounded-2xl text-sm">
-              NEW USERS
+            <div className={divStyle}>
+              <div>
+                <p>NEW USERS</p>
+                <p className="font-bold text-lg">150</p>
+              </div>
             </div>
-            <div className="col-span-6 lg:col-span-4 bg-[#333333] p-5 rounded-2xl text-sm">
-              TOTAL REVENUE
+            <div className={divStyle}>
+              <div>
+                <p>TOTAL REVENUE</p>
+                <p className="font-bold text-lg">N200,000.00</p>
+              </div>
+              <Image src={TotalRevenueIconSvg} alt="TotalRevenueIconSvg" />
             </div>
           </div>
 
@@ -42,13 +73,15 @@ const DashboardBody = () => {
           </div>
         </div>
 
-        <div className="hidden col-span-full lg:col-span-4 bg-[#333333] py-5 rounded-2xl lg:flex justify-center">
+        <div className="hidden col-span-full lg:col-span-3 bg-[#333333] py-5 rounded-2xl lg:flex flex-col items-center justify-center gap-3">
           <Calendar
             mode="single"
             selected={date}
             onSelect={setDate}
             className="rounded-md border"
           />
+
+          <Button className="bg-[#F7D098] text-black">Select</Button>
         </div>
       </div>
 

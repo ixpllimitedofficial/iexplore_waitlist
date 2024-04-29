@@ -5,100 +5,100 @@ import Image from "next/image";
 import UserMailIcon from "@/assets/svg/AdminIconsSvg/UserMailIconSvg.svg";
 import UserPhoneIcnSvg from "@/assets/svg/AdminIconsSvg/UserPhoneIconSvg.svg";
 import { usePathname } from "next/navigation";
+import ProfileImage from "@/assets/img/AdminPageImages/ReferralProfileImage.png";
+import { Badge } from "@/components/UI/badge";
+import EditUserDetailsDialog from "./EditUserDetailsDialog";
+import UserDrinksTable from "./UserDrinksTable";
+import UserFavoritesTable from "./UserFavoritesTable";
 
 const UserDetails = () => {
   const pathname = usePathname();
 
   return (
-    <section className="mt-5 bg-[#333333] p-5 lg:p-8 rounded-2xl">
-      <div className="flex justify-between">
-        <div>
-          <p className="font-bold text-xl lg:text-3xl text-[#F7D098] mb-1">
-            Christine Brooks
-          </p>
-          <p>04 Sep 1973</p>
+    <section className="mt-5">
+      {/* user details */}
+      <div className="grid grid-cols-3 gap-6">
+        <div className="flex flex-col items-center gap-3 col-span-1 bg-[#333333] p-4 rounded-2xl">
+          <div className="flex items-center w-full gap-3">
+            <Image
+              src={ProfileImage}
+              alt="ProfileImage"
+              className="h-[100px] w-auto"
+            />
+
+            <div className="">
+              <p className="font-bold text-2xl text-[#F7D098]">
+                Christine Brooks
+              </p>
+              <p className="font-medium">04 Sep 1973</p>
+              <p className="text-sm">Joined 5 months ago</p>
+            </div>
+          </div>
+
+          {/* divider */}
+          <div className="border-t-2 border-[#979797] w-full"></div>
+
+          <p className="text-sm">Active: 1hr 30mns ago</p>
         </div>
 
+        <div className="flex flex-col justify-center gap-3 col-span-1 bg-[#333333] p-4 rounded-2xl">
+          <p className="font-bold text-xl text-[#F7D098]">User details</p>
+
+          <div className="flex justify-between">
+            <div>
+              <p className="text-sm">Phone No:</p>
+              <p className="font-medium text-sm">09123456789</p>
+            </div>
+
+            <div>
+              <p className="text-sm">City:</p>
+              <p className="font-medium text-sm">Lagos</p>
+            </div>
+          </div>
+
+          <div>
+            <p className="text-sm">Email Address:</p>
+            <p className="font-medium text-sm">brookschristine.mail.com</p>
+          </div>
+        </div>
         <div>
-          <p className="bg-[#00b69b48] text-[#00B69B] px-3 lg:px-5 py-1 rounded-md font-semibold m-auto text-sm lg:text-base">
-            Active
-          </p>
+          <div className="flex gap-5 items-center justify-center">
+            <Badge className="bg-[#00b69b48] text-[#00B69B] text-sm">
+              Active
+            </Badge>
+            <EditUserDetailsDialog />
+          </div>
         </div>
       </div>
 
-      <div className="mt-5">
-        <p className="font-bold text-xl lg:text-2xl text-[#F7D098] mb-2">Details</p>
-
-        <div className="flex gap-2">
-          <Image src={UserMailIcon} alt="user mail icon" />
-          <p>09123456789</p>
-        </div>
-        <div className="flex gap-2">
-          <Image src={UserPhoneIcnSvg} alt="user phone icon" />
-          <p>brookschristine.mail.com</p>
-        </div>
-      </div>
-
-      {/* divider */}
-      <div className="border-t-2 border-[#979797] w-full my-5"></div>
-
-      <div className="mt-5">
-        <p className="font-bold text-xl lg:text-2xl text-[#F7D098] mb-2">Preference</p>
+      {/* preference */}
+      <div className="mt-5 bg-[#333333] p-5 rounded-2xl">
+        <p className="font-bold text-xl text-[#F7D098] mb-2">Preference</p>
 
         <div className="flex flex-wrap gap-3 mt-3">
-          <p className="border-2 border-[#F7D098] px-4 py-2 rounded-2xl">Bar</p>
-          <p className="border-2 border-[#F7D098] px-4 py-2 rounded-2xl">
+          <p className="border-2 border-[#F7D098] px-5 py-1 text-sm font-semibold rounded-xl">
+            Bar
+          </p>
+          <p className="border-2 border-[#F7D098] px-5 py-1 text-sm font-semibold rounded-xl">
             Club
           </p>
-          <p className="border-2 border-[#F7D098] px-4 py-2 rounded-2xl">
+          <p className="border-2 border-[#F7D098] px-5 py-1 text-sm font-semibold rounded-xl">
             Beach
           </p>
-          <p className="border-2 border-[#F7D098] px-4 py-2 rounded-2xl">
+          <p className="border-2 border-[#F7D098] px-5 py-1 text-sm font-semibold rounded-xl">
             Lounge
           </p>
-          <p className="border-2 border-[#F7D098] px-4 py-2 rounded-2xl">
+          <p className="border-2 border-[#F7D098] px-5 py-1 text-sm font-semibold rounded-xl">
             Hotel
           </p>
         </div>
       </div>
 
-      {/* divider */}
-      <div className="border-t-2 border-[#979797] w-full mt-10 mb-5"></div>
+      {/* drinks */}
+      <UserDrinksTable />
 
-      <div className="mt-5 flex flex-wrap justify-between gap-5 lg:gap-10">
-        <div>
-          <p className="font-bold text-xl lg:text-2xl text-[#F7D098] mb-2">Interactions</p>
-
-          <div className="flex flex-wrap gap-6 mt-3">
-            {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => {
-              return (
-                <p key={item} className="">
-                  Club {item}
-                </p>
-              );
-            })}
-          </div>
-        </div>
-
-              {/* divider */}
-      <div className="border-t-2 border-[#979797] w-full"></div>
-
-        <div>
-          <p className="font-bold text-xl lg:text-2xl text-[#F7D098] mb-2">
-            Interactions(Events)
-          </p>
-
-          <div className="flex flex-wrap gap-8 mt-3">
-            {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => {
-              return (
-                <p key={item} className="">
-                  Club {item}
-                </p>
-              );
-            })}
-          </div>
-        </div>
-      </div>
+      {/* favourites */}
+      <UserFavoritesTable />
 
       <svg
         width="24"

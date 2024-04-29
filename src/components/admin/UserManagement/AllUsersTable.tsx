@@ -20,6 +20,8 @@ import {
 import AppSearchInput from "@/components/UI/Inputs/AppSearchInput";
 
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+import DownloadIcon from "@/assets/svg/AdminIconsSvg/DownloadIcon.svg";
 
 const AllUsersTable = () => {
   const router = useRouter();
@@ -31,9 +33,9 @@ const AllUsersTable = () => {
   return (
     <section className="mt-5 bg-[#333333] p-5 rounded-2xl">
       <div className="flex flex-col gap-5 lg:gap-0 lg:flex-row justify-between">
-        <p className="font-bold text-xl text-[#F7D098]">All users</p>
+        <p className="font-bold text-xl text-[#F7D098]">All Explorers</p>
 
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-3">
           <AppSearchInput
             className="bg-[#F7D09866] text-[#F7D098] border-none focus-visible:ring-0"
             inputClass="placeholder:text-[#F7D098] placeholder:text-sm"
@@ -49,20 +51,23 @@ const AllUsersTable = () => {
               <SelectItem value="latest">Latest</SelectItem>
             </SelectContent>
           </Select>
+
+          <Image src={DownloadIcon} alt="download" />
         </div>
       </div>
 
       {/* TABLE */}
       <Table className="mt-4 w-[1000px] lg:w-full">
         <TableCaption className="text-[#B5B7C0]">
-          Showing data 1 to 8 of 256K entries
+          Showing data 1 to 8 of 256K entries <span className="text-[#F7D098]">(View all)</span>
         </TableCaption>
         <TableHeader>
           <TableRow className="bg-[#424242] border-none">
             <TableHead className=" text-white">S/N</TableHead>
             <TableHead className="text-white">NAME</TableHead>
             <TableHead className="text-white">PHONE NUMBER</TableHead>
-            <TableHead className="text-white">DATE OF BIRTH</TableHead>
+            <TableHead className="text-white">LAST SEEN</TableHead>
+            <TableHead className="text-white">CITY</TableHead>
             <TableHead className="text-white">EMAIL</TableHead>
             <TableHead className="text-center text-white">STATUS</TableHead>
           </TableRow>
@@ -79,7 +84,8 @@ const AllUsersTable = () => {
                 <TableCell className="font-medium py-5">{table}</TableCell>
                 <TableCell>Christine Brooks</TableCell>
                 <TableCell>09123456789</TableCell>
-                <TableCell>04 Sep 1973</TableCell>
+                <TableCell>1hr 30mins ago</TableCell>
+                <TableCell>Lagos</TableCell>
                 <TableCell>brookschristine.mail.com</TableCell>
                 <TableCell className="text-center">
                   <p className="bg-[#00b69b48] text-[#00B69B]  py-1 rounded-md font-semibold m-auto">
