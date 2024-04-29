@@ -12,7 +12,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <header className="flex flex-col-reverse gap-7 lg:flex-row items-center justify-between">
-        <p className="self-start lg:self-center font-bold text-2xl lg:text-[28px]">
+        <p className="self-start lg:self-center font-bold text-2xl">
           Content Moderation
         </p>
 

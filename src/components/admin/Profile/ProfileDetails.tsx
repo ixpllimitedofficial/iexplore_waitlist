@@ -22,10 +22,10 @@ const ProfileDetails = () => {
 
           <div>
             <div className="flex flex-col lg:flex-row gap-3 items-center">
-              <p className="font-bold text-3xl text-[#F7D098] mb-1">
+              <p className="font-bold text-xl text-[#F7D098] mb-1">
                 Anita Cruz
               </p>
-              <p className="text-[#F7D098] bg-[#5D5D5D] px-3 py-1 rounded-lg">
+              <p className="text-[#F7D098] bg-[#5D5D5D] px-3 py-1 rounded-lg text-sm">
                 Admin
               </p>
             </div>
@@ -43,7 +43,7 @@ const ProfileDetails = () => {
       <div className="border-t-2 border-[#979797] w-full my-5"></div>
 
       <div className="mt-5">
-        <p className="font-bold text-2xl mb-2">Details</p>
+        <p className="font-bold text-xl mb-2">Details</p>
 
         <div className="flex flex-col gap-2">
           <div className="flex gap-2">
@@ -69,7 +69,7 @@ const ProfileDetails = () => {
       <div className="border-t-2 border-[#979797] w-full my-5"></div>
 
       <Link href="/admin" className="flex justify-center">
-        <AppButton leftIcon={SignOutIconSvg} btnText="Sign Out" />
+        <AppButton leftIcon={SignOutIconSvg} btnText="Sign Out" className="text-sm" />
       </Link>
     </section>
   );

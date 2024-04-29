@@ -2,16 +2,16 @@ import React from "react";
 
 const NotificationCard = () => {
   return (
-    <div className="bg-[#333333] p-4 border-2 border-[#F7D098] rounded-2xl flex flex-col gap-4">
+    <div className="bg-[#333333] p-4 border-2 border-[#F7D098] rounded-2xl flex flex-col gap-3">
       <div className="flex items-center justify-between">
-        <p className="font-bold text-lg text-[#F7D098]">
+        <p className="font-bold text-[#F7D098]">
           New user verification
         </p>
 
-        <p className="font-semibold">Unread</p>
+        <p className="font-semibold text-sm">Unread</p>
       </div>
 
-      <p>
+      <p className="text-sm">
         Life seasons open have. Air have of. Lights fill after let third
         darkness replenish fruitful let. Wherein set image. Creepeth said above
         gathered bring.

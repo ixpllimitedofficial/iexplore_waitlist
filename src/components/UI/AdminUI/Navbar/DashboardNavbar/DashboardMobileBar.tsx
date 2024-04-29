@@ -166,16 +166,16 @@ const DashboardMobileBar = () => {
 
           {/* Analytic & Reporting */}
           <Link
-            href="/admin/dashboard/analytics"
+            href="/admin/dashboard/orders"
             onClick={showNav}
             className={`${
-              pathname.includes("analytics")
+              pathname.includes("orders")
                 ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
                 : "font-normal"
             } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
           >
             <Image src={AnalyticsIconSvg} alt="Analytics icon" />
-            <p>Analytic & Reporting</p>
+            <p>Orders</p>
           </Link>
 
           {/* divider */}

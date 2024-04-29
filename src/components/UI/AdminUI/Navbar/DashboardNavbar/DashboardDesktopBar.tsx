@@ -21,11 +21,11 @@ const DashboardDesktopBar = () => {
     <div className="hidden bg-[#3C3C3C] lg:col-span-2 sticky overflow-y-scroll no-scrollbar top-0 h-screen py-5 lg:flex flex-col items-center gap-8">
       {/* home icon */}
       {/* <Link href="/admin"> */}
-        <Image src={iExploreLogoSvg} alt="logo" height={70} />
+      <Image src={iExploreLogoSvg} alt="logo" height={60} />
       {/* </Link> */}
 
       {/* first part of nav */}
-      <nav className="flex flex-col gap-4 justify-center w-[80%]">
+      <nav className="flex flex-col gap-3 justify-center">
         {/* Dashboard */}
         <Link
           href="/admin/dashboard"
@@ -33,7 +33,7 @@ const DashboardDesktopBar = () => {
             pathname === "/admin/dashboard"
               ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
               : "font-normal"
-          } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
+          } text-[#F7D098] pl-3 py-2 flex items-center gap-2 text-sm`}
         >
           <Image src={HomeIconSvg} alt="Home icon" />
           <p>Dashboard</p>
@@ -49,7 +49,7 @@ const DashboardDesktopBar = () => {
             pathname.includes("user-management")
               ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
               : "font-normal"
-          } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
+          } text-[#F7D098] pl-3 py-2 flex items-center gap-2 text-sm`}
         >
           <Image src={UsersIconSvg} alt="Users icon" />
           <p>User Management</p>
@@ -62,7 +62,7 @@ const DashboardDesktopBar = () => {
             pathname.includes("vendor-management")
               ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
               : "font-normal"
-          } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
+          } text-[#F7D098] pl-3 py-2 flex items-center gap-2 text-sm`}
         >
           <Image src={VendorsIconSvg} alt="VendorsIcon" />
           <p>Vendor Management</p>
@@ -75,7 +75,7 @@ const DashboardDesktopBar = () => {
             pathname.includes("content-moderation")
               ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
               : "font-normal"
-          } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
+          } text-[#F7D098] pl-3 py-2 flex items-center gap-2 text-sm`}
         >
           <Image src={ContentIconSvg} alt="ContentIconSvg" />
           <p>Content Moderation</p>
@@ -88,7 +88,7 @@ const DashboardDesktopBar = () => {
             pathname.includes("referral")
               ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
               : "font-normal"
-          } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
+          } text-[#F7D098] pl-3 py-2 flex items-center gap-2 text-sm`}
         >
           <Image src={ReferralIconSvg} alt="ReferralIconSvg" />
           <p>Referral Management</p>
@@ -104,7 +104,7 @@ const DashboardDesktopBar = () => {
             pathname.includes("notifications")
               ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
               : "font-normal"
-          } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
+          } text-[#F7D098] pl-3 py-2 flex items-center gap-2 text-sm`}
         >
           <Image src={NotificationsIconSvg} alt="Notifcations icon" />
           <p>Notifications</p>
@@ -112,15 +112,15 @@ const DashboardDesktopBar = () => {
 
         {/* Analytic & Reporting */}
         <Link
-          href="/admin/dashboard/analytics"
+          href="/admin/dashboard/orders"
           className={`${
-            pathname.includes("analytics")
+            pathname.includes("orders")
               ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
               : "font-normal"
-          } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
+          } text-[#F7D098] pl-3 py-2 flex items-center gap-2 text-sm`}
         >
           <Image src={AnalyticsIconSvg} alt="Analytics icon" />
-          <p>Analytic & Reporting</p>
+          <p>Orders</p>
         </Link>
 
         {/* divider */}
@@ -133,7 +133,7 @@ const DashboardDesktopBar = () => {
             pathname.includes("settings")
               ? "font-bold bg-[#F7D0984D]  px-3 rounded-xl"
               : "font-normal"
-          } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
+          } text-[#F7D098] pl-3 py-2 flex items-center gap-2 text-sm`}
         >
           <Image src={SettingsIconSvg} alt="settings icon" />
           <p>Settings</p>
@@ -146,7 +146,7 @@ const DashboardDesktopBar = () => {
             pathname.includes("support")
               ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
               : "font-normal"
-          } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
+          } text-[#F7D098] pl-3 py-2 flex items-center gap-2 text-sm`}
         >
           <Image src={SupportIconSvg} alt="support icon" />
           <p>Support & Help desk</p>

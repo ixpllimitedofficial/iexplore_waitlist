@@ -1,10 +1,10 @@
 import React from "react";
-import ContentPage from "@/components/admin/ContentModeration/ContentPage";
+import AllContentsTable from "@/components/admin/ContentModeration/AllContentsTable";
 
 const page = () => {
   return (
     <>
-      <ContentPage />
+      <AllContentsTable />
     </>
   );
 };
