@@ -18,8 +18,11 @@ import {
   SelectValue,
 } from "@/components/UI/select";
 import AppSearchInput from "@/components/UI/Inputs/AppSearchInput";
+import DownloadIcon from "@/assets/svg/AdminIconsSvg/DownloadIcon.svg";
 
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+import { Badge } from "@/components/UI/badge";
 
 const AllVendorsTable = () => {
   const router = useRouter();
@@ -33,10 +36,10 @@ const AllVendorsTable = () => {
       <div className="flex flex-col gap-5 lg:gap-0 lg:flex-row justify-between">
         <p className="font-bold text-xl text-[#F7D098]">All vendors</p>
 
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-3">
           <AppSearchInput
-            className="bg-[#F7D09866z] text-[#F7D098] border-none focus-visible:ring-0"
-            inputClass="placeholder:text-[#F7D098]"
+            className="bg-[#F7D09866] text-[#F7D098] border-none focus-visible:ring-0"
+            inputClass="placeholder:text-[#F7D098] placeholder:text-sm"
           />
 
           <Select>
@@ -49,6 +52,8 @@ const AllVendorsTable = () => {
               <SelectItem value="latest">Latest</SelectItem>
             </SelectContent>
           </Select>
+
+          <Image src={DownloadIcon} alt="download" />
         </div>
       </div>
 
@@ -65,7 +70,7 @@ const AllVendorsTable = () => {
             <TableHead className="text-white">BUSINESS NAME</TableHead>
             <TableHead className="text-white">BUSINESS PHONE NUMBER</TableHead>
             <TableHead className="text-white">BUSINESS EMAIL</TableHead>
-            <TableHead className="text-center text-white">STATUS</TableHead>
+            <TableHead className="text-white">STATUS</TableHead>
           </TableRow>
         </TableHeader>
 
@@ -83,10 +88,10 @@ const AllVendorsTable = () => {
                 <TableCell>Club 777</TableCell>
                 <TableCell>09123456789</TableCell>
                 <TableCell>brookschristine.mail.com</TableCell>
-                <TableCell className="text-center">
-                  <p className="bg-[#ffec4348] text-[#FFEC43]  py-1 rounded-md font-semibold m-auto">
+                <TableCell>
+                  <Badge className="bg-[#ffec4348] text-[#FFEC43] text-sm">
                     Pending
-                  </p>
+                  </Badge>
                 </TableCell>
               </TableRow>
             </TableBody>

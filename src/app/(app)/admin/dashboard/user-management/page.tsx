@@ -1,15 +1,16 @@
 import React from "react";
-import PeopleIconSvg from "@/assets/svg/AdminIconsSvg/PeopleIconSvg.svg";
 import Image from "next/image";
+import PeopleIconSvg from "@/assets/svg/AdminIconsSvg/PeopleIconSvg.svg";
 import { ArrowDownIcon, ArrowUpIcon } from "@radix-ui/react-icons";
 import AllUsersTable from "@/components/admin/UserManagement/AllUsersTable";
 
 const page = () => {
-  const divStyle = "col-span-full md:col-span-4 lg:col-span-2 flex items-center justify-between bg-[#333333] p-5 rounded-2xl text-sm"
-  
+  const divStyle =
+    "col-span-full md:col-span-4 lg:col-span-2 flex items-center justify-between bg-[#333333] p-5 rounded-2xl text-sm";
+
   return (
     <>
-    <div className="grid grid-cols-8 gap-4 mt-5">
+      <div className="grid grid-cols-8 gap-4 mt-5">
         <div className={divStyle}>
           <div>
             <p>TOTAL USERS</p>
@@ -37,8 +38,7 @@ const page = () => {
               <div className="flex items-center">
                 <ArrowDownIcon color="#FF1800" />
                 <p className="text-sm">
-                  <span className="text-sm text-[#FF1800]">1% </span> this
-                  month
+                  <span className="text-sm text-[#FF1800]">1% </span> this month
                 </p>
               </div>
             </div>

@@ -11,18 +11,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <ProfileCard />
       </header>
 
-      <div className="grid grid-cols-6 gap-4 mt-5">
-        <div className="col-span-3 lg:col-span-1 bg-[#333333] p-5 rounded-2xl text-sm">
-          TOTAL VENDORS
-        </div>
-        <div className="col-span-3 lg:col-span-1 bg-[#333333] p-5 rounded-2xl text-sm">
-          NEW VENDORS
-        </div>
-        <div className="col-span-3 lg:col-span-1 bg-[#333333] p-5 rounded-2xl text-sm">
-          ACTIVE VENDORS
-        </div>
-      </div>
-
       {children}
     </>
   );

@@ -22,6 +22,7 @@ import AppSearchInput from "@/components/UI/Inputs/AppSearchInput";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import DownloadIcon from "@/assets/svg/AdminIconsSvg/DownloadIcon.svg";
+import { Badge } from "@/components/UI/badge";
 
 const AllUsersTable = () => {
   const router = useRouter();
@@ -69,7 +70,7 @@ const AllUsersTable = () => {
             <TableHead className="text-white">LAST SEEN</TableHead>
             <TableHead className="text-white">CITY</TableHead>
             <TableHead className="text-white">EMAIL</TableHead>
-            <TableHead className="text-center text-white">STATUS</TableHead>
+            <TableHead className="text-white">STATUS</TableHead>
           </TableRow>
         </TableHeader>
 
@@ -87,10 +88,10 @@ const AllUsersTable = () => {
                 <TableCell>1hr 30mins ago</TableCell>
                 <TableCell>Lagos</TableCell>
                 <TableCell>brookschristine.mail.com</TableCell>
-                <TableCell className="text-center">
-                  <p className="bg-[#00b69b48] text-[#00B69B]  py-1 rounded-md font-semibold m-auto">
+                <TableCell>
+                  <Badge className="bg-[#00b69b48] text-[#00B69B] text-sm">
                     Active
-                  </p>
+                  </Badge>
                 </TableCell>
               </TableRow>
             </TableBody>
