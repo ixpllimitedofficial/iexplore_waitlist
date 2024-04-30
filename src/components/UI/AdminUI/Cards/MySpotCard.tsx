@@ -55,7 +55,7 @@ const MySpotCard = () => {
           <p className="text-[#999999]">Time: 5pm - 4am </p>
         </div>
 
-        <button className="bg-[#F7D098] text-[#212121] p-2 rounded-xl flex justify-around items-center gap-1 font-medium">
+        <button className="bg-gold-500 text-[#212121] p-2 rounded-xl flex justify-around items-center gap-1 font-medium">
           <p className="text-base">More info</p>
           <Image
             src={ArrowRightIconSvg}

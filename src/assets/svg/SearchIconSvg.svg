@@ -7,14 +7,14 @@
             >
               <path
                 d="M20.875 20.875L26.5 26.5"
-                stroke="#F7D098"
+                stroke="#FFD700"
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               />
               <path
                 d="M24 12.75C24 6.5368 18.9632 1.5 12.75 1.5C6.5368 1.5 1.5 6.5368 1.5 12.75C1.5 18.9632 6.5368 24 12.75 24C18.9632 24 24 18.9632 24 12.75Z"
-                stroke="#F7D098"
+                stroke="#FFD700"
                 stroke-width="2"
                 stroke-linejoin="round"
               />

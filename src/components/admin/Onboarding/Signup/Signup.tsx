@@ -14,7 +14,7 @@ const Signup = () => {
 
       <div className="flex items-start gap-2">
         <input type="checkbox" aria-label="Check box" className="mt-1" />
-        <p className="text-[#E1BD8A]">
+        <p className="text-gold-500">
           By creating an account, I verify that i’m over 18 years of age and
           accept the{" "}
           <span className="underline font-bold"> Terms of Service</span> and

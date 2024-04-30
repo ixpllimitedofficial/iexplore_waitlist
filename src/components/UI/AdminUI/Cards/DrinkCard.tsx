@@ -45,7 +45,7 @@ const DrinkCard = () => {
         <p className="text-[#999999]">4.0 (90 Reviews) </p>
       </div>
 
-      <p className="text-[#F7D098] text-xl font-bold">NGN 232,000.00</p>
+      <p className="text-gold-500 text-xl font-bold">NGN 232,000.00</p>
     </div>
   );
 };

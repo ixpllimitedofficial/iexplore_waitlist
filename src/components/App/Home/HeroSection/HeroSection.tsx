@@ -11,7 +11,7 @@ const HeroSection = () => {
     >
       <div className="absolute w-[70%] bottom-2 md:bottom-10 lg:bottom-16 flex flex-col justify-center items-center gap-3">
         <h1 className="font-bold text-3xl md:text-5xl lg:text-6xl text-center">
-          FIND SOMETHING <br /> <span className="text-[#E1BD8A] italic">GREAT</span> TO
+          FIND SOMETHING <br /> <span className="text-gold-500 italic">GREAT</span> TO
           DO
         </h1>
 

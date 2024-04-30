@@ -32,6 +32,17 @@ const config = {
         foreground: "hsl(var(--foreground))",
         brandDark: "hsl(var(--brand-dark))",
         brandGold: "hsl(var(--brand-gold))",
+        "gold": {
+          // 100: '#cffafe',
+          // 200: '#a5f3fc',
+          // 300: '#67e8f9',
+          // 400: '#22d3ee',
+          500: '#FFD700',
+          600: '#D7B500',
+          // 700: '#0e7490',
+          800: '#FFD7004D',
+          // 900: '#164e63',
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

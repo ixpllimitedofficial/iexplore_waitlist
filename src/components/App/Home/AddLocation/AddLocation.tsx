@@ -15,7 +15,7 @@ const AddLocation = () => {
       <div className="absolute w-[95%] lg:w-[65%] text-center flex flex-col justify-center items-center">
         <h1 className="font-medium text-2xl md:text-5xl text-center">
           Looking for a cool place you can’t find on{" "}
-          <span className="text-[#E1BD8A] italic">iExplore.</span>
+          <span className="text-gold-500 italic">iExplore.</span>
         </h1>
 
         <AppButton

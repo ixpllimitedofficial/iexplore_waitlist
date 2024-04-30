@@ -22,17 +22,17 @@ const DesktopNavLP = () => {
       <nav className="flex items-center gap-16">
         <Link
           href="/"
-          className={`text-[#E1BD8A] text-lg ${
-            pathname === "/" ? "font-medium border-b-2 border-[#E1BD8A]" : ""
+          className={`text-gold-500 text-lg ${
+            pathname === "/" ? "font-medium border-b-2 border-gold-500" : ""
           }`}
         >
           Home
         </Link>
         <Link
           href="/about-us"
-          className={`text-[#E1BD8A] text-lg ${
+          className={`text-gold-500 text-lg ${
             pathname === "/about-us"
-              ? "font-medium border-b-2 border-[#E1BD8A]"
+              ? "font-medium border-b-2 border-gold-500"
               : ""
           }`}
         >
@@ -40,9 +40,9 @@ const DesktopNavLP = () => {
         </Link>
         <Link
           href="/user"
-          className={`text-[#E1BD8A] text-lg ${
+          className={`text-gold-500 text-lg ${
             pathname === "/user"
-              ? "font-medium border-b-2 border-[#E1BD8A]"
+              ? "font-medium border-b-2 border-gold-500"
               : ""
           }`}
         >
@@ -50,9 +50,9 @@ const DesktopNavLP = () => {
         </Link>
         <Link
           href="/vendor"
-          className={`text-[#E1BD8A] text-lg ${
+          className={`text-gold-500 text-lg ${
             pathname === "/vendor"
-              ? "font-medium border-b-2 border-[#E1BD8A]"
+              ? "font-medium border-b-2 border-gold-500"
               : ""
           }`}
         >
@@ -60,9 +60,9 @@ const DesktopNavLP = () => {
         </Link>
         <Link
           href="/contact-us"
-          className={`text-[#E1BD8A] text-lg ${
+          className={`text-gold-500 text-lg ${
             pathname === "/contact-us"
-              ? "font-medium border-b-2 border-[#E1BD8A]"
+              ? "font-medium border-b-2 border-gold-500"
               : ""
           }`}
         >
@@ -73,7 +73,7 @@ const DesktopNavLP = () => {
       <nav className="flex items-center gap-7">
         <Link
           href="/user/onboarding?flow=signup"
-          className="bg-[#E1BD8A] text-[#212121] text-lg px-4 py-2 rounded-xl font-bold"
+          className="bg-gold-500 text-[#212121] text-lg px-4 py-2 rounded-xl font-bold"
         >
           Register
         </Link>

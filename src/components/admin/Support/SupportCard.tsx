@@ -2,11 +2,9 @@ import React from "react";
 
 const SupportCard = () => {
   return (
-    <div className="col-span-full lg:col-span-2 bg-[#333333] p-4 border-2 border-[#F7D098] rounded-2xl flex flex-col gap-3">
+    <div className="col-span-full lg:col-span-2 bg-[#333333] p-4 border-2 border-gold-500 rounded-2xl flex flex-col gap-3">
       <div className="flex items-center justify-between">
-        <p className="font-bold text-[#F7D098]">
-          New user verification
-        </p>
+        <p className="font-bold text-gold-500">New user verification</p>
 
         <p className="font-semibold text-sm">Unread</p>
       </div>

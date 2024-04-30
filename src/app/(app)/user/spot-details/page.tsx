@@ -15,7 +15,7 @@ const page = () => {
       <section className="px-16 mt-32">
         {/* title and icons */}
         <div className="flex items-center justify-between mb-5">
-          <h1 className="text-[#E1BD8A] text-3xl font-bold">Club Quilox</h1>
+          <h1 className="text-gold-500 text-3xl font-bold">Club Quilox</h1>
 
           <div className="flex gap-2">
             <Image src={ShareIcon} alt="ShareIcon" height={45} />
@@ -37,14 +37,14 @@ const page = () => {
         </p>
 
         {/* location */}
-        <div className="border-t-2 border-[#F9D9AD] mt-5 pt-5 flex flex-col md:flex-row md:items-center justify-between gap-5">
+        <div className="border-t-2 border-gold-500 mt-5 pt-5 flex flex-col md:flex-row md:items-center justify-between gap-5">
           <p className="md:text-lg md:w-[30%]">
             873 Ozumba Mbadiwe Ave, Victoria Island 106104, Lagos
           </p>
 
           <div className="md:text-right">
             <p className=" font-medium">Open now</p>
-            <p className="text-[#E1BD8A]">6:00pm - 4:00am</p>
+            <p className="text-gold-500">6:00pm - 4:00am</p>
           </div>
         </div>
 

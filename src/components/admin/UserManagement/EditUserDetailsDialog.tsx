@@ -15,14 +15,14 @@ const EditUserDetailsDialog = () => {
   return (
     <Dialog>
       <DialogTrigger asChild className="col-end-12">
-        <Button className="bg-[#776751] text-[#F7D098]">
+        <Button className="bg-gold-800 text-gold-500">
           <p>Edit</p>
           <Image src={EditOutlineIconSvg} alt="edit icon" className="ml-2" />
         </Button>
       </DialogTrigger>
       <DialogContent className="w-[90%] md:max-w-[800px] bg-[#212121]">
         <DialogHeader>
-          <DialogTitle className="text-[#F7D098] text-2xl text-center">
+          <DialogTitle className="text-gold-500 text-2xl text-center">
             Edit user details
           </DialogTitle>
           {/* <DialogDescription>
@@ -30,19 +30,19 @@ const EditUserDetailsDialog = () => {
         </DialogDescription> */}
         </DialogHeader>
         <div className="grid gap-2 py-2">
-          <div className="bg-[#33333399] p-2 text-center text-[#F7D098] font-semibold">
+          <div className="bg-[#33333399] p-2 text-center text-gold-500 font-semibold">
             Personal Information
           </div>
         </div>
 
         <div className="grid gap-2 py-2">
-          <div className="bg-[#33333399] p-2 text-center text-[#F7D098] font-semibold">
+          <div className="bg-[#33333399] p-2 text-center text-gold-500 font-semibold">
             Preference
           </div>
         </div>
 
         <div className="grid gap-2 py-2">
-          <div className="bg-[#33333399] p-2 text-center text-[#F7D098] font-semibold">
+          <div className="bg-[#33333399] p-2 text-center text-gold-500 font-semibold">
             Account Status
           </div>
         </div>
@@ -50,7 +50,7 @@ const EditUserDetailsDialog = () => {
         <DialogFooter className="mx-auto">
           <Button
             type="submit"
-            className="bg-[#333333] text-[#F7D098]  border-2 border-[#F7D098]"
+            className="bg-[#333333] text-gold-500  border-2 border-gold-500"
           >
             Save
           </Button>

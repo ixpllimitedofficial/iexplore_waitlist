@@ -10,7 +10,7 @@ const RecommendedSectionCard = () => {
       </div>
 
       {/* badge */}
-      <h1 className="absolute bg-[#F7D098] text-black font-medium px-4 py-1 rounded-3xl right-4 top-4">
+      <h1 className="absolute bg-gold-500 text-black font-medium px-4 py-1 rounded-3xl right-4 top-4">
         Hot 🔥
       </h1>
 

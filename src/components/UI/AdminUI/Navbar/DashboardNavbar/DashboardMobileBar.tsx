@@ -43,7 +43,7 @@ const DashboardMobileBar = () => {
   }, [showNavState]);
 
   return (
-    <header className="fixed top-0 w-screen z-50 lg:hidden flex items-center justify-between px-6 py-5 bg-[#E1BD8A]">
+    <header className="fixed top-0 w-screen z-50 lg:hidden flex items-center justify-between px-6 py-5 bg-gold-500">
       {/* hamburger */}
       <Image
         src={DashboardMenuIcon}
@@ -53,7 +53,7 @@ const DashboardMobileBar = () => {
 
       {/* logo */}
       {/* <Link href="/admin/"> */}
-        <Image src={ExploreLogo} alt="ExploreLogo" height={50} width={50} />
+      <Image src={ExploreLogo} alt="ExploreLogo" height={50} width={50} />
       {/* </Link> */}
 
       <DropdownMenuTest />
@@ -82,7 +82,7 @@ const DashboardMobileBar = () => {
               pathname === "/admin/dashboard"
                 ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
                 : "font-normal"
-            } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
+            } text-gold-500 pl-3 py-2 flex items-center gap-2`}
           >
             <Image src={HomeIconSvg} alt="Home icon" />
             <p>Dashboard</p>
@@ -99,7 +99,7 @@ const DashboardMobileBar = () => {
               pathname.includes("user-management")
                 ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
                 : "font-normal"
-            } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
+            } text-gold-500 pl-3 py-2 flex items-center gap-2`}
           >
             <Image src={UsersIconSvg} alt="Users icon" />
             <p>User Management</p>
@@ -113,7 +113,7 @@ const DashboardMobileBar = () => {
               pathname.includes("vendor-management")
                 ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
                 : "font-normal"
-            } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
+            } text-gold-500 pl-3 py-2 flex items-center gap-2`}
           >
             <Image src={VendorsIconSvg} alt="VendorsIcon" />
             <p>Vendor Management</p>
@@ -127,7 +127,7 @@ const DashboardMobileBar = () => {
               pathname.includes("content-moderation")
                 ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
                 : "font-normal"
-            } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
+            } text-gold-500 pl-3 py-2 flex items-center gap-2`}
           >
             <Image src={ContentIconSvg} alt="ContentIconSvg" />
             <p>Content Moderation</p>
@@ -141,7 +141,7 @@ const DashboardMobileBar = () => {
               pathname.includes("referral")
                 ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
                 : "font-normal"
-            } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
+            } text-gold-500 pl-3 py-2 flex items-center gap-2`}
           >
             <Image src={ReferralIconSvg} alt="ReferralIconSvg" />
             <p>Referral Management</p>
@@ -158,7 +158,7 @@ const DashboardMobileBar = () => {
               pathname.includes("notifications")
                 ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
                 : "font-normal"
-            } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
+            } text-gold-500 pl-3 py-2 flex items-center gap-2`}
           >
             <Image src={NotificationsIconSvg} alt="Notifcations icon" />
             <p>Notifications</p>
@@ -172,7 +172,7 @@ const DashboardMobileBar = () => {
               pathname.includes("orders")
                 ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
                 : "font-normal"
-            } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
+            } text-gold-500 pl-3 py-2 flex items-center gap-2`}
           >
             <Image src={AnalyticsIconSvg} alt="Analytics icon" />
             <p>Orders</p>
@@ -189,7 +189,7 @@ const DashboardMobileBar = () => {
               pathname.includes("settings")
                 ? "font-bold bg-[#F7D0984D]  rounded-xl"
                 : "font-normal"
-            } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
+            } text-gold-500 pl-3 py-2 flex items-center gap-2`}
           >
             <Image src={SettingsIconSvg} alt="settings icon" />
             <p>Settings</p>
@@ -203,7 +203,7 @@ const DashboardMobileBar = () => {
               pathname.includes("support")
                 ? "font-bold bg-[#F7D0984D]  rounded-xl"
                 : "font-normal"
-            } text-[#F7D098] pl-3 py-2 flex items-center gap-2`}
+            } text-gold-500 pl-3 py-2 flex items-center gap-2`}
           >
             <Image src={SupportIconSvg} alt="support icon" />
             <p>Support & Help desk</p>

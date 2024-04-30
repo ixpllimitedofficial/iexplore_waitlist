@@ -43,7 +43,7 @@ const OrdersDetails = () => {
         <div className="col-span-full lg:col-span-4 grid grid-cols-1 gap-10">
           <div className="bg-[#333333] p-7 rounded-2xl">
             <p className="font-bold text-lg">Total Revenue</p>
-            <p className="font-bold text-2xl text-[#F7D098] py-1">N2,000,000</p>
+            <p className="font-bold text-2xl text-gold-500 py-1">N2,000,000</p>
             <p className="">Since 4 months</p>
           </div>
 

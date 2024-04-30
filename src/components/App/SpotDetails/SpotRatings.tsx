@@ -7,10 +7,10 @@ const SpotRatings = () => {
       {/* text */}
       <div className="flex flex-col items-center w-[80vw] md:w-auto gap-2">
         <div className="flex items-center gap-2">
-          <h1 className="text-5xl text-[#E1BD8A]">4.8</h1>
+          <h1 className="text-5xl text-gold-500">4.8</h1>
           <Image src={StarIcon} alt="StarIcon" height={30} />
         </div>
-        <p className="text-lg text-[#E1BD8A]">(2,109 Raters)</p>
+        <p className="text-lg text-gold-500">(2,109 Raters)</p>
       </div>
 
       {/* text */}

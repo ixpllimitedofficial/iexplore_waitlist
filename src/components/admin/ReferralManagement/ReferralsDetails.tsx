@@ -24,10 +24,10 @@ const ReferralsDetails = () => {
 
           <div>
             <div className="flex flex-col lg:flex-row gap-3 items-center">
-              <p className="font-bold text-3xl text-[#F7D098] mb-1">
+              <p className="font-bold text-3xl text-gold-500 mb-1">
                 Christine Brooks
               </p>
-              <p className="text-[#F7D098] bg-[#5D5D5D] px-3 py-1 rounded-lg">
+              <p className="text-gold-500 bg-[#5D5D5D] px-3 py-1 rounded-lg">
                 Top Affiliate
               </p>
             </div>
@@ -38,7 +38,7 @@ const ReferralsDetails = () => {
                   return (
                     <div key={item} className="text-center lg:text-start">
                       <p className="font-bold text-3xl">80</p>
-                      <p className="text-[#F7D098]">Referrals</p>
+                      <p className="text-gold-500">Referrals</p>
                     </div>
                   );
                 })}
@@ -69,11 +69,11 @@ const ReferralsDetails = () => {
 
           <div className="flex flex-col gap-2">
             <div className="flex gap-2">
-              <p className="text-[#F7D098] font-medium">Phone No:</p>
+              <p className="text-gold-500 font-medium">Phone No:</p>
               <p className="font-semibold">09123456789</p>
             </div>
             <div className="flex">
-              <p className="text-[#F7D098] font-medium">
+              <p className="text-gold-500 font-medium">
                 Email address:{" "}
                 <span className="font-semibold text-white">
                   brookschristine.mail.com
@@ -81,11 +81,11 @@ const ReferralsDetails = () => {
               </p>
             </div>
             <div className="flex gap-2">
-              <p className="text-[#F7D098] font-medium">Referral code</p>
+              <p className="text-gold-500 font-medium">Referral code</p>
               <p className="font-semibold">2christB</p>
             </div>
             <div className="flex gap-2">
-              <p className="text-[#F7D098] font-medium">Country:</p>
+              <p className="text-gold-500 font-medium">Country:</p>
               <p className="font-semibold">Nigeria</p>
             </div>
           </div>
@@ -99,15 +99,15 @@ const ReferralsDetails = () => {
 
           <div className="flex flex-col gap-2">
             <div className="flex gap-2">
-              <p className="text-[#F7D098] font-medium">Clubs: </p>
+              <p className="text-gold-500 font-medium">Clubs: </p>
               <p className="font-semibold">Club777, Colony, O2 Arena</p>
             </div>
             <div className="flex gap-2">
-              <p className="text-[#F7D098] font-medium">Bars:</p>
+              <p className="text-gold-500 font-medium">Bars:</p>
               <p className="font-semibold">Tit4Tat, Shandy, Xclusive</p>
             </div>
             <div className="flex gap-2">
-              <p className="text-[#F7D098] font-medium">Lounges:</p>
+              <p className="text-gold-500 font-medium">Lounges:</p>
               <p className="font-semibold">Refill</p>
             </div>
           </div>
@@ -130,7 +130,7 @@ const ReferralsDetails = () => {
                 >
                   <div className="flex items-center gap-2">
                     <Image src={TikTokIconSvg} alt="TikTokIconSvg" />
-                    <p className="text-[#F7D098] font-semibold text-lg">
+                    <p className="text-gold-500 font-semibold text-lg">
                       TikTok
                     </p>
                   </div>
@@ -152,11 +152,11 @@ const ReferralsDetails = () => {
           <p className="font-bold text-2xl mb-3">Payment Methods</p>
 
           <div className="flex flex-col mb-2">
-            <p className="text-[#F7D098] font-medium">Crypto:</p>
+            <p className="text-gold-500 font-medium">Crypto:</p>
             <p className="font-semibold">2kdni2920wjq1wwi20022 (Bitcoin)</p>
           </div>
           <div className="flex flex-col">
-            <p className="text-[#F7D098] font-medium">Bank:</p>
+            <p className="text-gold-500 font-medium">Bank:</p>
             <p className="font-semibold">Christy Brooks, 123456789 (GTBank)</p>
           </div>
         </div>

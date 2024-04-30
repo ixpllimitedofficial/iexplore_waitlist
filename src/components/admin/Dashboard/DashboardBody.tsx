@@ -81,7 +81,7 @@ const DashboardBody = () => {
             className="rounded-md border"
           />
 
-          <Button className="bg-[#F7D098] text-black">Select</Button>
+          <Button className="bg-gold-500 text-black">Select</Button>
         </div>
       </div>
 

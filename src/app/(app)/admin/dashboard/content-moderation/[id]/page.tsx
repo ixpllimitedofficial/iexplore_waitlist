@@ -16,15 +16,19 @@ const page = () => {
           <Image src={DrinkImage} alt="drink image" />
 
           <div className="flex flex-col gap-2">
-            <p className="text-[#F7D098] text-2xl font-bold">
-              Imperial Blue
-            </p>
+            <p className="text-gold-500 text-2xl font-bold">Imperial Blue</p>
 
             <p className="text-3xl font-bold">NGN 232,000.00</p>
 
             <div>
-              <p className="text-sm">Category: <span className="text-[#F7D098] font-bold">Spirit</span> </p>
-              <p className="text-sm mt-2">Drink volume: <span className="text-[#F7D098] font-bold">1.5L</span></p>
+              <p className="text-sm">
+                Category:{" "}
+                <span className="text-gold-500 font-bold">Spirit</span>{" "}
+              </p>
+              <p className="text-sm mt-2">
+                Drink volume:{" "}
+                <span className="text-gold-500 font-bold">1.5L</span>
+              </p>
             </div>
           </div>
 
@@ -56,7 +60,7 @@ const page = () => {
         {/* divider */}
         <div className="border-t-2 border-[#979797] w-full my-5"></div>
 
-        <p className="text-[#F7D098] text-lg font-semibold mb-5">
+        <p className="text-gold-500 text-lg font-semibold mb-5">
           Spots with drink available
         </p>
 
@@ -76,8 +80,7 @@ const page = () => {
 
                 <div className="p-2">
                   <p className="text-[#999999] text-sm font-semibold">
-                    Claim at{" "}
-                    <span className="text-[#F7D098]">Club Quilox </span>
+                    Claim at <span className="text-gold-500">Club Quilox </span>
                   </p>
 
                   <p className="text-lg mt-1 font-semibold">
@@ -85,7 +88,10 @@ const page = () => {
                   </p>
                 </div>
 
-                <AppButton className="font-medium mx-4 text-sm" btnText="View spot" />
+                <AppButton
+                  className="font-medium mx-4 text-sm"
+                  btnText="View spot"
+                />
               </div>
             );
           })}

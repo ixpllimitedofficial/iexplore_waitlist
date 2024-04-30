@@ -3,7 +3,7 @@
 <rect width="14.9171" height="15.8003" transform="matrix(-1 0 0 1 14.917 7.34375)" fill="white"/>
 </mask>
 <g mask="url(#mask0_985_3248)">
-<ellipse cx="14.9171" cy="13.6936" rx="14.9171" ry="13.6936" transform="matrix(-1 0 0 1 14.917 9.45117)" fill="#E1BD8A"/>
+<ellipse cx="14.9171" cy="13.6936" rx="14.9171" ry="13.6936" transform="matrix(-1 0 0 1 14.917 9.45117)" fill="#FFD700"/>
 </g>
 <mask id="mask1_985_3248" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="14" y="0" width="23" height="24">
 <rect x="14.917" y="0.572266" width="21.1979" height="22.5719" fill="white"/>

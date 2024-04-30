@@ -18,7 +18,7 @@ const HeroSection = () => {
         <div className="relative md:bottom-[40px] lg:bottom-[-80px] z-50 text-center md:text-start">
           <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl">
             FIND SOMETHING <br />
-            <span className="text-[#E1BD8A] italic font-bold">GREAT</span> TO DO
+            <span className="text-gold-500 italic font-bold">GREAT</span> TO DO
           </h1>
           <p className="md:text-lg lg:text-xl lg:w-[70%] my-2 lg:my-5">
             Download and enjoy our app with your friends with{" "}

@@ -31,16 +31,16 @@ const AllReferralsTable = () => {
   return (
     <section className="mt-5 bg-[#333333] p-5 rounded-2xl">
       <div className="flex flex-col gap-5 lg:gap-0 lg:flex-row justify-between">
-        <p className="font-bold text-xl text-[#F7D098]">All affiliates</p>
+        <p className="font-bold text-xl text-gold-500">All affiliates</p>
 
         <div className="flex items-center gap-5">
           <AppSearchInput
-            className="bg-[#F7D09866] text-[#F7D098] border-none focus-visible:ring-0"
-            inputClass="placeholder:text-[#F7D098]"
+            className="bg-gold-800 text-gold-500 border-none focus-visible:ring-0"
+            inputClass="placeholder:text-gold-500"
           />
 
           <Select>
-            <SelectTrigger className="w-auto bg-[#F7D09866] text-[#F7D098] border-none focus-visible:ring-0">
+            <SelectTrigger className="w-auto bg-gold-800 text-gold-500 border-none focus-visible:ring-0">
               <SelectValue placeholder="Sort by: Newest" />
             </SelectTrigger>
             <SelectContent className="">

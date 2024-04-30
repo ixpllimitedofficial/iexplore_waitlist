@@ -11,7 +11,7 @@ const MySpots = () => {
       <div className=" flex justify-between">
         <h1 className="text-[22px] md:text-3xl font-bold">My Spots</h1>
 
-        <button className="bg-[#F7D098] text-[#212121] px-3 py-2 rounded-xl flex justify-around items-center gap-1 font-medium">
+        <button className="bg-gold-500 text-[#212121] px-3 py-2 rounded-xl flex justify-around items-center gap-1 font-medium">
           <p className="text-sm md:text-lg">Add Spot</p>
           <Image src={PlusIconSvg} alt="PlusIconSvg" className="h-[15px]" />
         </button>
@@ -25,7 +25,7 @@ const MySpots = () => {
       </div>
 
       <div className="flex justify-center mt-5">
-        <button className="bg-[#F7D098] text-[#212121] px-3 py-2 rounded-xl flex justify-around items-center gap-1 font-medium self-center">
+        <button className="bg-gold-500 text-[#212121] px-3 py-2 rounded-xl flex justify-around items-center gap-1 font-medium self-center">
           <p className="text-lg">View all spots</p>
           <Image
             src={ArrowRightIconSvg}

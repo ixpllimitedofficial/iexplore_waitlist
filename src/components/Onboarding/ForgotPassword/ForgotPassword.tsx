@@ -9,7 +9,7 @@ const ForgotPassword = () => {
         Forgot Password?
       </h1>
 
-      <p className="text-center text-xl md:text-2xl text-[#F7D098] md:w-[70%] leading-normal self-center">
+      <p className="text-center text-xl md:text-2xl text-gold-500 md:w-[70%] leading-normal self-center">
         Please enter email associated with your password
       </p>
 
@@ -23,7 +23,7 @@ const ForgotPassword = () => {
         <p className="text-[##FBE9D0] text-center">Remember password?</p>
         <Link
           href="/user/onboarding?flow=login"
-          className="text-[#F7D098] underline font-semibold"
+          className="text-gold-500 underline font-semibold"
         >
           {" "}
           Login

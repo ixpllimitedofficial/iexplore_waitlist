@@ -31,9 +31,9 @@ const DashboardDesktopBar = () => {
           href="/admin/dashboard"
           className={`${
             pathname === "/admin/dashboard"
-              ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
+              ? "font-bold bg-gold-800 px-3 rounded-xl"
               : "font-normal"
-          } text-[#F7D098] pl-3 py-2 flex items-center gap-2 text-sm`}
+          } text-gold-500 pl-3 py-2 flex items-center gap-2 text-sm`}
         >
           <Image src={HomeIconSvg} alt="Home icon" />
           <p>Dashboard</p>
@@ -47,9 +47,9 @@ const DashboardDesktopBar = () => {
           href="/admin/dashboard/user-management"
           className={`${
             pathname.includes("user-management")
-              ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
+              ? "font-bold bg-gold-800 px-3 rounded-xl"
               : "font-normal"
-          } text-[#F7D098] pl-3 py-2 flex items-center gap-2 text-sm`}
+          } text-gold-500 pl-3 py-2 flex items-center gap-2 text-sm`}
         >
           <Image src={UsersIconSvg} alt="Users icon" />
           <p>User Management</p>
@@ -60,9 +60,9 @@ const DashboardDesktopBar = () => {
           href="/admin/dashboard/vendor-management"
           className={`${
             pathname.includes("vendor-management")
-              ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
+              ? "font-bold bg-gold-800 px-3 rounded-xl"
               : "font-normal"
-          } text-[#F7D098] pl-3 py-2 flex items-center gap-2 text-sm`}
+          } text-gold-500 pl-3 py-2 flex items-center gap-2 text-sm`}
         >
           <Image src={VendorsIconSvg} alt="VendorsIcon" />
           <p>Vendor Management</p>
@@ -73,9 +73,9 @@ const DashboardDesktopBar = () => {
           href="/admin/dashboard/content-moderation"
           className={`${
             pathname.includes("content-moderation")
-              ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
+              ? "font-bold bg-gold-800 px-3 rounded-xl"
               : "font-normal"
-          } text-[#F7D098] pl-3 py-2 flex items-center gap-2 text-sm`}
+          } text-gold-500 pl-3 py-2 flex items-center gap-2 text-sm`}
         >
           <Image src={ContentIconSvg} alt="ContentIconSvg" />
           <p>Content Moderation</p>
@@ -86,9 +86,9 @@ const DashboardDesktopBar = () => {
           href="/admin/dashboard/referral"
           className={`${
             pathname.includes("referral")
-              ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
+              ? "font-bold bg-gold-800 px-3 rounded-xl"
               : "font-normal"
-          } text-[#F7D098] pl-3 py-2 flex items-center gap-2 text-sm`}
+          } text-gold-500 pl-3 py-2 flex items-center gap-2 text-sm`}
         >
           <Image src={ReferralIconSvg} alt="ReferralIconSvg" />
           <p>Referral Management</p>
@@ -102,9 +102,9 @@ const DashboardDesktopBar = () => {
           href="/admin/dashboard/notifications"
           className={`${
             pathname.includes("notifications")
-              ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
+              ? "font-bold bg-gold-800 px-3 rounded-xl"
               : "font-normal"
-          } text-[#F7D098] pl-3 py-2 flex items-center gap-2 text-sm`}
+          } text-gold-500 pl-3 py-2 flex items-center gap-2 text-sm`}
         >
           <Image src={NotificationsIconSvg} alt="Notifcations icon" />
           <p>Notifications</p>
@@ -115,9 +115,9 @@ const DashboardDesktopBar = () => {
           href="/admin/dashboard/orders"
           className={`${
             pathname.includes("orders")
-              ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
+              ? "font-bold bg-gold-800 px-3 rounded-xl"
               : "font-normal"
-          } text-[#F7D098] pl-3 py-2 flex items-center gap-2 text-sm`}
+          } text-gold-500 pl-3 py-2 flex items-center gap-2 text-sm`}
         >
           <Image src={AnalyticsIconSvg} alt="Analytics icon" />
           <p>Orders</p>
@@ -131,9 +131,9 @@ const DashboardDesktopBar = () => {
           href="/admin/dashboard/settings"
           className={`${
             pathname.includes("settings")
-              ? "font-bold bg-[#F7D0984D]  px-3 rounded-xl"
+              ? "font-bold bg-gold-800  px-3 rounded-xl"
               : "font-normal"
-          } text-[#F7D098] pl-3 py-2 flex items-center gap-2 text-sm`}
+          } text-gold-500 pl-3 py-2 flex items-center gap-2 text-sm`}
         >
           <Image src={SettingsIconSvg} alt="settings icon" />
           <p>Settings</p>
@@ -144,9 +144,9 @@ const DashboardDesktopBar = () => {
           href="/admin/dashboard/support"
           className={`${
             pathname.includes("support")
-              ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
+              ? "font-bold bg-gold-800 px-3 rounded-xl"
               : "font-normal"
-          } text-[#F7D098] pl-3 py-2 flex items-center gap-2 text-sm`}
+          } text-gold-500 pl-3 py-2 flex items-center gap-2 text-sm`}
         >
           <Image src={SupportIconSvg} alt="support icon" />
           <p>Support & Help desk</p>

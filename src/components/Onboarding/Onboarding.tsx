@@ -24,7 +24,7 @@ const Onboarding = () => {
 
   // links style
   const activeLinkStyle: string =
-    "bg-[#212121] text-[#F7D098] p-3 w-2/5 rounded-xl text-center font-bold";
+    "bg-[#212121] text-gold-500 p-3 w-2/5 rounded-xl text-center font-bold";
 
   const unactiveLinkStyle: string =
     "w-2/5 text-[#212121] text-center font-bold";
@@ -36,7 +36,7 @@ const Onboarding = () => {
       {flowParams !== "login" && flowParams !== "signup" ? (
         ""
       ) : (
-        <div className="bg-[#E1BD8A] p-2 flex items-center justify-around rounded-xl">
+        <div className="bg-gold-500 p-2 flex items-center justify-around rounded-xl">
           <Link
             href="/user/onboarding?flow=login"
             className={

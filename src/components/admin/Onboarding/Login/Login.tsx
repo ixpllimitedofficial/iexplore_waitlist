@@ -13,7 +13,7 @@ const Login = () => {
         </p>
         <Link
           href="/user/onboarding?flow=signup"
-          className="text-[#F7D098] underline font-semibold"
+          className="text-gold-500 underline font-semibold"
         >
           {" "}
           Sign up

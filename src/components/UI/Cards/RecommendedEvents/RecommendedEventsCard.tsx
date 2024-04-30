@@ -12,7 +12,7 @@ const RecommendedEventsCard = () => {
   return (
     <div className="bg-[#333333] mt-7 py-8 px-5 md:p-10 w-[90vw] mx-auto rounded-3xl">
       <div className="flex items-center justify-between ">
-        <p className="font-medium text-[22px] md:text-2xl text-[#E1BD8A]">
+        <p className="font-medium text-[22px] md:text-2xl text-gold-500">
           Amapiano Beach Party
         </p>
 
@@ -34,7 +34,7 @@ const RecommendedEventsCard = () => {
       {/* location mini details */}
       <div className="mt-7 flex flex-wrap gap-4">
         {/* date */}
-        <div className="flex gap-2 border-2 rounded-full border-[#F9D9AD] px-5 py-3">
+        <div className="flex gap-2 border-2 rounded-full border-gold-500 px-5 py-3">
           <Image src={DateIcon} alt="Date icon" height={25} />
           <p className="text-lg md:text-xl text-[#F9D9AD] ">
             Friday 15th October
@@ -42,19 +42,19 @@ const RecommendedEventsCard = () => {
         </div>
 
         {/* time */}
-        <div className="flex gap-2 border-2 rounded-full border-[#F9D9AD] px-5 py-3">
+        <div className="flex gap-2 border-2 rounded-full border-gold-500 px-5 py-3">
           <Image src={TimeIcon} alt="TimeIcon" height={25} />
           <p className="text-lg md:text-xl text-[#F9D9AD] ">7:00pm</p>
         </div>
 
         {/* ticket policy */}
-        <div className="flex gap-2 border-2 w-auto rounded-full border-[#F9D9AD] px-5 py-3">
+        <div className="flex gap-2 border-2 w-auto rounded-full border-gold-500 px-5 py-3">
           <Image src={TicketIcon} alt="TicketIcon" height={25} />
           <p className="text-lg md:text-xl text-[#F9D9AD] ">Free</p>
         </div>
 
         {/* location */}
-        <div className="flex gap-2 border-2 w-auto rounded-full border-[#F9D9AD] px-5 py-3">
+        <div className="flex gap-2 border-2 w-auto rounded-full border-gold-500 px-5 py-3">
           <Image src={LocationIcon} alt="LocationIcon" height={25} />
           <p className="text-lg md:text-xl text-[#F9D9AD] ">
             Wave beach, Elegushi, Lagos

@@ -96,10 +96,7 @@ const SpotCategory = () => {
           <p className="text-[#8E8E8E] text-lg mb-3">Telephone</p>
 
           <div className="flex gap-2">
-            <FilterButton
-              btnText="+234"
-              className="border-2 border-[#E1BD8A]"
-            />
+            <FilterButton btnText="+234" className="border-2 border-gold-500" />
             <AppInput placeholder="09090909090" type="number" />
           </div>
         </div>

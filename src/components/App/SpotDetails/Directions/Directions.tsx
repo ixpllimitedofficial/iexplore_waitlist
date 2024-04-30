@@ -10,7 +10,7 @@ const Directions = () => {
       <section className="px-5">
         {/* title and icons */}
         <div className="flex items-center justify-between mb-5">
-          <h1 className="text-[#E1BD8A] text-3xl font-bold">Club Quilox</h1>
+          <h1 className="text-gold-500 text-3xl font-bold">Club Quilox</h1>
 
           <div className="flex gap-2">
             <Image src={ShareIcon} alt="ShareIcon" height={45} />

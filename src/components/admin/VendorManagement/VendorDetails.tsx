@@ -35,7 +35,7 @@ const VendorDetails = () => {
             />
 
             <div className="">
-              <p className="font-bold text-2xl text-[#F7D098]">
+              <p className="font-bold text-2xl text-gold-500">
                 Christine Brooks
               </p>
               <p className="font-medium">04 Sep 1973</p>
@@ -52,7 +52,7 @@ const VendorDetails = () => {
         {/* user details */}
 
         <div className="flex flex-col justify-center gap-3 col-span-1 bg-[#333333] p-4 rounded-2xl">
-          <p className="font-bold text-xl text-[#F7D098]">User details</p>
+          <p className="font-bold text-xl text-gold-500">User details</p>
 
           <div className="flex justify-between">
             <div>
@@ -75,7 +75,7 @@ const VendorDetails = () => {
         {/* business details */}
 
         <div className="flex flex-col justify-center gap-3 col-span-2 bg-[#333333] p-4 rounded-2xl">
-          <p className="font-bold text-xl text-[#F7D098]">Business details</p>
+          <p className="font-bold text-xl text-gold-500">Business details</p>
 
           <div className="flex justify-between">
             <div>
@@ -107,11 +107,11 @@ const VendorDetails = () => {
 
       <div className="mt-5 bg-[#333333] p-5 rounded-2xl">
         <div className="flex items-center justify-between">
-          <p className="font-bold text-xl text-[#F7D098]">Analytics</p>
+          <p className="font-bold text-xl text-gold-500">Analytics</p>
 
           <div className="flex items-center gap-2">
             <Select>
-              <SelectTrigger className="w-auto bg-[#F7D098] text-[#212121] border-none focus-visible:ring-0">
+              <SelectTrigger className="w-auto bg-gold-500 text-[#212121] border-none focus-visible:ring-0">
                 <SelectValue placeholder="This week" />
               </SelectTrigger>
               <SelectContent className="">

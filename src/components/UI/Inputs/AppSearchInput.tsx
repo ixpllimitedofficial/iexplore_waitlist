@@ -18,7 +18,7 @@ const AppSearchInput = ({ className, inputClass }: InputSearchType) => {
   return (
     <>
       <div
-        className={`flex items-center bg-[#424242] rounded-lg text-[#E1BD8A] border-2 border-[#E1BD8A] focus:outline-none  focus:ring-1 focus:ring-[#E1BD8A] ${className}`}
+        className={`flex items-center bg-[#424242] rounded-lg text-gold-500 border-2 border-gold-500 focus:outline-none  focus:ring-1 focus:ring-gold-500 ${className}`}
       >
         <div className="relative w-full">
           <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">

@@ -12,9 +12,7 @@ const page = () => {
   return (
     <section className="mt-5 bg-[#333333] p-5 rounded-2xl">
       <div className="">
-        <p className="font-bold text-xl text-[#F7D098] mb-2">
-          Account settings
-        </p>
+        <p className="font-bold text-xl text-gold-500 mb-2">Account settings</p>
 
         {/* divider */}
         <Divider />
@@ -22,7 +20,7 @@ const page = () => {
         <div className="mt-5 grid grid-cols-2 gap-5 md:gap-10">
           {/* edit profile */}
           <div className="col-span-full md:col-span-1">
-            <p className="text-[#F7D098] font-bold">Edit profile</p>
+            <p className="text-gold-500 font-bold">Edit profile</p>
 
             <div className="mt-2 flex flex-col gap-3">
               <AppInput
@@ -56,7 +54,7 @@ const page = () => {
 
           {/* change password */}
           <div className="col-span-full md:col-span-1">
-            <p className="text-[#F7D098] font-bold">Change Password</p>
+            <p className="text-gold-500 font-bold">Change Password</p>
 
             <div className="mt-2 flex flex-col gap-3">
               <AppInput
@@ -87,9 +85,7 @@ const page = () => {
         </div>
 
         <div className="mt-10 mb-5 flex flex-col gap-3 lg:w-[50%] mx-auto">
-          <p className="text-[#F7D098] font-bold">
-            Appearance settings
-          </p>
+          <p className="text-gold-500 font-bold">Appearance settings</p>
 
           <div className="flex justify-between items-center w-full border-[1px] border-[#424242] p-3 rounded-xl">
             <p className="text-sm">Push Notification</p>
@@ -104,7 +100,11 @@ const page = () => {
       </div>
 
       <Link href="/admin" className="flex justify-center">
-        <AppButton leftIcon={SignOutIconSvg} btnText="Sign Out" className="text-sm" />
+        <AppButton
+          leftIcon={SignOutIconSvg}
+          btnText="Sign Out"
+          className="text-sm"
+        />
       </Link>
     </section>
   );

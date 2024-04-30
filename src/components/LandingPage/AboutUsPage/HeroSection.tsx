@@ -11,7 +11,7 @@ const HeroSection = () => {
 
       <div className="h-full w-full flex items-center justify-center">
         <h1 className="font-bold text-3xl md:text-5xl">
-          About<span className="text-[#E1BD8A] font-bold">Us</span>
+          About<span className="text-gold-500 font-bold">Us</span>
         </h1>
       </div>
     </section>

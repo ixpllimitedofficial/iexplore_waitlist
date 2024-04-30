@@ -10,7 +10,7 @@ const Analytics = () => {
         <select
           name="This week"
           id=""
-          className="bg-[#F7D098] text-[#212121] text-xl font-semibold px-2"
+          className="bg-gold-500 text-[#212121] text-xl font-semibold px-2"
         >
           <option value="week">This week</option>
           <option value="month">This month</option>

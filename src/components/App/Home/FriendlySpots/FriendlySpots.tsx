@@ -11,10 +11,9 @@ const FriendlySpots = () => {
     >
       <div className="absolute left-5 md:10 lg:left-20 lg:w-[75%] flex flex-col gap-3">
         <h1 className="text-2xl md:text-5xl font-semibold lg:w-[70%]">
-          Top 15 <span className="text-[#E1BD8A] italic font-bold">budget</span>{" "}
-           friendly{" "}
-          <span className="text-[#E1BD8A] italic font-bold">spots</span> to
-          spend your evening in Lagos island
+          Top 15 <span className="text-gold-500 italic font-bold">budget</span>{" "}
+          friendly <span className="text-gold-500 italic font-bold">spots</span>{" "}
+          to spend your evening in Lagos island
         </h1>
         <p className="md:text-lg lg:text-xl w-[90%] lg:w-[70%]">
           Takwa bay, Freedom park, let’s take a look at some cool places to

@@ -1,9 +1,8 @@
-
 const AllFeatures = () => {
   return (
     <>
       {/* divider */}
-      <div className="my-5 border-t-2 border-[#F9D9AD] flex-grow"></div>
+      <div className="my-5 border-t-2 border-gold-500 flex-grow"></div>
 
       <h1 className="text-2xl font-bold mb-2">Features</h1>
 

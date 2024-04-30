@@ -34,16 +34,16 @@ const AllUsersTable = () => {
   return (
     <section className="mt-5 bg-[#333333] p-5 rounded-2xl">
       <div className="flex flex-col gap-5 lg:gap-0 lg:flex-row justify-between">
-        <p className="font-bold text-xl text-[#F7D098]">All Explorers</p>
+        <p className="font-bold text-xl text-gold-500">All Explorers</p>
 
         <div className="flex items-center gap-3">
           <AppSearchInput
-            className="bg-[#F7D09866] text-[#F7D098] border-none focus-visible:ring-0"
-            inputClass="placeholder:text-[#F7D098] placeholder:text-sm"
+            className="bg-gold-800 text-gold-500 border-none focus-visible:ring-0"
+            inputClass="placeholder:text-gold-500 placeholder:text-sm"
           />
 
           <Select>
-            <SelectTrigger className="w-auto bg-[#F7D09866] text-[#F7D098] border-none focus-visible:ring-0">
+            <SelectTrigger className="w-auto bg-gold-800 text-gold-500 border-none focus-visible:ring-0">
               <SelectValue placeholder="Sort by: Newest" />
             </SelectTrigger>
             <SelectContent className="">
@@ -60,7 +60,8 @@ const AllUsersTable = () => {
       {/* TABLE */}
       <Table className="mt-4 w-[1000px] lg:w-full">
         <TableCaption className="text-[#B5B7C0]">
-          Showing data 1 to 8 of 256K entries <span className="text-[#F7D098]">(View all)</span>
+          Showing data 1 to 8 of 256K entries{" "}
+          <span className="text-gold-500">(View all)</span>
         </TableCaption>
         <TableHeader>
           <TableRow className="bg-[#424242] border-none">

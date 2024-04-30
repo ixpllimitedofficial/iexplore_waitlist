@@ -8,7 +8,7 @@ import LinkedInIcon from "@/assets/svg/LinkedInIcon.svg";
 
 const Footer = () => {
   return (
-    <footer className=" bg-[#E1BD8A] text-black p-8 lg:py-12 lg:px-16">
+    <footer className=" bg-gold-600 text-black p-8 lg:py-12 lg:px-16">
       <div className="flex flex-col lg:flex-row gap-12 justify-between">
         <div className="flex flex-col gap-6 lg:w-[35%]">
           {/* logo */}

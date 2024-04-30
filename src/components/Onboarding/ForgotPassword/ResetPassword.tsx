@@ -38,16 +38,14 @@ const ResetPassword = () => {
             className="h-[180px] w-[180px]"
           />
 
-          <h1 className="text-[#F7D098] font-bold text-3xl">
-            Password changed
-          </h1>
+          <h1 className="text-gold-500 font-bold text-3xl">Password changed</h1>
           <p className="text-[#FBE9D0] text-xl md:text-2xl w-3/4 lg:w-1/4 text-center">
             Your password has been changed successfully!
           </p>
         </Modal>
       )}
 
-      <h1 className="text-[#E1BD8A] text-3xl font-bold text-center leading-snug self-center">
+      <h1 className="text-gold-500 text-3xl font-bold text-center leading-snug self-center">
         Reset password?
       </h1>
 

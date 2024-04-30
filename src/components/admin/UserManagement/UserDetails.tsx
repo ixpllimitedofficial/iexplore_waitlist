@@ -25,7 +25,7 @@ const UserDetails = () => {
             />
 
             <div className="">
-              <p className="font-bold text-2xl text-[#F7D098]">
+              <p className="font-bold text-2xl text-gold-500">
                 Christine Brooks
               </p>
               <p className="font-medium">04 Sep 1973</p>
@@ -40,7 +40,7 @@ const UserDetails = () => {
         </div>
 
         <div className="flex flex-col justify-center gap-3 col-span-1 bg-[#333333] p-4 rounded-2xl">
-          <p className="font-bold text-xl text-[#F7D098]">User details</p>
+          <p className="font-bold text-xl text-gold-500">User details</p>
 
           <div className="flex justify-between">
             <div>
@@ -71,22 +71,22 @@ const UserDetails = () => {
 
       {/* preference */}
       <div className="mt-5 bg-[#333333] p-5 rounded-2xl">
-        <p className="font-bold text-xl text-[#F7D098] mb-2">Preference</p>
+        <p className="font-bold text-xl text-gold-500 mb-2">Preference</p>
 
         <div className="flex flex-wrap gap-3 mt-3">
-          <p className="border-2 border-[#F7D098] px-5 py-1 text-sm font-semibold rounded-xl">
+          <p className="border-2 border-gold-500 px-5 py-1 text-sm font-semibold rounded-xl">
             Bar
           </p>
-          <p className="border-2 border-[#F7D098] px-5 py-1 text-sm font-semibold rounded-xl">
+          <p className="border-2 border-gold-500 px-5 py-1 text-sm font-semibold rounded-xl">
             Club
           </p>
-          <p className="border-2 border-[#F7D098] px-5 py-1 text-sm font-semibold rounded-xl">
+          <p className="border-2 border-gold-500 px-5 py-1 text-sm font-semibold rounded-xl">
             Beach
           </p>
-          <p className="border-2 border-[#F7D098] px-5 py-1 text-sm font-semibold rounded-xl">
+          <p className="border-2 border-gold-500 px-5 py-1 text-sm font-semibold rounded-xl">
             Lounge
           </p>
-          <p className="border-2 border-[#F7D098] px-5 py-1 text-sm font-semibold rounded-xl">
+          <p className="border-2 border-gold-500 px-5 py-1 text-sm font-semibold rounded-xl">
             Hotel
           </p>
         </div>

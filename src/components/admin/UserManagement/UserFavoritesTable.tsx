@@ -22,13 +22,13 @@ const UserFavoritesTable = () => {
 
   return (
     <section className="mt-5 bg-[#333333] p-5 rounded-2xl">
-      <p className="font-bold text-xl text-[#F7D098]">Favorites</p>
-    
+      <p className="font-bold text-xl text-gold-500">Favorites</p>
+
       {/* TABLE */}
       <Table className="mt-4 w-[1000px] lg:w-full">
         <TableCaption className="text-[#B5B7C0]">
           Showing data 1 to 2 of 2 entries{" "}
-          <span className="text-[#F7D098]">(View all)</span>
+          <span className="text-gold-500">(View all)</span>
         </TableCaption>
         <TableHeader>
           <TableRow className="bg-[#424242] border-none">
@@ -51,7 +51,9 @@ const UserFavoritesTable = () => {
               <TableRow>
                 <TableCell className="font-medium py-5">{table}</TableCell>
                 <TableCell>Club Quilox</TableCell>
-                <TableCell>873 Ozumba Mbadiwe Ave, Victoria Island 106104, Lagos</TableCell>
+                <TableCell>
+                  873 Ozumba Mbadiwe Ave, Victoria Island 106104, Lagos
+                </TableCell>
                 <TableCell>4.0(90)</TableCell>
                 <TableCell>6:00PM - 4:00AM</TableCell>
                 <TableCell>

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const DesktopNavApp = () => {
   return (
-    <header className="fixed top-0 w-screen z-50 hidden lg:flex items-center justify-between px-14 py-4 bg-brandGold ">
+    <header className="fixed top-0 w-screen z-50 hidden lg:flex items-center justify-between px-14 py-4 bg-gold-600 ">
       <Link href="/admin/">
         <Image
           src={ExploreLogo}

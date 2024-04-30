@@ -8,7 +8,7 @@
     --foreground: 0 0% 100%;
 
     --brand-dark: 0 0% 13%;
-    --brand-gold: 51 100% 42%;
+    --brand-gold: 51 100% 50%;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -83,7 +83,7 @@
   }
 
   .spotCategorySelection {
-    @apply flex gap-2 border-2 rounded-3xl border-[#F9D9AD] px-5 py-3 text-lg md:text-xl text-[#F9D9AD];
+    @apply flex gap-2 border-2 rounded-3xl border-gold-500 px-5 py-3 text-lg md:text-xl text-[#F9D9AD];
   }
 }
 

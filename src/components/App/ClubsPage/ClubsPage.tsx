@@ -4,7 +4,7 @@ import AppSearchInput from "@/components/UI/Inputs/AppSearchInput";
 const ClubsPage = () => {
   return (
     <section>
-      <h1 className="text-[#E1BD8A] text-3xl font-bold w-[90vw] mx-auto">
+      <h1 className="text-gold-500 text-3xl font-bold w-[90vw] mx-auto">
         Clubs
       </h1>
 

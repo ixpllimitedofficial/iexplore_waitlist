@@ -62,7 +62,7 @@ const LoginForm = () => {
 
       <Link
         href="/user/onboarding?flow=forgotPassword"
-        className=" text-[#E1BD8A] text-end font-medium"
+        className=" text-gold-500 text-end font-medium"
       >
         Forgot Password
       </Link>

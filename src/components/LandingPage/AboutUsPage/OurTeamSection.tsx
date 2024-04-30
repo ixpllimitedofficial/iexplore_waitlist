@@ -3,15 +3,17 @@ import React from "react";
 const OurTeamSection = () => {
   return (
     <section className="flex flex-col items-center gap-5 bg-[#3C3C3C] py-12">
-      <h3 className="font-bold text-xl bg-[#E1BD8A] text-black py-2 px-4 rounded-2xl">
+      <h3 className="font-bold text-xl bg-gold-500 text-black py-2 px-4 rounded-2xl">
         Our Team:
       </h3>
 
       <div className="text-center">
         <h3 className="font-bold text-2xl">
-          Meet the <span className="text-[#E1BD8A]">iExplore</span> team
+          Meet the <span className="text-gold-500">iExplore</span> team
         </h3>
-        <p className="text-lg mt-1 px-5 md:px-0">A Group Of Seasoned Team Of Workers</p>
+        <p className="text-lg mt-1 px-5 md:px-0">
+          A Group Of Seasoned Team Of Workers
+        </p>
       </div>
 
       {/* team photos */}
@@ -20,7 +22,7 @@ const OurTeamSection = () => {
           return (
             <div key={card} className="rounded-3xl overflow-hidden">
               <div className="h-[300px] w-[280px] bg-white"></div>
-              <div className="h-[80px] p-10 bg-[#E1BD8A]"></div>
+              <div className="h-[80px] p-10 bg-gold-500"></div>
             </div>
           );
         })}

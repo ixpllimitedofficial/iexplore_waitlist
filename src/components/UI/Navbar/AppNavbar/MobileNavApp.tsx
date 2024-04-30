@@ -29,7 +29,7 @@ const MobileNavApp = () => {
   }, [showNavState]);
 
   return (
-    <header className="fixed top-0 w-screen z-50 lg:hidden flex items-center justify-between px-10 py-5 bg-[#E1BD8A]">
+    <header className="fixed top-0 w-screen z-50 lg:hidden flex items-center justify-between px-10 py-5 bg-gold-500">
       {/* logo */}
       <Link href="/user/">
         <Image src={iExploreTextLogo} alt="iExploreTextLogo" />
@@ -40,7 +40,7 @@ const MobileNavApp = () => {
 
       {/* navbar */}
       <nav
-        className={`fixed top-0 h-screen w-screen z-[100] bg-[#E1BD8A] p-28 flex flex-col items-center gap-8 duration-700 ${
+        className={`fixed top-0 h-screen w-screen z-[100] bg-gold-500 p-28 flex flex-col items-center gap-8 duration-700 ${
           showNavState ? "right-0" : "right-[-100vw]"
         }`}
       >
@@ -103,7 +103,7 @@ const MobileNavApp = () => {
           <Link
             href="/user/onboarding?flow=signup"
             onClick={showNav}
-            className="bg-[#212121] text-[#E1BD8A] text-lg px-4 py-2 rounded-xl font-extrabold"
+            className="bg-[#212121] text-gold-500 text-lg px-4 py-2 rounded-xl font-extrabold"
           >
             Signup
           </Link>

@@ -4,7 +4,7 @@ import RecommendedEventsCard from "@/components/UI/Cards/RecommendedEvents/Recom
 const RecommendedEvents = () => {
   return (
     <section>
-      <h1 className="text-[#E1BD8A] text-2xl md:text-3xl font-bold pl-6">
+      <h1 className="text-gold-500 text-2xl md:text-3xl font-bold pl-6">
         Recommended events
       </h1>
 

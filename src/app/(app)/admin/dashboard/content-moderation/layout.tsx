@@ -21,7 +21,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       <div className="flex justify-between items-center w-full my-5">
         <Select>
-          <SelectTrigger className="w-auto bg-[#F7D098] text-[#1A1A1A] border-none focus-visible:ring-0">
+          <SelectTrigger className="w-auto bg-gold-500 text-[#1A1A1A] border-none focus-visible:ring-0">
             <SelectValue placeholder="Drinks" className="font-bold" />
           </SelectTrigger>
           <SelectContent className="">

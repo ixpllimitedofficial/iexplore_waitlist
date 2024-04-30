@@ -42,7 +42,7 @@ const LoginForm = () => {
 
   return (
     <section>
-      <div className="hidden bg-brandGold w-[50%] mx-auto p-2 lg:flex items-center justify-around rounded-xl">
+      <div className="hidden bg-gold-600 w-[50%] mx-auto p-2 lg:flex items-center justify-around rounded-xl">
         <p className="bg-brandDark text-brandGold p-3 w-2/5 rounded-xl text-center font-bold">
           Login
         </p>

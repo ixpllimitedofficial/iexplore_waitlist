@@ -17,7 +17,7 @@ const GetApp = () => {
       <div className="absolute left-5 md:left-8 lg:w-[60%] flex flex-col gap-2">
         <h1 className="font-bold text-2xl md:text-5xl">
           GET YOUR FRIENDS IN! <br />
-          <span className="text-[#E1BD8A] italic font-bold">
+          <span className="text-gold-500 italic font-bold">
             GET EVERYONE
           </span>{" "}
           IN!
@@ -28,8 +28,16 @@ const GetApp = () => {
         </p>
 
         <div className="flex gap-3 cursor-pointer">
-          <Image src={AppStoreImage} alt="AppStoreImage" className="h-6 w-auto md:h-10" />
-          <Image src={GooglePlayImage} alt="GooglePlayImage" className="h-6 w-auto md:h-10" />
+          <Image
+            src={AppStoreImage}
+            alt="AppStoreImage"
+            className="h-6 w-auto md:h-10"
+          />
+          <Image
+            src={GooglePlayImage}
+            alt="GooglePlayImage"
+            className="h-6 w-auto md:h-10"
+          />
         </div>
       </div>
 

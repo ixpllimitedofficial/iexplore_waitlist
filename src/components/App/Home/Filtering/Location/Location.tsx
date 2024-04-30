@@ -22,15 +22,13 @@ const Location = () => {
             />
 
             <div>
-              <h1 className="font-semibold text-[#E1BD8A]">
-                Lagos night club
-              </h1>
-              <p className="text-[#FBE9D0] text-sm">Ikoyi, Lagos</p>
+              <h1 className="font-semibold text-gold-500">Lagos night club</h1>
+              <p className="text-gold-600 text-sm">Ikoyi, Lagos</p>
             </div>
           </div>
 
           {/* divider */}
-          <div className="border-t-2 border-[#F9D9AD] flex-grow"></div>
+          <div className="border-t-2 border-gold-500 flex-grow"></div>
 
           {/* lcoation 2 */}
           <div className="flex items-center">
@@ -41,10 +39,8 @@ const Location = () => {
             />
 
             <div>
-              <h1 className="font-semibold text-[#E1BD8A]">
-                Abuja night club
-              </h1>
-              <p className="text-[#FBE9D0] text-sm">Gwagalada, Abuja</p>
+              <h1 className="font-semibold text-gold-500">Abuja night club</h1>
+              <p className="text-gold-600 text-sm">Gwagalada, Abuja</p>
             </div>
           </div>
         </div>

@@ -7,9 +7,7 @@ const RecommendedSection = () => {
   return (
     <section className="mx-5 md:mx-14 mt-10">
       <div className="flex items-center justify-between mb-4">
-        <h1 className="text-[#E1BD8A] text-xl md:text-2xl font-bold">
-          Events
-        </h1>
+        <h1 className="text-gold-500 text-xl md:text-2xl font-bold">Events</h1>
         <Link href="/user/recommended">
           <AppButton
             btnText="See all"

@@ -11,11 +11,9 @@ const Contribute = () => {
       <div className="relative bg-[#5D5D5D] h-[300px] mx-auto mt-5 rounded-3xl flex  items-center justify-center"></div>
 
       <Link href="#" className="flex justify-center">
-        <div className="flex items-center gap-2 mt-10 border-2 border-[#E1BD8A] rounded-xl py-3 px-5">
+        <div className="flex items-center gap-2 mt-10 border-2 border-gold-500 rounded-xl py-3 px-5">
           <Image src={CameraIcon} alt="CameraIcon" />
-          <p className="text-lg text-[#E1BD8A]">
-            Add a photo
-          </p>
+          <p className="text-lg text-gold-500">Add a photo</p>
         </div>
       </Link>
     </section>

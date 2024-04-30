@@ -27,7 +27,7 @@ const Filtering = () => {
           btnText="Category"
           handleClick={() => handleFilter("category")}
           className={` ${
-            filterParams === "category" && "text-black bg-[#E1BD8A] border-none"
+            filterParams === "category" && "text-black bg-gold-500 border-none"
           }`}
         />
 
@@ -35,7 +35,7 @@ const Filtering = () => {
           btnText="Location"
           handleClick={() => handleFilter("location")}
           className={`${
-            filterParams === "location" && "text-black bg-[#E1BD8A] border-none"
+            filterParams === "location" && "text-black bg-gold-500 border-none"
           }`}
         />
 
@@ -43,7 +43,7 @@ const Filtering = () => {
           btnText="Ratings"
           handleClick={() => handleFilter("ratings")}
           className={`${
-            filterParams === "ratings" && "text-black bg-[#E1BD8A] border-none"
+            filterParams === "ratings" && "text-black bg-gold-500 border-none"
           }`}
         />
       </section>

@@ -38,7 +38,7 @@ const EmailConfirmation = () => {
             className="h-[180px] w-[180px]"
           />
 
-          <h1 className="text-[#F7D098] font-bold text-3xl">Congratulations</h1>
+          <h1 className="text-gold-500 font-bold text-3xl">Congratulations</h1>
           <p className="text-[#FBE9D0] text-xl md:text-2xl w-3/4 lg:w-1/4 text-center">
             You are now an explorer, and you have been gifted a bottle of drink
             at the nearest bar
@@ -48,12 +48,12 @@ const EmailConfirmation = () => {
 
       <h1 className="text-[#FBE9D0] text-2xl lg:text-3xl text-center leading-snug">
         Enter the code sent to <br />
-        <span className="text-[#E1BD8A]"> Your email address:</span>
+        <span className="text-gold-500"> Your email address:</span>
       </h1>
 
       <AppInput />
 
-      <p className="text-[#E1BD8A] text-xl font-medium text-center leading-snug">
+      <p className="text-gold-500 text-xl font-medium text-center leading-snug">
         Resend code: <span className="text-[#FBE9D0]"> 00:30</span>
       </p>
 

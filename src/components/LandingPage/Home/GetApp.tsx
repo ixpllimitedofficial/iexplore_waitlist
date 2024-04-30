@@ -14,10 +14,7 @@ const GetApp = () => {
       <div className="text-center flex flex-col gap-3 lg:gap-6">
         <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">
           GET YOUR FRIENDS IN! <br />
-          <span className="text-[#E1BD8A] italic">
-            GET EVERYONE
-          </span>{" "}
-          IN!
+          <span className="text-gold-500 italic">GET EVERYONE</span> IN!
         </h1>
         <p className="px-10 text-sm md:text-base lg:text-xl font-medium">
           Download and enjoy our app with your friends with{" "}
@@ -25,17 +22,21 @@ const GetApp = () => {
         </p>
 
         <div className="flex justify-center gap-3 cursor-pointer">
-          <Image src={AppStoreImage} alt="AppStoreImage" className="h-8 w-auto md:h-12" />
-          <Image src={GooglePlayImage} alt="GooglePlayImage" className="h-8 w-auto md:h-12" />
+          <Image
+            src={AppStoreImage}
+            alt="AppStoreImage"
+            className="h-8 w-auto md:h-12"
+          />
+          <Image
+            src={GooglePlayImage}
+            alt="GooglePlayImage"
+            className="h-8 w-auto md:h-12"
+          />
         </div>
       </div>
 
       {/* phone image */}
-      <Image
-        src={GetAppPhonesImage}
-        alt="GetAppPhonesImage"
-        className=""
-      />
+      <Image src={GetAppPhonesImage} alt="GetAppPhonesImage" className="" />
     </section>
   );
 };

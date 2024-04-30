@@ -14,9 +14,9 @@ const Login = () => {
 
       {/* divider */}
       <div className="flex items-center">
-        <div className="border-t-2 border-[#F9D9AD] flex-grow"></div>
+        <div className="border-t-2 border-gold-500 flex-grow"></div>
         <div className="px-5 text-[#F9D9AD] text-xl font-bold">or</div>
-        <div className="border-t-2 border-[#F9D9AD] flex-grow"></div>
+        <div className="border-t-2 border-gold-500 flex-grow"></div>
       </div>
 
       {/* continue with buttons */}
@@ -36,7 +36,7 @@ const Login = () => {
         </p>
         <Link
           href="/user/onboarding?flow=signup"
-          className="text-[#F7D098] underline font-semibold"
+          className="text-gold-500 underline font-semibold"
         >
           {" "}
           Sign up

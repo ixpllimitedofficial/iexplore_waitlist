@@ -18,22 +18,44 @@ const index = () => {
         <div className="border-t-2 border-[#979797] w-full"></div>
 
         <div className="flex gap-1">
-          <Image src={LocationIcon} alt="LocationIcon" height={25} className="self-start" />
-          <p className="md:text-lg font-semibold">No 13b, Aroyewun street, Ramat Estate, Ogudu GRA. Lagos, Nigeria.</p>
+          <Image
+            src={LocationIcon}
+            alt="LocationIcon"
+            height={25}
+            className="self-start"
+          />
+          <p className="md:text-lg font-semibold">
+            No 13b, Aroyewun street, Ramat Estate, Ogudu GRA. Lagos, Nigeria.
+          </p>
         </div>
 
         <div className="flex items-center gap-1">
-          <Image src={MailSvg} alt="MailSvg" height={25} className="self-start"/>
+          <Image
+            src={MailSvg}
+            alt="MailSvg"
+            height={25}
+            className="self-start"
+          />
           <p className="md:text-lg font-semibold">support@explore.com</p>
         </div>
 
         <div className="flex items-center gap-1">
-          <Image src={PhoneSvg} alt="PhoneSvg" height={25} className="self-start"/>
+          <Image
+            src={PhoneSvg}
+            alt="PhoneSvg"
+            height={25}
+            className="self-start"
+          />
           <p className="md:text-lg font-semibold">08122384172</p>
         </div>
 
         <div className="flex items-center gap-1">
-          <Image src={WhatsappSvg} alt="WhatsappSvg" height={25} className="self-start"/>
+          <Image
+            src={WhatsappSvg}
+            alt="WhatsappSvg"
+            height={25}
+            className="self-start"
+          />
           <p className="md:text-lg font-semibold">
             Click here to chat with us on WhatsApp
           </p>
@@ -59,7 +81,7 @@ const index = () => {
           placeholder="Message"
         />
 
-        <AppButton btnText="Send Message" className="text-black bg-[#E1BD8A]" />
+        <AppButton btnText="Send Message" className="text-black bg-gold-500" />
       </div>
     </section>
   );
