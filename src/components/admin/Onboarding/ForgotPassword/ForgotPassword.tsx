@@ -5,7 +5,7 @@ import Link from "next/link";
 const ForgotPassword = () => {
   return (
     <section className="flex flex-col gap-6 justify-center mt-10 lg:mt-0">
-      <h1 className="text-[#FBE9D0] font-bold text-3xl text-center leading-snug self-center">
+      <h1 className="text-gold-500 font-bold text-3xl text-center leading-snug self-center">
         Forgot Password?
       </h1>
 

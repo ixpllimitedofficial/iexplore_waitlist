@@ -39,14 +39,14 @@ const EmailConfirmation = () => {
           />
 
           <h1 className="text-gold-500 font-bold text-3xl">Congratulations</h1>
-          <p className="text-[#FBE9D0] text-xl md:text-2xl w-3/4 lg:w-1/4 text-center">
+          <p className="text-gold-500 text-xl md:text-2xl w-3/4 lg:w-1/4 text-center">
             You are now an explorer, and you have been gifted a bottle of drink
             at the nearest bar
           </p>
         </Modal>
       )}
 
-      <h1 className="text-[#FBE9D0] text-2xl lg:text-3xl text-center leading-snug">
+      <h1 className="text-gold-500 text-2xl lg:text-3xl text-center leading-snug">
         Enter the code sent to <br />
         <span className="text-gold-500"> Your email address:</span>
       </h1>
@@ -54,7 +54,7 @@ const EmailConfirmation = () => {
       <AppInput />
 
       <p className="text-gold-500 text-xl font-medium text-center leading-snug">
-        Resend code: <span className="text-[#FBE9D0]"> 00:30</span>
+        Resend code: <span className="text-gold-500"> 00:30</span>
       </p>
 
       <AppButton

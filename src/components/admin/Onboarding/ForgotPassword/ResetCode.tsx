@@ -9,7 +9,7 @@ const ResetCode = () => {
         Reset password?
       </h1>
 
-      <h1 className="text-[#FBE9D0] text-xl md:text-2xl md:w-[50%] text-center leading-snug self-center">
+      <h1 className="text-gold-500 text-xl md:text-2xl md:w-[50%] text-center leading-snug self-center">
         We’ve sent a code to
         <span className="text-gold-500"> Maxxconnect127@gmail.com</span>
       </h1>
@@ -21,7 +21,7 @@ const ResetCode = () => {
       </Link>
 
       <p className="text-gold-500 text-lg font-medium text-center leading-snug self-center">
-        Resend code: <span className="text-[#FBE9D0]"> 00:30</span>
+        Resend code: <span className="text-gold-500"> 00:30</span>
       </p>
     </section>
   );

@@ -30,7 +30,7 @@ const AppInput = ({
         <label
           htmlFor={label}
           className={`${labelClassName} font-medium`}
-          // className={`${labelClassName} text-[#FAE0BA] text-lg font-medium`}
+          // className={`${labelClassName} text-gold-500 text-lg font-medium`}
         >
           {label}
         </label>
