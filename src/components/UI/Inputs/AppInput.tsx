@@ -42,7 +42,7 @@ const AppInput = ({
         value={value}
         onChange={handleChange}
         name={name}
-        className={`${inputClass} bg-[#424242] px-3 py-6 rounded-lg text-[#E1BD8A] border-[1px] border-[#E1BD8A] focus:outline-none  focus:ring-1 focus:ring-[#E1BD8A] placeholder:text-[#e1bd8ab4] placeholder:font-medium`}
+        className={`${inputClass} bg-[#424242] px-3 py-6 rounded-lg text-[#E1BD8A] border-[1px] border-[#E1BD8A] focus:outline-none  focus:ring-1 focus:ring-[#E1BD8A] placeholder:text-foreground placeholder:font-medium`}
       />
     </div>
   );

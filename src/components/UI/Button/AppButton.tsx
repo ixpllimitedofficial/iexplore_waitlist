@@ -19,7 +19,7 @@ const AppButton = ({
 }: ButtonProps) => {
   return (
     <button
-      className={`${className} bg-[#F7D098] text-[#212121] py-2 px-4 rounded-xl font-bold flex items-center justify-center gap-1`}
+      className={`${className} bg-brandGold text-brandDark py-2 px-4 rounded-xl font-bold flex items-center justify-center gap-1`}
       onClick={handleClick}
       type={type}
     >

@@ -1,6 +1,8 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 import {
   Table,
   TableBody,
@@ -18,8 +20,8 @@ import {
   SelectValue,
 } from "@/components/UI/select";
 import AppSearchInput from "@/components/UI/Inputs/AppSearchInput";
-
-import { useRouter } from "next/navigation";
+import DownloadIcon from "@/assets/svg/AdminIconsSvg/DownloadIcon.svg";
+import { Badge } from "@/components/UI/badge";
 
 const AllContentsTable = () => {
   const router = useRouter();
@@ -33,7 +35,7 @@ const AllContentsTable = () => {
       <div className="flex flex-col gap-5 lg:gap-0 lg:flex-row justify-between">
         <p className="font-bold text-xl text-[#F7D098]">All drinks</p>
 
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-3">
           <AppSearchInput
             className="bg-[#F7D09866] text-[#F7D098] border-none focus-visible:ring-0"
             inputClass="placeholder:text-[#F7D098]"
@@ -49,6 +51,8 @@ const AllContentsTable = () => {
               <SelectItem value="latest">Latest</SelectItem>
             </SelectContent>
           </Select>
+
+          <Image src={DownloadIcon} alt="download" />
         </div>
       </div>
 
@@ -61,10 +65,10 @@ const AllContentsTable = () => {
           <TableRow className="bg-[#424242] border-none">
             <TableHead className=" text-white">S/N</TableHead>
             <TableHead className="text-white">NAME</TableHead>
+            <TableHead className="text-white">CATEGORY</TableHead>
             <TableHead className="text-white">QUANTITY</TableHead>
-            <TableHead className="text-white">RATING</TableHead>
             <TableHead className="text-white">PRICE</TableHead>
-            <TableHead className="text-center text-white">STATUS</TableHead>
+            <TableHead className="text-white">STATUS</TableHead>
           </TableRow>
         </TableHeader>
 
@@ -78,13 +82,13 @@ const AllContentsTable = () => {
               <TableRow>
                 <TableCell className="font-medium py-5">{table}</TableCell>
                 <TableCell>Martell Davido Limited Edition XO</TableCell>
+                <TableCell>Wine</TableCell>
                 <TableCell>200</TableCell>
-                <TableCell>4.0 (90)</TableCell>
                 <TableCell>#203,450.00</TableCell>
-                <TableCell className="text-center">
-                  <p className="bg-[#00b69b48] text-[#00B69B]   py-1 rounded-md font-semibold m-auto">
+                <TableCell>
+                  <Badge className="bg-[#00b69b48] text-[#00B69B] text-sm">
                     In Stock
-                  </p>
+                  </Badge>
                 </TableCell>
               </TableRow>
             </TableBody>
