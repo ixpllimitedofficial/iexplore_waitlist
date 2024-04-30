@@ -22,7 +22,8 @@ const VendorsDrinksTable = () => {
 
   return (
     <section className="mt-5 bg-[#333333] p-5 rounded-2xl">
-      <p className="font-bold text-xl text-[#F7D098]">Drinks</p>
+        <p className="font-bold text-xl text-[#F7D098]">Drinks</p>
+
 
       {/* TABLE */}
       <Table className="mt-4 w-[1000px] lg:w-full">

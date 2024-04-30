@@ -2,8 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import UserMailIcon from "@/assets/svg/AdminIconsSvg/UserMailIconSvg.svg";
-import UserPhoneIcnSvg from "@/assets/svg/AdminIconsSvg/UserPhoneIconSvg.svg";
 import { usePathname } from "next/navigation";
 import ProfileImage from "@/assets/img/AdminPageImages/ReferralProfileImage.png";
 import { Badge } from "@/components/UI/badge";

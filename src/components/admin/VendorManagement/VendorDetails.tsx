@@ -1,13 +1,17 @@
 import React from "react";
 import Image from "next/image";
-import UserMailIcon from "@/assets/svg/AdminIconsSvg/UserMailIconSvg.svg";
-import UserPhoneIcnSvg from "@/assets/svg/AdminIconsSvg/UserPhoneIconSvg.svg";
-import AppButton from "@/components/UI/Button/AppButton";
-import Divider from "@/components/UI/Divider";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/UI/select";
 import ProfileImage from "@/assets/img/AdminPageImages/ReferralProfileImage.png";
 import { Badge } from "@/components/UI/badge";
 import EditUserDetailsDialog from "../UserManagement/EditUserDetailsDialog";
 import VendorsDrinksTable from "./VendorsDrinksTable";
+import DownloadIcon from "@/assets/svg/AdminIconsSvg/DownloadIcon.svg";
 
 const VendorDetails = () => {
   return (
@@ -102,7 +106,24 @@ const VendorDetails = () => {
       </div>
 
       <div className="mt-5 bg-[#333333] p-5 rounded-2xl">
-        <p className="font-bold text-xl text-[#F7D098]">Analytics</p>
+        <div className="flex items-center justify-between">
+          <p className="font-bold text-xl text-[#F7D098]">Analytics</p>
+
+          <div className="flex items-center gap-2">
+            <Select>
+              <SelectTrigger className="w-auto bg-[#F7D098] text-[#212121] border-none focus-visible:ring-0">
+                <SelectValue placeholder="This week" />
+              </SelectTrigger>
+              <SelectContent className="">
+                <SelectItem value="newest">Newest</SelectItem>
+                <SelectItem value="oldest">Oldest</SelectItem>
+                <SelectItem value="latest">Latest</SelectItem>
+              </SelectContent>
+            </Select>
+
+            <Image src={DownloadIcon} alt="download" />
+          </div>
+        </div>
       </div>
 
       <VendorsDrinksTable />
