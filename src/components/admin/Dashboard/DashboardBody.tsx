@@ -12,7 +12,7 @@ const DashboardBody = () => {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
 
   const divStyle =
-    "col-span-full md:col-span-6 lg:col-span-4 flex items-center justify-between bg-[#333333] gap-3 pr-5 rounded-2xl text-sm";
+    "col-span-full md:col-span-6 lg:col-span-4 flex items-center justify-between bg-[#333333] gap-3 pr-5 py-5 lg:py-0 rounded-2xl text-sm";
 
   return (
     <>
