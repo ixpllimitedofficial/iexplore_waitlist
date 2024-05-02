@@ -1,5 +1,5 @@
 import Image from "next/image";
-import EditOutlineIconSvg from "@/assets/svg/AdminIconsSvg/EditOutlineIconSvg.svg";
+import AddIconSvg from "@/assets/svg/AdminIconsSvg/AddIconSvg.svg";
 import { Button } from "@/components/UI/button";
 import {
   Dialog,
@@ -11,19 +11,19 @@ import {
   DialogTrigger,
 } from "@/components/UI/dialog";
 
-const EditVendorDetailsDialog = () => {
+const AddVendorDialog = () => {
   return (
     <Dialog>
       <DialogTrigger asChild className="">
-      <Button className="bg-gold-800 text-gold-500">
-          <p>Edit</p>
-          <Image src={EditOutlineIconSvg} alt="edit icon" className="ml-2" />
+        <Button className="bg-gold-800 text-gold-500">
+          <p>Add new vendor</p>
+          <Image src={AddIconSvg} alt="add icon" className="ml-2" />
         </Button>
       </DialogTrigger>
       <DialogContent className="w-[90%] md:max-w-[800px] bg-[#212121]">
         <DialogHeader>
           <DialogTitle className="text-gold-500 text-2xl text-center">
-            Edit vendor
+            Add vendor
           </DialogTitle>
           {/* <DialogDescription>
           Make changes to your profile here. Click save when you are done.
@@ -54,4 +54,4 @@ const EditVendorDetailsDialog = () => {
   );
 };
 
-export default EditVendorDetailsDialog;
+export default AddVendorDialog;

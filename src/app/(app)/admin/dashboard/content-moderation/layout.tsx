@@ -7,9 +7,7 @@ import {
 } from "@/components/UI/select";
 import AddDrinkDialog from "@/components/admin/ContentModeration/AddDrinkDialog";
 import ProfileCard from "@/components/UI/AdminUI/Cards/ProfileCard";
-import { Badge } from "@/components/UI/badge";
-import EditUserDetailsDialog from "@/components/admin/UserManagement/EditUserDetailsDialog";
-import EditSpotDetailsDialog from "@/components/admin/ContentModeration/EditSpotDetailsDialog";
+import AddSpotDialog from "@/components/admin/ContentModeration/AddSpotDialog";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -35,14 +33,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
         <AddDrinkDialog />
 
-        <div>
-          <div className="flex gap-5 justify-end">
-            <Badge className="bg-[#00b69b48] text-[#00B69B] text-sm">
-              Active
-            </Badge>
-            <EditSpotDetailsDialog />
-          </div>
-        </div>
+        <AddSpotDialog />
       </div>
 
       {children}

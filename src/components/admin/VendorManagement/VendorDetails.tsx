@@ -9,9 +9,10 @@ import {
 } from "@/components/UI/select";
 import ProfileImage from "@/assets/img/AdminPageImages/ReferralProfileImage.png";
 import { Badge } from "@/components/UI/badge";
-import EditUserDetailsDialog from "../UserManagement/EditUserDetailsDialog";
 import VendorsDrinksTable from "./VendorsDrinksTable";
 import DownloadIcon from "@/assets/svg/AdminIconsSvg/DownloadIcon.svg";
+import EditVendorDetailsDialog from "./EditVendorDetailsDialog";
+import AddVendorDialog from "./AddVendorDialog";
 
 const VendorDetails = () => {
   return (
@@ -21,7 +22,7 @@ const VendorDetails = () => {
           <Badge className="bg-[#00b69b48] text-[#00B69B] text-sm">
             Active
           </Badge>
-          <EditUserDetailsDialog />
+          <EditVendorDetailsDialog />
         </div>
       </div>
       {/* vendor details */}

@@ -12,20 +12,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <ProfileCard />
       </header>
 
-      <div className="grid grid-cols-4 gap-4 mt-5 items-center">
-        <div className="col-span-2 lg:col-span-1 bg-[#333333] p-5 rounded-2xl text-sm">
-          TOTAL AFFLIATES
-        </div>
-        <div className="col-span-2 lg:col-span-1 bg-[#333333] p-5 rounded-2xl text-sm">
-          NEW REFERRAL
-        </div>
-        <div className="col-span-2 lg:col-span-1 bg-[#333333] p-5 rounded-2xl text-sm">
-          ACTIVE AFFLIATES
-        </div>
-
-        <AddAffliateDialog />
-      </div>
-
       {children}
     </>
   );
