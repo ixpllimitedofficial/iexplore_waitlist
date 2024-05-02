@@ -46,7 +46,7 @@ const AddDrinkDialog = () => {
         </div>
         <DialogHeader>
           <DialogTitle className="text-gold-500 text-2xl text-center">
-            Add event details:
+            Add drink details:
           </DialogTitle>
           {/* <DialogDescription>
                 Make changes to your profile here. Click save when you are done.
@@ -78,7 +78,7 @@ const AddDrinkDialog = () => {
                 <Input id="username" value="@peduarte" className="col-span-3" />
               </div> */}
         </div>
-        <DialogFooter>
+        <DialogFooter className="mx-auto">
           <Button
             type="submit"
             className="bg-[#333333] text-gold-500  border-2 border-gold-500"

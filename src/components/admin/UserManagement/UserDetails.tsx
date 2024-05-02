@@ -60,7 +60,7 @@ const UserDetails = () => {
           </div>
         </div>
         <div>
-          <div className="flex gap-5 items-center justify-center">
+          <div className="flex gap-5 justify-center">
             <Badge className="bg-[#00b69b48] text-[#00B69B] text-sm">
               Active
             </Badge>

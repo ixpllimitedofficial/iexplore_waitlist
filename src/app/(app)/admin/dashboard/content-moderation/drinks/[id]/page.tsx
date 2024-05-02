@@ -16,7 +16,7 @@ const page = () => {
           <Image src={DrinkImage} alt="drink image" />
 
           <div className="flex flex-col gap-2">
-            <p className="text-gold-500 text-2xl font-bold">Imperial Blue</p>
+            <p className="text-gold-500 text-3xl font-bold">Imperial Blue</p>
 
             <p className="text-3xl font-bold">NGN 232,000.00</p>
 
@@ -32,8 +32,8 @@ const page = () => {
             </div>
           </div>
 
-          <div className="self-start flex flex-col gap-3">
-            <Badge className="bg-[#00b69b48] text-[#00B69B] text-sm">
+          <div className="self-start flex flex-col gap-3 mx-10">
+            <Badge className="bg-[#00b69b48] mx-auto text-[#00B69B] text-sm">
               In Stock
             </Badge>
 
@@ -54,7 +54,9 @@ const page = () => {
             </div>
           </div>
 
-          <EditDrinkDetailsDialog />
+          <div>
+            <EditDrinkDetailsDialog />
+          </div>
         </div>
 
         {/* divider */}

@@ -17,7 +17,7 @@ const VendorDetails = () => {
   return (
     <section className="mt-5">
       <div>
-        <div className="flex gap-5 items-center justify-end">
+        <div className="flex gap-5 justify-end">
           <Badge className="bg-[#00b69b48] text-[#00B69B] text-sm">
             Active
           </Badge>
