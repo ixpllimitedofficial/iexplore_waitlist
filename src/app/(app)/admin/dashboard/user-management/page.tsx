@@ -6,16 +6,18 @@ import AllUsersTable from "@/components/admin/UserManagement/AllUsersTable";
 
 const page = () => {
   const divStyle =
-    "col-span-full md:col-span-4 lg:col-span-2 flex items-center justify-between bg-[#333333] p-5 rounded-2xl text-sm";
+    "col-span-full md:col-span-3 lg:col-span-2 flex items-center gap-4 bg-[#333333] pr-5 py-5 rounded-2xl text-sm";
 
   return (
     <>
       <div className="grid grid-cols-8 gap-4 mt-5">
         <div className={divStyle}>
-          <div>
+          <div className="bg-gold-500 p-1 h-full"></div>
+
+          <div className="flex-grow">
             <p>TOTAL USERS</p>
             <div className="flex gap-1 items-center">
-              <p className="font-bold text-lg">2,000</p>
+              <p className="font-bold text-lg">200</p>
 
               <div className="flex items-center">
                 <ArrowUpIcon color="#00AC4F" />
@@ -30,7 +32,9 @@ const page = () => {
           <Image src={PeopleIconSvg} alt="PeopleIconSvg" />
         </div>
         <div className={divStyle}>
-          <div>
+          <div className="bg-gold-500 p-1 h-full"></div>
+
+          <div className="flex-grow">
             <p>NEW USERS</p>
             <div className="flex gap-1 items-center">
               <p className="font-bold text-lg">50</p>
@@ -47,7 +51,9 @@ const page = () => {
           <Image src={PeopleIconSvg} alt="PeopleIconSvg" />
         </div>
         <div className={divStyle}>
-          <div>
+          <div className="bg-gold-500 p-1 h-full"></div>
+
+          <div className="flex-grow">
             <p>ACTIVE NOW</p>
             <p className="font-bold text-lg">20</p>
           </div>

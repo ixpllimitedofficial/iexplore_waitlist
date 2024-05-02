@@ -12,7 +12,7 @@ const DashboardBody = () => {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
 
   const divStyle =
-    "col-span-full md:col-span-6 lg:col-span-4 flex items-center justify-between bg-[#333333] p-5 lg:py-0 rounded-2xl text-sm";
+    "col-span-full md:col-span-6 lg:col-span-4 flex items-center justify-between bg-[#333333] gap-3 pr-5 rounded-2xl text-sm";
 
   return (
     <>
@@ -21,7 +21,9 @@ const DashboardBody = () => {
         <div className="grid grid-cols-12 gap-4 col-span-full lg:col-span-7">
           <div className="grid grid-cols-12 gap-4 col-span-full">
             <div className={divStyle}>
-              <div>
+              <div className="bg-gold-500 px-1 py-5"></div>
+
+              <div className="flex-grow">
                 <p>TOTAL USERS</p>
                 <p className="font-bold text-lg">2,000</p>
               </div>
@@ -30,32 +32,50 @@ const DashboardBody = () => {
 
             {/*  */}
             <div className={divStyle}>
-              <div>
+              <div className="bg-gold-500 px-1 py-5"></div>
+
+              <div className="flex-grow">
                 <p>TOTAL VENDORS</p>
                 <p className="font-bold text-lg">50</p>
               </div>
             </div>
+
+            {/*  */}
             <div className={divStyle}>
-              <div>
+              <div className="bg-gold-500 px-1 py-5"></div>
+
+              <div className="flex-grow">
                 <p>ACTIVE USERS</p>
                 <p className="font-bold text-lg">20</p>
               </div>
             </div>
+
+            {/*  */}
             <div className={divStyle}>
-              <div>
+              <div className="bg-gold-500 px-1 py-5"></div>
+
+              <div className="flex-grow">
                 <p>TOTAL REFERRAL</p>
                 <p className="font-bold text-lg">200</p>
               </div>
               <Image src={TotalReferralIcon} alt="TotalReferralIcon" />
             </div>
+
+            {/*  */}
             <div className={divStyle}>
-              <div>
+              <div className="bg-gold-500 px-1 py-5"></div>
+
+              <div className="flex-grow">
                 <p>NEW USERS</p>
                 <p className="font-bold text-lg">150</p>
               </div>
             </div>
+
+            {/*  */}
             <div className={divStyle}>
-              <div>
+              <div className="bg-gold-500 px-1 py-5"></div>
+
+              <div className="flex-grow">
                 <p>TOTAL REVENUE</p>
                 <p className="font-bold text-lg">N200,000.00</p>
               </div>
