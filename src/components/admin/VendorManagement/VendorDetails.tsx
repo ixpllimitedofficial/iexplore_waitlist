@@ -12,7 +12,6 @@ import { Badge } from "@/components/UI/badge";
 import VendorsDrinksTable from "./VendorsDrinksTable";
 import DownloadIcon from "@/assets/svg/AdminIconsSvg/DownloadIcon.svg";
 import EditVendorDetailsDialog from "./EditVendorDetailsDialog";
-import AddVendorDialog from "./AddVendorDialog";
 
 const VendorDetails = () => {
   return (
@@ -26,81 +25,93 @@ const VendorDetails = () => {
         </div>
       </div>
       {/* vendor details */}
-      <div className="mt-5 grid grid-cols-5 gap-6">
-        <div className="flex flex-col items-center gap-3 col-span-2 bg-[#333333] p-4 rounded-2xl">
-          <div className="flex items-center w-full gap-3">
-            <Image
-              src={ProfileImage}
-              alt="ProfileImage"
-              className="h-[100px] w-auto"
-            />
+      <div className="mt-5 grid grid-cols-6 gap-6">
+        <div className="col-span-2">
+          <div className="flex flex-col items-center gap-3  bg-[#333333] p-4 rounded-2xl">
+            <div className="flex items-center w-full gap-3">
+              <Image
+                src={ProfileImage}
+                alt="ProfileImage"
+                className="h-[100px] w-auto"
+              />
 
-            <div className="">
-              <p className="font-bold text-2xl text-gold-500">
-                Christine Brooks
-              </p>
-              <p className="font-medium">04 Sep 1973</p>
-              <p className="text-sm">Joined 5 months ago</p>
+              <div className="">
+                <p className="font-bold text-2xl text-gold-500">
+                  Christine Brooks
+                </p>
+                <p className="font-medium">04 Sep 1973</p>
+                <p className="text-sm">Joined 5 months ago</p>
+              </div>
             </div>
+
+            {/* divider */}
+            <div className="border-t-2 border-[#979797] w-full"></div>
+
+            <p className="text-sm">Active: 1hr 30mns ago</p>
           </div>
-
-          {/* divider */}
-          <div className="border-t-2 border-[#979797] w-full"></div>
-
-          <p className="text-sm">Active: 1hr 30mns ago</p>
         </div>
 
         {/* user details */}
 
-        <div className="flex flex-col justify-center gap-3 col-span-1 bg-[#333333] p-4 rounded-2xl">
-          <p className="font-bold text-xl text-gold-500">User details:</p>
+        <div className="col-span-2">
+          <div className="flex flex-col gap-3 bg-[#333333] p-4 rounded-2xl">
+            <p className="font-bold text-xl text-gold-500">User details:</p>
 
-          <div className="flex justify-between">
-            <div>
-              <p className="text-sm">Phone No:</p>
-              <p className="font-semibold text-sm text-gold-500">09123456789</p>
+            <div className="flex flex-col gap-2">
+              <div>
+                <p className="text-sm">Phone No:</p>
+                <p className="font-semibold text-sm text-gold-500">
+                  09123456789
+                </p>
+              </div>
+
+              <div>
+                <p className="text-sm">Email Address:</p>
+                <p className="font-semibold text-sm text-gold-500">
+                  brookschristine.mail.com
+                </p>
+              </div>
+
+              <div>
+                <p className="text-sm">City:</p>
+                <p className="font-semibold text-sm text-gold-500">Lagos</p>
+              </div>
             </div>
-
-            <div>
-              <p className="text-sm">City:</p>
-              <p className="font-semibold text-sm text-gold-500">Lagos</p>
-            </div>
-          </div>
-
-          <div>
-            <p className="text-sm">Email Address:</p>
-            <p className="font-semibold text-sm text-gold-500">brookschristine.mail.com</p>
           </div>
         </div>
 
         {/* business details */}
 
-        <div className="flex flex-col justify-center gap-3 col-span-2 bg-[#333333] p-4 rounded-2xl">
-          <p className="font-bold text-xl text-gold-500">Business details:</p>
+        <div className="col-span-2">
+          <div className="flex flex-col gap-3 bg-[#333333] p-4 rounded-2xl">
+            <p className="font-bold text-xl text-gold-500">Business details:</p>
 
-          <div className="flex justify-between">
-            <div>
-              <p className="text-sm">Spot Name:</p>
-              <p className="font-semibold text-sm text-gold-500">Club 77</p>
-            </div>
+            <div className="flex flex-col gap-2">
+              <div>
+                <p className="text-sm">Spot Name:</p>
+                <p className="font-semibold text-sm text-gold-500">Club 77</p>
+              </div>
 
-            <div>
-              <p className="text-sm">Head Quarters :</p>
-              <p className="font-semibold text-sm text-gold-500">
-                21, Mokola Road, VI Lekki, Lagos State.
-              </p>
-            </div>
-          </div>
+              <div>
+                <p className="text-sm">Head Quarters :</p>
+                <p className="font-semibold text-sm text-gold-500">
+                  21, Mokola Road, VI Lekki, Lagos State.
+                </p>
+              </div>
 
-          <div className="flex justify-between">
-            <div>
-              <p className="text-sm">Email Address:</p>
-              <p className="font-semibold text-sm text-gold-500">brookschristine.mail.com</p>
-            </div>
+              <div>
+                <p className="text-sm">Phone No:</p>
+                <p className="font-semibold text-sm text-gold-500">
+                  09123456789
+                </p>
+              </div>
 
-            <div>
-              <p className="text-sm">Phone No:</p>
-              <p className="font-semibold text-sm text-gold-500">09123456789</p>
+              <div>
+                <p className="text-sm">Email Address:</p>
+                <p className="font-semibold text-sm text-gold-500">
+                  brookschristine.mail.com
+                </p>
+              </div>
             </div>
           </div>
         </div>

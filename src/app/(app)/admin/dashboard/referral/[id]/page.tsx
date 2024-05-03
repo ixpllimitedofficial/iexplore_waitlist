@@ -1,7 +1,7 @@
 import React from "react";
 import ReferralsDetails from "@/components/admin/ReferralManagement/ReferralsDetails";
-import EditSpotDetailsDialog from "@/components/admin/ContentModeration/EditSpotDetailsDialog";
 import { Badge } from "@/components/UI/badge";
+import EditAffliateDetailsDialog from "@/components/admin/ReferralManagement/EditAffliateDetailsDialog";
 
 const page = () => {
   return (
@@ -11,7 +11,7 @@ const page = () => {
           <Badge className="bg-[#00b69b48] text-[#00B69B] text-sm">
             Active
           </Badge>
-          <EditSpotDetailsDialog />
+          <EditAffliateDetailsDialog />
         </div>
       </div>
 
