@@ -7,10 +7,10 @@ import GetApp from "@/components/App/Home/GetApp/GetApp";
 const Directions = () => {
   return (
     <>
-      <section className="px-5">
+      <section className="px-5 md:px-10">
         {/* title and icons */}
         <div className="flex items-center justify-between mb-5">
-          <h1 className="text-gold-500 text-3xl font-bold">Club Quilox</h1>
+          <h1 className="text-gold-500 text-2xl md:text-3xl font-bold">Club Quilox</h1>
 
           <div className="flex gap-2">
             <Image src={ShareIcon} alt="ShareIcon" height={45} />

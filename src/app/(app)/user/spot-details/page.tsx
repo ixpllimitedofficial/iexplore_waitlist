@@ -12,7 +12,7 @@ import Clubs from "@/components/App/Home/Clubs/Clubs";
 const page = () => {
   return (
     <>
-      <section className="px-16 mt-32">
+      <section className="px-5 md:px-10 lg:px-16 mt-28">
         {/* title and icons */}
         <div className="flex items-center justify-between mb-5">
           <h1 className="text-gold-500 text-3xl font-bold">Club Quilox</h1>

@@ -9,10 +9,10 @@ import Offers from "@/components/App/SpotDetails/Features/Offers";
 const page = () => {
   return (
     <>
-      <section className="px-5 md:px-12 mt-32">
+      <section className="px-5 md:px-10 lg:px-16 mt-28">
         {/* title and icons */}
         <div className="flex items-center justify-between mb-5">
-          <h1 className="text-gold-500 text-3xl font-bold">Club Quilox</h1>
+          <h1 className="text-gold-500 text-2xl md:text-3xl font-bold">Club Quilox</h1>
 
           <div className="flex gap-2">
             <Image src={ShareIcon} alt="ShareIcon" height={45} />
@@ -22,12 +22,15 @@ const page = () => {
 
         {/* about */}
         <div className="mt-5">
-          <h1 className="text-2xl font-bold mb-2">About</h1>
+          <h1 className="text-xl md:text-2xl font-bold mb-2">About</h1>
 
-          <p className="text-xl leading-relaxed">
+          <p className="text-base md:text-xl leading-relaxed">
             Located at the heart of Lagos is the King of entertainment and
             nightlife in the city. Experience the thrill of Lagos nightlife
-            here. <br />
+            here.
+          </p>
+
+          <p className="text-base md:text-xl leading-relaxed mt-2">
             Club Quilox is one of the most popular bars/clubs in Lagos, Nigeria.
             Few people also know that it has a restaurant too. While many assume
             Club Quilox is in Lekki, it is more accurate to place its location

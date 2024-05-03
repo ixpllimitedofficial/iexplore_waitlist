@@ -12,12 +12,12 @@ const SpotFeatures = () => {
       <div className="flex flex-wrap gap-14 items-center justify-center mt-14">
         <div className="flex flex-col items-center gap-2">
           <Image src={SoundIcon} alt="SoundIcon" height={60} />
-          <p className="text-lg text-gold-500">Best sounds</p>
+          <p className="md:text-lg text-gold-500">Best sounds</p>
         </div>
 
         <div className="flex flex-col items-center gap-2">
           <Image src={StrippersIconSvg} alt="StrippersIconSvg" height={60} />
-          <p className="text-lg text-gold-500">Strippers</p>
+          <p className="md:text-lg text-gold-500">Strippers</p>
         </div>
 
         <div className="flex flex-col items-center gap-2">
@@ -26,17 +26,17 @@ const SpotFeatures = () => {
             alt="ReservationsIconSvg"
             height={60}
           />
-          <p className="text-lg text-gold-500">Reservations</p>
+          <p className="md:text-lg text-gold-500">Reservations</p>
         </div>
 
         <div className="flex flex-col items-center gap-2">
           <Image src={SecurityIconSvg} alt="SecurityIconSvg" height={60} />
-          <p className="text-lg text-gold-500">Security</p>
+          <p className="md:text-lg text-gold-500">Security</p>
         </div>
 
         <div className="flex flex-col items-center gap-2">
           <Image src={PaymentIconSvg} alt="PaymentIconSvg" height={60} />
-          <p className="text-lg text-gold-500">Payments</p>
+          <p className="md:text-lg text-gold-500">Payments</p>
         </div>
       </div>
 

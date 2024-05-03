@@ -16,7 +16,7 @@ const SingleReview = () => {
         </div>
       </div>
 
-      <p className="mt-5 text-xl text-gold-500">
+      <p className="mt-5 md:text-xl text-gold-500">
         Best place to enjoy nightlife in Lagos. Sound is perfect security is on
         point and there was no problem with finding a parking space. <br />{" "}
         <br /> Got to see and had some premium drinks there, definitely can’t

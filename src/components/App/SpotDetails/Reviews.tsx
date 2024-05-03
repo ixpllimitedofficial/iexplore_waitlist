@@ -7,10 +7,10 @@ const Reviews = () => {
     <section className="">
       <div className="md:px-10 pb-3 flex justify-between border-b-2 border-[#D0D0D0]">
         <Link href="#">
-          <p className="text-lg md:text-xl text-gold-500">Reviews</p>
+          <p className="md:text-xl text-gold-500">Reviews</p>
         </Link>
         <Link href="#">
-          <p className="text-lg md:text-xl text-gold-500">
+          <p className="md:text-xl text-gold-500">
             Questions & answers
           </p>
         </Link>

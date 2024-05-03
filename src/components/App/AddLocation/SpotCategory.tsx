@@ -4,60 +4,62 @@ import AppButton from "../../UI/Button/AppButton";
 import GetApp from "../Home/GetApp/GetApp";
 
 const SpotCategory = () => {
+  const spotCategorySelection = "flex gap-2 border-2 rounded-3xl border-gold-500 px-5 py-3  text-gold-500"
+
   return (
     <>
       <section className="mt-10 px-5 md:px-10">
         {/* spot category */}
-        <h4 className="text-2xl font-bold ">Spot Category</h4>
-        <div className="mt-7 flex flex-wrap gap-4 ">
-          <p className="spotCategorySelection">Clubs</p>
+        <h4 className="text-xl font-bold ">Spot Category</h4>
+        <div className="mt-5 flex flex-wrap gap-4">
+          <p className={spotCategorySelection}>Clubs</p>
 
-          <p className="spotCategorySelection">Restaurants</p>
+          <p className={spotCategorySelection}>Restaurants</p>
 
-          <p className="spotCategorySelection">Bars</p>
+          <p className={spotCategorySelection}>Bars</p>
 
-          <p className="spotCategorySelection">Beach</p>
+          <p className={spotCategorySelection}>Beach</p>
 
-          <p className="spotCategorySelection">Lounge</p>
+          <p className={spotCategorySelection}>Lounge</p>
 
-          <p className="spotCategorySelection">Hotel</p>
+          <p className={spotCategorySelection}>Hotel</p>
         </div>
 
         {/* Are you the proud owner */}
-        <h4 className="text-xl mt-14 ">
+        <h4 className="md:text-xl mt-7">
           Are you the proud owner, one of the awesome team members, or the
           official ambassador for this location?
         </h4>
 
-        <p className="text-xl mt-4 text-[#F9D9AD]">This field is required</p>
+        <p className="text-sm italic mt-2 text-font-500">*This field is required</p>
 
-        <div className="my-7 flex flex-wrap gap-4">
-          <p className="spotCategorySelection">Yes</p>
+        <div className="mt-3 flex flex-wrap gap-4">
+          <p className={spotCategorySelection}>Yes</p>
 
-          <p className="spotCategorySelection">No</p>
+          <p className={spotCategorySelection}>No</p>
         </div>
 
         {/* what is your role */}
-        <h4 className="text-2xl font-bold mt-14">What is your role?</h4>
-        <div className="mt-7 flex flex-wrap gap-4">
-          <p className="spotCategorySelection">Owner</p>
+        <h4 className="text-xl font-bold mt-7">What is your role?</h4>
+        <div className="mt-5 flex flex-wrap gap-4">
+          <p className={spotCategorySelection}>Owner</p>
 
-          <p className="spotCategorySelection">Manager</p>
+          <p className={spotCategorySelection}>Manager</p>
 
-          <p className="spotCategorySelection">Guest</p>
+          <p className={spotCategorySelection}>Guest</p>
 
-          <p className="spotCategorySelection">Sales/Marketing</p>
+          <p className={spotCategorySelection}>Sales/Marketing</p>
 
-          <p className="spotCategorySelection">Other</p>
+          <p className={spotCategorySelection}>Other</p>
         </div>
 
         {/* name of spot */}
-        <h4 className="text-2xl font-bold mt-14">Official name of spot</h4>
+        <h4 className="text-xl font-bold mt-7">Official name of spot</h4>
 
-        <AppInput placeholder="12B Club" inputClass="mt-5 " />
+        <AppInput placeholder="12B Club" inputClass="mt-5" />
 
         {/* operation time */}
-        <h4 className="text-2xl font-bold mt-14">Operation time</h4>
+        <h4 className="text-xl font-bold mt-7">Operation time</h4>
 
         <div className="flex gap-7 ">
           <div className="mt-4">
@@ -72,7 +74,7 @@ const SpotCategory = () => {
         </div>
 
         {/* Brief description about spot*/}
-        <h4 className="text-2xl font-bold mt-14">
+        <h4 className="text-xl font-bold mt-8">
           Brief description about spot
         </h4>
 
@@ -82,7 +84,7 @@ const SpotCategory = () => {
         />
 
         {/* Address of spot */}
-        <h4 className="text-2xl font-bold mt-14">Address of spot </h4>
+        <h4 className="text-xl font-bold mt-7">Address of spot </h4>
 
         <AppInput
           placeholder="12B Love street, Ikeja Lagos."
@@ -90,7 +92,7 @@ const SpotCategory = () => {
         />
 
         {/* contact info */}
-        <h4 className="text-2xl font-bold mt-14">Contact information</h4>
+        <h4 className="text-xl font-bold mt-7">Contact information</h4>
 
         <div className="mt-4">
           <p className="text-[#8E8E8E] text-lg mb-3">Telephone</p>
@@ -101,7 +103,7 @@ const SpotCategory = () => {
           </div>
         </div>
 
-        <div className="mt-10">
+        <div className="mt-7">
           <p className="text-[#8E8E8E] text-lg mb-3">
             Email address (Optional)
           </p>
@@ -109,14 +111,14 @@ const SpotCategory = () => {
           <AppInput placeholder="Maxxsmith@gmail.com" className="" />
         </div>
 
-        <div className="my-10">
+        <div className="my-7">
           <p className="text-[#8E8E8E] text-lg mb-3">Website (Optional)</p>
 
           <AppInput placeholder="club123.com" className="" />
         </div>
 
         {/* submit button */}
-        <AppButton btnText="Submit location" className="mx-auto" />
+        <AppButton btnText="Submit location" className="mx-auto text-sm" />
       </section>
 
       {/* get app */}

@@ -20,7 +20,7 @@ const FeaturesDetails = () => {
             height={25}
             className="self-start"
           />
-          <p className="text-lg">
+          <p className="md:text-xl">
             873 Ozumba Mbadiwe Ave, Victoria Island 106104, Lagos state.
             Nigeria.
           </p>
@@ -34,7 +34,7 @@ const FeaturesDetails = () => {
             height={25}
             className="self-start"
           />
-          <p className="text-lg">01 924 4386</p>
+          <p className="md:text-xl">01 924 4386</p>
         </div>
 
         {/* time */}
@@ -45,7 +45,7 @@ const FeaturesDetails = () => {
             height={25}
             className="self-start"
           />
-          <p className="text-lg">
+          <p className="md:text-xl">
             Open time: 6:00am <br /> Close time: 6:00pm
           </p>
         </div>
@@ -58,7 +58,7 @@ const FeaturesDetails = () => {
             height={25}
             className="self-start"
           />
-          <p className="text-lg">www.clubquilox.com</p>
+          <p className="md:text-xl">www.clubquilox.com</p>
         </div>
       </section>
     </>
