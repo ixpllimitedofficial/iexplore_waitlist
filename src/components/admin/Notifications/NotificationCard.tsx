@@ -16,11 +16,11 @@ const NotificationCard = () => {
       </p>
 
       <div className="flex gap-2">
-        <p className="bg-[#F9F2F2] text-[#BA1717] px-2 border-2 border-[#E2A1A1] rounded-full text-sm p-1 font-semibold">
+        <p className="bg-[#F9F2F2] text-[#BA1717] px-2 border-2 border-[#E2A1A1] rounded-full text-xs p-1 font-semibold">
           Pending
         </p>
 
-        <p className="bg-[#F9F2F2] text-[#202020] px-2 border-2 border-[#9E9E9E] rounded-full text-sm p-1 font-semibold">
+        <p className="bg-[#F9F2F2] text-[#202020] px-2 border-2 border-[#9E9E9E] rounded-full text-xs p-1 font-semibold">
           #123456
         </p>
       </div>

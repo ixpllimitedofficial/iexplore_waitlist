@@ -13,6 +13,7 @@ import NotificationsIconSvg from "@/assets/svg/AdminIconsSvg/NavbarIcons/Notific
 import AnalyticsIconSvg from "@/assets/svg/AdminIconsSvg/NavbarIcons/AnalyticsIconSvg.svg";
 import SettingsIconSvg from "@/assets/svg/AdminIconsSvg/NavbarIcons/SettingsIconSvg.svg";
 import SupportIconSvg from "@/assets/svg/AdminIconsSvg/NavbarIcons/SupportIconSvg.svg";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/UI/avatar";
 
 const DashboardDesktopBar = () => {
   const pathname = usePathname();
@@ -150,6 +151,26 @@ const DashboardDesktopBar = () => {
         >
           <Image src={SupportIconSvg} alt="support icon" />
           <p>Support & Help desk</p>
+        </Link>
+
+        {/* divider */}
+        <div className="border-t-2 border-[#e0e0e042] flex-grow"></div>
+
+        {/* profile */}
+
+        <Link
+          href="/admin/dashboard/profile"
+          className="mt-1 flex items-center gap-2 bg-gold-800 p-2 rounded-2xl"
+        >
+          <Avatar>
+            <AvatarImage src="https://github.com/shadcn.png" />
+            <AvatarFallback>CN</AvatarFallback>
+          </Avatar>
+
+          <div>
+            <p className="text-gold-500 font-bold text-sm">Anita Cruz</p>
+            <p className="text-gold-500 text-xs">Profile</p>
+          </div>
         </Link>
       </nav>
     </div>

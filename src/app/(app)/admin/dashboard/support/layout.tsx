@@ -30,10 +30,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
           <div className="text-gold-500 text-sm flex items-center gap-2 border-2 border-gold-500 px-3 py-2 rounded-2xl">
             <p className="">Pending</p>
-            <p className="bg-[#BE2424] text-white px-2 rounded-full">4</p>
+            <p className="bg-[#dad3d3] text-white px-2 rounded-full">4</p>
           </div>
 
-          <div className="text-gold-500 text-sm flex items-center gap-2 border-2 border-gold-500 px-3 py-2 rounded-2xl">
+          {/* <div className="text-gold-500 text-sm flex items-center gap-2 border-2 border-gold-500 px-3 py-2 rounded-2xl">
             <p className="">Read</p>
             <p className="bg-[#0DDA15] text-white px-2 rounded-full">4</p>
           </div>
@@ -41,7 +41,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="text-gold-500 text-sm flex items-center gap-2 border-2 border-gold-500 px-3 py-2 rounded-2xl">
             <p className="">Unread</p>
             <p className="bg-[#C4C4C4] text-white px-2 rounded-full">4</p>
-          </div>
+          </div> */}
         </div>
       </div>
 

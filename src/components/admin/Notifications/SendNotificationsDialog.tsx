@@ -57,9 +57,16 @@ const SendNotificationsDialog = () => {
         <DialogFooter>
           <Button
             type="submit"
-            className="bg-[#333333] text-gold-500  border-2 border-gold-500"
+            className="bg-[#333333] text-gold-500 border-2 border-gold-500"
           >
             Save as Draft
+          </Button>
+
+          <Button
+            type="submit"
+            className="bg-gold-500 text-brandDark font-semibold border-2 border-gold-500"
+          >
+            Save
           </Button>
         </DialogFooter>
       </DialogContent>

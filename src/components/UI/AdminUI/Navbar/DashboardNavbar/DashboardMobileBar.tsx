@@ -80,7 +80,7 @@ const DashboardMobileBar = () => {
             onClick={showNav}
             className={`${
               pathname === "/admin/dashboard"
-                ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
+                ? "font-bold bg-gold-800 px-3 rounded-xl mr-auto"
                 : "font-normal"
             } text-gold-500 pl-3 py-2 flex items-center gap-2`}
           >
@@ -97,7 +97,7 @@ const DashboardMobileBar = () => {
             onClick={showNav}
             className={`${
               pathname.includes("user-management")
-                ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
+                ? "font-bold bg-gold-800 px-3 rounded-xl mr-auto"
                 : "font-normal"
             } text-gold-500 pl-3 py-2 flex items-center gap-2`}
           >
@@ -111,7 +111,7 @@ const DashboardMobileBar = () => {
             onClick={showNav}
             className={`${
               pathname.includes("vendor-management")
-                ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
+                ? "font-bold bg-gold-800 px-3 rounded-xl mr-auto"
                 : "font-normal"
             } text-gold-500 pl-3 py-2 flex items-center gap-2`}
           >
@@ -125,7 +125,7 @@ const DashboardMobileBar = () => {
             onClick={showNav}
             className={`${
               pathname.includes("content-moderation")
-                ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
+                ? "font-bold bg-gold-800 px-3 rounded-xl mr-auto"
                 : "font-normal"
             } text-gold-500 pl-3 py-2 flex items-center gap-2`}
           >
@@ -139,7 +139,7 @@ const DashboardMobileBar = () => {
             onClick={showNav}
             className={`${
               pathname.includes("referral")
-                ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
+                ? "font-bold bg-gold-800 px-3 rounded-xl mr-auto"
                 : "font-normal"
             } text-gold-500 pl-3 py-2 flex items-center gap-2`}
           >
@@ -156,7 +156,7 @@ const DashboardMobileBar = () => {
             onClick={showNav}
             className={`${
               pathname.includes("notifications")
-                ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
+                ? "font-bold bg-gold-800 px-3 rounded-xl mr-auto"
                 : "font-normal"
             } text-gold-500 pl-3 py-2 flex items-center gap-2`}
           >
@@ -170,7 +170,7 @@ const DashboardMobileBar = () => {
             onClick={showNav}
             className={`${
               pathname.includes("orders")
-                ? "font-bold bg-[#F7D0984D] px-3 rounded-xl"
+                ? "font-bold bg-gold-800 px-3 rounded-xl mr-auto"
                 : "font-normal"
             } text-gold-500 pl-3 py-2 flex items-center gap-2`}
           >
@@ -187,7 +187,7 @@ const DashboardMobileBar = () => {
             onClick={showNav}
             className={`${
               pathname.includes("settings")
-                ? "font-bold bg-[#F7D0984D]  rounded-xl"
+                ? "font-bold bg-gold-800  rounded-xl"
                 : "font-normal"
             } text-gold-500 pl-3 py-2 flex items-center gap-2`}
           >
@@ -201,7 +201,7 @@ const DashboardMobileBar = () => {
             onClick={showNav}
             className={`${
               pathname.includes("support")
-                ? "font-bold bg-[#F7D0984D]  rounded-xl"
+                ? "font-bold bg-gold-800  rounded-xl"
                 : "font-normal"
             } text-gold-500 pl-3 py-2 flex items-center gap-2`}
           >
