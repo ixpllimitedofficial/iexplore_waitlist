@@ -7,9 +7,9 @@ import AppButton from "@/components/UI/Button/AppButton";
 
 const index = () => {
   return (
-    <section className="relative flex flex-col lg:flex-row items-center justify-between px-5 py-7 md:p-12 lg:py-3 gap-10 w-[80vw] bg-[#FEFAF5] mt-10 md:mt-36 text-black mb-10 mx-auto rounded-3xl">
+    <section className="relative flex flex-col lg:flex-row items-center justify-between px-5 py-7 md:p-12 lg:py-3 gap-10 w-[90vw] md:w-[85vw] bg-[#FEFAF5] mt-10 md:mt-36 text-black mb-10 mx-auto rounded-3xl">
       <div className="flex flex-col gap-4 lg:w-[45%]">
-        <h1 className="text-lg md:text-2xl">
+        <h1 className="md:text-2xl">
           Get in touch, we will love to hear from you{" "}
           <span className="font-bold">Anytime.</span>
         </h1>
@@ -24,7 +24,7 @@ const index = () => {
             height={25}
             className="self-start"
           />
-          <p className="md:text-lg font-semibold">
+          <p className="text-sm md:text-lg font-semibold">
             No 13b, Aroyewun street, Ramat Estate, Ogudu GRA. Lagos, Nigeria.
           </p>
         </div>
@@ -36,7 +36,7 @@ const index = () => {
             height={25}
             className="self-start"
           />
-          <p className="md:text-lg font-semibold">support@explore.com</p>
+          <p className="text-sm md:text-lg font-semibold">support@explore.com</p>
         </div>
 
         <div className="flex items-center gap-1">
@@ -46,7 +46,7 @@ const index = () => {
             height={25}
             className="self-start"
           />
-          <p className="md:text-lg font-semibold">08122384172</p>
+          <p className="text-sm md:text-lg font-semibold">08122384172</p>
         </div>
 
         <div className="flex items-center gap-1">
@@ -56,7 +56,7 @@ const index = () => {
             height={25}
             className="self-start"
           />
-          <p className="md:text-lg font-semibold">
+          <p className="text-sm md:text-lg font-semibold">
             Click here to chat with us on WhatsApp
           </p>
         </div>
@@ -67,21 +67,21 @@ const index = () => {
         <input
           type="text"
           placeholder="Your Name"
-          className="bg-[#FEFAF5] px-3 py-4 rounded-xl text-[#C8C8C8] border-none focus:outline-none  focus:ring-1 focus:ring-[#C8C8C8] w-full"
+          className="bg-[#FEFAF5] px-3 py-4 rounded-xl text-[#C8C8C8] border-none placeholder:text-sm focus:outline-none focus:ring-1 focus:ring-[#C8C8C8] w-full"
         />
 
         <input
           type="email"
           placeholder="Your Email"
-          className="bg-[#FEFAF5] px-3 py-4 rounded-xl text-[#C8C8C8] border-none focus:outline-none  focus:ring-1 focus:ring-[#C8C8C8] w-full"
+          className="bg-[#FEFAF5] px-3 py-4 rounded-xl text-[#C8C8C8] border-none placeholder:text-sm focus:outline-none focus:ring-1 focus:ring-[#C8C8C8] w-full"
         />
 
         <textarea
-          className="resize-none bg-[#FEFAF5] px-3 py-4 rounded-xl text-[#C8C8C8] border-none focus:outline-none  focus:ring-1 focus:ring-[#C8C8C8] w-full h-[300px]"
+          className="resize-none bg-[#FEFAF5] px-3 py-4 rounded-xl text-[#C8C8C8] border-none placeholder:text-sm focus:outline-none focus:ring-1 focus:ring-[#C8C8C8] w-full h-[300px]"
           placeholder="Message"
         />
 
-        <AppButton btnText="Send Message" className="text-black bg-gold-500" />
+        <AppButton btnText="Send Message" className="text-black bg-gold-500 mx-auto" />
       </div>
     </section>
   );

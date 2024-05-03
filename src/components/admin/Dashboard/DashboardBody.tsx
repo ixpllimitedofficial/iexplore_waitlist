@@ -12,7 +12,7 @@ const DashboardBody = () => {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
 
   const divStyle =
-    "col-span-full md:col-span-6 lg:col-span-4 flex items-center justify-between bg-[#333333] gap-3 pr-5 py-5 lg:py-0 rounded-2xl text-sm";
+    "col-span-full md:col-span-6 lg:col-span-4 flex items-center justify-between bg-[#333333] gap-2 pr-5 py-5 lg:py-0 rounded-2xl text-sm";
 
   return (
     <>
@@ -25,7 +25,7 @@ const DashboardBody = () => {
 
               <div className="flex-grow">
                 <p>TOTAL USERS</p>
-                <p className="font-bold text-lg">2,000</p>
+                <p className="font-bold text-base">2,000</p>
               </div>
               <Image src={PeopleIconSvg} alt="PeopleIconSvg" />
             </div>
@@ -36,7 +36,7 @@ const DashboardBody = () => {
 
               <div className="flex-grow">
                 <p>TOTAL VENDORS</p>
-                <p className="font-bold text-lg">50</p>
+                <p className="font-bold text-base">50</p>
               </div>
             </div>
 
@@ -46,7 +46,7 @@ const DashboardBody = () => {
 
               <div className="flex-grow">
                 <p>ACTIVE USERS</p>
-                <p className="font-bold text-lg">20</p>
+                <p className="font-bold text-base">20</p>
               </div>
             </div>
 
@@ -56,7 +56,7 @@ const DashboardBody = () => {
 
               <div className="flex-grow">
                 <p>TOTAL REFERRAL</p>
-                <p className="font-bold text-lg">200</p>
+                <p className="font-bold text-base">200</p>
               </div>
               <Image src={TotalReferralIcon} alt="TotalReferralIcon" />
             </div>
@@ -67,7 +67,7 @@ const DashboardBody = () => {
 
               <div className="flex-grow">
                 <p>NEW USERS</p>
-                <p className="font-bold text-lg">150</p>
+                <p className="font-bold text-base">150</p>
               </div>
             </div>
 
@@ -77,7 +77,7 @@ const DashboardBody = () => {
 
               <div className="flex-grow">
                 <p>TOTAL REVENUE</p>
-                <p className="font-bold text-lg">N200,000.00</p>
+                <p className="font-bold text-base">N200,000.00</p>
               </div>
               <Image src={TotalRevenueIconSvg} alt="TotalRevenueIconSvg" />
             </div>

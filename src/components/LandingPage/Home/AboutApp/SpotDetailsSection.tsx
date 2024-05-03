@@ -7,17 +7,17 @@ const SpotDetailsSection = () => {
   return (
     <section
       style={{ backgroundImage: `url(${AboutAppLightYellowBg.src})` }}
-      className="relative flex flex-col md:flex-row items-center justify-between gap-10 p-10 h-[600px] md:h-[350px] lg:h-[520px] w-[90%] md:w-[85vw] mx-auto bg-no-repeat bg-cover bg-center my-10 rounded-3xl overflow-hidden"
+      className="relative flex flex-col md:flex-row-reverse items-center justify-between gap-10 p-10 h-[600px] md:h-[350px] lg:h-[520px] w-[90%] md:w-[85vw] lg:w-[80vw] mx-auto bg-no-repeat bg-cover bg-center my-10 rounded-3xl overflow-hidden"
     >
       {/*  */}
-      <div className="md:hidden flex flex-col gap-3">
+      <div className="flex flex-col gap-1">
         <div>
           <Image src={SpotDetailsTextIcon} alt="SpotDetailsTextIcon" />
-          <h1 className="font-bold text-3xl text-black">Spot details</h1>
+          <h1 className="font-bold text-2xl md:text-3xl text-black">Spot details</h1>
         </div>
-        <p className="text-lg text-black font-medium leading-snug">
-          Get accurate details about the spot you’re interested on going which
-          also includes directions to your desired spot.
+        <p className="text-lg lg:text-xl text-black font-medium leading-snug">
+          Get accurate details about the spot you’re interested on going
+          which also includes directions to your desired spot.
         </p>
       </div>
 
@@ -25,20 +25,8 @@ const SpotDetailsSection = () => {
       <Image
         src={SpotDetailsPhoneImage}
         alt="SpotDetailsPhoneImage"
-        className="relative h-[600px] md:h-[500px] lg:h-auto w-auto md:bottom-[-150px] lg:bottom-[-230px]"
+        className="relative h-[700px] md:h-[500px] lg:h-[800px] w-auto md:bottom-[-150px] lg:bottom-[-230px]"
       />
-
-      {/*  */}
-      <div className="hidden md:w-[45%] md:flex flex-col gap-3">
-        <div>
-          <Image src={SpotDetailsTextIcon} alt="SpotDetailsTextIcon" />
-          <h1 className="font-bold text-3xl text-black">Spot details</h1>
-        </div>
-        <p className="md:text-lg lg:text-xl text-black font-medium leading-snug">
-          Get accurate details about the spot you’re interested on going which
-          also includes directions to your desired spot.
-        </p>
-      </div>
     </section>
   );
 };

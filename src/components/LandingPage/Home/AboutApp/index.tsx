@@ -11,7 +11,7 @@ const index = () => {
     <section className="pt-10 flex flex-col items-center">
       <div>
         <Image src={AboutPageTextIcon} alt="AboutPageTextIcon" className="mx-auto" />
-        <h1 className="font-bold text-3xl">About App</h1>
+        <h1 className="font-bold text-2xl lg:text-3xl">About App</h1>
       </div>
 
       <ExploreSection />

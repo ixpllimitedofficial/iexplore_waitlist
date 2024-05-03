@@ -53,40 +53,40 @@ const VendorDetails = () => {
         {/* user details */}
 
         <div className="flex flex-col justify-center gap-3 col-span-1 bg-[#333333] p-4 rounded-2xl">
-          <p className="font-bold text-xl text-gold-500">User details</p>
+          <p className="font-bold text-xl text-gold-500">User details:</p>
 
           <div className="flex justify-between">
             <div>
               <p className="text-sm">Phone No:</p>
-              <p className="font-medium text-sm">09123456789</p>
+              <p className="font-semibold text-sm text-gold-500">09123456789</p>
             </div>
 
             <div>
               <p className="text-sm">City:</p>
-              <p className="font-medium text-sm">Lagos</p>
+              <p className="font-semibold text-sm text-gold-500">Lagos</p>
             </div>
           </div>
 
           <div>
             <p className="text-sm">Email Address:</p>
-            <p className="font-medium text-sm">brookschristine.mail.com</p>
+            <p className="font-semibold text-sm text-gold-500">brookschristine.mail.com</p>
           </div>
         </div>
 
         {/* business details */}
 
         <div className="flex flex-col justify-center gap-3 col-span-2 bg-[#333333] p-4 rounded-2xl">
-          <p className="font-bold text-xl text-gold-500">Business details</p>
+          <p className="font-bold text-xl text-gold-500">Business details:</p>
 
           <div className="flex justify-between">
             <div>
               <p className="text-sm">Spot Name:</p>
-              <p className="font-medium text-sm">Club 77</p>
+              <p className="font-semibold text-sm text-gold-500">Club 77</p>
             </div>
 
             <div>
               <p className="text-sm">Head Quarters :</p>
-              <p className="font-medium text-sm">
+              <p className="font-semibold text-sm text-gold-500">
                 21, Mokola Road, VI Lekki, Lagos State.
               </p>
             </div>
@@ -95,12 +95,12 @@ const VendorDetails = () => {
           <div className="flex justify-between">
             <div>
               <p className="text-sm">Email Address:</p>
-              <p className="font-medium text-sm">brookschristine.mail.com</p>
+              <p className="font-semibold text-sm text-gold-500">brookschristine.mail.com</p>
             </div>
 
             <div>
               <p className="text-sm">Phone No:</p>
-              <p className="font-medium text-sm">09123456789</p>
+              <p className="font-semibold text-sm text-gold-500">09123456789</p>
             </div>
           </div>
         </div>

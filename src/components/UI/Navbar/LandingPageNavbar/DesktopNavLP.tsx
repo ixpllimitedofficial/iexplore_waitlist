@@ -46,7 +46,7 @@ const DesktopNavLP = () => {
               : ""
           }`}
         >
-          User
+          Users
         </Link>
         <Link
           href="/vendor"
@@ -56,7 +56,7 @@ const DesktopNavLP = () => {
               : ""
           }`}
         >
-          Vendor
+          Vendors
         </Link>
         <Link
           href="/contact-us"

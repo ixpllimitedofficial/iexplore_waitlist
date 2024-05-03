@@ -42,7 +42,7 @@ const LoginForm = () => {
 
   return (
     <section>
-      <div className="hidden bg-gold-600 w-[50%] mx-auto p-2 lg:flex items-center justify-around rounded-xl">
+      <div className="hidden bg-gold-500 w-[50%] mx-auto p-2 lg:flex items-center justify-around rounded-xl">
         <p className="bg-brandDark text-brandGold p-3 w-2/5 rounded-xl text-center font-bold">
           Login
         </p>
@@ -76,7 +76,7 @@ const LoginForm = () => {
 
         <AppButton
           btnText="Login"
-          className="text-[15px] md:text-lg"
+          className=""
           type="button"
           handleClick={handleLogin}
         />

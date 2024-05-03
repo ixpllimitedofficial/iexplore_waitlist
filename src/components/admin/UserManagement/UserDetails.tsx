@@ -40,23 +40,23 @@ const UserDetails = () => {
         </div>
 
         <div className="flex flex-col justify-center gap-3 col-span-1 bg-[#333333] p-4 rounded-2xl">
-          <p className="font-bold text-xl text-gold-500">User details</p>
+          <p className="font-bold text-xl text-gold-500">User details:</p>
 
           <div className="flex justify-between">
             <div>
               <p className="text-sm">Phone No:</p>
-              <p className="font-medium text-sm">09123456789</p>
+              <p className="font-semibold text-sm text-gold-500">09123456789</p>
             </div>
 
             <div>
               <p className="text-sm">City:</p>
-              <p className="font-medium text-sm">Lagos</p>
+              <p className="font-semibold text-sm text-gold-500">Lagos</p>
             </div>
           </div>
 
           <div>
             <p className="text-sm">Email Address:</p>
-            <p className="font-medium text-sm">brookschristine.mail.com</p>
+            <p className="font-semibold text-sm text-gold-500">brookschristine.mail.com</p>
           </div>
         </div>
         <div>

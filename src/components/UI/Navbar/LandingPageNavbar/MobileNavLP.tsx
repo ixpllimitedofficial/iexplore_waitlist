@@ -41,7 +41,7 @@ const MobileNavLP = () => {
 
       {/* navbar */}
       <nav
-        className={`fixed top-0 h-screen w-screen z-[100] bg-white p-28 flex flex-col items-center gap-10 duration-700 ${
+        className={`fixed top-0 h-screen w-screen z-[100] bg-gold-500 p-28 flex flex-col items-center gap-10 duration-700 ${
           showNavState ? "right-0" : "right-[-100vw]"
         }`}
       >
@@ -73,14 +73,14 @@ const MobileNavLP = () => {
           className="text-[#212121] text-lg font-medium"
           onClick={showNav}
         >
-          User
+          Users
         </Link>
         <Link
           href="/"
           className="text-[#212121] text-lg font-medium"
           onClick={showNav}
         >
-          Vendor
+          Vendors
         </Link>
         <Link
           href="/"
@@ -104,7 +104,7 @@ const MobileNavLP = () => {
           <Link
             href="/user/onboarding?flow=signup"
             onClick={showNav}
-            className="bg-[#212121] text-[#fff] text-lg px-4 py-2 rounded-xl font-extrabold"
+            className="bg-[#212121] text-gold-500 text-lg px-4 py-2 rounded-xl font-extrabold"
           >
             Register
           </Link>

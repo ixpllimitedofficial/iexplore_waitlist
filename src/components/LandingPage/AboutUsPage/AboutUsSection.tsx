@@ -19,7 +19,7 @@ const AboutUsSection = () => {
           and party.
         </p>
 
-        <p className="text-lg">
+        <p className="text-lg mt-2 md:m-0">
           Every day, the iExplore team brings its members diverse and exciting
           content on dining spots, events, destinations, adventures, weekend
           escapes, and more.

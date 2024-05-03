@@ -55,7 +55,8 @@ const AllReferralsTable = () => {
       {/* TABLE */}
       <Table className="mt-4 w-[1000px] lg:w-full">
         <TableCaption className="text-[#B5B7C0]">
-          Showing data 1 to 8 of 256K entries
+          Showing data 1 to 8 of 256K entries{" "}
+          <span className="text-gold-500">(View all)</span>
         </TableCaption>
         <TableHeader>
           <TableRow className="bg-[#424242] border-none">

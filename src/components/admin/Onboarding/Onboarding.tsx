@@ -24,8 +24,6 @@ const Onboarding = () => {
   const pathname = usePathname();
   const flowParams = useSearchParams().get("flow") as FlowType;
 
-  console.log(pathname, flowParams);
-
   // returned component
   return (
     <section className="w-[95vw] lg:pt-20 lg:md-0 lg:w-3/6">

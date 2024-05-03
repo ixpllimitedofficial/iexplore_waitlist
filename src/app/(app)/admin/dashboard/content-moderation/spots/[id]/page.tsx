@@ -46,15 +46,15 @@ const page = () => {
 
         <div className="col-span-1 flex flex-col gap-10 bg-[#333333] py-8 px-5 rounded-2xl">
           <div>
-            <p className="text-xl font-bold mb-1">Features</p>
-            <p className="text-gold-500 font-medium">
+            <p className="text-xl font-bold mb-1">Features:</p>
+            <p className="text-gold-500">
               Strippers, Free wifi, Security, Car Park, Privacy
             </p>
           </div>
 
           <div className="">
-            <p className="text-xl font-bold mb-1">Drinks available</p>
-            <p className="text-gold-500 font-medium">
+            <p className="text-xl font-bold mb-1">Drinks available:</p>
+            <p className="text-gold-500">
               Hennessy 220, Vodka, desperado, Imperial Blue, Lacoco.
             </p>
           </div>
