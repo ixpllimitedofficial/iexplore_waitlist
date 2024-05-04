@@ -41,12 +41,12 @@ const LoginForm = () => {
   };
 
   return (
-    <section>
-      <div className="hidden bg-gold-500 w-[50%] mx-auto p-2 lg:flex items-center justify-around rounded-xl">
+    <section className="mt-7">
+      {/* <div className="hidden bg-gold-500 w-[50%] mx-auto p-2 lg:flex items-center justify-around rounded-xl">
         <p className="bg-brandDark text-brandGold p-3 w-2/5 rounded-xl text-center font-bold">
           Login
         </p>
-      </div>
+      </div> */}
 
       <form action={handleLogin} className="flex flex-col gap-5 ">
         <AppInput
@@ -69,7 +69,7 @@ const LoginForm = () => {
 
         <Link
           href="/admin/onboarding?flow=forgotPassword"
-          className=" text-end font-medium"
+          className=" text-gold-500 text-end font-medium"
         >
           Forgot Password
         </Link>

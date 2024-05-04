@@ -6,7 +6,7 @@ import AppButton from "@/components/UI/Button/AppButton";
 import AppInput from "@/components/UI/Inputs/AppInput";
 import Modal from "@/components/UI/Modal/Modal";
 
-import PartyPopperIcon from "@/assets/img/PartyPopper.png";
+import PartyPopperIcon from "@/assets/svg/PartyPopperIcon.svg";
 
 const EmailConfirmation = () => {
   const [showModal, setShowModal] = useState(false);
@@ -28,7 +28,7 @@ const EmailConfirmation = () => {
   };
 
   return (
-    <section className="relative h-full flex flex-col gap-7 items-center justify-center mt-10 lg:mt-0">
+    <section className="relative h-full flex flex-col gap-4 items-center pt-28 mt-10 lg:mt-0">
       {/* modal */}
       {showModal && (
         <Modal handleModal={handleModal} btnText="Let's Go!">
@@ -39,27 +39,30 @@ const EmailConfirmation = () => {
           />
 
           <h1 className="text-gold-500 font-bold text-3xl">Congratulations</h1>
-          <p className="text-gold-500 text-xl md:text-2xl w-3/4 lg:w-1/4 text-center">
+          <p className="text-gold-500 text-xl w-3/4 lg:w-1/4 text-center">
             You are now an explorer, and you have been gifted a bottle of drink
-            at the nearest bar
+            at the nearest bar.
           </p>
         </Modal>
       )}
 
-      <h1 className="text-gold-500 text-2xl lg:text-3xl text-center leading-snug">
-        Enter the code sent to <br />
-        <span className="text-gold-500"> Your email address:</span>
+      <h1 className="text-gold-500 font-semibold text-3xl text-center leading-snug self-center">
+        Enter code
       </h1>
+
+      <p className="text-center text-xl text-gold-500 md:w-[70%] leading-normal self-center">
+        Enter the code sent to <br />
+        <span className="text-white"> your email address</span>
+      </p>
 
       <AppInput />
 
-      <p className="text-gold-500 text-xl font-medium text-center leading-snug">
-        Resend code: <span className="text-gold-500"> 00:30</span>
+      <p className="text-gold-500 font-medium text-center leading-snug">
+        Resend code: <span className="text-white"> 00:30</span>
       </p>
 
       <AppButton
         btnText="Confirm Email Address"
-        className="text-[15px] md:text-lg"
         handleClick={handleShowModal}
       />
     </section>

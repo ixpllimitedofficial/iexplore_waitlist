@@ -69,7 +69,7 @@ const LoginForm = () => {
 
       <AppButton
         btnText="Login"
-        className="text-sm py-4"
+        className=""
         type="button"
         handleClick={handleLogin}
       />

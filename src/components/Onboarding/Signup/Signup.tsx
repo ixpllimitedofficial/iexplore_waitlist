@@ -26,7 +26,7 @@ const Signup = () => {
       <Link href="/user/onboarding?flow=ageConfirmation">
         <AppButton
           btnText="Create Account"
-          className="w-full text-[15px] md:text-lg"
+          className="w-full"
         />
       </Link>
     </form>
