@@ -23,7 +23,7 @@ const Onboarding = () => {
   // returned component
   return (
     <>
-      <section className="w-[95vw] pb-14 lg:md-0 lg:w-3/6">
+      <section className="w-[95vw] pb-14 lg:w-3/6">
         {flowParams === null && <OnboardingForm />}
 
         {/* dynamically rendered form */}
