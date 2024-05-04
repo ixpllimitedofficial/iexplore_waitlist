@@ -72,7 +72,7 @@ const DesktopNavLP = () => {
 
       <nav className="flex items-center gap-7">
         <Link
-          href="/user/onboarding?flow=signup"
+          href="/user/onboarding"
           className="bg-gold-500 text-[#212121] text-lg px-4 py-2 rounded-xl font-bold"
         >
           Register

@@ -34,20 +34,22 @@ const DesktopNavApp = () => {
         </nav>
       )}
 
-      <nav className="flex items-center gap-7">
-        <Link
-          href="/user/onboarding?flow=login"
-          className="text-[#212121] text-lg font-medium"
-        >
-          Login
-        </Link>
-        <Link
-          href="/user/onboarding?flow=signup"
-          className="bg-[#212121] text-gold-500 text-lg px-4 py-2 rounded-xl font-extrabold"
-        >
-          Signup
-        </Link>
-      </nav>
+      {1 > 2 && (
+        <nav className="flex items-center gap-7">
+          <Link
+            href="/user/onboarding?flow=login"
+            className="text-[#212121] text-lg font-medium"
+          >
+            Login
+          </Link>
+          <Link
+            href="/user/onboarding?flow=signup"
+            className="bg-[#212121] text-gold-500 text-lg px-4 py-2 rounded-xl font-extrabold"
+          >
+            Signup
+          </Link>
+        </nav>
+      )}
     </header>
   );
 };

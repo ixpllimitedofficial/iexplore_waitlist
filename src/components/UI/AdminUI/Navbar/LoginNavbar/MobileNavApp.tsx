@@ -38,9 +38,6 @@ const MobileNavApp = () => {
       {/* hamburger */}
       {/* <Image src={HamburgerIconSvg} alt="HamburgerIconSvg" onClick={showNav} /> */}
       {/* <nav className="flex items-center gap-7"> */}
-      <p className="bg-[#fff] text-[#212121] text-base px-4 py-2 rounded-xl font-bold">
-        Please log in!
-      </p>
 
       {/* navbar */}
       <nav

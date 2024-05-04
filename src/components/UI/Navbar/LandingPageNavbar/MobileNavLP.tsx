@@ -94,15 +94,8 @@ const MobileNavLP = () => {
         <div className="border-t-2 border-black w-full"></div>
 
         <div className="flex flex-col items-center gap-7">
-          {/* <Link
-            href="/user/onboarding?flow=login"
-            onClick={showNav}
-            className="text-[#212121] text-lg font-medium"
-          >
-            Login
-          </Link> */}
           <Link
-            href="/user/onboarding?flow=signup"
+            href="/user/onboarding"
             onClick={showNav}
             className="bg-[#212121] text-gold-500 text-lg px-4 py-2 rounded-xl font-extrabold"
           >

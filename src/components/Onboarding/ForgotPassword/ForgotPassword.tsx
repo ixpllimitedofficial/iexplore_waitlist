@@ -4,25 +4,25 @@ import Link from "next/link";
 
 const ForgotPassword = () => {
   return (
-    <section className="h-full flex flex-col gap-6 justify-center mt-10 lg:mt-0">
-      <h1 className="text-gold-500 font-bold text-3xl text-center leading-snug self-center">
+    <section className="h-full flex flex-col gap-4 pt-28 mt-10 lg:mt-0">
+      <h1 className="text-gold-500 font-semibold text-3xl text-center leading-snug self-center">
         Forgot Password?
       </h1>
 
-      <p className="text-center text-xl md:text-2xl text-gold-500 md:w-[70%] leading-normal self-center">
+      <p className="text-center text-xl text-gold-500 md:w-[70%] leading-normal self-center">
         Please enter email associated with your password
       </p>
 
-      <AppInput placeholder="Maxxconnect@gmail.com" className="px-7" />
+      <AppInput placeholder="Maxxconnect@gmail.com" className="px-7 my-3" />
 
-      <Link href="/user/onboarding?flow=resetCode" className="self-center">
-        <AppButton btnText="Send code" className="text-[15px] md:text-lg" />
+      <Link href="/user/onboarding?flow=checkCode" className="self-center">
+        <AppButton btnText="Send code" className="text-base" />
       </Link>
 
-      <div className="flex items-center justify-center gap-1 text-lg">
+      <div className="flex items-center justify-center gap-1">
         <p className="text-[##FBE9D0] text-center">Remember password?</p>
         <Link
-          href="/user/onboarding?flow=login"
+          href="/user/onboarding"
           className="text-gold-500 underline font-semibold"
         >
           {" "}

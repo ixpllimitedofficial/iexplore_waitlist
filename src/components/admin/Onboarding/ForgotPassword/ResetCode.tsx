@@ -2,7 +2,7 @@ import AppButton from "@/components/UI/Button/AppButton";
 import AppInput from "@/components/UI/Inputs/AppInput";
 import Link from "next/link";
 
-const ResetCode = () => {
+const inputCode = () => {
   return (
     <section className="flex flex-col gap-8 justify-center mt-10 lg:mt-0">
       <h1 className="text-gold-500 font-bold text-3xl text-center leading-snug self-center">
@@ -27,4 +27,4 @@ const ResetCode = () => {
   );
 };
 
-export default ResetCode;
+export default inputCode;

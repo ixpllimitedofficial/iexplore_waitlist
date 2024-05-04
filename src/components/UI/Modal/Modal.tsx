@@ -14,7 +14,7 @@ const Modal = ({ children, handleModal, btnText }: ModalProps) => {
       <AppButton
         btnText={btnText}
         handleClick={handleModal}
-        className="text-[15px] md:text-lg"
+        className=""
       />
     </section>
   );

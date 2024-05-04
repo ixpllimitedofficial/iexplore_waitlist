@@ -15,32 +15,19 @@ const Login = () => {
       {/* divider */}
       <div className="flex items-center">
         <div className="border-t-2 border-gold-500 flex-grow"></div>
-        <div className="px-5 text-[#F9D9AD] text-xl font-bold">or</div>
+        <div className="px-3 text-gold-500 font-bold">or</div>
         <div className="border-t-2 border-gold-500 flex-grow"></div>
       </div>
 
       {/* continue with buttons */}
-      <div className="flex items-center bg-white text-black p-3 gap-2 rounded-2xl justify-center">
-        <Image src={GoogleIcon} alt="GoogleIcon" />
+      <div className="flex items-center bg-white text-black py-3 px-5 gap-2 mx-auto rounded-2xl justify-center">
+        <Image src={GoogleIcon} alt="GoogleIcon" height={15} />
         <button> Continue with Google</button>
       </div>
 
-      <div className="flex items-center bg-white text-black p-3 gap-2 rounded-2xl justify-center">
-        <Image src={AppleIcon} alt="AppleIcon" />
+      <div className="flex items-center bg-white text-black py-3 px-5 gap-2 mx-auto rounded-2xl justify-center">
+        <Image src={AppleIcon} alt="AppleIcon" height={20} />
         <button>Continue with Apple</button>
-      </div>
-
-      <div className="flex items-center justify-center gap-1">
-        <p className="text-[##FBE9D0] text-center">
-          Yet to create an account?{" "}
-        </p>
-        <Link
-          href="/user/onboarding?flow=signup"
-          className="text-gold-500 underline font-semibold"
-        >
-          {" "}
-          Sign up
-        </Link>
       </div>
     </section>
   );

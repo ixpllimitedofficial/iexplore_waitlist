@@ -7,7 +7,7 @@ import Signup from "./Signup/Signup";
 import AgeConfirmation from "./Confirmation/AgeConfirmation";
 import EmailConfirmation from "./Confirmation/EmailConfirmation";
 import ForgotPassword from "./ForgotPassword/ForgotPassword";
-import ResetCode from "./ForgotPassword/ResetCode";
+import inputCode from "./ForgotPassword/inputCode";
 import ResetPassword from "./ForgotPassword/ResetPassword";
 import LoginForm from "./Login/LoginForm";
 
@@ -17,7 +17,7 @@ type FlowType =
   | "ageConfirmation"
   | "emailConfirmation"
   | "forgotPassword"
-  | "resetCode"
+  | "inputCode"
   | "resetPassword";
 
 const Onboarding = () => {
@@ -27,12 +27,10 @@ const Onboarding = () => {
   // returned component
   return (
     <section className="w-[95vw] lg:pt-20 lg:md-0 lg:w-3/6">
-
-
-      {/* dynamically rendered form */}
-      {flowParams ===  null && <LoginForm />}
+      x{/* dynamically rendered form */}
+      {flowParams === null && <LoginForm />}
       {flowParams === "forgotPassword" && <ForgotPassword />}
-      {flowParams === "resetCode" && <ResetCode />}
+      {flowParams === "inputCode" && <inputCode />}
       {flowParams === "resetPassword" && <ResetPassword />}
       {/* {flowParams === "signup" && <Signup />}
       {flowParams === "ageConfirmation" && <AgeConfirmation />}

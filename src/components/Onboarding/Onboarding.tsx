@@ -1,71 +1,40 @@
 "use client";
 
-import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import Login from "./Login/Login";
-import Signup from "./Signup/Signup";
 import AgeConfirmation from "./Confirmation/AgeConfirmation";
 import EmailConfirmation from "./Confirmation/EmailConfirmation";
 import ForgotPassword from "./ForgotPassword/ForgotPassword";
-import ResetCode from "./ForgotPassword/ResetCode";
+import InputCode from "./ForgotPassword/InputCode";
 import ResetPassword from "./ForgotPassword/ResetPassword";
+import OnboardingForm from "./OnboardingForm";
+import CheckCode from "./ForgotPassword/CheckCode";
 
 type FlowType =
-  | "signup"
-  | "login"
   | "ageConfirmation"
   | "emailConfirmation"
   | "forgotPassword"
-  | "resetCode"
-  | "resetPassword";
+  | "inputCode"
+  | "resetPassword"
+  | "checkCode";
 
 const Onboarding = () => {
   const flowParams = useSearchParams().get("flow") as FlowType;
 
-  // links style
-  const activeLinkStyle: string =
-    "bg-[#212121] text-gold-500 p-3 w-2/5 rounded-xl text-center font-bold";
-
-  const unactiveLinkStyle: string =
-    "w-2/5 text-[#212121] text-center font-bold";
-
   // returned component
   return (
-    <section className="w-[95vw] pb-14 lg:md-0 lg:w-3/6">
-      {/* links */}
-      {flowParams !== "login" && flowParams !== "signup" ? (
-        ""
-      ) : (
-        <div className="bg-gold-500 p-2 flex items-center justify-around rounded-xl">
-          <Link
-            href="/user/onboarding?flow=login"
-            className={
-              flowParams === "login" ? activeLinkStyle : unactiveLinkStyle
-            }
-          >
-            Login
-          </Link>
+    <>
+      <section className="w-[95vw] pb-14 lg:md-0 lg:w-3/6">
+        {flowParams === null && <OnboardingForm />}
 
-          <Link
-            href="/user/onboarding?flow=signup"
-            className={
-              flowParams === "signup" ? activeLinkStyle : unactiveLinkStyle
-            }
-          >
-            Signup
-          </Link>
-        </div>
-      )}
-
-      {/* dynamically rendered form */}
-      {flowParams === "login" && <Login />}
-      {flowParams === "signup" && <Signup />}
-      {flowParams === "ageConfirmation" && <AgeConfirmation />}
-      {flowParams === "emailConfirmation" && <EmailConfirmation />}
-      {flowParams === "forgotPassword" && <ForgotPassword />}
-      {flowParams === "resetCode" && <ResetCode />}
-      {flowParams === "resetPassword" && <ResetPassword />}
-    </section>
+        {/* dynamically rendered form */}
+        {flowParams === "ageConfirmation" && <AgeConfirmation />}
+        {flowParams === "emailConfirmation" && <EmailConfirmation />}
+        {flowParams === "forgotPassword" && <ForgotPassword />}
+        {flowParams === "inputCode" && <InputCode />}
+        {flowParams === "resetPassword" && <ResetPassword />}
+        {flowParams === "checkCode" && <CheckCode />}
+      </section>
+    </>
   );
 };
 

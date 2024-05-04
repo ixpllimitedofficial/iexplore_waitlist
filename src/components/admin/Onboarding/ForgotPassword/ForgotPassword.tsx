@@ -15,7 +15,7 @@ const ForgotPassword = () => {
 
       <AppInput placeholder="Maxxconnect@gmail.com" className="px-7" />
 
-      <Link href="/admin/onboarding?flow=resetCode" className="self-center">
+      <Link href="/admin/onboarding?flow=inputCode" className="self-center">
         <AppButton btnText="Send code" className="text-[15px] md:text-lg" />
       </Link>
 
