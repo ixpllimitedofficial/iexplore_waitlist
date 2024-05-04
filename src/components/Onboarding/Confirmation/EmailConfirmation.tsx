@@ -28,7 +28,7 @@ const EmailConfirmation = () => {
   };
 
   return (
-    <section className="relative h-full flex flex-col gap-4 items-center pt-28 mt-10 lg:mt-0">
+    <section className="relative h-full flex flex-col gap-4 items-center pt-16 lg:pt-28">
       {/* modal */}
       {showModal && (
         <Modal handleModal={handleModal} btnText="Let's Go!">
@@ -46,13 +46,13 @@ const EmailConfirmation = () => {
         </Modal>
       )}
 
-      <h1 className="text-gold-500 font-semibold text-3xl text-center leading-snug self-center">
+      <h1 className="text-gold-500 font-semibold text-2xl md:text-3xl text-center leading-snug self-center">
         Enter code
       </h1>
 
-      <p className="text-center text-xl text-gold-500 md:w-[70%] leading-normal self-center">
-        Enter the code sent to <br />
-        <span className="text-white"> your email address</span>
+      <p className="text-center text-lg md:text-xl text-gold-500 md:w-[70%] leading-normal self-center">
+        Enter the code sent to
+        <span className="text-white"> youremailaddress</span>
       </p>
 
       <AppInput />

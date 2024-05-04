@@ -4,7 +4,7 @@ import Signup from "./Signup/Signup";
 
 const OnboardingForm = () => {
   return (
-    <Tabs defaultValue="login" className="mt-5">
+    <Tabs defaultValue="login" className="lg:mt-5">
       <TabsList className="grid w-full grid-cols-2 h-[60px] bg-brandGold text-brandDark">
         <TabsTrigger value="login" className="py-3">Login</TabsTrigger>
         <TabsTrigger value="signup" className="py-3">Signup</TabsTrigger>

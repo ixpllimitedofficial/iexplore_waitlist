@@ -28,7 +28,7 @@ const ResetPassword = () => {
   };
 
   return (
-    <section className="h-full flex flex-col gap-4 pt-28 mt-10 lg:mt-0">
+    <section className="h-full flex flex-col gap-4 pt-16 lg:pt-28">
       {/* modal */}
       {showModal && (
         <Modal handleModal={handleModal} btnText="Back to login">
@@ -45,16 +45,24 @@ const ResetPassword = () => {
         </Modal>
       )}
 
-      <h1 className="text-gold-500 text-3xl font-semibold text-center leading-snug self-center">
+      <h1 className="text-gold-500 text-2xl md:text-3xl font-semibold text-center leading-snug self-center">
         Reset password?
       </h1>
 
-      <h1 className="text-gold-500 text-xl md:w-[70%] text-center leading-snug self-center">
+      <h1 className="text-gold-500 text-lg md:text-xl md:w-[70%] text-center leading-snug self-center">
         Create a new password you’ll easily remember
       </h1>
 
-      <AppInput label="New password:" placeholder="Must be 8 characters" />
-      <AppInput label="Confirm new password:" placeholder="Repeat password" />
+      <AppInput
+        label="New password:"
+        placeholder="Must be 8 characters"
+        className="md:px-14 lg:px-10"
+      />
+      <AppInput
+        label="Confirm new password:"
+        placeholder="Repeat password"
+        className="md:px-14 lg:px-10"
+      />
 
       <AppButton
         btnText="Reset password"

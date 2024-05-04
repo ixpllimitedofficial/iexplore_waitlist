@@ -4,12 +4,12 @@ import Link from "next/link";
 
 const CheckCode = () => {
   return (
-    <section className="h-full flex flex-col gap-4 pt-28 mt-10 lg:mt-0">
-      <h1 className="text-gold-500 font-semibold text-3xl text-center leading-snug self-center">
+    <section className="h-full flex flex-col gap-4 pt-16 lg:pt-28">
+      <h1 className="text-gold-500 font-semibold text-2xl md:text-3xl text-center leading-snug self-center">
         Check your inbox
       </h1>
 
-      <h1 className="text-gold-500 text-xl md:w-[70%] text-center leading-snug self-center">
+      <h1 className="text-gold-500 text-lg md:text-xl md:w-[70%] text-center leading-snug self-center">
         We’ve sent an OTP code to
         <span className="text-white"> Maxxconnect127@gmail.com</span>
       </h1>
