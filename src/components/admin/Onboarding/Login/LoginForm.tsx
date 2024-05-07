@@ -1,87 +1,70 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import AppButton from "@/components/UI/Button/AppButton";
 import AppInput from "@/components/UI/Inputs/AppInput";
 
-type LoginFormProps = {
-  email: string;
-  password: string;
-};
+import { useForm, SubmitHandler } from "react-hook-form";
+import { IFormInput } from "@/types/InputTypes";
+
+import { userStore } from "@/store/user";
 
 const LoginForm = () => {
+  // router
   const router = useRouter();
 
-  const [loginData, setLoginData] = useState<LoginFormProps>({
-    email: "",
-    password: "",
-  });
+  // zustand
+  const loginUser = userStore((state: any) => state.loginUser);
 
-  const handleLoginChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
+  // react hook form
+  const {
+    register,
+    watch,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<IFormInput>();
 
-    setLoginData({
-      ...loginData,
-      [name]: value,
+  const onSubmit: SubmitHandler<IFormInput> = (data) => {
+    loginUser({
+      title: data.email,
+      body: data.password,
+      userId: 1,
     });
-  };
-
-  const handleLogin = () => {
     router.push("/admin/dashboard");
   };
 
-  const handleBtnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-
-    const { email, password } = loginData;
-
-    console.log("Email: ", email, "Password: ", password);
-  };
-
   return (
-    <section className="mt-7">
-      {/* <div className="hidden bg-gold-500 w-[50%] mx-auto p-2 lg:flex items-center justify-around rounded-xl">
-        <p className="bg-brandDark text-brandGold p-3 w-2/5 rounded-xl text-center font-bold">
-          Login
-        </p>
-      </div> */}
+    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5 ">
+      <AppInput
+        type="text"
+        label="Email Address:"
+        registerName="email"
+        register={register}
+        // placeholder="Maxxconnect127@gmail.com"
+        isInputRequired={{ value: true, message: "Email is required!" }}
+        errorMessage={errors.email?.message}
+      />
 
-      <form action={handleLogin} className="flex flex-col gap-5 ">
-        <AppInput
-          handleChange={handleLoginChange}
-          value={loginData.email}
-          type="email"
-          name="email"
-          label="Email address:"
-          placeholder="Maxxconnect127@gmail.com"
-        />
+      <AppInput
+        type="password"
+        label="Password:"
+        registerName="password"
+        register={register}
+        // placeholder="***********************"
+        isInputRequired={{ value: true, message: "Password is required!" }}
+        errorMessage={errors.password?.message}
+      />
 
-        <AppInput
-          handleChange={handleLoginChange}
-          value={loginData.password}
-          type="password"
-          name="password"
-          label="Password:"
-          placeholder="***********************"
-        />
+      <Link
+        href="/user/onboarding?flow=forgotPassword"
+        className=" text-gold-500 text-end font-medium"
+      >
+        Forgot Password
+      </Link>
 
-        <Link
-          href="/admin?flow=forgotPassword"
-          className=" text-gold-500 text-end font-medium"
-        >
-          Forgot Password
-        </Link>
-
-        <AppButton
-          btnText="Login"
-          className=""
-          type="button"
-          handleClick={handleLogin}
-        />
-      </form>
-    </section>
+      <AppButton btnText="Login" type="submit" />
+    </form>
   );
 };
 

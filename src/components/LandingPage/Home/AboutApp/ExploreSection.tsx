@@ -14,9 +14,9 @@ const ExploreSection = () => {
           <Image src={ExploreTextIxon} alt="ExploreTextIxon" />
           <h1 className="font-bold text-2xl md:text-3xl text-black">Explore</h1>
         </div>
-        <p className="text-base lg:text-xl text-black font-medium leading-snug">
+        <p className="text-lg lg:text-xl text-black font-medium leading-snug">
           Fuel your inner adventurer by exploring hidden spots and places that
-          makes you explore and relax at different spots suggested to you based
+          make you explore and relax at different spots suggested to you based
           on your preference.
         </p>
       </div>

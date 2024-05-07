@@ -10,7 +10,7 @@ const index = () => {
     <section className="relative flex flex-col lg:flex-row items-center justify-between px-5 py-7 md:p-12 lg:py-3 gap-10 w-[90vw] md:w-[85vw] bg-[#FEFAF5] mt-10 md:mt-36 text-black mb-10 mx-auto rounded-3xl">
       <div className="flex flex-col gap-4 lg:w-[45%]">
         <h1 className="md:text-2xl">
-          Get in touch, we will love to hear from you{" "}
+          Get in touch, we would love to hear from you{" "}
           <span className="font-bold">Anytime.</span>
         </h1>
 

@@ -16,7 +16,7 @@ const FeedSection = () => {
           <h1 className="font-bold text-2xl md:text-3xl text-black">Feed</h1>
         </div>
         <p className="text-lg lg:text-xl text-black font-medium leading-snug">
-          Share and view post by friends using the iExplore app at different
+          Share and view posts by friends using the iExplore app at different
           spots and events.
         </p>
       </div>

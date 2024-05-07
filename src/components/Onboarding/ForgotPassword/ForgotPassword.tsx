@@ -1,8 +1,21 @@
+"use client";
+
 import AppButton from "@/components/UI/Button/AppButton";
 import AppInput from "@/components/UI/Inputs/AppInput";
 import Link from "next/link";
 
+import { useForm, SubmitHandler } from "react-hook-form";
+import { IFormInput } from "@/types/InputTypes";
+
 const ForgotPassword = () => {
+  // react hook form
+  const {
+    register,
+    watch,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<IFormInput>();
+
   return (
     <section className="h-full flex flex-col gap-4 pt-16 lg:pt-28">
       <h1 className="text-gold-500 font-semibold text-2xl md:text-3xl text-center leading-snug self-center">
@@ -13,9 +26,12 @@ const ForgotPassword = () => {
         Please enter the email associated with your password
       </p>
 
+      {/* input */}
       <AppInput
         placeholder="Maxxconnect@gmail.com"
         className="md:px-20 lg:px-16 my-3"
+        registerName="email"
+        register={register}
       />
 
       <Link href="/user/onboarding?flow=checkCode" className="self-center">

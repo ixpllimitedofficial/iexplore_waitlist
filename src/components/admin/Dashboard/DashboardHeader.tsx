@@ -6,9 +6,8 @@ import { userStore } from "@/store/user";
 import { Button } from "@/components/UI/button";
 
 const Header = () => {
-  // const userData = userStore((state: any) => state.user);
-  // const fetchExternalData = userStore((state: any) => state.fetchExternalData);
-
+  const userData = userStore((state: any) => state.user);
+  
   return (
     <header className="flex flex-col-reverse gap-7 lg:flex-row items-center justify-between">
       <div className="self-start">
@@ -16,13 +15,6 @@ const Header = () => {
         <p className="text-gold-500 text-sm mt-1">
           Hi, Anita Cruz. Welcome back to iExplore Admin!
         </p>
-        {/* <Button
-          onClick={fetchExternalData}
-          className="mt-4"
-          variant="secondary"
-        >
-          Test button
-        </Button> */}
       </div>
 
       <ProfileCard />

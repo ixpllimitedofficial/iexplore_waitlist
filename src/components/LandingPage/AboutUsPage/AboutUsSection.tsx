@@ -14,9 +14,8 @@ const AboutUsSection = () => {
         </p>
 
         <p className="text-lg">
-          We at iExplore aim at bringing you the deserved entertainment you
-          deserve at our company, by giving you the best places to relax, drink
-          and party.
+          We at iExplore aim to bring you the entertainment you deserve at our
+          company, by giving you the best places to relax, drink, and party.
         </p>
 
         <p className="text-lg mt-2 md:m-0">

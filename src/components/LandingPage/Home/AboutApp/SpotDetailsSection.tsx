@@ -16,7 +16,7 @@ const SpotDetailsSection = () => {
           <h1 className="font-bold text-2xl md:text-3xl text-black">Spot details</h1>
         </div>
         <p className="text-lg lg:text-xl text-black font-medium leading-snug">
-          Get accurate details about the spot you’re interested on going
+          Get accurate details about the spot you’re interested in going
           which also includes directions to your desired spot.
         </p>
       </div>

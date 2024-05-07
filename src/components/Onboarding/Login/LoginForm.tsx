@@ -1,63 +1,59 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import AppButton from "@/components/UI/Button/AppButton";
 import AppInput from "@/components/UI/Inputs/AppInput";
 
-type LoginFormProps = {
-  email: string;
-  password: string;
-};
+import { useForm, SubmitHandler } from "react-hook-form";
+import { IFormInput } from "@/types/InputTypes";
+
+import { userStore } from "@/store/user";
 
 const LoginForm = () => {
+  // router
   const router = useRouter();
 
-  const [loginData, setLoginData] = useState<LoginFormProps>({
-    email: "",
-    password: "",
-  });
+  // zustand
+  const loginUser = userStore((state: any) => state.loginUser);
 
-  const handleLoginChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
+  // react hook form
+  const {
+    register,
+    watch,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<IFormInput>();
 
-    setLoginData({
-      ...loginData,
-      [name]: value,
+  const onSubmit: SubmitHandler<IFormInput> = (data) => {
+    loginUser({
+      title: data.email,
+      body: data.password,
+      userId: 1,
     });
-  };
-
-  const handleLogin = () => {
-    router.push("/user");
-  };
-
-  const handleBtnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-
-    const { email, password } = loginData;
-
-    console.log("Email: ", email, "Password: ", password);
+    // router.push("/user");
   };
 
   return (
-    <form action={handleLogin} className="flex flex-col gap-5 ">
+    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5 ">
       <AppInput
-        handleChange={handleLoginChange}
-        value={loginData.email}
-        type="email"
-        name="email"
-        label="Email address:"
-        placeholder="Maxxconnect127@gmail.com"
+        type="text"
+        label="Email Address:"
+        registerName="email"
+        register={register}
+        // placeholder="Maxxconnect127@gmail.com"
+        isInputRequired={{ value: true, message: "Email is required!" }}
+        errorMessage={errors.email?.message}
       />
 
       <AppInput
-        handleChange={handleLoginChange}
-        value={loginData.password}
         type="password"
-        name="password"
         label="Password:"
-        placeholder="***********************"
+        registerName="password"
+        register={register}
+        // placeholder="***********************"
+        isInputRequired={{ value: true, message: "Password is required!" }}
+        errorMessage={errors.password?.message}
       />
 
       <Link
@@ -67,12 +63,7 @@ const LoginForm = () => {
         Forgot Password
       </Link>
 
-      <AppButton
-        btnText="Login"
-        className=""
-        type="button"
-        handleClick={handleLogin}
-      />
+      <AppButton btnText="Login" type="submit" />
     </form>
   );
 };
