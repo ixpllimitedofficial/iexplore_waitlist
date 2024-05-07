@@ -39,16 +39,14 @@ const DesktopNavLP = () => {
           About Us
         </Link>
         <Link
-          href="/user"
+          href="/user/onboarding"
           className={`text-gold-500 text-lg ${
-            pathname === "/user"
-              ? "font-medium border-b-2 border-gold-500"
-              : ""
+            pathname === "/user" ? "font-medium border-b-2 border-gold-500" : ""
           }`}
         >
           Users
         </Link>
-        <Link
+        {/* <Link
           href="/vendor"
           className={`text-gold-500 text-lg ${
             pathname === "/vendor"
@@ -57,9 +55,9 @@ const DesktopNavLP = () => {
           }`}
         >
           Vendors
-        </Link>
+        </Link> */}
         <Link
-          href="/contact-us"
+          href="#contact-us"
           className={`text-gold-500 text-lg ${
             pathname === "/contact-us"
               ? "font-medium border-b-2 border-gold-500"
