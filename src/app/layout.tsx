@@ -5,9 +5,8 @@ import "./globals.css";
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-inter",
 });
-
 export const metadata: Metadata = {
   title: "iExplore",
   description: "Connect with places made for you to have fun",
@@ -19,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" className={`${inter.variable}`}>
       <head>
         <link rel="icon" href="/icon.svg" />
       </head>

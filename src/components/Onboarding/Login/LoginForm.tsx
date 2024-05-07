@@ -34,6 +34,10 @@ const LoginForm = () => {
     // router.push("/user");
   };
 
+  const handleBtnClick = () => {
+    router.push("/user");
+  };
+
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5 ">
       <AppInput
@@ -63,7 +67,7 @@ const LoginForm = () => {
         Forgot Password
       </Link>
 
-      <AppButton btnText="Login" type="submit" />
+      <AppButton btnText="Login" type="submit" handleClick={handleBtnClick} />
     </form>
   );
 };

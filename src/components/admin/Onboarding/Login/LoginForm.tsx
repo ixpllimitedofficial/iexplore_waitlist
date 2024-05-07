@@ -31,6 +31,10 @@ const LoginForm = () => {
       body: data.password,
       userId: 1,
     });
+    // router.push("/admin/dashboard");
+  };
+
+  const handleBtnClick = () => {
     router.push("/admin/dashboard");
   };
 
@@ -63,7 +67,7 @@ const LoginForm = () => {
         Forgot Password
       </Link>
 
-      <AppButton btnText="Login" type="submit" />
+      <AppButton btnText="Login" type="submit" handleClick={handleBtnClick} />
     </form>
   );
 };
