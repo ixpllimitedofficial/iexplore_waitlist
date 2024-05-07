@@ -3,6 +3,7 @@ import { Input } from "@/components/UI/input";
 import { InputType } from "@/types/InputTypes";
 
 const AppInput = ({
+  value,
   type,
   label,
   placeholder,

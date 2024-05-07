@@ -6,16 +6,17 @@ export interface IFormInput {
 }
 
 export type InputType = {
-    type?: string;
-    placeholder?: string;
-    label?: string
-    inputClass?: string;
-    className?: string;
-    name?: string;
-    labelClassName?: string;
-    registerName: Path<IFormInput>;
-    register: UseFormRegister<IFormInput>;
-    isInputRequired?: any;
-    errors?: any;
-    errorMessage?: string
-}
+  value?: string;
+  type?: string;
+  placeholder?: string;
+  label?: string;
+  inputClass?: string;
+  className?: string;
+  name?: string;
+  labelClassName?: string;
+  registerName?: Path<IFormInput>;
+  register?: UseFormRegister<IFormInput>;
+  isInputRequired?: any;
+  errors?: any;
+  errorMessage?: string;
+};
