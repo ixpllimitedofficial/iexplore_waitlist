@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import submitForm from "@/utils/submitForm";
 
 export async function GET() {
   try {
@@ -18,7 +19,7 @@ export async function GET() {
   }
 }
 
-export async function POST(request: NextRequest) {
+export async function POST(request: NextRequest, response: NextResponse) {
   const data = await request.json();
 
   try {
@@ -30,7 +31,7 @@ export async function POST(request: NextRequest) {
       body: JSON.stringify({
         title: data.title,
         body: data.body,
-        userId: data.userId
+        userId: data.userId,
       }),
     });
     const newData = await response.json();
@@ -43,4 +44,15 @@ export async function POST(request: NextRequest) {
     console.error("Error fetching external data:", error);
     NextResponse.json({ message: "Error fetching data" });
   }
+
+  // try {
+  //   const apiUrl = "https://jsonplaceholder.typicode.com/posts"; // Example API URL
+  //   const data = await submitForm(formData, apiUrl);
+  //   console.log(data);
+
+  //   return NextResponse.json(data);
+  // } catch (error) {
+  //   console.error("Error handling form submission:", error);
+  //   return NextResponse.json({ error: "Internal Server Error" });
+  // }
 }

@@ -16,6 +16,7 @@ const LoginForm = () => {
 
   // zustand
   const loginUser = userStore((state: any) => state.loginUser);
+  const loginUser2 = userStore((state: any) => state.loginUser2);
 
   // react hook form
   const {
@@ -26,12 +27,12 @@ const LoginForm = () => {
   } = useForm<IFormInput>();
 
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
-    loginUser({
-      title: data.email,
-      body: data.password,
-      userId: 1,
-    });
-    // router.push("/user");
+    // loginUser({
+    //   title: data.email,
+    //   body: data.password,
+    //   userId: 1,
+    // });
+    router.push("/user");
   };
 
   const handleBtnClick = () => {
@@ -67,7 +68,7 @@ const LoginForm = () => {
         Forgot Password
       </Link>
 
-      <AppButton btnText="Login" type="submit" handleClick={handleBtnClick} />
+      <AppButton btnText="Login" type="submit" />
     </form>
   );
 };

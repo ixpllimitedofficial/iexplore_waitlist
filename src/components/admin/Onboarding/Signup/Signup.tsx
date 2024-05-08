@@ -23,7 +23,7 @@ const Signup = () => {
         </p>
       </div>
 
-      <Link href="/user/onboarding?flow=ageConfirmation">
+      <Link href="/admin/?flow=ageConfirmation">
         <AppButton
           btnText="Create Account"
           className="w-full text-[15px] md:text-lg"

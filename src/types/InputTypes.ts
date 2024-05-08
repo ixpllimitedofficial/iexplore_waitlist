@@ -14,8 +14,8 @@ export type InputType = {
   className?: string;
   name?: string;
   labelClassName?: string;
-  registerName?: Path<IFormInput>;
-  register?: UseFormRegister<IFormInput>;
+  registerName: Path<IFormInput>;
+  register: UseFormRegister<IFormInput>;
   isInputRequired?: any;
   errors?: any;
   errorMessage?: string;

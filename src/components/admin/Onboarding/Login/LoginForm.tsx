@@ -26,15 +26,11 @@ const LoginForm = () => {
   } = useForm<IFormInput>();
 
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
-    loginUser({
-      title: data.email,
-      body: data.password,
-      userId: 1,
-    });
-    // router.push("/admin/dashboard");
-  };
-
-  const handleBtnClick = () => {
+    // loginUser({
+    //   title: data.email,
+    //   body: data.password,
+    //   userId: 1,
+    // });
     router.push("/admin/dashboard");
   };
 
@@ -61,13 +57,13 @@ const LoginForm = () => {
       />
 
       <Link
-        href="/user/onboarding?flow=forgotPassword"
+        href="/admin/?flow=forgotPassword"
         className=" text-gold-500 text-end font-medium"
       >
         Forgot Password
       </Link>
 
-      <AppButton btnText="Login" type="submit" handleClick={handleBtnClick} />
+      <AppButton btnText="Login" type="submit" />
     </form>
   );
 };

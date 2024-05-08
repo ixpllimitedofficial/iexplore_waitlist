@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import submitForm from "@/utils/submitForm";
 
 export const userStore = create((set) => ({
   user: {},
@@ -18,10 +19,19 @@ export const userStore = create((set) => ({
         throw new Error("Failed to fetch external data");
       }
 
-      set({ user: newData });
+      // set({ user: newData });
       console.log(newData);
     } catch (error) {
       console.error("Error fetching external data:", error);
     }
   },
+  // loginUser2: async (formData: any) => {
+  //   const apiUrl = "/api/user";
+
+  //   try {
+  //     return await submitForm(formData, apiUrl);
+  //   } catch (error) {
+  //     console.error("Error fetching external data:", error);
+  //   }
+  // },
 }));

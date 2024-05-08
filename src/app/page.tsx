@@ -3,7 +3,9 @@ import GetApp from "@/components/LandingPage/Home/GetApp";
 import HeroSection from "@/components/LandingPage/Home/HeroSection";
 import ContactSection from "@/components/LandingPage/Home/ContactSection";
 import Footer from "@/components/UI/Footer/Footer";
-const page = () => {
+
+const page = async () => {
+
   return (
     <>
       <HeroSection />
