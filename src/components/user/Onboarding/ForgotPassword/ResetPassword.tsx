@@ -12,7 +12,7 @@ const ResetPassword = () => {
   const router = useRouter();
 
   const handleModal = () => {
-    router.push("/user/onboarding");
+    router.push("/user");
 
     // Unsets Background Scrolling to use when SideDrawer/Modal is closed
     document.body.style.overflow = "unset";

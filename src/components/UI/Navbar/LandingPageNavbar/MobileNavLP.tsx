@@ -69,7 +69,7 @@ const MobileNavLP = () => {
           About Us
         </Link>
         <Link
-          href="/user/onboarding"
+          href="/user"
           className="text-[#212121] text-lg font-medium"
           onClick={showNav}
         >
@@ -95,7 +95,7 @@ const MobileNavLP = () => {
 
         <div className="flex flex-col items-center gap-7">
           <Link
-            href="/user/onboarding"
+            href="/user"
             onClick={showNav}
             className="bg-[#212121] text-gold-500 text-lg px-4 py-2 rounded-xl font-extrabold"
           >

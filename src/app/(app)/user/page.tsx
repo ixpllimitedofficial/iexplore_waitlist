@@ -1,25 +1,24 @@
-import HeroSection from "@/components/App/Home/HeroSection/HeroSection";
-import Filtering from "@/components/App/Home/Filtering/Filtering";
-import Clubs from "@/components/App/Home/Clubs/Clubs";
-import RecommendedSection from "@/components/App/Home/RecommendedSection/RecommendedSection";
-import GetApp from "@/components/App/Home/GetApp/GetApp";
-import FriendlySpots from "@/components/App/Home/FriendlySpots/FriendlySpots";
-import AddLocation from "@/components/App/Home/AddLocation/AddLocation";
-import Footer from "@/components/UI/Footer/Footer";
+import Onboarding from "@/components/user/Onboarding/Onboarding";
+import OnboardingBgImage from "@/assets/img/OnboardingBgImage.png";
+import Image from "next/image";
+import AppNavbar from "@/components/UI/Navbar/AppNavbar/AppNavbar";
 
 const page = () => {
   return (
-    <main className="mt-28">
-      <HeroSection />
-      <Filtering />
-      <Clubs />
-      <RecommendedSection />
-      <GetApp />
-      <Clubs />
-      <FriendlySpots />
-      <AddLocation />
-      <Footer />
-    </main>
+      <>
+        <AppNavbar />
+
+      <section className="relative px-5 mt-28 md:px-10 flex justify-center lg:justify-between gap-20">
+        <div className="relative hidden lg:block">
+          <h1 className="font-bold text-4xl absolute left-10 bottom-16 w-4/6">
+            Connect with places made for you to have fun
+          </h1>
+          <Image src={OnboardingBgImage} alt="OnboardingBgImage" />
+        </div>
+
+        <Onboarding />
+      </section>
+    </>
   );
 };
 

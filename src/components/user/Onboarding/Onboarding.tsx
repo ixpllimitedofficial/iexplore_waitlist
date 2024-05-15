@@ -4,10 +4,10 @@ import { useSearchParams } from "next/navigation";
 import AgeConfirmation from "./Confirmation/AgeConfirmation";
 import EmailConfirmation from "./Confirmation/EmailConfirmation";
 import ForgotPassword from "./ForgotPassword/ForgotPassword";
-import InputCode from "./ForgotPassword/InputCode";
+import InputCode from "./Confirmation/InputCode";
 import ResetPassword from "./ForgotPassword/ResetPassword";
 import OnboardingForm from "./OnboardingForm";
-import CheckCode from "./ForgotPassword/CheckCode";
+import CheckCode from "./Confirmation/CheckCode";
 
 type FlowType =
   | "ageConfirmation"

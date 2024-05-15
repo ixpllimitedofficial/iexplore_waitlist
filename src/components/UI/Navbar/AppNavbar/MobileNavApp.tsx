@@ -94,14 +94,14 @@ const MobileNavApp = () => {
 
         <div className="flex flex-col items-center gap-7">
           <Link
-            href="/user/onboarding?flow=login"
+            href="/user?flow=login"
             onClick={showNav}
             className="text-[#212121] text-lg font-medium"
           >
             Login
           </Link>
           <Link
-            href="/user/onboarding?flow=signup"
+            href="/user?flow=signup"
             onClick={showNav}
             className="bg-[#212121] text-gold-500 text-lg px-4 py-2 rounded-xl font-extrabold"
           >

@@ -5,11 +5,13 @@ import AppButton from "@/components/UI/Button/AppButton";
 
 import GoogleIcon from "@/assets/img/GoogleIcon.png";
 import AppleIcon from "@/assets/img/AppleIcon.png";
+import FormInput from "@/components/UI/Inputs/FormInput";
 
 const Login = () => {
   return (
     <section className="mt-7 flex flex-col gap-5">
       {/* form */}
+      {/* <FormInput /> */}
       <LoginForm />
 
       {/* divider */}

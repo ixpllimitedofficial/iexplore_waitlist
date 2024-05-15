@@ -9,14 +9,22 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { IFormInput } from "@/types/InputTypes";
 
 import { userStore } from "@/store/user";
+import { useEffect } from "react";
 
 const LoginForm = () => {
   // router
   const router = useRouter();
 
   // zustand
+  const user = userStore((state: any) => state.user);
   const loginUser = userStore((state: any) => state.loginUser);
-  const loginUser2 = userStore((state: any) => state.loginUser2);
+
+  useEffect(() => {
+    console.log(user.message);
+    if (user.message === "success") {
+      router.push("/user/home");
+    }
+  }, [user, router]);
 
   // react hook form
   const {
@@ -27,12 +35,11 @@ const LoginForm = () => {
   } = useForm<IFormInput>();
 
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
-    // loginUser({
-    //   title: data.email,
-    //   body: data.password,
-    //   userId: 1,
-    // });
-    router.push("/user");
+    loginUser({
+      username_or_email: "tweetdatebot@gmail.com",
+      password: "MySecret@123",
+    });
+    // router.push("/user");
   };
 
   const handleBtnClick = () => {
@@ -62,11 +69,13 @@ const LoginForm = () => {
       />
 
       <Link
-        href="/user/onboarding?flow=forgotPassword"
+        href="/user?flow=forgotPassword"
         className=" text-gold-500 text-end font-medium"
       >
         Forgot Password
       </Link>
+
+      <p>{user.message}</p>
 
       <AppButton btnText="Login" type="submit" />
     </form>

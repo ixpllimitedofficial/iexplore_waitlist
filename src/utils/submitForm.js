@@ -1,6 +1,6 @@
 // const submitForm = async (formData, apiUrl) => {
 //   try {
-//     const response = await fetch(apiUrl + "posts", {
+//     const response = await fetch(apiUrl, {
 //       method: "POST",
 //       headers: {
 //         "Content-Type": "application/json",
@@ -31,7 +31,7 @@ const submitForm = async (formData, apiUrl) => {
       throw new Error("Failed to fetch external data");
     }
 
-    return await response.json();
+    return await data;
   } catch (error) {
     console.error("Error fetching external data:", error);
     //   NextResponse.json({ message: "Error fetching data" });

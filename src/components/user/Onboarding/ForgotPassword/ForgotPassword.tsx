@@ -34,16 +34,13 @@ const ForgotPassword = () => {
         register={register}
       />
 
-      <Link href="/user/onboarding?flow=checkCode" className="self-center">
+      <Link href="/user?flow=checkCode" className="self-center">
         <AppButton btnText="Send code" className="text-base" />
       </Link>
 
       <div className="flex items-center justify-center gap-1">
         <p className="text-[##FBE9D0] text-center">Remember password?</p>
-        <Link
-          href="/user/onboarding"
-          className="text-gold-500 underline font-semibold"
-        >
+        <Link href="/user" className="text-gold-500 underline font-semibold">
           {" "}
           Login
         </Link>

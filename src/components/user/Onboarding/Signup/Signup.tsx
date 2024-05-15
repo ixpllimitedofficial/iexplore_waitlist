@@ -23,11 +23,8 @@ const Signup = () => {
         </p>
       </div>
 
-      <Link href="/user/onboarding?flow=ageConfirmation">
-        <AppButton
-          btnText="Create Account"
-          className="w-full"
-        />
+      <Link href="/user?flow=ageConfirmation">
+        <AppButton btnText="Create Account" className="w-full" />
       </Link>
     </form>
   );

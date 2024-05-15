@@ -1,16 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
-import submitForm from "@/utils/submitForm";
+import { apiGet, apiPost } from "@/utils/appFunctions";
 
 export async function GET() {
   try {
-    const response = await fetch("http://3.91.40.69/");
-    const data = await response.json();
-
-    if (!response.ok) {
-      throw new Error(
-        `Failed to fetch data from external API: ${response.status}`
-      );
-    }
+    const data = await apiGet(
+      "https://jsonplaceholder.typicode.com/posts"
+    );
 
     return NextResponse.json(data);
   } catch (error) {
@@ -19,40 +14,21 @@ export async function GET() {
   }
 }
 
-export async function POST(request: NextRequest, response: NextResponse) {
+export async function POST(request: NextRequest) {
   const data = await request.json();
+  const apiUrl = "http://44.193.73.68:8000/api/auth/login/";
 
   try {
-    const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
+    const responseData = await apiPost(
+      {
+        username_or_email: data.username_or_email,
+        password: data.password,
       },
-      body: JSON.stringify({
-        title: data.title,
-        body: data.body,
-        userId: data.userId,
-      }),
-    });
-    const newData = await response.json();
-
-    if (!response.ok) {
-      throw new Error("Failed to fetch external data");
-    }
-    return NextResponse.json(newData);
+      apiUrl
+    );
+    return NextResponse.json(responseData);
   } catch (error) {
-    console.error("Error fetching external data:", error);
-    NextResponse.json({ message: "Error fetching data" });
+    console.error("Error handling form submission:", error);
+    return NextResponse.json({ error: "Internal Server Error" });
   }
-
-  // try {
-  //   const apiUrl = "https://jsonplaceholder.typicode.com/posts"; // Example API URL
-  //   const data = await submitForm(formData, apiUrl);
-  //   console.log(data);
-
-  //   return NextResponse.json(data);
-  // } catch (error) {
-  //   console.error("Error handling form submission:", error);
-  //   return NextResponse.json({ error: "Internal Server Error" });
-  // }
 }

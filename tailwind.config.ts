@@ -32,15 +32,15 @@ const config = {
         foreground: "hsl(var(--foreground))",
         brandDark: "hsl(var(--brand-dark))",
         brandGold: "hsl(var(--brand-gold))",
-        "gold": {
+        gold: {
           // 100: '#cffafe',
           // 200: '#a5f3fc',
           // 300: '#67e8f9',
           // 400: '#22d3ee',
-          500: '#FFD700',
-          600: '#D7B500',
+          500: "#FFD700",
+          600: "#D7B500",
           // 700: '#0e7490',
-          800: '#FFD7004D',
+          800: "#FFD7004D",
           // 900: '#164e63',
         },
         primary: {
@@ -86,10 +86,15 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "caret-blink": {
+          "0%,70%,100%": { opacity: "1" },
+          "20%,50%": { opacity: "0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "caret-blink": "caret-blink 1.25s ease-out infinite",
       },
     },
   },

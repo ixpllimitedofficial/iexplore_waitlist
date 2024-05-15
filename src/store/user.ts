@@ -1,37 +1,26 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import submitForm from "@/utils/submitForm";
+import { apiGet, apiPost } from "@/utils/appFunctions";
 
 export const userStore = create((set) => ({
   user: {},
-  loginUser: async (data: any) => {
+  getUser: async () => {
     try {
-      const response = await fetch("/api/user", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-      const newData = await response.json();
-
-      if (!response.ok) {
-        throw new Error("Failed to fetch external data");
-      }
-
-      // set({ user: newData });
-      console.log(newData);
+      const responseData = await apiGet("/api/user");
+      console.log(responseData);
     } catch (error) {
       console.error("Error fetching external data:", error);
     }
   },
-  // loginUser2: async (formData: any) => {
-  //   const apiUrl = "/api/user";
-
-  //   try {
-  //     return await submitForm(formData, apiUrl);
-  //   } catch (error) {
-  //     console.error("Error fetching external data:", error);
-  //   }
-  // },
+  loginUser: async (formData: any) => {
+    try {
+      const responseData = await apiPost(formData, "/api/user");
+      console.log(responseData);
+      set({ user: responseData });
+    } catch (error) {
+      console.error("Error fetching external data:", error);
+      console.log(error);
+      
+    }
+  },
 }));

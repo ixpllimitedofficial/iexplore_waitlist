@@ -39,7 +39,7 @@ const DesktopNavLP = () => {
           About Us
         </Link>
         <Link
-          href="/user/onboarding"
+          href="/user"
           className={`text-gold-500 text-lg ${
             pathname === "/user" ? "font-medium border-b-2 border-gold-500" : ""
           }`}
@@ -70,7 +70,7 @@ const DesktopNavLP = () => {
 
       <nav className="flex items-center gap-7">
         <Link
-          href="/user/onboarding"
+          href="/user"
           className="bg-gold-500 text-[#212121] text-lg px-4 py-2 rounded-xl font-bold"
         >
           Register
