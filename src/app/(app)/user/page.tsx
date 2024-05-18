@@ -4,9 +4,10 @@ import Image from "next/image";
 import AppNavbar from "@/components/UI/Navbar/AppNavbar/AppNavbar";
 
 const page = () => {
+
   return (
-      <>
-        <AppNavbar />
+    <>
+      <AppNavbar />
 
       <section className="relative px-5 mt-28 md:px-10 flex justify-center lg:justify-between gap-20">
         <div className="relative hidden lg:block">

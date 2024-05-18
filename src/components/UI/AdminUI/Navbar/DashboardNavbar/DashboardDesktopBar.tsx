@@ -45,7 +45,7 @@ const DashboardDesktopBar = () => {
 
         {/* user */}
         <Link
-          href="/admin/dashboard/user-management"
+          href="/admin/user-management"
           className={`${
             pathname.includes("user-management")
               ? "font-bold bg-gold-800 px-3 rounded-xl"
@@ -58,7 +58,7 @@ const DashboardDesktopBar = () => {
 
         {/* vendor */}
         <Link
-          href="/admin/dashboard/vendor-management"
+          href="/admin/vendor-management"
           className={`${
             pathname.includes("vendor-management")
               ? "font-bold bg-gold-800 px-3 rounded-xl"
@@ -71,7 +71,7 @@ const DashboardDesktopBar = () => {
 
         {/* content */}
         <Link
-          href="/admin/dashboard/content-moderation"
+          href="/admin/content-moderation"
           className={`${
             pathname.includes("content-moderation")
               ? "font-bold bg-gold-800 px-3 rounded-xl"
@@ -84,7 +84,7 @@ const DashboardDesktopBar = () => {
 
         {/* Referral */}
         <Link
-          href="/admin/dashboard/referral"
+          href="/admin/referral"
           className={`${
             pathname.includes("referral")
               ? "font-bold bg-gold-800 px-3 rounded-xl"
@@ -100,7 +100,7 @@ const DashboardDesktopBar = () => {
 
         {/* Notifications */}
         <Link
-          href="/admin/dashboard/notifications"
+          href="/admin/notifications"
           className={`${
             pathname.includes("notifications")
               ? "font-bold bg-gold-800 px-3 rounded-xl"
@@ -113,7 +113,7 @@ const DashboardDesktopBar = () => {
 
         {/* Analytic & Reporting */}
         <Link
-          href="/admin/dashboard/orders"
+          href="/admin/orders"
           className={`${
             pathname.includes("orders")
               ? "font-bold bg-gold-800 px-3 rounded-xl"
@@ -129,7 +129,7 @@ const DashboardDesktopBar = () => {
 
         {/* Settings */}
         <Link
-          href="/admin/dashboard/settings"
+          href="/admin/settings"
           className={`${
             pathname.includes("settings")
               ? "font-bold bg-gold-800  px-3 rounded-xl"
@@ -142,7 +142,7 @@ const DashboardDesktopBar = () => {
 
         {/* Support */}
         <Link
-          href="/admin/dashboard/support"
+          href="/admin/support"
           className={`${
             pathname.includes("support")
               ? "font-bold bg-gold-800 px-3 rounded-xl"
@@ -159,7 +159,7 @@ const DashboardDesktopBar = () => {
         {/* profile */}
 
         <Link
-          href="/admin/dashboard/profile"
+          href="/admin/profile"
           className="mt-1 flex items-center gap-2 bg-gold-800 p-2 rounded-2xl"
         >
           <Avatar>

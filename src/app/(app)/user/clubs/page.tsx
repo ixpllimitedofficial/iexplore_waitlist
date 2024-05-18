@@ -1,19 +1,19 @@
-import ClubsPage from "@/components/App/ClubsPage/ClubsPage";
-import AddLocation from "@/components/App/Home/AddLocation/AddLocation";
-import FriendlySpots from "@/components/App/Home/FriendlySpots/FriendlySpots";
 import Footer from "@/components/UI/Footer/Footer";
+import ClubsPage from "@/components/user/ClubsPage/ClubsPage";
+import AddLocation from "@/components/user/Home/AddLocation/AddLocation";
+import FriendlySpots from "@/components/user/Home/FriendlySpots/FriendlySpots";
 
 const page = () => {
   return (
-    <section className="mt-28">
-      <ClubsPage />
+      <section className="mt-28">
+        <ClubsPage />
 
-      <FriendlySpots />
+        <FriendlySpots />
 
-      <AddLocation />
+        <AddLocation />
 
-      <Footer />
-    </section>
+        <Footer />
+      </section>
   );
 };
 

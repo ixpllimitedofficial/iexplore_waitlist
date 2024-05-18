@@ -3,7 +3,11 @@
 import HomeImage from "@/assets/img/HomeImage.png";
 import AppButton from "@/components/UI/Button/AppButton";
 
+import { userStore } from "@/store/user";
+
 const HeroSection = () => {
+  const logoutUser = userStore((state: any) => state.isUserLoggedin);
+
   return (
     <section
       style={{ backgroundImage: `url(${HomeImage.src})` }}
@@ -20,8 +24,6 @@ const HeroSection = () => {
           className="relative  text-sm md:text-base"
           handleClick={() => alert("Find event!")}
         />
-
-        <h1></h1>
       </div>
     </section>
   );

@@ -4,6 +4,8 @@ import { apiGet, apiPost } from "@/utils/appFunctions";
 
 export const userStore = create((set) => ({
   user: {},
+  isUserLoggedin: false,
+  isAdminLoggedin: true,
   getUser: async () => {
     try {
       const responseData = await apiGet("/api/user");
@@ -15,12 +17,19 @@ export const userStore = create((set) => ({
   loginUser: async (formData: any) => {
     try {
       const responseData = await apiPost(formData, "/api/user");
-      console.log(responseData);
       set({ user: responseData });
+
+      if (responseData.message === "success") {
+        set(() => ({ isUserLoggedin: true }));
+      }
     } catch (error) {
       console.error("Error fetching external data:", error);
       console.log(error);
-      
+      set(() => ({ isUserLoggedin: false }));
     }
+  },
+  logoutUser: () => {
+    set(() => ({ isUserLoggedin: false }));
+    set({ user: {} });
   },
 }));

@@ -1,10 +1,10 @@
 import Image from "next/image";
 import ShareIcon from "@/assets/svg/SpotDetailsSvg/ShareIconSvg.svg";
 import BookmarkIcon from "@/assets/svg/SpotDetailsSvg/BookmarkIconSvg.svg";
-import FriendlySpots from "@/components/App/Home/FriendlySpots/FriendlySpots";
-import AllFeatures from "@/components/App/SpotDetails/Features/AllFeatures";
-import FeaturesDetails from "@/components/App/SpotDetails/Features/FeaturesDetails";
-import Offers from "@/components/App/SpotDetails/Features/Offers";
+import FriendlySpots from "@/components/user/Home/FriendlySpots/FriendlySpots";
+import AllFeatures from "@/components/user/SpotDetails/Features/AllFeatures";
+import FeaturesDetails from "@/components/user/SpotDetails/Features/FeaturesDetails";
+import Offers from "@/components/user/SpotDetails/Features/Offers";
 
 const page = () => {
   return (
@@ -12,7 +12,9 @@ const page = () => {
       <section className="px-5 md:px-10 lg:px-16 mt-28">
         {/* title and icons */}
         <div className="flex items-center justify-between mb-5">
-          <h1 className="text-gold-500 text-2xl md:text-3xl font-bold">Club Quilox</h1>
+          <h1 className="text-gold-500 text-2xl md:text-3xl font-bold">
+            Club Quilox
+          </h1>
 
           <div className="flex gap-2">
             <Image src={ShareIcon} alt="ShareIcon" height={45} />

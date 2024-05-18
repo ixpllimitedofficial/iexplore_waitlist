@@ -27,7 +27,7 @@ const AllOrdersTable = () => {
   const router = useRouter();
 
   const handleClick = (id: number) => {
-    // router.push(`/admin/dashboard/user-management/${id}`);
+    // router.push(`/admin/user-management/${id}`);
   };
 
   return (

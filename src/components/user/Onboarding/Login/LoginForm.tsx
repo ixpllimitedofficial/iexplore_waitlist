@@ -23,9 +23,9 @@ import { Input } from "@/components/UI/input";
 import { inputStyling } from "@/utils/constant";
 
 const formSchema = z.object({
-  username_or_email: z.string().email().min(10, {
-    message: "Username/Email must be at least 10 characters.",
-  }),
+  username_or_email: z
+    .string()
+    .min(3, { message: "Username must be at least 10 characters." }),
   password: z.string().min(5, {
     message: "Password must be at least 2 characters.",
   }),
@@ -37,6 +37,7 @@ const LoginForm = () => {
 
   // zustand
   const user = userStore((state: any) => state.user);
+  const isUserLoggedin = userStore((state: any) => state.isUserLoggedin);
   const loginUser = userStore((state: any) => state.loginUser);
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -53,11 +54,13 @@ const LoginForm = () => {
   }
 
   useEffect(() => {
-    console.log(user.message);
-    if (user.message === "success") {
+    console.log(user);
+    console.log(isUserLoggedin);
+
+    if (isUserLoggedin) {
       router.push("/user/home");
     }
-  }, [user, router]);
+  }, [user, router, isUserLoggedin]);
 
   return (
     <>

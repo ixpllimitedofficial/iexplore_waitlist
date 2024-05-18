@@ -7,7 +7,7 @@ import Link from "next/link";
 const ProfileCard = () => {
   return (
     <Link
-      href="/admin/dashboard/profile"
+      href="/admin/profile"
       // className="self-end bg-[#F7D0984D] p-2 lg:p-4 rounded-2xl flex items-center gap-2 lg:gap-4"
       className="hidden lg:flex items-center gap-3 bg-gold-800 p-4 rounded-2xl"
     >

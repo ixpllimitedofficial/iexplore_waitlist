@@ -28,7 +28,7 @@ const AllVendorsTable = () => {
   const router = useRouter();
 
   const handleClick = (id: number) => {
-    router.push(`/admin/dashboard/vendor-management/${id}`);
+    router.push(`/admin/vendor-management/${id}`);
   };
 
   return (

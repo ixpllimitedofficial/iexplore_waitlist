@@ -30,11 +30,11 @@ const DropdownMenuTest = () => {
 
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <Link href="/admin/dashboard/profile">
+          <Link href="/admin/profile">
             <DropdownMenuItem>Profile</DropdownMenuItem>
           </Link>
 
-          <Link href="/admin/dashboard/settings">
+          <Link href="/admin/settings">
             <DropdownMenuItem>Settings</DropdownMenuItem>
           </Link>
         </DropdownMenuGroup>

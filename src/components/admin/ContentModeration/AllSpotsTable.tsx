@@ -27,7 +27,7 @@ const AllSpotsTable = () => {
   const router = useRouter();
 
   const handleClick = (id: number) => {
-    router.push(`/admin/dashboard/content-moderation/spots/${id}`);
+    router.push(`/admin/content-moderation/spots/${id}`);
   };
 
   return (
@@ -83,7 +83,9 @@ const AllSpotsTable = () => {
               <TableRow>
                 <TableCell className="font-medium py-5">{table}</TableCell>
                 <TableCell>Club Quilox</TableCell>
-                <TableCell>873 Ozumba Mbadiwe Ave, Victoria Island 106104, Lagos</TableCell>
+                <TableCell>
+                  873 Ozumba Mbadiwe Ave, Victoria Island 106104, Lagos
+                </TableCell>
                 <TableCell>4.0 (90)</TableCell>
                 <TableCell>6:00PM - 4:00AM</TableCell>
                 <TableCell>

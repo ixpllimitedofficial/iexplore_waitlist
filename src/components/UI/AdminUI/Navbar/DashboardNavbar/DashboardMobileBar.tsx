@@ -93,7 +93,7 @@ const DashboardMobileBar = () => {
 
           {/* user */}
           <Link
-            href="/admin/dashboard/user-management"
+            href="/admin/user-management"
             onClick={showNav}
             className={`${
               pathname.includes("user-management")
@@ -107,7 +107,7 @@ const DashboardMobileBar = () => {
 
           {/* vendor */}
           <Link
-            href="/admin/dashboard/vendor-management"
+            href="/admin/vendor-management"
             onClick={showNav}
             className={`${
               pathname.includes("vendor-management")
@@ -121,7 +121,7 @@ const DashboardMobileBar = () => {
 
           {/* content */}
           <Link
-            href="/admin/dashboard/content-moderation"
+            href="/admin/content-moderation"
             onClick={showNav}
             className={`${
               pathname.includes("content-moderation")
@@ -135,7 +135,7 @@ const DashboardMobileBar = () => {
 
           {/* Referral */}
           <Link
-            href="/admin/dashboard/referral"
+            href="/admin/referral"
             onClick={showNav}
             className={`${
               pathname.includes("referral")
@@ -152,7 +152,7 @@ const DashboardMobileBar = () => {
 
           {/* Notifications */}
           <Link
-            href="/admin/dashboard/notifications"
+            href="/admin/notifications"
             onClick={showNav}
             className={`${
               pathname.includes("notifications")
@@ -166,7 +166,7 @@ const DashboardMobileBar = () => {
 
           {/* Analytic & Reporting */}
           <Link
-            href="/admin/dashboard/orders"
+            href="/admin/orders"
             onClick={showNav}
             className={`${
               pathname.includes("orders")
@@ -183,7 +183,7 @@ const DashboardMobileBar = () => {
 
           {/* Settings */}
           <Link
-            href="/admin/dashboard/settings"
+            href="/admin/settings"
             onClick={showNav}
             className={`${
               pathname.includes("settings")
@@ -197,7 +197,7 @@ const DashboardMobileBar = () => {
 
           {/* Support */}
           <Link
-            href="/admin/dashboard/support"
+            href="/admin/support"
             onClick={showNav}
             className={`${
               pathname.includes("support")

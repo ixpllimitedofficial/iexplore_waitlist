@@ -27,7 +27,7 @@ const AllContentsTable = () => {
   const router = useRouter();
 
   const handleClick = (id: number) => {
-    router.push(`/admin/dashboard/content-moderation/drinks/${id}`);
+    router.push(`/admin/content-moderation/drinks/${id}`);
   };
 
   return (

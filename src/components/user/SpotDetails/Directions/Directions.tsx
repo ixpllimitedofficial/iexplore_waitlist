@@ -2,7 +2,7 @@ import MapImage from "@/assets/img/SpotDetails/MapImage.png";
 import Image from "next/image";
 import ShareIcon from "@/assets/svg/SpotDetailsSvg/ShareIconSvg.svg";
 import BookmarkIcon from "@/assets/svg/SpotDetailsSvg/BookmarkIconSvg.svg";
-import GetApp from "@/components/App/Home/GetApp/GetApp";
+import GetApp from "@/components/user/Home/GetApp/GetApp";
 
 const Directions = () => {
   return (

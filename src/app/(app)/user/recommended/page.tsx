@@ -1,10 +1,10 @@
-import RecommendedEvents from "@/components/App/RecommendedEvents/RecommendedEvents";
+import RecommendedEvents from "@/components/user/RecommendedEvents/RecommendedEvents";
 import Footer from "@/components/UI/Footer/Footer";
 
 const page = () => {
   return (
     <section className="mt-28">
-      <RecommendedEvents /> 
+      <RecommendedEvents />
 
       <Footer />
     </section>

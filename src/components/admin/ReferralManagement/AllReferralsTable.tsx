@@ -25,7 +25,7 @@ const AllReferralsTable = () => {
   const router = useRouter();
 
   const handleClick = (id: number) => {
-    router.push(`/admin/dashboard/referral/${id}`);
+    router.push(`/admin/referral/${id}`);
   };
 
   return (

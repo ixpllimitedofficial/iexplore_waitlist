@@ -2,12 +2,12 @@ import Image from "next/image";
 import ShareIcon from "@/assets/svg/SpotDetailsSvg/ShareIconSvg.svg";
 import BookmarkIcon from "@/assets/svg/SpotDetailsSvg/BookmarkIconSvg.svg";
 import SpotDetailsImage from "@/assets/img/SpotDetails/SpotDetailsImage.png";
-import SpotFeatures from "@/components/App/SpotDetails/SpotFeatures";
-import GetDirections from "@/components/App/SpotDetails/GetDirections";
-import SpotRatings from "@/components/App/SpotDetails/SpotRatings";
-import Reviews from "@/components/App/SpotDetails/Reviews";
-import Contribute from "@/components/App/SpotDetails/Contribute";
-import Clubs from "@/components/App/Home/Clubs/Clubs";
+import SpotFeatures from "@/components/user/SpotDetails/SpotFeatures";
+import GetDirections from "@/components/user/SpotDetails/GetDirections";
+import SpotRatings from "@/components/user/SpotDetails/SpotRatings";
+import Reviews from "@/components/user/SpotDetails/Reviews";
+import Contribute from "@/components/user/SpotDetails/Contribute";
+import Clubs from "@/components/user/Home/Clubs/Clubs";
 
 const page = () => {
   return (

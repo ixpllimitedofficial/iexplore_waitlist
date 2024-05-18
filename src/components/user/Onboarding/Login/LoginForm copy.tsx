@@ -38,6 +38,8 @@ const LoginForm = () => {
     loginUser({
       username_or_email: "tweetdatebot@gmail.com",
       password: "MySecret@123",
+      // tweetdatebot@gmail.com
+      // MySecret@123
     });
     // router.push("/user");
   };
