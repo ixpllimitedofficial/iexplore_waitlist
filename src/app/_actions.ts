@@ -1,4 +1,4 @@
-export const apiGet = async (apiUrl) => {
+export const apiGet = async (apiUrl: any) => {
   try {
     const response = await fetch(apiUrl);
     const data = await response.json();
@@ -16,19 +16,29 @@ export const apiGet = async (apiUrl) => {
   }
 };
 
-export const apiPost = async (formData, apiUrl) => {
+export const apiPost = async (formData: any, apiUrl: any, funcType?: any) => {
   console.log(formData, apiUrl);
+  let finalData;
+
+  if (formData.extraUrl) {
+    const { extraUrl, ...newData } = formData;
+    finalData = newData;
+  } else {
+    finalData = formData;
+  }
+
   try {
     const response = await fetch(apiUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Accept: "application/json",
       },
-      body: JSON.stringify(formData),
+      body: JSON.stringify(finalData),
     });
     const data = await response.json();
 
-    console.log(response);
+    console.log(data, "testing data");
 
     if (!response.ok) {
       throw new Error("Failed to fetch external data");

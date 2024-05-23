@@ -1,11 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import LoginForm from "./LoginForm";
-import AppButton from "@/components/UI/Button/AppButton";
-
 import GoogleIcon from "@/assets/img/GoogleIcon.png";
 import AppleIcon from "@/assets/img/AppleIcon.png";
-import FormInput from "@/components/UI/Inputs/FormInput";
 
 const Login = () => {
   return (

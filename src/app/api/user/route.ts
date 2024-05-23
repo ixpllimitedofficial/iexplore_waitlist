@@ -2,7 +2,8 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import { cookies } from "next/headers";
-import { apiGet, apiPost } from "@/utils/appFunctions";
+// import { apiGet, apiPost } from "@/utils/appFunctions";
+import { apiGet, apiPost } from "@/app/_actions";
 
 export async function GET() {
   try {
@@ -16,34 +17,35 @@ export async function GET() {
 }
 
 export async function POST(request: NextRequest) {
-  const data = await request.json();
-  const apiUrl = "http://44.193.73.68:8000/api/auth/login/";
-  let isUserAuth;
+  const preData = await request.json();
+  console.log(preData);
+
+  const apiUrl = "http://44.193.73.68:8000/api/auth" + preData.extraUrl;
+  console.log(apiUrl);
+
+  const { extraUrl, ...data } = preData;
+  console.log(data);
 
   try {
-    const responseData = await apiPost(
-      {
-        username_or_email: data.username_or_email,
-        password: data.password,
+    const response = await fetch(apiUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
       },
-      apiUrl
-    );
+      body: JSON.stringify(data),
+    });
+    const responseData = await response.json();
+    console.log(responseData, "yeah");
+    console.log(response);
 
-    if ((responseData.message = "success")) {
-      cookies().set({
-        name: "isUserAuth",
-        value: "true",
-        httpOnly: true,
-      });
+    if (!response.ok) {
+      throw new Error(responseData.email);
     }
+
     return NextResponse.json(responseData);
   } catch (error) {
-    cookies().set({
-      name: "isUserAuth",
-      value: "false",
-      httpOnly: true,
-    });
     console.error("Error handling form submission:", error);
-    return NextResponse.json({ error: "Internal Server Error" });
+    return NextResponse.json(error);
   }
 }

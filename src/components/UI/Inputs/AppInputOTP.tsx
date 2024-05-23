@@ -26,7 +26,7 @@ const FormSchema = z.object({
   }),
 });
 
-const AppInputOTP = () => {
+const AppInputOTP = ({userRole}: any) => {
   // router
   const router = useRouter();
 
@@ -41,7 +41,7 @@ const AppInputOTP = () => {
     console.log(data);
 
     if (data.pin.length >= 6) {
-      router.push("/user?flow=resetPassword");
+      router.push(`/${userRole}?flow=resetPassword`);
     }
   }
 

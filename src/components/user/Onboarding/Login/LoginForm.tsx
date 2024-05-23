@@ -21,15 +21,7 @@ import {
 import { Input } from "@/components/UI/input";
 
 import { inputStyling } from "@/utils/constant";
-
-const formSchema = z.object({
-  username_or_email: z
-    .string()
-    .min(3, { message: "Username must be at least 10 characters." }),
-  password: z.string().min(5, {
-    message: "Password must be at least 2 characters.",
-  }),
-});
+import { loginValidationSchema } from "@/types/authSchemas";
 
 const LoginForm = () => {
   // router
@@ -40,22 +32,22 @@ const LoginForm = () => {
   const isUserLoggedin = userStore((state: any) => state.isUserLoggedin);
   const loginUser = userStore((state: any) => state.loginUser);
 
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<z.infer<typeof loginValidationSchema>>({
+    resolver: zodResolver(loginValidationSchema),
     defaultValues: {
-      username_or_email: "",
-      password: "",
+      username_or_email: "ayomisco",
+      password: "MySecret@123",
     },
   });
 
-  function onSubmit(data: z.infer<typeof formSchema>) {
+  function onSubmit(data: z.infer<typeof loginValidationSchema>) {
     console.log(data);
     loginUser(data);
   }
 
   useEffect(() => {
-    console.log(user);
-    console.log(isUserLoggedin);
+    // console.log(user);
+    // console.log(isUserLoggedin);
 
     if (isUserLoggedin) {
       router.push("/user/home");
@@ -121,44 +113,9 @@ const LoginForm = () => {
             Forgot Password
           </Link>
 
-          {user.message && <p>{user.message}</p>}
-
           <AppButton btnText="Login" type="submit" className="text-sm" />
         </form>
       </Form>
-
-      {/* <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5 ">
-        <AppInput
-          type="text"
-          label="Email Address:"
-          registerName="email"
-          register={register}
-          // placeholder="Maxxconnect127@gmail.com"
-          isInputRequired={{ value: true, message: "Email is required!" }}
-          errorMessage={errors.email?.message}
-        />
-
-        <AppInput
-          type="password"
-          label="Password:"
-          registerName="password"
-          register={register}
-          // placeholder="***********************"
-          isInputRequired={{ value: true, message: "Password is required!" }}
-          errorMessage={errors.password?.message}
-        />
-
-        <Link
-          href="/user?flow=forgotPassword"
-          className=" text-gold-500 text-end font-medium"
-        >
-          Forgot Password
-        </Link>
-
-        <p>{user.message}</p>
-
-        <AppButton btnText="Login" type="submit" />
-      </form> */}
     </>
   );
 };

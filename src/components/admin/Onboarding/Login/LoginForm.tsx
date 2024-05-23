@@ -3,68 +3,124 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import AppButton from "@/components/UI/Button/AppButton";
-import AppInput from "@/components/UI/Inputs/AppInput";
-
-import { useForm, SubmitHandler } from "react-hook-form";
-import { IFormInput } from "@/types/InputTypes";
-
+import { useForm } from "react-hook-form";
 import { userStore } from "@/store/user";
+import { useEffect } from "react";
+
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/UI/form";
+import { Input } from "@/components/UI/input";
+
+import { inputStyling } from "@/utils/constant";
+import { loginValidationSchema } from "@/types/authSchemas";
 
 const LoginForm = () => {
   // router
   const router = useRouter();
 
   // zustand
+  const user = userStore((state: any) => state.user);
+  const isUserLoggedin = userStore((state: any) => state.isUserLoggedin);
   const loginUser = userStore((state: any) => state.loginUser);
 
   // react hook form
-  const {
-    register,
-    watch,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<IFormInput>();
+  const form = useForm<z.infer<typeof loginValidationSchema>>({
+    resolver: zodResolver(loginValidationSchema),
+    defaultValues: {
+      username_or_email: "",
+      password: "",
+    },
+  });
 
-  const onSubmit: SubmitHandler<IFormInput> = (data) => {
-    // loginUser({
-    //   title: data.email,
-    //   body: data.password,
-    //   userId: 1,
-    // });
+  function onSubmit(data: z.infer<typeof loginValidationSchema>) {
+    console.log(data);
+    loginUser(data);
     router.push("/admin/dashboard");
-  };
+  }
+
+  useEffect(() => {
+    // console.log(user);
+    // console.log(isUserLoggedin);
+
+    if (isUserLoggedin) {
+      router.push("/user/home");
+    }
+  }, [user, router, isUserLoggedin]);
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5 ">
-      <AppInput
-        type="text"
-        label="Email Address:"
-        registerName="email"
-        register={register}
-        // placeholder="Maxxconnect127@gmail.com"
-        isInputRequired={{ value: true, message: "Email is required!" }}
-        errorMessage={errors.email?.message}
-      />
+    <>
+      <Form {...form}>
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="flex flex-col gap-4"
+        >
+          {/* username */}
+          <FormField
+            control={form.control}
+            name="username_or_email"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Username or Email:</FormLabel>
+                <FormControl>
+                  <Input
+                    className={`${inputStyling}`}
+                    placeholder="Username or Email"
+                    {...field}
+                  />
+                </FormControl>
+                {/* <FormDescription>
+                This is your public display name.
+              </FormDescription> */}
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-      <AppInput
-        type="password"
-        label="Password:"
-        registerName="password"
-        register={register}
-        // placeholder="***********************"
-        isInputRequired={{ value: true, message: "Password is required!" }}
-        errorMessage={errors.password?.message}
-      />
+          {/* password */}
+          <FormField
+            control={form.control}
+            name="password"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Password:</FormLabel>
+                <FormControl>
+                  <Input
+                    className={`${inputStyling}`}
+                    placeholder="Password"
+                    {...field}
+                    type="password"
+                  />
+                </FormControl>
+                {/* <FormDescription>
+                This is your public display name.
+              </FormDescription> */}
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-      <Link
-        href="/admin/?flow=forgotPassword"
-        className=" text-gold-500 text-end font-medium"
-      >
-        Forgot Password
-      </Link>
+          <Link
+            href="/admin?flow=forgotPassword"
+            className=" text-gold-500 text-end text-sm font-medium"
+          >
+            Forgot Password
+          </Link>
 
-      <AppButton btnText="Login" type="submit" />
-    </form>
+          {user.message && <p>{user.message}</p>}
+
+          <AppButton btnText="Login" type="submit" className="text-sm" />
+        </form>
+      </Form>
+    </>
   );
 };
 

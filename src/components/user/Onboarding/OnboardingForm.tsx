@@ -1,6 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/UI/tabs";
 import Login from "./Login/Login";
 import Signup from "./Signup/Signup";
+import SignupForm from "./Signup/SignupForm";
 
 const OnboardingForm = () => {
   return (
@@ -13,7 +14,7 @@ const OnboardingForm = () => {
         <Login />
       </TabsContent>
       <TabsContent value="signup">
-        <Signup />
+        <SignupForm />
       </TabsContent>
     </Tabs>
   );

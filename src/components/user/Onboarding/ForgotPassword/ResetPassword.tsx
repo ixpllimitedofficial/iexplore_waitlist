@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -7,9 +8,56 @@ import Modal from "@/components/UI/Modal/Modal";
 
 import PasswordChangeIcon from "@/assets/svg/PasswordChangeIcon.svg";
 
+import Link from "next/link";
+import { useForm } from "react-hook-form";
+import { userStore } from "@/store/user";
+import { useEffect } from "react";
+
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/UI/form";
+import { Input } from "@/components/UI/input";
+
+import { inputStyling } from "@/utils/constant";
+import { resetPasswordValidationSchema } from "@/types/authSchemas";
+
 const ResetPassword = () => {
-  const [showModal, setShowModal] = useState(false);
   const router = useRouter();
+
+  const [showModal, setShowModal] = useState(false);
+
+  // zustand
+  const user = userStore((state: any) => state.user);
+  const isUserLoggedin = userStore((state: any) => state.isUserLoggedin);
+  const loginUser = userStore((state: any) => state.loginUser);
+
+  const form = useForm<z.infer<typeof resetPasswordValidationSchema>>({
+    resolver: zodResolver(resetPasswordValidationSchema),
+    defaultValues: {
+      password: "",
+      confirm_password: "",
+    },
+  });
+
+  function onSubmit(data: z.infer<typeof resetPasswordValidationSchema>) {
+    console.log(data);
+    // loginUser(data);
+
+    handleShowModal()
+
+    // router.push("/user");
+
+    // Unsets Background Scrolling to use when SideDrawer/Modal is closed
+    document.body.style.overflow = "unset";
+  }
 
   const handleModal = () => {
     router.push("/user");
@@ -28,7 +76,7 @@ const ResetPassword = () => {
   };
 
   return (
-    <section className="h-full flex flex-col gap-4 pt-16 lg:pt-28">
+    <section className="h-full flex flex-col gap-2 pt-16 lg:pt-28">
       {/* modal */}
       {showModal && (
         <Modal handleModal={handleModal} btnText="Back to login">
@@ -53,22 +101,64 @@ const ResetPassword = () => {
         Create a new password you’ll easily remember
       </h1>
 
-      <AppInput
-        label="New password:"
-        placeholder="Must be 8 characters"
-        className="md:px-14 lg:px-10"
-      />
-      <AppInput
-        label="Confirm new password:"
-        placeholder="Repeat password"
-        className="md:px-14 lg:px-10"
-      />
+      <Form {...form}>
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="flex flex-col gap-4"
+        >
+          {/* password */}
+          <FormField
+            control={form.control}
+            name="password"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Password:</FormLabel>
+                <FormControl>
+                  <Input
+                    className={`${inputStyling}`}
+                    placeholder="Password"
+                    {...field}
+                    type="password"
+                  />
+                </FormControl>
+                {/* <FormDescription>
+                This is your public display name.
+              </FormDescription> */}
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-      <AppButton
-        btnText="Reset password"
-        className="rounded-2xl self-center"
-        handleClick={handleShowModal}
-      />
+          {/*confirm password */}
+          <FormField
+            control={form.control}
+            name="confirm_password"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Confirm Password:</FormLabel>
+                <FormControl>
+                  <Input
+                    className={`${inputStyling}`}
+                    placeholder="Confirm Password"
+                    {...field}
+                    type="password"
+                  />
+                </FormControl>
+                {/* <FormDescription>
+                This is your public display name.
+              </FormDescription> */}
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <AppButton
+            btnText="Reset password"
+            type="submit"
+            className="text-sm"
+          />
+        </form>
+      </Form>
     </section>
   );
 };
