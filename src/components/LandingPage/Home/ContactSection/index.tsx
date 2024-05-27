@@ -13,7 +13,7 @@ const index = () => {
       id="contact-us"
     >
       <div className="flex flex-col gap-4 lg:w-[45%]">
-        <h1 className="md:text-3xl font-bold">
+        <h1 className="md:text-2xl lg:text-3xl font-bold">
           CONTACT US, WE WOULD LOVE TO HEAR FROM YOU.
           {/* <span className="font-bold">Anytime.</span> */}
         </h1>

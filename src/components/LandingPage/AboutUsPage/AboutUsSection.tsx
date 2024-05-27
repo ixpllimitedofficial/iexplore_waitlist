@@ -7,34 +7,34 @@ const AboutUsSection = () => {
         About Us:
       </h3>
 
-      <div className="grid grid-cols-3 justify-between gap-3 lg:gap-10">
-        <p className="font-bold text-3xl">
+      <div className="grid grid-cols-3 justify-between gap-5 lg:gap-10">
+        <p className="col-span-full lg:col-span-1 font-bold text-3xl">
           <span className="text-gold-500">Introduction</span> to the BEST
           ENTERTAINMENT AGENCY
         </p>
 
-        <p className="text-lg">
+        <p className="text-lg col-span-full lg:col-span-1">
           We are a dynamic and innovative mobile application with root in the
           nightlife experience market.  The brand is born out of passion and the
           desire to redefine the way we experience the nightlife industry in
           Africa.
         </p>
 
-        <p className="text-lg mt-2 md:m-0">
+        <p className="text-lg col-span-full lg:col-span-1">
           Our brand pillars offer cutting edge solutions that will elevate the
           night’s experience. Explorers are exposed to a new and seamless
           perspective to discovering, enjoying and connecting with the best
           nightlife spots In their city
         </p>
 
-        <p className="text-lg mt-2 md:m-0">
+        <p className="text-lg col-span-full lg:col-span-1">
           We are more than an application, We are your personal connection to
           the best and happening places in your city. We are committed to
           empowering you to accomplish more, connect deeper and experience life
           to the fullest.
         </p>
 
-        <p className="text-lg mt-2 md:m-0">
+        <p className="text-lg col-span-full lg:col-span-1">
         Everyday, Explorers get to go on exciting adventures as they discover new destinations where they can connect and  enjoy the night out with friends.
         </p>
       </div>

@@ -35,23 +35,31 @@ const LoginForm = () => {
   const form = useForm<z.infer<typeof loginValidationSchema>>({
     resolver: zodResolver(loginValidationSchema),
     defaultValues: {
-      username_or_email: "ayomisco",
-      password: "MySecret@123",
+      username_or_email: "",
+      password: "",
     },
+    // defaultValues: {
+    //   username_or_email: "ayomisco",
+    //   password: "MySecret@123",
+    // },
   });
 
   function onSubmit(data: z.infer<typeof loginValidationSchema>) {
     console.log(data);
-    loginUser(data);
+    alert(
+      `Logged in with: Username: ${data.username_or_email}, Password: ${data.password} `
+    );
+    router.push("/user/home");
+    // loginUser(data);
   }
 
   useEffect(() => {
     // console.log(user);
     // console.log(isUserLoggedin);
 
-    if (isUserLoggedin) {
-      router.push("/user/home");
-    }
+    // if (isUserLoggedin) {
+    //   router.push("/user/home");
+    // }
   }, [user, router, isUserLoggedin]);
 
   return (

@@ -17,7 +17,7 @@ const HeroSection = () => {
 
       <div className="px-5 md:px-10 lg:px-24 pt-28 lg:pt-0 flex flex-col md:flex-row items-center justify-center md:justify-between gap-5">
         <div className="relative md:bottom-[40px] lg:bottom-[-80px] z-50 text-center md:text-start">
-          <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl">
+          <h1 className="font-bold text-2xl md:text-3xl lg:text-5xl">
             DISCOVER, CONNECT, & <br />
             <span className="text-gold-500 italic font-bold">ENJOY</span> THE
             BEST NIGHT OUT IN YOUR CITY!
@@ -45,7 +45,7 @@ const HeroSection = () => {
         <Image
           src={LandingPagePhoneImage}
           alt="LandingPagePhoneImage"
-          className="relative h-[370px] md:h-[450px] lg:h-[630px] w-auto bottom-[-30px] md:bottom-[5px] lg:bottom-[-180px] z-50"
+          className="relative h-[350px] md:h-[450px] lg:h-[630px] w-auto bottom-[-20px] md:bottom-[5px] lg:bottom-[-180px] z-50"
         />
       </div>
 

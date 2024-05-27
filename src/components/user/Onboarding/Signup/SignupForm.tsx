@@ -48,41 +48,45 @@ const SignupForm = () => {
 
   const form = useForm<z.infer<typeof signupValidationSchema>>({
     resolver: zodResolver(signupValidationSchema),
-    // defaultValues: {
-    //   checkbox: false,
-    //   first_name: "",
-    //   last_name: "",
-    //   email: "",
-    //   username: "",
-    //   role: "user",
-    //   phone: "",
-    //   gender: "",
-    //   date_of_birth: undefined,
-    //   location: "",
-    //   referral_code: "",
-    //   password: "",
-    //   confirm_password: "",
-    // },
     defaultValues: {
-      checkbox: true,
-      first_name: "Ayomide",
-      last_name: "Francis",
-      email: "ayomidetesting@gmail.com",
-      username: "ayomisco",
+      checkbox: false,
+      first_name: "",
+      last_name: "",
+      email: "",
+      username: "",
       role: "user",
-      phone: "08025373455",
-      gender: "male",
+      phone: "",
+      gender: "",
       date_of_birth: "",
-      location: "Nigeria",
+      location: "",
       referral_code: "",
-      password: "MySecret@123",
-      confirm_password: "MySecret@123",
+      password: "",
+      confirm_password: "",
     },
+    // defaultValues: {
+    //   checkbox: true,
+    //   first_name: "Ayomide",
+    //   last_name: "Francis",
+    //   email: "ayomidetesting@gmail.com",
+    //   username: "ayomisco",
+    //   role: "user",
+    //   phone: "08025373455",
+    //   gender: "male",
+    //   date_of_birth: "",
+    //   location: "Nigeria",
+    //   referral_code: "",
+    //   password: "MySecret@123",
+    //   confirm_password: "MySecret@123",
+    // },
   });
 
   function onSubmit(data: z.infer<typeof signupValidationSchema>) {
     const { checkbox, ...newData } = data;
-
+    console.log(data);
+    alert(
+      ` You are now signed up!`
+    );
+    router.push("/user/home");
     signupUser(newData);
   }
 

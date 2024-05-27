@@ -29,7 +29,7 @@ const LoginForm = () => {
 
   // zustand
   const user = userStore((state: any) => state.user);
-  const isUserLoggedin = userStore((state: any) => state.isUserLoggedin);
+  const isAdminLoggedin = userStore((state: any) => state.isAdminLoggedin);
   const loginUser = userStore((state: any) => state.loginUser);
 
   // react hook form
@@ -43,18 +43,20 @@ const LoginForm = () => {
 
   function onSubmit(data: z.infer<typeof loginValidationSchema>) {
     console.log(data);
-    loginUser(data);
+    alert(
+      `Logged in with: Username: ${data.username_or_email}, Password: ${data.password} `
+    );
+    // loginUser(data);
     router.push("/admin/dashboard");
   }
 
   useEffect(() => {
     // console.log(user);
-    // console.log(isUserLoggedin);
-
-    if (isUserLoggedin) {
-      router.push("/user/home");
-    }
-  }, [user, router, isUserLoggedin]);
+    // console.log(isAdminLoggedin);
+    // if (isAdminLoggedin) {
+    //   router.push("/admin/dashboard");
+    // }
+  }, [user, router, isAdminLoggedin]);
 
   return (
     <>

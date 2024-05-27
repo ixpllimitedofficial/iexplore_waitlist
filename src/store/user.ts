@@ -5,7 +5,7 @@ import { persist } from "zustand/middleware";
 
 export const userStore = create((set) => ({
   user: {},
-  isUserLoggedin: false,
+  isUserLoggedin: true,
   isAdminLoggedin: true,
   userRegistrationStatus: {},
   getUser: async () => {

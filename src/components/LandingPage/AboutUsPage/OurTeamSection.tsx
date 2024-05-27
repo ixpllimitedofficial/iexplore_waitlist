@@ -8,7 +8,7 @@ const OurTeamSection = () => {
       </h3> */}
 
       <div className="text-center">
-        <h3 className="font-bold text-3xl">
+        <h3 className="font-bold text-3xl px-2 md:px-0">
           Meet the <span className="text-gold-500">iExplore</span> team:
         </h3>
         <p className="text-lg mt-1 px-5 md:px-0">
