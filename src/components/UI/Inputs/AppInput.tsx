@@ -1,6 +1,5 @@
 import React from "react";
 import { Input } from "@/components/UI/input";
-import { InputType } from "@/types/InputTypes";
 
 const AppInput = ({
   value,
@@ -14,7 +13,7 @@ const AppInput = ({
   registerName,
   isInputRequired,
   errorMessage,
-}: InputType) => {
+}: any) => {
   return (
     <div className={`${className} flex flex-col gap-2`}>
       {label && (

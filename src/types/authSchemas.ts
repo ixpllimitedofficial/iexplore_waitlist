@@ -28,8 +28,7 @@ export const signupValidationSchema = z
         required_error: "Please select a gender.",
       })
       .min(1, { message: "Please select a gender" }),
-    date_of_birth: z.string()
-    .min(1, { message: "Please select a date" }),
+    date_of_birth: z.string().min(1, { message: "Please select a date" }),
     location: z
       .string({
         required_error: "Please select a location.",
@@ -70,3 +69,5 @@ export const resetPasswordValidationSchema = z
     message: "Passwords don't match",
     path: ["confirm_password"], // path of error
   });
+
+export type InputTypes = any;
