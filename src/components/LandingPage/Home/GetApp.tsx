@@ -1,4 +1,5 @@
-import GetAppImage from "@/assets/img/GetAppImage.png";
+/* eslint-disable react/no-unescaped-entities */
+import GetAppImage from "@/assets/img/LandingPage/GetAppImage.jpeg";
 import GetAppPhonesImage from "@/assets/img/LandingPage/GetAppPhonesImage.png";
 import AppStoreImage from "@/assets/img/AppStoreImage.png";
 import GooglePlayImage from "@/assets/img/GooglePlayImage.png";
@@ -11,11 +12,15 @@ const GetApp = () => {
       style={{ backgroundImage: `url(${GetAppImage.src})` }}
       className="relative flex flex-col items-center justify-center w-[85vw] bg-no-repeat bg-cover bg-center mb-10 mx-auto rounded-3xl pt-10 md:pt-16"
     >
-      <div className="text-center flex flex-col gap-3 lg:gap-6">
-        <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">
-          GET YOUR FRIENDS IN! <br />
-          <span className="text-gold-500 italic">GET EVERYONE</span> IN!
-        </h1>
+      <div className="text-center flex flex-col gap-3 lg:gap-6 z-50">
+        <div>
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">
+            UNLOCK YOUR CITY'S SECRETS: <br />
+          </h1>
+          <p className="text-gold-500 text-2xl md:text-4xl lg:text-5xl font-medium w-4/5 mx-auto italic">
+            YOUR NIGHT'S ADVENTURE BEGINS HERE!"
+          </p>
+        </div>
         <p className="px-10 text-sm md:text-base lg:text-xl font-medium">
           Download and enjoy our app with your friends with{" "}
           <span className="font-bold italic">ease!</span>
@@ -36,7 +41,9 @@ const GetApp = () => {
       </div>
 
       {/* phone image */}
-      <Image src={GetAppPhonesImage} alt="GetAppPhonesImage" className="" />
+      <Image src={GetAppPhonesImage} alt="GetAppPhonesImage" className="z-50" />
+
+      <div className="absolute top-0 left-0 bg-[#000000b9] h-full w-full"></div>
     </section>
   );
 };

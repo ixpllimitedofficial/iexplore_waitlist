@@ -7,13 +7,13 @@ import Footer from "@/components/UI/Footer/Footer";
 const page = async () => {
 
   return (
-    <>
+    <section>
       <HeroSection />
       <AboutApp />
       <GetApp />
       <ContactSection />
       <Footer />
-    </>
+    </section>
   );
 };
 

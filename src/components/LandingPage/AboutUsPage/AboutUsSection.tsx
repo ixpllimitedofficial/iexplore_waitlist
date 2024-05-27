@@ -7,21 +7,35 @@ const AboutUsSection = () => {
         About Us:
       </h3>
 
-      <div className="flex flex-col lg:flex-row justify-between gap-3 lg:gap-10">
-        <p className="font-bold text-2xl lg:w-[75%]">
+      <div className="grid grid-cols-3 justify-between gap-3 lg:gap-10">
+        <p className="font-bold text-3xl">
           <span className="text-gold-500">Introduction</span> to the BEST
           ENTERTAINMENT AGENCY
         </p>
 
         <p className="text-lg">
-          We at iExplore aim to bring you the entertainment you deserve at our
-          company, by giving you the best places to relax, drink, and party.
+          We are a dynamic and innovative mobile application with root in the
+          nightlife experience market.  The brand is born out of passion and the
+          desire to redefine the way we experience the nightlife industry in
+          Africa.
         </p>
 
         <p className="text-lg mt-2 md:m-0">
-          Every day, the iExplore team brings its members diverse and exciting
-          content on dining spots, events, destinations, adventures, weekend
-          escapes, and more.
+          Our brand pillars offer cutting edge solutions that will elevate the
+          night’s experience. Explorers are exposed to a new and seamless
+          perspective to discovering, enjoying and connecting with the best
+          nightlife spots In their city
+        </p>
+
+        <p className="text-lg mt-2 md:m-0">
+          We are more than an application, We are your personal connection to
+          the best and happening places in your city. We are committed to
+          empowering you to accomplish more, connect deeper and experience life
+          to the fullest.
+        </p>
+
+        <p className="text-lg mt-2 md:m-0">
+        Everyday, Explorers get to go on exciting adventures as they discover new destinations where they can connect and  enjoy the night out with friends.
         </p>
       </div>
     </section>

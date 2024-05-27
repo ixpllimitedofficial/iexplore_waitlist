@@ -7,17 +7,19 @@ const ExploreSection = () => {
   return (
     <section
       style={{ backgroundImage: `url(${AboutAppYellowBg.src})` }}
-      className="relative flex flex-col md:flex-row items-center justify-between gap-10 p-10 h-[600px] md:h-[350px] lg:h-[520px] w-[90vw] lg:w-[80vw] mx-auto bg-no-repeat bg-cover bg-center my-10 rounded-3xl overflow-hidden"
+      className="relative flex flex-col md:flex-row items-center justify-around gap-10 p-10 h-[600px] md:h-[350px] lg:h-[520px] w-[90vw] lg:w-[80vw] mx-auto bg-no-repeat bg-cover bg-center my-10 rounded-3xl overflow-hidden"
     >
-      <div className="flex flex-col gap-1">
+      <div className="md:w-[45%] flex flex-col gap-3">
         <div>
           <Image src={ExploreTextIxon} alt="ExploreTextIxon" />
           <h1 className="font-bold text-2xl md:text-3xl text-black">Explore</h1>
+          <p className="text-lg lg:text-xl text-black font-bold italic leading-snug">
+            (Satisfy the adventurer in you)
+          </p>
         </div>
-        <p className="text-lg lg:text-xl text-black font-medium leading-snug">
-          Fuel your inner adventurer by exploring hidden spots and places that
-          make you explore and relax at different spots suggested to you based
-          on your preference.
+        <p className="text-lg lg:text-xl text-black leading-snug">
+          As you journey the hottest spots for an experience to fill your soul,
+          you uncover  hidden gems in your city’s vibrant nightlife scene .
         </p>
       </div>
 

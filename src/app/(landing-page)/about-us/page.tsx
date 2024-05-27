@@ -1,3 +1,4 @@
+import AboutUsAim from "@/components/LandingPage/AboutUsPage/AboutUsAim";
 import AboutUsFeatures from "@/components/LandingPage/AboutUsPage/AboutUsFeatures";
 import AboutUsSection from "@/components/LandingPage/AboutUsPage/AboutUsSection";
 import HeroSection from "@/components/LandingPage/AboutUsPage/HeroSection";
@@ -12,6 +13,7 @@ const page = () => {
       <HeroSection />
       <AboutUsSection />
       <AboutUsFeatures />
+      <AboutUsAim />
       <TeamPhotoSection />
       <OurTeamSection />
       <ContactSection />

@@ -8,16 +8,14 @@ import LinkedInIcon from "@/assets/svg/LinkedInIcon.svg";
 
 const Footer = () => {
   return (
-    <footer className=" bg-gold-600 text-black p-8 lg:py-12 lg:px-16">
+    <footer className=" bg-gold-500 text-black p-8 lg:py-12 lg:px-16">
       <div className="flex flex-col lg:flex-row gap-12 justify-between">
-        <div className="flex flex-col gap-6 lg:w-[35%]">
+        <div className="flex flex-col gap-6 lg:w-[45%]">
           {/* logo */}
           <Image src={ExploreDarkLogo} alt="logo" height={70} />
 
-          <p className="leading-relaxed">
-            Donec mattis porta eros, aliquet finibus risus interdum at. Nulla
-            vivethe as it was for us to know what was to be done. the this is a
-            long post for the text.`This small text has to be place here.
+          <p className="leading-relaxed font-medium">
+          We are a dynamic and innovative mobile application with root in the nightlife experience market. Our pillars are designed to elevate your night’s experience. We provide all you need in one convenient platform.
           </p>
 
           {/* icons */}
@@ -70,11 +68,11 @@ const Footer = () => {
           </div>
 
           {/* nav 2 */}
-          <div className="flex flex-col gap-3 font-medium lg:pt-20">
+          {/* <div className="flex flex-col gap-3 font-medium lg:pt-20">
             <p>Support</p>
             <p>Knowledge base</p>
             <p>Live chat</p>
-          </div>
+          </div> */}
 
           {/* nav 3 */}
           <div className="flex flex-col gap-3 font-medium lg:pt-20">

@@ -2,14 +2,14 @@ import React from "react";
 
 const OurTeamSection = () => {
   return (
-    <section className="flex flex-col items-center gap-5 bg-[#3C3C3C] py-12">
-      <h3 className="font-bold text-xl bg-gold-500 text-black py-2 px-4 rounded-2xl">
+    <section className="flex flex-col items-center gap-5 bg-black py-12">
+      {/* <h3 className="font-bold text-xl bg-gold-500 text-black py-2 px-4 rounded-2xl">
         Our Team:
-      </h3>
+      </h3> */}
 
       <div className="text-center">
-        <h3 className="font-bold text-2xl">
-          Meet the <span className="text-gold-500">iExplore</span> team
+        <h3 className="font-bold text-3xl">
+          Meet the <span className="text-gold-500">iExplore</span> team:
         </h3>
         <p className="text-lg mt-1 px-5 md:px-0">
           A Group Of Seasoned Team Of Workers

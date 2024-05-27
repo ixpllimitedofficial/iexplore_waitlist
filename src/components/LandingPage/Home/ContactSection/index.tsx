@@ -4,14 +4,18 @@ import PhoneSvg from "@/assets/svg/LandingPageSvg/PhoneSvg.svg";
 import WhatsappSvg from "@/assets/svg/LandingPageSvg/WhatsappSvg.svg";
 import LocationIcon from "@/assets/svg/LandingPageSvg/LocationIcon.svg";
 import AppButton from "@/components/UI/Button/AppButton";
+import { Button } from "@/components/UI/button";
 
 const index = () => {
   return (
-    <section className="relative flex flex-col lg:flex-row items-center justify-between px-5 py-7 md:p-12 lg:py-3 gap-10 w-[90vw] md:w-[85vw] bg-[#FEFAF5] mt-10 md:mt-36 text-black mb-10 mx-auto rounded-3xl" id="contact-us">
+    <section
+      className="relative flex flex-col lg:flex-row items-center justify-between px-5 py-7 md:p-12 lg:py-3 gap-10 w-[90vw] md:w-[85vw] bg-[#FFC000] mt-10 md:mt-36 text-black mb-10 mx-auto rounded-3xl"
+      id="contact-us"
+    >
       <div className="flex flex-col gap-4 lg:w-[45%]">
-        <h1 className="md:text-2xl">
-          Get in touch, we would love to hear from you{" "}
-          <span className="font-bold">Anytime.</span>
+        <h1 className="md:text-3xl font-bold">
+          CONTACT US, WE WOULD LOVE TO HEAR FROM YOU.
+          {/* <span className="font-bold">Anytime.</span> */}
         </h1>
 
         {/* divider */}
@@ -36,7 +40,9 @@ const index = () => {
             height={25}
             className="self-start"
           />
-          <p className="text-sm md:text-lg font-semibold">support@explore.com</p>
+          <p className="text-sm md:text-lg font-semibold">
+            support@explore.com
+          </p>
         </div>
 
         <div className="flex items-center gap-1">
@@ -63,7 +69,7 @@ const index = () => {
       </div>
 
       {/* phone image */}
-      <div className="bg-white p-5 flex flex-col gap-5 w-full lg:w-[45%] rounded-3xl shadow-xl relative lg:-top-20">
+      <div className="bg-[#FFC000] p-5 flex flex-col gap-5 w-full lg:w-[45%] rounded-3xl shadow-xl relative lg:-top-20">
         <input
           type="text"
           placeholder="Your Name"
@@ -81,7 +87,9 @@ const index = () => {
           placeholder="Message"
         />
 
-        <AppButton btnText="Send Message" className="text-black bg-gold-500 mx-auto" />
+        <Button className="text-black bg-[#FEFAF5] mx-auto hover:bg-[#fefaf5be]">
+          Send Message
+        </Button>
       </div>
     </section>
   );
