@@ -10,7 +10,7 @@ import Link from "next/link";
 const page = () => {
   return (
     <>
-      <div className="mt-5 bg-[#333333] p-5 lg:p-8 rounded-2xl">
+      <div className="mt-5 bg-brandDarkNeutral p-5 lg:p-8 rounded-2xl">
         <div className="grid grid-cols-2 gap-10">
           {/* edit profile */}
           <div className="col-span-full md:col-span-1">
@@ -79,7 +79,7 @@ const page = () => {
         </div>
       </div>
 
-      <div className="bg-[#333333] p-5 rounded-2xl mt-10 mb-5 flex flex-col gap-3 lg:w-[50%] mx-auto">
+      <div className="bg-brandDarkNeutral p-5 rounded-2xl mt-10 mb-5 flex flex-col gap-3 lg:w-[50%] mx-auto">
         <p className="text-gold-500 font-bold">Appearance settings</p>
 
         <div className="bg-brandDark flex justify-between items-center w-full border-[1px] border-[#424242] p-3 rounded-xl">

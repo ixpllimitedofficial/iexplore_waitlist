@@ -8,6 +8,7 @@
     --foreground: 0 0% 100%;
 
     --brand-dark: 0 0% 0%;
+    --brand-dark-neutral: 0 0% 5%;
     --brand-gold: 45 100% 50%;
 
     --card: 0 0% 100%;
@@ -84,7 +85,7 @@
 
 @layer components {
   .footerIcon {
-    @apply bg-[#212121] p-4 rounded-full w-[50px] h-[50px] flex place-items-center;
+    @apply bg-[#000000] p-4 rounded-full w-[50px] h-[50px] flex place-items-center;
   }
 
   .spotCategorySelection {

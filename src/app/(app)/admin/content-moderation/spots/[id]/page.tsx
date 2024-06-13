@@ -17,7 +17,7 @@ const page = () => {
       </div>
 
       <section className="mt-5 grid grid-cols-4 gap-5">
-        <div className="col-span-3 bg-[#333333] p-5 lg:p-8 rounded-2xl">
+        <div className="col-span-3 bg-brandDarkNeutral p-5 lg:p-8 rounded-2xl">
           <p className="font-bold text-2xl text-[#FFFFFF]">Club Quilox</p>
 
           <div className="flex flex-col lg:flex-row mt-5 gap-5">
@@ -44,7 +44,7 @@ const page = () => {
           </div>
         </div>
 
-        <div className="col-span-1 flex flex-col gap-10 bg-[#333333] py-8 px-5 rounded-2xl">
+        <div className="col-span-1 flex flex-col gap-10 bg-brandDarkNeutral py-8 px-5 rounded-2xl">
           <div>
             <p className="text-xl font-bold mb-1">Features:</p>
             <p className="text-gold-500">
@@ -60,7 +60,7 @@ const page = () => {
           </div>
         </div>
 
-        <div className="col-span-full bg-[#333333] p-5 lg:p-8 rounded-2xl">
+        <div className="col-span-full bg-brandDarkNeutral p-5 lg:p-8 rounded-2xl">
           <p className="font-bold text-xl text-[#FFFFFF]">User traffic</p>
         </div>
       </section>

@@ -15,7 +15,7 @@ const EditVendorDetailsDialog = () => {
   return (
     <Dialog>
       <DialogTrigger asChild className="">
-      <Button className="bg-gold-800 text-gold-500">
+        <Button className="bg-gold-800 text-gold-500">
           <p>Edit</p>
           <Image src={EditOutlineIconSvg} alt="edit icon" className="ml-2" />
         </Button>
@@ -44,7 +44,7 @@ const EditVendorDetailsDialog = () => {
         <DialogFooter className="mx-auto">
           <Button
             type="submit"
-            className="bg-[#333333] text-gold-500  border-2 border-gold-500"
+            className="bg-brandDarkNeutral text-gold-500  border-2 border-gold-500"
           >
             Save
           </Button>

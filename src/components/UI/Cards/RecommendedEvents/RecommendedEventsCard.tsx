@@ -10,7 +10,7 @@ import LocationIcon from "@/assets/svg/RecommendedEventsSvg/LocationIconSvg.svg"
 
 const RecommendedEventsCard = () => {
   return (
-    <div className="bg-[#333333] mt-7 py-8 px-5 md:p-10 w-[90vw] mx-auto rounded-3xl">
+    <div className="bg-brandDarkNeutral mt-7 py-8 px-5 md:p-10 w-[90vw] mx-auto rounded-3xl">
       <div className="flex items-center justify-between ">
         <p className="font-medium text-[22px] md:text-2xl text-gold-500">
           Amapiano Beach Party

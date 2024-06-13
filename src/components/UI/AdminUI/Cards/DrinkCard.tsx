@@ -15,7 +15,7 @@ const DrinkCard = () => {
   return (
     <div
       //   onClick={() => handleClick()}
-      className="bg-[#333333] p-4 rounded-3xl"
+      className="bg-brandDarkNeutral p-4 rounded-3xl"
     >
       {/* image */}
       <Image

@@ -13,7 +13,7 @@ const ProfileDetails = () => {
     <>
       <div className="mt-5 grid grid-cols-6 gap-4">
         <div className="flex flex-col items-center gap-3 col-span-full md:col-span-3 lg:col-span-2">
-          <div className="flex items-center bg-[#333333] p-4 rounded-2xl w-full gap-3">
+          <div className="flex items-center bg-brandDarkNeutral p-4 rounded-2xl w-full gap-3">
             <div className="relative">
               <Image src={ProfileImage} alt="profile image" height={100} />
               <Image
@@ -39,7 +39,7 @@ const ProfileDetails = () => {
 
         {/* user details */}
         <div className="col-span-full md:col-span-3 lg:col-span-2">
-          <div className="flex flex-col gap-3 bg-[#333333] p-4 rounded-2xl">
+          <div className="flex flex-col gap-3 bg-brandDarkNeutral p-4 rounded-2xl">
             <p className="font-bold text-lg text-gold-500">Details:</p>
 
             <div className="flex flex-col gap-3">
@@ -69,7 +69,7 @@ const ProfileDetails = () => {
         <div className="hidden lg:col-span-2"></div>
       </div>
 
-      <div className="mt-5 lg:mt-8 bg-[#333333] p-5 lg:p-8 rounded-2xl">
+      <div className="mt-5 lg:mt-8 bg-brandDarkNeutral p-5 lg:p-8 rounded-2xl">
         <div className="grid grid-cols-2 gap-10">
           {/* edit profile */}
           <div className="col-span-full md:col-span-1">

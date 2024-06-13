@@ -27,7 +27,7 @@ const Filtering = () => {
           btnText="Category"
           handleClick={() => handleFilter("category")}
           className={` ${
-            filterParams === "category" && "text-black bg-gold-500 border-none"
+            filterParams === "category" && "text-black bg-gold-500 border-none" 
           }`}
         />
 

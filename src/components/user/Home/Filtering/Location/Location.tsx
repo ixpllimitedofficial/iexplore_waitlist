@@ -8,10 +8,10 @@ const Location = () => {
     <section>
       {/* search */}
       <div className="w-[90vw] md:w-[70vw] mx-auto mt-5">
-        <AppSearchInput className="p-1" />
+        <AppSearchInput className="p-1 bg-brandDarkNeutral" />
       </div>
 
-      <div className="bg-[#333333] w-[85vw] md:w-[70vw] p-5 mx-auto mt-5 rounded-2xl">
+      <div className="bg-brandDarkNeutral w-[85vw] md:w-[70vw] p-5 mx-auto mt-5 rounded-2xl">
         <div className="flex flex-col gap-5">
           {/* location 1 */}
           <div className="flex items-center">

@@ -7,7 +7,7 @@ import AddVendorDialog from "@/components/admin/VendorManagement/AddVendorDialog
 
 const page = () => {
   const divStyle =
-    "col-span-full md:col-span-3 lg:col-span-2 flex items-center gap-2 bg-[#333333] pr-5 py-5 rounded-2xl text-sm";
+    "col-span-full md:col-span-3 lg:col-span-2 flex items-center gap-2 bg-brandDarkNeutral pr-5 py-5 rounded-2xl text-sm";
 
   return (
     <>
@@ -49,7 +49,7 @@ const page = () => {
             </div>
           </div>
 
-          <Image src={PeopleIconSvg} alt="PeopleIconSvg"/>
+          <Image src={PeopleIconSvg} alt="PeopleIconSvg" />
         </div>
 
         <div className={divStyle}>

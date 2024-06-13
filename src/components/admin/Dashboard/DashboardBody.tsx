@@ -12,7 +12,7 @@ const DashboardBody = () => {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
 
   const divStyle =
-    "col-span-full md:col-span-6 lg:col-span-4 flex items-center justify-between bg-[#333333] gap-2 pr-5 py-5 lg:py-0 rounded-2xl text-sm";
+    "col-span-full md:col-span-6 lg:col-span-4 flex items-center justify-between bg-brandDarkNeutral gap-2 pr-5 py-5 lg:py-0 rounded-2xl text-sm";
 
   return (
     <>
@@ -84,16 +84,16 @@ const DashboardBody = () => {
           </div>
 
           <div className="grid grid-cols-12 gap-4 col-span-full">
-            <div className="col-span-full lg:col-span-6 bg-[#333333] p-5 rounded-2xl text-sm">
+            <div className="col-span-full lg:col-span-6 bg-brandDarkNeutral p-5 rounded-2xl text-sm">
               Vendors traffic
             </div>
-            <div className="col-span-full lg:col-span-6 bg-[#333333] p-5 rounded-2xl text-sm">
+            <div className="col-span-full lg:col-span-6 bg-brandDarkNeutral p-5 rounded-2xl text-sm">
               Influencers traffic
             </div>
           </div>
         </div>
 
-        <div className="hidden col-span-full lg:col-span-3 bg-[#333333] py-5 rounded-2xl lg:flex flex-col items-center justify-center gap-3">
+        <div className="hidden col-span-full lg:col-span-3 bg-brandDarkNeutral py-5 rounded-2xl lg:flex flex-col items-center justify-center gap-3">
           <Calendar
             mode="single"
             selected={date}
@@ -107,13 +107,13 @@ const DashboardBody = () => {
 
       {/* body 2 */}
       <div className="grid grid-cols-5 gap-4 mt-5">
-        <div className="col-span-full lg:col-span-3 bg-[#333333] rounded-2xl">
+        <div className="col-span-full lg:col-span-3 bg-brandDarkNeutral rounded-2xl">
           <p className="font-bold m-5 text-lg"> Users traffic</p>
 
           {/* divider */}
           <div className="border-t-2 border-[#979797] w-full mb-3"></div>
         </div>
-        <div className="col-span-full lg:col-span-2 bg-[#333333] p-5 rounded-2xl">
+        <div className="col-span-full lg:col-span-2 bg-brandDarkNeutral p-5 rounded-2xl">
           Notifications
         </div>
       </div>

@@ -9,7 +9,7 @@ import EditDrinkDetailsDialog from "@/components/admin/ContentModeration/EditDri
 const page = () => {
   return (
     <>
-      <section className="mt-5 bg-[#333333] p-5 lg:p-8 rounded-2xl">
+      <section className="mt-5 bg-brandDarkNeutral p-5 lg:p-8 rounded-2xl">
         <p className="font-bold text-2xl text-[#FFFFFF]">Drink details</p>
 
         <div className="flex flex-col lg:flex-row mt-5 gap-5">

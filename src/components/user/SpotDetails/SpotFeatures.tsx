@@ -9,7 +9,7 @@ import Link from "next/link";
 const SpotFeatures = () => {
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="flex flex-wrap gap-14 items-center justify-center mt-14">
+      <div className="flex flex-wrap gap-20 items-center justify-center mt-14">
         <div className="flex flex-col items-center gap-2">
           <Image src={SoundIcon} alt="SoundIcon" height={60} />
           <p className="md:text-lg text-gold-500">Best sounds</p>

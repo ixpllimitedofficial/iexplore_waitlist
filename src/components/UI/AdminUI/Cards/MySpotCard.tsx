@@ -15,7 +15,7 @@ const MySpotCard = () => {
   return (
     <div
       //   onClick={() => handleClick()}
-      className="bg-[#333333] flex gap-5 p-4 rounded-3xl"
+      className="bg-brandDarkNeutral flex gap-5 p-4 rounded-3xl"
     >
       {/* image */}
       <div>

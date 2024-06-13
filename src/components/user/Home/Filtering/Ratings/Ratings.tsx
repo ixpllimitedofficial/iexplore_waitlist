@@ -3,7 +3,7 @@ import RadioCircleIcon from "@/assets/svg/RadioCircleIcon.svg";
 
 const Ratings = () => {
   return (
-    <section className="bg-[#333333] w-[80vw] md:w-[50vw] p-5 mx-auto mt-5 rounded-2xl flex flex-col gap-5">
+    <section className="bg-brandDarkNeutral w-[80vw] md:w-[50vw] p-5 mx-auto mt-5 rounded-2xl flex flex-col gap-5">
       {/* first rating */}
       <div className="flex items-center ">
         <Image

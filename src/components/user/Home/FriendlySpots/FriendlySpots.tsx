@@ -15,7 +15,7 @@ const FriendlySpots = () => {
           friendly <span className="text-gold-500 italic font-bold">spots</span>{" "}
           to spend your evening in Lagos island
         </h1>
-        <p className="md:text-lg lg:text-xl w-[90%] lg:w-[70%]">
+        <p className="md:text-lg lg:text-2xl w-[90%] lg:w-[70%]">
           Takwa bay, Freedom park, let’s take a look at some cool places to
           chill with friendly budget in Lagos
         </p>

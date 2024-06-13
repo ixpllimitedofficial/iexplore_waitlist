@@ -81,7 +81,7 @@ const AddDrinkDialog = () => {
         <DialogFooter className="mx-auto">
           <Button
             type="submit"
-            className="bg-[#333333] text-gold-500  border-2 border-gold-500"
+            className="bg-brandDarkNeutral text-gold-500  border-2 border-gold-500"
           >
             Save
           </Button>

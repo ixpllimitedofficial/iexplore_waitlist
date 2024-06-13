@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const ContinueSetup = () => {
   return (
-    <div className="bg-[#333333] w-[50%] mt-5 ml-10 h-[350px] p-5 rounded-3xl">
+    <div className="bg-brandDarkNeutral w-[50%] mt-5 ml-10 h-[350px] p-5 rounded-3xl">
       <div className="flex items-center justify-between">
         <h1 className="text-[22px] md:text-2xl font-bold">
           Continue business set up

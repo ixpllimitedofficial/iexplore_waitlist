@@ -2,9 +2,12 @@ import AppInput from "../../UI/Inputs/AppInput";
 import FilterButton from "../../UI/Button/FilterButton";
 import AppButton from "../../UI/Button/AppButton";
 import GetApp from "../Home/GetApp/GetApp";
+import { Input } from "@/components/UI/input";
+import { inputStyling } from "@/utils/constant";
 
 const SpotCategory = () => {
-  const spotCategorySelection = "flex gap-2 border-2 rounded-3xl border-gold-500 px-5 py-3  text-gold-500"
+  const spotCategorySelection =
+    "flex gap-2 border-2 rounded-3xl border-gold-500 px-5 py-3  text-gold-500";
 
   return (
     <>
@@ -31,7 +34,9 @@ const SpotCategory = () => {
           official ambassador for this location?
         </h4>
 
-        <p className="text-sm italic mt-2 text-font-500">*This field is required</p>
+        <p className="text-sm italic mt-2 text-font-500">
+          *This field is required
+        </p>
 
         <div className="mt-3 flex flex-wrap gap-4">
           <p className={spotCategorySelection}>Yes</p>
@@ -56,7 +61,7 @@ const SpotCategory = () => {
         {/* name of spot */}
         <h4 className="text-xl font-bold mt-7">Official name of spot</h4>
 
-        <AppInput placeholder="12B Club" inputClass="mt-5" />
+        <Input placeholder="12B Club" className={`${inputStyling} mt-3`} />
 
         {/* operation time */}
         <h4 className="text-xl font-bold mt-7">Operation time</h4>
@@ -74,21 +79,19 @@ const SpotCategory = () => {
         </div>
 
         {/* Brief description about spot*/}
-        <h4 className="text-xl font-bold mt-8">
-          Brief description about spot
-        </h4>
+        <h4 className="text-xl font-bold mt-8">Brief description about spot</h4>
 
-        <AppInput
+        <Input
           placeholder="Nestled in the city's heart, this bar boasts warm lighting, expert mixologists, and a diverse menu. Perfect for intimate gatherings or lively nights out. An ideal spot for a memorable evening."
-          inputClass="mt-5"
+          className={`${inputStyling} mt-3`}
         />
 
         {/* Address of spot */}
-        <h4 className="text-xl font-bold mt-7">Address of spot </h4>
+        <h4 className="text-xl font-bold mt-7">Address of spot</h4>
 
-        <AppInput
+        <Input
           placeholder="12B Love street, Ikeja Lagos."
-          inputClass="mt-5 "
+          className={`${inputStyling} mt-3`}
         />
 
         {/* contact info */}
@@ -108,13 +111,19 @@ const SpotCategory = () => {
             Email address (Optional)
           </p>
 
-          <AppInput placeholder="Maxxsmith@gmail.com" className="" />
+          <Input
+            placeholder="Maxxsmith@gmail.com"
+            className={`${inputStyling} mt-3`}
+          />
         </div>
 
         <div className="my-7">
           <p className="text-[#8E8E8E] text-lg mb-3">Website (Optional)</p>
 
-          <AppInput placeholder="club123.com" className="" />
+          <Input
+            placeholder="club123.com"
+            className={`${inputStyling} mt-3`}
+          />
         </div>
 
         {/* submit button */}

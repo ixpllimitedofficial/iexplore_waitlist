@@ -192,6 +192,7 @@ const SignupForm = () => {
                   <Input
                     className={`${inputStyling}`}
                     placeholder="09012345678"
+                    type="number"
                     {...field}
                   />
                 </FormControl>

@@ -3,12 +3,14 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import iExploreTextLogo from "@/assets/svg/NavbarSvg/iExploreTextLogoSvg.svg";
 import HamburgerIconSvg from "@/assets/svg/NavbarSvg/HamburgerIconSvg.svg";
 import CloseIconSvg from "@/assets/svg/NavbarSvg/CloseIconSvg.svg";
 
 const MobileNavApp = () => {
+  const pathname = usePathname();
+
   // router
   const router = useRouter();
 
@@ -36,8 +38,13 @@ const MobileNavApp = () => {
       </Link>
 
       {/* hamburger */}
-      <Image src={HamburgerIconSvg} alt="HamburgerIconSvg" onClick={showNav} />
-
+      {pathname !== "/user" && (
+        <Image
+          src={HamburgerIconSvg}
+          alt="HamburgerIconSvg"
+          onClick={showNav}
+        />
+      )}
       {/* navbar */}
       <nav
         className={`fixed top-0 h-screen w-screen z-[100] bg-gold-500 p-28 flex flex-col items-center gap-8 duration-700 ${
@@ -90,24 +97,28 @@ const MobileNavApp = () => {
         </Link>
 
         {/* divider */}
-        <div className="border-t-2 border-black w-full"></div>
+        {pathname === "/user" && (
+          <div className="border-t-2 border-black w-full"></div>
+        )}
 
-        <div className="flex flex-col items-center gap-7">
-          <Link
-            href="/user?flow=login"
-            onClick={showNav}
-            className="text-[#212121] text-lg font-medium"
-          >
-            Login
-          </Link>
-          <Link
-            href="/user?flow=signup"
-            onClick={showNav}
-            className="bg-[#212121] text-gold-500 text-lg px-4 py-2 rounded-xl font-extrabold"
-          >
-            Signup
-          </Link>
-        </div>
+        {pathname === "/user" && (
+          <div className="flex flex-col items-center gap-7">
+            <Link
+              href="/user?flow=login"
+              onClick={showNav}
+              className="text-[#212121] text-lg font-medium"
+            >
+              Login
+            </Link>
+            <Link
+              href="/user?flow=signup"
+              onClick={showNav}
+              className="bg-[#212121] text-gold-500 text-lg px-4 py-2 rounded-xl font-extrabold"
+            >
+              Signup
+            </Link>
+          </div>
+        )}
       </nav>
     </header>
   );

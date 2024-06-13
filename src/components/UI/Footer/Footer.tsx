@@ -85,7 +85,7 @@ const Footer = () => {
       </div>
 
       {/* bottom line */}
-      <div className="mt-10 border-t-4 pt-5 flex flex-col gap-4 md:gap-10 md:flex-row justify-between mx-auto">
+      <div className="mt-10 border-t-4 pt-5 flex flex-col gap-4 md:gap-10 md:flex-row justify-between mx-auto font-medium">
         <p className="">
           Copyright 2024. iexplore@mail.com. All Rights Reserved.
         </p>

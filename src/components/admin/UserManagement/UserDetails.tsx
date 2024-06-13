@@ -16,7 +16,7 @@ const UserDetails = () => {
     <section className="mt-5">
       {/* user details */}
       <div className="grid grid-cols-3 gap-6">
-        <div className="flex flex-col items-center gap-3 col-span-1 bg-[#333333] p-4 rounded-2xl">
+        <div className="flex flex-col items-center gap-3 col-span-1 bg-brandDarkNeutral p-4 rounded-2xl">
           <div className="flex items-center w-full gap-3">
             <Image
               src={ProfileImage}
@@ -39,7 +39,7 @@ const UserDetails = () => {
           <p className="text-sm">Active: 1hr 30mns ago</p>
         </div>
 
-        <div className="flex flex-col justify-center gap-3 col-span-1 bg-[#333333] p-4 rounded-2xl">
+        <div className="flex flex-col justify-center gap-3 col-span-1 bg-brandDarkNeutral p-4 rounded-2xl">
           <p className="font-bold text-xl text-gold-500">User details:</p>
 
           <div className="flex justify-between">
@@ -56,7 +56,9 @@ const UserDetails = () => {
 
           <div>
             <p className="text-sm">Email Address:</p>
-            <p className="font-semibold text-sm text-gold-500">brookschristine.mail.com</p>
+            <p className="font-semibold text-sm text-gold-500">
+              brookschristine.mail.com
+            </p>
           </div>
         </div>
         <div>
@@ -70,7 +72,7 @@ const UserDetails = () => {
       </div>
 
       {/* preference */}
-      <div className="mt-5 bg-[#333333] p-5 rounded-2xl">
+      <div className="mt-5 bg-brandDarkNeutral p-5 rounded-2xl">
         <p className="font-bold text-xl text-gold-500 mb-2">Preference</p>
 
         <div className="flex flex-wrap gap-3 mt-3">

@@ -31,6 +31,7 @@ const config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         brandDark: "hsl(var(--brand-dark))",
+        brandDarkNeutral: "hsl(var(--brand-dark-neutral))",
         brandGold: "hsl(var(--brand-gold))",
         gold: {
           // 100: '#cffafe',

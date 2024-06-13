@@ -11,7 +11,7 @@ const FeaturesDetails = () => {
       <div className="my-5 border-t-2 border-gold-500 flex-grow"></div>
 
       {/* details */}
-      <section className="flex flex-col flex-gap gap-5">
+      <section className="my-4 flex flex-col flex-gap gap-8">
         {/* location */}
         <div className="flex gap-2">
           <Image

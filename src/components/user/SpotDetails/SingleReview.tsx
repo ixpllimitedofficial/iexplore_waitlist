@@ -6,13 +6,13 @@ const SingleReview = () => {
   return (
     <section className="py-7">
       <div className="flex gap-3">
-        <h3 className="bg-[#fff] text-[#212121] text-2xl font-bold py-3 px-4 rounded-full grid place-items-center">
+        <h3 className="bg-gold-500 text-brandDark text-2xl font-bold py-3 px-4 rounded-full grid place-items-center">
           M
         </h3>
 
         <div>
           <p className="text-xl text-gold-500 font-semibold">Max Smith</p>
-          <p className="text-gold-500">12th Sept 2023</p>
+          <p className="text-gold-500">12th Sept 2024</p>
         </div>
       </div>
 

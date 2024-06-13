@@ -18,7 +18,7 @@ const ReferralsDetails = () => {
       {/* vendor details */}
       <div className="mt-5 grid grid-cols-6 gap-4">
         <div className="flex flex-col items-center gap-3 col-span-2">
-          <div className="flex items-center bg-[#333333] p-4 rounded-2xl w-full gap-3">
+          <div className="flex items-center bg-brandDarkNeutral p-4 rounded-2xl w-full gap-3">
             <div className="relative">
               <Image src={ProfileImage} alt="profile image" height={100} />
               <Image
@@ -60,7 +60,7 @@ const ReferralsDetails = () => {
 
         {/* user details */}
         <div className="col-span-2">
-          <div className="flex flex-col gap-3 bg-[#333333] p-4 rounded-2xl">
+          <div className="flex flex-col gap-3 bg-brandDarkNeutral p-4 rounded-2xl">
             <p className="font-bold text-lg text-gold-500">Details:</p>
 
             <div className="flex flex-col gap-2">
@@ -93,7 +93,7 @@ const ReferralsDetails = () => {
 
         {/* business details */}
         <div className="col-span-2">
-          <div className="flex flex-col gap-3 bg-[#333333] p-4 rounded-2xl">
+          <div className="flex flex-col gap-3 bg-brandDarkNeutral p-4 rounded-2xl">
             <p className="font-bold text-lg text-gold-500">Affiliate Clubs:</p>
 
             <div className="flex flex-col gap-2">
@@ -122,7 +122,7 @@ const ReferralsDetails = () => {
         </div>
       </div>
 
-      <div className="mt-5 bg-[#333333] p-5 rounded-2xl">
+      <div className="mt-5 bg-brandDarkNeutral p-5 rounded-2xl">
         <div className="flex flex-col  justify-between">
           <div>
             <p className="font-bold text-xl mb-2">Marketing Channels</p>
@@ -153,7 +153,7 @@ const ReferralsDetails = () => {
         </div>
       </div>
 
-      <div className="mt-5 bg-[#333333] p-5 rounded-2xl">
+      <div className="mt-5 bg-brandDarkNeutral p-5 rounded-2xl">
         <div className="flex items-center justify-between">
           <p className="font-bold text-xl text-gold-500">Analytics</p>
 
