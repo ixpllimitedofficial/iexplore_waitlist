@@ -13,14 +13,18 @@ const CheckCode = () => {
 
       <h1 className="text-gold-500 text-lg md:text-xl md:w-[70%] text-center leading-snug self-center">
         We’ve sent an OTP code to
-        <span className="text-white"> Maxxconnect127@gmail.com</span>
+        <span className="text-white"> Your email</span>
       </h1>
 
-      <Link href="/user?flow=inputCode" className="mt-5 mx-10">
-        <AppButton btnText="Open email app" className="py-3 w-full text-base" />
+      <Link
+        href="https://mail.google.com"
+        target="_blank"
+        className="mt-5 mx-10"
+      >
+        <AppButton btnText="Open gmail app" className="py-3 w-full text-base" />
       </Link>
 
-      <Link href="/user?flow=inputCode" className="mx-10">
+      <Link href="/user?flow=verifyUserOTP" className="mx-10">
         <AppButton
           btnText="Enter code manually"
           className="py-3 w-full text-base border-brandGold border-2 bg-transparent text-gold-500"

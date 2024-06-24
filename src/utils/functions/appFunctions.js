@@ -1,3 +1,4 @@
+
 export const apiGet = async (apiUrl) => {
   try {
     const response = await fetch(apiUrl);

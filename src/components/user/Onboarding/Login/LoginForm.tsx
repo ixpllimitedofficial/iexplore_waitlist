@@ -22,6 +22,7 @@ import { Input } from "@/components/UI/input";
 
 import { inputStyling } from "@/utils/constant";
 import { loginValidationSchema } from "@/types/authSchemas";
+import PasswordField from "@/components/UI/Inputs/PasswordField";
 
 const LoginForm = () => {
   // router
@@ -46,20 +47,17 @@ const LoginForm = () => {
 
   function onSubmit(data: z.infer<typeof loginValidationSchema>) {
     console.log(data);
-    alert(
+    console.log(
       `Logged in with: Username: ${data.username_or_email}, Password: ${data.password} `
     );
-    router.push("/user/home");
-    // loginUser(data);
+    loginUser(data);
   }
 
   useEffect(() => {
-    // console.log(user);
-    // console.log(isUserLoggedin);
-
-    // if (isUserLoggedin) {
-    //   router.push("/user/home");
-    // }
+    console.log(isUserLoggedin);
+    if (isUserLoggedin) {
+      router.push("/user/home");
+    }
   }, [user, router, isUserLoggedin]);
 
   return (
@@ -99,16 +97,12 @@ const LoginForm = () => {
               <FormItem>
                 <FormLabel>Password:</FormLabel>
                 <FormControl>
-                  <Input
-                    className={`${inputStyling}`}
+                  <PasswordField
+                    field={field}
                     placeholder="Password"
-                    {...field}
-                    type="password"
+                    inputStyling={inputStyling}
                   />
                 </FormControl>
-                {/* <FormDescription>
-                This is your public display name.
-              </FormDescription> */}
                 <FormMessage />
               </FormItem>
             )}
@@ -116,7 +110,7 @@ const LoginForm = () => {
 
           <Link
             href="/user?flow=forgotPassword"
-            className=" text-gold-500 text-end text-sm font-medium"
+            className="self-end text-gold-500 text-end text-sm font-medium"
           >
             Forgot Password
           </Link>

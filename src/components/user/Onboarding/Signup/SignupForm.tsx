@@ -1,20 +1,10 @@
 "use client";
 
-import { CalendarIcon } from "@radix-ui/react-icons";
-import { format } from "date-fns";
-import { cn } from "@/lib/utils";
-import { Calendar } from "@/components/UI/calendar";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/UI/popover";
-import { Button } from "@/components/UI/button";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import AppButton from "@/components/UI/Button/AppButton";
 import { useForm } from "react-hook-form";
 import { userStore } from "@/store/user";
-import { useEffect } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Checkbox } from "@/components/UI/checkbox";
@@ -37,14 +27,25 @@ import {
 import { Input } from "@/components/UI/input";
 import { inputStyling } from "@/utils/constant";
 import { signupValidationSchema } from "@/types/authSchemas";
+import PasswordField from "@/components/UI/Inputs/PasswordField";
 
 const SignupForm = () => {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
   // router
   const router = useRouter();
 
   // zustand
   const user = userStore((state: any) => state.user);
   const signupUser = userStore((state: any) => state.signupUser);
+  const isUserRegistered = userStore((state: any) => state.isUserRegistered);
+  const setIsUserRegistered = userStore(
+    (state: any) => state.setIsUserRegistered
+  );
 
   const form = useForm<z.infer<typeof signupValidationSchema>>({
     resolver: zodResolver(signupValidationSchema),
@@ -63,40 +64,26 @@ const SignupForm = () => {
       password: "",
       confirm_password: "",
     },
-    // defaultValues: {
-    //   checkbox: true,
-    //   first_name: "Ayomide",
-    //   last_name: "Francis",
-    //   email: "ayomidetesting@gmail.com",
-    //   username: "ayomisco",
-    //   role: "user",
-    //   phone: "08025373455",
-    //   gender: "male",
-    //   date_of_birth: "",
-    //   location: "Nigeria",
-    //   referral_code: "",
-    //   password: "MySecret@123",
-    //   confirm_password: "MySecret@123",
-    // },
   });
 
   function onSubmit(data: z.infer<typeof signupValidationSchema>) {
     const { checkbox, ...newData } = data;
-    console.log(data);
-    alert(
-      ` You are now signed up!`
-    );
-    router.push("/user/home");
     signupUser(newData);
   }
 
   useEffect(() => {
     // console.log(user);
-    // console.log(isUserLoggedin);
-    // if (isUserLoggedin) {
-    //   router.push("/user/home");
-    // }
-  }, [user, router]);
+    console.log(isUserRegistered);
+    if (isUserRegistered) {
+      router.push("/user?flow=checkCode");
+    }
+
+    // Cleanup function to be called when the component is unmounted
+    return () => {
+      // Set isUserRegistered to false
+      setIsUserRegistered(false);
+    };
+  }, [user, router, isUserRegistered, setIsUserRegistered]);
 
   return (
     <>
@@ -191,8 +178,8 @@ const SignupForm = () => {
                 <FormControl>
                   <Input
                     className={`${inputStyling}`}
-                    placeholder="09012345678"
-                    type="number"
+                    placeholder="+2341234567890"
+                    type="text"
                     {...field}
                   />
                 </FormControl>
@@ -230,19 +217,19 @@ const SignupForm = () => {
             )}
           />
 
-          {/* first name */}
+          {/* date of birth*/}
           <FormField
             control={form.control}
             name="date_of_birth"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>date:</FormLabel>
-                <FormControl>
+                <FormLabel>Date:</FormLabel>
+                <FormControl className="">
                   <Input
                     type="date"
                     className={`${inputStyling}`}
                     placeholder="First Name"
-                    max="2010-01-01"
+                    max="2007-01-01"
                     {...field}
                   />
                 </FormControl>
@@ -250,48 +237,6 @@ const SignupForm = () => {
               </FormItem>
             )}
           />
-
-          {/* date_of_birth */}
-          {/* <FormField
-            control={form.control}
-            name="date_of_birth"
-            render={({ field }) => (
-              <FormItem className="flex flex-col">
-                <FormLabel>Date of birth</FormLabel>
-                <Popover>
-                  <PopoverTrigger asChild>
-                    <FormControl>
-                      <Button
-                        className={cn(
-                          "py-5 border-[1px] bg-transparent hover:bg-transparent border-gold-500 text-left font-normal",
-                          !field.value && "text-muted-foreground"
-                        )}
-                      >
-                        {field.value ? (
-                          format(field.value, "PPP")
-                        ) : (
-                          <span>Pick a date</span>
-                        )}
-                        <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                      </Button>
-                    </FormControl>
-                  </PopoverTrigger>
-                  <PopoverContent className="w-auto p-0" align="start">
-                    <Calendar
-                      mode="single"
-                      selected={field.value}
-                      onSelect={field.onChange}
-                      disabled={(date) =>
-                        date > new Date() || date < new Date("1900-01-01")
-                      }
-                      initialFocus
-                    />
-                  </PopoverContent>
-                </Popover>
-                <FormMessage />
-              </FormItem>
-            )}
-          /> */}
 
           {/* location */}
           <FormField
@@ -318,6 +263,25 @@ const SignupForm = () => {
             )}
           />
 
+          {/* Referral Code */}
+          <FormField
+            control={form.control}
+            name="referral_code"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Referral Code:</FormLabel>
+                <FormControl>
+                  <Input
+                    className={`${inputStyling}`}
+                    placeholder="Referral code"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
           {/* password */}
           <FormField
             control={form.control}
@@ -326,11 +290,10 @@ const SignupForm = () => {
               <FormItem>
                 <FormLabel>Password:</FormLabel>
                 <FormControl>
-                  <Input
-                    className={`${inputStyling}`}
+                  <PasswordField
+                    field={field}
                     placeholder="Password"
-                    {...field}
-                    type="password"
+                    inputStyling={inputStyling}
                   />
                 </FormControl>
                 <FormMessage />
@@ -346,11 +309,10 @@ const SignupForm = () => {
               <FormItem>
                 <FormLabel>Confirm Password:</FormLabel>
                 <FormControl>
-                  <Input
-                    className={`${inputStyling}`}
+                  <PasswordField
+                    field={field}
                     placeholder="Confirm Password"
-                    {...field}
-                    type="password"
+                    inputStyling={inputStyling}
                   />
                 </FormControl>
                 <FormMessage />

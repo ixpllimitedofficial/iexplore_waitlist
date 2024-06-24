@@ -18,7 +18,7 @@ import NotificationsIconSvg from "@/assets/svg/AdminIconsSvg/NavbarIcons/Notific
 import AnalyticsIconSvg from "@/assets/svg/AdminIconsSvg/NavbarIcons/AnalyticsIconSvg.svg";
 import SettingsIconSvg from "@/assets/svg/AdminIconsSvg/NavbarIcons/SettingsIconSvg.svg";
 import SupportIconSvg from "@/assets/svg/AdminIconsSvg/NavbarIcons/SupportIconSvg.svg";
-import DropdownMenuTest from "../../Cards/DropdownMenuTest";
+import ProfileDropdownMenu from "../../Cards/ProfileDropdownMenu";
 
 const DashboardMobileBar = () => {
   // router
@@ -56,7 +56,7 @@ const DashboardMobileBar = () => {
       <Image src={ExploreLogo} alt="ExploreLogo" height={50} width={50} />
       {/* </Link> */}
 
-      <DropdownMenuTest />
+      <ProfileDropdownMenu />
 
       {/* navbar */}
       <nav

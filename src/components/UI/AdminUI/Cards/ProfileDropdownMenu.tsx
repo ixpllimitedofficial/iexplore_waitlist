@@ -16,7 +16,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/UI/avatar";
 import Link from "next/link";
 
-const DropdownMenuTest = () => {
+const ProfileDropdownMenu = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -48,4 +48,4 @@ const DropdownMenuTest = () => {
   );
 };
 
-export default DropdownMenuTest;
+export default ProfileDropdownMenu;

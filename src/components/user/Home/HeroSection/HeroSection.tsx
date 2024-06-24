@@ -15,7 +15,7 @@ const HeroSection = () => {
       style={{ backgroundImage: `url(${LandingPageBgImage2.src})` }}
       className="relative flex items-center justify-center h-[250px] md:h-[400px] lg:h-[600px] w-[90vw] md:w-[85vw] lg:w-[80vw] mx-auto rounded-3xl bg-no-repeat bg-cover bg-center "
     >
-      <div className="w-[70%] flex flex-col justify-center items-center gap-10 z-50">
+      <div className="w-[70%] flex flex-col justify-center items-center gap-10 z-40">
         <h1 className="font-bold text-center text-2xl md:text-3xl lg:text-6xl">
           DISCOVER, CONNECT, & <br />
           <span className="text-gold-500 italic font-bold">ENJOY</span> THE BEST

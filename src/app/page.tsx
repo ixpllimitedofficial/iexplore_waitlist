@@ -4,8 +4,8 @@ import HeroSection from "@/components/LandingPage/Home/HeroSection";
 import ContactSection from "@/components/LandingPage/Home/ContactSection";
 import Footer from "@/components/UI/Footer/Footer";
 
-const page = async () => {
 
+const page = async () => {
   return (
     <section>
       <HeroSection />

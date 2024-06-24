@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "@/components/UI/toaster";
+
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,7 +26,11 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/icon.svg" />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Toaster />
+        <ToastContainer />
+      </body>
     </html>
   );
 }

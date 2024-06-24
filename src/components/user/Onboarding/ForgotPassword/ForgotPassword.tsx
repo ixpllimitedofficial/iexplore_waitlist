@@ -35,13 +35,12 @@ const ForgotPassword = () => {
   const form = useForm<z.infer<typeof forgotPasswordValidationSchema>>({
     resolver: zodResolver(forgotPasswordValidationSchema),
     defaultValues: {
-      username_or_email: "",
+      email: "",
     },
   });
 
   function onSubmit(data: z.infer<typeof forgotPasswordValidationSchema>) {
     console.log(data);
-    loginUser(data);
     router.push("/user?flow=checkCode");
   }
 
@@ -72,14 +71,14 @@ const ForgotPassword = () => {
           {/* username */}
           <FormField
             control={form.control}
-            name="username_or_email"
+            name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Username or Email:</FormLabel>
+                <FormLabel>Email:</FormLabel>
                 <FormControl>
                   <Input
                     className={`${inputStyling}`}
-                    placeholder="Username or Email"
+                    placeholder="youremail@email.com"
                     {...field}
                   />
                 </FormControl>
@@ -95,7 +94,7 @@ const ForgotPassword = () => {
         </form>
       </Form>
 
-      <div className="flex items-center justify-center gap-1 text-sm">
+      <div className="mt-1 flex items-center justify-center gap-1 text-sm">
         <p className="text-[##FBE9D0] text-center">Remember password?</p>
         <Link href="/user" className="text-gold-500 underline font-semibold">
           {" "}

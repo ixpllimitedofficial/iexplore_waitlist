@@ -1,5 +1,6 @@
 "use client";
 
+import React, { useState, useEffect } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -19,38 +20,55 @@ import {
   InputOTPSlot,
 } from "@/components/UI/input-otp";
 import AppButton from "../Button/AppButton";
+import { verifyOTPSchema } from "@/types/authSchemas";
 
-const FormSchema = z.object({
-  pin: z.string().min(6, {
-    message: "Your one-time password must be 6 characters.",
-  }),
-});
+// zustand store
+import { userStore } from "@/store/user";
 
-const AppInputOTP = ({userRole}: any) => {
+const AppInputOTP = ({ userRole, destination }: any) => {
+  const verifyUserOTP = userStore((state: any) => state.verifyUserOTP);
+  const isUserOTPVerified = userStore((state: any) => state.isUserOTPVerified);
+  const setisOTPVerified = userStore((state: any) => state.setisOTPVerified);
+
   // router
   const router = useRouter();
 
-  const form = useForm<z.infer<typeof FormSchema>>({
-    resolver: zodResolver(FormSchema),
+  const form = useForm<z.infer<typeof verifyOTPSchema>>({
+    resolver: zodResolver(verifyOTPSchema),
     defaultValues: {
-      pin: "",
+      otp: "",
     },
   });
 
-  function onSubmit(data: z.infer<typeof FormSchema>) {
+  function onSubmit(data: z.infer<typeof verifyOTPSchema>) {
     console.log(data);
-
-    if (data.pin.length >= 6) {
-      router.push(`/${userRole}?flow=resetPassword`);
-    }
+    verifyUserOTP(data);
   }
+
+  useEffect(() => {
+    console.log(userRole);
+    console.log(isUserOTPVerified);
+    if (isUserOTPVerified) {
+      if (userRole && destination) {
+        router.push(`/${userRole}?flow=${destination}`);
+      } else {
+        router.push(`/${userRole}`);
+      }
+    }
+
+    // Cleanup function to be called when the component is unmounted
+    return () => {
+      // Set isOTPVerified to false
+      setisOTPVerified(false);
+    };
+  }, [destination, isUserOTPVerified, router, setisOTPVerified, userRole]);
 
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)}>
         <FormField
           control={form.control}
-          name="pin"
+          name="otp"
           render={({ field }) => (
             <FormItem className="flex flex-col items-center">
               {/* <FormLabel>One-Time Password</FormLabel> */}

@@ -8,8 +8,12 @@ import iExploreTextLogo from "@/assets/svg/NavbarSvg/iExploreTextLogoSvg.svg";
 import HamburgerIconSvg from "@/assets/svg/NavbarSvg/HamburgerIconSvg.svg";
 import CloseIconSvg from "@/assets/svg/NavbarSvg/CloseIconSvg.svg";
 
+import { userStore } from "@/store/user";
+
 const MobileNavApp = () => {
   const pathname = usePathname();
+
+  const logoutUser = userStore((state: any) => state.logoutUser);
 
   // router
   const router = useRouter();
@@ -61,35 +65,35 @@ const MobileNavApp = () => {
         </div>
 
         <Link
-          href="/"
+          href="/user/home"
           className="text-[#212121] text-lg font-medium"
           onClick={showNav}
         >
           Home
         </Link>
         <Link
-          href="/"
+          href="/user/home"
           className="text-[#212121] text-lg font-medium"
           onClick={showNav}
         >
           Explore
         </Link>
         <Link
-          href="/"
+          href="/user/home"
           className="text-[#212121] text-lg font-medium"
           onClick={showNav}
         >
           Saved
         </Link>
         <Link
-          href="/"
+          href="/user/home"
           className="text-[#212121] text-lg font-medium"
           onClick={showNav}
         >
           Feed
         </Link>
         <Link
-          href="/"
+          href="/user/home"
           className="text-[#212121] text-lg font-medium"
           onClick={showNav}
         >
@@ -97,26 +101,28 @@ const MobileNavApp = () => {
         </Link>
 
         {/* divider */}
-        {pathname === "/user" && (
+        {pathname !== "/user" && (
           <div className="border-t-2 border-black w-full"></div>
         )}
 
-        {pathname === "/user" && (
+        {pathname !== "/user" && (
           <div className="flex flex-col items-center gap-7">
-            <Link
-              href="/user?flow=login"
-              onClick={showNav}
-              className="text-[#212121] text-lg font-medium"
+            <button
+              onClick={() => {
+                showNav;
+                logoutUser();
+              }}
+              className="bg-[#212121] text-gold-500 text-lg px-4 py-2 rounded-xl font-medium"
             >
-              Login
-            </Link>
-            <Link
+              Sign out
+            </button>
+            {/* <Link
               href="/user?flow=signup"
               onClick={showNav}
               className="bg-[#212121] text-gold-500 text-lg px-4 py-2 rounded-xl font-extrabold"
             >
               Signup
-            </Link>
+            </Link> */}
           </div>
         )}
       </nav>

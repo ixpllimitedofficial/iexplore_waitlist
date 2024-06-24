@@ -5,6 +5,7 @@ import ExploreLogo from "@/assets/svg/NavbarSvg/iExploreLogoSvg.svg";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/UI/avatar";
+import ProfileDropdownMenu from "../../UserUI/Cards/ProfileDropdownMenu";
 
 const DesktopNavApp = () => {
   const pathname = usePathname();
@@ -22,30 +23,40 @@ const DesktopNavApp = () => {
 
       {pathname !== "/user" && (
         <nav className="flex items-center gap-10">
-          <Link href="/user/home" className="text-[#212121] text-lg font-medium">
+          <Link
+            href="/user/home"
+            className="text-[#212121] text-lg font-medium"
+          >
             Home
           </Link>
-          <Link href="/user/home" className="text-[#212121] text-lg font-medium">
+          <Link
+            href="/user/home"
+            className="text-[#212121] text-lg font-medium"
+          >
             Explore
           </Link>
-          <Link href="/user/home" className="text-[#212121] text-lg font-medium">
+          <Link
+            href="/user/home"
+            className="text-[#212121] text-lg font-medium"
+          >
             Saved
           </Link>
-          <Link href="/user/home" className="text-[#212121] text-lg font-medium">
+          <Link
+            href="/user/home"
+            className="text-[#212121] text-lg font-medium"
+          >
             Feed
           </Link>
-          <Link href="/user/home" className="text-[#212121] text-lg font-medium">
+          <Link
+            href="/user/home"
+            className="text-[#212121] text-lg font-medium"
+          >
             Drinks
           </Link>
         </nav>
       )}
 
-      {pathname !== "/user" && (
-        <Avatar>
-          <AvatarImage src="https://github.com/shadcn.png" />
-          <AvatarFallback>CN</AvatarFallback>
-        </Avatar>
-      )}
+      {pathname !== "/user" && <ProfileDropdownMenu />}
     </header>
   );
 };
