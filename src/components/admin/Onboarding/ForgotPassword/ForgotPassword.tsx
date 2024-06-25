@@ -35,7 +35,7 @@ const ForgotPassword = () => {
   const form = useForm<z.infer<typeof forgotPasswordValidationSchema>>({
     resolver: zodResolver(forgotPasswordValidationSchema),
     defaultValues: {
-      username_or_email: "",
+      email: "",
     },
   });
 
@@ -72,7 +72,7 @@ const ForgotPassword = () => {
           {/* username */}
           <FormField
             control={form.control}
-            name="username_or_email"
+            name="email"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Username or Email:</FormLabel>
