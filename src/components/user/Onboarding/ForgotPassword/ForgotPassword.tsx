@@ -28,9 +28,12 @@ const ForgotPassword = () => {
   const router = useRouter();
 
   // zustand
-  const user = userStore((state: any) => state.user);
+  const resetIsResetOTPSent = userStore(
+    (state: any) => state.resetIsResetOTPSent
+  );
   const isUserLoggedin = userStore((state: any) => state.isUserLoggedin);
-  const loginUser = userStore((state: any) => state.loginUser);
+  const isResetOTPSent = userStore((state: any) => state.isResetOTPSent);
+  const requestUserOTP = userStore((state: any) => state.requestUserOTP);
 
   const form = useForm<z.infer<typeof forgotPasswordValidationSchema>>({
     resolver: zodResolver(forgotPasswordValidationSchema),
@@ -41,17 +44,19 @@ const ForgotPassword = () => {
 
   function onSubmit(data: z.infer<typeof forgotPasswordValidationSchema>) {
     console.log(data);
-    router.push("/user?flow=checkCode");
+    requestUserOTP(data, "resetPassword");
   }
 
-  // useEffect(() => {
-  //   // console.log(user);
-  //   // console.log(isUserLoggedin);
+  useEffect(() => {
+    if (isResetOTPSent) {
+      console.log("true");
+      router.push("/user?flow=verifyOTP");
+    }
 
-  //   if (isUserLoggedin) {
-  //     router.push("/user/home");
-  //   }
-  // }, [user, router, isUserLoggedin]);
+    return () => {
+      resetIsResetOTPSent();
+    };
+  }, [router, isUserLoggedin, isResetOTPSent, resetIsResetOTPSent]);
 
   return (
     <section className="h-full flex flex-col gap-2 pt-16 lg:pt-28">
@@ -74,7 +79,7 @@ const ForgotPassword = () => {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email:</FormLabel>
+                {/* <FormLabel>Email:</FormLabel> */}
                 <FormControl>
                   <Input
                     className={`${inputStyling}`}

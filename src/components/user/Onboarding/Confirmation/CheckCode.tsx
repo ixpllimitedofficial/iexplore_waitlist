@@ -24,7 +24,7 @@ const CheckCode = () => {
         <AppButton btnText="Open gmail app" className="py-3 w-full text-base" />
       </Link>
 
-      <Link href="/user?flow=verifyUserOTP" className="mx-10">
+      <Link href="/user?flow=verifyOTP" className="mx-10">
         <AppButton
           btnText="Enter code manually"
           className="py-3 w-full text-base border-brandGold border-2 bg-transparent text-gold-500"

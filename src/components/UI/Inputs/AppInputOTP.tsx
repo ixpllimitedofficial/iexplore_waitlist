@@ -26,9 +26,11 @@ import { verifyOTPSchema } from "@/types/authSchemas";
 import { userStore } from "@/store/user";
 
 const AppInputOTP = ({ userRole, destination }: any) => {
-  const verifyUserOTP = userStore((state: any) => state.verifyUserOTP);
+  const verifyOTP = userStore((state: any) => state.verifyOTP);
   const isUserOTPVerified = userStore((state: any) => state.isUserOTPVerified);
   const setisOTPVerified = userStore((state: any) => state.setisOTPVerified);
+
+  const previousUrlForOTP = userStore((state: any) => state.previousUrlForOTP);
 
   // router
   const router = useRouter();
@@ -42,15 +44,20 @@ const AppInputOTP = ({ userRole, destination }: any) => {
 
   function onSubmit(data: z.infer<typeof verifyOTPSchema>) {
     console.log(data);
-    verifyUserOTP(data);
+
+    if (previousUrlForOTP === "resetPassword") {
+      verifyOTP(data, "verifyOTP");
+    } else {
+      verifyOTP(data, "verifyUserOTP");
+    }
   }
 
   useEffect(() => {
-    console.log(userRole);
-    console.log(isUserOTPVerified);
+    console.log(previousUrlForOTP);
+    
     if (isUserOTPVerified) {
-      if (userRole && destination) {
-        router.push(`/${userRole}?flow=${destination}`);
+      if (userRole && previousUrlForOTP === "resetPassword") {
+        router.push(`/${userRole}?flow=${previousUrlForOTP}`);
       } else {
         router.push(`/${userRole}`);
       }
@@ -61,7 +68,14 @@ const AppInputOTP = ({ userRole, destination }: any) => {
       // Set isOTPVerified to false
       setisOTPVerified(false);
     };
-  }, [destination, isUserOTPVerified, router, setisOTPVerified, userRole]);
+  }, [
+    destination,
+    isUserOTPVerified,
+    router,
+    setisOTPVerified,
+    userRole,
+    previousUrlForOTP,
+  ]);
 
   return (
     <Form {...form}>

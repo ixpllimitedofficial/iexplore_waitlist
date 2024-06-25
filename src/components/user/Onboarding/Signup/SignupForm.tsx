@@ -72,10 +72,9 @@ const SignupForm = () => {
   }
 
   useEffect(() => {
-    // console.log(user);
     console.log(isUserRegistered);
     if (isUserRegistered) {
-      router.push("/user?flow=checkCode");
+      router.push("/user?flow=verifyOTP");
     }
 
     // Cleanup function to be called when the component is unmounted

@@ -13,7 +13,7 @@ type FlowType =
   | "ageConfirmation"
   | "emailConfirmation"
   | "forgotPassword"
-  | "verifyUserOTP"
+  | "verifyOTP"
   | "resetPassword"
   | "checkCode";
 
@@ -30,7 +30,7 @@ const Onboarding = () => {
         {flowParams === "ageConfirmation" && <AgeConfirmation />}
         {flowParams === "emailConfirmation" && <EmailConfirmation />}
         {flowParams === "forgotPassword" && <ForgotPassword />}
-        {flowParams === "verifyUserOTP" && <VerifyUserOTP />}
+        {flowParams === "verifyOTP" && <VerifyUserOTP />}
         {flowParams === "resetPassword" && <ResetPassword />}
         {flowParams === "checkCode" && <CheckCode />}
       </section>
