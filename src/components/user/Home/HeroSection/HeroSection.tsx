@@ -2,6 +2,7 @@
 
 import HomeImage from "@/assets/img/HomeImage.png";
 import LandingPageBgImage2 from "@/assets/img/LandingPage/LandingPageBgImage2.jpeg";
+import GeolocationComponent from "@/components/GeolocationComponent";
 import AppButton from "@/components/UI/Button/AppButton";
 import { Button } from "@/components/UI/button";
 
@@ -25,6 +26,8 @@ const HeroSection = () => {
         <Button className="bg-gold-500 hover:bg-gold-500 text-black font-semibold text-lg">
           Find an event
         </Button>
+
+        <GeolocationComponent />
       </div>
 
       <div className="absolute top-0 left-0 bg-[#00000088] h-full w-full"></div>
