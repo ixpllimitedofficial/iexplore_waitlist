@@ -6,10 +6,10 @@ import GeolocationComponent from "@/components/GeolocationComponent";
 import AppButton from "@/components/UI/Button/AppButton";
 import { Button } from "@/components/UI/button";
 
-import { userStore } from "@/store/user";
+import { useSession, SessionProvider } from "next-auth/react";
 
 const HeroSection = () => {
-  const logoutUser = userStore((state: any) => state.isUserLoggedin);
+  const { data: session }: any = useSession();
 
   return (
     <section
@@ -27,7 +27,7 @@ const HeroSection = () => {
           Find an event
         </Button>
 
-        <GeolocationComponent />
+        {/* <GeolocationComponent /> */}
       </div>
 
       <div className="absolute top-0 left-0 bg-[#00000088] h-full w-full"></div>

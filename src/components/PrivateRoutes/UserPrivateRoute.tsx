@@ -1,20 +1,32 @@
 "use client";
 
-import { userStore } from "@/store/user";
-import { redirect, usePathname } from "next/navigation";
+import { useSession, SessionProvider } from "next-auth/react";
+import { useEffect } from "react";
+import { useRouter, usePathname } from "next/navigation";
 
-export default function UserPrivateRoute({ children }: any) {
-  const isUserLoggedin = userStore((state: any) => state.isUserLoggedin);
-
+const UserPrivateRoute = ({ children }: any) => {
+  const { data: session, status } = useSession();
+  const router = useRouter();
   const pathname = usePathname();
 
-  if (pathname === "/user") {
-    return children
+  useEffect(() => {
+    if (status === "loading") return; // Do nothing while loading
+    if (!session && pathname !== "/user") {
+      router.push("/user");
+    }
+  }, [session, status, pathname, router]);
+
+  if (status === "loading" || (!session && pathname !== "/user")) {
+    return <div>Loading...</div>; // Or a loading spinner
   }
 
-  if (!isUserLoggedin) {
-    return redirect("/user");
-  }
+  return <>{children}</>;
+};
 
-  return children;
-}
+const WrappedUserPrivateRoute = ({ children }: any) => (
+  <SessionProvider>
+    <UserPrivateRoute>{children}</UserPrivateRoute>
+  </SessionProvider>
+);
+
+export default WrappedUserPrivateRoute;

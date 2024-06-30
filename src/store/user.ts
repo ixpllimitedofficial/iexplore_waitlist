@@ -16,7 +16,6 @@ const initialState = {
   emailForOTP: "",
   isUserOTPVerified: false,
   isResetOTPSent: false,
-  isUserLoggedin: false,
   isAdminLoggedin: false,
   previousUrlForOTP: "",
 };
@@ -32,40 +31,6 @@ export const userStore = create(
           console.log(responseData);
         } catch (error) {
           console.error("Error fetching external data:", error);
-        }
-      },
-      loginUser: async (formData: any) => {
-        try {
-          const response = await fetch(
-            "http://44.193.73.68:8000/api/auth/login/",
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json",
-              },
-              body: JSON.stringify(formData),
-            }
-          );
-          const responseData = await response.json();
-          console.log(responseData);
-
-          if (!response.ok) {
-            extractAndThrowLoginError(responseData);
-          }
-
-          showSimpleToast(responseData.msg, "success");
-          set(() => ({ isUserLoggedin: true }));
-          set({ user: responseData.data.user });
-
-          // if (responseData.message === "success") {
-
-          // }
-        } catch (error: any) {
-          const errorString = error.message;
-
-          showSimpleToast(errorString, "failed");
-          // set(() => ({ isUserLoggedin: false }));
         }
       },
       signupUser: async (formData: any) => {
@@ -124,12 +89,12 @@ export const userStore = create(
 
         if (otpType === "verifyOTP") {
           url = "http://44.193.73.68:8000/api/verify-otp/";
+          let urls = "http://44.193.73.68:8000/api/verify-otp/";
         } else if (otpType === "verifyUserOTP") {
           url = "http://44.193.73.68:8000/api/verification/";
         }
 
         console.log(url);
-        
 
         try {
           const response = await fetch(url, {

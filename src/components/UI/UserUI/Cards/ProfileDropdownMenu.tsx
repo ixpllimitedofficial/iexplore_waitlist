@@ -18,6 +18,8 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/UI/avatar";
 import Link from "next/link";
 
+import { signOut } from "@/auth/helpers";
+
 import { userStore } from "@/store/user";
 
 const ProfileDropdownMenu = () => {
@@ -46,7 +48,11 @@ const ProfileDropdownMenu = () => {
         </DropdownMenuGroup>
         <DropdownMenuSeparator /> */}
 
-        <DropdownMenuItem onClick={() => logoutUser()}>
+        <DropdownMenuItem
+          onClick={async () => {
+            await signOut();
+          }}
+        >
           Sign out
         </DropdownMenuItem>
       </DropdownMenuContent>

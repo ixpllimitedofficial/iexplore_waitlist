@@ -1,5 +1,7 @@
 "use client";
 
+import { useSession, SessionProvider } from "next-auth/react";
+
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import AppButton from "@/components/UI/Button/AppButton";
@@ -24,14 +26,17 @@ import { inputStyling } from "@/utils/constant";
 import { loginValidationSchema } from "@/types/authSchemas";
 import PasswordField from "@/components/UI/Inputs/PasswordField";
 
+import { signIn } from "next-auth/react";
+import { showSimpleToast } from "@/utils/functions/alertFunctions";
+
 const LoginForm = () => {
+  const { data: session, status } = useSession();
+
   // router
   const router = useRouter();
 
   // zustand
   const user = userStore((state: any) => state.user);
-  const isUserLoggedin = userStore((state: any) => state.isUserLoggedin);
-  const loginUser = userStore((state: any) => state.loginUser);
 
   const form = useForm<z.infer<typeof loginValidationSchema>>({
     resolver: zodResolver(loginValidationSchema),
@@ -39,26 +44,22 @@ const LoginForm = () => {
       username_or_email: "",
       password: "",
     },
-    // defaultValues: {
-    //   username_or_email: "ayomisco",
-    //   password: "MySecret@123",
-    // },
   });
 
-  function onSubmit(data: z.infer<typeof loginValidationSchema>) {
-    console.log(data);
-    console.log(
-      `Logged in with: Username: ${data.username_or_email}, Password: ${data.password} `
-    );
-    loginUser(data);
+  async function onSubmit(data: z.infer<typeof loginValidationSchema>) {
+    await signIn("credentials", {
+      redirect: false,
+      username: data.username_or_email,
+      password: data.password,
+    });
   }
 
   useEffect(() => {
-    console.log(isUserLoggedin);
-    if (isUserLoggedin) {
+    if (session) {
+      showSimpleToast("Logged in successfully", "success");
       router.push("/user/home");
     }
-  }, [user, router, isUserLoggedin]);
+  }, [user, router, session]);
 
   return (
     <>

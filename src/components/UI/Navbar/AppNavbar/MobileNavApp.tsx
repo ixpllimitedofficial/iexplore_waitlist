@@ -10,13 +10,10 @@ import CloseIconSvg from "@/assets/svg/NavbarSvg/CloseIconSvg.svg";
 
 import { userStore } from "@/store/user";
 
+import { signOut } from "@/auth/helpers";
+
 const MobileNavApp = () => {
   const pathname = usePathname();
-
-  const logoutUser = userStore((state: any) => state.logoutUser);
-
-  // router
-  const router = useRouter();
 
   // whether to show nav or not's state and function
   const [showNavState, setshowNavState] = useState<boolean>(false);
@@ -108,9 +105,10 @@ const MobileNavApp = () => {
         {pathname !== "/user" && (
           <div className="flex flex-col items-center gap-7">
             <button
-              onClick={() => {
+              onClick={async () => {
                 showNav;
-                logoutUser();
+
+                await signOut();
               }}
               className="bg-[#212121] text-gold-500 text-lg px-4 py-2 rounded-xl font-medium"
             >
