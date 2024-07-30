@@ -15,7 +15,7 @@ const JoinWaitlistSection = () => {
         </p>
       </section>
 
-      <div className="mt-10 flex items-center gap-4 w-3/5 mx-auto">
+      <div className="mt-10 mb-24 flex items-center gap-4 w-3/5 mx-auto">
         <Input
           className="bg-[#FFFFFF1A] px-3 py-6 rounded-none text-[#C8C8C8] border-t-0 border-r-0 border-l-0 border-b-gold-500 placeholder:text-base placeholder:text-[#4D4D4D] "
           placeholder="Email Address"

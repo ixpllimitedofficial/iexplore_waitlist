@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { inter, manrope } from './fonts'
+import { manrope } from './fonts'
 import "./globals.css";
 
 import { ToastContainer } from "react-toastify";
 
-import MainDesktopAndMobileNav from "@/components/Navbars/MainWebsiteNavbar/MainDesktopAndMobileNav";
+import MainDesktopAndMobileNav from "@/components/MainPage/Navbars/MainWebsiteNavbar/MainDesktopAndMobileNav";
 
 export const metadata: Metadata = {
   title: "iExplore",
