@@ -1,7 +1,11 @@
+import HeroSection from "@/components/MainPage/Waitlist/HeroSection";
+// import MainDesktopAndMobileNav from "@/components/Navbars/MainWebsiteNavbar/MainDesktopAndMobileNav";
+
 const page = async () => {
   return (
-    <section className="relative h-screen w-screen grid place-items-center">
-      <h1 className="text-5xl mx-10 text-center">WAITING LIST PAGE</h1>
+    <section className="bg-[#201D1C] py-24">
+      {/* <MainDesktopAndMobileNav /> */}
+      <HeroSection />
     </section>
   );
 };

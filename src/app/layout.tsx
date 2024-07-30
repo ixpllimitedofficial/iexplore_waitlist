@@ -1,15 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { inter, manrope } from './fonts'
 import "./globals.css";
 
-import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-});
+import MainDesktopAndMobileNav from "@/components/Navbars/MainWebsiteNavbar/MainDesktopAndMobileNav";
+
 export const metadata: Metadata = {
   title: "iExplore",
   description: "Connect with places made for you to have fun",
@@ -21,11 +17,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable}`}>
+    <html lang="en" className={manrope.className}>
       <head>
         <link rel="icon" href="/icon.svg" />
       </head>
       <body>
+      <MainDesktopAndMobileNav />
         {children}
         <ToastContainer />
       </body>
