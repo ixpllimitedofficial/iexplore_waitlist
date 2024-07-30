@@ -4,10 +4,10 @@
 
 @layer base {
   :root {
-    --background: 0 0% 0%;
+    --background: 0 0% 5%;
     --foreground: 0 0% 100%;
 
-    --brand-dark: 0 0% 0%;
+    --brand-dark: 0 0% 5%;
     --brand-dark-neutral: 0 0% 5%;
     --brand-gold: 45 100% 50%;
 

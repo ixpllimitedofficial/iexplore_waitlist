@@ -9,9 +9,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/UI/carousel";
-
-import PhoneCard from "@/assets/img/MainWebsite/PhoneCard.png";
-import Phone from "@/assets/img/MainWebsite/Phone2.png";
+import Phone from "@/assets/img/MainWebsite/Phone.png";
 import SpotPhoneCard from "./SpotPhoneCard";
 
 const SpotsOnPhoneSection = () => {
@@ -25,15 +23,10 @@ const SpotsOnPhoneSection = () => {
         loop: true,
       }}
     >
-      {/* <Image
-          src={PhoneCard}
-          alt="PhoneCard"
-          className="w-[63vw] max-w-[300px] h-auto mx-auto"
-        /> */}
       <Image
         src={Phone}
         alt="Phone"
-        className="absolute top-[70%] left-1/2 w-[80vw] max-w-[370px] transform -translate-x-1/2 -translate-y-1/2"
+        className="absolute top-[70%] left-1/2 w-[80vw] max-w-[370px] transform -translate-x-1/2 -translate-y-1/2 z-40"
       />
 
       <CarouselContent className="relative -ml-1">
