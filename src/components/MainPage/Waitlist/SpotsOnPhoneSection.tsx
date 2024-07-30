@@ -11,7 +11,8 @@ import {
 } from "@/components/UI/carousel";
 
 import PhoneCard from "@/assets/img/MainWebsite/PhoneCard.png";
-import Phone from "@/assets/img/MainWebsite/Phone.png";
+import Phone from "@/assets/img/MainWebsite/Phone2.png";
+import SpotPhoneCard from "./SpotPhoneCard";
 
 const SpotsOnPhoneSection = () => {
   const plugin = React.useRef(Autoplay({ delay: 2000 }));
@@ -24,6 +25,11 @@ const SpotsOnPhoneSection = () => {
         loop: true,
       }}
     >
+      {/* <Image
+          src={PhoneCard}
+          alt="PhoneCard"
+          className="w-[63vw] max-w-[300px] h-auto mx-auto"
+        /> */}
       <Image
         src={Phone}
         alt="Phone"
@@ -32,12 +38,8 @@ const SpotsOnPhoneSection = () => {
 
       <CarouselContent className="relative -ml-1">
         {Array.from({ length: 7 }).map((_, index) => (
-          <CarouselItem key={index} className="pl-4 md:basis-1/3 xl:basis-1/4">
-            <Image
-              src={PhoneCard}
-              alt="PhoneCard"
-              className="w-[63vw] max-w-[300px] h-auto mx-auto"
-            />
+          <CarouselItem key={index} className="pl-3 md:basis-1/3 xl:basis-1/4">
+            <SpotPhoneCard />
           </CarouselItem>
         ))}
       </CarouselContent>
