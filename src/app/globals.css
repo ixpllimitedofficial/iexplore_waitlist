@@ -93,6 +93,20 @@
 }
 
 @layer utilities {
+  /* embla */
+  .embla {
+    overflow: hidden;
+    width: 80%;
+  }
+  .embla__container {
+    display: flex;
+  }
+  .embla__slide {
+    flex: 0 0 100%;
+    min-width: 0;
+  }
+
+  /*  */
   .no-scrollbar::-webkit-scrollbar {
     width: 7px;
   }

@@ -20,7 +20,7 @@ const MainWebsiteDesktopNav = () => {
         <p className="text-xl font-bold">iExplore</p>
       </Link>
 
-      <nav className="flex items-center gap-14 bg-[#F2F1E8] text-[#322016] font-bold p-2 rounded-lg">
+      <nav className="flex items-center gap-14 bg-[#F2F1E8] text-[#322016] font-bold p-2 rounded-xl">
         <Link
           href="/"
           className={`px-5 ${
