@@ -15,9 +15,9 @@ const DashboardBody = () => {
     "col-span-full md:col-span-6 lg:col-span-4 flex items-center justify-between bg-brandDarkNeutral gap-2 pr-5 py-5 lg:py-0 rounded-2xl text-sm";
 
   return (
-    <>
+    <section className="px-7">
       {/* body 1 */}
-      <div className="grid grid-cols-10 gap-4 mt-5">
+      <div className="grid grid-cols-10 gap-4">
         <div className="grid grid-cols-12 gap-4 col-span-full lg:col-span-7">
           <div className="grid grid-cols-12 gap-4 col-span-full">
             <div className={divStyle}>
@@ -117,7 +117,7 @@ const DashboardBody = () => {
           Notifications
         </div>
       </div>
-    </>
+    </section>
   );
 };
 

@@ -16,7 +16,7 @@ const initialState = {
   emailForOTP: "",
   isUserOTPVerified: false,
   isResetOTPSent: false,
-  isAdminLoggedin: false,
+  isAdminLoggedin: true,
   previousUrlForOTP: "",
 };
 

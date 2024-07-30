@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Toaster } from "@/components/UI/toaster";
 
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
@@ -28,7 +27,6 @@ export default function RootLayout({
       </head>
       <body>
         {children}
-        <Toaster />
         <ToastContainer />
       </body>
     </html>

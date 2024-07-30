@@ -1,8 +1,7 @@
 import Image from "next/image";
-import LandingPageBgImage from "@/assets/img/LandingPage/LandingPageBgImage.png";
+
 import LandingPageBgImage2 from "@/assets/img/LandingPage/LandingPageBgImage2.jpeg";
 import LandingPagePhoneImage from "@/assets/img/LandingPage/LandingPagePhoneImage.png";
-import LandingPageSpiralsImage from "@/assets/img/LandingPage/LandingPageSpiralsImage.png";
 import AppStoreImage from "@/assets/img/AppStoreImage.png";
 import GooglePlayImage from "@/assets/img/GooglePlayImage.png";
 import NavbarLP from "../../UI/Navbar/LandingPageNavbar/NavbarLP";
@@ -49,12 +48,6 @@ const HeroSection = () => {
         />
       </div>
 
-      {/* spiral image */}
-      {/* <Image
-        src={LandingPageSpiralsImage}
-        alt="LandingPageSpiralsImage"
-        className="absolute top-0 left-0"
-      /> */}
       <div className="absolute top-0 left-0 bg-[#000000da] h-full w-full"></div>
     </section>
   );

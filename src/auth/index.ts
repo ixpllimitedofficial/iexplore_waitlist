@@ -1,3 +1,4 @@
+import { extractAndThrowLoginError } from "@/utils/functions/throwErrorFunctions";
 import NextAuth, { User, NextAuthConfig } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 
@@ -12,24 +13,30 @@ const authOptions: NextAuthConfig = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials): Promise<User | null> {
+        try {
+          const res = await fetch("http://44.193.73.68:8000/api/auth/login/", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: JSON.stringify({
+              username_or_email: credentials.username,
+              password: credentials.password,
+            }),
+          });
 
-        const res = await fetch("http://44.193.73.68:8000/api/auth/login/", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify({
-            username_or_email: credentials.username,
-            password: credentials.password,
-          }),
-        });
-        const user = await res.json();
+          const user = await res.json();
 
-        if (res.ok && user) {
-          return user;
+          if (res.ok && user) {
+            return user;
+          } else {
+            throw new Error(user.message || "Invalid credentials");
+            return null;
+          }
+        } catch (error: any) {
+          throw new Error(error.message || "Login failed");
         }
-        return null;
       },
     }),
   ],
@@ -51,17 +58,17 @@ const authOptions: NextAuthConfig = {
       session.user.accessToken = token.accessToken;
       // Add any other user fields here
       return session;
-    }
+    },
   },
   basePath: BASE_PATH,
   secret: process.env.NEXTAUTH_SECRET,
   pages: {
     // signIn: '/auth/signIn',  // Custom sign-in page
     // signOut: '/auth/signout',  // Custom sign-out page
-    // error: '/auth/error',  // Custom error page
+    error: "/auth/error", // Custom error page
     // verifyRequest: '/auth/verify-request',  // Custom verify request page
     // newUser: '/auth/new-user'  // Custom new user page
-  }
+  },
 };
 
 export const { handlers, auth, signIn, signOut } = NextAuth(authOptions);

@@ -47,10 +47,36 @@ const LoginForm = () => {
   });
 
   async function onSubmit(data: z.infer<typeof loginValidationSchema>) {
+    // const res = await signIn("credentials", {
+    //   username: data.username_or_email,
+    //   password: data.password,
+    //   redirect: false,
+    // }).then((stuff) => {
+    //   // stuff is { error: "CredentialsSignin", status: 200, ok: true, url: null } at this point
+    //   console.log("stuff in", stuff);
+    // });
+    // if (res?.status == 200) {
+    //   console.log();
+    // } else if (res?.error === "custom error to the client") {
+    //   console.log("error");
+
+    //   // handle this particular error
+    // } else {
+    //   // handle generic error
+    // }
+
     await signIn("credentials", {
       redirect: false,
       username: data.username_or_email,
       password: data.password,
+    }).then((res) => {
+      console.log(res);
+
+      if (res?.ok) {
+        return true;
+      } else if (res?.error) {
+        throw new Error(res.error);
+      }
     });
   }
 
