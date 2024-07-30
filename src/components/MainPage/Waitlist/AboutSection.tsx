@@ -16,7 +16,7 @@ const AboutSection = () => {
         </p>
       </section>
 
-      <Image src={DiscJockey} alt="DiscJockey" />
+      <Image src={DiscJockey} alt="DiscJockey" className="w-full" />
     </>
   );
 };
