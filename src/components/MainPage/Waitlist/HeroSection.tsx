@@ -14,7 +14,7 @@ const HeroSection = () => {
         <h1 className={`text-gold-500 text-7xl ${anton.className} w-3/4`}>
           YOUR NIGHTLIFE COMPANION IN YOUR HANDS
         </h1>
-        <p className="text-xl my-6 w-[90%]">
+        <p className="text-lg my-5 w-[90%]">
           Everything you need to explore the best of your city’s nightlife. Your
           ultimate nightlife companion in one app.
         </p>
