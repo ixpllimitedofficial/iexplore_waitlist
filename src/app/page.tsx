@@ -6,12 +6,12 @@ import SpotsOnPhoneSection from "@/components/MainPage/Waitlist/SpotsOnPhoneSect
 
 const page = async () => {
   return (
-    <section className="bg-[#0E0E0E] pt-24">
+    <section className="pt-24">
       <HeroSection />
       <SpotsOnPhoneSection />
       <AboutSection />
       <JoinWaitlistSection />
-      <Footer />
+      {/* <Footer /> */}
     </section>
   );
 };

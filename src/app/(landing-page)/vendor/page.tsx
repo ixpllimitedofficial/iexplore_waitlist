@@ -1,10 +1,13 @@
-const page = () => {
-    return (
-      <section className="relative h-screen w-screen grid place-items-center">
-        <h1 className="text-5xl mx-10 text-center">VENDOR</h1>
-      </section>
-    );
-  };
-  
-  export default page;
-  
+import Footer from "@/components/MainPage/Footer/Footer";
+import HeroSection from "@/components/MainPage/Vendor/HeroSection";
+
+const page = async () => {
+  return (
+    <section className="pt-36">
+      <HeroSection />
+      {/* <Footer /> */}
+    </section>
+  );
+};
+
+export default page;
