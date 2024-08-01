@@ -1,5 +1,5 @@
-import { anton } from "@/app/fonts";
 import Image from "next/image";
+import { anton } from "@/app/fonts";
 import AboutVendorImg1 from "@/assets/img/MainWebsite/AboutVendorImg1.png";
 import AboutVendorImg2 from "@/assets/img/MainWebsite/AboutVendorImg2.png";
 import AboutVendorImg3 from "@/assets/img/MainWebsite/AboutVendorImg3.png";
