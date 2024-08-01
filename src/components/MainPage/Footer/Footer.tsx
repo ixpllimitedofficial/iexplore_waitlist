@@ -107,7 +107,7 @@ const Footer = () => {
       </footer>
 
       <div className="bg-black">
-        <Image src={iexploreFooter} alt="iexploreFooter" />
+        <Image src={iexploreFooter} alt="iexploreFooter" className="w-full" />
       </div>
     </>
   );

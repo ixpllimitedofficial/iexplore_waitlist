@@ -2,21 +2,16 @@
 
 import * as React from "react";
 import { anton } from "@/app/fonts";
-import Image from "next/image";
 import Autoscroll from "embla-carousel-auto-scroll";
 
-import { Card, CardContent } from "@/components/UI/card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/UI/carousel";
-import { start } from "repl";
 
 const DiscoverExploreConnect = () => {
-  const plugin = React.useRef(Autoscroll());
+  const plugin = React.useRef(Autoscroll({speed: 3}));
 
   return (
     <Carousel
@@ -44,7 +39,7 @@ const DiscoverExploreConnect = () => {
         ].map((item: any) => (
           <CarouselItem
             key={item.id}
-            className="md:basis-1/6 flex items-center justify-center p-6"
+            className="md:basis-1/6 flex items-center justify-center"
           >
             <h1 className={`text-[#F2F1E8] text-7xl ${anton.className}`}>
               {item.name}

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { anton } from "@/app/fonts";
 import { Button } from "@/components/UI/button";
-import { Input } from "@/components/UI/input";
 
 import DesktopApp from "@/assets/img/MainWebsite/DesktopApp.png";
 import VendorImages from "@/assets/img/MainWebsite/VendorImages.png";
@@ -30,8 +29,6 @@ const HeroSection = () => {
             Learn More
           </Button>
         </div>
-
-        {/* <Image src={DesktopApp} alt="DesktopApp" className="mt-5" /> */}
       </section>
 
       <div className="relative w-full">
