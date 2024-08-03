@@ -14,7 +14,7 @@ const HeroSection = () => {
         <h1 className={`text-gold-500 text-7xl ${anton.className} w-3/4`}>
           YOUR NIGHTLIFE COMPANION IN YOUR HANDS
         </h1>
-        <p className="text-lg my-5 w-[90%]">
+        <p className="text-lg my-5 w-[80%]">
           Everything you need to explore the best of your city’s nightlife. Your
           ultimate nightlife companion in one app.
         </p>
@@ -24,7 +24,7 @@ const HeroSection = () => {
             className="bg-[#FFFFFF1A] px-3 py-6 rounded-none text-[#C8C8C8] border-t-0 border-r-0 border-l-0 border-b-gold-500 placeholder:text-base placeholder:text-[#4D4D4D] "
             placeholder="Email Address"
           />
-          <Button className="bg-gold-500 hover:bg-gold-600 text-[#322016] px-10 py-6 rounded-3xl font-bold text-base">
+          <Button className="bg-gold-500 transition duration-200 hover:bg-white text-[#322016] px-10 py-6 rounded-3xl font-bold text-base">
             Join Waitlist
           </Button>
         </div>
@@ -38,7 +38,18 @@ const HeroSection = () => {
       </div>
 
       {/* right */}
-      <Image src={HeroVid} alt="HeroVid" className="h-[450px] w-auto"  />
+      <div className="relative h-[450px] w-auto">
+        <video
+          autoPlay
+          muted
+          loop
+          preload="none"
+          className="h-[450px] w-auto object-cover"
+        >
+          <source src="/heroVid.mp4" type="video/mp4" />
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
     </section>
   );
 };

@@ -22,13 +22,13 @@ const AboutVendor = () => {
       {/* Dashboard Analytics*/}
       <section className="p-14 flex items-center gap-20">
         <div>
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-3">
             <div className="bg-gold-500 text-brandDark mr-auto px-4 py-2 rounded-3xl flex items-center gap-2">
               {BulletPointSvg}
               <p className="font-semibold">Dashboard Analytics</p>
             </div>
-            <h3 className={`text-[#F2F1E8] text-6xl ${anton.className} `}>
-              UNLOCK POWERFUL INSIGHTS WITH DASHBOARD ANALYTICS
+            <h3 className={`text-[#F2F1E8] text-[56px] leading-tight ${anton.className} `}>
+              UNLOCK POWERFUL INSIGHTS WITH <span className="text-gold-500">DASHBOARD ANALYTICS</span>
             </h3>
             <p className="text-lg text-[#D1D1D1]">
               Leverage Dashboard Analytics to monitor foot traffic and customer
@@ -55,14 +55,14 @@ const AboutVendor = () => {
         />
 
         <div>
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-3">
             <div className="bg-gold-500 text-brandDark mr-auto px-4 py-2 rounded-3xl flex items-center gap-2">
               {BulletPointSvg}
 
               <p className="font-semibold">Location Management</p>
             </div>
-            <h3 className={`text-[#F2F1E8] text-6xl ${anton.className} `}>
-              OPTIMIZE YOUR VENUE’S PRESENCE WITH EASE
+            <h3 className={`text-[#F2F1E8] text-[56px] leading-tight ${anton.className} `}>
+              OPTIMIZE YOUR VENUE’S PRESENCE<span className="text-gold-500"> WITH EASE</span> 
             </h3>
             <p className="text-lg text-[#D1D1D1]">
               Seamlessly manage your venue’s details with iExplore’s Spot
@@ -83,8 +83,8 @@ const AboutVendor = () => {
 
               <p className="font-semibold">Drink Management</p>
             </div>
-            <h3 className={`text-[#F2F1E8] text-6xl ${anton.className} `}>
-              SHARE YOUR LATEST DRINKS AND MENU OFFERING
+            <h3 className={`text-[#F2F1E8] text-[56px] leading-tight ${anton.className} `}>
+              SHARE YOUR <span className="text-gold-500"> LATEST DRINKS</span> AND MENU OFFERING
             </h3>
             <p className="text-lg text-[#D1D1D1]">
               With our Drink Management tool, you can easily update and showcase

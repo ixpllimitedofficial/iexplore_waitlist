@@ -1,7 +1,15 @@
-const page = () => {
+import HeroSection from "@/components/MainPage/Home/HeroSection";
+import FAQ from "@/components/MainPage/FAQ";
+import GetStarted from "@/components/MainPage/Vendor/GetStarted";
+import Discover from "@/components/MainPage/Home/Discover";
+
+const page = async () => {
   return (
-    <section className="relative h-screen w-screen grid place-items-center">
-      <h1 className="text-5xl mx-10 text-center">HOME</h1>
+    <section className="">
+      <HeroSection />
+      <Discover />
+      <FAQ />
+      <GetStarted />
     </section>
   );
 };

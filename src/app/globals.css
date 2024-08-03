@@ -80,7 +80,7 @@
 
 @layer components {
   .footerIcon {
-    @apply bg-[#F2F1E8] p-3 rounded-full w-[45px] h-[45px] flex place-items-center;
+    @apply bg-[#F2F1E8] hover:bg-gold-700 p-3 rounded-full w-[45px] h-[45px] flex place-items-center;
   }
 
   .spotCategorySelection {

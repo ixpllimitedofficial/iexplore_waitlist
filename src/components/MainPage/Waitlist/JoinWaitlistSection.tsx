@@ -20,7 +20,7 @@ const JoinWaitlistSection = () => {
           className="bg-[#FFFFFF1A] px-3 py-6 rounded-none text-[#C8C8C8] border-t-0 border-r-0 border-l-0 border-b-gold-500 placeholder:text-base placeholder:text-[#4D4D4D] "
           placeholder="Email Address"
         />
-        <Button className="bg-gold-500 hover:bg-gold-600 text-[#322016] px-10 py-6 rounded-3xl font-bold text-base">
+        <Button className="bg-gold-500 transition duration-200 hover:bg-white text-[#322016] px-10 py-6 rounded-3xl font-bold text-base">
           Get early access
         </Button>
       </div>

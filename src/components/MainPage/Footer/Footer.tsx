@@ -16,7 +16,9 @@ const Footer = () => {
       <footer className="bg-black text-[#F2F1E8] p-12 grid grid-cols-5 gap-x-40">
         <div className="col-span-3">
           <div className="flex flex-col gap-5">
-            <h3 className={`text-[#F2F1E8] text-5xl ${anton.className} w-2/4`}>
+            <h3
+              className={`text-[#F2F1E8] text-5xl leading-tight ${anton.className} w-2/4`}
+            >
               SIGN UP TO OUR NEWSLETTER
             </h3>
             <p className="text-lg text-[#D1D1D1]">
@@ -34,7 +36,7 @@ const Footer = () => {
               className="bg-[#FFFFFF1A] px-3 py-6 rounded-none text-[#C8C8C8] border-t-0 border-r-0 border-l-0 border-b-gold-500 placeholder:text-base placeholder:text-[#4D4D4D] "
               placeholder="Email Address"
             />
-            <Button className="bg-white hover:bg-white text-[#322016] px-7 py-5 rounded-3xl font-extrabold text-sm mr-auto mt-3">
+            <Button className="bg-white transition duration-200 hover:bg-gold-700 text-[#322016] px-7 py-5 rounded-3xl font-extrabold mr-auto mt-3">
               Sign Up
             </Button>
           </div>
@@ -71,16 +73,16 @@ const Footer = () => {
               </div>
 
               <div className="footerIcon">
+                <Image src={XIcon} alt="XIcon" width={35} height={35} />
+              </div>
+
+              <div className="footerIcon">
                 <Image
                   src={InstagramIcon}
                   alt="InstagramIcon"
                   width={35}
                   height={35}
                 />
-              </div>
-
-              <div className="footerIcon">
-                <Image src={XIcon} alt="XIcon" width={35} height={35} />
               </div>
 
               <div className="footerIcon">

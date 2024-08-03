@@ -38,13 +38,13 @@ const GetStarted = () => {
             ELEVATE YOUR BUSINESS <br /> EXPERIENCE WITH <br /> IEXPLORE VENDOR
             NOW
           </h3>
-          <Button className="bg-white hover:bg-white text-[#322016] text-lg px-7 py-5 rounded-3xl font-extrabold mx-auto mt-3">
+          <Button className="bg-white transition duration-300 hover:bg-[#322016] hover:text-white text-[#322016] text-lg px-7 py-6 rounded-3xl font-extrabold mx-auto mt-3">
             Get Started
           </Button>
         </div>
       </section>
 
-      <section className="bg-[#F4EBCD] px-10 py-6">
+      <section className="bg-[#F4EBCD] px-10 py-4">
         <div className="flex items-center justify-between gap-5">
           <Carousel
             plugins={[plugin.current]}

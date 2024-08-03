@@ -20,7 +20,6 @@ const DiscoverExploreConnect = () => {
         align: "start",
         loop: true,
       }}
-      className="w-full my-14 absolute bottom-12"
     >
       <CarouselContent>
         {[
@@ -36,12 +35,18 @@ const DiscoverExploreConnect = () => {
           { name: "-", id: 10 },
           { name: "EXPLORE", id: 11 },
           { name: "-", id: 12 },
+          { name: "DISCOVER", id: 13},
+          { name: "-", id: 14 },
+          { name: "CONNECT", id: 15 },
+          { name: "-", id: 16 },
+          { name: "EXPLORE", id: 17 },
+          { name: "-", id: 18 },
         ].map((item: any) => (
           <CarouselItem
             key={item.id}
             className="md:basis-1/6 flex items-center justify-center"
           >
-            <h1 className={`text-[#F2F1E8] text-7xl ${anton.className}`}>
+            <h1 className={`text-[#F2F1E8] text-6xl ${anton.className}`}>
               {item.name}
             </h1>
           </CarouselItem>

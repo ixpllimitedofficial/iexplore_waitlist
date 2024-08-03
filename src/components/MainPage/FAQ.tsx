@@ -11,20 +11,20 @@ import FAQimage from "@/assets/img/MainWebsite/FAQimage.png";
 
 const FAQ = () => {
   return (
-    <section className="w-[85vw] mx-auto my-14">
-      <div className="flex flex-col gap-5 text-center">
-        <h3 className={`text-gold-500 text-6xl ${anton.className} `}>
+    <section className="w-[80vw] mx-auto my-14">
+      <div className="flex flex-col gap-3 text-center">
+        <h3 className={`text-gold-500 text-5xl ${anton.className} `}>
           FREQUENTLY ASKED QUESTIONS?
         </h3>
-        <p className="text-lg text-[#D1D1D1] w-3/4 mx-auto">
+        <p className="text-[#D1D1D1] text-lg w-3/5 mx-auto">
           We understand you might have some questions to know better about being
           a vendor on iExplore, we have you covered. Here are some frequently
-          asked questions and their answers
+          asked questions and their answers.
         </p>
       </div>
 
       <Accordion type="single" collapsible className="my-5">
-        <AccordionItem value="item-1" className="py-5">
+        <AccordionItem value="item-1" className="py-3">
           <AccordionTrigger className="text-2xl">
             What Really is iExplore?
           </AccordionTrigger>
