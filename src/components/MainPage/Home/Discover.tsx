@@ -87,7 +87,7 @@ const Discover = () => {
       {/* GET INFORMATION OF THE BEST LOCATIONS  */}
       <div className="h-[500px] px-24 mt-28 flex justify-end relative">
         <div className="bg-[#0E0E0E] py-10 pr-1 w-[45%] absolute left-28 -bottom-10">
-          <h3 className={`text-[#F2F1E8] text-6xl ${anton.className} `}>
+          <h3 className={`text-[#F2F1E8] text-6xl ${anton.className} pr-5`}>
             GET INFORMATION OF THE{" "}
             <span className="text-gold-500"> BEST LOCATIONS</span>
           </h3>

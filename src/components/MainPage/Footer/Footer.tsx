@@ -36,7 +36,7 @@ const Footer = () => {
               className="bg-[#FFFFFF1A] px-3 py-6 rounded-none text-[#C8C8C8] border-t-0 border-r-0 border-l-0 border-b-gold-500 placeholder:text-base placeholder:text-[#4D4D4D] "
               placeholder="Email Address"
             />
-            <Button className="bg-white transition duration-200 hover:bg-gold-700 text-[#322016] px-7 py-5 rounded-3xl font-extrabold mr-auto mt-3">
+            <Button className="bg-white transition duration-200 hover:bg-gold-500 text-[#322016] px-7 py-5 rounded-3xl font-extrabold mr-auto mt-3">
               Sign Up
             </Button>
           </div>
