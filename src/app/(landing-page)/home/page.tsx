@@ -6,6 +6,7 @@ import AboutCEO from "@/components/MainPage/Home/AboutCEO";
 import ExploreTheExperience from "@/components/MainPage/Home/ExploreTheExperience";
 import NewsAndUpdates from "@/components/MainPage/Home/NewsAndUpdates";
 import OurPartners from "@/components/MainPage/Home/OurPartners";
+import OurMission from "@/components/MainPage/Home/OurMission";
 
 const page = async () => {
   return (
@@ -13,6 +14,7 @@ const page = async () => {
       <HeroSection />
       <Discover />
       <AboutCEO />
+      <OurMission />
       <ExploreTheExperience />
       <NewsAndUpdates />
       <FAQ />

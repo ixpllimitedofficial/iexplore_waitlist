@@ -22,7 +22,7 @@ const AboutCEO = () => {
         <Image
           src={AboutCEOimg3}
           alt="AboutCEOimg3"
-          className="mt-24 z-[100]"
+          className="mt-24"
         />
 
         {/* image 1 */}
