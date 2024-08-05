@@ -3,6 +3,9 @@ import FAQ from "@/components/MainPage/FAQ";
 import Discover from "@/components/MainPage/Home/Discover";
 import JoinWaitlistFooter from "@/components/MainPage/JoinWaitlistFooter";
 import AboutCEO from "@/components/MainPage/Home/AboutCEO";
+import ExploreTheExperience from "@/components/MainPage/Home/ExploreTheExperience";
+import NewsAndUpdates from "@/components/MainPage/Home/NewsAndUpdates";
+import OurPartners from "@/components/MainPage/Home/OurPartners";
 
 const page = async () => {
   return (
@@ -10,7 +13,10 @@ const page = async () => {
       <HeroSection />
       <Discover />
       <AboutCEO />
+      <ExploreTheExperience />
+      <NewsAndUpdates />
       <FAQ />
+      <OurPartners />
       <JoinWaitlistFooter />
     </section>
   );

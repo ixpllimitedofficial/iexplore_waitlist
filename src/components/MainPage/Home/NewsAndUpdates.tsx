@@ -1,0 +1,49 @@
+import { anton } from "@/app/fonts";
+import Image from "next/image";
+import { Button } from "@/components/UI/button";
+import { ArrowRightIcon } from "@radix-ui/react-icons";
+
+import NewsImg from "@/assets/img/MainWebsite/NewsImg.png";
+
+const NewsAndUpdates = () => {
+  return (
+    <section className="p-14">
+      <div className="flex items-center justify-between">
+        <h3 className={`text-[#F2F1E8] text-6xl mt-3 ${anton.className} `}>
+          NEWS & UPDATES
+        </h3>
+        <p className="text-[#D1D1D1] text-lg w-[60%]">
+          Explore our articles to discover more about the vibrant nightlife
+          scene. Stay updated with the latest events and be inspired by
+          incredible stories from iconic venues and the creative minds shaping
+          the nightlife experience.
+        </p>
+      </div>
+
+      <div className="mt-14 grid grid-cols-3 gap-7">
+        {[1, 2, 3].map((item) => {
+          return (
+            <div key={item} className="flex flex-col gap-3">
+              <Image src={NewsImg} alt="NewsImg" className="w-full"/>
+              <p className="text-white font-bold text-xl">
+                A Night Out in Lagos: Your Ultimate Guide to Unforgettable
+                Experiences
+              </p>
+              <p className="text-[#D1D1D1] text-lg">
+                A night out in Lagos is more than just an evening, it’s a
+                journey through a city bursting with energy and creativity.
+                Start your adventure with a dinner at one of the city’s eclectic
+                restaurants, followed by a visit to a trendy bar or lounge...
+              </p>
+              <Button className="mr-auto mt-2 bg-[#F2F1E8] text-[#322016] transition duration-100 hover:bg-[#E1B141] px-4 py-6 rounded-xl font-bold text-base">
+                Read More <ArrowRightIcon className="ml-2 h-6 w-6" />
+              </Button>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+};
+
+export default NewsAndUpdates;
