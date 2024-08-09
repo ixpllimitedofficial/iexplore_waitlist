@@ -98,7 +98,7 @@ const Footer = () => {
         </div>
 
         {/* bottom line */}
-        <div className="col-span-full mt-10 border-b-2 border-[#4D4D4D] pb-2 flex flex-col-reverse md:flex-row gap-4 md:gap-10 justify-between text-[#D1D1D1] text-base">
+        <div className="col-span-full mt-10 border-b-2 border-[#4D4D4D] pb-2 flex flex-col-reverse md:flex-row gap-4 md:gap-10 justify-between text-[#D1D1D1] text-sm md:text-base">
           <p className="">All rights reserve. Maxx Technologies © 2024</p>
 
           <div className="flex justify-between gap-10">

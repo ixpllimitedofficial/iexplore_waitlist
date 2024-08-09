@@ -4,26 +4,27 @@ import { Button } from "@/components/UI/button";
 import { Input } from "@/components/UI/input";
 
 import ExplorersWaiting from "@/assets/img/MainWebsite/ExplorersWaiting.png";
-import HeroVid from "@/assets/img/MainWebsite/HeroVid.png";
-
 const HeroSection = () => {
   return (
-    <section className="flex gap-24 items-center py-10 px-16">
+    <section className="flex flex-col md:flex-row gap-5 md:gap-24 items-center py-10 px-4 md:px-16">
       {/* left */}
       <div>
-        <h1 className={`text-gold-500 text-7xl ${anton.className} w-3/4`}>
+        <h1
+          className={`text-gold-500 text-5xl md:text-7xl ${anton.className} text-center md:text-left md:w-3/4`}
+        >
           YOUR NIGHTLIFE COMPANION IN YOUR HANDS
         </h1>
-        <p className="text-lg my-5 w-[80%]">
+        <p className="text-lg text-center md:text-left my-5 md:w-[80%]">
           Everything you need to explore the best of your city’s nightlife. Your
           ultimate nightlife companion in one app.
         </p>
 
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col md:flex-row justify-between gap-4">
           <Input
             className="bg-[#FFFFFF1A] px-3 py-6 rounded-none text-[#C8C8C8] border-t-0 border-r-0 border-l-0 border-b-gold-500 placeholder:text-base placeholder:text-[#4D4D4D] "
             placeholder="Email Address"
           />
+
           <Button className="bg-gold-500 transition duration-200 hover:bg-white text-[#322016] px-10 py-6 rounded-3xl font-bold text-base">
             Join Waitlist
           </Button>
@@ -31,20 +32,20 @@ const HeroSection = () => {
 
         <div className="flex items-center gap-2">
           <Image src={ExplorersWaiting} alt="ExplorersWaiting" />
-          <p className="text-base text-[#D1D1D1] my-4">
+          <p className="text-sm md:text-base text-[#D1D1D1] my-4">
             12.7k Explorers already waiting
           </p>
         </div>
       </div>
 
       {/* right */}
-      <div className="relative h-[450px] w-auto">
+      <div className="relative w-full h-[400px] md:h-[450px] md:w-auto">
         <video
           autoPlay
           muted
           loop
           preload="none"
-          className="h-[450px] w-auto object-cover"
+          className="h-full w-full object-cover"
         >
           <source src="/heroVid.mp4" type="video/mp4" />
           Your browser does not support HTML5 video.

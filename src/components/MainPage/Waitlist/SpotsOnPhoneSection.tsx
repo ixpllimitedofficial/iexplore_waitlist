@@ -18,7 +18,7 @@ const SpotsOnPhoneSection = () => {
   return (
     
     <Carousel
-      className="mt-60 mb-96 relative"
+      className="mt-40 md:mt-60 mb-72 m md:mb-96 relative"
       plugins={[plugin.current]}
       opts={{
         loop: true,
