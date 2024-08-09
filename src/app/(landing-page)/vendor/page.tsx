@@ -6,7 +6,7 @@ import HeroSection from "@/components/MainPage/Vendor/HeroSection";
 
 const page = async () => {
   return (
-    <section className="pt-36">
+    <section className="pt-24 md:pt-36">
       <HeroSection />
       <AboutVendor />
       <FAQ />

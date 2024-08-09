@@ -7,7 +7,7 @@ const HeroSection = () => {
         className="relative w-full h-screen overflow-hidden"
       >
         <h1
-          className={`text-[#F2F1E8] text-[55px] leading-none md:text-6xl ${anton.className} absolute z-10 left-3 md:left-10 bottom-10 md:w-[37%]`}
+          className={`text-[#F2F1E8] text-[55px] leading-none md:text-6xl ${anton.className} absolute z-10 left-3 md:left-10 bottom-14 md:bottom-10 md:w-[37%]`}
         >
           DISCOVER, CONNECT, AND ENJOY THE BEST NIGHT OUT IN YOUR
           CITY! 
