@@ -13,10 +13,12 @@ const FAQ = () => {
   return (
     <section className="w-[80vw] mx-auto my-14">
       <div className="flex flex-col gap-3 text-center">
-        <h3 className={`text-gold-500 text-5xl ${anton.className} `}>
+        <h3
+          className={`text-gold-500 text-4xl md:text-5xl ${anton.className} `}
+        >
           FREQUENTLY ASKED QUESTIONS?
         </h3>
-        <p className="text-[#D1D1D1] text-lg w-3/5 mx-auto">
+        <p className="text-[#D1D1D1] text-lg md:w-3/5 mx-auto">
           We understand you might have some questions to know better about being
           a vendor on iExplore, we have you covered. Here are some frequently
           asked questions and their answers.
@@ -25,14 +27,14 @@ const FAQ = () => {
 
       <Accordion type="single" collapsible className="my-5">
         <AccordionItem value="item-1" className="py-3">
-          <AccordionTrigger className="text-2xl">
+          <AccordionTrigger className="text-xl md:text-2xl text-start">
             What Really is iExplore?
           </AccordionTrigger>
-          <AccordionContent className="flex gap-5 items-center">
-            <Image src={FAQimage} alt="FAQimage" />
+          <AccordionContent className="flex flex-col md:flex-row gap-5 items-center">
+            <Image src={FAQimage} alt="FAQimage" className="hidden md:block" />
             <div>
               {/* <p className="text-2xl">What Really is iExplore?</p> */}
-              <p className="text-lg text-[#D1D1D1] mt-2 w-3/4">
+              <p className="text-lg text-[#D1D1D1] mt-2 md:w-3/4">
                 We understand you might have a lot of questions to help you
                 enjoy your experience out with iExplore, so we have compiled a
                 list of frequently asked questions to guide you and help you
@@ -43,14 +45,14 @@ const FAQ = () => {
         </AccordionItem>
 
         <AccordionItem value="item-2" className="py-5">
-          <AccordionTrigger className="text-2xl">
+          <AccordionTrigger className="text-xl md:text-2xl text-start">
             How can I find events near me?
           </AccordionTrigger>
-          <AccordionContent className="flex gap-5 items-center">
-            <Image src={FAQimage} alt="FAQimage" />
+          <AccordionContent className="flex flex-col md:flex-row gap-5 items-center">
+            <Image src={FAQimage} alt="FAQimage" className="hidden md:block" />
             <div>
               {/* <p className="text-2xl">What Really is iExplore?</p> */}
-              <p className="text-lg text-[#D1D1D1] mt-2 w-3/4">
+              <p className="text-lg text-[#D1D1D1] mt-2 md:w-3/4">
                 We understand you might have a lot of questions to help you
                 enjoy your experience out with iExplore, so we have compiled a
                 list of frequently asked questions to guide you and help you
@@ -61,14 +63,14 @@ const FAQ = () => {
         </AccordionItem>
 
         <AccordionItem value="item-3" className="py-5">
-          <AccordionTrigger className="text-2xl">
-          Can I share my experiences on the app?
+          <AccordionTrigger className="text-xl md:text-2xl text-start">
+            Can I share my experiences on the app?
           </AccordionTrigger>
-          <AccordionContent className="flex gap-5 items-center">
-            <Image src={FAQimage} alt="FAQimage" />
+          <AccordionContent className="flex flex-col md:flex-row gap-5 items-center">
+            <Image src={FAQimage} alt="FAQimage" className="hidden md:block" />
             <div>
               {/* <p className="text-2xl">What Really is iExplore?</p> */}
-              <p className="text-lg text-[#D1D1D1] mt-2 w-3/4">
+              <p className="text-lg text-[#D1D1D1] mt-2 md:w-3/4">
                 We understand you might have a lot of questions to help you
                 enjoy your experience out with iExplore, so we have compiled a
                 list of frequently asked questions to guide you and help you

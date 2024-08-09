@@ -9,12 +9,12 @@ import HomeDiscoverFeeds2 from "@/assets/img/MainWebsite/HomeDiscoverFeeds2.png"
 
 const Discover = () => {
   return (
-    <section className="mb-32">
+    <section className="md:mb-32">
       <div className="mt-10">
         <DiscoverExploreConnect />
       </div>
 
-      <p className="text-lg text-[#D1D1D1] text-center w-3/4 mx-auto my-16">
+      <p className="text-lg text-[#D1D1D1] text-center px-5 md:w-3/4 mx-auto my-10 md:my-16">
         Discover the hottest spots around you and plan epic nights out while
         staying in the loop with exciting updates from events around you. Enjoy
         exclusive benefits when you order your favorite drink at your go-to
@@ -23,18 +23,20 @@ const Discover = () => {
       </p>
 
       {/* SATISFY YOUR INNER EXPLORER */}
-      <div className="h-[500px] px-24 flex relative">
+      <div className="md:h-[500px] md:px-24 flex flex-col md:flex-row relative">
         <Image
           src={HomeDiscoverImage1}
           alt="HomeDiscoverImage1"
-          className="h-[400px] w-auto"
+          className="w-full md:h-[400px] md:w-auto"
         />
 
-        <div className="bg-[#0E0E0E] py-10 pl-1 w-[45%] absolute right-28 -bottom-10 text-right">
-          <h3 className={`text-[#F2F1E8] text-6xl ${anton.className} `}>
+        <div className="bg-[#0E0E0E] py-10 px-5 md:pl-1 md:w-[45%] md:absolute right-28 -bottom-10 md:text-right">
+          <h3
+            className={`text-[#F2F1E8] text-4xl md:text-6xl ${anton.className} `}
+          >
             SATISFY YOUR INNER <span className="text-gold-500"> EXPLORER</span>
           </h3>
-          <p className="pl-8 mt-3 text-lg text-[#D1D1D1]">
+          <p className="md:pl-8 mt-3 text-lg text-[#D1D1D1]">
             Never miss a beat. Stay in the know with detailed information on
             working hours, location, capacity, guidelines, security and
             up-coming events at selected venues of interest.
@@ -43,16 +45,16 @@ const Discover = () => {
       </div>
 
       {/* DRINKS AND FEEDS */}
-      <div className="grid grid-cols-2 my-24 px-24 gap-10">
+      <div className=" grid grid-cols-2 my-2 md:my-24 md:px-24 gap-10">
         {/* drinks */}
-        <div className="flex gap-5">
+        <div className="col-span-full md:col-span-1 flex flex-col md:flex-row gap-5">
           <Image
             src={HomeDiscoverDrinks2}
             alt="HomeDiscoverDrinks2"
-            className="h-[300px] w-auto"
+            className="w-[85%] h-auto mx-auto md:h-[300px] md:w-auto"
           />
 
-          <div className="pt-20">
+          <div className="pt-5 md:pt-20 px-7">
             <h3 className={`text-[#F2F1E8] text-4xl ${anton.className} `}>
               DRINKS
             </h3>
@@ -65,14 +67,14 @@ const Discover = () => {
         </div>
 
         {/* feeds */}
-        <div className="flex gap-5">
+        <div className="col-span-full md:col-span-1 flex flex-col md:flex-row gap-5">
           <Image
             src={HomeDiscoverFeeds2}
             alt="HomeDiscoverFeeds2"
-            className="h-[300px] w-auto"
+            className="w-[85%] h-auto mx-auto md:h-[300px] md:w-auto"
           />
 
-          <div className="pt-20">
+          <div className="pt-5 md:pt-20 px-7">
             <h3 className={`text-[#F2F1E8] text-4xl ${anton.className} `}>
               FEEDS
             </h3>
@@ -85,13 +87,15 @@ const Discover = () => {
       </div>
 
       {/* GET INFORMATION OF THE BEST LOCATIONS  */}
-      <div className="h-[500px] px-24 mt-28 flex justify-end relative">
-        <div className="bg-[#0E0E0E] py-10 pr-1 w-[45%] absolute left-28 -bottom-10">
-          <h3 className={`text-[#F2F1E8] text-6xl ${anton.className} pr-5`}>
+      <div className="md:h-[500px] md:px-24 flex flex-col-reverse md:flex-row relative mt-10 md:mt-28 justify-end ">
+        <div className="bg-[#0E0E0E] py-10 px-5 md:pr-1 md:w-[45%] md:absolute left-28 -bottom-10">
+          <h3
+            className={`text-[#F2F1E8] text-4xl md:text-6xl ${anton.className} md:pr-5`}
+          >
             GET INFORMATION OF THE{" "}
             <span className="text-gold-500"> BEST LOCATIONS</span>
           </h3>
-          <p className="w-[90%] mt-3 text-lg text-[#D1D1D1]">
+          <p className="md:w-[90%] mt-3 text-lg text-[#D1D1D1]">
             Never miss a beat. Stay in the know with detailed information on
             working hours, location, capacity, guidelines, security and
             up-coming events at selected venues of interest.
@@ -101,7 +105,7 @@ const Discover = () => {
         <Image
           src={HomeDiscoverImage2}
           alt="HomeDiscoverImage2"
-          className="h-[400px] w-auto"
+          className="w-full md:h-[400px] md:w-auto"
         />
       </div>
     </section>

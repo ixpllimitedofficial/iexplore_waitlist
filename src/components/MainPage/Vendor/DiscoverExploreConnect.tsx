@@ -44,9 +44,9 @@ const DiscoverExploreConnect = () => {
         ].map((item: any) => (
           <CarouselItem
             key={item.id}
-            className="md:basis-1/6 flex items-center justify-center"
+            className="basis-1/3 md:basis-1/6 flex items-center justify-center"
           >
-            <h1 className={`text-[#F2F1E8] text-6xl ${anton.className}`}>
+            <h1 className={`text-[#F2F1E8] text-5xl md:text-6xl ${anton.className}`}>
               {item.name}
             </h1>
           </CarouselItem>

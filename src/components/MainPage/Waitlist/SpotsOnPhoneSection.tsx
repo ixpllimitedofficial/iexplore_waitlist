@@ -16,6 +16,7 @@ const SpotsOnPhoneSection = () => {
   const plugin = React.useRef(Autoplay({ delay: 2000 }));
 
   return (
+    
     <Carousel
       className="mt-60 mb-96 relative"
       plugins={[plugin.current]}
@@ -26,7 +27,7 @@ const SpotsOnPhoneSection = () => {
       <Image
         src={Phone}
         alt="Phone"
-        className="absolute top-[70%] left-1/2 w-[80vw] max-w-[370px] transform -translate-x-1/2 -translate-y-1/2 z-40"
+        className="absolute top-[70%] left-1/2 w-[80vw] max-w-[370px] transform -translate-x-1/2 -translate-y-1/2"
       />
 
       <CarouselContent className="relative -ml-1">

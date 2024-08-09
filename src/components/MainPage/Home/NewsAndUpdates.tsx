@@ -7,12 +7,12 @@ import NewsImg from "@/assets/img/MainWebsite/NewsImg.png";
 
 const NewsAndUpdates = () => {
   return (
-    <section className="p-14">
-      <div className="flex items-center justify-between">
-        <h3 className={`text-[#F2F1E8] text-6xl mt-3 ${anton.className} `}>
-          NEWS & UPDATES
+    <section className="px-5 py-10 md:p-14">
+      <div className="flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-3">
+        <h3 className={`text-[#F2F1E8] text-5xl md:text-6xl mt-3 ${anton.className} `}>
+          BLOG & UPDATES
         </h3>
-        <p className="text-[#D1D1D1] text-lg w-[60%]">
+        <p className="text-[#D1D1D1] text-lg md:w-[60%]">
           Explore our articles to discover more about the vibrant nightlife
           scene. Stay updated with the latest events and be inspired by
           incredible stories from iconic venues and the creative minds shaping
@@ -23,8 +23,8 @@ const NewsAndUpdates = () => {
       <div className="mt-14 grid grid-cols-3 gap-7">
         {[1, 2, 3].map((item) => {
           return (
-            <div key={item} className="flex flex-col gap-3">
-              <Image src={NewsImg} alt="NewsImg" className="w-full"/>
+            <div key={item} className="col-span-full md:col-span-1 flex flex-col gap-3">
+              <Image src={NewsImg} alt="NewsImg" className="w-full" />
               <p className="text-white font-bold text-xl">
                 A Night Out in Lagos: Your Ultimate Guide to Unforgettable
                 Experiences

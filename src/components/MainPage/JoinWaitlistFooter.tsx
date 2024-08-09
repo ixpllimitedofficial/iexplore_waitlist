@@ -18,7 +18,7 @@ const JoinWaitlistFooter = () => {
   const plugin = React.useRef(Autoplay({ delay: 3000 }));
 
   return (
-    <section className="bg-[#F4EBCD] px-10 py-4">
+    <section className="bg-[#F4EBCD] px-2 md:px-10 py-4">
       <div className="flex items-center justify-between gap-5">
         <Carousel
           plugins={[plugin.current]}
@@ -33,7 +33,7 @@ const JoinWaitlistFooter = () => {
               { name: "JOIN THE WAITLIST NOW", id: 2 },
             ].map((item: any) => (
               <CarouselItem key={item.id} className="p-3">
-                <h3 className={`text-[#322016] text-6xl ${anton.className}`}>
+                <h3 className={`text-[#322016] text-4xl md:text-6xl ${anton.className}`}>
                   {item.name}
                 </h3>
               </CarouselItem>
@@ -42,9 +42,9 @@ const JoinWaitlistFooter = () => {
         </Carousel>
         <Link
           href="/"
-          className="bg-[#0E1111] hover:bg-[#0E1111] text-[#F4EBCD] h-auto w-auto p-6 rounded-full font-extrabold"
+          className="bg-[#0E1111] hover:bg-[#0E1111] text-[#F4EBCD] h-16 w-16 md:h-auto md:w-auto p-3 md:p-6 rounded-full font-extrabold"
         >
-          <ArrowRightIcon className="h-16 w-16 shrink-0 text-white transition-transform duration-200" />
+          <ArrowRightIcon className="h-10 w-10 md:h-16 md:w-16 text-white transition-transform duration-200" />
         </Link>
       </div>
     </section>

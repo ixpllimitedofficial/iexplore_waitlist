@@ -18,7 +18,7 @@ const ExploreTheExperience = () => {
   const plugin = React.useRef(Autoscroll({ speed: 3 }));
 
   return (
-    <section className="bg-gold-500 py-14">
+    <section className="bg-gold-500 py-10 md:py-14">
       <h3 className={`text-[#0E1111] text-5xl text-center ${anton.className} `}>
         EXPLORE THE EXPERIENCE!
       </h3>
