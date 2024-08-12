@@ -7,7 +7,7 @@ import NewsImg from "@/assets/img/MainWebsite/NewsImg.png";
 
 const BlogsAndUpdates = () => {
   return (
-    <section className="px-5 py-10 md:p-14">
+    <section className="px-5 pt-10 md:pt-14">
       <div className="flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-3">
         <h3
           className={`text-[#F2F1E8] text-5xl md:text-6xl mt-3 md:mt-0 ${anton.className} `}
@@ -22,7 +22,7 @@ const BlogsAndUpdates = () => {
         </p>
       </div>
 
-      <div className="mt-14 grid grid-cols-3 gap-10">
+      <div className="mt-8 md:mt-14 grid grid-cols-3 gap-10">
         {[1, 2, 3].map((item) => {
           return (
             <div

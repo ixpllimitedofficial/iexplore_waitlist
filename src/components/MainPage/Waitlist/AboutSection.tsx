@@ -5,7 +5,7 @@ import DiscJockey from "@/assets/img/MainWebsite/DiscJockey.png";
 const AboutSection = () => {
   return (
     <>
-      <section className="my-5 md:my-16 flex flex-col items-center text-center gap-3 px-4 md:w-2/4 mx-auto">
+      <section className="mb-16 flex flex-col items-center text-center gap-3 px-4 md:w-2/4 mx-auto">
         <h1 className={`text-gold-500 text-5xl md:text-6xl ${anton.className}`}>
           DIGITISING <span className="text-white">THE NIGTHLIFE ECOSYSTEM</span>  FOR ALL
         </h1>

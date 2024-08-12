@@ -13,7 +13,7 @@ import OwolabiMustapha from "@/assets/img/MainWebsite/OwolabiMustapha.png";
 
 const AboutCEO = () => {
   return (
-    <section className="bg-[#F2F1E8] w-full px-3 md:px-14 py-10 md:py-20 grid grid-cols-2 md:gap-10">
+    <section className="bg-[#F2F1E8] w-full px-3 md:px-14 py-10 md:py-20 grid grid-cols-2 md:gap-10 mt-10">
       <div className="relative col-span-full md:col-span-1">
         {/* image 1 */}
         <Image
@@ -55,10 +55,10 @@ const AboutCEO = () => {
           <Image
             src={OwolabiMustapha}
             alt="OwolabiMustapha"
-            className="my-2 mx-auto md:mx-0"
+            className="my-3 md:my-2 mx-auto md:mx-0 h-[40px] w-auto"
           />
           <h3
-            className={`text-[#322016] text-4xl text-center md:text-left ${anton.className} `}
+            className={`text-[#322016] text-3xl md:text-4xl text-center md:text-left ${anton.className} `}
           >
             MD/CEO IEXPLORE
           </h3>
@@ -70,8 +70,8 @@ const AboutCEO = () => {
           className="hidden md:block ml-auto mr-16"
         />
 
-        <div className="flex justify-center md:justify-start mt-2 md:mt-0">
-          <Button className="md:ml-16 bg-[#322016] text-[#F2F1E8] transition duration-100 hover:bg-[#E1B141] hover:text-[#0E1111] px-10 py-6 rounded-3xl font-bold text-lg">
+        <div className="flex justify-center md:justify-start mt-3 md:mt-0">
+          <Button className="md:ml-16 bg-[#322016] text-[#F2F1E8] transition duration-100 hover:bg-[#E1B141] hover:text-[#0E1111] px-8 py-6 rounded-3xl font-bold text-lg">
             More about us <ArrowRightIcon className="ml-2 h-6 w-6" />
           </Button>
         </div>

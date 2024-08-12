@@ -3,7 +3,6 @@ import { anton } from "@/app/fonts";
 import { Button } from "@/components/UI/button";
 import { Input } from "@/components/UI/input";
 
-import ExplorersWaiting from "@/assets/img/MainWebsite/ExplorersWaiting.png";
 import ExplorersWaitingSvg from "@/assets/svg/MainWebsite/ExplorersWaitingSvg.svg";
 
 const HeroSection = () => {
@@ -32,8 +31,8 @@ const HeroSection = () => {
           </Button>
         </div>
 
-        <div className="flex items-center gap-2">
-          <Image src={ExplorersWaitingSvg} alt="ExplorersWaiting" className="h-[35px] w-auto" />
+        <div className="flex items-center justify-center md:justify-start gap-2">
+          <Image src={ExplorersWaitingSvg} alt="ExplorersWaiting" className="h-[30px] md:h-[35px] w-auto" />
           <p className="text-sm md:text-base text-[#D1D1D1] my-4">
             12.7k Explorers already waiting
           </p>

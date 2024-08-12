@@ -15,9 +15,9 @@ const Footer = () => {
     <>
       <footer className="bg-black text-[#F2F1E8] px-5 py-10 md:p-12 grid grid-cols-5 md:gap-x-40">
         <div className="col-span-full md:col-span-3">
-          <div className="flex flex-col gap-5 text-center md:text-left">
+          <div className="flex flex-col gap-3 text-center md:text-left">
             <h3
-              className={`text-[#F2F1E8] text-5xl leading-tight ${anton.className} md:w-2/4`}
+              className={`text-[#F2F1E8] text-[42px] md:text-5xl leading-tight ${anton.className} md:w-2/4`}
             >
               SIGN UP TO OUR NEWSLETTER
             </h3>
@@ -43,8 +43,8 @@ const Footer = () => {
         </div>
 
         <div className="h-full col-span-full md:col-span-2">
-          <div className="flex gap-16">
-            <div className="flex flex-col gap-5 font-medium">
+          <div className="flex justify-evenly md:justify-start gap-16">
+            <div className="flex flex-col items-center md:items-start gap-5 font-medium">
               <p className="font-bold text-xl text-[#F2F1E8">About Us</p>
               <p className="text-[#D1D1D1]">Who we are</p>
               <p className="text-[#D1D1D1]">Our Team</p>
@@ -52,7 +52,7 @@ const Footer = () => {
               <p className="text-[#D1D1D1]">Contact Us</p>
             </div>
 
-            <div className="flex flex-col gap-5 font-medium">
+            <div className="flex flex-col items-center md:items-start gap-5 font-medium">
               <p className="font-bold text-xl text-[#F2F1E8">Vendor</p>
               <p className="text-[#D1D1D1]">iExplore vendor</p>
               <p className="text-[#D1D1D1]">All Vendors</p>
@@ -98,8 +98,8 @@ const Footer = () => {
         </div>
 
         {/* bottom line */}
-        <div className="col-span-full mt-10 border-b-2 border-[#4D4D4D] pb-2 flex flex-col-reverse md:flex-row gap-4 md:gap-10 justify-between text-[#D1D1D1] text-sm md:text-base">
-          <p className="">All rights reserve. Maxx Technologies © 2024</p>
+        <div className="col-span-full mt-10 md:mt-0 border-b-2 border-[#4D4D4D] pb-2 flex flex-col-reverse md:flex-row gap-4 md:gap-10 justify-between text-[#D1D1D1] text-sm md:text-base">
+          <p className="text-center md:text-left">All rights reserve. Maxx Technologies © 2024</p>
 
           <div className="flex justify-between gap-10">
             <p className="underline">Privacy Policy</p>

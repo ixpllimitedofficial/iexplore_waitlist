@@ -9,7 +9,7 @@ const page = async () => {
   return (
     <>
       <MainDesktopAndMobileNav />
-      <section className="pt-24 md:pt-36">
+      <section className="pt-28 md:pt-32">
         <HeroSection />
         <AboutVendor />
         <FAQ />

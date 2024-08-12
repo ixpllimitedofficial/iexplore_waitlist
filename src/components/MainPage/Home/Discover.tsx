@@ -36,7 +36,7 @@ const Discover = () => {
           >
             SATISFY <span className="text-gold-500"> YOUR INNER </span> EXPLORER
           </h3>
-          <p className="md:pl-8 mt-3 text-lg text-[#D1D1D1]">
+          <p className="md:pl-8 mt-3 md:text-lg text-[#D1D1D1]">
             Never miss a beat. Stay in the know with detailed information on
             working hours, location, capacity, guidelines, security and
             up-coming events at selected venues of interest.
@@ -55,10 +55,10 @@ const Discover = () => {
           />
 
           <div className="pt-5 md:pt-14 px-7">
-            <h3 className={`text-[#F2F1E8] text-[42px] ${anton.className} `}>
+            <h3 className={`text-[#F2F1E8] text-4xl md:text-[42px] mt-2 ${anton.className} `}>
               DRINKS
             </h3>
-            <p className="mt-1 text-[#D1D1D1] text-lg">
+            <p className="mt-1 text-[#D1D1D1] md:text-lg">
               Earn points while you spend. Seamlessly connect with friends over
               drinks at the best spot in your city and earn convertible points
               while you spend.
@@ -75,10 +75,10 @@ const Discover = () => {
           />
 
           <div className="pt-5 md:pt-14 px-7">
-            <h3 className={`text-[#F2F1E8] text-[42px] ${anton.className} `}>
+            <h3 className={`text-[#F2F1E8] text-4xl md:text-[42px] mt-2 ${anton.className} `}>
               SPOT <span className="text-gold-500"> DETAILS</span>
             </h3>
-            <p className="mt-1 text-[#D1D1D1] text-lg">
+            <p className="mt-1 text-[#D1D1D1] md:text-lg">
               Get information and reviews on your favourite hangout spots and
               locations. See what’s new there and get information on everything
               you need to have a good time.
@@ -88,14 +88,14 @@ const Discover = () => {
       </div>
 
       {/* GET INFORMATION OF THE BEST LOCATIONS  */}
-      <div className="md:h-[500px] md:px-24 flex flex-col-reverse md:flex-row relative mt-10 md:mt-28 justify-end ">
-        <div className="bg-[#0E0E0E] py-10 px-5 md:pr-1 md:w-[45%] md:absolute left-28 -bottom-10">
+      <div className="md:h-[500px] md:px-24 flex flex-col-reverse md:flex-row relative mt-16 md:mt-28 justify-end">
+        <div className="bg-[#0E0E0E] py-7 px-5 md:pr-1 md:w-[45%] md:absolute left-28 -bottom-10">
           <h3
             className={`text-[#F2F1E8] text-4xl md:text-6xl ${anton.className} md:pr-5`}
           >
             <span className="text-gold-500">GET INFORMATION </span>OF THE BEST LOCATIONS
           </h3>
-          <p className="md:w-[90%] mt-3 text-lg text-[#D1D1D1]">
+          <p className="md:w-[90%] mt-3 md:text-lg text-[#D1D1D1]">
             Never miss a beat. Stay in the know with detailed information on
             working hours, location, capacity, guidelines, security and
             up-coming events at selected venues of interest.

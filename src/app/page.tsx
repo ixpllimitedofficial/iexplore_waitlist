@@ -8,7 +8,7 @@ import MainDesktopAndMobileNav from "@/components/MainPage/Navbars/MainWebsiteNa
 const page = async () => {
   return (
     <>
-      <section className="pt-24">
+      <section className="pt-16 md:pt-24">
         <MainDesktopAndMobileNav />
         <HeroSection />
         <SpotsOnPhoneSection />

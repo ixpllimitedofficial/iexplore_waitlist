@@ -3,9 +3,9 @@ import { anton } from "@/app/fonts";
 const HeroSection = () => {
   return (
     <>
-      <section className="relative w-full h-screen overflow-hidden">
+      <section className="relative w-full h-[650px] overflow-hidden">
         <h1
-          className={`text-[#F2F1E8] text-[55px] leading-none md:text-6xl ${anton.className} absolute z-10 left-3 md:left-10 bottom-14 md:bottom-10 md:w-[45%]`}
+          className={`text-[#F2F1E8] text-[48px] leading-none md:text-6xl ${anton.className} absolute z-10 left-3 md:left-10 bottom-8 md:bottom-5 md:w-[42%]`}
         >
           DISCOVER, <span className="text-gold-500">CONNECT</span>, AND ENJOY{" "}
           <span className="text-gold-500">THE BEST NIGHT OUT</span> IN YOUR CITY! 
