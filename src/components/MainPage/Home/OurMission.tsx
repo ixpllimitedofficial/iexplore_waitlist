@@ -26,7 +26,7 @@ const OurMission = () => {
     >
       <CarouselContent className="md:mx-4">
         {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem key={index} className="grid grid-cols-2 items-center">
+          <CarouselItem key={index} className="grid grid-cols-2 items-center gap-5">
             <div className="relative col-span-full md:col-span-1">
               <Image
                 src={OurPurposeImage}
@@ -35,8 +35,10 @@ const OurMission = () => {
               />
             </div>
             <div className="mt-10 md:mt-0 flex flex-col gap-3 col-span-full md:col-span-1 text-center md:text-left">
-              <h3 className={`text-5xl ${anton.className} `}>OUR PURPOSE</h3>
-              <p className="text-[#D1D1D1] text-lg">
+              <h3 className={`text-5xl ${anton.className} `}>
+                OUR <span className="text-gold-500">PURPOSE</span>
+              </h3>
+              <p className="text-[#D1D1D1] text-lg w-4/5">
                 We exist to bridge the gap between explorers and the city’s
                 nightlife businesses.
               </p>

@@ -13,10 +13,8 @@ const FAQ = () => {
   return (
     <section className="w-[80vw] mx-auto my-14">
       <div className="flex flex-col gap-3 text-center">
-        <h3
-          className={`text-gold-500 text-4xl md:text-5xl ${anton.className} `}
-        >
-          FREQUENTLY ASKED QUESTIONS?
+        <h3 className={` text-4xl md:text-5xl ${anton.className} `}>
+          FREQUENTLY ASKED <span className="text-gold-500">QUESTIONS?</span>
         </h3>
         <p className="text-[#D1D1D1] text-lg md:w-3/5 mx-auto">
           We understand you might have some questions to know better about being
@@ -33,7 +31,6 @@ const FAQ = () => {
           <AccordionContent className="flex flex-col md:flex-row gap-5 items-center">
             <Image src={FAQimage} alt="FAQimage" className="hidden md:block" />
             <div>
-              {/* <p className="text-2xl">What Really is iExplore?</p> */}
               <p className="text-lg text-[#D1D1D1] mt-2 md:w-3/4">
                 We understand you might have a lot of questions to help you
                 enjoy your experience out with iExplore, so we have compiled a
@@ -51,7 +48,6 @@ const FAQ = () => {
           <AccordionContent className="flex flex-col md:flex-row gap-5 items-center">
             <Image src={FAQimage} alt="FAQimage" className="hidden md:block" />
             <div>
-              {/* <p className="text-2xl">What Really is iExplore?</p> */}
               <p className="text-lg text-[#D1D1D1] mt-2 md:w-3/4">
                 We understand you might have a lot of questions to help you
                 enjoy your experience out with iExplore, so we have compiled a
@@ -69,7 +65,40 @@ const FAQ = () => {
           <AccordionContent className="flex flex-col md:flex-row gap-5 items-center">
             <Image src={FAQimage} alt="FAQimage" className="hidden md:block" />
             <div>
-              {/* <p className="text-2xl">What Really is iExplore?</p> */}
+              <p className="text-lg text-[#D1D1D1] mt-2 md:w-3/4">
+                We understand you might have a lot of questions to help you
+                enjoy your experience out with iExplore, so we have compiled a
+                list of frequently asked questions to guide you and help you
+                simplify your journey with us.
+              </p>
+            </div>
+          </AccordionContent>
+        </AccordionItem>
+
+        <AccordionItem value="item-4" className="py-5">
+          <AccordionTrigger className="text-xl md:text-2xl text-start">
+            Is the app available in my city?
+          </AccordionTrigger>
+          <AccordionContent className="flex flex-col md:flex-row gap-5 items-center">
+            <Image src={FAQimage} alt="FAQimage" className="hidden md:block" />
+            <div>
+              <p className="text-lg text-[#D1D1D1] mt-2 md:w-3/4">
+                We understand you might have a lot of questions to help you
+                enjoy your experience out with iExplore, so we have compiled a
+                list of frequently asked questions to guide you and help you
+                simplify your journey with us.
+              </p>
+            </div>
+          </AccordionContent>
+        </AccordionItem>
+
+        <AccordionItem value="item-5" className="py-5">
+          <AccordionTrigger className="text-xl md:text-2xl text-start">
+            How do I get started?
+          </AccordionTrigger>
+          <AccordionContent className="flex flex-col md:flex-row gap-5 items-center">
+            <Image src={FAQimage} alt="FAQimage" className="hidden md:block" />
+            <div>
               <p className="text-lg text-[#D1D1D1] mt-2 md:w-3/4">
                 We understand you might have a lot of questions to help you
                 enjoy your experience out with iExplore, so we have compiled a

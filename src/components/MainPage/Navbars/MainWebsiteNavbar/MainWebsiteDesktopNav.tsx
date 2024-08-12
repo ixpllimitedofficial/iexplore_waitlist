@@ -43,10 +43,10 @@ const MainWebsiteDesktopNav = () => {
 
       <nav className="flex items-center gap-7">
         <Link
-          href="/user"
+          href="/"
           className="bg-[#F2F1E8] text-[#322016] transition duration-200 hover:bg-gold-500 px-6 py-2 rounded-3xl font-bold"
         >
-          Get Started
+          Join Waitlist
         </Link>
       </nav>
     </header>

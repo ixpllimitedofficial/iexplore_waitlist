@@ -5,9 +5,9 @@ import { ArrowRightIcon } from "@radix-ui/react-icons";
 import QuoteRightIcon from "@/assets/svg/MainWebsite/QuoteRightIcon.svg";
 import QuoteLeftIcon from "@/assets/svg/MainWebsite/QuoteLeftIcon.svg";
 
-import AboutCEOimg3 from "@/assets/img/MainWebsite/AboutCEOimg3.png";
-import CEOimg from "@/assets/img/MainWebsite/AboutCEOimg1.png";
-import AboutCEOimg1 from "@/assets/img/MainWebsite/AboutCEOimg2.png";
+import CEOImage from "@/assets/img/MainWebsite/CEOImage1.png";
+import CEOImage2 from "@/assets/img/MainWebsite/CEOImage2.png";
+import CEOImage3 from "@/assets/img/MainWebsite/CEOImage3.png";
 
 import OwolabiMustapha from "@/assets/img/MainWebsite/OwolabiMustapha.png";
 
@@ -17,23 +17,23 @@ const AboutCEO = () => {
       <div className="relative col-span-full md:col-span-1">
         {/* image 1 */}
         <Image
-          src={AboutCEOimg1}
-          alt="AboutCEOimg1"
-          className="hidden md:block relative left-12"
+          src={CEOImage2}
+          alt="CEOImage2"
+          className="hidden md:block relative left-16 h-[250px] w-auto"
         />
 
         {/* image 3 */}
         <Image
-          src={AboutCEOimg3}
-          alt="AboutCEOimg3"
-          className="hidden md:block mt-24"
+          src={CEOImage3}
+          alt="CEOImage3"
+          className="hidden md:block mt-24 h-[200px] w-auto"
         />
 
         {/* image 1 */}
         <Image
-          src={CEOimg}
+          src={CEOImage}
           alt="CEOimg"
-          className="mx-auto md:absolute top-36 right-0"
+          className="mx-auto md:absolute top-36 right-0 "
         />
       </div>
 
@@ -52,16 +52,13 @@ const AboutCEO = () => {
             unforgettable nights. Discover, enjoy, and thrive with us as your
             nightlife companion.
           </p>
-          {/* <p className="italic text-[#E1B141] text-2xl w-[80%] mx-auto mt-5">
-          Owolabi Mustapha
-          </p> */}
           <Image
             src={OwolabiMustapha}
             alt="OwolabiMustapha"
-            className="my-3 mx-auto md:mx-0"
+            className="my-2 mx-auto md:mx-0"
           />
           <h3
-            className={`text-[#0E1111] text-3xl text-center md:text-left mt-3 ${anton.className} `}
+            className={`text-[#322016] text-4xl text-center md:text-left ${anton.className} `}
           >
             MD/CEO IEXPLORE
           </h3>
@@ -74,7 +71,7 @@ const AboutCEO = () => {
         />
 
         <div className="flex justify-center md:justify-start mt-2 md:mt-0">
-          <Button className="md:ml-16 bg-[#0E1111] text-[#F2F1E8] transition duration-100 hover:bg-[#E1B141] hover:text-[#0E1111] px-10 py-6 rounded-3xl font-bold text-lg">
+          <Button className="md:ml-16 bg-[#322016] text-[#F2F1E8] transition duration-100 hover:bg-[#E1B141] hover:text-[#0E1111] px-10 py-6 rounded-3xl font-bold text-lg">
             More about us <ArrowRightIcon className="ml-2 h-6 w-6" />
           </Button>
         </div>

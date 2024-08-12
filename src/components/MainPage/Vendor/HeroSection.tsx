@@ -11,10 +11,10 @@ const HeroSection = () => {
   return (
     <>
       <section className="flex flex-col gap-3 items-center text-center px-4">
-        <h1 className={`text-gold-500 text-5xl md:text-7xl ${anton.className} md:w-[70%]`}>
-          BECOME A VENDOR AND ATTRACT MORE GUESTS WITH IEXPLORE TODAY
+        <h1 className={`text-gold-500 text-5xl md:text-6xl ${anton.className} md:w-[70%]`}>
+          BECOME A VENDOR AND <span className="text-white">ATTRACT MORE GUESTS</span> WITH IEXPLORE TODAY
         </h1>
-          <p className="md:text-lg text-[#F6F6F6] md:w-[55%]">
+          <p className="md:text-xl text-[#F6F6F6] md:w-[55%]">
           Join the nightlife revolution! Transform your venue into a nightlife
           hotspot, connect with thrill-seekers and boost your business
           engagement with iExplore vendor.
@@ -22,7 +22,7 @@ const HeroSection = () => {
 
         <div className="flex items-center gap-2 md:gap-4">
           <Button className="bg-gold-500 transition duration-200 hover:bg-white text-[#322016] px-6 md:px-10 py-6 rounded-3xl font-bold text-base">
-            Get Started
+            Join Waitlist
           </Button>
 
           <Button className="bg-[#4D4D4D] transition duration-200 hover:bg-[#2b2a2a] text-[#F6F6F6] px-6 md:px-10 py-6 rounded-3xl font-bold text-base">

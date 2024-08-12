@@ -23,10 +23,10 @@ export default function RootLayout({
         <link rel="icon" href="/icon.svg" />
       </head>
       <body>
-        <MainDesktopAndMobileNav />
+        {/* <MainDesktopAndMobileNav /> */}
         {children}
         <ToastContainer />
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );

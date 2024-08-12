@@ -85,7 +85,7 @@ const MainWebsiteMobileNav = () => {
             onClick={showNav}
             className="bg-[#F2F1E8] text-[#322016] text-lg px-4 py-2 rounded-xl font-extrabold"
           >
-            Get Started
+           Join Waitlist
           </Link>
         </div>
       </nav>

@@ -4,8 +4,8 @@ import DiscoverExploreConnect from "../Vendor/DiscoverExploreConnect";
 import HomeDiscoverImage1 from "@/assets/img/MainWebsite/HomeDiscoverImage1.png";
 import HomeDiscoverImage2 from "@/assets/img/MainWebsite/HomeDiscoverImage2.png";
 
-import HomeDiscoverDrinks2 from "@/assets/img/MainWebsite/HomeDiscoverDrinks2.png";
-import HomeDiscoverFeeds2 from "@/assets/img/MainWebsite/HomeDiscoverFeeds2.png";
+import HomeDiscoverDrinks from "@/assets/img/MainWebsite/HomeDiscoverDrinks.png";
+import HomeDiscoverSpotDetails from "@/assets/img/MainWebsite/HomeDiscoverSpotDetails.png";
 
 const Discover = () => {
   return (
@@ -34,7 +34,7 @@ const Discover = () => {
           <h3
             className={`text-[#F2F1E8] text-4xl md:text-6xl ${anton.className} `}
           >
-            SATISFY YOUR INNER <span className="text-gold-500"> EXPLORER</span>
+            SATISFY <span className="text-gold-500"> YOUR INNER </span> EXPLORER
           </h3>
           <p className="md:pl-8 mt-3 text-lg text-[#D1D1D1]">
             Never miss a beat. Stay in the know with detailed information on
@@ -47,18 +47,18 @@ const Discover = () => {
       {/* DRINKS AND FEEDS */}
       <div className=" grid grid-cols-2 my-2 md:my-24 md:px-24 gap-10">
         {/* drinks */}
-        <div className="col-span-full md:col-span-1 flex flex-col md:flex-row gap-5">
+        <div className="col-span-full md:col-span-1 flex flex-col md:flex-row">
           <Image
-            src={HomeDiscoverDrinks2}
-            alt="HomeDiscoverDrinks2"
+            src={HomeDiscoverDrinks}
+            alt="HomeDiscoverDrinks"
             className="w-[85%] h-auto mx-auto md:h-[300px] md:w-auto"
           />
 
-          <div className="pt-5 md:pt-20 px-7">
-            <h3 className={`text-[#F2F1E8] text-4xl ${anton.className} `}>
+          <div className="pt-5 md:pt-14 px-7">
+            <h3 className={`text-[#F2F1E8] text-[42px] ${anton.className} `}>
               DRINKS
             </h3>
-            <p className="mt-3 text-[#D1D1D1]">
+            <p className="mt-1 text-[#D1D1D1] text-lg">
               Earn points while you spend. Seamlessly connect with friends over
               drinks at the best spot in your city and earn convertible points
               while you spend.
@@ -66,21 +66,22 @@ const Discover = () => {
           </div>
         </div>
 
-        {/* feeds */}
-        <div className="col-span-full md:col-span-1 flex flex-col md:flex-row gap-5">
+        {/* spot details */}
+        <div className="col-span-full md:col-span-1 flex flex-col md:flex-row">
           <Image
-            src={HomeDiscoverFeeds2}
-            alt="HomeDiscoverFeeds2"
+            src={HomeDiscoverSpotDetails}
+            alt="HomeDiscoverSpotDetails"
             className="w-[85%] h-auto mx-auto md:h-[300px] md:w-auto"
           />
 
-          <div className="pt-5 md:pt-20 px-7">
-            <h3 className={`text-[#F2F1E8] text-4xl ${anton.className} `}>
-              FEEDS
+          <div className="pt-5 md:pt-14 px-7">
+            <h3 className={`text-[#F2F1E8] text-[42px] ${anton.className} `}>
+              SPOT <span className="text-gold-500"> DETAILS</span>
             </h3>
-            <p className="mt-3 text-[#D1D1D1]">
-              Find out what is new. Stay connected and updated while you plan to
-              join the buzz at the places you love.
+            <p className="mt-1 text-[#D1D1D1] text-lg">
+              Get information and reviews on your favourite hangout spots and
+              locations. See what’s new there and get information on everything
+              you need to have a good time.
             </p>
           </div>
         </div>
@@ -92,8 +93,7 @@ const Discover = () => {
           <h3
             className={`text-[#F2F1E8] text-4xl md:text-6xl ${anton.className} md:pr-5`}
           >
-            GET INFORMATION OF THE{" "}
-            <span className="text-gold-500"> BEST LOCATIONS</span>
+            <span className="text-gold-500">GET INFORMATION </span>OF THE BEST LOCATIONS
           </h3>
           <p className="md:w-[90%] mt-3 text-lg text-[#D1D1D1]">
             Never miss a beat. Stay in the know with detailed information on

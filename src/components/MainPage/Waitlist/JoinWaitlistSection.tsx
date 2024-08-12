@@ -7,7 +7,7 @@ const JoinWaitlistSection = () => {
     <>
       <section className="mt-24 flex flex-col items-center text-center gap-3 px-4 md:w-3/5 mx-auto">
         <h3 className={`text-gold-500 text-5xl ${anton.className}`}>
-          JOIN THE WAITLIST!
+          JOIN THE <span className="text-white">WAITLIST!</span>
         </h3>
         <p className="text-lg text-[#D1D1D1]">
           Members of our waitlist will receive VIP treatment and early access to

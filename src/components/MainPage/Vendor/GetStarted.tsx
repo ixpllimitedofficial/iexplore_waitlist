@@ -34,12 +34,14 @@ const GetStarted = () => {
         />
 
         <div className="flex flex-col items-center gap-5 text-center">
-          <h3 className={`text-[#322016] text-5xl md:text-6xl ${anton.className}`}>
+          <h3
+            className={`text-[#322016] text-5xl md:text-6xl ${anton.className}`}
+          >
             ELEVATE YOUR BUSINESS <br /> EXPERIENCE WITH <br /> IEXPLORE VENDOR
             NOW
           </h3>
           <Button className="bg-white transition duration-300 hover:bg-[#322016] hover:text-white text-[#322016] md:text-lg px-7 py-6 rounded-3xl font-extrabold mx-auto">
-            Get Started
+            Get early access
           </Button>
         </div>
       </section>

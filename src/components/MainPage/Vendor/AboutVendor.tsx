@@ -30,8 +30,9 @@ const AboutVendor = () => {
             <h3
               className={`text-[#F2F1E8] text-4xl md:text-[56px] leading-tight ${anton.className} `}
             >
-              UNLOCK POWERFUL INSIGHTS WITH{" "}
-              <span className="text-gold-500">DASHBOARD ANALYTICS</span>
+              UNLOCK
+              <span className="text-gold-500"> POWERFUL INSIGHTS WITH </span>
+              DASHBOARD ANALYTICS
             </h3>
             <p className=" md:text-lg text-[#D1D1D1]">
               Leverage Dashboard Analytics to monitor foot traffic and customer
@@ -45,7 +46,7 @@ const AboutVendor = () => {
         <Image
           src={AboutVendorImg1}
           alt="AboutVendorImg1"
-          className="w-full h-auto md:h-[450px] md:w-auto"
+          className="w-full h-auto md:h-[500px] md:w-auto"
         />
       </section>
 
@@ -54,7 +55,7 @@ const AboutVendor = () => {
         <Image
           src={AboutVendorImg2}
           alt="AboutVendorImg2"
-          className="w-full h-auto md:h-[450px] md:w-auto"
+          className="w-full h-auto md:h-[500px] md:w-auto"
         />
 
         <div>
@@ -67,8 +68,8 @@ const AboutVendor = () => {
             <h3
               className={`text-[#F2F1E8] text-4xl md:text-[56px] leading-tight ${anton.className} `}
             >
-              OPTIMIZE YOUR VENUE’S PRESENCE
-              <span className="text-gold-500"> WITH EASE</span>
+              OPTIMIZE YOUR
+              <span className="text-gold-500"> VENUE’S PRESENCE </span> WITH EASE
             </h3>
             <p className="md:text-lg text-[#D1D1D1]">
               Seamlessly manage your venue’s details with iExplore’s Spot
@@ -92,8 +93,8 @@ const AboutVendor = () => {
             <h3
               className={`text-[#F2F1E8] text-4xl md:text-[56px] leading-tight ${anton.className} `}
             >
-              SHARE YOUR <span className="text-gold-500"> LATEST DRINKS</span>{" "}
-              AND MENU OFFERING
+              SHARE YOUR <span className="text-gold-500"> LATEST DRINKS AND</span>{" "}
+             MENU OFFERING
             </h3>
             <p className="md:text-lg text-[#D1D1D1]">
               With our Drink Management tool, you can easily update and showcase
@@ -107,7 +108,7 @@ const AboutVendor = () => {
         <Image
           src={AboutVendorImg3}
           alt="AboutVendorImg3"
-          className="w-full h-auto md:h-[450px] md:w-auto"
+          className="w-full h-auto md:h-[500px] md:w-auto"
         />
       </section>
     </>
