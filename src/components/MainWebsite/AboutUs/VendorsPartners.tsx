@@ -114,9 +114,9 @@ const VendorsPartners = () => {
         <div className="border-t-2 border-[#979797] w-full mt-5 mb-10"></div>
       </section>
 
-      <div className="flex justify-center">
+      <div className="flex justify-center mb-16">
         <Link
-          href="/"
+          href="/all-vendors"
           className="bg-gold-500 text-brandDark px-4 py-2 rounded-3xl mx-auto font-bold"
         >
           View all vendors

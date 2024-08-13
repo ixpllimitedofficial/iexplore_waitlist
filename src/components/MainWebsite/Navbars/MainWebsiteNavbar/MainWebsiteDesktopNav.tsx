@@ -17,24 +17,30 @@ const MainWebsiteDesktopNav = () => {
       <nav className="flex items-center gap-14 bg-[#F2F1E8] text-[#322016] font-bold p-2 rounded-xl">
         <Link
           href="/"
-          className={`px-5 py-2 ${
-            pathname === "/" ? "bg-gold-500 rounded-lg" : ""
+          className={`px-5 py-2 rounded-lg ${
+            pathname === "/"
+              ? "bg-gold-500"
+              : "transition duration-200 hover:bg-gold-500"
           }`}
         >
           Waitlist
         </Link>
         <Link
           href="/home"
-          className={`px-5 py-2 ${
-            pathname === "/home" ? "bg-gold-500 rounded-lg" : ""
+          className={`px-5 py-2 rounded-lg ${
+            pathname === "/home"
+              ? "bg-gold-500"
+              : "transition duration-200 hover:bg-gold-500"
           }`}
         >
           Home
         </Link>
         <Link
           href="/vendor"
-          className={`px-5 py-2 ${
-            pathname === "/vendor" ? "bg-gold-500 rounded-lg" : ""
+          className={`px-5 py-2 rounded-lg ${
+            pathname === "/vendor"
+              ? "bg-gold-500"
+              : "transition duration-200 hover:bg-gold-500"
           }`}
         >
           Vendor
