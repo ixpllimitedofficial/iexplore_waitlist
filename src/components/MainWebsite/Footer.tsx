@@ -48,14 +48,14 @@ const Footer = () => {
               <p className="font-bold text-xl text-[#F2F1E8">About Us</p>
               <Link href="/about-us" className="text-[#D1D1D1]">Who we are</Link>
               {/* <p className="text-[#D1D1D1]">Our Team</p> */}
-              <Link href="/" className="text-[#D1D1D1]">Our Partners</Link>
+              <Link href="/our-partners" className="text-[#D1D1D1]">Our Partners</Link>
               <Link href="/contact-us" className="text-[#D1D1D1]">Contact Us</Link>
             </div>
 
             <div className="flex flex-col items-center md:items-start gap-5 font-medium">
               <p className="font-bold text-xl text-[#F2F1E8">Vendor</p>
-              <Link href="/" className="text-[#D1D1D1]">iExplore vendor</Link>
-              <Link href="/" className="text-[#D1D1D1]">All Vendors</Link>
+              <Link href="/vendor" className="text-[#D1D1D1]">iExplore vendor</Link>
+              <Link href="/all-vendors" className="text-[#D1D1D1]">All Vendors</Link>
             </div>
           </div>
 
