@@ -1,15 +1,14 @@
+import Image from "next/image";
+import Link from "next/link";
 import { anton } from "@/app/fonts";
 import { Button } from "@/components/UI/button";
 import { Input } from "@/components/UI/input";
-
-import Image from "next/image";
 
 import iexploreFooter from "@/assets/img/MainWebsite/iexploreFooter.png";
 import FacebookIcon from "@/assets/svg/FacebookIcon.svg";
 import InstagramIcon from "@/assets/svg/InstagramIcon.svg";
 import XIcon from "@/assets/svg/XIcon.svg";
 import WhatsappIcon from "@/assets/svg/WhatsappIcon.svg";
-import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -50,7 +49,7 @@ const Footer = () => {
               <Link href="/about-us" className="text-[#D1D1D1]">Who we are</Link>
               {/* <p className="text-[#D1D1D1]">Our Team</p> */}
               <Link href="/" className="text-[#D1D1D1]">Our Partners</Link>
-              <Link href="/" className="text-[#D1D1D1]">Contact Us</Link>
+              <Link href="/contact-us" className="text-[#D1D1D1]">Contact Us</Link>
             </div>
 
             <div className="flex flex-col items-center md:items-start gap-5 font-medium">

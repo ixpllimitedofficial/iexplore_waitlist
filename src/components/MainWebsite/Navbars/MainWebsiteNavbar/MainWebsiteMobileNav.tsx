@@ -108,13 +108,15 @@ const MainWebsiteMobileNav = () => {
           Blog & Updates
         </Link>
 
+        */}
+
         <Link
-          href="/vendor"
+          href="/contact-us"
           className={`text-[#f2f1e8] text-[27px] ${anton.className} `}
           onClick={showNav}
         >
           Contact Us
-        </Link> */}
+        </Link>
 
         {/* divider */}
         {/* <div className="border-t-2 border-[#F2F1E8] w-full"></div> */}

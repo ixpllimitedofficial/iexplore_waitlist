@@ -10,6 +10,7 @@ import CEOImage2 from "@/assets/img/MainWebsite/CEOImage2.png";
 import CEOImage3 from "@/assets/img/MainWebsite/CEOImage3.png";
 
 import OwolabiMustapha from "@/assets/img/MainWebsite/OwolabiMustapha.png";
+import Link from "next/link";
 
 const AboutCEO = () => {
   return (
@@ -71,9 +72,17 @@ const AboutCEO = () => {
         />
 
         <div className="flex justify-center md:justify-start mt-3 md:mt-0">
-          <Button className="md:ml-16 bg-[#322016] text-[#F2F1E8] transition duration-100 hover:bg-[#E1B141] hover:text-[#0E1111] px-8 py-6 rounded-3xl font-bold text-lg">
+          {/* <Button className="md:ml-16 bg-[#322016] text-[#F2F1E8] transition duration-100 hover:bg-[#E1B141] hover:text-[#0E1111] px-8 py-6 rounded-3xl font-bold text-lg">
             More about us <ArrowRightIcon className="ml-2 h-6 w-6" />
-          </Button>
+          </Button> */}
+
+          <Link
+            href="/about-us"
+            className="md:ml-16 bg-[#322016] text-[#F2F1E8] transition duration-100 hover:bg-[#E1B141] hover:text-[#0E1111] px-8 py-6 rounded-3xl font-bold text-lg"
+          >
+            More about us
+            <ArrowRightIcon className="h-6 w-6" />
+          </Link>
         </div>
       </div>
     </section>
