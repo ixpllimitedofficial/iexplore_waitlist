@@ -9,7 +9,7 @@ const MainWebsiteDesktopNav = () => {
   const pathname = usePathname();
 
   return (
-    <header className="fixed top-0 w-screen z-50 hidden lg:flex items-center justify-between px-16 py-4 bg-[#0000004D] backdrop-blur-2xl">
+    <header className="fixed top-0 w-screen z-50 hidden lg:flex items-center justify-between px-16 py-5 bg-[#0000004D] backdrop-blur-2xl">
       <Link href="/">
         <Image src={ExploreLogo} alt="iExploreLogo.png" />
       </Link>
@@ -17,24 +17,24 @@ const MainWebsiteDesktopNav = () => {
       <nav className="flex items-center gap-14 bg-[#F2F1E8] text-[#322016] font-bold p-2 rounded-xl">
         <Link
           href="/"
-          className={`px-5 ${
-            pathname === "/" ? "bg-gold-500 px-5 py-2 rounded-lg" : ""
+          className={`px-5 py-2 ${
+            pathname === "/" ? "bg-gold-500 rounded-lg" : ""
           }`}
         >
           Waitlist
         </Link>
         <Link
           href="/home"
-          className={`px-5 ${
-            pathname === "/home" ? "bg-gold-500 px-5 py-2 rounded-lg" : ""
+          className={`px-5 py-2 ${
+            pathname === "/home" ? "bg-gold-500 rounded-lg" : ""
           }`}
         >
           Home
         </Link>
         <Link
           href="/vendor"
-          className={`px-5 ${
-            pathname === "/vendor" ? "bg-gold-500 px-5 py-2 rounded-lg" : ""
+          className={`px-5 py-2 ${
+            pathname === "/vendor" ? "bg-gold-500 rounded-lg" : ""
           }`}
         >
           Vendor

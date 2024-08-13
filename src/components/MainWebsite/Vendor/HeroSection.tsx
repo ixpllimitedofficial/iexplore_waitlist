@@ -15,7 +15,7 @@ const HeroSection = () => {
           BECOME A VENDOR AND <span className="text-white">ATTRACT MORE GUESTS</span> WITH IEXPLORE TODAY
         </h1>
           <p className="md:text-xl text-[#F6F6F6] md:w-[55%]">
-          Join the nightlife revolution! Transform your venue into a nightlife
+          Join the night-life revolution! Transform your venue into a nightlife
           hotspot, connect with thrill-seekers and boost your business
           engagement with iExplore vendor.
         </p>

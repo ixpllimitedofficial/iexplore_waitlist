@@ -1,14 +1,14 @@
-import HeroSection from "@/components/MainPage/Home/HeroSection";
-import FAQ from "@/components/MainPage/FAQ";
-import Discover from "@/components/MainPage/Home/Discover";
-import JoinWaitlistFooter from "@/components/MainPage/JoinWaitlistFooter";
-import AboutCEO from "@/components/MainPage/Home/AboutCEO";
-import ExploreTheExperience from "@/components/MainPage/Home/ExploreTheExperience";
-import OurPartners from "@/components/MainPage/Home/OurPartners";
-import OurMission from "@/components/MainPage/Home/OurMission";
-import MainDesktopAndMobileNav from "@/components/MainPage/Navbars/MainWebsiteNavbar/MainDesktopAndMobileNav";
-import Footer from "@/components/MainPage/Footer/Footer";
-import BlogsAndUpdates from "@/components/MainPage/Home/BlogsAndUpdates";
+import MainDesktopAndMobileNav from "@/components/MainWebsite/Navbars/MainWebsiteNavbar/MainDesktopAndMobileNav";
+import HeroSection from "@/components/MainWebsite/Home/HeroSection";
+import FAQ from "@/components/MainWebsite/FAQ";
+import Discover from "@/components/MainWebsite/Home/Discover";
+import JoinWaitlistFooter from "@/components/MainWebsite/JoinWaitlistFooter";
+import AboutCEO from "@/components/MainWebsite/Home/AboutCEO";
+import ExploreTheExperience from "@/components/MainWebsite/Home/ExploreTheExperience";
+import OurPartners from "@/components/MainWebsite/Home/OurPartners";
+import OurMission from "@/components/MainWebsite/Home/OurMission";
+import Footer from "@/components/MainWebsite/Footer";
+import BlogsAndUpdates from "@/components/MainWebsite/Home/BlogsAndUpdates";
 
 const page = async () => {
   return (

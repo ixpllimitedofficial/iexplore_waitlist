@@ -9,6 +9,7 @@ import FacebookIcon from "@/assets/svg/FacebookIcon.svg";
 import InstagramIcon from "@/assets/svg/InstagramIcon.svg";
 import XIcon from "@/assets/svg/XIcon.svg";
 import WhatsappIcon from "@/assets/svg/WhatsappIcon.svg";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -46,16 +47,16 @@ const Footer = () => {
           <div className="flex justify-evenly md:justify-start gap-16">
             <div className="flex flex-col items-center md:items-start gap-5 font-medium">
               <p className="font-bold text-xl text-[#F2F1E8">About Us</p>
-              <p className="text-[#D1D1D1]">Who we are</p>
-              <p className="text-[#D1D1D1]">Our Team</p>
-              <p className="text-[#D1D1D1]">Our Partners</p>
-              <p className="text-[#D1D1D1]">Contact Us</p>
+              <Link href="/about-us" className="text-[#D1D1D1]">Who we are</Link>
+              {/* <p className="text-[#D1D1D1]">Our Team</p> */}
+              <Link href="/" className="text-[#D1D1D1]">Our Partners</Link>
+              <Link href="/" className="text-[#D1D1D1]">Contact Us</Link>
             </div>
 
             <div className="flex flex-col items-center md:items-start gap-5 font-medium">
               <p className="font-bold text-xl text-[#F2F1E8">Vendor</p>
-              <p className="text-[#D1D1D1]">iExplore vendor</p>
-              <p className="text-[#D1D1D1]">All Vendors</p>
+              <Link href="/" className="text-[#D1D1D1]">iExplore vendor</Link>
+              <Link href="/" className="text-[#D1D1D1]">All Vendors</Link>
             </div>
           </div>
 
@@ -85,14 +86,14 @@ const Footer = () => {
                 />
               </div>
 
-              <div className="footerIcon">
+              {/* <div className="footerIcon">
                 <Image
                   src={WhatsappIcon}
                   alt="WhatsappIcon"
                   width={35}
                   height={35}
                 />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

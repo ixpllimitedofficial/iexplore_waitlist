@@ -91,14 +91,15 @@ const MainWebsiteMobileNav = () => {
           Vendor
         </Link>
 
-        {/* <Link
-          href="/vendor"
+        <Link
+          href="/about-us"
           className={`text-[#f2f1e8] text-[27px] ${anton.className} `}
           onClick={showNav}
         >
           About Us
         </Link>
 
+        {/*
         <Link
           href="/vendor"
           className={`text-[#f2f1e8] text-[27px] ${anton.className} `}

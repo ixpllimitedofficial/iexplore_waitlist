@@ -4,9 +4,6 @@ import "./globals.css";
 
 import { ToastContainer } from "react-toastify";
 
-import MainDesktopAndMobileNav from "@/components/MainPage/Navbars/MainWebsiteNavbar/MainDesktopAndMobileNav";
-import Footer from "@/components/MainPage/Footer/Footer";
-
 export const metadata: Metadata = {
   title: "iExplore",
   description: "Connect with places made for you to have fun",

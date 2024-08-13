@@ -1,9 +1,9 @@
-import Footer from "@/components/MainPage/Footer/Footer";
-import AboutSection from "@/components/MainPage/Waitlist/AboutSection";
-import HeroSection from "@/components/MainPage/Waitlist/HeroSection";
-import JoinWaitlistSection from "@/components/MainPage/Waitlist/JoinWaitlistSection";
-import SpotsOnPhoneSection from "@/components/MainPage/Waitlist/SpotsOnPhoneSection";
-import MainDesktopAndMobileNav from "@/components/MainPage/Navbars/MainWebsiteNavbar/MainDesktopAndMobileNav";
+import MainDesktopAndMobileNav from "@/components/MainWebsite/Navbars/MainWebsiteNavbar/MainDesktopAndMobileNav";
+import HeroSection from "@/components/MainWebsite/Waitlist/HeroSection";
+import SpotsOnPhoneSection from "@/components/MainWebsite/Waitlist/SpotsOnPhoneSection";
+import AboutSection from "@/components/MainWebsite/Waitlist/AboutSection";
+import JoinWaitlistSection from "@/components/MainWebsite/Waitlist/JoinWaitlistSection";
+import Footer from "@/components/MainWebsite/Footer";
 
 const page = async () => {
   return (
