@@ -72,16 +72,10 @@ const AboutCEO = () => {
         />
 
         <div className="flex justify-center md:justify-start mt-3 md:mt-0">
-          {/* <Button className="md:ml-16 bg-[#322016] text-[#F2F1E8] transition duration-100 hover:bg-[#E1B141] hover:text-[#0E1111] px-8 py-6 rounded-3xl font-bold text-lg">
-            More about us <ArrowRightIcon className="ml-2 h-6 w-6" />
-          </Button> */}
-
-          <Link
-            href="/about-us"
-            className="md:ml-16 bg-[#322016] text-[#F2F1E8] transition duration-100 hover:bg-[#E1B141] hover:text-[#0E1111] px-8 py-6 rounded-3xl font-bold text-lg"
-          >
-            More about us
-            <ArrowRightIcon className="h-6 w-6" />
+          <Link href="/about-us">
+            <Button className="md:ml-16 bg-[#322016] text-[#F2F1E8] transition duration-100 hover:bg-[#E1B141] hover:text-[#0E1111] px-8 py-6 rounded-3xl font-bold text-lg">
+              More about us <ArrowRightIcon className="ml-2 h-6 w-6" />
+            </Button>
           </Link>
         </div>
       </div>

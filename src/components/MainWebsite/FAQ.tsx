@@ -13,8 +13,11 @@ const FAQ = () => {
   return (
     <section className="w-[80vw] mx-auto my-14">
       <div className="flex flex-col gap-3 text-center">
-        <h3 className={` text-4xl md:text-5xl ${anton.className} `}>
-          FREQUENTLY ASKED <span className="text-gold-500">QUESTIONS?</span>
+        <h3
+          className={`text-gold-500 text-4xl md:text-5xl ${anton.className} `}
+        >
+          {/* FREQUENTLY ASKED <span className="text-gold-500">QUESTIONS?</span> */}
+          FREQUENTLY ASKED QUESTIONS?
         </h3>
         <p className="text-[#D1D1D1] text-lg md:w-3/5 mx-auto">
           We understand you might have some questions to know better about being

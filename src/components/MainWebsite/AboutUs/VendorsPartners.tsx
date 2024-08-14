@@ -24,11 +24,11 @@ const VendorsPartners = () => {
       <section className="mt-16">
         <div className="flex flex-col justify-center gap-3">
           <h1
-            className={`text-gold-500 text-5xl md:text-6xl ${anton.className} `}
+            className={`text-gold-500 text-4xl md:text-6xl ${anton.className} text-center`}
           >
             VENDORS & PARTNERS
           </h1>
-          <p className="text-lg w-3/5">
+          <p className="text-lg md:w-3/5 text-center md:text-start">
             We partner with the best locations to make you have the best time
             and provide the best experience where ever you are.
           </p>
@@ -37,14 +37,14 @@ const VendorsPartners = () => {
         {/* Hot box */}
         <div className="border-t-2 border-[#979797] w-full mt-5"></div>
 
-        <div className="flex items-center gap-12 my-5">
+        <div className="flex flex-col md:flex-row items-center gap-3 md:gap-12 my-5">
           <div className="bg-gold-500 text-brandDark px-4 py-2 rounded-3xl flex items-center gap-2">
             {BulletPointSvg}
             <p className="font-semibold">Vendor</p>
           </div>
 
-          <div className="w-full flex items-center justify-between">
-            <p className="text-2xl">Hot Box, Lagos</p>
+          <div className="w-full flex flex-col md:flex-row items-center justify-between gap-3">
+            <p className="text-xl md:text-2xl">Hot Box, Lagos</p>
 
             <Image src={HotBox} alt="HotBox" className="h-[100px] w-auto" />
           </div>
@@ -53,14 +53,14 @@ const VendorsPartners = () => {
         {/* Flying fish */}
         <div className="border-t-2 border-[#979797] w-full mt-5"></div>
 
-        <div className="flex items-center gap-12 my-5">
+        <div className="flex flex-col md:flex-row items-center gap-3 md:gap-12 my-5">
           <div className="bg-gold-500 text-brandDark px-4 py-2 rounded-3xl flex items-center gap-2">
             {BulletPointSvg}
             <p className="font-semibold">Vendor</p>
           </div>
 
-          <div className="w-full flex items-center justify-between">
-            <p className="text-2xl">Flying Fish</p>
+          <div className="w-full flex flex-col md:flex-row items-center justify-between gap-3">
+            <p className="text-xl md:text-2xl">Flying Fish</p>
 
             <Image
               src={FlyingFish}
@@ -73,14 +73,14 @@ const VendorsPartners = () => {
         {/* divider */}
         <div className="border-t-2 border-[#979797] w-full mt-5"></div>
 
-        <div className="flex items-center gap-12 my-5">
+        <div className="flex flex-col md:flex-row items-center gap-3 md:gap-12 my-5">
           <div className="bg-gold-500 text-brandDark px-4 py-2 rounded-3xl flex items-center gap-2">
             {BulletPointSvg}
             <p className="font-semibold">Vendor</p>
           </div>
 
-          <div className="w-full flex items-center justify-between">
-            <p className="text-2xl">Club Quilox</p>
+          <div className="w-full flex flex-col md:flex-row items-center justify-between gap-3">
+            <p className="text-xl md:text-2xl">Club Quilox</p>
 
             <Image
               src={ClubQuilox}
@@ -93,14 +93,14 @@ const VendorsPartners = () => {
         {/* divider */}
         <div className="border-t-2 border-[#979797] w-full mt-5"></div>
 
-        <div className="flex items-center gap-12 my-5">
+        <div className="flex flex-col md:flex-row items-center gap-3 md:gap-12 my-5">
           <div className="bg-gold-500 text-brandDark px-4 py-2 rounded-3xl flex items-center gap-2">
             {BulletPointSvg}
             <p className="font-semibold">Vendor</p>
           </div>
 
-          <div className="w-full flex items-center justify-between">
-            <p className="text-2xl">Stage Lagos</p>
+          <div className="w-full flex flex-col md:flex-row items-center justify-between gap-3">
+            <p className="text-xl md:text-2xl">Stage Lagos</p>
 
             <Image
               src={StageLagos}

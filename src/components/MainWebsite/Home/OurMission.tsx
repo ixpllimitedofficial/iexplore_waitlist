@@ -19,7 +19,7 @@ import OurVisionImage from "@/assets/img/MainWebsite/OurVisionImage.png";
 const OurMission = () => {
   return (
     <Carousel
-      className="py-5 md:py-12 relative md:w-[60%] mx-auto"
+      className="py-10 md:py-12 relative md:w-[60%] mx-auto"
       opts={{
         align: "start",
         loop: true,

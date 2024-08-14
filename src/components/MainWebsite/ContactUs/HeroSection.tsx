@@ -12,9 +12,9 @@ import AddressIconSvg from "@/assets/svg/MainWebsite/AddressIconSvg.svg";
 
 const HeroSection = () => {
   return (
-    <section className="relative grid grid-cols-2 gap-10 pt-5">
+    <section className="relative grid grid-cols-2 gap-10 pt-5 pb-16">
       <div className="col-span-full md:col-span-1">
-        <p className="text-xl text-[#F6F6F6]">
+        <p className="text-lg md:text-xl text-[#F6F6F6] text-center md:text-start">
           For more information, questions or comments: send us an email or give
           us a call! We are always open to a conversation, advice or feedback
           and would love to get in touch with you.
@@ -55,13 +55,13 @@ const HeroSection = () => {
             />
           </div>
 
-          <Button className="bg-gold-500 transition duration-200 hover:bg-white text-[#322016] px-10 py-6 rounded-3xl font-bold text-base mr-auto">
+          <Button className="bg-gold-500 transition duration-200 hover:bg-white text-[#322016] px-10 py-6 rounded-3xl font-bold text-base mx-auto md:mr-auto">
             Send message
           </Button>
         </div>
       </div>
 
-      <div className="relative col-span-full md:col-span-1 flex flex-col gap-8">
+      <div className="relative col-span-full md:col-span-1 flex flex-col gap-4 md:gap-8">
         {/* image 1 */}
         <Image
           src={ContactUsImg}
@@ -72,7 +72,7 @@ const HeroSection = () => {
         <div className="flex items-center gap-3">
           <Image src={CallIconSvg} alt="CallIconSvg" width={35} height={35} />
 
-          <p className="text-xl text-[#F6F6F6]">
+          <p className="text-lg md:text-xl text-[#F6F6F6] text-start">
             +234 801 234 5678 <br /> +234 709 876 5432{" "}
           </p>
         </div>
@@ -80,7 +80,9 @@ const HeroSection = () => {
         <div className="flex items-center gap-3">
           <Image src={EmailIconSvg} alt="EmailIconSvg" width={35} height={35} />
 
-          <p className="text-xl text-[#F6F6F6]">info@iexplore.com</p>
+          <p className="text-lg md:text-xl text-[#F6F6F6] text-start">
+            info@iexplore.com
+          </p>
         </div>
 
         <div className="flex items-center gap-3">
@@ -91,7 +93,7 @@ const HeroSection = () => {
             height={35}
           />
 
-          <p className="text-xl text-[#F6F6F6]">
+          <p className="text-lg md:text-xl text-[#F6F6F6] text-start">
             No 13b, Aroyewun street, Ramat CR, Ogudu GRA, Ojota, Lagos State,
             Nigeria
           </p>

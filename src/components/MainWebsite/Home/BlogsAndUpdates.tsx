@@ -9,10 +9,15 @@ const BlogsAndUpdates = () => {
   return (
     <section className="px-5 pt-10 md:pt-14">
       <div className="flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-3">
-        <h3
+        {/* <h3
           className={`text-[#F2F1E8] text-5xl md:text-6xl mt-3 md:mt-0 ${anton.className} `}
         >
           BLOG <span className="text-gold-500">& UPDATES</span>
+        </h3> */}
+        <h3
+          className={`text-[#F2F1E8] text-5xl md:text-6xl mt-3 md:mt-0 ${anton.className} `}
+        >
+          BLOG & UPDATES
         </h3>
         <p className="text-[#D1D1D1] text-lg md:w-[60%]">
           Explore our articles to discover more about the vibrant nightlife

@@ -30,9 +30,10 @@ const AboutVendor = () => {
             <h3
               className={`text-[#F2F1E8] text-4xl md:text-[56px] leading-tight ${anton.className} `}
             >
-              UNLOCK
+              {/* UNLOCK
               <span className="text-gold-500"> POWERFUL INSIGHTS WITH </span>
-              DASHBOARD ANALYTICS
+              DASHBOARD ANALYTICS */}
+              UNLOCK POWERFUL INSIGHTS WITH DASHBOARD ANALYTICS
             </h3>
             <p className=" md:text-lg text-[#D1D1D1]">
               Leverage Dashboard Analytics to monitor foot traffic and customer
@@ -68,8 +69,10 @@ const AboutVendor = () => {
             <h3
               className={`text-[#F2F1E8] text-4xl md:text-[56px] leading-tight ${anton.className} `}
             >
-              OPTIMIZE YOUR
-              <span className="text-gold-500"> VENUE’S PRESENCE </span> WITH EASE
+              {/* OPTIMIZE YOUR
+              <span className="text-gold-500"> VENUE’S PRESENCE </span> WITH
+              EASE */}
+              OPTIMIZE YOUR VENUE’S PRESENCE WITH EASE
             </h3>
             <p className="md:text-lg text-[#D1D1D1]">
               Seamlessly manage your venue’s details with iExplore’s Spot
@@ -93,8 +96,10 @@ const AboutVendor = () => {
             <h3
               className={`text-[#F2F1E8] text-4xl md:text-[56px] leading-tight ${anton.className} `}
             >
-              SHARE YOUR <span className="text-gold-500"> LATEST DRINKS AND</span>{" "}
-             MENU OFFERING
+              {/* SHARE YOUR{" "}
+              <span className="text-gold-500"> LATEST DRINKS AND</span> MENU
+              OFFERING */}
+              SHARE YOUR LATEST DRINKS AND MENU OFFERING
             </h3>
             <p className="md:text-lg text-[#D1D1D1]">
               With our Drink Management tool, you can easily update and showcase

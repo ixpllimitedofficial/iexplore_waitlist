@@ -11,22 +11,12 @@ const page = () => {
   return (
     <>
       <MainDesktopAndMobileNav />
-      <section className="relative px-16 py-32">
-        <div className="flex items-center justify-between">
-          <h1
-            className={`text-gold-500 text-5xl md:text-6xl ${anton.className} `}
-          >
-            CONTACT US
-          </h1>
-
-          {/* <Link
-            href="/"
-            className="bg-gold-500 text-brandDark px-4 py-2 rounded-3xl flex items-center gap-1"
-          >
-            Back to website
-            <ArrowRightIcon className="h-6 w-6" />
-          </Link> */}
-        </div>
+      <section className="relative px-2 md:px-16 pt-28 md:pt-32">
+        <h1
+          className={`text-gold-500 text-5xl md:text-6xl ${anton.className} text-center md:text-start`}
+        >
+          CONTACT US
+        </h1>
 
         <HeroSection />
       </section>

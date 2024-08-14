@@ -58,14 +58,13 @@ const MainWebsiteMobileNav = () => {
           showNavState ? "top-16 left-0" : "top-[-100vh] left-0"
         }`}
       >
-        {/* to close nav */}
-        {/* <div className="absolute top-7 z-[120] cursor-pointer noSelect flex w-[75%] justify-between"> */}
-        {/* logo */}
-        {/* <Image src={iExploreLogoSvg} alt="iExploreLogoSvg" height={50} /> */}
-
-        {/* to close */}
-        {/* <Image src={CloseIconSvg} alt="CloseIconSvg" onClick={showNav} />
-        </div> */}
+        <Link
+          href="/"
+          className={`text-[#f2f1e8] text-[27px] ${anton.className} `}
+          onClick={showNav}
+        >
+          Waitlist
+        </Link>
 
         <Link
           href="/home"
@@ -73,14 +72,6 @@ const MainWebsiteMobileNav = () => {
           onClick={showNav}
         >
           Home
-        </Link>
-
-        <Link
-          href="/"
-          className={`text-[#f2f1e8] text-[27px] ${anton.className} `}
-          onClick={showNav}
-        >
-          Waitlist
         </Link>
 
         <Link
@@ -127,7 +118,7 @@ const MainWebsiteMobileNav = () => {
           onClick={showNav}
           className="bg-gold-500 text-[#322016] text-center px-4 py-2 rounded-3xl font-bold"
         >
-          Get Started
+          Join Waitlist
         </Link>
         {/* </div> */}
       </nav>

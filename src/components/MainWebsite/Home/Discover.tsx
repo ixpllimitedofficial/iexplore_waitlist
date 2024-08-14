@@ -31,10 +31,15 @@ const Discover = () => {
         />
 
         <div className="bg-[#0E0E0E] py-10 px-5 md:pl-1 md:w-[45%] md:absolute right-28 -bottom-10 md:text-right">
-          <h3
+          {/* <h3
             className={`text-[#F2F1E8] text-4xl md:text-6xl ${anton.className} `}
           >
             SATISFY <span className="text-gold-500"> YOUR INNER </span> EXPLORER
+          </h3> */}
+          <h3
+            className={`text-[#F2F1E8] text-4xl md:text-6xl ${anton.className} `}
+          >
+            SATISFY YOUR INNER EXPLORER
           </h3>
           <p className="md:pl-8 mt-3 md:text-lg text-[#D1D1D1]">
             Never miss a beat. Stay in the know with detailed information on
@@ -55,7 +60,9 @@ const Discover = () => {
           />
 
           <div className="pt-5 md:pt-14 px-7">
-            <h3 className={`text-[#F2F1E8] text-4xl md:text-[42px] mt-2 ${anton.className} `}>
+            <h3
+              className={`text-[#F2F1E8] text-4xl md:text-[42px] mt-2 ${anton.className} `}
+            >
               DRINKS
             </h3>
             <p className="mt-1 text-[#D1D1D1] md:text-lg">
@@ -75,8 +82,15 @@ const Discover = () => {
           />
 
           <div className="pt-5 md:pt-14 px-7">
-            <h3 className={`text-[#F2F1E8] text-4xl md:text-[42px] mt-2 ${anton.className} `}>
+            {/* <h3
+              className={`text-[#F2F1E8] text-4xl md:text-[42px] mt-2 ${anton.className} `}
+            >
               SPOT <span className="text-gold-500"> DETAILS</span>
+            </h3> */}
+            <h3
+              className={`text-[#F2F1E8] text-4xl md:text-[42px] mt-2 ${anton.className} `}
+            >
+              SPOT DETAILS
             </h3>
             <p className="mt-1 text-[#D1D1D1] md:text-lg">
               Get information and reviews on your favourite hangout spots and
@@ -93,7 +107,9 @@ const Discover = () => {
           <h3
             className={`text-[#F2F1E8] text-4xl md:text-6xl ${anton.className} md:pr-5`}
           >
-            <span className="text-gold-500">GET INFORMATION </span>OF THE BEST LOCATIONS
+            {/* <span className="text-gold-500">GET INFORMATION </span>OF THE BEST
+            LOCATIONS */}
+            GET INFORMATION OF THE BEST LOCATIONS
           </h3>
           <p className="md:w-[90%] mt-3 md:text-lg text-[#D1D1D1]">
             Never miss a beat. Stay in the know with detailed information on

@@ -4,11 +4,16 @@ const HeroSection = () => {
   return (
     <>
       <section className="relative w-full h-[650px] overflow-hidden">
-        <h1
+        {/* <h1
           className={`text-[#F2F1E8] text-[48px] leading-none md:text-6xl ${anton.className} absolute z-10 left-3 md:left-10 bottom-8 md:bottom-5 md:w-[42%]`}
         >
           DISCOVER, <span className="text-gold-500">CONNECT</span>, AND ENJOY{" "}
           <span className="text-gold-500">THE BEST NIGHT OUT</span> IN YOUR CITY! 
+        </h1> */}
+        <h1
+          className={`text-[#F2F1E8] text-[48px] leading-none md:text-6xl ${anton.className} absolute z-10 left-3 md:left-10 bottom-8 md:bottom-5 md:w-[42%]`}
+        >
+          DISCOVER, CONNECT, AND ENJOY THE BEST NIGHT OUT IN YOUR CITY! 
         </h1>
         <video
           autoPlay

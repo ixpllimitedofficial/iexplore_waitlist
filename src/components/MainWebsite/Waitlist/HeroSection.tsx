@@ -10,10 +10,15 @@ const HeroSection = () => {
     <section className="flex flex-col md:flex-row gap-5 md:gap-32 items-center py-10 px-4 md:px-16">
       {/* left */}
       <div>
-        <h1
+        {/* <h1
           className={`text-gold-500 text-5xl md:text-7xl ${anton.className} text-center md:text-left md:w-3/5`}
         >
           YOUR <span className="text-white">NIGHTLIFE COMPANION</span> IN YOUR HANDS
+        </h1> */}
+        <h1
+          className={`text-gold-500 text-5xl md:text-7xl ${anton.className} text-center md:text-left md:w-3/5`}
+        >
+          YOUR NIGHTLIFE COMPANION IN YOUR HANDS
         </h1>
         <p className="text-lg text-center md:text-left my-5 md:w-[80%]">
           Everything you need to explore the best of your city’s nightlife. Your
@@ -32,7 +37,11 @@ const HeroSection = () => {
         </div>
 
         <div className="flex items-center justify-center md:justify-start gap-2">
-          <Image src={ExplorersWaitingSvg} alt="ExplorersWaiting" className="h-[30px] md:h-[35px] w-auto" />
+          <Image
+            src={ExplorersWaitingSvg}
+            alt="ExplorersWaiting"
+            className="h-[30px] md:h-[35px] w-auto"
+          />
           <p className="text-sm md:text-base text-[#D1D1D1] my-4">
             12.7k Explorers already waiting
           </p>
