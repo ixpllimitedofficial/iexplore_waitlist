@@ -25,7 +25,7 @@ const page = async () => {
         <OurPartners />
         <JoinWaitlistFooter />
       </section>
-      <Footer />;
+      <Footer />
     </>
   );
 };

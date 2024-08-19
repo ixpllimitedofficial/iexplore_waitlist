@@ -32,7 +32,7 @@ const SpotsOnPhoneSection = () => {
 
       <CarouselContent className="relative -ml-1">
         {Array.from({ length: 7 }).map((_, index) => (
-          <CarouselItem key={index} className="pl-3 md:basis-1/3 xl:basis-1/4">
+          <CarouselItem key={index} className="pl-3 md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
             <SpotPhoneCard />
           </CarouselItem>
         ))}

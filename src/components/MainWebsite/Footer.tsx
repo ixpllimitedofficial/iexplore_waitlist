@@ -13,11 +13,11 @@ import WhatsappIcon from "@/assets/svg/WhatsappIcon.svg";
 const Footer = () => {
   return (
     <>
-      <footer className="bg-black text-[#F2F1E8] px-5 py-10 md:p-12 grid grid-cols-5 md:gap-x-40">
+      <footer className="bg-black text-[#F2F1E8] px-5 py-10 md:p-12 grid grid-cols-5 md:gap-x-10 lg:gap-x-40">
         <div className="col-span-full md:col-span-3">
           <div className="flex flex-col gap-3 text-center md:text-left">
             <h3
-              className={`text-[#F2F1E8] text-[42px] md:text-5xl leading-tight ${anton.className} md:w-2/4`}
+              className={`text-[#F2F1E8] text-[42px] md:text-5xl leading-tight ${anton.className} lg:w-2/4`}
             >
               SIGN UP TO OUR NEWSLETTER
             </h3>
@@ -43,7 +43,7 @@ const Footer = () => {
         </div>
 
         <div className="h-full col-span-full md:col-span-2">
-          <div className="flex justify-evenly md:justify-start gap-16">
+          <div className="flex justify-evenly md:justify-start gap-5 lg:gap-16">
             <div className="flex flex-col items-center md:items-start gap-5 font-medium">
               <p className="font-bold text-xl text-[#F2F1E8">About Us</p>
               <Link href="/about-us" className="text-[#D1D1D1]">Who we are</Link>
