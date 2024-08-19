@@ -20,7 +20,7 @@ const AboutVendor = () => {
   return (
     <>
       {/* Dashboard Analytics*/}
-      <section className="px-5 mt-16 md:p-14 flex flex-col-reverse md:flex-row items-center gap-7 md:gap-20">
+      <section className="px-5 mt-16 md:p-14 flex flex-col-reverse lg:flex-row items-center gap-7 lg:gap-20">
         <div>
           <div className="flex flex-col gap-3">
             <div className="bg-gold-500 text-brandDark mr-auto px-4 py-2 rounded-3xl flex items-center gap-2">
@@ -28,7 +28,7 @@ const AboutVendor = () => {
               <p className="font-semibold">Dashboard Analytics</p>
             </div>
             <h3
-              className={`text-[#F2F1E8] text-4xl md:text-[56px] leading-tight ${anton.className} `}
+              className={`text-[#F2F1E8] text-4xl md:text-5xl lg:text-[56px] leading-tight ${anton.className} `}
             >
               {/* UNLOCK
               <span className="text-gold-500"> POWERFUL INSIGHTS WITH </span>
@@ -52,7 +52,7 @@ const AboutVendor = () => {
       </section>
 
       {/* Location Management */}
-      <section className="px-5 mt-10 md:p-14 flex flex-col md:flex-row items-center gap-7 md:gap-20">
+      <section className="px-5 mt-10 md:p-14 flex flex-col lg:flex-row items-center gap-7 lg:gap-20">
         <Image
           src={AboutVendorImg2}
           alt="AboutVendorImg2"
@@ -67,7 +67,7 @@ const AboutVendor = () => {
               <p className="font-semibold">Location Management</p>
             </div>
             <h3
-              className={`text-[#F2F1E8] text-4xl md:text-[56px] leading-tight ${anton.className} `}
+              className={`text-[#F2F1E8] text-4xl md:text-5xl lg:text-[56px] leading-tight ${anton.className} `}
             >
               {/* OPTIMIZE YOUR
               <span className="text-gold-500"> VENUE’S PRESENCE </span> WITH
@@ -85,7 +85,7 @@ const AboutVendor = () => {
       </section>
 
       {/* Drink Management */}
-      <section className="px-5 mt-10 md:p-14 flex flex-col-reverse md:flex-row items-center gap-7 md:gap-20">
+      <section className="px-5 mt-10 md:p-14 flex flex-col-reverse lg:flex-row items-center gap-7 lg:gap-20">
         <div>
           <div className="flex flex-col gap-3">
             <div className="bg-gold-500 text-brandDark mr-auto px-4 py-2 rounded-3xl flex items-center gap-2">
@@ -94,7 +94,7 @@ const AboutVendor = () => {
               <p className="font-semibold">Drink Management</p>
             </div>
             <h3
-              className={`text-[#F2F1E8] text-4xl md:text-[56px] leading-tight ${anton.className} `}
+              className={`text-[#F2F1E8] text-4xl md:text-5xl lg:text-[56px] leading-tight ${anton.className} `}
             >
               {/* SHARE YOUR{" "}
               <span className="text-gold-500"> LATEST DRINKS AND</span> MENU

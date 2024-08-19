@@ -11,26 +11,26 @@ import JoinWaitlistFooter from "../JoinWaitlistFooter";
 const GetStarted = () => {
   return (
     <>
-      <section className="bg-gold-500 p-10 md:p-48 relative">
+      <section className="bg-gold-500 p-10 lg:p-48 relative">
         <Image
           src={GetStartedImg1}
           alt="GetStartedImg1"
-          className="hidden md:block absolute left-20 top-24 -z-9"
+          className="hidden lg:block absolute left-20 top-24 -z-9"
         />
         <Image
           src={GetStartedImg2}
           alt="GetStartedImg2"
-          className="hidden md:block absolute right-14 top-20"
+          className="hidden lg:block absolute right-14 top-20"
         />
         <Image
           src={GetStartedImg3}
           alt="GetStartedImg3"
-          className="hidden md:block absolute bottom-20 left-36"
+          className="hidden lg:block absolute bottom-20 left-36"
         />
         <Image
           src={GetStartedImg4}
           alt="GetStartedImg4"
-          className="hidden md:block absolute right-44 bottom-24"
+          className="hidden lg:block absolute right-44 bottom-24"
         />
 
         <div className="flex flex-col items-center gap-5 text-center">
