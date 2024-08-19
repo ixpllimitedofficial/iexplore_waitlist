@@ -19,7 +19,7 @@ const FAQ = () => {
           {/* FREQUENTLY ASKED <span className="text-gold-500">QUESTIONS?</span> */}
           FREQUENTLY ASKED QUESTIONS?
         </h3>
-        <p className="text-[#D1D1D1] text-lg md:w-3/5 mx-auto">
+        <p className="text-[#D1D1D1] text-lg lg:w-3/5 mx-auto">
           We understand you might have some questions to know better about being
           a vendor on iExplore, we have you covered. Here are some frequently
           asked questions and their answers.

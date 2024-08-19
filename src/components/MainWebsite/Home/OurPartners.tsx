@@ -20,7 +20,7 @@ const OurPartners = () => {
               key={item}
               src={PartnerImg}
               alt="NewsImg"
-              className="h-[60px] md:h-full w-auto"
+              className="h-[100px] lg:h-full w-auto"
             />
           );
         })}

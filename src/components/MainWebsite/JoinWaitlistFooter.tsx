@@ -27,13 +27,13 @@ const JoinWaitlistFooter = () => {
           }}
           orientation="vertical"
         >
-          <CarouselContent className="-mt-1 h-[80px]">
+          <CarouselContent className="-mt-1 h-[80px] md:h-[70px]">
             {[
               { name: "BE PART OF THE EXPERIENCE!", id: 1 },
               { name: "JOIN THE WAITLIST NOW", id: 2 },
             ].map((item: any) => (
               <CarouselItem key={item.id} className="p-3">
-                <h3 className={`text-[#322016] text-4xl md:text-6xl ${anton.className}`}>
+                <h3 className={`text-[#322016] text-4xl md:text-5xl lg:text-6xl ${anton.className}`}>
                   {item.name}
                 </h3>
               </CarouselItem>

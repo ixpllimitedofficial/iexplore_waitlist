@@ -14,27 +14,27 @@ import Link from "next/link";
 
 const AboutCEO = () => {
   return (
-    <section className="bg-[#F2F1E8] w-full px-3 md:px-14 py-10 md:py-20 grid grid-cols-2 md:gap-10 mt-10">
+    <section className="bg-[#F2F1E8] w-full px-3 lg:px-14 py-10 md:py-20 grid grid-cols-2 gap-5 lg:gap-10 mt-10">
       <div className="relative col-span-full md:col-span-1">
         {/* image 1 */}
         <Image
           src={CEOImage2}
           alt="CEOImage2"
-          className="hidden md:block relative left-16 h-[250px] w-auto"
+          className="hidden lg:block relative left-16 h-[250px] w-auto"
         />
 
         {/* image 3 */}
         <Image
           src={CEOImage3}
           alt="CEOImage3"
-          className="hidden md:block mt-24 h-[200px] w-auto"
+          className="hidden lg:block mt-24 h-[200px] w-auto"
         />
 
         {/* image 1 */}
         <Image
           src={CEOImage}
           alt="CEOimg"
-          className="mx-auto md:absolute top-36 right-0 "
+          className="mx-auto lg:absolute top-36 right-0 "
         />
       </div>
 
@@ -45,7 +45,7 @@ const AboutCEO = () => {
           className="hidden md:block"
         />
 
-        <div className="md:w-[80%] mx-auto">
+        <div className="lg:w-[80%] mx-auto">
           <p className="text-[#0E1111] leading-loose text-lg text-center md:text-left md:text-xl font-medium mt-5">
             Our app revolutionizes the nightlife experience in Africa, born from
             a passion to connect explorers with the best spots in their city.
@@ -68,12 +68,12 @@ const AboutCEO = () => {
         <Image
           src={QuoteRightIcon}
           alt="QuoteRightIcon"
-          className="hidden md:block ml-auto mr-16"
+          className="hidden md:block ml-auto lg:mr-16"
         />
 
         <div className="flex justify-center md:justify-start mt-3 md:mt-0">
           <Link href="/about-us">
-            <Button className="md:ml-16 bg-[#322016] text-[#F2F1E8] transition duration-100 hover:bg-[#E1B141] hover:text-[#0E1111] px-8 py-6 rounded-3xl font-bold text-lg">
+            <Button className="lg:ml-16 bg-[#322016] text-[#F2F1E8] transition duration-100 hover:bg-[#E1B141] hover:text-[#0E1111] px-8 py-6 rounded-3xl font-bold text-lg">
               More about us <ArrowRightIcon className="ml-2 h-6 w-6" />
             </Button>
           </Link>

@@ -32,7 +32,7 @@ const BlogsAndUpdates = () => {
           return (
             <div
               key={item}
-              className="col-span-full md:col-span-1 flex flex-col gap-2"
+              className="col-span-full md:col-span-full lg:col-span-1 flex flex-col gap-2"
             >
               <Image src={NewsImg} alt="NewsImg" className="w-full" />
               <p className="text-white font-bold text-xl mt-1">

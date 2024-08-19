@@ -10,11 +10,11 @@ import HomeDiscoverSpotDetails from "@/assets/img/MainWebsite/HomeDiscoverSpotDe
 const Discover = () => {
   return (
     <section className="md:mb-32">
-      <div className="mt-10">
+      <div className="mt-5">
         <DiscoverExploreConnect />
       </div>
 
-      <p className="text-lg text-[#D1D1D1] text-center px-5 md:w-3/4 mx-auto my-10 md:my-16">
+      <p className="text-lg text-[#D1D1D1] text-center px-5 md:w-4/5 lg:w-3/4 mx-auto my-10 lg:my-16">
         Discover the hottest spots around you and plan epic nights out while
         staying in the loop with exciting updates from events around you. Enjoy
         exclusive benefits when you order your favorite drink at your go-to
@@ -23,21 +23,21 @@ const Discover = () => {
       </p>
 
       {/* SATISFY YOUR INNER EXPLORER */}
-      <div className="md:h-[500px] md:px-24 flex flex-col md:flex-row relative">
+      <div className="md:h-[500px] lg:px-24 flex flex-col md:flex-row relative">
         <Image
           src={HomeDiscoverImage1}
           alt="HomeDiscoverImage1"
-          className="w-full md:h-[400px] md:w-auto"
+          className="w-full md:h-[300px] md:w-auto lg:h-[400px]"
         />
 
-        <div className="bg-[#0E0E0E] py-10 px-5 md:pl-1 md:w-[45%] md:absolute right-28 -bottom-10 md:text-right">
+        <div className="bg-[#0E0E0E] py-10 px-5 md:pl-1 md:w-4/5 lg:w-[45%] md:absolute right-0 lg:right-28 bottom-10 md:text-right">
           {/* <h3
             className={`text-[#F2F1E8] text-4xl md:text-6xl ${anton.className} `}
           >
             SATISFY <span className="text-gold-500"> YOUR INNER </span> EXPLORER
           </h3> */}
           <h3
-            className={`text-[#F2F1E8] text-4xl md:text-6xl ${anton.className} `}
+            className={`text-[#F2F1E8] text-4xl md:text-5xl lg:text-6xl ${anton.className} `}
           >
             SATISFY YOUR INNER EXPLORER
           </h3>
@@ -50,16 +50,16 @@ const Discover = () => {
       </div>
 
       {/* DRINKS AND FEEDS */}
-      <div className=" grid grid-cols-2 my-2 md:my-24 md:px-24 gap-10">
+      <div className=" grid grid-cols-2 my-2 px-10 lg:my-24 lg:px-24 gap-10">
         {/* drinks */}
-        <div className="col-span-full md:col-span-1 flex flex-col md:flex-row">
+        <div className="col-span-full lg:col-span-1 flex flex-col md:flex-row items-center gap-5">
           <Image
             src={HomeDiscoverDrinks}
             alt="HomeDiscoverDrinks"
             className="w-[85%] h-auto mx-auto md:h-[300px] md:w-auto"
           />
 
-          <div className="pt-5 md:pt-14 px-7">
+          <div className="px-7">
             <h3
               className={`text-[#F2F1E8] text-4xl md:text-[42px] mt-2 ${anton.className} `}
             >
@@ -74,14 +74,15 @@ const Discover = () => {
         </div>
 
         {/* spot details */}
-        <div className="col-span-full md:col-span-1 flex flex-col md:flex-row">
+        <div className="col-span-full lg:col-span-1 flex flex-col md:flex-row items-center gap-5">
           <Image
             src={HomeDiscoverSpotDetails}
             alt="HomeDiscoverSpotDetails"
             className="w-[85%] h-auto mx-auto md:h-[300px] md:w-auto"
           />
 
-          <div className="pt-5 md:pt-14 px-7">
+          {/* <div className="pt-5 md:pt-14 px-7"> */}
+          <div className="px-7">
             {/* <h3
               className={`text-[#F2F1E8] text-4xl md:text-[42px] mt-2 ${anton.className} `}
             >
@@ -102,10 +103,10 @@ const Discover = () => {
       </div>
 
       {/* GET INFORMATION OF THE BEST LOCATIONS  */}
-      <div className="md:h-[500px] md:px-24 flex flex-col-reverse md:flex-row relative mt-16 md:mt-28 justify-end">
-        <div className="bg-[#0E0E0E] py-7 px-5 md:pr-1 md:w-[45%] md:absolute left-28 -bottom-10">
+      <div className="md:h-[500px] lg:px-24 flex flex-col-reverse md:flex-row relative mt-16 lg:mt-28 justify-end">
+        <div className="bg-[#0E0E0E] py-7 px-5 md:pr-1 md:w-4/5 lg:w-[45%] md:absolute left-0 lg:left-28 bottom-10">
           <h3
-            className={`text-[#F2F1E8] text-4xl md:text-6xl ${anton.className} md:pr-5`}
+            className={`text-[#F2F1E8] text-4xl md:text-5xl lg:text-6xl ${anton.className} md:pr-5`}
           >
             {/* <span className="text-gold-500">GET INFORMATION </span>OF THE BEST
             LOCATIONS */}
@@ -121,7 +122,7 @@ const Discover = () => {
         <Image
           src={HomeDiscoverImage2}
           alt="HomeDiscoverImage2"
-          className="w-full md:h-[400px] md:w-auto"
+          className="w-full md:h-[300px] md:w-auto lg:h-[400px]"
         />
       </div>
     </section>

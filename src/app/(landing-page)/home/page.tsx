@@ -14,17 +14,15 @@ const page = async () => {
   return (
     <>
       <MainDesktopAndMobileNav />
-      <section className="">
-        <HeroSection />
-        <Discover />
-        <AboutCEO />
-        <OurMission />
-        <ExploreTheExperience />
-        <BlogsAndUpdates />
-        <FAQ />
-        <OurPartners />
-        <JoinWaitlistFooter />
-      </section>
+      <HeroSection />
+      <Discover />
+      <AboutCEO />
+      <OurMission />
+      <ExploreTheExperience />
+      <BlogsAndUpdates />
+      <FAQ />
+      <OurPartners />
+      <JoinWaitlistFooter />
       <Footer />
     </>
   );
