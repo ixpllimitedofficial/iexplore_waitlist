@@ -28,7 +28,7 @@ const VendorsPartners = () => {
           >
             VENDORS & PARTNERS
           </h1>
-          <p className="text-lg md:w-3/5 text-center md:text-start">
+          <p className="text-lg md:w-3/5 mx-auto text-center">
             We partner with the best locations to make you have the best time
             and provide the best experience where ever you are.
           </p>

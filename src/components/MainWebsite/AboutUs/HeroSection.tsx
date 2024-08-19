@@ -6,7 +6,7 @@ import AboutUsImage2 from "@/assets/img/MainWebsite/AboutUsImage2.png";
 const HeroSection = () => {
   return (
     <section className="relative grid grid-cols-2 gap-10 pt-5">
-      <div className="col-span-full md:col-span-1 text-lg md:text-xl text-[#F6F6F6] text-center md:text-start flex flex-col gap-5">
+      <div className="col-span-full lg:col-span-1 text-lg md:text-xl text-[#F6F6F6] text-center md:text-start flex flex-col gap-5">
         <p>
           We are a dynamic and innovative mobile application with root in the
           nightlife experience market. The brand is born out of passion and the
@@ -22,7 +22,7 @@ const HeroSection = () => {
         <Image
           src={AboutUsImage1}
           alt="AboutUsImage1"
-          className="md:hidden relative top-0 left-0"
+          className="lg:hidden relative top-0 left-0 w-full h-auto"
         />
         <p>
           {" "}
@@ -38,19 +38,19 @@ const HeroSection = () => {
         </p>
       </div>
 
-      <div className="relative col-span-full md:col-span-1">
+      <div className="relative col-span-full lg:col-span-1">
         {/* image 1 */}
         <Image
           src={AboutUsImage1}
           alt="AboutUsImage1"
-          className="hidden md:relative top-0 left-0"
+          className="hidden lg:block lg:relative top-0 left-0"
         />
 
         {/* image 2 */}
         <Image
           src={AboutUsImage2}
           alt="AboutUsImage2"
-          className="md:absolute bottom-0 right-0"
+          className="w-full lg:w-auto lg:absolute lg:bottom-0 lg:right-0"
         />
       </div>
     </section>

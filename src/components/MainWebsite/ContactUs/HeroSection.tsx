@@ -12,8 +12,8 @@ import AddressIconSvg from "@/assets/svg/MainWebsite/AddressIconSvg.svg";
 
 const HeroSection = () => {
   return (
-    <section className="relative grid grid-cols-2 gap-10 pt-5 pb-16">
-      <div className="col-span-full md:col-span-1">
+    <section className="relative grid grid-cols-2 gap-10 pt-5 pb-16 px-3">
+      <div className="col-span-full lg:col-span-1">
         <p className="text-lg md:text-xl text-[#F6F6F6] text-center md:text-start">
           For more information, questions or comments: send us an email or give
           us a call! We are always open to a conversation, advice or feedback
@@ -61,7 +61,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="relative col-span-full md:col-span-1 flex flex-col gap-4 md:gap-8">
+      <div className="relative col-span-full lg:col-span-1 flex flex-col gap-4 md:gap-8">
         {/* image 1 */}
         <Image
           src={ContactUsImg}

@@ -54,13 +54,13 @@ const MainWebsiteMobileNav = () => {
 
       {/* navbar */}
       <nav
-        className={`-z-50 fixed top-0 h-screen w-screen bg-brandDark p-10 flex flex-col gap-7 duration-1000 ${
+        className={`-z-50 fixed top-0 h-screen w-screen bg-brandDark px-10 pt-14 flex flex-col gap-10 duration-1000 ${
           showNavState ? "top-16 left-0" : "top-[-100vh] left-0"
         }`}
       >
         <Link
           href="/"
-          className={`text-[#f2f1e8] text-[27px] ${anton.className} `}
+          className={`text-[#f2f1e8] text-4xl ${anton.className} `}
           onClick={showNav}
         >
           Waitlist
@@ -68,7 +68,7 @@ const MainWebsiteMobileNav = () => {
 
         <Link
           href="/home"
-          className={`text-[#f2f1e8] text-[27px] ${anton.className} `}
+          className={`text-[#f2f1e8] text-4xl ${anton.className} `}
           onClick={showNav}
         >
           Home
@@ -76,7 +76,7 @@ const MainWebsiteMobileNav = () => {
 
         <Link
           href="/vendor"
-          className={`text-[#f2f1e8] text-[27px] ${anton.className} `}
+          className={`text-[#f2f1e8] text-4xl ${anton.className} `}
           onClick={showNav}
         >
           Vendor
@@ -84,7 +84,7 @@ const MainWebsiteMobileNav = () => {
 
         <Link
           href="/about-us"
-          className={`text-[#f2f1e8] text-[27px] ${anton.className} `}
+          className={`text-[#f2f1e8] text-4xl ${anton.className} `}
           onClick={showNav}
         >
           About Us
@@ -103,7 +103,7 @@ const MainWebsiteMobileNav = () => {
 
         <Link
           href="/contact-us"
-          className={`text-[#f2f1e8] text-[27px] ${anton.className} `}
+          className={`text-[#f2f1e8] text-4xl ${anton.className} `}
           onClick={showNav}
         >
           Contact Us
