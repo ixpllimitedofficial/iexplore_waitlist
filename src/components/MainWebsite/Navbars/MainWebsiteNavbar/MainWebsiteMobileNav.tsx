@@ -90,16 +90,13 @@ const MainWebsiteMobileNav = () => {
           About Us
         </Link>
 
-        {/*
         <Link
-          href="/vendor"
-          className={`text-[#f2f1e8] text-[27px] ${anton.className} `}
+          href="/blogs"
+          className={`text-[#f2f1e8] text-4xl ${anton.className} `}
           onClick={showNav}
         >
           Blog & Updates
         </Link>
-
-        */}
 
         <Link
           href="/contact-us"
