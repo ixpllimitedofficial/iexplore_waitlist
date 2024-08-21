@@ -7,7 +7,7 @@ import ExplorersWaitingSvg from "@/assets/svg/MainWebsite/ExplorersWaitingSvg.sv
 
 const HeroSection = () => {
   return (
-    <section className="flex flex-col md:flex-row gap-5 lg:gap-24 items-center py-10 px-5 lg:px-16">
+    <section className="flex flex-col md:flex-row gap-5 lg:gap-24 items-center py-8 px-5 md:p-8 lg:px-16">
       {/* left */}
       <div>
         {/* <h1
@@ -16,22 +16,22 @@ const HeroSection = () => {
           YOUR <span className="text-white">NIGHTLIFE COMPANION</span> IN YOUR HANDS
         </h1> */}
         <h1
-          className={`text-gold-500 text-5xl md:text-6xl lg:text-7xl ${anton.className} text-center md:text-left`}
+          className={`text-gold-500 text-5xl md:text-6xl lg:text-7xl ${anton.className} text-center md:text-left lg:w-3/4`}
         >
           YOUR NIGHTLIFE COMPANION IN YOUR HANDS
         </h1>
-        <p className="text-lg text-center md:text-left my-5 lg:w-[80%]">
+        <p className="text-lg text-center md:text-left my-4 lg:w-[80%]">
           Everything you need to explore the best of your city’s nightlife. Your
           ultimate nightlife companion in one app.
         </p>
 
-        <div className="flex flex-col lg:flex-row justify-between gap-4">
+        <div className="flex flex-col lg:flex-row justify-between md:items-center gap-4">
           <Input
             className="bg-[#FFFFFF1A] px-3 py-6 rounded-none text-[#C8C8C8] border-t-0 border-r-0 border-l-0 border-b-gold-500 placeholder:text-base placeholder:text-[#4D4D4D] "
             placeholder="Email Address"
           />
 
-          <Button className="bg-gold-500 transition duration-200 hover:bg-white text-[#322016] px-10 py-6 rounded-3xl font-bold text-base">
+          <Button className="bg-gold-500 transition duration-200 hover:bg-white text-[#322016] px-8 py-5 lg:py-6 rounded-3xl font-bold text-base md:mr-auto">
             Join Waitlist
           </Button>
         </div>
