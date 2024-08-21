@@ -3,7 +3,7 @@ import { anton } from "@/app/fonts";
 const HeroSection = () => {
   return (
     <>
-      <section className="relative w-full h-[650px] overflow-hidden">
+      <section className="relative w-full h-[600px] lg:h-screen overflow-hidden">
         {/* <h1
           className={`text-[#F2F1E8] text-[48px] leading-none md:text-6xl ${anton.className} absolute z-10 left-3 md:left-10 bottom-8 md:bottom-5 md:w-[42%]`}
         >

@@ -9,7 +9,7 @@ const MainWebsiteDesktopNav = () => {
   const pathname = usePathname();
 
   return (
-    <header className="fixed top-0 w-screen z-50 hidden lg:flex items-center justify-between px-16 py-5 bg-[#0000004D] backdrop-blur-2xl">
+    <header className="fixed top-0 w-screen z-50 hidden lg:flex items-center justify-between px-16 py-4 bg-[#0000004D] backdrop-blur-2xl">
       <Link href="/">
         <Image src={ExploreLogo} alt="iExploreLogo.png" />
       </Link>

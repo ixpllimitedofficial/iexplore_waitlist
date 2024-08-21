@@ -19,22 +19,22 @@ import OurVisionImage from "@/assets/img/MainWebsite/OurVisionImage.png";
 const OurMission = () => {
   return (
     <Carousel
-      className="py-10 md:py-12 relative md:w-[85%] lg:w-[60%] mx-auto"
+      className="py-8 md:py-12 relative md:w-[60%] mx-auto"
       opts={{
         align: "start",
         loop: true,
       }}
     >
-      <CarouselContent className="md:mx-4">
+      <CarouselContent className="">
         <CarouselItem className="grid grid-cols-2 items-center md:gap-5">
-          <div className="relative col-span-full md:col-span-1">
+          <div className="relative col-span-full lg:col-span-1">
             <Image
               src={OurPurposeImage}
               alt="OurPurposeImage"
-              className="mt-14 md:mt-0 w-[85%] h-auto md:h-[500px] md:w-auto mx-auto"
+              className="w-[85%] h-auto md:h-[500px] md:w-auto mx-auto"
             />
           </div>
-          <div className="flex flex-col items-center md:items-start gap-3 col-span-full md:col-span-1 text-center md:text-left">
+          <div className="flex flex-col items-center lg:items-start gap-3 col-span-full lg:col-span-1 text-center lg:text-left">
             <h3 className={`text-5xl ${anton.className} `}>
               OUR <span className="text-gold-500">PURPOSE</span>
             </h3>
@@ -45,15 +45,15 @@ const OurMission = () => {
           </div>
         </CarouselItem>
 
-        <CarouselItem className="grid grid-cols-2 items-center gap-7 md:gap-5">
-          <div className="relative col-span-full md:col-span-1">
+        <CarouselItem className=" grid grid-cols-2 items-center gap-7 md:gap-5">
+          <div className="relative col-span-full lg:col-span-1">
             <Image
               src={OurMissionImage}
               alt="OurMissionImage"
               className="mt-14 md:mt-0 w-[85%] h-auto md:h-[500px] md:w-auto mx-auto"
             />
           </div>
-          <div className="flex flex-col items-center md:items-start gap-3 col-span-full md:col-span-1 text-center md:text-left">
+          <div className="flex flex-col items-center lg:items-start gap-3 col-span-full lg:col-span-1 text-center lg:text-left">
             <h3 className={`text-5xl ${anton.className} `}>
               OUR <span className="text-gold-500">MISSON</span>
             </h3>
@@ -66,14 +66,14 @@ const OurMission = () => {
         </CarouselItem>
 
         <CarouselItem className="grid grid-cols-2 items-center gap-7 md:gap-5">
-          <div className="relative col-span-full md:col-span-1">
+          <div className="relative col-span-full lg:col-span-1">
             <Image
               src={OurVisionImage}
               alt="OurVisionImage"
               className="mt-14 md:mt-0 w-[85%] h-auto md:h-[500px] md:w-auto mx-auto"
             />
           </div>
-          <div className="flex flex-col items-center md:items-start gap-3 col-span-full md:col-span-1 text-center md:text-left">
+          <div className="flex flex-col items-center lg:items-start gap-3 col-span-full lg:col-span-1 text-center lg:text-left">
             <h3 className={`text-5xl ${anton.className} `}>
               OUR <span className="text-gold-500">VISION</span>
             </h3>

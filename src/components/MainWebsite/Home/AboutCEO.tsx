@@ -14,7 +14,7 @@ import Link from "next/link";
 
 const AboutCEO = () => {
   return (
-    <section className="bg-[#F2F1E8] w-full px-3 lg:px-14 py-10 md:py-20 grid grid-cols-2 gap-5 lg:gap-10 mt-10">
+    <section className="bg-[#F2F1E8] w-full px-10 lg:px-14 py-10 md:py-16 grid grid-cols-2 gap-5 lg:gap-10 mt-10">
       <div className="relative col-span-full md:col-span-1">
         {/* image 1 */}
         <Image
@@ -34,7 +34,7 @@ const AboutCEO = () => {
         <Image
           src={CEOImage}
           alt="CEOimg"
-          className="mx-auto lg:absolute top-36 right-0 "
+          className="w-full lg:w-auto md:mx-auto lg:absolute top-36 right-0 "
         />
       </div>
 
@@ -46,7 +46,7 @@ const AboutCEO = () => {
         />
 
         <div className="lg:w-[80%] mx-auto">
-          <p className="text-[#0E1111] leading-loose text-lg text-center md:text-left md:text-xl font-medium mt-5">
+          <p className="text-[#0E1111] leading-loose text-lg text-center md:text-left md:text-xl font-medium mt-3">
             Our app revolutionizes the nightlife experience in Africa, born from
             a passion to connect explorers with the best spots in their city.
             We’re not just an app; we’re your gateway to deeper connections and

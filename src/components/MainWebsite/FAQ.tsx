@@ -11,7 +11,7 @@ import FAQimage from "@/assets/img/MainWebsite/FAQimage.png";
 
 const FAQ = () => {
   return (
-    <section className="w-[80vw] mx-auto my-14">
+    <section className="w-[80vw] mx-auto my-20">
       <div className="flex flex-col gap-3 text-center">
         <h3
           className={`text-gold-500 text-4xl md:text-5xl ${anton.className} `}
@@ -32,9 +32,9 @@ const FAQ = () => {
             What Really is iExplore?
           </AccordionTrigger>
           <AccordionContent className="flex flex-col md:flex-row gap-5 items-center">
-            <Image src={FAQimage} alt="FAQimage" className="hidden md:block" />
+            {/* <Image src={FAQimage} alt="FAQimage" className="hidden md:block" /> */}
             <div>
-              <p className="text-lg text-[#D1D1D1] mt-2 md:w-3/4">
+              <p className="text-lg text-[#D1D1D1] mt-2">
                 We understand you might have a lot of questions to help you
                 enjoy your experience out with iExplore, so we have compiled a
                 list of frequently asked questions to guide you and help you
@@ -49,9 +49,9 @@ const FAQ = () => {
             How can I find events near me?
           </AccordionTrigger>
           <AccordionContent className="flex flex-col md:flex-row gap-5 items-center">
-            <Image src={FAQimage} alt="FAQimage" className="hidden md:block" />
+            {/* <Image src={FAQimage} alt="FAQimage" className="hidden md:block" /> */}
             <div>
-              <p className="text-lg text-[#D1D1D1] mt-2 md:w-3/4">
+              <p className="text-lg text-[#D1D1D1] mt-2">
                 We understand you might have a lot of questions to help you
                 enjoy your experience out with iExplore, so we have compiled a
                 list of frequently asked questions to guide you and help you
@@ -66,9 +66,9 @@ const FAQ = () => {
             Can I share my experiences on the app?
           </AccordionTrigger>
           <AccordionContent className="flex flex-col md:flex-row gap-5 items-center">
-            <Image src={FAQimage} alt="FAQimage" className="hidden md:block" />
+            {/* <Image src={FAQimage} alt="FAQimage" className="hidden md:block" /> */}
             <div>
-              <p className="text-lg text-[#D1D1D1] mt-2 md:w-3/4">
+              <p className="text-lg text-[#D1D1D1] mt-2">
                 We understand you might have a lot of questions to help you
                 enjoy your experience out with iExplore, so we have compiled a
                 list of frequently asked questions to guide you and help you
@@ -83,9 +83,9 @@ const FAQ = () => {
             Is the app available in my city?
           </AccordionTrigger>
           <AccordionContent className="flex flex-col md:flex-row gap-5 items-center">
-            <Image src={FAQimage} alt="FAQimage" className="hidden md:block" />
+            {/* <Image src={FAQimage} alt="FAQimage" className="hidden md:block" /> */}
             <div>
-              <p className="text-lg text-[#D1D1D1] mt-2 md:w-3/4">
+              <p className="text-lg text-[#D1D1D1] mt-2">
                 We understand you might have a lot of questions to help you
                 enjoy your experience out with iExplore, so we have compiled a
                 list of frequently asked questions to guide you and help you
@@ -100,9 +100,9 @@ const FAQ = () => {
             How do I get started?
           </AccordionTrigger>
           <AccordionContent className="flex flex-col md:flex-row gap-5 items-center">
-            <Image src={FAQimage} alt="FAQimage" className="hidden md:block" />
+            {/* <Image src={FAQimage} alt="FAQimage" className="hidden md:block" /> */}
             <div>
-              <p className="text-lg text-[#D1D1D1] mt-2 md:w-3/4">
+              <p className="text-lg text-[#D1D1D1] mt-2">
                 We understand you might have a lot of questions to help you
                 enjoy your experience out with iExplore, so we have compiled a
                 list of frequently asked questions to guide you and help you

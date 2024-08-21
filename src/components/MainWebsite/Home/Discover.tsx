@@ -10,11 +10,11 @@ import HomeDiscoverSpotDetails from "@/assets/img/MainWebsite/HomeDiscoverSpotDe
 const Discover = () => {
   return (
     <section className="md:mb-32">
-      <div className="mt-5">
+      <div className="mt-8">
         <DiscoverExploreConnect />
       </div>
 
-      <p className="text-lg text-[#D1D1D1] text-center px-5 md:w-4/5 lg:w-3/4 mx-auto my-10 lg:my-16">
+      <p className="text-lg text-[#D1D1D1] text-center px-5 md:w-4/5 lg:w-3/4 mx-auto my-8">
         Discover the hottest spots around you and plan epic nights out while
         staying in the loop with exciting updates from events around you. Enjoy
         exclusive benefits when you order your favorite drink at your go-to
@@ -30,7 +30,7 @@ const Discover = () => {
           className="w-full md:h-[300px] md:w-auto lg:h-[400px]"
         />
 
-        <div className="bg-[#0E0E0E] py-10 px-5 md:pl-1 md:w-4/5 lg:w-[45%] md:absolute right-0 lg:right-28 bottom-10 md:text-right">
+        <div className="bg-[#0E0E0E] py-10 px-5 md:pl-1 md:w-4/5 lg:w-[45%] md:absolute right-0 lg:right-28 bottom-16 lg:bottom-10 md:text-right">
           {/* <h3
             className={`text-[#F2F1E8] text-4xl md:text-6xl ${anton.className} `}
           >
@@ -50,7 +50,7 @@ const Discover = () => {
       </div>
 
       {/* DRINKS AND FEEDS */}
-      <div className=" grid grid-cols-2 my-2 px-10 lg:my-24 lg:px-24 gap-10">
+      <div className=" grid grid-cols-2 my-2 md:px-10 lg:my-10 lg:px-24 gap-10">
         {/* drinks */}
         <div className="col-span-full lg:col-span-1 flex flex-col md:flex-row items-center gap-5">
           <Image
@@ -103,7 +103,7 @@ const Discover = () => {
       </div>
 
       {/* GET INFORMATION OF THE BEST LOCATIONS  */}
-      <div className="md:h-[500px] lg:px-24 flex flex-col-reverse md:flex-row relative mt-16 lg:mt-28 justify-end">
+      <div className="md:h-[500px] lg:px-24 flex flex-col-reverse md:flex-row relative mt-16 lg:mt-20 justify-end">
         <div className="bg-[#0E0E0E] py-7 px-5 md:pr-1 md:w-4/5 lg:w-[45%] md:absolute left-0 lg:left-28 bottom-10">
           <h3
             className={`text-[#F2F1E8] text-4xl md:text-5xl lg:text-6xl ${anton.className} md:pr-5`}

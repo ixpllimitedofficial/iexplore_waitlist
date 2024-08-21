@@ -9,7 +9,7 @@ const JoinWaitlistSection = () => {
         {/* <h3 className={`text-gold-500 text-5xl ${anton.className}`}>
           JOIN THE <span className="text-white">WAITLIST!</span>
         </h3> */}
-        <h3 className={`text-gold-500 text-4xl md:text-5xl lg:text-6xl ${anton.className}`}>
+        <h3 className={`text-gold-500 text-[42px] lg:text-5xl leading-tight ${anton.className}`}>
           JOIN THE WAITLIST!
         </h3>
         <p className="lg:text-lg text-[#D1D1D1]">

@@ -17,11 +17,11 @@ const Footer = () => {
         <div className="col-span-full md:col-span-3">
           <div className="flex flex-col gap-3 text-center md:text-left">
             <h3
-              className={`text-[#F2F1E8] text-[42px] md:text-5xl leading-tight ${anton.className} lg:w-2/4`}
+              className={`text-[#F2F1E8] text-[36px] md:text-[42px] lg:text-5xl leading-tight ${anton.className} lg:w-2/4`}
             >
               SIGN UP TO OUR NEWSLETTER
             </h3>
-            <p className="text-lg text-[#D1D1D1]">
+            <p className="lg:text-lg text-[#D1D1D1]">
               Stay in the loop and up to date with iExplore’s nightlife
               newsletter! Discover exclusive events, Hottest locations, and the
               latest trends to make every night unforgettable. Join our
@@ -31,7 +31,7 @@ const Footer = () => {
           </div>
 
           <div className="mt-8 mb-10 md:mb-24 flex flex-col gap-2">
-            <p className="text-lg font-bold">Email:</p>
+            <p className="md:text-lg font-bold">Email:</p>
             <Input
               className="bg-[#FFFFFF1A] px-3 py-6 rounded-none text-[#C8C8C8] border-t-0 border-r-0 border-l-0 border-b-gold-500 placeholder:text-base placeholder:text-[#4D4D4D] "
               placeholder="Email Address"
@@ -43,24 +43,24 @@ const Footer = () => {
         </div>
 
         <div className="h-full col-span-full md:col-span-2">
-          <div className="flex justify-evenly md:justify-start gap-5 lg:gap-16">
-            <div className="flex flex-col items-center md:items-start gap-5 font-medium">
-              <p className="font-bold text-xl text-[#F2F1E8">About Us</p>
+          <div className="flex justify-evenly md:justify-start gap-5 lg:gap-8">
+            <div className="flex flex-col items-center md:items-start gap-3 font-medium">
+              <p className="font-bold text-lg md:text-xl text-[#F2F1E8">About Us</p>
               <Link href="/about-us" className="text-[#D1D1D1]">Who we are</Link>
               {/* <p className="text-[#D1D1D1]">Our Team</p> */}
               <Link href="/our-partners" className="text-[#D1D1D1]">Our Partners</Link>
               <Link href="/contact-us" className="text-[#D1D1D1]">Contact Us</Link>
             </div>
 
-            <div className="flex flex-col items-center md:items-start gap-5 font-medium">
-              <p className="font-bold text-xl text-[#F2F1E8">Vendor</p>
+            <div className="flex flex-col items-center md:items-start gap-3 font-medium">
+              <p className="font-bold text-lg md:text-xl text-[#F2F1E8">Vendor</p>
               <Link href="/vendor" className="text-[#D1D1D1]">iExplore vendor</Link>
               <Link href="/all-vendors" className="text-[#D1D1D1]">All Vendors</Link>
             </div>
           </div>
 
-          <div className="mt-14 flex flex-col items-center md:items-start gap-5 font-medium">
-            <p className="font-bold text-xl text-[#F2F1E8">Follow Us</p>
+          <div className="mt-10 flex flex-col items-center md:items-start gap-3 font-medium">
+            <p className="font-bold text-lg md:text-xl text-[#F2F1E8">Follow Us</p>
 
             <div className="flex gap-3">
               <div className="footerIcon">
