@@ -7,11 +7,12 @@ import GetStartedImg3 from "@/assets/img/MainWebsite/GetStartedImg3.png";
 import GetStartedImg4 from "@/assets/img/MainWebsite/GetStartedImg4.png";
 import Image from "next/image";
 import JoinWaitlistFooter from "../JoinWaitlistFooter";
+import Link from "next/link";
 
 const GetStarted = () => {
   return (
     <>
-      <section className="bg-gold-500 p-10 lg:p-48 relative">
+      <section className="bg-gold-500 px-5 py-10 md:py-16 lg:p-48 relative">
         <Image
           src={GetStartedImg1}
           alt="GetStartedImg1"
@@ -35,14 +36,16 @@ const GetStarted = () => {
 
         <div className="flex flex-col items-center gap-5 text-center">
           <h3
-            className={`text-[#322016] text-5xl md:text-6xl ${anton.className}`}
+            className={`text-[#322016] text-4xl md:text-6xl ${anton.className}`}
           >
             ELEVATE YOUR BUSINESS <br /> EXPERIENCE WITH <br /> IEXPLORE VENDOR
             NOW
           </h3>
-          <Button className="bg-white transition duration-300 hover:bg-[#322016] hover:text-white text-[#322016] md:text-lg px-7 py-6 rounded-3xl font-extrabold mx-auto">
-            Get early access
-          </Button>
+          <Link href="/">
+            <Button className="bg-white transition duration-200 hover:bg-[#322016] hover:text-white text-[#322016] px-7 py-5 md:px-10 md:py-6 rounded-3xl font-bold text-base">
+              Get early access
+            </Button>
+          </Link>
         </div>
       </section>
 

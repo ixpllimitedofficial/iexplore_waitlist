@@ -33,7 +33,7 @@ const JoinWaitlistFooter = () => {
               { name: "JOIN THE WAITLIST NOW", id: 2 },
             ].map((item: any) => (
               <CarouselItem key={item.id} className="p-3">
-                <h3 className={`text-[#322016] text-4xl md:text-5xl lg:text-6xl ${anton.className}`}>
+                <h3 className={`text-[#322016] text-3xl md:text-5xl lg:text-6xl ${anton.className}`}>
                   {item.name}
                 </h3>
               </CarouselItem>
