@@ -50,7 +50,7 @@ const HeroSection = () => {
         <Image
           src={AboutUsImage2}
           alt="AboutUsImage2"
-          className="w-full lg:w-auto lg:absolute lg:bottom-0 lg:right-0"
+          className="w-full lg:w-[400px] lg:absolute lg:bottom-0 lg:right-0"
         />
       </div>
     </section>

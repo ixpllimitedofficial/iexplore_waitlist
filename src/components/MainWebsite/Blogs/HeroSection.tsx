@@ -21,14 +21,14 @@ const HeroSection = () => {
         </div>
 
         <div>
-          <p className="text-xl">
+          <p className="md:text-xl">
             It’s needless to state that a lot is happening this weekend in
             Lagos, maybe not in the typical Weekender fashion, but a Lagosian
             can’t be surprised. Regardless, it’s left to us to find a balance
             and try to enjoy the little time we have before going back to
             dealing with capitalism, and we have just the guide for that.
           </p>
-          <p className="text-xl mt-3">
+          <p className="md:text-xl mt-3">
             You should always make some time to have fun and you are living in
             the right city to get the most fun. Our e-guide will help you
             explore all the fun experiences in Lagos this year. You can also
@@ -38,7 +38,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-5 w-[90%] md:w-3/4 mx-auto">
+      <div className="mt-7 flex flex-col gap-5 w-[90%] md:w-3/4 mx-auto">
         <h1 className={`text-3xl md:text-5xl ${anton.className}`}>
           Karaoke on the Rooftop
         </h1>
@@ -49,7 +49,7 @@ const HeroSection = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <p className="text-xl">
+        <p className="md:text-xl">
           Get ready to unleash your inner star! Karaoke on the Safron Rooftop is
           now happening every Thursday. Gather your friends, pick your favorite
           songs, and sing your heart out under the stars. <br /> Time: 6 PM{" "}

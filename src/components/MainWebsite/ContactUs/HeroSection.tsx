@@ -12,7 +12,7 @@ import AddressIconSvg from "@/assets/svg/MainWebsite/AddressIconSvg.svg";
 
 const HeroSection = () => {
   return (
-    <section className="relative grid grid-cols-2 gap-10 pt-5 pb-16 px-3">
+    <section className="relative grid grid-cols-2 gap-16 lg:gap-10 pt-3 pb-16 px-3">
       <div className="col-span-full lg:col-span-1">
         <p className="text-lg md:text-xl text-[#F6F6F6] text-center md:text-start">
           For more information, questions or comments: send us an email or give

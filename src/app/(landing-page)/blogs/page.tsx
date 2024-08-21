@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { anton } from "@/app/fonts";
 import MainDesktopAndMobileNav from "@/components/MainWebsite/Navbars/MainWebsiteNavbar/MainDesktopAndMobileNav";
-import OurGoals from "@/components/MainWebsite/AboutUs/OurGoals";
 import Footer from "@/components/MainWebsite/Footer";
 import HeroSection from "@/components/MainWebsite/Blogs/HeroSection";
 import MoreBlogs from "@/components/MainWebsite/Blogs/MoreBlogs";

@@ -8,8 +8,8 @@ const OurGoals = () => {
   return (
     <section className="mt-16 flex flex-col gap-10">
       {/* vision */}
-      <div className="flex flex-col-reverse md:flex-row">
-        <div className="md:w-2/4 p-10 bg-[#F2F1E8] text-[#0E0E0E] flex flex-col justify-center gap-3">
+      <div className="mx-2 md:m-0 flex flex-col-reverse md:flex-row">
+        <div className=" md:w-2/4 p-10 bg-[#F2F1E8] text-[#0E0E0E] flex flex-col justify-center gap-3">
           <h1
             className={`text-5xl ${anton.className} text-center md:text-start`}
           >
@@ -32,7 +32,7 @@ const OurGoals = () => {
       </div>
 
       {/* mission */}
-      <div className="flex flex-col-reverse md:flex-row-reverse">
+      <div className="mx-2 md:m-0 flex flex-col-reverse md:flex-row-reverse">
         <div className="md:w-2/4 p-10 bg-gold-500 text-[#0E0E0E] flex flex-col md:items-end justify-center gap-3">
           <h1 className={`text-5xl ${anton.className} text-center md:text-start`}>OUR MISSION</h1>
           <p className="text-lg lg:w-3/4 text-center md:text-right">
@@ -52,7 +52,7 @@ const OurGoals = () => {
       </div>
 
       {/* purpose */}
-      <div className="flex flex-col-reverse md:flex-row">
+      <div className="mx-2 md:m-0 flex flex-col-reverse md:flex-row">
         <div className="md:w-2/4 p-10 bg-[#F2F1E8] text-[#0E0E0E] flex flex-col justify-center gap-3">
           <h1 className={`text-5xl ${anton.className} text-center md:text-start`}>OUR PURPOSE</h1>
           <p className="text-lg lg:w-2/4 text-center md:text-start">

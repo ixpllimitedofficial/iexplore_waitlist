@@ -13,7 +13,7 @@ const page = () => {
       <MainDesktopAndMobileNav />
       <section className="relative px-2 md:px-16 pt-28 md:pt-32">
         <h1
-          className={`text-gold-500 text-5xl md:text-6xl ${anton.className} text-center md:text-start`}
+          className={`text-gold-500 text-4xl md:text-5xl ${anton.className} text-center md:text-start`}
         >
           CONTACT US
         </h1>
