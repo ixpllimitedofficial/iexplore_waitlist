@@ -33,7 +33,7 @@ const WaitlistForm = ({ handleShowModal }: any) => {
     try {
       const response = await apiPost(
         data,
-        "http://44.193.73.68:8000/api/v1/waitlist/signup/"
+        "https://iexplore.vercel.app/api/v1/waitlist/signup/"
       );
 
       if (response?.message === "You've been added to the waitlist!") {
