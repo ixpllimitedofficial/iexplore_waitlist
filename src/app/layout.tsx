@@ -3,6 +3,7 @@ import { manrope } from "./fonts";
 import "./globals.css";
 
 import { ToastContainer } from "react-toastify";
+import { Toaster } from "@/components/UI/toaster";
 
 export const metadata: Metadata = {
   title: "iExplore",
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body>
         {/* <MainDesktopAndMobileNav /> */}
         {children}
+        <Toaster />
         <ToastContainer />
         {/* <Footer /> */}
       </body>

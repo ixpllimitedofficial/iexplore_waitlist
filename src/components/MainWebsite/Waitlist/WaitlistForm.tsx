@@ -18,6 +18,7 @@ import { Input } from "@/components/UI/input";
 import { forgotPasswordValidationSchema } from "@/types/authSchemas";
 import { Button } from "@/components/UI/button";
 import { apiPost } from "@/app/_actions";
+import { toast } from "@/components/UI/use-toast";
 
 const WaitlistForm = ({ handleShowModal }: any) => {
   const form = useForm<z.infer<typeof forgotPasswordValidationSchema>>({
@@ -39,8 +40,17 @@ const WaitlistForm = ({ handleShowModal }: any) => {
       if (response?.message === "You've been added to the waitlist!") {
         handleShowModal();
       } else if (response?.message === "Email is already on the waitlist") {
-        alert("Email is already on the waitlist");
+        toast({
+          title: "Email already added",
+          description: "Email is already on the waitlist",
+          variant: "destructive"
+        });
       } else {
+        toast({
+          title: "This is an errpr",
+          description: "Error error",
+          variant: "destructive"
+        });
         console.log("Unexpected response:", response);
       }
     } catch (error) {
