@@ -55,7 +55,7 @@ const MainWebsiteMobileNav = () => {
       {/* navbar */}
       <nav
         className={`-z-50 fixed top-0 h-screen w-screen bg-brandDark px-8 pt-10 flex flex-col gap-8 duration-1000 ${
-          showNavState ? "top-16 left-0" : "top-[-100vh] left-0"
+          showNavState ? "top-16 left-0" : "top-[-150vh] left-0"
         }`}
       >
         <Link

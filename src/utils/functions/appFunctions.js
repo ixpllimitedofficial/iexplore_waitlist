@@ -18,7 +18,6 @@ export const apiGet = async (apiUrl) => {
 };
 
 export const apiPost = async (formData, apiUrl) => {
-  console.log(formData, apiUrl);
   try {
     const response = await fetch(apiUrl, {
       method: "POST",
@@ -28,8 +27,6 @@ export const apiPost = async (formData, apiUrl) => {
       body: JSON.stringify(formData),
     });
     const data = await response.json();
-
-    console.log(response);
 
     if (!response.ok) {
       throw new Error("Failed to fetch external data");

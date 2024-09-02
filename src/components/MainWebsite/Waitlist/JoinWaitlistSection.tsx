@@ -1,25 +1,18 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-
-import ExplorersWaitingSvg from "@/assets/svg/MainWebsite/ExplorersWaitingSvg.svg";
 import WaitlistSuccessSvg from "@/assets/svg/MainWebsite/WaitlistSuccessSvg.svg";
 import WaitlistModal from "@/components/MainWebsite/Waitlist/WaitlistModal";
 
 import { anton } from "@/app/fonts";
-import { Button } from "@/components/UI/button";
-import { Input } from "@/components/UI/input";
 import WaitlistForm from "./WaitlistForm";
 
 const JoinWaitlistSection = () => {
-  const router = useRouter();
   const [showModal, setShowModal] = useState(false);
 
   const handleModal: any = () => {
-    // router.push("/");
     setShowModal(false);
 
     // Unsets Background Scrolling to use when SideDrawer/Modal is closed

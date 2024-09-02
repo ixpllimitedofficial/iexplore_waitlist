@@ -1,4 +1,4 @@
-import { apiGet, apiPost } from "@/app/_actions";
+import { apiGet, apiPost } from "@/utils/functions/appFunctions";;
 import {
   extractAndThrowSignupError,
   extractAndThrowLoginError,

@@ -8,7 +8,7 @@ const WaitlistModal = ({ children }: ModalProps) => {
   }
 
   return (
-    <section className="fixed h-screen w-screen top-[0px] left-[0px] overflow-hidden flex flex-col gap-3 md:gap-5 justify-center items-center bg-[#0E0E0E] z-[60]">
+    <section className="fixed h-screen w-screen top-[0px] left-[0px] overflow-hidden flex flex-col gap-3 md:gap-5 justify-center items-center backdrop-blur-md bg-[#0e0e0ecb] z-[60]">
       {children}
     </section>
   );

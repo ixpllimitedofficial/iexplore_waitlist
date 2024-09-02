@@ -54,7 +54,7 @@ export const signupValidationSchema = z
     path: ["confirm_password"],
   });
 
-export const forgotPasswordValidationSchema = z.object({
+export const emailSchema = z.object({
   email: z.string().email({
     message: "Please put in a valid email.",
   }),

@@ -23,7 +23,7 @@ import {
 import { Input } from "@/components/UI/input";
 import { inputStyling } from "@/utils/constant";
 
-import { forgotPasswordValidationSchema } from "@/types/authSchemas";
+import { emailSchema } from "@/types/authSchemas";
 
 // zustand store
 import { userStore } from "@/store/user";
@@ -47,14 +47,14 @@ function MyTimer({ expiryTimestamp }: any) {
 
   const requestUserOTP = userStore((state: any) => state.requestUserOTP);
 
-  const form = useForm<z.infer<typeof forgotPasswordValidationSchema>>({
-    resolver: zodResolver(forgotPasswordValidationSchema),
+  const form = useForm<z.infer<typeof emailSchema>>({
+    resolver: zodResolver(emailSchema),
     defaultValues: {
       email: "",
     },
   });
 
-  function onSubmit(data: z.infer<typeof forgotPasswordValidationSchema>) {
+  function onSubmit(data: z.infer<typeof emailSchema>) {
     console.log(data);
     // Restarts to 5 minutes timer
     const time = new Date();
@@ -137,7 +137,6 @@ const VerifyUserOTP = () => {
   time.setSeconds(time.getSeconds() + 300); // 5 minutes timer
 
   useEffect(() => {
-
     return () => {
       // Set isOTPVerified to false
       if (isUserOTPVerified) {

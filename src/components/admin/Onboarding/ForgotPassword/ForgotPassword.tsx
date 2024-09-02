@@ -21,7 +21,7 @@ import {
 import { Input } from "@/components/UI/input";
 
 import { inputStyling } from "@/utils/constant";
-import { forgotPasswordValidationSchema } from "@/types/authSchemas";
+import { emailSchema } from "@/types/authSchemas";
 
 const ForgotPassword = () => {
   // router
@@ -32,14 +32,14 @@ const ForgotPassword = () => {
   const isUserLoggedin = userStore((state: any) => state.isUserLoggedin);
   const loginUser = userStore((state: any) => state.loginUser);
 
-  const form = useForm<z.infer<typeof forgotPasswordValidationSchema>>({
-    resolver: zodResolver(forgotPasswordValidationSchema),
+  const form = useForm<z.infer<typeof emailSchema>>({
+    resolver: zodResolver(emailSchema),
     defaultValues: {
       email: "",
     },
   });
 
-  function onSubmit(data: z.infer<typeof forgotPasswordValidationSchema>) {
+  function onSubmit(data: z.infer<typeof emailSchema>) {
     console.log(data);
     loginUser(data);
     router.push("/admin?flow=checkCode");

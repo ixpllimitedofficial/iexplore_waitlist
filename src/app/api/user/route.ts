@@ -3,7 +3,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { cookies } from "next/headers";
 // import { apiGet, apiPost } from "@/utils/appFunctions";
-import { apiGet, apiPost } from "@/app/_actions";
+import { apiGet, apiPost } from "@/app/actions";
 
 export async function GET() {
   try {

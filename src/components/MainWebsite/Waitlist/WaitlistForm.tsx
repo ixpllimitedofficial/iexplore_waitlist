@@ -7,56 +7,48 @@ import { z } from "zod";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/UI/form";
 import { Input } from "@/components/UI/input";
 
-import { forgotPasswordValidationSchema } from "@/types/authSchemas";
+import { emailSchema } from "@/types/authSchemas";
 import { Button } from "@/components/UI/button";
-import { apiPost } from "@/app/_actions";
 import { toast } from "@/components/UI/use-toast";
 
+import { onSubmitWaitlist } from "@/app/actions";
+
 const WaitlistForm = ({ handleShowModal }: any) => {
-  const form = useForm<z.infer<typeof forgotPasswordValidationSchema>>({
-    resolver: zodResolver(forgotPasswordValidationSchema),
+  const form = useForm<z.infer<typeof emailSchema>>({
+    resolver: zodResolver(emailSchema),
     defaultValues: {
       email: "",
     },
   });
 
-  async function onSubmit(
-    data: z.infer<typeof forgotPasswordValidationSchema>
-  ) {
-    try {
-      const response = await apiPost(
-        data,
-        "https://iexplore.vercel.app/api/v1/waitlist/signup/"
-      );
+  async function onSubmit(data: z.infer<typeof emailSchema>) {
+    const result = await onSubmitWaitlist(data);
 
-      if (response?.message === "You've been added to the waitlist!") {
-        handleShowModal();
-      } else if (response?.message === "Email is already on the waitlist") {
-        toast({
-          title: "Email already added",
-          description: "Email is already on the waitlist",
-          variant: "destructive"
-        });
-      } else {
-        toast({
-          title: "This is an errpr",
-          description: "Error error",
-          variant: "destructive"
-        });
-        console.log("Unexpected response:", response);
-      }
-    } catch (error) {
-      console.error("Request failed:", error);
-    } finally {
-      document.body.style.overflow = "unset";
+    if (result.status === "added") {
+      toast({
+        title: "Your email has been added to the waitlist!",
+        description: "Please check your email for confirmation",
+        variant: "success",
+      });
+      handleShowModal();
+    } else if (result.status === "already_added") {
+      toast({
+        title: "Email already added to waitlist!",
+        description: "Please check your email for confirmation",
+        variant: "destructive",
+      });
+    } else {
+      toast({
+        title: "This is an error",
+        description: "Unexpected response from the server",
+        variant: "destructive",
+      });
     }
   }
 
