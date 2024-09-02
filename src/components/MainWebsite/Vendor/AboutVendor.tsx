@@ -33,13 +33,13 @@ const AboutVendor = () => {
               {/* UNLOCK
               <span className="text-gold-500"> POWERFUL INSIGHTS WITH </span>
               DASHBOARD ANALYTICS */}
-              UNLOCK POWERFUL INSIGHTS WITH DASHBOARD ANALYTICS
+              DISCOVER INSIGHTS WITH DASHBOARD ANALYTICS
             </h3>
             <p className=" md:text-lg text-[#D1D1D1]">
-              Leverage Dashboard Analytics to monitor foot traffic and customer
-              behavior. Access real-time data to make informed decisions,
-              improve service, and boost profitability. Stay ahead of the
-              competition with insights that drive growth.
+              Track foot traffic and customer behavior in real-time. Make
+              smarter decisions, enhance service, and drive profits with data
+              that keeps you ahead. Stay ahead of the competition with insights
+              that drive growth.
             </p>
           </div>
         </div>
@@ -72,13 +72,12 @@ const AboutVendor = () => {
               {/* OPTIMIZE YOUR
               <span className="text-gold-500"> VENUE’S PRESENCE </span> WITH
               EASE */}
-              OPTIMIZE YOUR VENUE’S PRESENCE WITH EASE
+              ELEVATE YOUR VENUE’S PRESENCE WITH EASE
             </h3>
             <p className="md:text-lg text-[#D1D1D1]">
-              Seamlessly manage your venue’s details with iExplore’s Spot
-              Management feature. Update your location, hours, and special
-              events to ensure patrons always know what’s happening. Make your
-              spot the go-to destination in the nightlife scene.
+              With iExplore’s Spot Management, Easily adjust your location,
+              hours, and events to stay top-of-mind in the nightlife scene. Make
+              your spot the ultimate go-to destination.
             </p>
           </div>
         </div>
@@ -102,10 +101,9 @@ const AboutVendor = () => {
               SHARE YOUR LATEST DRINKS AND MENU OFFERING
             </h3>
             <p className="md:text-lg text-[#D1D1D1]">
-              With our Drink Management tool, you can easily update and showcase
-              your latest drink offerings. Highlight seasonal specials and crowd
-              favorites to entice new customers and keep regulars coming back
-              for more.
+              Update and display your newest drink offerings with our Drink
+              Management tool. Highlight seasonal specials and favorites to
+              attract new customers and keep regulars returning for more.
             </p>
           </div>
         </div>

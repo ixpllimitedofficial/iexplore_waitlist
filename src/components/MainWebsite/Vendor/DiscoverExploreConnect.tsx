@@ -11,7 +11,7 @@ import {
 } from "@/components/UI/carousel";
 
 const DiscoverExploreConnect = () => {
-  const plugin = React.useRef(Autoscroll({speed: 3}));
+  const plugin = React.useRef(Autoscroll({ speed: 3 }));
 
   return (
     <Carousel
@@ -35,7 +35,7 @@ const DiscoverExploreConnect = () => {
           { name: "-", id: 10 },
           { name: "EXPLORE", id: 11 },
           { name: "-", id: 12 },
-          { name: "DISCOVER", id: 13},
+          { name: "DISCOVER", id: 13 },
           { name: "-", id: 14 },
           { name: "CONNECT", id: 15 },
           { name: "-", id: 16 },
@@ -46,7 +46,7 @@ const DiscoverExploreConnect = () => {
             key={item.id}
             className="basis-1/3 md:basis-1/6 flex items-center justify-center"
           >
-            <h1 className={`text-[#F2F1E8] text-5xl lg:text-6xl ${anton.className}`}>
+            <h1 className={`text-[#F2F1E8] text-5xl ${anton.className}`}>
               {item.name}
             </h1>
           </CarouselItem>

@@ -45,22 +45,38 @@ const Footer = () => {
         <div className="h-full col-span-full md:col-span-2">
           <div className="flex justify-evenly md:justify-start gap-5 lg:gap-8">
             <div className="flex flex-col items-center md:items-start gap-3 font-medium">
-              <p className="font-bold text-lg md:text-xl text-[#F2F1E8">About Us</p>
-              <Link href="/about-us" className="text-[#D1D1D1]">Who we are</Link>
+              <p className="font-bold text-lg md:text-xl text-[#F2F1E8">
+                About Us
+              </p>
+              <Link href="/about-us" className="text-[#D1D1D1]">
+                Who we are
+              </Link>
               {/* <p className="text-[#D1D1D1]">Our Team</p> */}
-              <Link href="/our-partners" className="text-[#D1D1D1]">Our Partners</Link>
-              <Link href="/contact-us" className="text-[#D1D1D1]">Contact Us</Link>
+              <Link href="/our-partners" className="text-[#D1D1D1]">
+                Our Partners
+              </Link>
+              <Link href="/contact-us" className="text-[#D1D1D1]">
+                Contact Us
+              </Link>
             </div>
 
             <div className="flex flex-col items-center md:items-start gap-3 font-medium">
-              <p className="font-bold text-lg md:text-xl text-[#F2F1E8">Vendor</p>
-              <Link href="/vendor" className="text-[#D1D1D1]">iExplore vendor</Link>
-              <Link href="/all-vendors" className="text-[#D1D1D1]">All Vendors</Link>
+              <p className="font-bold text-lg md:text-xl text-[#F2F1E8">
+                Vendor
+              </p>
+              <Link href="/vendor" className="text-[#D1D1D1]">
+                iExplore vendor
+              </Link>
+              <Link href="/all-vendors" className="text-[#D1D1D1]">
+                All Vendors
+              </Link>
             </div>
           </div>
 
           <div className="mt-10 flex flex-col items-center md:items-start gap-3 font-medium">
-            <p className="font-bold text-lg md:text-xl text-[#F2F1E8">Follow Us</p>
+            <p className="font-bold text-lg md:text-xl text-[#F2F1E8">
+              Follow Us
+            </p>
 
             <div className="flex gap-3">
               <div className="footerIcon">
@@ -99,7 +115,9 @@ const Footer = () => {
 
         {/* bottom line */}
         <div className="col-span-full mt-10 md:mt-0 border-b-2 border-[#4D4D4D] pb-2 flex flex-col-reverse md:flex-row gap-4 md:gap-10 justify-between text-[#D1D1D1] text-sm md:text-base">
-          <p className="text-center md:text-left">All rights reserve. Maxx Technologies © 2024</p>
+          <p className="text-center md:text-left">
+            All rights reserve. IXPL Limited © 2024
+          </p>
 
           <div className="flex justify-between gap-10">
             <p className="underline">Privacy Policy</p>

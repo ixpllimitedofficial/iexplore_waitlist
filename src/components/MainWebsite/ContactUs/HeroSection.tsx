@@ -81,7 +81,7 @@ const HeroSection = () => {
           <Image src={EmailIconSvg} alt="EmailIconSvg" width={35} height={35} />
 
           <p className="text-lg md:text-xl text-[#F6F6F6] text-start">
-            info@iexplore.com
+            info@iexploreonline.com
           </p>
         </div>
 
@@ -94,7 +94,7 @@ const HeroSection = () => {
           />
 
           <p className="text-lg md:text-xl text-[#F6F6F6] text-start">
-            No 13b, Aroyewun street, Ramat CR, Ogudu GRA, Ojota, Lagos State,
+            13b, Aroyewun street, Ramat CR, Ogudu GRA, Ojota, Lagos State,
             Nigeria
           </p>
         </div>

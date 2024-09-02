@@ -16,9 +16,9 @@ const UserPrivateRoute = ({ children }: any) => {
     }
   }, [session, status, pathname, router]);
 
-  if (status === "loading" || (!session && pathname !== "/user")) {
-    return <div>Loading...</div>; // Or a loading spinner
-  }
+  // if (status === "loading" || (!session && pathname !== "/user")) {
+  //   return <div>Loading...</div>; // Or a loading spinner
+  // }
 
   return <>{children}</>;
 };
