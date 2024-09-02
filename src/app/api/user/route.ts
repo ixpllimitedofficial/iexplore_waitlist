@@ -2,8 +2,7 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import { cookies } from "next/headers";
-// import { apiGet, apiPost } from "@/utils/appFunctions";
-import { apiGet, apiPost } from "@/app/actions";
+import { apiGet, apiPost } from "@/utils/functions/appFunctions";
 
 export async function GET() {
   try {
