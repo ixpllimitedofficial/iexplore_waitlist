@@ -37,7 +37,7 @@ const Discover = () => {
 
         <div
           className="bg-[#0E0E0E] py-10 px-5 md:pl-1 md:w-4/5 lg:w-[45%] md:absolute right-0 lg:right-28 bottom-16 lg:bottom-10 md:text-right"
-          data-aos="fade-left"
+          data-aos="fade-up"
           data-aos-duration="1000"
         >
           <h3
