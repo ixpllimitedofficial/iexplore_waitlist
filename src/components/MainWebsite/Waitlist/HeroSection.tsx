@@ -56,18 +56,15 @@ const HeroSection = () => {
       )}
 
       {/* left */}
-      <div>
-        {/* <h1
-          className={`text-gold-500 text-5xl md:text-7xl ${anton.className} text-center md:text-left md:w-3/5`}
-        >
-          YOUR <span className="text-white">NIGHTLIFE COMPANION</span> IN YOUR HANDS
-        </h1> */}
+      <div data-aos="fade-up" data-aos-delay="50" data-aos-duration="2000">
         <h1
           className={`text-gold-500 text-5xl md:text-6xl lg:text-7xl ${anton.className} text-center md:text-left lg:w-3/4`}
         >
           YOUR NIGHTLIFE COMPANION IN YOUR HANDS
         </h1>
-        <p className="text-lg text-center md:text-left my-4 lg:w-[80%]">
+        <p
+          className="text-lg text-center md:text-left my-4 lg:w-[80%]"
+        >
           Everything you need to explore the best of your city’s nightlife. Your
           ultimate nightlife companion in one app.
         </p>

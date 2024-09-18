@@ -34,7 +34,12 @@ const GetStarted = () => {
           className="hidden lg:block absolute right-44 bottom-24"
         />
 
-        <div className="flex flex-col items-center gap-5 text-center">
+        <div
+          className="flex flex-col items-center gap-5 text-center"
+          data-aos="fade-up"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+        >
           <h3
             className={`text-[#322016] text-4xl md:text-6xl ${anton.className}`}
           >

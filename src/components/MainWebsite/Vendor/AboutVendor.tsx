@@ -21,27 +21,25 @@ const AboutVendor = () => {
     <>
       {/* Dashboard Analytics*/}
       <section className="px-5 md:px-7 mt-10 md:py-10 lg:p-14 flex flex-col-reverse md:flex-row items-center gap-7 lg:gap-20">
-        <div>
-          <div className="flex flex-col gap-3">
-            <div className="bg-gold-500 text-brandDark mr-auto px-4 py-2 rounded-3xl flex items-center gap-2">
-              {BulletPointSvg}
-              <p className="font-semibold">Dashboard Analytics</p>
-            </div>
-            <h3
-              className={`text-[#F2F1E8] text-4xl lg:text-5xl ${anton.className} `}
-            >
-              {/* UNLOCK
-              <span className="text-gold-500"> POWERFUL INSIGHTS WITH </span>
-              DASHBOARD ANALYTICS */}
-              DISCOVER INSIGHTS WITH DASHBOARD ANALYTICS
-            </h3>
-            <p className=" md:text-lg text-[#D1D1D1]">
-              Track foot traffic and customer behavior in real-time. Make
-              smarter decisions, enhance service, and drive profits with data
-              that keeps you ahead. Stay ahead of the competition with insights
-              that drive growth.
-            </p>
+        <div
+          className="flex flex-col gap-3"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
+          <div className="bg-gold-500 text-brandDark mr-auto px-4 py-2 rounded-3xl flex items-center gap-2">
+            {BulletPointSvg}
+            <p className="font-semibold">Dashboard Analytics</p>
           </div>
+          <h3
+            className={`text-[#F2F1E8] text-4xl lg:text-5xl ${anton.className} `}
+          >
+            UNLOCK POWERFUL INSIGHTS WITH DASHBOARD ANALYTICS
+          </h3>
+          <p className=" md:text-lg text-[#D1D1D1]">
+            Track foot traffic and customer behavior in real-time. Make smarter
+            decisions and drive profits with data that drives growth and keeps
+            you ahead of the competition.
+          </p>
         </div>
 
         <Image
@@ -59,53 +57,54 @@ const AboutVendor = () => {
           className="w-full h-auto md:h-[300px] lg:h-[500px] md:w-auto"
         />
 
-        <div>
-          <div className="flex flex-col gap-3 my-4 md:my-0">
-            <div className="bg-gold-500 text-brandDark mr-auto px-4 py-2 rounded-3xl flex items-center gap-2">
-              {BulletPointSvg}
+        <div
+          className="flex flex-col gap-3 my-4 md:my-0"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
+          <div className="bg-gold-500 text-brandDark mr-auto px-4 py-2 rounded-3xl flex items-center gap-2">
+            {BulletPointSvg}
 
-              <p className="font-semibold">Location Management</p>
-            </div>
-            <h3
-              className={`text-[#F2F1E8] text-4xl lg:text-5xl ${anton.className} `}
-            >
-              {/* OPTIMIZE YOUR
-              <span className="text-gold-500"> VENUE’S PRESENCE </span> WITH
-              EASE */}
-              ELEVATE YOUR VENUE’S PRESENCE WITH EASE
-            </h3>
-            <p className="md:text-lg text-[#D1D1D1]">
-              With iExplore’s Spot Management, Easily adjust your location,
-              hours, and events to stay top-of-mind in the nightlife scene. Make
-              your spot the ultimate go-to destination.
-            </p>
+            <p className="font-semibold">Location Management</p>
           </div>
+          <h3
+            className={`text-[#F2F1E8] text-4xl lg:text-5xl ${anton.className} `}
+          >
+            EASILY OPTIMIZE VENUE PRESENCE
+          </h3>
+          <p className="md:text-lg text-[#D1D1D1]">
+            Make your spot the ultimate go-to destination with Spot management:
+            Easily update your location, hours of service and special events to
+            stay top-of-mind in the nightlife scene.
+          </p>
         </div>
       </section>
 
       {/* Drink Management */}
       <section className="px-5 md:px-7 md:py-10 lg:p-14 flex flex-col-reverse md:flex-row items-center gap-7 lg:gap-20">
-        <div>
-          <div className="flex flex-col gap-3">
-            <div className="bg-gold-500 text-brandDark mr-auto px-4 py-2 rounded-3xl flex items-center gap-2">
-              {BulletPointSvg}
+        <div
+          className="flex flex-col gap-3"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
+          <div className="bg-gold-500 text-brandDark mr-auto px-4 py-2 rounded-3xl flex items-center gap-2">
+            {BulletPointSvg}
 
-              <p className="font-semibold">Drink Management</p>
-            </div>
-            <h3
-              className={`text-[#F2F1E8] text-4xl lg:text-5xl ${anton.className} `}
-            >
-              {/* SHARE YOUR{" "}
+            <p className="font-semibold">Drink Management</p>
+          </div>
+          <h3
+            className={`text-[#F2F1E8] text-4xl lg:text-5xl ${anton.className} `}
+          >
+            {/* SHARE YOUR{" "}
               <span className="text-gold-500"> LATEST DRINKS AND</span> MENU
               OFFERING */}
-              SHARE YOUR LATEST DRINKS AND MENU OFFERING
-            </h3>
-            <p className="md:text-lg text-[#D1D1D1]">
-              Update and display your newest drink offerings with our Drink
-              Management tool. Highlight seasonal specials and favorites to
-              attract new customers and keep regulars returning for more.
-            </p>
-          </div>
+            UPDATE DRINKS AND MENU OFFERING
+          </h3>
+          <p className="md:text-lg text-[#D1D1D1]">
+            With our Drink Management tool, you can update and showcase latest
+            drink offering, highlight seasonal specials and crowd favorites to
+            entice new customers and keep the regulars returning for more.
+          </p>
         </div>
 
         <Image

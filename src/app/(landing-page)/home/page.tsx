@@ -1,6 +1,6 @@
 import MainDesktopAndMobileNav from "@/components/MainWebsite/Navbars/MainWebsiteNavbar/MainDesktopAndMobileNav";
 import HeroSection from "@/components/MainWebsite/Home/HeroSection";
-import FAQ from "@/components/MainWebsite/FAQ";
+import UserFAQ from "@/components/MainWebsite/UsersFAQ";
 import Discover from "@/components/MainWebsite/Home/Discover";
 import JoinWaitlistFooter from "@/components/MainWebsite/JoinWaitlistFooter";
 import AboutCEO from "@/components/MainWebsite/Home/AboutCEO";
@@ -20,7 +20,7 @@ const page = async () => {
       <OurMission />
       <ExploreTheExperience />
       <BlogsAndUpdates />
-      <FAQ />
+      <UserFAQ />
       <OurPartners />
       <JoinWaitlistFooter />
       <Footer />

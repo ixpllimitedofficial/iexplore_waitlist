@@ -4,6 +4,7 @@ import "./globals.css";
 
 import { ToastContainer } from "react-toastify";
 import { Toaster } from "@/components/UI/toaster";
+import AOSinit from "@/components/AOS";
 
 export const metadata: Metadata = {
   title: "iExplore",
@@ -21,11 +22,10 @@ export default function RootLayout({
         <link rel="icon" href="/icon.svg" />
       </head>
       <body>
-        {/* <MainDesktopAndMobileNav /> */}
+        <AOSinit />
         {children}
         <Toaster />
         <ToastContainer />
-        {/* <Footer /> */}
       </body>
     </html>
   );

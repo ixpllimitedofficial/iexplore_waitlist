@@ -15,7 +15,12 @@ import Link from "next/link";
 const AboutCEO = () => {
   return (
     <section className="bg-[#F2F1E8] w-full px-10 lg:px-14 py-10 md:py-16 grid grid-cols-2 gap-5 lg:gap-10 mt-10">
-      <div className="relative col-span-full md:col-span-1">
+      <div
+        className="relative col-span-full md:col-span-1"
+        data-aos="fade-up"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+      >
         {/* image 1 */}
         <Image
           src={CEOImage2}
@@ -38,7 +43,12 @@ const AboutCEO = () => {
         />
       </div>
 
-      <div className="col-span-full md:col-span-1">
+      <div
+        className="col-span-full md:col-span-1"
+        data-aos="fade-up"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+      >
         <Image
           src={QuoteLeftIcon}
           alt="QuoteLeftIcon"

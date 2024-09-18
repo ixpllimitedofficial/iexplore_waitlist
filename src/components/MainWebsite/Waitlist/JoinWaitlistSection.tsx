@@ -52,7 +52,12 @@ const JoinWaitlistSection = () => {
         </WaitlistModal>
       )}
 
-      <section className="mt-14 flex flex-col items-center text-center gap-2 px-4 md:w-[65%] lg:w-2/4 mx-auto">
+      <section
+        className="mt-14 flex flex-col items-center text-center gap-2 px-4 md:w-[65%] lg:w-2/4 mx-auto"
+        data-aos="fade-up"
+        data-aos-delay="50"
+        data-aos-duration="2000"
+      >
         <h3
           className={`text-gold-500 text-[42px] lg:text-5xl leading-tight ${anton.className}`}
         >
@@ -64,7 +69,12 @@ const JoinWaitlistSection = () => {
         </p>
       </section>
 
-      <div className="mt-5 mb-16 w-4/5 md:w-3/5 lg:w-2/4 mx-auto">
+      <div
+        className="mt-5 mb-16 w-4/5 md:w-3/5 lg:w-2/4 mx-auto"
+        data-aos="fade-up"
+        data-aos-delay="50"
+        data-aos-duration="2000"
+      >
         <WaitlistForm handleShowModal={handleShowModal} />
       </div>
     </>

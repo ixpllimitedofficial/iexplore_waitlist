@@ -1,4 +1,4 @@
-import FAQ from "@/components/MainWebsite/FAQ";
+import VendorFAQ from "@/components/MainWebsite/VendorFAQ";
 import Footer from "@/components/MainWebsite/Footer";
 import AboutVendor from "@/components/MainWebsite/Vendor/AboutVendor";
 import GetStarted from "@/components/MainWebsite/Vendor/GetStarted";
@@ -12,7 +12,7 @@ const page = async () => {
       <section className="pt-28 md:pt-32">
         <HeroSection />
         <AboutVendor />
-        <FAQ />
+        <VendorFAQ />
         <GetStarted />
       </section>
       <Footer />

@@ -14,7 +14,12 @@ const Discover = () => {
         <DiscoverExploreConnect />
       </div>
 
-      <p className="text-lg text-[#D1D1D1] text-center px-5 md:w-4/5 lg:w-3/4 mx-auto my-8">
+      <p
+        className="text-lg text-[#D1D1D1] text-center px-5 md:w-4/5 lg:w-3/4 mx-auto my-8"
+        data-aos="fade-up"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+      >
         Discover the hottest spots around you and plan epic nights out while
         staying in the loop with exciting updates from events around you. Enjoy
         exclusive benefits when you order your favorite drink at your go-to
@@ -30,12 +35,11 @@ const Discover = () => {
           className="w-full md:h-[300px] md:w-auto lg:h-[400px]"
         />
 
-        <div className="bg-[#0E0E0E] py-10 px-5 md:pl-1 md:w-4/5 lg:w-[45%] md:absolute right-0 lg:right-28 bottom-16 lg:bottom-10 md:text-right">
-          {/* <h3
-            className={`text-[#F2F1E8] text-4xl md:text-6xl ${anton.className} `}
-          >
-            SATISFY <span className="text-gold-500"> YOUR INNER </span> EXPLORER
-          </h3> */}
+        <div
+          className="bg-[#0E0E0E] py-10 px-5 md:pl-1 md:w-4/5 lg:w-[45%] md:absolute right-0 lg:right-28 bottom-16 lg:bottom-10 md:text-right"
+          data-aos="fade-left"
+          data-aos-duration="1000"
+        >
           <h3
             className={`text-[#F2F1E8] text-4xl md:text-5xl lg:text-6xl ${anton.className} `}
           >
@@ -57,9 +61,16 @@ const Discover = () => {
             src={HomeDiscoverDrinks}
             alt="HomeDiscoverDrinks"
             className="w-[85%] h-auto mx-auto md:h-[300px] md:w-auto"
+            data-aos="fade-up"
+            data-aos-duration="1000"
           />
 
-          <div className="px-7">
+          <div
+            className="px-7"
+            data-aos="fade-up"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+          >
             <h3
               className={`text-[#F2F1E8] text-4xl md:text-[42px] mt-2 ${anton.className} `}
             >
@@ -79,15 +90,17 @@ const Discover = () => {
             src={HomeDiscoverSpotDetails}
             alt="HomeDiscoverSpotDetails"
             className="w-[85%] h-auto mx-auto md:h-[300px] md:w-auto"
+            data-aos="fade-up"
+            data-aos-duration="1000"
           />
 
           {/* <div className="pt-5 md:pt-14 px-7"> */}
-          <div className="px-7">
-            {/* <h3
-              className={`text-[#F2F1E8] text-4xl md:text-[42px] mt-2 ${anton.className} `}
-            >
-              SPOT <span className="text-gold-500"> DETAILS</span>
-            </h3> */}
+          <div
+            className="px-7"
+            data-aos="fade-up"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+          >
             <h3
               className={`text-[#F2F1E8] text-4xl md:text-[42px] mt-2 ${anton.className} `}
             >
@@ -104,7 +117,11 @@ const Discover = () => {
 
       {/* GET INFORMATION OF THE BEST LOCATIONS  */}
       <div className="md:h-[500px] lg:px-24 flex flex-col-reverse md:flex-row relative mt-16 lg:mt-20 justify-end">
-        <div className="bg-[#0E0E0E] py-7 px-5 md:pr-1 md:w-4/5 lg:w-[45%] md:absolute left-0 lg:left-28 bottom-10">
+        <div
+          className="bg-[#0E0E0E] py-7 px-5 md:pr-1 md:w-4/5 lg:w-[45%] md:absolute left-0 lg:left-28 bottom-10"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+        >
           <h3
             className={`text-[#F2F1E8] text-4xl md:text-5xl lg:text-6xl ${anton.className} md:pr-5`}
           >

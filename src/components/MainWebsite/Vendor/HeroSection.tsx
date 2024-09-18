@@ -11,11 +11,15 @@ import Link from "next/link";
 const HeroSection = () => {
   return (
     <>
-      <section className="flex flex-col gap-5 items-center text-center px-2">
+      <section
+        className="flex flex-col gap-5 items-center text-center px-2"
+        data-aos="fade-up"
+        data-aos-delay="50"
+        data-aos-duration="2000"
+      >
         <h1
           className={`text-gold-500 text-5xl md:text-6xl ${anton.className} md:w-[85%] lg:w-[70%]`}
         >
-          {/* BECOME A VENDOR AND <span className="text-white">ATTRACT MORE GUESTS</span> WITH IEXPLORE TODAY */}
           BECOME A VENDOR AND ATTRACT MORE GUESTS WITH IEXPLORE TODAY
         </h1>
         <p className="md:text-xl text-[#F6F6F6] md:w-4/5 lg:w-[55%]">
@@ -44,6 +48,9 @@ const HeroSection = () => {
           src={DesktopApp}
           alt="DesktopApp"
           className="mt-5 w-[95%] md:w-[60%] mx-auto"
+          data-aos="fade-up"
+          data-aos-delay="500"
+          data-aos-duration="2000"
         />
 
         <div className="absolute bottom-2 md:bottom-7 w-full">
