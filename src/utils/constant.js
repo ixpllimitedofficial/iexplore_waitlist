@@ -1,3 +1,2 @@
 export const inputStyling =
-  "px-3 py-5 rounded-lg text-gold-500 border-[1px] border-gold-500 focus:outline-none  focus:ring-1 focus:ring-gold-500 placeholder:font-medium";
-
+  "bg-[#FFFFFF1A] px-3 py-6 lg:text-lg rounded-none border-t-0 border-r-0 border-l-0 border-b-gold-500 placeholder:text-[#4D4D4D]";

@@ -26,6 +26,7 @@ export const apiPost = async (formData, apiUrl) => {
       },
       body: JSON.stringify(formData),
     });
+    
     const data = await response.json();
 
     if (!response.ok) {
