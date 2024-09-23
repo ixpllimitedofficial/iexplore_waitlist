@@ -1,36 +1,45 @@
-"use client";
-
-import HomeImage from "@/assets/img/HomeImage.png";
-import LandingPageBgImage2 from "@/assets/img/LandingPage/LandingPageBgImage2.jpeg";
-import GeolocationComponent from "@/components/GeolocationComponent";
-import AppButton from "@/components/UI/Button/AppButton";
-import { Button } from "@/components/UI/button";
-
-import { useSession, SessionProvider } from "next-auth/react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/UI/select";
+import AppSearchInput from "@/components/UI/Inputs/AppSearchInput";
 
 const HeroSection = () => {
-  // const { data: session }: any = useSession();
-
   return (
-    <section
-      style={{ backgroundImage: `url(${LandingPageBgImage2.src})` }}
-      className="relative flex items-center justify-center h-[250px] md:h-[400px] lg:h-[600px] w-[90vw] md:w-[85vw] lg:w-[80vw] mx-auto rounded-3xl bg-no-repeat bg-cover bg-center "
-    >
-      <div className="w-[70%] flex flex-col justify-center items-center gap-10 z-40">
-        <h1 className="font-bold text-center text-2xl md:text-3xl lg:text-6xl">
-          DISCOVER, CONNECT, & <br />
-          <span className="text-gold-500 italic font-bold">ENJOY</span> THE BEST
-          NIGHT OUT IN YOUR CITY!
-        </h1>
+    <section>
+      <div className="flex items-center gap-20 px-5">
+        <AppSearchInput
+          className="bg-[#4D4D4D66] text-gold-500 border-none focus-visible:ring-0 flex-grow"
+          inputClass="placeholder:text-[#B0B0B0] placeholder:text-lg"
+        />
 
-        <Button className="bg-gold-500 hover:bg-gold-500 text-black font-semibold text-lg">
-          Find an event
-        </Button>
+        <div className="flex gap-3">
+          <Select>
+            <SelectTrigger className="px-10 py-5 bg-[#4D4D4D66] text-[#B0B0B0] text-lg border-none focus-visible:ring-0">
+              <SelectValue placeholder="Category" />
+            </SelectTrigger>
+             <SelectContent className="">
+              <SelectItem value="newest">Newest</SelectItem>
+              <SelectItem value="oldest">Oldest</SelectItem>
+              <SelectItem value="latest">Latest</SelectItem>
+            </SelectContent>
+          </Select>
 
-        {/* <GeolocationComponent /> */}
+          <Select>
+            <SelectTrigger className="px-10 py-5 bg-[#4D4D4D66] text-[#B0B0B0] text-lg border-none focus-visible:ring-0">
+              <SelectValue placeholder="Ratings" />
+            </SelectTrigger>
+            <SelectContent className="">
+              <SelectItem value="newest">Newest</SelectItem>
+              <SelectItem value="oldest">Oldest</SelectItem>
+              <SelectItem value="latest">Latest</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
       </div>
-
-      <div className="absolute top-0 left-0 bg-[#00000088] h-full w-full"></div>
     </section>
   );
 };

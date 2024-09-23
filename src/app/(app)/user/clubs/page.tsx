@@ -5,14 +5,8 @@ import FriendlySpots from "@/components/user/Home/FriendlySpots/FriendlySpots";
 
 const page = () => {
   return (
-      <section className="mt-28">
+      <section className="">
         <ClubsPage />
-
-        <FriendlySpots />
-
-        <AddLocation />
-
-        <Footer />
       </section>
   );
 };

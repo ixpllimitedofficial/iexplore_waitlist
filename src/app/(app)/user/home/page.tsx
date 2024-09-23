@@ -12,7 +12,7 @@ const page = () => {
     <main className="mt-32">
       <HeroSection />
       <Filtering />
-      <Clubs />
+      <Clubs /> 
       <RecommendedSection />
       <GetApp />
       <Clubs />
