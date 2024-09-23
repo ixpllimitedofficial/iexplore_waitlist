@@ -3,10 +3,8 @@ import Footer from "@/components/UI/Footer/Footer";
 
 const page = () => {
   return (
-    <section className="mt-28">
+    <section>
       <RecommendedEvents />
-
-      <Footer />
     </section>
   );
 };

@@ -59,7 +59,7 @@ const SignupForm = () => {
       phone: "",
       gender: "",
       date_of_birth: "",
-      location: "",
+      // location: "",
       referral_code: "",
       password: "",
       confirm_password: "",
@@ -238,7 +238,7 @@ const SignupForm = () => {
           />
 
           {/* location */}
-          <FormField
+          {/* <FormField
             control={form.control}
             name="location"
             render={({ field }) => (
@@ -260,7 +260,7 @@ const SignupForm = () => {
                 <FormMessage />
               </FormItem>
             )}
-          />
+          /> */}
 
           {/* Referral Code */}
           <FormField

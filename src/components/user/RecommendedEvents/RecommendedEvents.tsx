@@ -11,8 +11,6 @@ const RecommendedEvents = () => {
       {[1, 2, 3].map((card) => {
         return <RecommendedEventsCard key={card} />;
       })}
-
-      <GetApp />
     </section>
   );
 };
