@@ -12,7 +12,7 @@ const InputCode = () => {
         {/* <span className="text-white"> Maxxconnect127@gmail.com</span> */}
       </h1>
 
-      <AppInputOTP userRole="admin" />
+      <AppInputOTP />
 
       <p className="text-gold-500 font-medium text-center leading-snug self-center">
         Resend code: <span className="text-white"> 00:30</span>
