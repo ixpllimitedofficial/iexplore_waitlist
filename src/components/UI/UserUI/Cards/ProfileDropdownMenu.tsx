@@ -19,11 +19,14 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/UI/avatar";
 import Link from "next/link";
 
 import { signOut } from "@/auth/helpers";
-
+import { useRouter } from "next/navigation";
 import { userStore } from "@/store/user";
 
 const ProfileDropdownMenu = () => {
   const logoutUser = userStore((state: any) => state.logoutUser);
+
+  // router
+  const router = useRouter();
 
   return (
     <DropdownMenu>
@@ -49,8 +52,10 @@ const ProfileDropdownMenu = () => {
         <DropdownMenuSeparator /> */}
 
         <DropdownMenuItem
-          onClick={async () => {
-            await signOut();
+          onClick={() => {
+            router.push("/login");
+            // async () => {
+            // await signOut();
           }}
         >
           Sign out

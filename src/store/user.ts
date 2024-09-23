@@ -128,7 +128,7 @@ export const userStore = create(
         let url = "";
 
         if (requestType === "requestOTP") {
-          url = "http://44.193.73.68:8000/api/request-otp/";
+          url = "https://iexplore.vercel.app/api/v1/auth/request-otp";
         } else if (requestType === "resetPassword") {
           url = "http://44.193.73.68:8000/api/password-reset_otp/";
         }

@@ -9,7 +9,7 @@ import { Button } from "@/components/UI/button";
 import { useSession, SessionProvider } from "next-auth/react";
 
 const HeroSection = () => {
-  const { data: session }: any = useSession();
+  // const { data: session }: any = useSession();
 
   return (
     <section

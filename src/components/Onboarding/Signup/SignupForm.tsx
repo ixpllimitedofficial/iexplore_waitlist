@@ -1,13 +1,11 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import AppButton from "@/components/UI/Button/AppButton";
 import { useForm } from "react-hook-form";
 import { userStore } from "@/store/user";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { Checkbox } from "@/components/UI/checkbox";
 import {
   Form,
   FormControl,
@@ -17,6 +15,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/UI/form";
+
 import {
   Select,
   SelectContent,
@@ -24,11 +23,16 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/UI/select";
+import { Checkbox } from "@/components/UI/checkbox";
 import { Input } from "@/components/UI/input";
-import { inputStyling } from "@/utils/constant";
-import { signupValidationSchema } from "@/types/authSchemas";
 import PasswordField from "@/components/UI/Inputs/PasswordField";
 import { Button } from "@/components/UI/button";
+import { toast } from "@/components/UI/use-toast";
+
+import { inputStyling } from "@/utils/constant";
+import { signupValidationSchema } from "@/types/authSchemas";
+
+import { onLogin, onSignup } from "@/app/actions";
 
 const SignupForm = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -39,14 +43,6 @@ const SignupForm = () => {
 
   // router
   const router = useRouter();
-
-  // zustand
-  const user = userStore((state: any) => state.user);
-  const signupUser = userStore((state: any) => state.signupUser);
-  const isUserRegistered = userStore((state: any) => state.isUserRegistered);
-  const setIsUserRegistered = userStore(
-    (state: any) => state.setIsUserRegistered
-  );
 
   const form = useForm<z.infer<typeof signupValidationSchema>>({
     resolver: zodResolver(signupValidationSchema),
@@ -60,30 +56,32 @@ const SignupForm = () => {
       phone: "",
       gender: "",
       date_of_birth: "",
-      location: "",
+      // location: "",
       referral_code: "",
       password: "",
       confirm_password: "",
     },
   });
 
-  function onSubmit(data: z.infer<typeof signupValidationSchema>) {
-    const { checkbox, ...newData } = data;
-    signupUser(newData);
-  }
+  async function onSubmit(data: z.infer<typeof signupValidationSchema>) {
+    const result = await onSignup(data);
 
-  useEffect(() => {
-    console.log(isUserRegistered);
-    if (isUserRegistered) {
-      router.push("/user?flow=verifyOTP");
+    if (result.status === "success") {
+      toast({
+        title: "Sign up successful",
+        description: "Please check your email and confirm your OTP!",
+        variant: "success",
+      });
+
+      router.push("/signup?flow=verifyOTP");
+    } else {
+      toast({
+        title: "An error occured!",
+        description: result,
+        variant: "destructive",
+      });
     }
-
-    // Cleanup function to be called when the component is unmounted
-    return () => {
-      // Set isUserRegistered to false
-      setIsUserRegistered(false);
-    };
-  }, [user, router, isUserRegistered, setIsUserRegistered]);
+  }
 
   return (
     <>
@@ -178,7 +176,7 @@ const SignupForm = () => {
                 <FormControl>
                   <Input
                     className={`${inputStyling}`}
-                    placeholder="+2341234567890"
+                    placeholder="09012345678"
                     type="text"
                     {...field}
                   />
@@ -229,7 +227,7 @@ const SignupForm = () => {
                     type="date"
                     className={`${inputStyling}`}
                     placeholder="First Name"
-                    max="2007-01-01"
+                    max="2006-08-31"
                     {...field}
                   />
                 </FormControl>
@@ -239,7 +237,7 @@ const SignupForm = () => {
           />
 
           {/* location */}
-          <FormField
+          {/* <FormField
             control={form.control}
             name="location"
             render={({ field }) => (
@@ -261,7 +259,7 @@ const SignupForm = () => {
                 <FormMessage />
               </FormItem>
             )}
-          />
+          /> */}
 
           {/* Referral Code */}
           <FormField
@@ -351,9 +349,6 @@ const SignupForm = () => {
           <Button
             className="bg-gold-500 hover:bg-white transition duration-200 text-[#322016] px-8 py-5 lg:py-6 rounded-3xl font-bold text-base flex-grow"
             type="submit"
-            onClick={() => {
-              router.push("/signup?flow=verifyOTP");
-            }}
           >
             Sign up
           </Button>

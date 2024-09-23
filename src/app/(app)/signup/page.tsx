@@ -1,9 +1,6 @@
-import Link from "next/link";
 import Image from "next/image";
-import ExploreLogo from "@/assets/svg/NavbarSvg/iExploreTextLogoSvg.svg";
-import SignupForm from "@/components/Onboarding/Signup/SignupForm";
-import OnboardingImage from "@/assets/svg/iExploreLogo.svg";
 import Signup from "@/components/Onboarding/Signup/Signup";
+import OnboardingImage from "@/assets/svg/iExploreLogo.svg";
 
 const page = () => {
   return (

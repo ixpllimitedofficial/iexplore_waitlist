@@ -1,6 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import React, { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -19,25 +21,17 @@ import {
   InputOTPGroup,
   InputOTPSlot,
 } from "@/components/UI/input-otp";
-import AppButton from "../Button/AppButton";
+import { toast } from "@/components/UI/use-toast";
+
 import { verifyOTPSchema } from "@/types/authSchemas";
 
-// zustand store
-import { userStore } from "@/store/user";
-
-import WelcomeImage from "@/assets/img/WelcomeImage.png";
-import Modal from "../Modal/Modal";
-import Image from "next/image";
 import { Button } from "../button";
-import Link from "next/link";
+import Modal from "../Modal/Modal";
 
-const AppInputOTP = ({ userRole, destination }: any) => {
-  const verifyOTP = userStore((state: any) => state.verifyOTP);
-  const isUserOTPVerified = userStore((state: any) => state.isUserOTPVerified);
-  const setisOTPVerified = userStore((state: any) => state.setisOTPVerified);
+import { onVerifyUserOTP } from "@/app/actions";
+import WelcomeImage from "@/assets/img/WelcomeImage.png";
 
-  const previousUrlForOTP = userStore((state: any) => state.previousUrlForOTP);
-
+const AppInputOTP = () => {
   // router
   const router = useRouter();
 
@@ -65,41 +59,25 @@ const AppInputOTP = ({ userRole, destination }: any) => {
     }
   };
 
-  function onSubmit(data: z.infer<typeof verifyOTPSchema>) {
-    console.log(data);
-    handleShowModal();
+  async function onSubmit(data: z.infer<typeof verifyOTPSchema>) {
+    const result = await onVerifyUserOTP(data);
 
-    // if (previousUrlForOTP === "resetPassword") {
-    //   verifyOTP(data, "verifyOTP");
-    // } else {
-    //   verifyOTP(data, "verifyUserOTP");
-    // }
-  }
+    if (result.status === "success") {
+      toast({
+        title: "OTP Verification successful!",
+        description: result.message,
+        variant: "success",
+      });
 
-  useEffect(() => {
-    console.log(previousUrlForOTP);
-
-    if (isUserOTPVerified) {
-      if (userRole && previousUrlForOTP === "resetPassword") {
-        router.push(`/${userRole}?flow=${previousUrlForOTP}`);
-      } else {
-        router.push(`/${userRole}`);
-      }
+      handleShowModal();
+    } else {
+      toast({
+        title: "An error occured!",
+        description: result,
+        variant: "destructive",
+      });
     }
-
-    // Cleanup function to be called when the component is unmounted
-    return () => {
-      // Set isOTPVerified to false
-      setisOTPVerified(false);
-    };
-  }, [
-    destination,
-    isUserOTPVerified,
-    router,
-    setisOTPVerified,
-    userRole,
-    previousUrlForOTP,
-  ]);
+  }
 
   return (
     <>
@@ -115,11 +93,15 @@ const AppInputOTP = ({ userRole, destination }: any) => {
             />
 
             <p className=" text-xl text-center w-3/5">
-              Hooray! You are now an explorer. Login to continue exploring iExplore!
+              Hooray! You are now an explorer. Login to continue exploring
+              iExplore!
             </p>
           </div>
 
-          <Link href="/login" className="bg-gold-500 hover:bg-white transition duration-200 text-[#322016] px-8 py-2 rounded-3xl font-bold text-base">
+          <Link
+            href="/login"
+            className="bg-gold-500 hover:bg-white transition duration-200 text-[#322016] px-8 py-2 rounded-3xl font-bold text-base"
+          >
             Let’s Go!
           </Link>
         </Modal>

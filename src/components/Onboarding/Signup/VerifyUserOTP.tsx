@@ -1,14 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useTimer } from "react-timer-hook";
-import AppInputOTP from "@/components/UI/Inputs/AppInputOTP";
-import { Button } from "@/components/UI/button";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import AppButton from "@/components/UI/Button/AppButton";
+
+import { useTimer } from "react-timer-hook";
+
 import { useForm } from "react-hook-form";
-import Modal from "@/components/UI/Modal/Modal";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import {
@@ -20,17 +18,69 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/UI/form";
-import { Input } from "@/components/UI/input";
-import { inputStyling } from "@/utils/constant";
 
 import { emailSchema } from "@/types/authSchemas";
 
-import Image from "next/image";
+import { Button } from "@/components/UI/button";
+import { Input } from "@/components/UI/input";
+import AppInputOTP from "@/components/UI/Inputs/AppInputOTP";
+import { toast } from "@/components/UI/use-toast";
+
 import ArrowLeft from "@/assets/svg/ArrowLeft.svg";
 
-// zustand store
-import { userStore } from "@/store/user";
+import { inputStyling } from "@/utils/constant";
 
+import { onResendUserOTP } from "@/app/actions";
+
+// user otp verification component
+const VerifyUserOTP = () => {
+  const router = useRouter();
+
+  const time = new Date();
+  time.setSeconds(time.getSeconds() + 300); // 5 minutes timer
+
+  return (
+    <>
+      <Image
+        src={ArrowLeft}
+        alt="ArrowLeft"
+        className="mt-12"
+        onClick={() => {
+          router.back();
+        }}
+      />
+
+      <section className="h-full flex flex-col gap-5 mt-12">
+        <h1 className="text-gold-500 font-semibold text-3xl text-center leading-snug self-center">
+          Confirm OTP
+        </h1>
+
+        <h1 className="md:text-xl md:w-[70%] text-center leading-snug self-center">
+          To confirm your email address, please enter the OTP we sent to your
+          email.
+        </h1>
+
+        {/* code input component */}
+        <AppInputOTP />
+
+        {/* timer component */}
+        <MyTimer expiryTimestamp={time} />
+
+        <div className="mt-3 flex items-center justify-center gap-1 text-lg text-center">
+          <p className="">Already Verified?</p>
+          <Link href="/login" className="text-gold-500 underline font-semibold">
+            {" "}
+            Login
+          </Link>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default VerifyUserOTP;
+
+// timer and resend code component
 function MyTimer({ expiryTimestamp }: any) {
   const {
     totalSeconds,
@@ -48,8 +98,6 @@ function MyTimer({ expiryTimestamp }: any) {
     onExpire: () => console.warn(""),
   });
 
-  const requestUserOTP = userStore((state: any) => state.requestUserOTP);
-
   const form = useForm<z.infer<typeof emailSchema>>({
     resolver: zodResolver(emailSchema),
     defaultValues: {
@@ -57,30 +105,32 @@ function MyTimer({ expiryTimestamp }: any) {
     },
   });
 
-  function onSubmit(data: z.infer<typeof emailSchema>) {
-    console.log(data);
+  async function onSubmit(data: z.infer<typeof emailSchema>) {
     // Restarts to 5 minutes timer
     const time = new Date();
     time.setSeconds(time.getSeconds() + 300);
     restart(time);
-    requestUserOTP(data, "requestOTP");
+
+    const result = await onResendUserOTP(data);
+
+    if (result.status === "success") {
+      toast({
+        title: "Success",
+        description: result.msg,
+        variant: "success",
+      });
+    } else {
+      toast({
+        title: "An error occured!",
+        description: result,
+        variant: "destructive",
+      });
+    }
   }
 
   return (
     <div style={{ textAlign: "center" }}>
       {!isRunning && (
-        // <Button
-        //   className="bg-gold-500 hover:bg-gold-600 text-black mt-2"
-        //   onClick={() => {
-        //     // Restarts to 5 minutes timer
-        //     const time = new Date();
-        //     time.setSeconds(time.getSeconds() + 20);
-        //     restart(time);
-        //     requestUserOTP(emailForOTP);
-        //   }}
-        // >
-        //   Resend
-        // </Button>
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
@@ -100,24 +150,22 @@ function MyTimer({ expiryTimestamp }: any) {
                       {...field}
                     />
                   </FormControl>
-                  {/* <FormDescription>
-                This is your public display name.
-              </FormDescription> */}
                   <FormMessage />
                 </FormItem>
               )}
             />
 
-            <AppButton
-              btnText="Send code again"
+            <Button
+              className="bg-gold-500 hover:bg-white transition duration-200 text-[#322016] px-8 py-5 lg:py-6 rounded-3xl font-bold mx-auto"
               type="submit"
-              className="text-sm"
-            />
+            >
+              Send code again
+            </Button>
           </form>
         </Form>
       )}
 
-      <p className="text-gold-500 font-medium text-center leading-snug self-center">
+      <p className="text-gold-500 font-medium text-center leading-snug self-center mt-3">
         Resend code:{" "}
         <span className="text-white">
           {minutes}:{seconds}
@@ -126,68 +174,3 @@ function MyTimer({ expiryTimestamp }: any) {
     </div>
   );
 }
-
-const VerifyUserOTP = () => {
-  const isUserOTPVerified = userStore((state: any) => state.isUserOTPVerified);
-  const setisOTPVerified = userStore((state: any) => state.setisOTPVerified);
-  const emailForOTP = userStore((state: any) => state.emailForOTP);
-  const clearEmailForOTPstate = userStore(
-    (state: any) => state.clearEmailForOTPstate
-  );
-
-  const previousUrlForOTP = userStore((state: any) => state.previousUrlForOTP);
-
-  const router = useRouter();
-
-  const time = new Date();
-  time.setSeconds(time.getSeconds() + 300); // 5 minutes timer
-
-  useEffect(() => {
-    return () => {
-      // Set isOTPVerified to false
-      if (isUserOTPVerified) {
-        clearEmailForOTPstate();
-        setisOTPVerified(false);
-      }
-    };
-  }, [setisOTPVerified, isUserOTPVerified, clearEmailForOTPstate]);
-
-  return (
-    <>
-      <Image
-        src={ArrowLeft}
-        alt="ArrowLeft"
-        className="mt-12"
-        onClick={() => {
-          router.back();
-        }}
-      />
-
-      <section className="h-full flex flex-col gap-5 mt-12">
-        <h1 className="text-gold-500 font-semibold text-3xl text-center leading-snug self-center">
-          Confirm OTP
-        </h1>
-
-        <h1 className="md:text-xl md:w-[70%] text-center leading-snug self-center">
-          To confirm your email address, please enter the OTP we sent to{" "}
-          {emailForOTP !== "" ? emailForOTP : "your email."}
-          {/* <span className="text-white"> Maxxconnect127@gmail.com</span> */}
-        </h1>
-
-        <AppInputOTP userRole="user" />
-
-        <MyTimer expiryTimestamp={time} emailForOTP={emailForOTP} />
-
-        <div className="mt-3 flex items-center justify-center gap-1 text-lg text-center">
-          <p className="">Already Verified?</p>
-          <Link href="/login" className="text-gold-500 underline font-semibold">
-            {" "}
-            Login
-          </Link>
-        </div>
-      </section>
-    </>
-  );
-};
-
-export default VerifyUserOTP;

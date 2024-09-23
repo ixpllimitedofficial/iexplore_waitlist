@@ -29,35 +29,27 @@ const LoginForm = () => {
   const form = useForm<z.infer<typeof loginValidationSchema>>({
     resolver: zodResolver(loginValidationSchema),
     defaultValues: {
-      username_or_email: "fenetox312@asaud.com",
-      password: "MySecret@123",
+      username_or_email: "",
+      password: "",
     },
   });
 
   async function onSubmit(data: z.infer<typeof loginValidationSchema>) {
-    console.log(data);
-
     const result = await onLogin(data);
 
-    // if (result.status === "loggedIn") {
-    //   toast({
-    //     title: "Logged in",
-    //     description: "You are logged in",
-    //     variant: "success",
-    //   });
-    // } else if (result.status === "failed") {
-    //   toast({
-    //     title: "Failure",
-    //     description: "Couldn't login",
-    //     variant: "destructive",
-    //   });
-    // } else {
-    //   toast({
-    //     title: "This is an error",
-    //     description: "Unexpected response from the server",
-    //     variant: "destructive",
-    //   });
-    // }
+    if (result.status === "success") {
+      toast({
+        title: "Logged in",
+        description: result.msg,
+        variant: "success",
+      });
+    } else {
+      toast({
+        title: "There is an error",
+        description: result,
+        variant: "destructive",
+      });
+    }
   }
 
   return (
@@ -116,15 +108,15 @@ const LoginForm = () => {
 
           <div className="flex flex-col md:flex-row items-center justify-between gap-5">
             <Button
-              className="bg-gold-500 hover:bg-white transition duration-200 text-[#322016] px-8 py-5 lg:py-6 rounded-3xl font-bold text-base flex-grow"
+              className="bg-gold-500 hover:bg-white transition duration-200 text-[#322016] px-10 py-5 rounded-3xl font-bold text-base mx-auto"
               type="submit"
             >
               Login
             </Button>
-            <p className="text-gold-500">or</p>
+            {/* <p className="text-gold-500">or</p>
             <Button className="hover:bg-gold-500 bg-white transition duration-200 text-[#322016] px-8 py-5 lg:py-6 rounded-3xl font-bold text-base flex-grow">
               Continue with Google
-            </Button>
+            </Button> */}
           </div>
         </form>
       </Form>

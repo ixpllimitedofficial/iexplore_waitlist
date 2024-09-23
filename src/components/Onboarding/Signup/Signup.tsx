@@ -1,21 +1,15 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
-import CheckCode from "./CheckCode";
-import SignupForm from "./SignupForm";
-import VerifyUserOTP from "./VerifyUserOTP";
 import Link from "next/link";
 import Image from "next/image";
-import ExploreLogo from "@/assets/svg/NavbarSvg/iExploreTextLogoSvg.svg";
-import OnboardingImage from "@/assets/svg/iExploreLogo.svg";
+import { useSearchParams } from "next/navigation";
 
-type FlowType =
-  | "ageConfirmation"
-  | "emailConfirmation"
-  | "forgotPassword"
-  | "verifyOTP"
-  | "resetPassword"
-  | "checkCode";
+import SignupForm from "./SignupForm";
+import VerifyUserOTP from "./VerifyUserOTP";
+
+import ExploreLogo from "@/assets/svg/NavbarSvg/iExploreTextLogoSvg.svg";
+
+type FlowType = "verifyOTP"
 
 const Signup = () => {
   const flowParams = useSearchParams().get("flow") as FlowType;
@@ -39,7 +33,7 @@ const Signup = () => {
               <div className="">
                 <SignupForm />
 
-                <div className="flex items-center mt-5 gap-1">
+                <div className="flex items-center justify-center mt-5 gap-1">
                   <p className="text-lg font-medium">
                     Already have an account?
                   </p>

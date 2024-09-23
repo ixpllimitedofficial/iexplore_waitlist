@@ -1,8 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
+
 import ExploreLogo from "@/assets/svg/NavbarSvg/iExploreTextLogoSvg.svg";
-import LoginForm from "@/components/Onboarding/Login/LoginForm";
 import OnboardingImage from "@/assets/svg/iExploreLogo.svg";
+
+import LoginForm from "@/components/Onboarding/Login/LoginForm";
 
 const page = () => {
   return (
@@ -24,7 +26,7 @@ const page = () => {
               {/* login form */}
               <LoginForm />
 
-              <div className="flex items-center mt-5 gap-2">
+              <div className="flex items-center justify-center mt-5 gap-2">
                 <p className="text-lg font-medium">New to iExplore?</p>
                 <Link
                   href="/signup"

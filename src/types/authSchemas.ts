@@ -26,18 +26,18 @@ export const signupValidationSchema = z
     role: z.string(),
     phone: z
       .string()
-      .min(12, { message: "Phone Number must be at least 12 chars." }),
+      .min(11, { message: "Phone Number must be at least 11 chars." }),
     gender: z
       .string({
         required_error: "Please select a gender.",
       })
       .min(1, { message: "Please select a gender" }),
     date_of_birth: z.string().min(1, { message: "Please select a date" }),
-    location: z
-      .string({
-        required_error: "Please select a location.",
-      })
-      .min(1, { message: "Please select a location" }),
+    // location: z
+    //   .string({
+    //     required_error: "Please select a location.",
+    //   })
+    //   .min(1, { message: "Please select a location" }),
     referral_code: z.string().optional(),
     password: z.string().min(1, {
       message: "Password must be not be empty.",

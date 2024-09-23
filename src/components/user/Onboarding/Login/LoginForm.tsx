@@ -30,7 +30,7 @@ import { signIn } from "next-auth/react";
 import { showSimpleToast } from "@/utils/functions/alertFunctions";
 
 const LoginForm = () => {
-  const { data: session, status } = useSession();
+  // const { data: session, status } = useSession();
 
   // router
   const router = useRouter();
@@ -80,12 +80,12 @@ const LoginForm = () => {
     });
   }
 
-  useEffect(() => {
-    if (session) {
-      showSimpleToast("Logged in successfully", "success");
-      router.push("/user/home");
-    }
-  }, [user, router, session]);
+  // useEffect(() => {
+  //   if (session) {
+  //     showSimpleToast("Logged in successfully", "success");
+  //     router.push("/user/home");
+  //   }
+  // }, [user, router, session]);
 
   return (
     <>
