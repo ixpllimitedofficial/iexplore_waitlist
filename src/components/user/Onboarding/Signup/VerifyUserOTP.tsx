@@ -158,7 +158,7 @@ const VerifyUserOTP = () => {
         {/* <span className="text-white"> Maxxconnect127@gmail.com</span> */}
       </h1>
 
-      <AppInputOTP userRole="user" />
+      <AppInputOTP/>
 
       <MyTimer expiryTimestamp={time} emailForOTP={emailForOTP} />
 
