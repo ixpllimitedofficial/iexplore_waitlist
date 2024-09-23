@@ -36,7 +36,7 @@ const ProfileDropdownMenu = () => {
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="z-[200] -mr-44 mt-6 lg:mt-1 lg:mr-5">
+      <DropdownMenuContent className="z-[200] mr-3 lg:mr-5 mt-1">
         <DropdownMenuLabel>Anita Cruz</DropdownMenuLabel>
 
         <DropdownMenuSeparator />

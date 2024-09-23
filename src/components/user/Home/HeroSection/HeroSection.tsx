@@ -10,13 +10,13 @@ import AppSearchInput from "@/components/UI/Inputs/AppSearchInput";
 const HeroSection = () => {
   return (
     <section>
-      <div className="flex items-center gap-20 px-5">
+      <div className="flex flex-col md:flex-row items-center gap-3 md:gap-20 px-5">
         <AppSearchInput
           className="bg-[#4D4D4D66] text-gold-500 border-none focus-visible:ring-0 flex-grow"
           inputClass="placeholder:text-[#B0B0B0] placeholder:text-lg"
         />
 
-        <div className="flex gap-3">
+        <div className="flex flex-col md:flex-row gap-3">
           <Select>
             <SelectTrigger className="px-10 py-5 bg-[#4D4D4D66] text-[#B0B0B0] text-lg border-none focus-visible:ring-0">
               <SelectValue placeholder="Category" />

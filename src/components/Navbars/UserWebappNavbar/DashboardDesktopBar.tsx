@@ -13,8 +13,10 @@ const DashboardDesktopBar = () => {
   const pathname = usePathname();
 
   return (
-      <div className="hidden lg:col-span-2 sticky overflow-y-scroll no-scrollbar top-0 h-screen pt-7 lg:flex flex-col items-center gap-8 border-r-2 border-[#4D4D4D66]">
-      <Image src={iExploreNavLogo} alt="iExploreNavLogo" height={35} />
+    <div className="hidden lg:col-span-2 sticky overflow-y-scroll no-scrollbar top-0 h-screen pt-7 lg:flex flex-col items-center gap-8 border-r-2 border-[#4D4D4D66]">
+      <div className="w-4/5 mx-auto">
+        <Image src={iExploreNavLogo} alt="iExploreNavLogo" height={35} />
+      </div>
 
       <nav className="flex flex-col gap-5 w-4/5">
         {/* home */}
