@@ -10,8 +10,8 @@ const page = () => {
   return (
     <section className="grid grid-cols-2">
       <div className="col-span-full md:col-span-1">
-        <section className="py-7 px-3 lg:px-10">
-          <Image src={ExploreLogo} alt="iExploreLogo.png" />
+        <section className="py-7 px-5 lg:px-10">
+          <Image src={ExploreLogo} alt="iExploreLogo.png" height={45} />
 
           <div className="relative mt-16 flex gap-20 justify-between items-center">
             {/* login form */}

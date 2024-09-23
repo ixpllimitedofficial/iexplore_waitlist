@@ -16,8 +16,8 @@ const Signup = () => {
 
   // returned component
   return (
-    <section className="py-7 px-3 lg:px-10">
-      <Image src={ExploreLogo} alt="iExploreLogo.png" />
+    <section className="py-7 px-5 lg:px-10">
+      <Image src={ExploreLogo} alt="iExploreLogo.png" height={45} />
 
       {flowParams === null && (
         <div className="">

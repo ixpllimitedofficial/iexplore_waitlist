@@ -331,7 +331,7 @@ const SignupForm = () => {
                   />
                 </FormControl>
                 <div className="text-gold-500">
-                  <FormLabel className="text-lg">
+                  <FormLabel className="md:text-lg">
                     By creating an account, I verify that I’m over 18 years of
                     age and accept the{" "}
                     <span className="underline font-bold">

@@ -43,6 +43,7 @@ const LoginForm = () => {
         description: result.msg,
         variant: "success",
       });
+      router.push("/user")
     } else {
       toast({
         title: "There is an error",
