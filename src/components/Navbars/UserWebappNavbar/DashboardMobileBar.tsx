@@ -20,19 +20,23 @@ const DashboardDesktopBar = () => {
   const pathname = usePathname();
 
   return (
-    <div className="lg:hidden fixed bottom-0 left-0 w-full flex items-center gap-8 border-r-2 border-[#4D4D4D66] bg-brandDark z-50 py-4">
+    <div className="lg:hidden fixed bottom-0 left-0 w-full flex items-center gap-8 border-r-2 border-[#4D4D4D66] bg-brandDark z-50 py-3">
       <nav className="flex justify-around gap-3 w-full">
         {/* home */}
         <Link
           href="/user"
           className={`${
             pathname === "/user" ? "text-gold-500" : "text-[#B0B0B0]"
-          } text-lg font-bold flex flex-col items-center gap-1`}
+          } font-medium flex flex-col items-center gap-1`}
         >
           {pathname === "/user" ? (
-            <Image src={ActiveMobileHomeIcon} alt="ActiveMobileHomeIcon" height={32} />
+            <Image
+              src={ActiveMobileHomeIcon}
+              alt="ActiveMobileHomeIcon"
+              height={27}
+            />
           ) : (
-            <Image src={HomeSvg} alt="Home icon" />
+            <Image src={HomeSvg} alt="Home icon" height={27} />
           )}
           <p>Home</p>
         </Link>
@@ -42,15 +46,16 @@ const DashboardDesktopBar = () => {
           href="/user/explore"
           className={`${
             pathname.includes("explore") ? "text-gold-500" : "text-[#B0B0B0]"
-          } text-lg font-bold flex flex-col items-center gap-1`}
+          } font-medium flex flex-col items-center gap-1`}
         >
           {pathname.includes("explore") ? (
             <Image
               src={ActiveMobileExploreIcon}
-              alt="ActiveMobileExploreIcon" height={32}
+              alt="ActiveMobileExploreIcon"
+              height={27}
             />
           ) : (
-            <Image src={ExploreIcon} alt="ExploreIcon" />
+            <Image src={ExploreIcon} alt="ExploreIcon" height={27} />
           )}
           <p>Explore</p>
         </Link>
@@ -60,12 +65,16 @@ const DashboardDesktopBar = () => {
           href="/user/feed"
           className={`${
             pathname.includes("feed") ? "text-gold-500" : "text-[#B0B0B0]"
-          } text-lg font-bold flex flex-col items-center gap-1`}
+          } font-medium flex flex-col items-center gap-1`}
         >
           {pathname.includes("feed") ? (
-            <Image src={ActiveMobileFeedIcon} alt="ActiveMobileFeedIcon" height={32} />
+            <Image
+              src={ActiveMobileFeedIcon}
+              alt="ActiveMobileFeedIcon"
+              height={27}
+            />
           ) : (
-            <Image src={FeedIcon} alt="FeedIcon" />
+            <Image src={FeedIcon} alt="FeedIcon" height={27} />
           )}
           <p>Feed</p>
         </Link>
@@ -75,12 +84,16 @@ const DashboardDesktopBar = () => {
           href="/user/drinks"
           className={`${
             pathname.includes("drinks") ? "text-gold-500" : "text-[#B0B0B0]"
-          } text-lg font-bold flex flex-col items-center gap-1`}
+          } font-medium flex flex-col items-center gap-1`}
         >
           {pathname.includes("drinks") ? (
-            <Image src={ActiveMobileDrinksIcon} alt="ActiveMobileDrinksIcon" height={32} />
+            <Image
+              src={ActiveMobileDrinksIcon}
+              alt="ActiveMobileDrinksIcon"
+              height={27}
+            />
           ) : (
-            <Image src={DrinksIcon} alt="DrinksIcon" />
+            <Image src={DrinksIcon} alt="DrinksIcon" height={27} />
           )}
           <p>Drinks</p>
         </Link>

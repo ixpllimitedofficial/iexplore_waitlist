@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
@@ -36,6 +34,7 @@ import { onLogin, onSignup } from "@/app/actions";
 
 const SignupForm = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [btnState, setBtnState] = useState(false);
 
   const toggleShowPassword = () => {
     setShowPassword(!showPassword);
@@ -64,6 +63,8 @@ const SignupForm = () => {
   });
 
   async function onSubmit(data: z.infer<typeof signupValidationSchema>) {
+    setBtnState(true);
+
     const result = await onSignup(data);
 
     if (result.status === "success") {
@@ -80,6 +81,8 @@ const SignupForm = () => {
         description: result,
         variant: "destructive",
       });
+
+      setBtnState(false);
     }
   }
 
@@ -349,8 +352,9 @@ const SignupForm = () => {
           <Button
             className="bg-gold-500 hover:bg-white transition duration-200 text-[#322016] px-8 py-5 lg:py-6 rounded-3xl font-bold text-base flex-grow"
             type="submit"
+            disabled={btnState}
           >
-            Sign up
+            {!btnState ? "Sign up" : "Signing up..."}
           </Button>
         </form>
       </Form>

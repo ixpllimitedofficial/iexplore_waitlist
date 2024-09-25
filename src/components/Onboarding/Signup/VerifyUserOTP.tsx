@@ -31,6 +31,7 @@ import ArrowLeft from "@/assets/svg/ArrowLeft.svg";
 import { inputStyling } from "@/utils/constant";
 
 import { onResendUserOTP } from "@/app/actions";
+import { useState } from "react";
 
 // user otp verification component
 const VerifyUserOTP = () => {
@@ -82,6 +83,8 @@ export default VerifyUserOTP;
 
 // timer and resend code component
 function MyTimer({ expiryTimestamp }: any) {
+  const [btnState, setBtnState] = useState(false);
+
   const {
     totalSeconds,
     seconds,
@@ -106,6 +109,8 @@ function MyTimer({ expiryTimestamp }: any) {
   });
 
   async function onSubmit(data: z.infer<typeof emailSchema>) {
+    setBtnState(true);
+
     // Restarts to 5 minutes timer
     const time = new Date();
     time.setSeconds(time.getSeconds() + 300);
@@ -125,6 +130,8 @@ function MyTimer({ expiryTimestamp }: any) {
         description: result,
         variant: "destructive",
       });
+
+      setBtnState(false);
     }
   }
 
@@ -158,8 +165,9 @@ function MyTimer({ expiryTimestamp }: any) {
             <Button
               className="bg-gold-500 hover:bg-white transition duration-200 text-[#322016] px-8 py-5 lg:py-6 rounded-3xl font-bold mx-auto"
               type="submit"
+              disabled={btnState}
             >
-              Send code again
+              {!btnState ? "Send code again" : "Sending code..."}
             </Button>
           </form>
         </Form>

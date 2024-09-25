@@ -32,6 +32,8 @@ import { onVerifyUserOTP } from "@/app/actions";
 import WelcomeImage from "@/assets/img/WelcomeImage.png";
 
 const AppInputOTP = () => {
+  const [btnState, setBtnState] = useState(false);
+
   // router
   const router = useRouter();
 
@@ -60,6 +62,8 @@ const AppInputOTP = () => {
   };
 
   async function onSubmit(data: z.infer<typeof verifyOTPSchema>) {
+    setBtnState(true);
+
     const result = await onVerifyUserOTP(data);
 
     if (result.status === "success") {
@@ -76,6 +80,8 @@ const AppInputOTP = () => {
         description: result,
         variant: "destructive",
       });
+
+      setBtnState(false);
     }
   }
 
@@ -141,9 +147,10 @@ const AppInputOTP = () => {
           <Button
             className="bg-gold-500 hover:bg-white transition duration-200 text-[#322016] px-8 py-5 lg:py-6 rounded-3xl font-bold text-base mx-auto"
             type="submit"
-          >
-            Confirm code
-          </Button>
+            disabled={btnState}
+            >
+              {!btnState ? "Confirm code" : "Confirming code..."}
+            </Button>
         </form>
       </Form>
     </>

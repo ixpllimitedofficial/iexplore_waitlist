@@ -15,7 +15,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <Image
               src={iExploreNavLogo}
               alt="iExploreNavLogo"
-              height={35}
+              height={30}
               className="lg:hidden"
             />
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import {
   Form,
@@ -23,6 +23,8 @@ import { loginValidationSchema } from "@/types/authSchemas";
 import { onLogin } from "@/app/actions";
 
 const LoginForm = () => {
+  const [btnState, setBtnState] = useState(false);
+  
   // router
   const router = useRouter();
 
@@ -35,6 +37,8 @@ const LoginForm = () => {
   });
 
   async function onSubmit(data: z.infer<typeof loginValidationSchema>) {
+    setBtnState(true);
+
     const result = await onLogin(data);
 
     if (result.status === "success") {
@@ -43,13 +47,15 @@ const LoginForm = () => {
         description: result.msg,
         variant: "success",
       });
-      router.push("/user")
+      router.push("/user");
     } else {
       toast({
         title: "There is an error",
         description: result,
         variant: "destructive",
       });
+
+      setBtnState(false);
     }
   }
 
@@ -111,8 +117,9 @@ const LoginForm = () => {
             <Button
               className="bg-gold-500 hover:bg-white transition duration-200 text-[#322016] px-10 py-5 rounded-3xl font-bold text-base mx-auto"
               type="submit"
+              disabled={btnState}
             >
-              Login
+              {!btnState ? "Login" : "Logging in..."}
             </Button>
             {/* <p className="text-gold-500">or</p>
             <Button className="hover:bg-gold-500 bg-white transition duration-200 text-[#322016] px-8 py-5 lg:py-6 rounded-3xl font-bold text-base flex-grow">
