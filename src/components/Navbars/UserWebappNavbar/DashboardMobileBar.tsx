@@ -18,7 +18,7 @@ import NotificationsIconSvg from "@/assets/svg/AdminIconsSvg/NavbarIcons/Notific
 import AnalyticsIconSvg from "@/assets/svg/AdminIconsSvg/NavbarIcons/AnalyticsIconSvg.svg";
 import SettingsIconSvg from "@/assets/svg/AdminIconsSvg/NavbarIcons/SettingsIconSvg.svg";
 import SupportIconSvg from "@/assets/svg/AdminIconsSvg/NavbarIcons/SupportIconSvg.svg";
-import ProfileDropdownMenu from "@/components/UI/UserUI/Cards/ProfileDropdownMenu";
+import ProfileDropdownMenu from "@/components/UI/UserUI/ProfileDropdownMenu";
 
 const DashboardMobileBar = () => {
   // router

@@ -14,9 +14,9 @@ const ClubCard = () => {
   return (
     <div
       onClick={() => handleClick()}
-      className="bg-[#4D4D4D66] p-2 rounded-3xl flex flex-col"
+      className="bg-[#4D4D4D66] p-2 rounded-3xl flex flex-grow flex-col"
     >
-      <div className="w-[320px] h-[200px] overflow-hidden rounded-3xl">
+      <div className="w-full h-[200px] overflow-hidden rounded-3xl">
         <Image
           src={ClubImage}
           alt="club image"

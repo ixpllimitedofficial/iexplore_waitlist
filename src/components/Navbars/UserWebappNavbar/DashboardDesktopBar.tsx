@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import iExploreNavLogo from "@/assets/svg/UserIconsSvg/iExploreNavLogo.svg";
-import HomeIconSvg from "@/assets/svg/UserIconsSvg/HomeActiveIcon.svg";
+import HomeSvg from "@/assets/svg/UserIconsSvg/HomeIcon.svg";
 import ExploreIcon from "@/assets/svg/UserIconsSvg/ExploreIcon.svg";
 import FeedIcon from "@/assets/svg/UserIconsSvg/FeedIcon.svg";
 import DrinksIcon from "@/assets/svg/UserIconsSvg/DrinksIcon.svg";
@@ -18,7 +18,7 @@ const DashboardDesktopBar = () => {
         <Image src={iExploreNavLogo} alt="iExploreNavLogo" height={35} />
       </div>
 
-      <nav className="flex flex-col gap-5 w-4/5">
+      <nav className="flex flex-col gap-3 w-4/5">
         {/* home */}
         <Link
           href="/user"
@@ -28,15 +28,15 @@ const DashboardDesktopBar = () => {
               : "text-[#B0B0B0]"
           } text-lg font-bold pl-3 py-2 flex items-center gap-2`}
         >
-          <Image src={HomeIconSvg} alt="Home icon" />
+          <Image src={HomeSvg} alt="Home icon" />
           <p>Home</p>
         </Link>
 
         {/* explore */}
         <Link
-          href="/user"
+          href="/user/explore"
           className={`${
-            pathname === "/user/explore"
+            pathname.includes("explore")
               ? "bg-gold-500 text-brandDark px-3 rounded-xl"
               : "text-[#B0B0B0]"
           } text-lg font-bold pl-3 py-2 flex items-center gap-2`}
@@ -49,7 +49,7 @@ const DashboardDesktopBar = () => {
         <Link
           href="/user"
           className={`${
-            pathname === "/user/feed"
+            pathname.includes("feed")
               ? "bg-gold-500 text-brandDark px-3 rounded-xl"
               : "text-[#B0B0B0]"
           } text-lg font-bold pl-3 py-2 flex items-center gap-2`}
@@ -62,7 +62,7 @@ const DashboardDesktopBar = () => {
         <Link
           href="/user"
           className={`${
-            pathname === "/user/drinks"
+            pathname.includes("drinks")
               ? "bg-gold-500 text-brandDark px-3 rounded-xl"
               : "text-[#B0B0B0]"
           } text-lg font-bold pl-3 py-2 flex items-center gap-2`}

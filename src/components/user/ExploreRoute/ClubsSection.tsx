@@ -1,17 +1,15 @@
-import AppButton from "@/components/UI/Button/AppButton";
-import ClubCard from "@/components/UI/Cards/ClubCard";
-import ArrowButtonRight from "@/assets/svg/ArrowButtonRight.svg";
 import Link from "next/link";
 import { Button } from "@/components/UI/button";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
+import ClubCard from "./ClubCard";
 
-const Clubs = () => {
+const ClubsSection = () => {
   return (
     <section className="ml-8 mt-7 flex flex-col">
       <h1 className="text-2xl font-bold">Clubs</h1>
 
-      <div className="mt-4 flex gap-5 overflow-x-scroll no-scrollbar whitespace-nowrap">
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((card) => {
+      <div className="mt-4 grid grid-col-1 lg:grid-cols-3 gap-5 pr-5 ">
+        {[1, 2, 3, 4, 5, 6].map((card) => {
           return <ClubCard key={card} />;
         })}
       </div>
@@ -29,4 +27,4 @@ const Clubs = () => {
   );
 };
 
-export default Clubs;
+export default ClubsSection;

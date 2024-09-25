@@ -1,4 +1,5 @@
-import ClubCard from "@/components/UI/Cards/ClubCard";
+import ClubCard from "./ClubCard";
+
 
 const ClubsPage = () => {
   return (

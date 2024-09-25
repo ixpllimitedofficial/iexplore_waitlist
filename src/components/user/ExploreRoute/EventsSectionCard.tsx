@@ -2,9 +2,9 @@ import Image from "next/image";
 import RecommendationImage from "@/assets/img/RecommendationImage.png";
 import Link from "next/link";
 
-const RecommendedSectionCard = () => {
+const EventsSectionCard = () => {
   return (
-    <Link href="/user/spot-details" className="relative">
+    <Link href="/user/clubs" className="relative">
       <div className="w-[370px] h-[230px] overflow-hidden">
         <Image src={RecommendationImage} alt="recommendation image" className="object-cover" />
       </div>
@@ -24,4 +24,4 @@ const RecommendedSectionCard = () => {
   );
 };
 
-export default RecommendedSectionCard;
+export default EventsSectionCard;

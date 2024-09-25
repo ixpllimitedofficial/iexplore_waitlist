@@ -1,0 +1,54 @@
+"use client";
+import { useRouter, useSearchParams } from "next/navigation";
+import Image from "next/image";
+import ClubImage from "@/assets/img/ClubImage.png";
+import RatingsIcon from "@/assets/svg/UserIconsSvg/RatingsIcon.svg";
+import { Button } from "@/components/UI/button";
+
+const ClubCard = () => {
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push("/user/explore/1");
+  };
+
+  return (
+    <div
+      onClick={() => handleClick()}
+      className="bg-[#4D4D4D66] px-2 py-3 rounded-3xl flex flex-col"
+    >
+      <div className="w-full h-[200px] overflow-hidden rounded-3xl">
+        <Image
+          src={ClubImage}
+          alt="club image"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      <div className="flex items-center justify-between mt-4 mb-1 px-2">
+        <h1 className="text-xl font-bold">Maxx BBQs & Bistro</h1>
+
+        <div className="flex items-center gap-1">
+          <Image src={RatingsIcon} alt="RatingsIcon" height={20} />
+          <p className="font-bold text-gold-500 text-lg">4.5</p>
+        </div>
+      </div>
+
+      <p className="pl-2 text-lg text-[#D1D1D1]">Tejuosho Mall, Yaba</p>
+
+      <div className="flex items-center px-2 text-gold-500 text-lg gap-3">
+        <p>Bars & Pubs</p>
+        <p>11pm - 4am</p>
+      </div>
+
+      <Button
+        className="bg-gold-500 hover:bg-white transition duration-200 text-[#322016] px-10 py-5 rounded-3xl font-bold text-lg mt-3"
+        onClick={handleClick}
+      >
+        Spot details
+      </Button>
+    </div>
+  );
+};
+
+export default ClubCard;
