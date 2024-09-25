@@ -1,7 +1,7 @@
 "use client";
 
 import { useForm } from "react-hook-form";
-
+import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import {
@@ -20,6 +20,8 @@ import { toast } from "@/components/UI/use-toast";
 import { onSubmitWaitlist } from "@/app/actions";
 
 const WaitlistForm = ({ handleShowModal }: any) => {
+  const [btnState, setBtnState] = useState(false);
+
   const form = useForm<z.infer<typeof emailSchema>>({
     resolver: zodResolver(emailSchema),
     defaultValues: {
@@ -28,6 +30,8 @@ const WaitlistForm = ({ handleShowModal }: any) => {
   });
 
   async function onSubmit(data: z.infer<typeof emailSchema>) {
+    setBtnState(true);
+
     const result = await onSubmitWaitlist(data);
 
     if (result.status === "added") {
@@ -49,6 +53,8 @@ const WaitlistForm = ({ handleShowModal }: any) => {
         description: "Unexpected response from the server",
         variant: "destructive",
       });
+
+      setBtnState(false);
     }
   }
 
@@ -79,8 +85,9 @@ const WaitlistForm = ({ handleShowModal }: any) => {
         <Button
           className="bg-gold-500 transition duration-200 hover:bg-white text-[#322016] px-8 py-5 lg:py-6 rounded-3xl font-bold text-base"
           type="submit"
+          disabled={btnState}
         >
-          Join Waitlist
+          {!btnState ? "Join Waitlist" : "Adding to waitlist..."}
         </Button>
       </form>
     </Form>
