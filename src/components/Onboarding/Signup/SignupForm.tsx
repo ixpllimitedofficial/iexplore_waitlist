@@ -239,31 +239,6 @@ const SignupForm = () => {
             )}
           />
 
-          {/* location */}
-          {/* <FormField
-            control={form.control}
-            name="location"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="text-lg">Location</FormLabel>
-                <Select
-                  onValueChange={field.onChange}
-                  defaultValue={field.value}
-                >
-                  <FormControl>
-                    <SelectTrigger className={`${inputStyling}`}>
-                      <SelectValue placeholder="Location" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    <SelectItem value="Nigeria">Nigeria</SelectItem>
-                  </SelectContent>
-                </Select>
-                <FormMessage />
-              </FormItem>
-            )}
-          /> */}
-
           {/* Referral Code */}
           <FormField
             control={form.control}
