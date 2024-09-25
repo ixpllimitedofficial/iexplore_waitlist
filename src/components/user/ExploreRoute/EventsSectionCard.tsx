@@ -16,7 +16,7 @@ const EventsSectionCard = () => {
 
       {/* text */}
       <div className="absolute left-5 bottom-5 flex flex-col justify-between">
-        <h1 className="text-xl font-medium">Omah Lay live at Hotbox</h1>
+        <p className="text-xl font-medium">Omah Lay live at Hotbox</p>
 
         <p className="text-[#B0B0B0] font-bold">Hotbox, Oniru. 12th Dec 2024.</p>
       </div>

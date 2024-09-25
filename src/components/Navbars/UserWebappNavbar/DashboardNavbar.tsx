@@ -6,7 +6,7 @@ const DashboardNavbar = () => {
   return (
     <>
       <DashboardDesktopBar />
-      {/* <DashboardMobileBar /> */}
+      <DashboardMobileBar />
     </>
   );
 };

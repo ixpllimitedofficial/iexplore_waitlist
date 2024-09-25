@@ -8,6 +8,7 @@ import HomeSvg from "@/assets/svg/UserIconsSvg/HomeIcon.svg";
 import ExploreIcon from "@/assets/svg/UserIconsSvg/ExploreIcon.svg";
 import FeedIcon from "@/assets/svg/UserIconsSvg/FeedIcon.svg";
 import DrinksIcon from "@/assets/svg/UserIconsSvg/DrinksIcon.svg";
+import ProfileIcon from "@/assets/svg/UserIconsSvg/ProfileIcon.svg";
 
 const DashboardDesktopBar = () => {
   const pathname = usePathname();
@@ -47,7 +48,7 @@ const DashboardDesktopBar = () => {
 
         {/* feed */}
         <Link
-          href="/user"
+          href="/user/feed"
           className={`${
             pathname.includes("feed")
               ? "bg-gold-500 text-brandDark px-3 rounded-xl"
@@ -60,7 +61,7 @@ const DashboardDesktopBar = () => {
 
         {/* drinks */}
         <Link
-          href="/user"
+          href="/user/drinks"
           className={`${
             pathname.includes("drinks")
               ? "bg-gold-500 text-brandDark px-3 rounded-xl"
@@ -69,6 +70,19 @@ const DashboardDesktopBar = () => {
         >
           <Image src={DrinksIcon} alt="drink icon" />
           <p>Drinks</p>
+        </Link>
+
+        {/* drinks */}
+        <Link
+          href="/user/profile"
+          className={`${
+            pathname.includes("profile")
+              ? "bg-gold-500 text-brandDark px-3 rounded-xl"
+              : "text-[#B0B0B0]"
+          } text-lg font-bold pl-3 py-2 flex items-center gap-2`}
+        >
+          <Image src={ProfileIcon} alt="profile icon" />
+          <p>Profile</p>
         </Link>
       </nav>
     </div>

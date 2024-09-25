@@ -5,7 +5,7 @@ import ClubCard from "./ClubCard";
 
 const ClubsSection = () => {
   return (
-    <section className="ml-8 mt-7 flex flex-col">
+    <section className="ml-4 lg:ml-8 mt-7 flex flex-col">
       <h1 className="text-2xl font-bold">Clubs</h1>
 
       <div className="mt-4 grid grid-col-1 lg:grid-cols-3 gap-5 pr-5 ">

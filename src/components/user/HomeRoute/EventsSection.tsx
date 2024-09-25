@@ -12,7 +12,7 @@ const EventsSection = () => {
         })}
       </div>
 
-      <Link href="/user/recommended" className="self-end mr-5 my-3">
+      <Link href="/user" className="self-end mr-5 my-3">
         <Button
           className="bg-[#0E0E0E] transition duration-200 text-gold-500 border-2 border-gold-500 px-7 py-5 rounded-3xl font-bold text-base"
           type="submit"

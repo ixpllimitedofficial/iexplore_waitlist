@@ -10,7 +10,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         {/* navbar */}
         <DashboardNavbar />
         
-        <div className="relative col-span-12 lg:col-span-10 pb-5">
+        <div className="relative col-span-12 lg:col-span-10 mb-24 lg:pb-5">
           <div className="flex justify-between lg:justify-end items-center px-5 py-7">
             <Image
               src={iExploreNavLogo}
