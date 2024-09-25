@@ -5,10 +5,19 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import iExploreNavLogo from "@/assets/svg/UserIconsSvg/iExploreNavLogo.svg";
 import HomeSvg from "@/assets/svg/UserIconsSvg/HomeIcon.svg";
+import ActiveHomeSvg from "@/assets/svg/UserIconsSvg/ActiveHomeIcon.svg";
+
 import ExploreIcon from "@/assets/svg/UserIconsSvg/ExploreIcon.svg";
+import ActiveExploreIcon from "@/assets/svg/UserIconsSvg/ActiveExploreIcon.svg";
+
 import FeedIcon from "@/assets/svg/UserIconsSvg/FeedIcon.svg";
+import ActiveFeedIcon from "@/assets/svg/UserIconsSvg/ActiveFeedIcon.svg";
+
 import DrinksIcon from "@/assets/svg/UserIconsSvg/DrinksIcon.svg";
+import ActiveDrinksIcon from "@/assets/svg/UserIconsSvg/ActiveDrinksIcon.svg";
+
 import ProfileIcon from "@/assets/svg/UserIconsSvg/ProfileIcon.svg";
+import ActiveProfileIcon from "@/assets/svg/UserIconsSvg/ActiveProfileIcon.svg";
 
 const DashboardDesktopBar = () => {
   const pathname = usePathname();
@@ -29,7 +38,11 @@ const DashboardDesktopBar = () => {
               : "text-[#B0B0B0]"
           } text-lg font-bold pl-3 py-2 flex items-center gap-2`}
         >
-          <Image src={HomeSvg} alt="Home icon" />
+          {pathname === "/user" ? (
+            <Image src={ActiveHomeSvg} alt="ActiveHomeicon" />
+          ) : (
+            <Image src={HomeSvg} alt="Home icon" />
+          )}
           <p>Home</p>
         </Link>
 
@@ -42,7 +55,11 @@ const DashboardDesktopBar = () => {
               : "text-[#B0B0B0]"
           } text-lg font-bold pl-3 py-2 flex items-center gap-2`}
         >
-          <Image src={ExploreIcon} alt="ExploreIcon" />
+          {pathname.includes("explore") ? (
+            <Image src={ActiveExploreIcon} alt="ActiveExploreIcon" />
+          ) : (
+            <Image src={ExploreIcon} alt="ExploreIcon" />
+          )}
           <p>Explore</p>
         </Link>
 
@@ -55,7 +72,11 @@ const DashboardDesktopBar = () => {
               : "text-[#B0B0B0]"
           } text-lg font-bold pl-3 py-2 flex items-center gap-2`}
         >
-          <Image src={FeedIcon} alt="feed icon" />
+          {pathname.includes("feed") ? (
+            <Image src={ActiveFeedIcon} alt="ActiveFeedIcon" />
+          ) : (
+            <Image src={FeedIcon} alt="FeedIcon" />
+          )}
           <p>Feed</p>
         </Link>
 
@@ -68,7 +89,11 @@ const DashboardDesktopBar = () => {
               : "text-[#B0B0B0]"
           } text-lg font-bold pl-3 py-2 flex items-center gap-2`}
         >
-          <Image src={DrinksIcon} alt="drink icon" />
+          {pathname.includes("drinks") ? (
+            <Image src={ActiveDrinksIcon} alt="ActiveDrinksIcon" />
+          ) : (
+            <Image src={DrinksIcon} alt="DrinksIcon" />
+          )}
           <p>Drinks</p>
         </Link>
 
@@ -81,7 +106,11 @@ const DashboardDesktopBar = () => {
               : "text-[#B0B0B0]"
           } text-lg font-bold pl-3 py-2 flex items-center gap-2`}
         >
-          <Image src={ProfileIcon} alt="profile icon" />
+          {pathname.includes("profile") ? (
+            <Image src={ActiveProfileIcon} alt="ActiveProfileIcon" />
+          ) : (
+            <Image src={ProfileIcon} alt="ProfileIcon" />
+          )}
           <p>Profile</p>
         </Link>
       </nav>
