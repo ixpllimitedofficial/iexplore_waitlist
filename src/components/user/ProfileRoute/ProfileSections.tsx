@@ -10,6 +10,7 @@ import ProfileLogoutIcon from "@/assets/svg/UserIconsSvg/ProfileLogoutIcon.svg";
 import NextRightArrowIcon from "@/assets/svg/UserIconsSvg/NextRightArrowIcon.svg";
 
 import { Button } from "@/components/UI/button";
+import Link from "next/link";
 
 const ProfileSections = () => {
   return (
@@ -27,9 +28,9 @@ const ProfileSections = () => {
               <p className="text-xl mt-2">Locations</p>
             </div>
 
-            <div>
+            <Link href="/user/profile/saved-locations">
               <Image src={NextRightArrowIcon} alt="NextRightArrowIcon" />
-            </div>
+            </Link>
           </div>
 
           <div className="bg-[#4D4D4D33] flex justify-between mt-5 px-5 py-6 rounded-2xl">
@@ -38,9 +39,9 @@ const ProfileSections = () => {
               <p className="text-xl mt-2">Drinks</p>
             </div>
 
-            <div>
+            <Link href="/user/profile/saved-drinks">
               <Image src={NextRightArrowIcon} alt="NextRightArrowIcon" />
-            </div>
+            </Link>
           </div>
         </div>
       </div>
@@ -90,7 +91,7 @@ const ProfileSections = () => {
       {/* saved */}
       <div className="mt-10">
         <div className="bg-[#4D4D4D33] px-5 py-3 text-gold-500 text-lg">
-          Saved
+        Resources
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">

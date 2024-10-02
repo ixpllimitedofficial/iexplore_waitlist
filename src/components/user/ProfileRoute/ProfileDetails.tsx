@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Button } from "@/components/UI/button";
 import ProfileImage from "@/assets/img/UserWebappImages/ProfileImage.png";
 import ToggleIcon from "@/assets/svg/UserIconsSvg/ToggleIcon.svg";
+import Link from "next/link";
 
 const ProfileDetails = () => {
   return (
@@ -14,9 +15,11 @@ const ProfileDetails = () => {
         </div>
 
         <div className="flex flex-col md:flex-row gap-5">
-          <Button className="bg-[#4D4D4D66] hover:bg-[#4d4d4dab] transition duration-200 px-7 py-5 rounded-3xl text-lg">
-            Edit profile
-          </Button>
+          <Link href="/user/profile/edit">
+            <Button className="bg-[#4D4D4D66] hover:bg-[#4d4d4dab] transition duration-200 px-7 py-5 rounded-3xl text-lg">
+              Edit profile
+            </Button>
+          </Link>
 
           <Button className="bg-gold-500 hover:bg-gold-600 text-brandDark transition duration-200 px-7 py-5 rounded-3xl font-bold text-lg">
             Share app

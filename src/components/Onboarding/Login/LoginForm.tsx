@@ -21,10 +21,11 @@ import PasswordField from "@/components/UI/Inputs/PasswordField";
 import { inputStyling } from "@/utils/constant";
 import { loginValidationSchema } from "@/types/authSchemas";
 import { onLogin } from "@/app/actions";
+import Link from "next/link";
 
 const LoginForm = () => {
   const [btnState, setBtnState] = useState(false);
-  
+
   // router
   const router = useRouter();
 
@@ -64,7 +65,7 @@ const LoginForm = () => {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="flex flex-col gap-7"
+          className="flex flex-col gap-5"
         >
           {/* username */}
           <FormField
@@ -106,12 +107,12 @@ const LoginForm = () => {
             )}
           />
 
-          {/* <Link
-            href="/user?flow=forgotPassword"
-            className="self-end text-gold-500 text-end text-sm font-medium"
+          <Link
+            href="/forgot-password"
+            className="self-end text-gold-500 text-lg font-medium"
           >
             Forgot Password
-          </Link> */}
+          </Link>
 
           <div className="flex flex-col md:flex-row items-center justify-between gap-5">
             <Button

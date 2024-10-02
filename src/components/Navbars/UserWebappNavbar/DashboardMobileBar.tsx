@@ -45,10 +45,10 @@ const DashboardDesktopBar = () => {
         <Link
           href="/user/explore"
           className={`${
-            pathname.includes("explore") ? "text-gold-500" : "text-[#B0B0B0]"
+            pathname.includes("/explore") ? "text-gold-500" : "text-[#B0B0B0]"
           } font-medium flex flex-col items-center gap-1`}
         >
-          {pathname.includes("explore") ? (
+          {pathname.includes("/explore") ? (
             <Image
               src={ActiveMobileExploreIcon}
               alt="ActiveMobileExploreIcon"
@@ -64,10 +64,10 @@ const DashboardDesktopBar = () => {
         <Link
           href="/user/feed"
           className={`${
-            pathname.includes("feed") ? "text-gold-500" : "text-[#B0B0B0]"
+            pathname.includes("/feed") ? "text-gold-500" : "text-[#B0B0B0]"
           } font-medium flex flex-col items-center gap-1`}
         >
-          {pathname.includes("feed") ? (
+          {pathname.includes("/feed") ? (
             <Image
               src={ActiveMobileFeedIcon}
               alt="ActiveMobileFeedIcon"
@@ -83,10 +83,10 @@ const DashboardDesktopBar = () => {
         <Link
           href="/user/drinks"
           className={`${
-            pathname.includes("drinks") ? "text-gold-500" : "text-[#B0B0B0]"
+            pathname.includes("/drinks") ? "text-gold-500" : "text-[#B0B0B0]"
           } font-medium flex flex-col items-center gap-1`}
         >
-          {pathname.includes("drinks") ? (
+          {pathname.includes("/drinks") ? (
             <Image
               src={ActiveMobileDrinksIcon}
               alt="ActiveMobileDrinksIcon"
@@ -97,19 +97,6 @@ const DashboardDesktopBar = () => {
           )}
           <p>Drinks</p>
         </Link>
-
-        {/* drinks */}
-        {/* <Link
-          href="/user/profile"
-          className={`${
-            pathname.includes("profile")
-              ? "bg-gold-500 text-brandDark px-3 rounded-xl"
-              : "text-[#B0B0B0]"
-          } text-lg font-bold py-2 flex items-center gap-2`}
-        >
-          <Image src={ProfileIcon} alt="profile icon" />
-          <p>Profile</p>
-        </Link> */}
       </nav>
     </div>
   );

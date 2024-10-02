@@ -20,6 +20,14 @@ const page = () => {
 
       <Clubs />
       <Clubs />
+
+      <section className="ml-4 lg:ml-8 mt-7 flex flex-col">
+        <div className="flex items-center justify-between mb-4">
+          <h1 className="text-gold-500 text-xl md:text-2xl font-bold">
+            Iexplore spots this week
+          </h1>
+        </div>
+      </section>
     </>
   );
 };

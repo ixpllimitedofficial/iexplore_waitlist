@@ -80,4 +80,38 @@ export const verifyOTPSchema = z.object({
   }),
 });
 
+export const editProfileSchema = z
+  .object({
+    full_name: z
+      .string()
+      .min(2, { message: "First name must be at least 2 chars." }),
+    phone: z
+      .string()
+      .min(11, { message: "Phone Number must be at least 11 chars." }),
+    email: z.string().email({
+      message: "Please put in a valid email.",
+    }),
+    date_of_birth: z.string().min(1, { message: "Please select a date" }),
+    password: z.string().min(1, {
+      message: "Current Password must be not be empty.",
+    }),
+    confirm_password: z.string().min(1, {
+      message: "Confirm current password must be not be empty.",
+    }),
+    new_password: z.string().min(1, {
+      message: "New Password must be not be empty.",
+    }),
+    confirm_new_password: z.string().min(1, {
+      message: "Confirm New Password must be not be empty.",
+    }),
+  })
+  .refine((data) => data.password === data.confirm_password, {
+    message: "Current Passwords don't match",
+    path: ["confirm_password"],
+  })
+  .refine((data) => data.new_password === data.confirm_new_password, {
+    message: "New Passwords don't match",
+    path: ["confirm_new_password"],
+  });
+
 export type InputTypes = any;

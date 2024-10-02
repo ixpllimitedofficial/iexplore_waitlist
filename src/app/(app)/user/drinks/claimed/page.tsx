@@ -1,12 +1,11 @@
+import ClaimedDrinksSection from "@/components/user/DrinksRoute/ClaimedDrinksSection";
 import TopSearchBar from "@/components/user/DrinksRoute/TopSearchBar";
-import DrinksSection from "@/components/user/DrinksRoute/DrinksSection";
 
 const page = () => {
   return (
     <>
       <TopSearchBar />
-
-      <DrinksSection />
+      <ClaimedDrinksSection />
     </>
   );
 };

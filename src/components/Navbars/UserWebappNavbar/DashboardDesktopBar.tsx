@@ -33,7 +33,7 @@ const DashboardDesktopBar = () => {
         <Link
           href="/user"
           className={`${
-            pathname === "/user"
+            pathname === "/user" || pathname.includes("/user/clubs")
               ? "bg-gold-500 text-brandDark px-3 rounded-xl"
               : "text-[#B0B0B0]"
           } text-lg font-bold pl-3 py-2 flex items-center gap-2`}
@@ -50,12 +50,12 @@ const DashboardDesktopBar = () => {
         <Link
           href="/user/explore"
           className={`${
-            pathname.includes("explore")
+            pathname.includes("/explore")
               ? "bg-gold-500 text-brandDark px-3 rounded-xl"
               : "text-[#B0B0B0]"
           } text-lg font-bold pl-3 py-2 flex items-center gap-2`}
         >
-          {pathname.includes("explore") ? (
+          {pathname.includes("/explore") ? (
             <Image src={ActiveExploreIcon} alt="ActiveExploreIcon" />
           ) : (
             <Image src={ExploreIcon} alt="ExploreIcon" />
@@ -67,12 +67,12 @@ const DashboardDesktopBar = () => {
         <Link
           href="/user/feed"
           className={`${
-            pathname.includes("feed")
+            pathname.includes("/feed")
               ? "bg-gold-500 text-brandDark px-3 rounded-xl"
               : "text-[#B0B0B0]"
           } text-lg font-bold pl-3 py-2 flex items-center gap-2`}
         >
-          {pathname.includes("feed") ? (
+          {pathname.includes("/feed") ? (
             <Image src={ActiveFeedIcon} alt="ActiveFeedIcon" />
           ) : (
             <Image src={FeedIcon} alt="FeedIcon" />
@@ -84,12 +84,12 @@ const DashboardDesktopBar = () => {
         <Link
           href="/user/drinks"
           className={`${
-            pathname.includes("drinks")
+            pathname.includes("/drinks")
               ? "bg-gold-500 text-brandDark px-3 rounded-xl"
               : "text-[#B0B0B0]"
           } text-lg font-bold pl-3 py-2 flex items-center gap-2`}
         >
-          {pathname.includes("drinks") ? (
+          {pathname.includes("/drinks") ? (
             <Image src={ActiveDrinksIcon} alt="ActiveDrinksIcon" />
           ) : (
             <Image src={DrinksIcon} alt="DrinksIcon" />
@@ -101,12 +101,12 @@ const DashboardDesktopBar = () => {
         <Link
           href="/user/profile"
           className={`${
-            pathname.includes("profile")
+            pathname.includes("/profile")
               ? "bg-gold-500 text-brandDark px-3 rounded-xl"
               : "text-[#B0B0B0]"
           } text-lg font-bold pl-3 py-2 flex items-center gap-2`}
         >
-          {pathname.includes("profile") ? (
+          {pathname.includes("/profile") ? (
             <Image src={ActiveProfileIcon} alt="ActiveProfileIcon" />
           ) : (
             <Image src={ProfileIcon} alt="ProfileIcon" />

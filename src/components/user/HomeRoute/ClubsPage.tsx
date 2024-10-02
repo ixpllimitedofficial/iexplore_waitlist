@@ -1,12 +1,19 @@
-// import ClubCard from "@/components/UI/Cards/ClubCard";
-
+import Image from "next/image";
+import ArrowLeft from "@/assets/svg/ArrowLeft.svg";
+import Link from "next/link";
 import ClubCard from "./ClubCard";
 
 const ClubsPage = () => {
   return (
     <section className="">
-      <div>
-        <h1 className="text-center text-3xl font-bold mx-auto">Clubs</h1>
+      <div className="flex items-center px-5">
+        <Link href="/user">
+          <Image src={ArrowLeft} alt="ArrowLeft" className="justify-start" />
+        </Link>
+
+        <div className="flex justify-center items-center gap-3 w-full">
+          <p className=" font-bold text-3xl">Clubs</p>
+        </div>
       </div>
 
       <div className="flex flex-wrap justify-around mt-5 w-[80vw] mx-auto gap-5">

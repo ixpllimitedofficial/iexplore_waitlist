@@ -1,10 +1,12 @@
+import Link from "next/link";
 import Image from "next/image";
 import ArrowLeft from "@/assets/svg/ArrowLeft.svg";
-import Link from "next/link";
+import SpotDetails from "@/components/user/ExploreRoute/SpotDetails/SpotDetails";
+import ReviewsRatings from "@/components/user/ExploreRoute/ReviewsRatings/ReviewsRatings";
 
 const page = () => {
   return (
-    <section className="px-5">
+    <section className="px-7">
       <div className="flex items-center">
         <Link href="/user/explore">
           <Image src={ArrowLeft} alt="ArrowLeft" className="justify-start" />
@@ -17,6 +19,10 @@ const page = () => {
           </div>
         </div>
       </div>
+
+      <SpotDetails />
+
+      <ReviewsRatings />
     </section>
   );
 };

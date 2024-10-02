@@ -17,27 +17,27 @@ const TopSearchBar = () => {
         />
 
         <div className="flex flex-row gap-3">
-          <Link href="/user/drinks">
+          <Link href="/user/profile/saved-locations">
             <Button
               className={`${
-                pathname === "/user/drinks"
+                pathname === "/user/profile/saved-locations"
                   ? "bg-gold-500 text-brandDark hover:bg-gold-500 hover:text-brandDark"
-                  : "bg-[#4D4D4D66] text-[#B0B0B0] hover:bg-gold-500 hover:text-brandDark "
+                  : "bg-[#4D4D4D66] text-[#B0B0B0] hover:bg-gold-500 hover:text-brandDark"
               } transition duration-200 px-5 md:px-10 py-5 rounded-3xl font-bold text-lg`}
             >
-              Drinks for you
+              Locations
             </Button>
           </Link>
 
-          <Link href="/user/drinks/claimed">
+          <Link href="/user/profile/saved-drinks">
             <Button
               className={`${
-                pathname === "/user/drinks/claimed"
+                pathname === "/user/profile/saved-drinks"
                   ? "bg-gold-500 text-brandDark hover:bg-gold-500 hover:text-brandDark"
                   : "bg-[#4D4D4D66] text-[#B0B0B0] hover:bg-gold-500 hover:text-brandDark "
               } transition duration-200 px-5 md:px-10 py-5 rounded-3xl font-bold text-lg`}
             >
-              Claimed drinks
+              Drinks
             </Button>
           </Link>
         </div>
