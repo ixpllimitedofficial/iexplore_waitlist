@@ -1,4 +1,8 @@
 import React from "react";
+import Image from "next/image";
+import StopWatch from "@/assets/svg/VendorSvg/stop-watch.png";
+import LocationStar from "@/assets/svg/VendorSvg/location-star-01.svg";
+import LocationShare from "@/assets/svg/VendorSvg/location-share-01.png";
 
 const SpotDetails = () => {
   return (
@@ -33,17 +37,31 @@ const SpotDetails = () => {
             and great vibes.
           </p>
 
-          <div className="col-span-1 flex flex-col gap-3">
-            <div>
-              <p className="text-lg font-bold">
+          <div className="col-span-1 flex flex-col gap-5">
+            <div className="flex gap-3 items-center">
+              <Image src={LocationStar} alt="location" width={30} height={30} />
+              <p className="text-lg font-semibold">
                 873 Ozumba Mbadiwe Ave, Victoria Island 106104, Lagos
               </p>
             </div>
+            <div className="flex gap-3 items-center">
+              <Image
+                src={StopWatch}
+                alt="location share"
+                width={30}
+                height={30}
+              />
+              <p className="text-lg font-bold">4pm - 11pm</p>
+            </div>
 
-            <p className="text-lg font-bold">4pm - 11pm</p>
-
-            <div className="bg-gold-500 py-1 px-3 rounded-3xl font-bold text-brandDark self-start">
-              Share spot
+            <div className="bg-gold-500 py-1 px-5 rounded-3xl font-bold text-brandDark self-start flex gap-3 items-center">
+              <Image
+                src={LocationShare}
+                alt="stop watch"
+                width={30}
+                height={30}
+              />
+              <p>Share spot</p>
             </div>
           </div>
         </div>

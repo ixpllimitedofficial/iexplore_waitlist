@@ -89,7 +89,7 @@ const AppInputOTP = () => {
     <>
       {showModal && (
         <Modal handleModal={handleModal} btnText="Let's Go!">
-          <h1 className="text-gold-500 font-bold text-3xl">Welcome!</h1>
+          <h1 className="text-gold-500 font-bold text-3xl">Sign up Completed</h1>
 
           <div className="bg-[#0E0E0EB2] border-2 border-[#4D4D4D] rounded-xl flex flex-col gap-5 p-7 items-center">
             <Image
@@ -127,12 +127,12 @@ const AppInputOTP = () => {
                 <FormControl>
                   <InputOTP maxLength={6} {...field}>
                     <InputOTPGroup>
-                      <InputOTPSlot index={0} />
-                      <InputOTPSlot index={1} />
-                      <InputOTPSlot index={2} />
-                      <InputOTPSlot index={3} />
-                      <InputOTPSlot index={4} />
-                      <InputOTPSlot index={5} />
+                      <InputOTPSlot index={0} className="mx-1 border border-white rounded"/>
+                      <InputOTPSlot index={1} className="mx-1 border-white border-2 rounded"/>
+                      <InputOTPSlot index={2} className="mx-1 border-white border-2 rounded"/>
+                      <InputOTPSlot index={3} className="mx-1 border-white border-2 rounded"/>
+                      <InputOTPSlot index={4} className="mx-1 border-white border-2 rounded"/>
+                      <InputOTPSlot index={5} className="mx-1 border-white border-2 rounded"/>
                     </InputOTPGroup>
                   </InputOTP>
                 </FormControl>
@@ -145,7 +145,7 @@ const AppInputOTP = () => {
           />
 
           <Button
-            className="bg-gold-500 hover:bg-white transition duration-200 text-[#322016] px-8 py-5 lg:py-6 rounded-3xl font-bold text-base mx-auto"
+            className="bg-[#FFFFFF1A] hover:bg-gold-500 hover:text-white transition duration-200 text-[#b8b7b7] px-8 py-5 lg:py-6 rounded-3xl font-bold text-base mx-auto w-[90%] lg:w-[50%] mt-32 lg:mt-2"
             type="submit"
             disabled={btnState}
             >

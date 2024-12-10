@@ -45,6 +45,16 @@ export const signupValidationSchema = z
     confirm_password: z.string().min(1, {
       message: "Confirm Password must be not be empty.",
     }),
+    business_name: z.string().min(1, {
+      message: "Business name must not be empty.",
+    }),
+    business_address: z.string().min(1, {
+      message: "Business address must not be empty.",
+    }),
+    business_email_address: z.string().min(1, {
+      message: "Business email is required",
+    }),
+    business_phone_number: z.string().min(11, { message: "Phone Number must be at least 11 chars." }),
     checkbox: z.boolean().refine((checked) => checked, {
       message: "You must check the checkbox.",
     }),
@@ -59,6 +69,11 @@ export const emailSchema = z.object({
     message: "Please put in a valid email.",
   }),
 });
+export const business_email_addressSchema = z.object({
+  business_email_address: z.string().email({
+    message: "Please put in a valid email."
+  }),
+})
 
 export const resetPasswordValidationSchema = z
   .object({
