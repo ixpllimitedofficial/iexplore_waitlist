@@ -34,9 +34,12 @@ const SpotDetails = () => {
           </p>
 
           <div className="col-span-1 flex flex-col gap-3">
-            <p className="text-lg font-bold">
-              873 Ozumba Mbadiwe Ave, Victoria Island 106104, Lagos
-            </p>
+            <div>
+              <p className="text-lg font-bold">
+                873 Ozumba Mbadiwe Ave, Victoria Island 106104, Lagos
+              </p>
+            </div>
+
             <p className="text-lg font-bold">4pm - 11pm</p>
 
             <div className="bg-gold-500 py-1 px-3 rounded-3xl font-bold text-brandDark self-start">

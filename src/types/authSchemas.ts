@@ -45,6 +45,16 @@ export const signupValidationSchema = z
     confirm_password: z.string().min(1, {
       message: "Confirm Password must be not be empty.",
     }),
+    business_name: z.string().min(1, {
+      message: "Business name must not be empty.",
+    }),
+    business_address: z.string().min(1, {
+      message: "Business address must not be empty.",
+    }),
+    business_email_address: z.string().min(1, {
+      message: "Business email is required",
+    }),
+    business_phone_number: z.string().min(11, { message: "Phone Number must be at least 11 chars." }),
     checkbox: z.boolean().refine((checked) => checked, {
       message: "You must check the checkbox.",
     }),
@@ -59,6 +69,11 @@ export const emailSchema = z.object({
     message: "Please put in a valid email.",
   }),
 });
+export const business_email_addressSchema = z.object({
+  business_email_address: z.string().email({
+    message: "Please put in a valid email."
+  }),
+})
 
 export const resetPasswordValidationSchema = z
   .object({
@@ -78,6 +93,45 @@ export const verifyOTPSchema = z.object({
   otp: z.string().min(6, {
     message: "Your one-time password must be 6 characters.",
   }),
+});
+
+export const setupBusinessValidationSchema = z
+.object({
+  profile_picture: z
+  .string()
+  .min(2, { message: "Add a profile picture" }),
+  business_name: z
+    .string()
+    .min(2, { message: "business name must be at least 2 chars." }),
+  email: z.string().email({
+    message: "Please put in a valid email.",
+  }),
+  phone_number: z.string().min(11, { message: "Phone Number must be at least 11 chars." }),
+  business_address: z.string().min(1, {
+    message: "Business address must not be empty.",
+  }),
+  opening_hour: z.string().min(1, {
+    message: "Field must not be empty.",
+  }),
+  closing_hour: z.string().min(1, {
+    message: "Field must not be empty.",
+  }),
+  category: z.string().min(1, {
+    message: "Please select a category.",
+  }),
+  photo_of_business: z.string().min(1, {
+    message: "Please upload a business picture.",
+  }),
+  utility_of_business: z.string().min(1, {
+    message: "Please upload your utility bill.",
+  }),
+  cac_of_business: z.string().min(1, {
+    message: "Please upload your CAC.",
+  }),
+  cac_number_of_business: z.string().min(1, {
+    message: "This field is required",
+  }),
+
 });
 
 export const editProfileSchema = z

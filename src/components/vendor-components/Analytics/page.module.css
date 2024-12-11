@@ -1,0 +1,30 @@
+.borderRating {
+  border: 2px solid rgb(255, 204, 0);
+}
+.borderTraffic {
+  border: 2px solid rgb(0, 136, 0);
+  background: rgba(0, 136, 0, 0.5);
+}
+.borderStock {
+  border: 2px solid rgb(229, 0, 0);
+  background: rgba(229, 0, 0, 0.5);
+}
+.charts{
+  color:inherit;
+  visibility: hidden;
+}
+.date{
+  font-size: 10px;
+}
+@media(max-width:768px){
+  .analysis_title{
+    margin-top:2rem !important;
+  }
+  .analytic_wrapper{
+    padding: 0.5rem;
+  }
+  .borderRating,.borderStock,.borderTraffic{
+    padding:0.3rem;
+    font-size: 1rem;
+  }
+}
