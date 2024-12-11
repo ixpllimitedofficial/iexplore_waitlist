@@ -95,6 +95,45 @@ export const verifyOTPSchema = z.object({
   }),
 });
 
+export const setupBusinessValidationSchema = z
+.object({
+  profile_picture: z
+  .string()
+  .min(2, { message: "Add a profile picture" }),
+  business_name: z
+    .string()
+    .min(2, { message: "business name must be at least 2 chars." }),
+  email: z.string().email({
+    message: "Please put in a valid email.",
+  }),
+  phone_number: z.string().min(11, { message: "Phone Number must be at least 11 chars." }),
+  business_address: z.string().min(1, {
+    message: "Business address must not be empty.",
+  }),
+  opening_hour: z.string().min(1, {
+    message: "Field must not be empty.",
+  }),
+  closing_hour: z.string().min(1, {
+    message: "Field must not be empty.",
+  }),
+  category: z.string().min(1, {
+    message: "Please select a category.",
+  }),
+  photo_of_business: z.string().min(1, {
+    message: "Please upload a business picture.",
+  }),
+  utility_of_business: z.string().min(1, {
+    message: "Please upload your utility bill.",
+  }),
+  cac_of_business: z.string().min(1, {
+    message: "Please upload your CAC.",
+  }),
+  cac_number_of_business: z.string().min(1, {
+    message: "This field is required",
+  }),
+
+});
+
 export const editProfileSchema = z
   .object({
     full_name: z

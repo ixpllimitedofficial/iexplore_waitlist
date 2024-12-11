@@ -3,22 +3,31 @@ import Image from "next/image";
 import StopWatch from "@/assets/svg/VendorSvg/stop-watch.png";
 import LocationStar from "@/assets/svg/VendorSvg/location-star-01.svg";
 import LocationShare from "@/assets/svg/VendorSvg/location-share-01.png";
+import FrameOne from "@/assets/img/VendorPage/Frame 19704.png";
+import FrameTwo from "@/assets/img/VendorPage/Frame 20027.png";
+import FrameThree from "@/assets/img/VendorPage/Frame 20031.png";
+import FrameFour from "@/assets/img/VendorPage/Frame 20032.png";
+import FrameFive from "@/assets/img/VendorPage/Frame 20027 (1).png";
+import FrameSix from "@/assets/img/VendorPage/Frame 20031 (1).png";
+import FrameSeven from "@/assets/img/VendorPage/Frame 20032 (1).png";
+
+import GallerySlide from "@/components/vendor-components/GallerySlide";
+
+const slides = [
+  { src: FrameOne, alt: "frame one" },
+  { src: FrameTwo, alt: "frame two" },
+  { src: FrameThree, alt: "frame three" },
+  { src: FrameFour, alt: "frame four" },
+  { src: FrameFive, alt: "frame five" },
+  { src: FrameSix, alt: "frame six" },
+];
+
 
 const SpotDetails = () => {
   return (
     <section className="mt-8">
       {/* images */}
-      <div className="grid grid-cols-2 gap-5 h-[380px]">
-        <div className="bg-[#4D4D4D66]"></div>
-        <div className="grid grid-cols-3 gap-4">
-          <div className="bg-[#4D4D4D66]"></div>
-          <div className="bg-[#4D4D4D66]"></div>
-          <div className="bg-[#4D4D4D66]"></div>
-          <div className="bg-[#4D4D4D66]"></div>
-          <div className="bg-[#4D4D4D66]"></div>
-          <div className="bg-[#4D4D4D66]"></div>
-        </div>
-      </div>
+      <GallerySlide slides={slides}/>
 
       {/* details */}
       <div className="mt-7">

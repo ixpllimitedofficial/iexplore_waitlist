@@ -49,14 +49,14 @@ const NewDashboardDesktopBar = () => {
       <nav className="flex flex-col gap-3 justify-center">
         {/* Dashboard */}
         <Link
-          href="/vendor-Home/dashboard"
+          href="/vendor-Home/dashboard" 
           className={`${
-            pathname === "/vendor-Home/dashboard"
+            pathname.includes("/vendor-Home/dashboard") || pathname.includes("/vendor-Home/dashboard/set-up")
               ? "bg-gold-500 text-brandDark px-3 rounded-3xl"
               : "text-[#B0B0B0]"
           }text-lg font-bold pl-3 py-2 flex items-center gap-2 text-[#B0B0B0]`}
         >
-          {pathname === "/vendor-Home/dashboard" ? (
+          {pathname.includes("/vendor-Home/dashboard") || pathname.includes("/vendor-Home/dashboard/set-up") ? (
             <Image src={ActiveHomeSvg} alt="ActiveHomeicon" />
           ) : (
             <Image src={HomeSvg} alt="Home icon" />
@@ -72,7 +72,7 @@ const NewDashboardDesktopBar = () => {
               : "text-[#B0B0B0]"
           }text-lg font-bold pl-3 py-2 flex items-center gap-2 text-[#B0B0B0]`}
         >
-          {pathname === "/vendor-Home/business" ? (
+          {pathname.includes("/vendor-Home/business") || pathname.includes("/vendor-Home/business/") ? (
             <Image src={NewStoreSVG} alt="Users icon" className="w-7 h-7" />
           ) : (
             <Image src={UsersIconSvg} alt="Users icon" className="w-7 h-7" />

@@ -6,8 +6,15 @@ import MarketIcon from "@/assets/svg/VendorSvg/marketSvg.svg";
 import NotifyIcon from "@/assets/svg/VendorSvg/NoticeSvg.svg";
 import DrinksIcon from "@/assets/svg/VendorSvg/drinkSvg.svg";
 import AppButton from "@/components/UI/Button/AppButton";
+import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 
 const SetUpBusiness = () => {
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push("/vendor-Home/dashboard/set-up");
+  };
   return (
     <div className={`${Styles.container} p-6 rounded-2xl h-fit`}>
       <h1 className="text-2xl font-semibold text-center mb-6">
@@ -41,7 +48,11 @@ const SetUpBusiness = () => {
           </p>
         </div>
       </div>
-      <AppButton btnText="Set up business" className="w-full mt-3 rounded-full"/>
+      <AppButton
+        btnText="Set up business"
+        className="w-full mt-3 rounded-full"
+        handleClick={handleClick}
+      />
     </div>
   );
 };
