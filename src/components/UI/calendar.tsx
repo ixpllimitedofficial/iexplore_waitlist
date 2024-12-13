@@ -22,15 +22,15 @@ function Calendar({
       classNames={{
         months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
         month: "space-y-4",
-        caption: "flex justify-center pt-1 relative items-center",
+        caption: "flex justify-between pt-1 relative items-center",
         caption_label: "text-sm font-medium",
-        nav: "space-x-1 flex items-center",
+        nav: "space-x-5 flex items-center justify-end", // Move navigation buttons to the right
         nav_button: cn(
           buttonVariants({ variant: "outline" }),
-          "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100"
+          "h-7 w-7 bg-transparent border border-gold-500 p-0  hover:bg-gold-500 hover:text-white "
         ),
-        nav_button_previous: "absolute left-1",
-        nav_button_next: "absolute right-1",
+        nav_button_previous: "relative order-1", // Adjust order for proper alignment
+        nav_button_next: "relative order-2", // Keep next button after previous
         table: "w-full border-collapse space-y-1",
         head_row: "flex",
         head_cell:
@@ -50,8 +50,6 @@ function Calendar({
         day_range_end: "day-range-end",
         day_selected:
           "bg-gold-500 text-slate-50 hover:bg-gold-500 hover:text-slate-50 focus:bg-gold-500 focus:text-slate-50 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50 dark:hover:text-slate-900 dark:focus:bg-slate-50 dark:focus:text-slate-900",
-        // day_today:
-        //   "bg-slate-100 text-slate-900 dark:bg-slate-800 dark:text-slate-50",
         day_outside:
           "day-outside text-slate-500 opacity-50  aria-selected:bg-slate-100/50 aria-selected:text-slate-500 aria-selected:opacity-30 dark:text-slate-400 dark:aria-selected:bg-slate-800/50 dark:aria-selected:text-slate-400",
         day_disabled: "text-slate-500 opacity-50 dark:text-slate-400",
@@ -62,7 +60,7 @@ function Calendar({
       }}
       components={{
         IconLeft: ({ ...props }) => <ChevronLeftIcon className="h-4 w-4" />,
-        IconRight: ({ ...props }) => <ChevronRightIcon className="h-4 w-4" />,
+        IconRight: ({ ...props }) => <ChevronRightIcon className="h-4 w-4 " />,
       }}
       {...props}
     />

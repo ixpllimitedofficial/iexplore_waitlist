@@ -9,7 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.5",
+    "@emotion/styled": "^11.13.5",
     "@hookform/resolvers": "^3.4.0",
+    "@mui/material": "^6.1.9",
+    "@mui/x-charts": "^7.23.0",
     "@radix-ui/react-accordion": "^1.2.0",
     "@radix-ui/react-avatar": "^1.0.4",
     "@radix-ui/react-checkbox": "^1.0.4",
@@ -32,6 +36,7 @@
     "embla-carousel-react": "^8.1.7",
     "http-proxy-middleware": "^3.0.0",
     "input-otp": "^1.2.4",
+    "lucide-react": "^0.462.0",
     "next": "14.0.2",
     "next-auth": "^5.0.0-beta.19",
     "react": "^18",
@@ -40,6 +45,7 @@
     "react-hook-form": "^7.51.4",
     "react-timer-hook": "^3.0.7",
     "react-toastify": "^10.0.5",
+    "recharts": "^2.14.0",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.23.8",

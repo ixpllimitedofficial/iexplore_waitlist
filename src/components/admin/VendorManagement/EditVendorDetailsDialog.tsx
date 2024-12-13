@@ -14,11 +14,10 @@ import {
 const EditVendorDetailsDialog = () => {
   return (
     <Dialog>
-      <DialogTrigger asChild className="">
-        <Button className="bg-gold-800 text-gold-500">
-          <p>Edit</p>
-          <Image src={EditOutlineIconSvg} alt="edit icon" className="ml-2" />
-        </Button>
+      <DialogTrigger asChild className="col-end-12">
+        <span className="w-[50%] cursor-pointer border border-[#b4ddb4] px-4 py-2 rounded-full text-white text-center font-semibold whitespace-nowrap">
+          Edit
+        </span>
       </DialogTrigger>
       <DialogContent className="w-[90%] md:max-w-[800px] bg-[#212121]">
         <DialogHeader>

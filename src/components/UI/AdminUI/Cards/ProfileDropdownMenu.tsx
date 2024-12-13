@@ -20,10 +20,10 @@ const ProfileDropdownMenu = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Avatar>
+        {/* <Avatar>
           <AvatarImage src="https://github.com/shadcn.png" />
           <AvatarFallback>CN</AvatarFallback>
-        </Avatar>
+        </Avatar> */}
       </DropdownMenuTrigger>
       <DropdownMenuContent className="mr-3">
         <DropdownMenuLabel>Anita Cruz</DropdownMenuLabel>
