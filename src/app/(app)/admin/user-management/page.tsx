@@ -1,68 +1,50 @@
 import React from "react";
 import Image from "next/image";
 import PeopleIconSvg from "@/assets/svg/AdminIconsSvg/PeopleIconSvg.svg";
+import ActiveUsersIconSvg from "@/assets/svg/AdminIconsSvg/ActiveUsersIconSvg.svg";
 import { ArrowDownIcon, ArrowUpIcon } from "@radix-ui/react-icons";
 import AllUsersTable from "@/components/admin/UserManagement/AllUsersTable";
 
 const page = () => {
+  // const divStyle =
+  //   "col-span-full md:col-span-3 lg:col-span-2 flex items-center gap-2 bg-brandDarkNeutral pr-5 py-5 rounded-2xl text-sm";
   const divStyle =
-    "col-span-full md:col-span-3 lg:col-span-2 flex items-center gap-2 bg-brandDarkNeutral pr-5 py-5 rounded-2xl text-sm";
+    "flex items-center justify-between w-full bg-[#23232325] gap-2 px-4 lg:px-10 py-3 lg:py-5 lg:pl-5 pl-2 rounded-2xl border border-[#4D4D4D] text-sm";
+
 
   return (
     <>
-      <div className="grid grid-cols-8 gap-4 mt-5">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-5 p-5">
         <div className={divStyle}>
-          <div className="bg-gold-500 p-1 h-full"></div>
-
-          <div className="flex-grow">
-            <p>TOTAL USERS</p>
-            <div className="flex gap-1 items-center">
-              <p className="font-bold text-base">200</p>
-
-              <div className="flex items-center">
-                <ArrowUpIcon color="#00AC4F" />
-                <p className="text-sm">
-                  <span className="text-sm text-[#00AC4F]"> 16% </span> this
-                  month
-                </p>
-              </div>
-            </div>
-          </div>
-
           <Image src={PeopleIconSvg} alt="PeopleIconSvg" />
+          <div className="flex-grow">
+            <p className='text-sm lg:text-[16px] whitespace-nowrap  font-normal '>Total Users</p>
+            <p className="font-bold text-lg lg:text-2xl">2,000</p>
+          </div>
+          <span className="bg-[#008800] border border-[#b4ddb4] px- p-2 rounded-full text-white  font-semibold whitespace-nowrap">+16% from last week</span>
+        </div>
+
+        <div className={divStyle}>
+          <Image src={ActiveUsersIconSvg} alt="ActiveUsersIconSvg" />
+          <div className="flex-grow">
+            <p className='text-sm lg:text-[16px] whitespace-nowrap font-normal'>Active Users</p>
+            <p className="font-bold text-lg lg:text-2xl">2,000</p>
+          </div>
+          <span className="bg-[#E50000] border border-[#e2bdbd] p-2 rounded-full text-white  font-semibold whitespace-nowrap">-2% from last week</span>
         </div>
         <div className={divStyle}>
-          <div className="bg-gold-500 p-1 h-full"></div>
-
+          <Image src={ActiveUsersIconSvg} alt="ActiveUsersIconSvg" />
           <div className="flex-grow">
-            <p>NEW USERS</p>
-            <div className="flex gap-1 items-center">
-              <p className="font-bold text-base">50</p>
-
-              <div className="flex items-center">
-                <ArrowDownIcon color="#FF1800" />
-                <p className="text-sm">
-                  <span className="text-sm text-[#FF1800]">1% </span> this month
-                </p>
-              </div>
-            </div>
+            <p className='text-sm lg:text-[16px] font-normal'>Active Users</p>
+            <p className="font-bold text-lg lg:text-2xl">2,000</p>
           </div>
 
-          <Image src={PeopleIconSvg} alt="PeopleIconSvg" />
-        </div>
-        <div className={divStyle}>
-          <div className="bg-gold-500 p-1 h-full"></div>
-
-          <div className="flex-grow">
-            <p>ACTIVE NOW</p>
-            <p className="font-bold text-base">20</p>
-          </div>
-
-          <Image src={PeopleIconSvg} alt="PeopleIconSvg" />
         </div>
       </div>
 
-      <AllUsersTable />
+      <div className="p-5">
+        <AllUsersTable />
+      </div>
     </>
   );
 };

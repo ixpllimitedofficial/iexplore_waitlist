@@ -15,7 +15,6 @@ const SpotDetails = () => {
           <div className="bg-[#4D4D4D66]"></div>
         </div>
       </div>
-
       {/* details */}
       <div className="mt-7">
         <p className=" font-bold text-2xl">About</p>
@@ -26,7 +25,7 @@ const SpotDetails = () => {
             ultimate beach bar experience. Nestled along the pristine coastline,
             our bar offers a laid-back atmosphere where you can unwind with a
             refreshing cocktail in hand, savor fresh, locally-sourced bites, and
-            enjoy the soothing sounds of the ocean. Whether you're here to catch
+            enjoy the soothing sounds of the ocean. Whether you&apos;re here to catch
             the sunset, dance under the stars, or simply relax with friends, MBB
             is your go-to destination for unforgettable moments by the water.
             Come as you are, and let the beach be your backdrop for good times

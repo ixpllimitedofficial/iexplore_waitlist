@@ -121,7 +121,7 @@ const LoginForm = () => {
 
           {user.message && <p>{user.message}</p>}
           <NewAppButton btnText="Login" type="submit" className="text-sm"/>
-          <p className="text-center">Don't have an account? <span className="text-gold-500"><Link href="/vendor-Home?flow=signup">Signup</Link></span></p>
+          <p className="text-center">Don&apos;t have an account? <span className="text-gold-500"><Link href="/vendor-Home?flow=signup">Signup</Link></span></p>
         </form>
       </Form>
     </>

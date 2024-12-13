@@ -32,18 +32,18 @@ const AllVendorsTable = () => {
   };
 
   return (
-    <section className="mt-5 bg-brandDarkNeutral p-5 rounded-2xl">
+    <section className="mt-5 bg-[#4D4D4D] p-5 rounded-2xl">
       <div className="flex flex-col gap-5 lg:gap-0 lg:flex-row justify-between">
-        <p className="font-bold text-xl text-gold-500">All vendors</p>
+        <p className="font-bold text-lg text-white">All Explorers</p>
 
         <div className="flex items-center gap-3">
           <AppSearchInput
-            className="bg-gold-800 text-gold-500 border-none focus-visible:ring-0"
-            inputClass="placeholder:text-gold-500 placeholder:text-sm"
+            className="bg-white border-none focus-visible:ring-0"
+            inputClass="placeholder:text-[##4D4D4D] placeholder:text-sm"
           />
 
           <Select>
-            <SelectTrigger className="w-auto bg-gold-800 text-gold-500 border-none focus-visible:ring-0">
+            <SelectTrigger className="w-auto bg-gold-500 text-black border-none focus-visible:ring-0">
               <SelectValue placeholder="Sort by: Newest" />
             </SelectTrigger>
             <SelectContent className="">
@@ -60,16 +60,17 @@ const AllVendorsTable = () => {
       {/* TABLE */}
       <Table className="mt-4 w-[1000px] lg:w-full">
         <TableCaption className="text-[#B5B7C0]">
-          Showing data 1 to 8 of 256K entries
+          Showing data 1 to 8 of 256K entries{" "}
+          <span className="text-gold-500">(View all)</span>
         </TableCaption>
         <TableHeader>
           <TableRow className="bg-[#424242] border-none">
             <TableHead className=" text-white">S/N</TableHead>
             <TableHead className="text-white">NAME</TableHead>
             <TableHead className="text-white">PHONE NUMBER</TableHead>
-            <TableHead className="text-white">BUSINESS NAME</TableHead>
-            <TableHead className="text-white">BUSINESS PHONE NUMBER</TableHead>
-            <TableHead className="text-white">BUSINESS EMAIL</TableHead>
+            <TableHead className="text-white">LAST SEEN</TableHead>
+            <TableHead className="text-white">CITY</TableHead>
+            <TableHead className="text-white">EMAIL</TableHead>
             <TableHead className="text-white">STATUS</TableHead>
           </TableRow>
         </TableHeader>
@@ -85,8 +86,8 @@ const AllVendorsTable = () => {
                 <TableCell className="font-medium py-5">{table}</TableCell>
                 <TableCell>Christine Brooks</TableCell>
                 <TableCell>09123456789</TableCell>
-                <TableCell>Club 777</TableCell>
-                <TableCell>09123456789</TableCell>
+                <TableCell>1Hour ago</TableCell>
+                <TableCell>ikeja-Lagos</TableCell>
                 <TableCell>brookschristine.mail.com</TableCell>
                 <TableCell>
                   <Badge className="bg-[#ffec4348] text-[#FFEC43] text-sm">

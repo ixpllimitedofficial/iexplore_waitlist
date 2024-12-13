@@ -21,13 +21,6 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/UI/form";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/UI/select";
 import { ToggleGroup, ToggleGroupItem } from "@/components/UI/toggle-group";
 import { Toggle } from "@/components/UI/toggle";
 import { Checkbox } from "@/components/UI/checkbox";
@@ -42,6 +35,21 @@ type UploadedFile = {
   preview: string;
 } & File; // Extending the File type to include the preview property
 
+const useCreateOnDrop = (setFileState: Function, multiple: boolean = false) => {
+  return useCallback(
+    (acceptedFiles: File[]) => {
+      const previews = acceptedFiles.map((file) =>
+        Object.assign(file, { preview: URL.createObjectURL(file) })
+      );
+      if (multiple) {
+        setFileState((prev: UploadedFile[]) => [...prev, ...previews]);
+      } else {
+        setFileState(previews[0]);
+      }
+    },
+    [setFileState, multiple]
+  );
+};
 const Page = () => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [businessPhotos, setBusinessPhotos] = useState<UploadedFile[]>([]);
@@ -52,6 +60,10 @@ const Page = () => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [btnState, setBtnState] = useState(false);
 
+  const onBusinessDrop = useCreateOnDrop(setBusinessPhotos, true);
+  const onUtilityDrop = useCreateOnDrop(setUtilityBill);
+  const onCertDrop = useCreateOnDrop(setRegistrationCertificate);
+
   const form = useForm<z.infer<typeof setupBusinessValidationSchema>>({
     resolver: zodResolver(setupBusinessValidationSchema),
     defaultValues: {
@@ -60,7 +72,7 @@ const Page = () => {
       email: "",
       phone_number: "",
       business_address: "",
-      opening_hour: "user",
+      opening_hour: "",
       closing_hour: "",
       category: "",
       photo_of_business: "",
@@ -80,43 +92,20 @@ const Page = () => {
   const handleUploadClick = () => {
     fileInputRef.current?.click();
   };
-  // Generalized onDrop handler
-  const createOnDrop = (setFileState: Function, multiple: boolean = false) =>
-    useCallback((acceptedFiles: File[]) => {
-      const previews = acceptedFiles.map((file) =>
-        Object.assign(file, { preview: URL.createObjectURL(file) })
-      );
-      if (multiple) {
-        setFileState((prev: UploadedFile[]) => [...prev, ...previews]);
-      } else {
-        setFileState(previews[0]);
-      }
-    }, []);
-
-  // Dropzones
   const {
     getRootProps: getBusinessRootProps,
     getInputProps: getBusinessInputProps,
-  } = useDropzone({
-    onDrop: createOnDrop(setBusinessPhotos, true),
-    accept: { "image/*": [] },
-  });
+  } = useDropzone({ onDrop: onBusinessDrop, accept: { "image/*": [] } });
 
   const {
     getRootProps: getUtilityRootProps,
     getInputProps: getUtilityInputProps,
-  } = useDropzone({
-    onDrop: createOnDrop(setUtilityBill),
-    accept: { "image/*": [] },
-  });
+  } = useDropzone({ onDrop: onUtilityDrop, accept: { "image/*": [] } });
 
   const { getRootProps: getCertRootProps, getInputProps: getCertInputProps } =
-    useDropzone({
-      onDrop: createOnDrop(setRegistrationCertificate),
-      accept: { "image/*": [] },
-    });
+    useDropzone({ onDrop: onCertDrop, accept: { "image/*": [] } });
 
-  // Handle reset for previews
+  // // Handle reset for previews
   const handleReset = (
     setFileState: Function,
     file: UploadedFile | UploadedFile[] | null
@@ -276,7 +265,7 @@ const Page = () => {
                   name="opening_hour"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-lg">Opening hour</FormLabel>
+                      <FormLabel className="text-lg">Opening hour:</FormLabel>
                       <FormControl>
                         <Input
                           className={`${inputStyling}`}

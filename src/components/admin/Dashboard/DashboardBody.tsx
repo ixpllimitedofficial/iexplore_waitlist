@@ -4,119 +4,132 @@ import React from "react";
 import Image from "next/image";
 import { Calendar } from "@/components/UI/calendar";
 import PeopleIconSvg from "@/assets/svg/AdminIconsSvg/PeopleIconSvg.svg";
-import TotalReferralIcon from "@/assets/svg/AdminIconsSvg/TotalReferralIcon.svg";
+import ActiveUsersIconSvg from "@/assets/svg/AdminIconsSvg/ActiveUsersIconSvg.svg";
 import TotalRevenueIconSvg from "@/assets/svg/AdminIconsSvg/TotalRevenueIconSvg.svg";
+import TotalVendorIconSvg from "@/assets/svg/AdminIconsSvg/TotalVendorIconSvg.svg";
+import NewVendorIconSvg from "@/assets/svg/AdminIconsSvg/NewVendorIconSvg.svg";
+import TotalReferralIconSvg from "@/assets/svg/AdminIconsSvg/TotalReferralIconSvg.svg";
 import { Button } from "@/components/UI/button";
+import UserTraffic from './UserTraffic'
+import NotificationCard from "./Notification";
+import VendorTraffic from "./VendorTraffic";
+import InfluencersTraffic from "./InfluencersTraffic";
+import { Divider } from '@mui/material';
 
 const DashboardBody = () => {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
 
   const divStyle =
-    "col-span-full md:col-span-6 lg:col-span-4 flex items-center justify-between bg-brandDarkNeutral gap-2 pr-5 py-5 lg:py-0 rounded-2xl text-sm";
+    "flex items-center justify-between w-full bg-[#23232325] gap-2 pr- py-3 lg:py-5 lg:pl-5 pl-2 rounded-2xl border border-[#4D4D4D] text-sm";
 
   return (
-    <section className="px-7">
-      {/* body 1 */}
-      <div className="grid grid-cols-10 gap-4">
-        <div className="grid grid-cols-12 gap-4 col-span-full lg:col-span-7">
-          <div className="grid grid-cols-12 gap-4 col-span-full">
+    <section className="px-4 lg:px-7 overflow-x-hidden">
+      {/* Body 1 */}
+      <div className="flex flex-col lg:flex-row gap-8">
+        {/* Left Section */}
+        <div className="flex-grow">
+          {/* Stats Cards */}
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6">
             <div className={divStyle}>
-              <div className="bg-gold-500 px-1 py-5"></div>
-
-              <div className="flex-grow">
-                <p>TOTAL USERS</p>
-                <p className="font-bold text-base">2,000</p>
-              </div>
               <Image src={PeopleIconSvg} alt="PeopleIconSvg" />
+              <div className="flex-grow">
+                <p className='text-sm lg:text-[16px]  font-normal '>Total Users</p>
+                <p className="font-bold text-lg lg:text-2xl">2,000</p>
+              </div>
+
             </div>
 
-            {/*  */}
             <div className={divStyle}>
-              <div className="bg-gold-500 px-1 py-5"></div>
-
+              <Image src={TotalVendorIconSvg} alt="TotalVendorIconSvg" />
               <div className="flex-grow">
-                <p>TOTAL VENDORS</p>
-                <p className="font-bold text-base">50</p>
+                <p className='text-sm lg:text-[16px]  font-normal '>Total Vendors</p>
+                <p className="font-bold text-lg lg:text-2xl">2,000</p>
               </div>
             </div>
 
-            {/*  */}
             <div className={divStyle}>
-              <div className="bg-gold-500 px-1 py-5"></div>
-
-              <div className="flex-grow">
-                <p>ACTIVE USERS</p>
-                <p className="font-bold text-base">20</p>
-              </div>
-            </div>
-
-            {/*  */}
-            <div className={divStyle}>
-              <div className="bg-gold-500 px-1 py-5"></div>
-
-              <div className="flex-grow">
-                <p>TOTAL REFERRAL</p>
-                <p className="font-bold text-base">200</p>
-              </div>
-              <Image src={TotalReferralIcon} alt="TotalReferralIcon" />
-            </div>
-
-            {/*  */}
-            <div className={divStyle}>
-              <div className="bg-gold-500 px-1 py-5"></div>
-
-              <div className="flex-grow">
-                <p>NEW USERS</p>
-                <p className="font-bold text-base">150</p>
-              </div>
-            </div>
-
-            {/*  */}
-            <div className={divStyle}>
-              <div className="bg-gold-500 px-1 py-5"></div>
-
-              <div className="flex-grow">
-                <p>TOTAL REVENUE</p>
-                <p className="font-bold text-base">N200,000.00</p>
-              </div>
               <Image src={TotalRevenueIconSvg} alt="TotalRevenueIconSvg" />
+              <div className="flex-grow">
+                <p className='text-sm lg:text-[16px] font-normal'>Total Revenue</p>
+                <p className="font-bold text-lg lg:text-2xl">2,000</p>
+              </div>
+            </div>
+
+            <div className={divStyle}>
+              <Image src={ActiveUsersIconSvg} alt="ActiveUsersIconSvg" />
+              <div className="flex-grow">
+                <p className='text-sm lg:text-[16px] font-normal'>Active Users</p>
+                <p className="font-bold text-lg lg:text-2xl">2,000</p>
+              </div>
+
+            </div>
+
+            <div className={divStyle}>
+              <Image src={NewVendorIconSvg} alt="NewVendorIconSvg" />
+              <div className="flex-grow">
+                <p className='text-sm lg:text-[16px]  font-normal'>New Vendors</p>
+                <p className="font-bold text-lg lg:text-2xl">2,000</p>
+              </div>
+            </div>
+
+            <div className={divStyle}>
+              <Image src={TotalReferralIconSvg} alt="TTotalReferralIconSvg" />
+              <div className="flex-grow">
+                <p className='text-sm lg:text-[16px]  font-normal '>Total Referrals</p>
+                <p className="font-bold text-lg lg:text-2xl">N2,000</p>
+              </div>
+
             </div>
           </div>
 
-          <div className="grid grid-cols-12 gap-4 col-span-full">
-            <div className="col-span-full lg:col-span-6 bg-brandDarkNeutral p-5 rounded-2xl text-sm">
-              Vendors traffic
+          {/* Traffic Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-8">
+            <div className="bg-[#23232325] p-5 rounded-2xl">
+              <div className="flex justify-between items-center text-xs pb-2">
+                <h2 className="text-base lg:text-lg font-bold">Vendors Traffic</h2>
+                <span className="bg-gold-500 px-4 p-2 rounded-full text-black font-semibold whitespace-nowrap">+13% from last week</span>
+              </div>
+              <Divider sx={{ backgroundColor: '#4D4D4D', height: 2 }} />
+              <VendorTraffic />
             </div>
-            <div className="col-span-full lg:col-span-6 bg-brandDarkNeutral p-5 rounded-2xl text-sm">
-              Influencers traffic
+
+            <div className="bg-[#23232325] p-5 rounded-2xl">
+              <div className="flex justify-between items-center text-xs pb-2">
+                <h2 className="text-base lg:text-lg font-bold">Influencers Traffic</h2>
+                <span className="bg-gold-500 px-4 p-2 rounded-full text-black font-semibold whitespace-nowrap">+13% from last week</span>
+              </div>
+              <Divider sx={{ backgroundColor: '#4D4D4D', height: 2 }} />
+              <InfluencersTraffic />
             </div>
           </div>
         </div>
 
-        <div className="hidden col-span-full lg:col-span-3 bg-brandDarkNeutral py-5 rounded-2xl lg:flex flex-col items-center justify-center gap-3">
+        {/* Right Section */}
+        <div className="flex flex-col bg-[#23232325] pt-5 rounded-2xl items-center gap-3">
           <Calendar
             mode="single"
             selected={date}
             onSelect={setDate}
-            className="rounded-md border"
+            className="rounded-md"
           />
-
-          <Button className="bg-gold-500 text-black">Select</Button>
         </div>
       </div>
 
-      {/* body 2 */}
-      <div className="grid grid-cols-5 gap-4 mt-5">
-        <div className="col-span-full lg:col-span-3 bg-brandDarkNeutral rounded-2xl">
-          <p className="font-bold m-5 text-lg"> Users traffic</p>
+      {/* Body 2 */}
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 mt-8">
+  {/* User Traffic Section */}
+  <div className="col-span-1 lg:col-span-3 bg-[#23232325] p-5 rounded-2xl">
+    <div className="border-full my-3"></div>
+    <UserTraffic />
+  </div>
 
-          {/* divider */}
-          <div className="border-t-2 border-[#979797] w-full mb-3"></div>
-        </div>
-        <div className="col-span-full lg:col-span-2 bg-brandDarkNeutral p-5 rounded-2xl">
-          Notifications
-        </div>
-      </div>
+  {/* Notification Card Section */}
+  <div className="col-span-1 lg:col-span-2 bg-brandDarkNeutral p-5 rounded-2xl">
+    <NotificationCard />
+  </div>
+</div>
+
+
     </section>
   );
 };

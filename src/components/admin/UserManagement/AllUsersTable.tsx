@@ -32,9 +32,9 @@ const AllUsersTable = () => {
   };
 
   return (
-    <section className="mt-5 bg-brandDarkNeutral p-5 rounded-2xl">
+    <section className="bg mt-5 bg-[#4D4D4D] p-5 rounded-2xl">
       <div className="flex flex-col gap-5 lg:gap-0 lg:flex-row justify-between">
-        <p className="font-bold text-xl text-gold-500">All Explorers</p>
+        <p className="font-bold text-lg text-white">All Explorers</p>
 
         <div className="flex items-center gap-3">
           <AppSearchInput

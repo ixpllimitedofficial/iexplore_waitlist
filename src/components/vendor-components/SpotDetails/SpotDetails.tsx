@@ -22,12 +22,11 @@ const slides = [
   { src: FrameSix, alt: "frame six" },
 ];
 
-
 const SpotDetails = () => {
   return (
     <section className="mt-8">
       {/* images */}
-      <GallerySlide slides={slides}/>
+      <GallerySlide slides={slides} />
 
       {/* details */}
       <div className="mt-7">
@@ -39,11 +38,11 @@ const SpotDetails = () => {
             ultimate beach bar experience. Nestled along the pristine coastline,
             our bar offers a laid-back atmosphere where you can unwind with a
             refreshing cocktail in hand, savor fresh, locally-sourced bites, and
-            enjoy the soothing sounds of the ocean. Whether you're here to catch
-            the sunset, dance under the stars, or simply relax with friends, MBB
-            is your go-to destination for unforgettable moments by the water.
-            Come as you are, and let the beach be your backdrop for good times
-            and great vibes.
+            enjoy the soothing sounds of the ocean. Whether you&apos;re here to
+            catch the sunset, dance under the stars, or simply relax with
+            friends, MBB is your go-to destination for unforgettable moments by
+            the water. Come as you are, and let the beach be your backdrop for
+            good times and great vibes.
           </p>
 
           <div className="col-span-1 flex flex-col gap-5">

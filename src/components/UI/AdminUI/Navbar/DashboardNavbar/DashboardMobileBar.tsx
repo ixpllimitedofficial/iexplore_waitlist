@@ -5,10 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
 import iExploreTextLogo from "@/assets/svg/NavbarSvg/iExploreTextLogoSvg.svg";
-import ExploreLogo from "@/assets/svg/NavbarSvg/iExploreLogoSvg.svg";
+import ExploreMobileIconSvg from "@/assets/svg/NavbarSvg/ExploreMobileIconSvg.svg";
 import DashboardMenuIcon from "@/assets/svg/AdminIconsSvg/DashboardMenuIcon.svg";
-import CloseIconSvg from "@/assets/svg/AdminIconsSvg/CloseIconSvg.svg";
-
 import HomeIconSvg from "@/assets/svg/AdminIconsSvg/NavbarIcons/HomeIconSvg.svg";
 import UsersIconSvg from "@/assets/svg/AdminIconsSvg/NavbarIcons/UsersIconSvg.svg";
 import VendorsIconSvg from "@/assets/svg/AdminIconsSvg/NavbarIcons/VendorsIconSvg.svg";
@@ -21,196 +19,141 @@ import SupportIconSvg from "@/assets/svg/AdminIconsSvg/NavbarIcons/SupportIconSv
 import ProfileDropdownMenu from "../../Cards/ProfileDropdownMenu";
 
 const DashboardMobileBar = () => {
-  // router
   const router = useRouter();
-
   const pathname = usePathname();
 
-  // whether to show nav or not's state and function
-  const [showNavState, setshowNavState] = useState<boolean>(false);
-  const showNav = () => {
-    setshowNavState(!showNavState);
-  };
+  const [showNavState, setshowNavState] = useState(false);
+
+  const showNav = () => setshowNavState(!showNavState);
 
   useEffect(() => {
-    // Disables Background Scrolling whilst the navbar is open
-    if (showNavState == true) {
-      document.body.style.overflow = "hidden";
-    } else {
-      // Unsets Background Scrolling to use when navbar is closed
-      document.body.style.overflow = "unset";
-    }
+    document.body.style.overflow = showNavState ? "hidden" : "unset";
   }, [showNavState]);
 
   return (
-    <header className="fixed top-0 w-screen z-50 lg:hidden flex items-center justify-between px-6 py-5 bg-gold-500">
-      {/* hamburger */}
+    <header className="fixed top-0 w-screen z-50 lg:hidden flex items-center px-6 py-5 bg-black gap-20">
+      {/* Hamburger Icon */}
       <Image
         src={DashboardMenuIcon}
         alt="DashboardMenuIcon"
         onClick={showNav}
+        className="h-6 w-6 cursor-pointer"
       />
 
-      {/* logo */}
-      {/* <Link href="/admin/"> */}
-      <Image src={ExploreLogo} alt="ExploreLogo" height={50} width={50} />
-      {/* </Link> */}
+      {/* Logo */}
+      <Image
+        src={ExploreMobileIconSvg}
+        alt="Explore Mobile Icon"
+        className="h-8 w-auto"
+        priority
+      />
 
       <ProfileDropdownMenu />
 
-      {/* navbar */}
+      {/* Sidebar Navigation */}
       <nav
-        className={`fixed top-0 h-screen w-screen z-[100] bg-[#3C3C3C] px-10 pt-14 pb-28 flex flex-col items-center gap-8 duration-700 ${
-          showNavState ? "left-0" : "left-[-100vw]"
-        }`}
+        className={`fixed top-14 left-0 h-screen w-74 bg-[#222121] z-[100] px-6  pb-6 flex flex-col gap-6 text-white duration-300 ${showNavState ? "translate-x-0" : "-translate-x-full"
+          }`}
       >
-        {/* to close nav */}
-        <div className="absolute top-5 z-[120] cursor-pointer noSelect flex w-[80%] justify-between">
-          {/* logo */}
-          <Image src={ExploreLogo} alt="ExploreLogo" height={50} width={50} />
+        {/* Close Button */}
+        {/* <Image
+          src={DashboardMenuIcon}
+          alt="Close Icon"
+          onClick={showNav}
+          className="h-6 w-6 cursor-pointer self-end"
+        /> */}
 
-          {/* to close */}
-          <Image src={CloseIconSvg} alt="CloseIconSvg" onClick={showNav} />
-        </div>
-
-        <div className="mt-14 flex flex-col gap-5 overflow-y-scroll no-scrollbar w-full">
+        {/* Navigation Links */}
+        <div className="flex flex-col gap-5 overflow-y-scroll no-scrollbar py-5">
           {/* Dashboard */}
-          <Link
+          <NavLink
             href="/admin/dashboard"
-            onClick={showNav}
-            className={`${
-              pathname === "/admin/dashboard"
-                ? "font-bold bg-gold-800 px-3 rounded-xl mr-auto"
-                : "font-normal"
-            } text-gold-500 pl-3 py-2 flex items-center gap-2`}
-          >
-            <Image src={HomeIconSvg} alt="Home icon" />
-            <p>Dashboard</p>
-          </Link>
+            pathname={pathname}
+            icon={HomeIconSvg}
+            label="Dashboard"
+          />
 
-          {/* divider */}
-          <div className="border-t-2 border-[#e0e0e042] flex-grow"></div>
-
-          {/* user */}
-          <Link
+          {/* User Management */}
+          <NavLink
             href="/admin/user-management"
-            onClick={showNav}
-            className={`${
-              pathname.includes("user-management")
-                ? "font-bold bg-gold-800 px-3 rounded-xl mr-auto"
-                : "font-normal"
-            } text-gold-500 pl-3 py-2 flex items-center gap-2`}
-          >
-            <Image src={UsersIconSvg} alt="Users icon" />
-            <p>User Management</p>
-          </Link>
+            pathname={pathname}
+            icon={UsersIconSvg}
+            label="User Management"
+          />
 
-          {/* vendor */}
-          <Link
+          {/* Vendor Management */}
+          <NavLink
             href="/admin/vendor-management"
-            onClick={showNav}
-            className={`${
-              pathname.includes("vendor-management")
-                ? "font-bold bg-gold-800 px-3 rounded-xl mr-auto"
-                : "font-normal"
-            } text-gold-500 pl-3 py-2 flex items-center gap-2`}
-          >
-            <Image src={VendorsIconSvg} alt="VendorsIcon" />
-            <p>Vendor Management</p>
-          </Link>
+            pathname={pathname}
+            icon={VendorsIconSvg}
+            label="Vendor Management"
+          />
 
-          {/* content */}
-          <Link
+          {/* Content Moderation */}
+          <NavLink
             href="/admin/content-moderation"
-            onClick={showNav}
-            className={`${
-              pathname.includes("content-moderation")
-                ? "font-bold bg-gold-800 px-3 rounded-xl mr-auto"
-                : "font-normal"
-            } text-gold-500 pl-3 py-2 flex items-center gap-2`}
-          >
-            <Image src={ContentIconSvg} alt="ContentIconSvg" />
-            <p>Content Moderation</p>
-          </Link>
+            pathname={pathname}
+            icon={ContentIconSvg}
+            label="Content Moderation"
+          />
 
-          {/* Referral */}
-          <Link
+          {/* Referral Management */}
+          <NavLink
             href="/admin/referral"
-            onClick={showNav}
-            className={`${
-              pathname.includes("referral")
-                ? "font-bold bg-gold-800 px-3 rounded-xl mr-auto"
-                : "font-normal"
-            } text-gold-500 pl-3 py-2 flex items-center gap-2`}
-          >
-            <Image src={ReferralIconSvg} alt="ReferralIconSvg" />
-            <p>Referral Management</p>
-          </Link>
-
-          {/* divider */}
-          <div className="border-t-2 border-[#e0e0e042] flex-grow"></div>
+            pathname={pathname}
+            icon={ReferralIconSvg}
+            label="Referral Management"
+          />
 
           {/* Notifications */}
-          <Link
+          <NavLink
             href="/admin/notifications"
-            onClick={showNav}
-            className={`${
-              pathname.includes("notifications")
-                ? "font-bold bg-gold-800 px-3 rounded-xl mr-auto"
-                : "font-normal"
-            } text-gold-500 pl-3 py-2 flex items-center gap-2`}
-          >
-            <Image src={NotificationsIconSvg} alt="Notifcations icon" />
-            <p>Notifications</p>
-          </Link>
+            pathname={pathname}
+            icon={NotificationsIconSvg}
+            label="Notifications"
+          />
 
-          {/* Analytic & Reporting */}
-          <Link
+          {/* Orders */}
+          <NavLink
             href="/admin/orders"
-            onClick={showNav}
-            className={`${
-              pathname.includes("orders")
-                ? "font-bold bg-gold-800 px-3 rounded-xl mr-auto"
-                : "font-normal"
-            } text-gold-500 pl-3 py-2 flex items-center gap-2`}
-          >
-            <Image src={AnalyticsIconSvg} alt="Analytics icon" />
-            <p>Orders</p>
-          </Link>
-
-          {/* divider */}
-          <div className="border-t-2 border-[#e0e0e042] flex-grow"></div>
+            pathname={pathname}
+            icon={AnalyticsIconSvg}
+            label="Orders"
+          />
 
           {/* Settings */}
-          <Link
+          <NavLink
             href="/admin/settings"
-            onClick={showNav}
-            className={`${
-              pathname.includes("settings")
-                ? "font-bold bg-gold-800  rounded-xl"
-                : "font-normal"
-            } text-gold-500 pl-3 py-2 flex items-center gap-2`}
-          >
-            <Image src={SettingsIconSvg} alt="settings icon" />
-            <p>Settings</p>
-          </Link>
+            pathname={pathname}
+            icon={SettingsIconSvg}
+            label="Settings"
+          />
 
           {/* Support */}
-          <Link
+          <NavLink
             href="/admin/support"
-            onClick={showNav}
-            className={`${
-              pathname.includes("support")
-                ? "font-bold bg-gold-800  rounded-xl"
-                : "font-normal"
-            } text-gold-500 pl-3 py-2 flex items-center gap-2`}
-          >
-            <Image src={SupportIconSvg} alt="support icon" />
-            <p>Support & Help desk</p>
-          </Link>
+            pathname={pathname}
+            icon={SupportIconSvg}
+            label="Support & Help Desk"
+          />
         </div>
       </nav>
     </header>
+  );
+};
+
+// Helper Component for NavLinks
+const NavLink = ({ href, pathname, icon, label }: any) => {
+  const isActive = pathname.includes(href);
+  return (
+    <Link
+      href={href}
+      className={`flex items-center gap-3 px-3 py-2 rounded-lg ${isActive ? "bg-yellow-500 font-bold" : "hover:bg-gray-700"
+        }`}
+    >
+      <Image src={icon} alt={`${label} icon`} className="h-5 w-5" />
+      <p>{label}</p>
+    </Link>
   );
 };
 
