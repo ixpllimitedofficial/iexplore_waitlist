@@ -16,7 +16,7 @@ type FlowType =
   | "checkCode"
   | "signup";
 
-const page = () => {
+const Page = () => {
 
   // Ensure that query is available before accessing 'flow'
   const flowParams = useSearchParams().get("flow") as FlowType;
@@ -41,4 +41,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
