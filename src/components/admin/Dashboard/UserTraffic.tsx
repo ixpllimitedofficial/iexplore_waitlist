@@ -1,9 +1,8 @@
-
 import React from "react";
 import { Box, Card } from "@mui/material";
-import { AreaChart, Area, Tooltip, ResponsiveContainer, defs } from "recharts";
+import { AreaChart, Area, Tooltip, ResponsiveContainer } from "recharts";
 import { DownloadIcon } from "@radix-ui/react-icons";
-import { Divider } from '@mui/material';
+import { Divider } from "@mui/material";
 
 // Define the type for the chart data
 interface DataPoint {
