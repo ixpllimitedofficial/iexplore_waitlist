@@ -3,6 +3,7 @@ import RatingsIcon from "@/assets/svg/UserIconsSvg/RatingsIcon.svg";
 import Link from "next/link";
 import { Button } from "@/components/UI/button";
 import SimilarSpots from "./SimilarSpots";
+import DrinkCard from "@/components/vendor-components/ReviewsComponents/ReviewCard";
 
 const ReviewsRatings = () => {
   return (
