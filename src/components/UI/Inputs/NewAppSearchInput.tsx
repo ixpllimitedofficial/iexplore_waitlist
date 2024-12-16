@@ -16,7 +16,7 @@ type InputSearchType = {
   debounceDelay?: number;
 };
 
-const AppSearchInput: React.FC<InputSearchType> = ({
+const NewAppSearchInput: React.FC<InputSearchType> = ({
   className,
   inputClass,
   value = "",
@@ -58,4 +58,4 @@ const AppSearchInput: React.FC<InputSearchType> = ({
   );
 };
 
-export default AppSearchInput;
+export default NewAppSearchInput;

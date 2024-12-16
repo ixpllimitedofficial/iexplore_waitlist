@@ -6,13 +6,11 @@ import BookmarkIcon from "@/assets/svg/BookmarkIcon.svg";
 import { Button } from "@/components/UI/button";
 import RatingsIcon from "@/assets/svg/UserIconsSvg/RatingsIcon.svg";
 
-const DrinkCard = () => {
+type EventProps ={
+  handleClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+}
+const DrinkCard = ({handleClick}:EventProps) => {
   const router = useRouter();
-
-  const handleClick = () => {
-    alert("Drink claimed");
-  };
-
   return (
     <div
       className="relative bg-[#4D4D4D66] px-2 py-3 rounded-3xl flex flex-col"
@@ -22,7 +20,7 @@ const DrinkCard = () => {
         Free
       </h1> */}
 
-      <div className="w-full h-[200px] overflow-hidden rounded-3xl">
+      <div className="w-full h-[130px] md:h-[200px] overflow-hidden rounded-3xl">
         <Image
           src={DrinkImage}
           alt="drink image"
@@ -31,7 +29,7 @@ const DrinkCard = () => {
       </div>
 
       <div className="flex items-center justify-between mt-4 mb-1 px-2">
-        <p className="text-2xl md:text-lg font-semibold">Johnnie Walker Black Label</p>
+        <p className="text-sm md:text-lg font-semibold">Johnnie Walker Black Label</p>
 
         <div className="flex items-center gap-1">
           <Image src={RatingsIcon} alt="RatingsIcon" height={20} className="hidden md:block"/>
@@ -40,15 +38,15 @@ const DrinkCard = () => {
       </div>
 
       <div className="px-2 flex items-center my-1">
-        <p className="text-xl font-bold">N232,000</p>
+        <p className=" text-sm md:text-xl font-bold">N232,000</p>
         <p className="pl-2 text-lg text-[#D1D1D1] hidden md:block">Available at Club Quilox</p>
       </div>
 
       <Button
-        className="bg-gold-500 hover:bg-white transition duration-200 text-[#322016] px-10 py-5 rounded-3xl font-bold text-lg mt-3"
+        className="bg-gold-500 hover:bg-white transition duration-200 text-[#322016] px-10 py-5 rounded-3xl font-bold text-sm md:text-lg mt-3"
         onClick={handleClick}
       >
-        Claim drink
+        Drinks Details
       </Button>
     </div>
   );
