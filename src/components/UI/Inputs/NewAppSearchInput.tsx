@@ -12,7 +12,7 @@ type InputSearchType = {
   inputClass?: string;
   className?: string;
   name?: string;
-  onChange: (value: string) => void;
+  onChange?: (value: string) => void;
   debounceDelay?: number;
 };
 
@@ -20,7 +20,7 @@ const NewAppSearchInput: React.FC<InputSearchType> = ({
   className,
   inputClass,
   value = "",
-  onChange,
+  onChange = () => {}, // Default no-op function
   debounceDelay = 1000, // Default debounce delay
 }) => {
   const [debouncedValue, setDebouncedValue] = useState<string>(value);
