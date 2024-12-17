@@ -13,12 +13,12 @@ const DrinksSection = () => {
     <section className="md:ml-8 flex flex-col">
       <div className="flex justify-between items-center mb-3">
         <h1 className="text-2xl font-bold">Drinks</h1>
-        <Link href="/vendor-Home/spots">
+        <Link href="/vendor-Home/drinks">
           <button className=" md:hidden flex gap-1 justify-center items-center text-sm border border-gold-500 text-gold-500 hover:text-black hover:bg-gold-500 md:bg-gold-500 md:text-brandDark md:text-lg p-1 md:p-3 rounded-full  font-bold">
             See all <ArrowRightIcon />
           </button>
         </Link>
-        <Link href="/vendor-Home/spots" className="hidden md:block">
+        <Link href="/vendor-Home/drinks/add" className="hidden md:block">
           <button className="flex gap-1 justify-center items-center text-sm border border-gold-500 text-gold-500 hover:text-black hover:bg-gold-500 md:bg-gold-500 md:text-brandDark md:text-lg p-1 md:p-3 rounded-full  font-bold">
             Add new drinks <PlusIcon />
           </button>
@@ -30,7 +30,7 @@ const DrinksSection = () => {
         })}
       </div>
       <Link
-        href="/vendor-Home/spots"
+        href="/vendor-Home/drinks"
         className="self-center my-10 hidden md:block"
       >
         <Button
@@ -40,7 +40,7 @@ const DrinksSection = () => {
           View all drinks
         </Button>
       </Link>
-      <Link href="/vendor-Home/spots" className="mt-6 mb-10 md:hidden">
+      <Link href="/vendor-Home/drinks/add" className="mt-6 mb-10 md:hidden">
         <button className="flex gap-1 justify-center items-center text-lg bg-gold-500 text-brandDark hover:bg-white p-2 w-full  rounded-full  font-light">
           Add new drink <PlusIcon />
         </button>

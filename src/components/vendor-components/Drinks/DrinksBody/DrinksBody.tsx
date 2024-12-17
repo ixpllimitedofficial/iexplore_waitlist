@@ -69,7 +69,7 @@ const DrinksBody = () => {
             </div>
           </div>
         </Link>
-        <Link href="/vendor-Home/drinks/add" className="w-[50%]">
+        <Link href="/vendor-Home/drinks/request" className="w-[50%]">
           <div className="bg-[#4D4D4D66] flex gap-2 items-center p-5 rounded-lg">
             <div className="bg-[#4D4D4D] p-1 md:p-2 rounded-full">
               <GiftIcon />
