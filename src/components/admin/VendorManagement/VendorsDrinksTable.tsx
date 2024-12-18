@@ -17,7 +17,7 @@ const VendorsDrinksTable = () => {
   const router = useRouter();
 
   const handleClick = (id: number) => {
-    router.push(`/admin/vendor-management/${id}`);
+    router.push(`/admin/vendor-management/${id}/approve-drink`);
   };
 
   return (
