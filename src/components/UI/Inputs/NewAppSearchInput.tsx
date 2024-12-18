@@ -16,7 +16,7 @@ type InputSearchType = {
   debounceDelay?: number;
 };
 
-const AppSearchInput: React.FC<InputSearchType> = ({
+const NewAppSearchInput: React.FC<InputSearchType> = ({
   className,
   inputClass,
   value = "",
@@ -38,7 +38,7 @@ const AppSearchInput: React.FC<InputSearchType> = ({
   return (
     <>
       <div
-        className={`flex items-center bg-[#424242] rounded-lg text-black border-2 border-gold-500 focus:outline-none  focus:ring-1 focus:ring-gold-500 ${className}`}
+        className={`flex items-center bg-[#424242] rounded-lg text-gold-500 border-2 border-gold-500 focus:outline-none  focus:ring-1 focus:ring-gold-500 ${className}`}
       >
         <div className="relative w-full py-1">
           <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
@@ -58,4 +58,4 @@ const AppSearchInput: React.FC<InputSearchType> = ({
   );
 };
 
-export default AppSearchInput;
+export default NewAppSearchInput;

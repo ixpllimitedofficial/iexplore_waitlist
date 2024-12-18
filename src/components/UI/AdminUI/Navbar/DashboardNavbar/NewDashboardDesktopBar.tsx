@@ -84,15 +84,15 @@ const NewDashboardDesktopBar = () => {
         <Link
           href="/vendor-Home/drinks"
           className={`${
-            pathname === "/vendor-Home/drinks"
+            pathname.includes("drinks")
               ? "bg-gold-500 text-brandDark px-3 rounded-3xl"
               : "text-[#B0B0B0]"
           }text-lg font-bold pl-3 py-2 flex items-center gap-2 text-[#B0B0B0]`}
         >
-          {pathname === "/vendor-Home/drinks" ? (
-            <Image src={ActiveDrinksIcon} alt="ActiveHomeicon" />
+          {pathname.includes("/vendor-Home/drinks") || pathname.includes("/vendor-Home/drinks/") ? (
+            <Image src={ActiveDrinksIcon} alt="Users icon" className="w-7 h-7" />
           ) : (
-            <Image src={DrinksIcon} alt="Home icon" />
+            <Image src={DrinksIcon} alt="Users icon" className="w-7 h-7" />
           )}
           <p>Drinks</p>
         </Link>

@@ -133,6 +133,28 @@ export const setupBusinessValidationSchema = z
   }),
 
 });
+export const addDrinksValidationSchema = z
+.object({
+  profile_picture: z
+  .string()
+  .min(2, { message: "Add a profile picture" }),
+  drinks_name: z
+    .string()
+    .min(2, { message: "Drinks name must be at least 2 chars." }),
+  drinks_price: z.string().min(3, { message: "Drinks must be at least 3 chars." }),
+  select_Spot: z.string().min(1, {
+    message: "Drinks spot must not be empty.",
+  }),
+  drinks_description: z.string().min(1, {
+    message: "Drinks description must not be empty.",
+  }),
+  category: z.string().min(1, {
+    message: "Please select a category.",
+  }),
+  drinks_volume: z.string().min(1, {
+    message: "Please select volumes.",
+  }),
+});
 
 export const editProfileSchema = z
   .object({

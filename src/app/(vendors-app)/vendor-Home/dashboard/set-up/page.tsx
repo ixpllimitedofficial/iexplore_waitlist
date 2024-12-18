@@ -148,11 +148,13 @@ const Page = () => {
             <Image src={ArrowLeft} alt="ArrowLeft" className="justify-start" />
           </Link>
 
-          <div className="flex justify-center items-center gap-3 w-full">
-            <p className="font-bold text-3xl">Continue business setup</p>
+          <div className=" mt-14 md:mt-0 flex justify-center items-center gap-3 w-full">
+            <p className="font-bold text-lg md:text-3xl">
+              Continue business setup
+            </p>
           </div>
         </div>
-        <div className="mt-10 w-[80%] mx-auto">
+        <div className="mt-10 w-[100%] md:w-[80%] mx-auto">
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
@@ -296,7 +298,9 @@ const Page = () => {
                   )}
                 />
               </div>
-              <p className="text-2xl font-light mb-5">Sport Category</p>
+              <p className="text-center md:text-left text-2xl font-light mb-5">
+                Sport Category
+              </p>
               <ToggleGroup
                 type="single"
                 className="gap-5 justify-start flex-wrap"
@@ -304,54 +308,54 @@ const Page = () => {
                 <ToggleGroupItem
                   value="bars & pubs"
                   aria-label="Toggle bars & pubs"
-                  className="bg-[#4D4D4D66] text-[#4D4D4D] w-[30%] text-2xl py-10 text-left border border-[#4D4D4D] hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
+                  className="bg-[#4D4D4D66] text-[#4D4D4D] w-[46%] md:w-[30%] text-2xl py-10 text-left border border-[#4D4D4D] hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
                 >
                   Bars & Pubs
                 </ToggleGroupItem>
                 <ToggleGroupItem
                   value="clubs"
                   aria-label="Toggle clubs"
-                  className="bg-[#4D4D4D66] text-[#4D4D4D] w-[30%] text-2xl py-10 text-left border border-[#4D4D4D] hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
+                  className="bg-[#4D4D4D66] text-[#4D4D4D] w-[46%] md:w-[30%] text-2xl py-10 text-left border border-[#4D4D4D] hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
                 >
                   Clubs
                 </ToggleGroupItem>
                 <ToggleGroupItem
                   value="hotels"
                   aria-label="Toggle hotels"
-                  className="bg-[#4D4D4D66] text-[#4D4D4D] w-[33%] text-2xl py-10 text-left border border-[#4D4D4D] hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
+                  className="bg-[#4D4D4D66] text-[#4D4D4D] w-[46%] md:w-[33%] text-2xl py-10 text-left border border-[#4D4D4D] hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
                 >
                   Hotels
                 </ToggleGroupItem>
                 <ToggleGroupItem
                   value="resturants"
                   aria-label="Toggle resturants"
-                  className="bg-[#4D4D4D66] text-[#4D4D4D] w-[30%] text-2xl py-10 text-left border border-[#4D4D4D] hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
+                  className="bg-[#4D4D4D66] text-[#4D4D4D] w-[46%] md:w-[30%] text-2xl py-10 text-left border border-[#4D4D4D] hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
                 >
                   Resturants
                 </ToggleGroupItem>
                 <ToggleGroupItem
                   value="lounges"
                   aria-label="Toggle lounges"
-                  className="bg-[#4D4D4D66] text-[#4D4D4D] w-[30%] text-2xl py-10 text-left border border-[#4D4D4D] hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
+                  className="bg-[#4D4D4D66] text-[#4D4D4D] w-[46%] md:w-[30%] text-2xl py-10 text-left border border-[#4D4D4D] hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
                 >
                   Lounges
                 </ToggleGroupItem>
                 <ToggleGroupItem
                   value="beach parties"
                   aria-label="Toggle beach parties"
-                  className="bg-[#4D4D4D66] text-[#4D4D4D] w-[33%] text-2xl py-10 text-left border border-[#4D4D4D] hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
+                  className="bg-[#4D4D4D66] text-[#4D4D4D] w-[46%] md:w-[33%] text-2xl py-10 text-left border border-[#4D4D4D] hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
                 >
                   Beach Parties
                 </ToggleGroupItem>
               </ToggleGroup>
 
-              <p className="text-2xl font-bold text-center mb-5 mt-10">
+              <p className="text-lg md:text-2xl font-bold text-center mb-2 md:mb-5 mt-10">
                 Business Features and Listings
               </p>
               {/*closing hour*/}
               <ToggleGroup
                 type="multiple"
-                className="gap-5 w-[60%] flex-wrap justify-center items-center mx-auto"
+                className="gap-5 w-[100%] md:w-[60%] flex-wrap justify-center items-center mx-auto"
               >
                 <ToggleGroupItem
                   value="beer"
@@ -543,7 +547,7 @@ const Page = () => {
                   )}
                 </section>
               </div>
-              <div className="w-[50%] mx-auto">
+              <div className="w-[100%] md:w-[50%] mx-auto">
                 {/*cac number*/}
                 <FormField
                   control={form.control}
