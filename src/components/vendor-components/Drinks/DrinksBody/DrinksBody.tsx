@@ -37,7 +37,7 @@ const DrinksBody = () => {
             </div>
           </div>
         </Link>
-        <Link href="/vendor-Home/drinks/add" className="w-[50%]">
+        <Link href="/vendor-Home/drinks/remove" className="w-[50%]">
           <div className="bg-[#4D4D4D66] flex gap-2 items-center p-3 md:p-5 rounded-lg">
             <div className="bg-[#4D4D4D] p-1 md:p-2 rounded-full">
               <MinusCircle />
@@ -54,7 +54,7 @@ const DrinksBody = () => {
         </Link>
       </div>
       <div className="flex gap-5 md:w-[65%] justify-center items-center mt-3 mx-auto text-center">
-        <Link href="/vendor-Home/drinks/add" className="w-[50%]">
+        <Link href="/vendor-Home/drinks/discount" className="w-[50%]">
           <div className="bg-[#4D4D4D66] flex gap-2 items-center p-3 md:p-5 rounded-lg">
             <div className="bg-[#4D4D4D] p-1 md:p-2 rounded-full">
               <LocalOfferOutlinedIcon />

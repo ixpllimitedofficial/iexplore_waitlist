@@ -1,10 +1,22 @@
 "use client";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/UI/tabs";
 import DrinkCard from "@/components/vendor-components/Drinks/DrinkCard";
+
 import { useState } from "react";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIos";
 import { useRouter, useSearchParams } from "next/navigation";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/UI/alert-dialog";
 
 const ITEMS_PER_PAGE = 9;
 
@@ -53,6 +65,7 @@ const TabsDemo: React.FC = () => {
   const [whiskeyPage, setWhiskeyPage] = useState(1);
   const [beerPage, setBeerPage] = useState(1);
   const [activeTab, setActiveTab] = useState(fetchedDrinks[0].name);
+  const [openDialog, setOpenDialog] = useState(false);
 
   const handleTabChange = (value: string) => {
     setActiveTab(value);
@@ -79,6 +92,22 @@ const TabsDemo: React.FC = () => {
   const singlePage = () => {
     router.push("/vendor-Home/drinks/1");
   };
+  const handleDelete = () => {
+    setOpenDialog(true);
+  };
+  const deleteDiscount = () => {
+    alert("discount removed");
+  };
+  const handleSaveDiscount = (discountData: { selectedDiscount: number | null; customDiscount: string }) => {
+    alert(`Saved Discount Data: Selected Discount: ${discountData.selectedDiscount}, Custom Discount: ${discountData.customDiscount}`);
+    console.log("Saved Discount Data:", discountData);
+    // Perform actions with discountData
+  };
+  const handleConfirmDelete = () => {
+    // Handle delete logic here
+    alert("Delete confirmed");
+    console.log("Delete confirmed");
+  };
   return (
     <div className="w-full mt-5">
       <Tabs defaultValue={fetchedDrinks[0].name} className="w-full">
@@ -104,91 +133,18 @@ const TabsDemo: React.FC = () => {
 
         {/* All Drinks Section */}
         <TabsContent value="All Drinks">
-          <div className="mt-10">
-            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5 pr-1 md:pr-5">
+          <div className="mt-10 mb-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 pr-1 md:pr-5">
               {paginate(allDrinksData, allDrinksPage).map((drink) => (
-                <DrinkCard key={drink} handleClick={singlePage} />
+                <DrinkCard
+                  key={drink}
+                  removeDiscount={deleteDiscount}
+                  handleClick={singlePage}
+                  onSaveDiscount={handleSaveDiscount}
+                  hideDicountContent={true}
+                />
               ))}
             </div>
-            {/* Pagination for All Drinks */}
-            {/* Pagination for All Drinks */}
-            <div className="flex justify-between items-center mt-5 mx-0 md:mx-2">
-              <div className="flex space-x-1">
-                {Array.from({ length: totalPages(allDrinksData) })
-                  .map((_, index) => index + 1)
-                  .filter((page) => {
-                    // Display first 3 pages, last 2 pages, and current page with neighbors
-                    return (
-                      page <= 3 ||
-                      page > totalPages(allDrinksData) - 2 ||
-                      (page >= allDrinksPage - 1 && page <= allDrinksPage + 1)
-                    );
-                  })
-                  .reduce<(number | string)[]>((acc, page, index, array) => {
-                    // Add ellipses where necessary
-                    if (index > 0 && page > array[index - 1] + 1) {
-                      acc.push("...");
-                    }
-                    acc.push(page);
-                    return acc;
-                  }, [])
-                  .map((page, index) =>
-                    typeof page === "number" ? (
-                      <button
-                        key={index}
-                        className={`p-1 md:px-3 md:py-1 border rounded-full ${
-                          allDrinksPage === page
-                            ? "bg-gold-500 text-brandDark font-bold"
-                            : "bg-[#4D4D4D] text-[#B0B0B0] font-bold"
-                        }`}
-                        onClick={() => setAllDrinksPage(page)}
-                      >
-                        {page}
-                      </button>
-                    ) : (
-                      <span key={index} className="md:px-3 py-1">
-                        {page}
-                      </span>
-                    )
-                  )}
-              </div>
-              <div className="flex space-x-2">
-                <button
-                  className={` px-1 md:px-4 py-1 border rounded-md flex md:gap-1 items-center ${
-                    allDrinksPage === 1
-                      ? "bg-[#4D4D4D] text-[#B0B0B0]"
-                      : "bg-gold-500 text-black"
-                  }`}
-                  disabled={allDrinksPage === 1}
-                  onClick={() => setAllDrinksPage(allDrinksPage - 1)}
-                >
-                  <ArrowBackIosNewIcon />
-                  Previous
-                </button>
-                <button
-                  className={`px-1 md:px-4 py-1 border rounded-md flex md:gap-1 items-center ${
-                    allDrinksPage === totalPages(allDrinksData)
-                      ? "bg-[#4D4D4D] text-[#B0B0B0]"
-                      : "bg-gold-500 text-black"
-                  }`}
-                  disabled={allDrinksPage === totalPages(allDrinksData)}
-                  onClick={() => setAllDrinksPage(allDrinksPage + 1)}
-                >
-                  Next
-                  <ArrowForwardIosIcon />
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-10 mb-10">
-            <h2 className="text-xl font-bold mb-3">Out of Stock Drinks</h2>
-            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5  pr-1 md:pr-5">
-              {paginate(outOfStockData, outOfStockPage).map((drink) => (
-                <DrinkCard key={drink} handleClick={singlePage} />
-              ))}
-            </div>
-            {/* Pagination for Out of Stock Drinks */}
             {/* Pagination for All Drinks */}
             <div className="flex justify-between items-center mt-5 mx-0 md:mx-2">
               <div className="flex space-x-1">
@@ -271,6 +227,35 @@ const TabsDemo: React.FC = () => {
         <TabsContent value="Beer">Beer content</TabsContent>
         {/* Other Tabs Section */}
       </Tabs>
+
+      {/* AlertDialog */}
+      <AlertDialog open={openDialog} onOpenChange={setOpenDialog}>
+        <AlertDialogContent className="border-gold-500 flex flex-col justify-center items-center text-center">
+          <AlertDialogHeader>
+            <AlertDialogTitle className="text-center text-2xl">
+              Remove Drink
+            </AlertDialogTitle>
+            <AlertDialogDescription className="w-[80%] text-center mx-auto">
+              Are you sure you want to remove this drink from your drinks
+              catalogue?
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogAction
+              onClick={handleConfirmDelete}
+              className="bg-gold-500 text-brandDark px-6 rounded-full hover:bg-white"
+            >
+              Delete Drink
+            </AlertDialogAction>
+            <AlertDialogCancel
+              onClick={() => setOpenDialog(false)}
+              className="bg-brandDark px-6 rounded-full text-gold-500 border-gold-500"
+            >
+              Cancel
+            </AlertDialogCancel>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   );
 };

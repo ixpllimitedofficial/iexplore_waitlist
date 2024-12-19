@@ -49,13 +49,13 @@ const CopyAndShareInput: React.FC = () => {
         <div className="flex gap-4">
           <button
             onClick={handleCopy}
-            className="w-[50%] md:min-w-fit px-8 py-2 bg-gold-500 text-brandDark rounded-full hover:bg-white focus:ring-2 focus:ring-gold-500 focus:outline-none"
+            className="w-[50%] md:min-w-fit md:px-8 py-2 bg-gold-500 text-brandDark rounded-full hover:bg-white focus:ring-2 focus:ring-gold-500 focus:outline-none"
           >
             Copy code
           </button>
           <button
             onClick={handleShare}
-            className="w-[50%] md:min-w-fit px-8 py-2 bg-[#4D4D4D] text-white rounded-full hover:bg-gold-500 focus:ring-2 focus:ring-gold-500 focus:outline-none"
+            className="w-[50%] md:min-w-fit md:px-8 py-2 bg-[#4D4D4D] text-white rounded-full hover:bg-gold-500 focus:ring-2 focus:ring-gold-500 focus:outline-none"
           >
             Share code
           </button>
