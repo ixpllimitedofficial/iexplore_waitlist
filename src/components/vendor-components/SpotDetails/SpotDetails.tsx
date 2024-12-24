@@ -10,7 +10,7 @@ import FrameFour from "@/assets/img/VendorPage/Frame 20032.png";
 import FrameFive from "@/assets/img/VendorPage/Frame 20027 (1).png";
 import FrameSix from "@/assets/img/VendorPage/Frame 20031 (1).png";
 import FrameSeven from "@/assets/img/VendorPage/Frame 20032 (1).png";
-
+import InsightsIcon from "@mui/icons-material/Insights";
 import GallerySlide from "@/components/vendor-components/GallerySlide";
 
 const slides = [
@@ -21,12 +21,20 @@ const slides = [
   { src: FrameFive, alt: "frame five" },
   { src: FrameSix, alt: "frame six" },
 ];
-
-const SpotDetails = () => {
+interface spotProps {
+  showInsight?: boolean;
+}
+const SpotDetails: React.FC<spotProps> = ({ showInsight }) => {
   return (
     <section className="mt-8">
       {/* images */}
       <GallerySlide slides={slides} />
+      {showInsight && (
+        <p className="w-[30%] my-5 mx-auto bg-gold-500 text-center text-brandDark py-3 rounded-3xl flex gap-2 font-bold items-center justify-center cursor-pointer">
+          <InsightsIcon />
+          Business insight
+        </p>
+      )}
 
       {/* details */}
       <div className="mt-7">
