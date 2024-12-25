@@ -14,7 +14,7 @@ const page = () => {
 
   return (
     <>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-5 p-5">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:mt-5 p-5">
         <div className={divStyle}>
           <Image src={PeopleIconSvg} alt="PeopleIconSvg" />
           <div className="flex-grow">
@@ -30,7 +30,7 @@ const page = () => {
             <p className='text-sm lg:text-[16px] whitespace-nowrap font-normal'>Active Users</p>
             <p className="font-bold text-lg lg:text-2xl">2,000</p>
           </div>
-          <span className="bg-[#E50000] border border-[#e2bdbd] p-2 rounded-full text-white  font-semibold whitespace-nowrap">-2% from last week</span>
+          <span className="bg-[#E50000] border border-[#e2bdbd] p-1 px-2 rounded-full text-white   whitespace-nowrap">-2% from last week</span>
         </div>
         <div className={divStyle}>
           <Image src={ActiveUsersIconSvg} alt="ActiveUsersIconSvg" />

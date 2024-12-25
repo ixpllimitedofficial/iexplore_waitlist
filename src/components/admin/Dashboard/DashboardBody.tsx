@@ -23,7 +23,7 @@ const DashboardBody = () => {
     "flex items-center justify-between w-full bg-[#23232325] gap-2 pr- py-3 lg:py-5 lg:pl-5 pl-2 rounded-2xl border border-[#4D4D4D] text-sm";
 
   return (
-    <section className="px-4 lg:px-7 overflow-x-hidden">
+    <section className="px-3 lg:px-7 overflow-x-hidden">
       {/* Body 1 */}
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Left Section */}
@@ -117,17 +117,17 @@ const DashboardBody = () => {
 
       {/* Body 2 */}
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 mt-8">
-  {/* User Traffic Section */}
-  <div className="col-span-1 lg:col-span-3 bg-[#23232325] p-5 rounded-2xl">
-    <div className="border-full my-3"></div>
-    <UserTraffic />
-  </div>
+        {/* User Traffic Section */}
+        <div className="col-span-1 lg:col-span-3 bg-[#23232325] p-5 rounded-2xl">
+          <div className="border-full my-3"></div>
+          <UserTraffic />
+        </div>
 
-  {/* Notification Card Section */}
-  <div className="col-span-1 lg:col-span-2 bg-brandDarkNeutral p-5 rounded-2xl">
-    <NotificationCard />
-  </div>
-</div>
+        {/* Notification Card Section */}
+        <div className="col-span-1 lg:col-span-2 bg-brandDarkNeutral p-5 rounded-2xl">
+          <NotificationCard />
+        </div>
+      </div>
 
 
     </section>

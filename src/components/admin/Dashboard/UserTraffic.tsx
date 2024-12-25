@@ -1,3 +1,5 @@
+'use client'
+
 import React from "react";
 import { Box, Card } from "@mui/material";
 import { AreaChart, Area, Tooltip, ResponsiveContainer } from "recharts";
@@ -62,11 +64,11 @@ const Dashboard: React.FC = () => {
                     }}
                 >
                     <div className="flex justify-between items-center mb-2">
-                        <h2 className="font-bold text-base lg:text-lg">Vendors Traffic</h2>
+                        <h2 className="font-semibold text-sm lg:text-lg whitespace-nowrap">Vendors Traffic</h2>
 
                         <div className="flex gap-3 items-center">
                             <span className="bg-gold-500 px-2 py-1 lg:px-4 lg:p-2 rounded-full text-xs lg:text-base font-semibold text-black whitespace-nowrap">+13% from last week</span>
-                            <span className="hidden lg:flex bg-gold-500 px-2 py-1 lg:px-4 lg:p-2 rounded-full text-xs lg:text-base font-semibold text-black whitespace-nowrap">+13% from last week</span>
+                            <span className="hidden lg:flex bg-gold-500 px-2 py-1 lg:px-4 lg:p-2 rounded-full text-xs lg:text-base font-semibold text-black whitespace-nowrap">This week</span>
                             <div className="flex items-center justify-center bg-gold-500 rounded-lg p-2 lg:p-3">
                                 <DownloadIcon className="text-black text-base lg:text-xl font-semibold" />
                             </div>

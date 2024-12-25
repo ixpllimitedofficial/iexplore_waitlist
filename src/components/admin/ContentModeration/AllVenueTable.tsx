@@ -23,18 +23,17 @@ import AppSearchInput from "@/components/UI/Inputs/AppSearchInput";
 import DownloadIcon from "@/assets/svg/AdminIconsSvg/DownloadIcon.svg";
 import { Badge } from "@/components/UI/badge";
 
-const AllContentsTable = () => {
+const AllVenuesTable = () => {
   const router = useRouter();
 
-  const handleClick = (id: number) => {
-    router.push(`/admin/content-moderation/drinks/${id}`);
-  };
+//   const handleClick = (id: number) => {
+//     router.push(`/admin/content-moderation/spots/${id}`);
+//   };
 
   return (
-    <section className="mt-5 bg-[#4D4D4D]  p-5 rounded-2xl">
+    <section className="mt-5 bg-[#4D4D4D] p-5 rounded-2xl">
       <div className="flex flex-col gap-5 lg:gap-0 lg:flex-row justify-between">
-        <p className="font-bold text-xl text-white">All drinks</p>
-
+        <p className="font-bold text-xl text-white">All venue</p>
         <div className="flex flex-col lg:flex-row items-center gap-3">
           <AppSearchInput
             className="bg-white border-none focus-visible:ring-0 w-full"
@@ -66,10 +65,10 @@ const AllContentsTable = () => {
         <TableHeader>
           <TableRow className="bg-[#424242] border-none">
             <TableHead className=" text-white">S/N</TableHead>
-            <TableHead className="text-white">NAME</TableHead>
-            <TableHead className="text-white">CATEGORY</TableHead>
-            <TableHead className="text-white">QUANTITY</TableHead>
-            <TableHead className="text-white">PRICE</TableHead>
+            <TableHead className="text-white">VENUE NAME</TableHead>
+            <TableHead className="text-white">LOCATION</TableHead>
+            <TableHead className="text-white">RATING</TableHead>
+            <TableHead className="text-white">WORKING HOURS</TableHead>
             <TableHead className="text-white">STATUS</TableHead>
           </TableRow>
         </TableHeader>
@@ -79,14 +78,16 @@ const AllContentsTable = () => {
             <TableBody
               className="border-b-2 border-[#9797974b]"
               key={table}
-              onClick={() => handleClick(table)}
+            //   onClick={() => handleClick(table)}
             >
               <TableRow>
                 <TableCell className="font-medium py-5">{table}</TableCell>
-                <TableCell>Martell Davido Limited Edition XO</TableCell>
-                <TableCell>Wine</TableCell>
-                <TableCell>200</TableCell>
-                <TableCell>#203,450.00</TableCell>
+                <TableCell>Club Quilox</TableCell>
+                <TableCell>
+                  873 Ozumba Mbadiwe Ave, Victoria Island 106104, Lagos
+                </TableCell>
+                <TableCell>4.0 (90)</TableCell>
+                <TableCell>6:00PM - 4:00AM</TableCell>
                 <TableCell>
                   <Badge className="bg-[#008800] text-[#fff] text-sm rounded-full">
                     Active
@@ -101,4 +102,4 @@ const AllContentsTable = () => {
   );
 };
 
-export default AllContentsTable;
+export default AllVenuesTable;
