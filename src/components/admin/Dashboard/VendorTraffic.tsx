@@ -1,3 +1,5 @@
+'use client'
+
 import { FC } from "react";
 import { Bar, BarChart, CartesianGrid, LabelList, XAxis, YAxis } from "recharts";
 import { Card, CardContent } from "@/components/UI/card";
@@ -23,10 +25,10 @@ const chartConfig = {
 const VendorTraffic: FC = () => {
     return (
         <Card className="bg-neutral border-none flex flex-row lg:flex-nowrap items-center justify-between gap-4">
-            <div className="w-[50%] lg:w-[30%] flex flex-col items-center text-center md:space-y-2 mt-5 md:mt-4">
+            <div className="w-[30%] lg:w-[30%] flex flex-col items-center text-center md:space-y-2 mt-5 md:mt-4">
                 <h1 className="text-3xl lg:text-4xl font-bold text-white">12</h1>
 
-                <p className=" mt-5 text-muted-foreground text-xs lg:text-sm">New Vendor</p>
+                <p className=" mt-5 text-muted-foreground text-xs lg:text-sm whitespace-nowrap">New Vendor</p>
                 <p className="lg:text-sm text-white text-xs  font-normal">(12-17 Dec)</p>
             </div>
 

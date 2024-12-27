@@ -31,28 +31,28 @@ const AllSpotsTable = () => {
   };
 
   return (
-    <section className="mt-5 bg-brandDarkNeutral p-5 rounded-2xl">
+    <section className="mt-5 bg-[#4D4D4D] p-5 rounded-2xl">
       <div className="flex flex-col gap-5 lg:gap-0 lg:flex-row justify-between">
-        <p className="font-bold text-xl text-gold-500">All spots</p>
-
-        <div className="flex items-center gap-3">
+        <p className="font-bold text-xl text-white">All spots</p>
+        <div className="flex flex-col lg:flex-row items-center gap-3">
           <AppSearchInput
-            className="bg-gold-800 text-gold-500 border-none focus-visible:ring-0"
-            inputClass="placeholder:text-gold-500"
+            className="bg-white border-none focus-visible:ring-0 w-full"
+            inputClass="placeholder:text-[##4D4D4D] placeholder:text-sm"
           />
+          <div className='w-full flex gap-2'>
+            <Select>
+              <SelectTrigger className="w-full lg:w-auto bg-gold-500 text-black border-none focus-visible:ring-0">
+                <SelectValue placeholder="Sort by: Newest" />
+              </SelectTrigger>
+              <SelectContent className="">
+                <SelectItem value="newest">Newest</SelectItem>
+                <SelectItem value="oldest">Oldest</SelectItem>
+                <SelectItem value="latest">Latest</SelectItem>
+              </SelectContent>
+            </Select>
 
-          <Select>
-            <SelectTrigger className="w-auto bg-gold-800 text-gold-500 border-none focus-visible:ring-0">
-              <SelectValue placeholder="Sort by: Newest" />
-            </SelectTrigger>
-            <SelectContent className="">
-              <SelectItem value="newest">Newest</SelectItem>
-              <SelectItem value="oldest">Oldest</SelectItem>
-              <SelectItem value="latest">Latest</SelectItem>
-            </SelectContent>
-          </Select>
-
-          <Image src={DownloadIcon} alt="download" />
+            <Image src={DownloadIcon} alt="download" />
+          </div>
         </div>
       </div>
 
@@ -65,7 +65,7 @@ const AllSpotsTable = () => {
         <TableHeader>
           <TableRow className="bg-[#424242] border-none">
             <TableHead className=" text-white">S/N</TableHead>
-            <TableHead className="text-white">VENUE NAME</TableHead>
+            <TableHead className="text-white">SPOT NAME</TableHead>
             <TableHead className="text-white">LOCATION</TableHead>
             <TableHead className="text-white">RATING</TableHead>
             <TableHead className="text-white">WORKING HOURS</TableHead>
@@ -89,8 +89,8 @@ const AllSpotsTable = () => {
                 <TableCell>4.0 (90)</TableCell>
                 <TableCell>6:00PM - 4:00AM</TableCell>
                 <TableCell>
-                  <Badge className="bg-[#00b69b48] text-[#00B69B] text-sm">
-                    In Stock
+                  <Badge className="bg-[#008800] text-[#fff] text-sm rounded-full">
+                  Active
                   </Badge>
                 </TableCell>
               </TableRow>

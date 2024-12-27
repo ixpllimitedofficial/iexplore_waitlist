@@ -18,7 +18,7 @@ const EditUserDetailsDialog = () => {
           Edit
         </span>
       </DialogTrigger>
-      <DialogContent className="w-[90%] max-w-screen-sm md:max-w-[800px] bg-[#212121] border border-gold-500 text-white rounded-lg max-h-screen overflow-y-auto p-10">
+      <DialogContent className="w-[90%] max-w-screen-sm md:max-w-[800px] bg-[#212121] border border-gold-500 text-white rounded-lg max-h-[600px] overflow-y-auto p-5 lg:p-10">
         <DialogHeader>
           <DialogTitle className="text-white text-2xl text-center">
             Edit user details
@@ -64,14 +64,14 @@ const EditUserDetailsDialog = () => {
 
         {/* Preferences Section */}
         <div className="grid gap-4 py-2 justify-center items-center">
-          <div className="p-2 text-center text-gold-500 font-semibold">
+          <div className="p-2 text-center text-white font-semibold">
             Preferences
           </div>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex justify-center items-center flex-wrap gap-2">
             {["Bar", "Club", "Beach", "Lounge", "Hotel"].map((pref) => (
               <span
                 key={pref}
-                className="px-4 py-2 bg-[#444444] text-gold-500 border border-gold-500 rounded-full cursor-pointer"
+                className="px-4 py-1.5 bg-[#444444] text- border border-gold-500 rounded-full cursor-pointer hover:bg-gold-500 hover:text-black"
               >
                 {pref}
               </span>
@@ -81,14 +81,14 @@ const EditUserDetailsDialog = () => {
 
         {/* Account Status Section */}
         <div className="grid gap-4 py-2">
-          <div className="p-2 text-center text-gold-500 font-semibold">
+          <div className="p-2 text-center text-white font-semibold">
             Account Status
           </div>
           <div className="flex justify-center gap-4">
-            <button className="px-4 py-2 bg-gold-500 text-black rounded-full">
+            <button className="px-4 py-2 bg-transparent border border-gold-500 text-white hover:bg-gold-500 hover:text-black rounded-full">
               Active
             </button>
-            <button className="px-4 py-2 bg-transparent border border-gold-500 text-white rounded-full">
+            <button className="px-4 py-2 bg-transparent border border-gold-500 text-white hover:bg-gold-500 hover:text-black rounded-full">
               Disabled
             </button>
           </div>
