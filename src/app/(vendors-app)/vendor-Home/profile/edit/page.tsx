@@ -117,25 +117,9 @@ const Page = () => {
     }
     setFileState(Array.isArray(file) ? [] : null);
   };
-  async function onSubmit(data: z.infer<typeof setupBusinessValidationSchema>) {
-    // setBtnState(true);
-    // const result = await onSignup(data);
-    // if (result.status === "success") {
-    //   toast({
-    //     title: "Sign up successful",
-    //     description: "Please check your email and confirm your OTP!",
-    //     variant: "success",
-    //   });
-    //   router.push("/signup?flow=verifyOTP");
-    // } else {
-    //   toast({
-    //     title: "An error occured!",
-    //     description: result,
-    //     variant: "destructive",
-    //   });
-    //   setBtnState(false);
-    // }
-  }
+  async function onSubmit(
+    data: z.infer<typeof setupBusinessValidationSchema>
+  ) {}
 
   return (
     <>
@@ -144,13 +128,13 @@ const Page = () => {
       </section>
       <section className="px-7 py-6 w-[100%]">
         <div className="flex items-center">
-          <Link href="/vendor-Home/dashboard">
+          <Link href="/vendor-Home/profile">
             <Image src={ArrowLeft} alt="ArrowLeft" className="justify-start" />
           </Link>
 
           <div className=" mt-14 md:mt-0 flex justify-center items-center gap-3 w-full">
             <p className="font-bold text-lg md:text-3xl">
-              Continue business setup
+              Edit business profile
             </p>
           </div>
         </div>

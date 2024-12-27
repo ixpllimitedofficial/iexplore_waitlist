@@ -49,14 +49,16 @@ const NewDashboardDesktopBar = () => {
       <nav className="flex flex-col gap-3 justify-center">
         {/* Dashboard */}
         <Link
-          href="/vendor-Home/dashboard" 
+          href="/vendor-Home/dashboard"
           className={`${
-            pathname.includes("/vendor-Home/dashboard") || pathname.includes("/vendor-Home/dashboard/set-up")
+            pathname.includes("/vendor-Home/dashboard") ||
+            pathname.includes("/vendor-Home/dashboard/set-up")
               ? "bg-gold-500 text-brandDark px-3 rounded-3xl"
               : "text-[#B0B0B0]"
           }text-lg font-bold pl-3 py-2 flex items-center gap-2 text-[#B0B0B0]`}
         >
-          {pathname.includes("/vendor-Home/dashboard") || pathname.includes("/vendor-Home/dashboard/set-up") ? (
+          {pathname.includes("/vendor-Home/dashboard") ||
+          pathname.includes("/vendor-Home/dashboard/set-up") ? (
             <Image src={ActiveHomeSvg} alt="ActiveHomeicon" />
           ) : (
             <Image src={HomeSvg} alt="Home icon" />
@@ -72,7 +74,8 @@ const NewDashboardDesktopBar = () => {
               : "text-[#B0B0B0]"
           }text-lg font-bold pl-3 py-2 flex items-center gap-2 text-[#B0B0B0]`}
         >
-          {pathname.includes("/vendor-Home/business") || pathname.includes("/vendor-Home/business/") ? (
+          {pathname.includes("/vendor-Home/business") ||
+          pathname.includes("/vendor-Home/business/") ? (
             <Image src={NewStoreSVG} alt="Users icon" className="w-7 h-7" />
           ) : (
             <Image src={UsersIconSvg} alt="Users icon" className="w-7 h-7" />
@@ -84,15 +87,20 @@ const NewDashboardDesktopBar = () => {
         <Link
           href="/vendor-Home/drinks"
           className={`${
-            pathname === "/vendor-Home/drinks"
+            pathname.includes("drinks")
               ? "bg-gold-500 text-brandDark px-3 rounded-3xl"
               : "text-[#B0B0B0]"
           }text-lg font-bold pl-3 py-2 flex items-center gap-2 text-[#B0B0B0]`}
         >
-          {pathname === "/vendor-Home/drinks" ? (
-            <Image src={ActiveDrinksIcon} alt="ActiveHomeicon" />
+          {pathname.includes("/vendor-Home/drinks") ||
+          pathname.includes("/vendor-Home/drinks/") ? (
+            <Image
+              src={ActiveDrinksIcon}
+              alt="Users icon"
+              className="w-7 h-7"
+            />
           ) : (
-            <Image src={DrinksIcon} alt="Home icon" />
+            <Image src={DrinksIcon} alt="Users icon" className="w-7 h-7" />
           )}
           <p>Drinks</p>
         </Link>
@@ -101,15 +109,20 @@ const NewDashboardDesktopBar = () => {
         <Link
           href="/vendor-Home/feed"
           className={`${
-            pathname === "/vendor-Home/feed"
+            pathname.includes("feed")
               ? "bg-gold-500 text-brandDark px-3 rounded-3xl"
               : "text-[#B0B0B0]"
           }text-lg font-bold pl-3 py-2 flex items-center gap-2 text-[#B0B0B0]`}
         >
-          {pathname === "/vendor-Home/feed" ? (
-            <Image src={ActiveFeedIcon} alt="ActiveHomeicon" />
+          {pathname.includes("/vendor-Home/feed") ||
+          pathname.includes("/vendor-Home/feed/") ? (
+            <Image
+              src={ActiveFeedIcon}
+              alt="ActiveHomeicon"
+              className="w-7 h-7"
+            />
           ) : (
-            <Image src={FeedIcons} alt="Home icon" />
+            <Image src={FeedIcons} alt="Home icon" className="w-7 h-7" />
           )}
           <p>Feed</p>
         </Link>
@@ -135,15 +148,20 @@ const NewDashboardDesktopBar = () => {
         <Link
           href="/vendor-Home/profile"
           className={`${
-            pathname === "/vendor-Home/profile"
+            pathname.includes("profile")
               ? "bg-gold-500 text-brandDark px-3 rounded-3xl"
               : "text-[#B0B0B0]"
           }text-lg font-bold pl-3 py-2 flex items-center gap-2 text-[#B0B0B0]`}
         >
-          {pathname === "/vendor-Home/profile" ? (
-            <Image src={ActiveProfileIcon} alt="ActiveHomeicon" />
+          {pathname.includes("/vendor-Home/profile") ||
+          pathname.includes("/vendor-Home/profile/") ? (
+            <Image
+              src={ActiveProfileIcon}
+              alt="ActiveHomeicon"
+              className="w-7 h-7"
+            />
           ) : (
-            <Image src={ProfileIcons} alt="Home icon" />
+            <Image src={ProfileIcons} alt="Home icon" className="w-7 h-7" />
           )}
           <p>Profile</p>
         </Link>

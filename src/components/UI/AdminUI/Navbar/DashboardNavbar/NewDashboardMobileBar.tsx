@@ -80,13 +80,14 @@ const NewDashboardMobileBar = () => {
       {/* navbar */}
       <nav
         className={`fixed top-[14%] h-screen w-[60%] z-[100] bg-[#3C3C3C] px-5 pt-8 pb-28 flex flex-col items-center gap-8 duration-700 ${
-          showNavState ? "left-0" : "left-[-100vw]"
+          showNavState ? "left-0" : "left-[-150vw]"
         }`}
       >
         <div className="mt-1 flex flex-col gap-5 overflow-y-scroll no-scrollbar w-full">
           {/* Dashboard */}
           <Link
             href="/vendor-Home/dashboard"
+            onClick={showNav}
             className={`${
               pathname === "/vendor-Home/dashboard"
                 ? "bg-gold-500 text-brandDark px-3 rounded-3xl"
@@ -103,6 +104,7 @@ const NewDashboardMobileBar = () => {
           {/* business */}
           <Link
             href="/vendor-Home/business"
+            onClick={showNav}
             className={`${
               pathname.includes("business")
                 ? "bg-gold-500 text-brandDark px-3 rounded-3xl"
@@ -116,27 +118,29 @@ const NewDashboardMobileBar = () => {
             )}
             <p>Business</p>
           </Link>
-
-          {/* drinks */}
-          <Link
-            href="/vendor-Home/drinks"
-            className={`${
-              pathname === "/vendor-Home/drinks"
-                ? "bg-gold-500 text-brandDark px-3 rounded-3xl"
-                : "text-[#B0B0B0]"
-            }text-lg font-bold pl-3 py-2 flex items-center gap-2 text-[#B0B0B0]`}
-          >
-            {pathname === "/vendor-Home/drinks" ? (
-              <Image src={ActiveDrinksIcon} alt="ActiveHomeicon" />
-            ) : (
-              <Image src={DrinksIcon} alt="Home icon" />
-            )}
-            <p>Drinks</p>
-          </Link>
+          
+        {/* drinks */}
+        <Link
+          href="/vendor-Home/drinks"
+          onClick={showNav}
+          className={`${
+            pathname.includes("drinks")
+              ? "bg-gold-500 text-brandDark px-3 rounded-3xl"
+              : "text-[#B0B0B0]"
+          }text-lg font-bold pl-3 py-2 flex items-center gap-2 text-[#B0B0B0]`}
+        >
+          {pathname.includes("/vendor-Home/drinks") || pathname.includes("/vendor-Home/drinks/") ? (
+            <Image src={ActiveDrinksIcon} alt="Users icon" className="w-7 h-7" />
+          ) : (
+            <Image src={DrinksIcon} alt="Users icon" className="w-7 h-7" />
+          )}
+          <p>Drinks</p>
+        </Link>
 
           {/* feed */}
           <Link
             href="/vendor-Home/feed"
+            onClick={showNav}
             className={`${
               pathname === "/vendor-Home/feed"
                 ? "bg-gold-500 text-brandDark px-3 rounded-3xl"
@@ -154,6 +158,7 @@ const NewDashboardMobileBar = () => {
           {/* notification */}
           <Link
             href="/vendor-Home/notifications"
+            onClick={showNav}
             className={`${
               pathname.includes("notifications")
                 ? "bg-gold-500 text-brandDark px-3 rounded-3xl"
@@ -171,6 +176,7 @@ const NewDashboardMobileBar = () => {
           {/* Profile */}
           <Link
             href="/vendor-Home/profile"
+            onClick={showNav}
             className={`${
               pathname === "/vendor-Home/profile"
                 ? "bg-gold-500 text-brandDark px-3 rounded-3xl"
