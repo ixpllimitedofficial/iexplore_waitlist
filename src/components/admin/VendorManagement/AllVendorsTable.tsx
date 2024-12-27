@@ -33,27 +33,28 @@ const AllVendorsTable = () => {
 
   return (
     <section className="mt-5 bg-[#4D4D4D] p-5 rounded-2xl">
-      <div className="flex flex-col gap-5 lg:gap-0 lg:flex-row justify-between">
+      <div className="flex flex-col gap-5 lg:gap-0 lg:flex-row justify-center lg:justify-between">
         <p className="font-bold text-lg text-white">All Explorers</p>
 
-        <div className="flex items-center gap-3">
+        <div className="flex flex-col lg:flex-row items-center gap-3">
           <AppSearchInput
-            className="bg-white border-none focus-visible:ring-0"
+            className="bg-white border-none focus-visible:ring-0 w-full"
             inputClass="placeholder:text-[##4D4D4D] placeholder:text-sm"
           />
+          <div className='w-full flex gap-2'>
+            <Select>
+              <SelectTrigger className="w-full lg:w-auto bg-gold-500 text-black border-none focus-visible:ring-0">
+                <SelectValue placeholder="Sort by: Newest" />
+              </SelectTrigger>
+              <SelectContent className="">
+                <SelectItem value="newest">Newest</SelectItem>
+                <SelectItem value="oldest">Oldest</SelectItem>
+                <SelectItem value="latest">Latest</SelectItem>
+              </SelectContent>
+            </Select>
 
-          <Select>
-            <SelectTrigger className="w-auto bg-gold-500 text-black border-none focus-visible:ring-0">
-              <SelectValue placeholder="Sort by: Newest" />
-            </SelectTrigger>
-            <SelectContent className="">
-              <SelectItem value="newest">Newest</SelectItem>
-              <SelectItem value="oldest">Oldest</SelectItem>
-              <SelectItem value="latest">Latest</SelectItem>
-            </SelectContent>
-          </Select>
-
-          <Image src={DownloadIcon} alt="download" />
+            <Image src={DownloadIcon} alt="download" />
+          </div>
         </div>
       </div>
 

@@ -24,42 +24,40 @@ const EditUserDetailsDialog = () => {
             Edit user details
           </DialogTitle>
         </DialogHeader>
-
-        {/* Personal Information Section */}
-        <div className="grid gap-4 ">
+        <div className="grid gap-4">
           <div className="p-2 text-center text-white font-semibold">
             Personal Information
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             <input
               type="text"
               placeholder="First Name"
-              className="bg-[#33333399] p-2 rounded border border-gray-500"
+              className="w-full h-14 bg-[#33333399] rounded border border-gray-500 px-4 text-white placeholder-gray-400"
             />
             <input
               type="text"
               placeholder="Last Name"
-              className="bg-[#33333399] p-2 rounded border border-gray-500"
+              className="w-full h-14 bg-[#33333399] rounded border border-gray-500 px-4 text-white placeholder-gray-400"
             />
             <input
               type="email"
               placeholder="Email Address"
-              className="bg-[#33333399] p-2 rounded border border-gray-500"
+              className="w-full h-14 bg-[#33333399] rounded border border-gray-500 px-4 text-white placeholder-gray-400"
             />
             <input
               type="tel"
               placeholder="Phone Number"
-              className="bg-[#33333399] p-2 rounded border border-gray-500"
+              className="w-full h-14 bg-[#33333399] rounded border border-gray-500 px-4 text-white placeholder-gray-400"
             />
             <input
               type="text"
               placeholder="Date of Birth"
-              className="bg-[#33333399] p-2 rounded border border-gray-500"
+              className="w-full h-14 bg-[#33333399] rounded border border-gray-500 px-4 text-white placeholder-gray-400"
             />
             <input
               type="text"
               placeholder="Country"
-              className="bg-[#33333399] p-2 rounded border border-gray-500"
+              className="w-full h-14 bg-[#33333399] rounded border border-gray-500 px-4 text-white placeholder-gray-400"
             />
           </div>
         </div>
