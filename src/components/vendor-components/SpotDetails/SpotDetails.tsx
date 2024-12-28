@@ -12,6 +12,7 @@ import FrameSix from "@/assets/img/VendorPage/Frame 20031 (1).png";
 import FrameSeven from "@/assets/img/VendorPage/Frame 20032 (1).png";
 import InsightsIcon from "@mui/icons-material/Insights";
 import GallerySlide from "@/components/vendor-components/GallerySlide";
+import Link from "next/link";
 
 const slides = [
   { src: FrameOne, alt: "frame one" },
@@ -30,10 +31,12 @@ const SpotDetails: React.FC<spotProps> = ({ showInsight }) => {
       {/* images */}
       <GallerySlide slides={slides} />
       {showInsight && (
-        <p className="w-[30%] my-5 mx-auto bg-gold-500 text-center text-brandDark py-3 rounded-3xl flex gap-2 font-bold items-center justify-center cursor-pointer">
-          <InsightsIcon />
-          Business insight
-        </p>
+        <Link href="/vendor-Home/profile/insight">
+          <p className="md:w-[30%] my-5 mx-auto bg-gold-500 text-center text-brandDark py-3 rounded-3xl flex gap-2 font-bold items-center justify-center cursor-pointer">
+            <InsightsIcon />
+            Business insight
+          </p>
+        </Link>
       )}
 
       {/* details */}

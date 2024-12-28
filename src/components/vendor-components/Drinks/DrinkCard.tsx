@@ -11,7 +11,7 @@ type EventProps = {
   handleClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   handleDelete?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   removeDiscount?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-  onSaveDiscount: (discountData: {
+  onSaveDiscount?: (discountData: {
     selectedDiscount: number | null;
     customDiscount: string;
   }) => void;
@@ -33,7 +33,9 @@ const DrinkCard = ({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault(); // Prevent the form from reloading
     // Pass the values to the parent component
-    onSaveDiscount({ selectedDiscount, customDiscount });
+    if (onSaveDiscount) {
+      onSaveDiscount({ selectedDiscount, customDiscount });
+    }
   };
   return (
     <div

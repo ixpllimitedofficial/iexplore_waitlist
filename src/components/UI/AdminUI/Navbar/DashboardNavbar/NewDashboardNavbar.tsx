@@ -1,12 +1,33 @@
 import React from "react";
 import NewDashboardDesktopBar from "./NewDashboardDesktopBar";
 import NewDashboardMobileBar from "./NewDashboardMobileBar";
+import { usePathname } from "next/navigation";
+
+const VENDOR_HOME_PREFIX = "/vendor-Home";
 
 const NewDesktopNavbar = () => {
+  const pathname = usePathname();
+
+  const hiddenMobileBarRoutes = [
+    `${VENDOR_HOME_PREFIX}/profile/following`,
+    `${VENDOR_HOME_PREFIX}/profile/edit`,
+    `${VENDOR_HOME_PREFIX}/profile/1`,
+    `${VENDOR_HOME_PREFIX}/profile/insight`,
+    `${VENDOR_HOME_PREFIX}/profile/terms`,
+    `${VENDOR_HOME_PREFIX}/profile/privacy`,
+    `${VENDOR_HOME_PREFIX}/profile/support`,
+    `${VENDOR_HOME_PREFIX}/profile/adverts`,
+    `${VENDOR_HOME_PREFIX}/profile/adverts/1`,
+    `${VENDOR_HOME_PREFIX}/profile/adverts/createAd`,
+    `${VENDOR_HOME_PREFIX}/profile/adverts/createAd/checkoutAd`,
+  ];
+  // Check if the current path is in the hidden routes
+  const shouldShowMobileBar = !hiddenMobileBarRoutes.includes(pathname);
+
   return (
     <>
-      <NewDashboardDesktopBar/>
-      <NewDashboardMobileBar/>
+      <NewDashboardDesktopBar />
+      {shouldShowMobileBar && <NewDashboardMobileBar />}
     </>
   );
 };

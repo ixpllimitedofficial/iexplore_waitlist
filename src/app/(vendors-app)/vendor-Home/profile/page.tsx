@@ -10,10 +10,13 @@ import Link from "next/link";
 import ToggleIcon from "@/assets/svg/UserIconsSvg/ToggleIcon.svg";
 import BusinessCard from "@/components/vendor-components/ProfileComponents/BusinessCard/page";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import PhoneIcon from "@mui/icons-material/Phone";
-import PolicyIcon from "@mui/icons-material/Policy";
-import ArticleIcon from "@mui/icons-material/Article";
 import { useRouter } from "next/navigation";
+import ProfileDrinksIcon from "@/assets/svg/UserIconsSvg/ProfileDrinksIcon.svg";
+import ProfileFeedbackIcon from "@/assets/svg/UserIconsSvg/ProfileFeedbackIcon.svg";
+import ProfileFAQsIcon from "@/assets/svg/UserIconsSvg/ProfileFAQsIcon.svg";
+import ProfileCallIcon from "@/assets/svg/UserIconsSvg/ProfileCallIcon.svg";
+import ProfilePolicyIcon from "@/assets/svg/UserIconsSvg/ProfilePolicyIcon.svg";
+import ProfileLogoutIcon from "@/assets/svg/UserIconsSvg/ProfileLogoutIcon.svg";
 const Page = () => {
   const businessVerified = true;
   const router = useRouter();
@@ -23,13 +26,15 @@ const Page = () => {
   return (
     <main>
       <Header title="Profile" className="hidden md:block" />
-      <section className="w-[40%] my-10 mx-auto">
+      <section className="w-[95%] md:w-[40%] mt-20 md:my-10 mx-auto">
         <div className="bg-[#4D4D4D4D] p-4 rounded-2xl cursor-pointer">
-          <div className="flex justify-center items-center gap-5">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-5">
             <Image src={StoryImg} alt="profile image" width={80} height={80} />
             <div>
-              <h1 className="text-3xl font-bold my-2">Club Maxx</h1>
-              <p className="bg-gold-500 flex gap-1 w-fit p-1 rounded-2xl text-brandDark">
+              <h1 className="text-center md:text-left text-3xl font-bold my-2">
+                Club Maxx
+              </h1>
+              <p className="mx-auto md:mx-0 bg-gold-500 flex gap-1 w-fit p-1 rounded-2xl text-brandDark">
                 Business Rating <StarIcon />
                 4.5
               </p>
@@ -51,7 +56,7 @@ const Page = () => {
             </button>
           </Link>
         </div>
-        <Link href="/vendor-Home/profile">
+        <Link href="/vendor-Home/profile/adverts">
           <button className="w-[100%] my-5 bg-gold-500 py-3 text-brandDark text-2xl font-bold rounded-2xl">
             <CampaignIcon /> Manage advertisement
           </button>
@@ -69,8 +74,10 @@ const Page = () => {
         </div>
         <div className="my-3 flex gap-2">
           <div className="w-[50%] bg-[#4D4D4D4D] p-3 text-center rounded-xl">
-            <p className="font-light text-lg">Following</p>
-            <p className="text-2xl font-bold">1000</p>
+            <Link href="/vendor-Home/profile/following">
+              <p className="font-light text-lg">Following</p>
+              <p className="text-2xl font-bold">1000</p>
+            </Link>
           </div>
           <div className="w-[50%] bg-[#4D4D4D4D] p-3 text-center rounded-xl">
             <p className="font-light text-lg">Followers</p>
@@ -82,48 +89,54 @@ const Page = () => {
           <Image src={ToggleIcon} alt="toggle icon" />
         </div>
       </section>
-      <section className="w-[80%] mx-auto my-8 text-center">
+      <section className="w-[95%] md:w-[80%] mx-auto my-8 text-center">
         <p className="text-2xl font-bold">Business</p>
 
-        <div className="grid grid-cols-2 gap-5 md:pr-5 mt-10">
+        <div className="grid grid-col-1 md:grid-cols-2 gap-5 md:pr-5 mt-10">
           {[1, 2, 3].map((item) => {
             return <BusinessCard key={item} handleClick={handleClick} />;
           })}
         </div>
       </section>
-      <section className="w-[50%] mx-auto my-5">
+      <section className="w-[95%] md:w-[50%] mx-auto my-5">
         <p className="text-2xl font-bold text-center">Resources</p>
-        <div className="mt-5 flex gap-5">
+        <div className="mt-5 flex flex-col md:flex-row gap-5">
           <div className="flex-1 bg-[#4D4D4D4D] border-2 border-[#4D4D4D4D] border-opacity-30 p-3 rounded-lg flex justify-between">
             <div>
               <p>
                 {" "}
-                <ArticleIcon />
+                <Image src={ProfileFeedbackIcon} alt="feed back" />
               </p>
 
               <p className="my-1">Terms of use</p>
             </div>
-            <p className="bg-gold-500 w-fit h-fit rounded-lg text-brandDark">
-              <KeyboardArrowRightIcon />
-            </p>
+            <Link href="/vendor-Home/profile/terms">
+              <p className="bg-gold-500 w-fit h-fit rounded-lg text-brandDark cursor-pointer">
+                <KeyboardArrowRightIcon />
+              </p>
+            </Link>
           </div>
           <div className="flex-1 bg-[#4D4D4D4D] border-2 border-[#4D4D4D4D] border-opacity-30 p-3 rounded-lg flex justify-between">
             <div>
-              <PolicyIcon />
+              <Image src={ProfilePolicyIcon} alt="policy icon" />
               <p className="my-1">Privacy Policy</p>
             </div>
-            <p className="bg-gold-500 w-fit h-fit rounded-lg text-brandDark">
-              <KeyboardArrowRightIcon />
-            </p>
+            <Link href="/vendor-Home/profile/privacy">
+              <p className="bg-gold-500 w-fit h-fit rounded-lg text-brandDark cursor-pointer">
+                <KeyboardArrowRightIcon />
+              </p>
+            </Link>
           </div>
           <div className="flex-1 bg-[#4D4D4D4D] border-2 border-[#4D4D4D4D] border-opacity-30 p-3 rounded-lg flex justify-between">
             <div>
-              <PhoneIcon />
+              <Image src={ProfileCallIcon} alt="call icon" />
               <p className="my-1">Call center</p>
             </div>
-            <p className="bg-gold-500 w-fit h-fit rounded-lg text-brandDark">
-              <KeyboardArrowRightIcon />
-            </p>
+            <Link href="/vendor-Home/profile/support">
+              <p className="bg-gold-500 w-fit h-fit rounded-lg text-brandDark cursor-pointer">
+                <KeyboardArrowRightIcon />
+              </p>
+            </Link>
           </div>
         </div>
       </section>
