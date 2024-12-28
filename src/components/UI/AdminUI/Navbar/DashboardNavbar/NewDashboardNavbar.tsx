@@ -20,6 +20,9 @@ const NewDesktopNavbar = () => {
     `${VENDOR_HOME_PREFIX}/profile/adverts/1`,
     `${VENDOR_HOME_PREFIX}/profile/adverts/createAd`,
     `${VENDOR_HOME_PREFIX}/profile/adverts/createAd/checkoutAd`,
+    `${VENDOR_HOME_PREFIX}/profile/adverts/boostAd`,
+    `${VENDOR_HOME_PREFIX}/profile/adverts/boostAd/boostCheckout`,
+    `${VENDOR_HOME_PREFIX}/profile/adverts/deleteAd`,
   ];
   // Check if the current path is in the hidden routes
   const shouldShowMobileBar = !hiddenMobileBarRoutes.includes(pathname);

@@ -37,19 +37,19 @@ const Page = () => {
   return (
     <main>
       <Header title="Profile" className="hidden md:block" />
-      <section className="px-7 md:py-6">
+      <section className="px-3 md:px-7 md:py-6">
         <div className="flex items-center">
           <Link href="/vendor-Home/profile/adverts">
             <Image src={ArrowLeft} alt="ArrowLeft" className="justify-start" />
           </Link>
 
           <div className="flex flex-col justify-center items-center gap-3 w-full">
-            <p className="hidden md:block font-bold text-3xl">Boost Ad</p>
+            <p className="text-xl font-bold md:text-3xl">Remove Ad</p>
           </div>
         </div>
-        <div className="w-[90%] mt-10 mx-auto">
+        <div className="md:w-[90%] mt-10 mx-auto">
           <p className="text-2xl font-bold mb-5">Running Ads</p>
-          <div className=" grid grid-cols-2 gap-5">
+          <div className=" grid grid-cols-1 md:grid-cols-2 gap-5">
             {[1, 2, 3, 4, 5, 6].map((item) => {
               return (
                 <AdvertCard
@@ -69,7 +69,7 @@ const Page = () => {
       </section>
       {/* AlertDialog */}
       <AlertDialog open={openDialog} onOpenChange={setOpenDialog}>
-        <AlertDialogContent className="border-gold-500 flex flex-col justify-center items-center text-center">
+        <AlertDialogContent className="border-gold-500 flex flex-col justify-center items-center text-center w-[95%] md:w-full">
           <AlertDialogHeader>
             <AlertDialogTitle className="text-center text-2xl">
               Remove Ad
@@ -79,7 +79,7 @@ const Page = () => {
               campaign
             </AlertDialogDescription>
           </AlertDialogHeader>
-          <AlertDialogFooter>
+          <AlertDialogFooter className="flex flex-row items-center gap-3">
             <AlertDialogAction
               onClick={handleConfirmDelete}
               className="bg-gold-500 text-brandDark px-6 rounded-full hover:bg-white"
