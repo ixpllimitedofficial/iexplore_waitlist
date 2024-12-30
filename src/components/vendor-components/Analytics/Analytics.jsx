@@ -23,15 +23,17 @@ const Analytics = ({ hasAnotherContainer }) => {
         >
           <p className="my-3 mb-5 font-bold">Spots Managed</p>
           <span
-            className={`${styles.borderRating} bg-gold-800 py-2 px-4 rounded-full font-semibold`}
+            className={`${styles.borderRating} bg-gold-800 py-2 text-sm md:text-lg  md:px-4 rounded-full font-semibold`}
           >
-            Rating: 4.5 (900)
+            Rating: 4.5(900)
           </span>
           <div className="mt-10 flex items-center gap-3 md:gap-5">
             <Image src={Store} alt="store icon" />
             <div className="text-center">
               <p className="text-4xl md:text-5xl">4</p>
-              <p className="mt-4 md:mt-2 md:text-2xl hidden md:block">Spots managed</p>
+              <p className="mt-4 md:mt-2 md:text-2xl hidden md:block">
+                Spots managed
+              </p>
             </div>
           </div>
           <p className="md:mt-2 text-lg lg:hidden text-center">Spots managed</p>
@@ -43,7 +45,7 @@ const Analytics = ({ hasAnotherContainer }) => {
         >
           <p className="my-3 mb-5 font-bold">Drinks</p>
           <span
-            className={`${styles.borderStock} border-4 py-2 px-4 rounded-full font-semibold`}
+            className={`${styles.borderStock} border-4 py-2 text-sm md:text-lg  md:px-4 rounded-full font-semibold`}
           >
             Out of stock - 25
           </span>

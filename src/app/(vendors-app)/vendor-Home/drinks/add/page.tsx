@@ -90,13 +90,13 @@ const Page = () => {
       <section className="">
         <Header title="Drinks" className="hidden md:block" />
       </section>
-      <section className="px-7 py-6 w-[100%]">
+      <section className="px-3 md:px-7 md:py-6 w-[100%]">
         <div className="flex items-center">
           <Link href="/vendor-Home/drinks">
             <Image src={ArrowLeft} alt="ArrowLeft" className="justify-start" />
           </Link>
 
-          <div className=" mt-14 md:mt-0 flex justify-center items-center gap-3 w-full">
+          <div className="md:mt-0 flex justify-center items-center gap-3 w-full">
             <p className="font-bold text-lg md:text-3xl">Add Drink</p>
           </div>
         </div>
@@ -404,7 +404,7 @@ const Page = () => {
                 />
 
                 <Button
-                  className="bg-[#4D4D4D] w-full mt-10 hover:bg-white transition duration-200 text-[#B0B0B0] px-8 py-5 lg:py-6 rounded-3xl font-bold text-base flex-grow"
+                  className="mb-3 bg-[#4D4D4D] w-full mt-10 hover:bg-white transition duration-200 text-[#B0B0B0] px-8 py-5 lg:py-6 rounded-3xl font-bold text-base flex-grow"
                   type="submit"
                   disabled={btnState}
                 >

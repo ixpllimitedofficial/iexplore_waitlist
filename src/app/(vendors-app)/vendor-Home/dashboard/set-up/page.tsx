@@ -142,13 +142,13 @@ const Page = () => {
       <section className="">
         <Header title="Home" className="hidden md:block" />
       </section>
-      <section className="px-7 py-6 w-[100%]">
+      <section className="px-3 md:px-7 py-6 w-[100%]">
         <div className="flex items-center">
           <Link href="/vendor-Home/dashboard">
             <Image src={ArrowLeft} alt="ArrowLeft" className="justify-start" />
           </Link>
 
-          <div className=" mt-14 md:mt-0 flex justify-center items-center gap-3 w-full">
+          <div className=" md:mt-0 flex justify-center items-center gap-3 w-full">
             <p className="font-bold text-lg md:text-3xl">
               Continue business setup
             </p>
@@ -438,7 +438,7 @@ const Page = () => {
               <div className="max-w-lg mx-auto p-6">
                 {/* Business Photos */}
                 <section className="mb-10">
-                  <p className="text-2xl font-bold text-center mb-5">
+                  <p className="text-xl md:text-2xl font-bold text-center mb-5">
                     Add photos of business
                   </p>
                   {businessPhotos.length === 0 ? (
@@ -485,7 +485,7 @@ const Page = () => {
 
                 {/* Utility Bill */}
                 <section className="mb-10">
-                  <p className="text-2xl font-bold text-center mb-5">
+                  <p className="text-xl md:text-2xl font-bold text-center mb-5">
                     Add utility bill for business validation
                   </p>
                   {utilityBill === null ? (
@@ -517,7 +517,7 @@ const Page = () => {
 
                 {/* Registration Certificate */}
                 <section>
-                  <p className="text-2xl font-bold text-center mb-5">
+                  <p className="text-xl md:text-2xl font-bold text-center mb-5">
                     Add CAC for business verification
                   </p>
                   {registrationCertificate === null ? (

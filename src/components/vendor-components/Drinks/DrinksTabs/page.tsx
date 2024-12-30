@@ -111,27 +111,50 @@ const TabsDemo: React.FC = () => {
               ))}
             </div>
             {/* Pagination for All Drinks */}
-            <div className="flex justify-between items-center mt-5 mx-2">
+            {/* Pagination for All Drinks */}
+            <div className="flex justify-between items-center mt-5 mx-0 md:mx-2">
               <div className="flex space-x-1">
-                {Array.from({ length: totalPages(allDrinksData) }).map(
-                  (_, index) => (
-                    <button
-                      key={index + 1}
-                      className={`px-3 py-1 border rounded-full ${
-                        allDrinksPage === index + 1
-                          ? "bg-gold-500 text-brandDark font-bold"
-                          : "bg-[#4D4D4D] text-[#B0B0B0] font-bold"
-                      }`}
-                      onClick={() => setAllDrinksPage(index + 1)}
-                    >
-                      {index + 1}
-                    </button>
-                  )
-                )}
+                {Array.from({ length: totalPages(allDrinksData) })
+                  .map((_, index) => index + 1)
+                  .filter((page) => {
+                    // Display first 3 pages, last 2 pages, and current page with neighbors
+                    return (
+                      page <= 3 ||
+                      page > totalPages(allDrinksData) - 2 ||
+                      (page >= allDrinksPage - 1 && page <= allDrinksPage + 1)
+                    );
+                  })
+                  .reduce<(number | string)[]>((acc, page, index, array) => {
+                    // Add ellipses where necessary
+                    if (index > 0 && page > array[index - 1] + 1) {
+                      acc.push("...");
+                    }
+                    acc.push(page);
+                    return acc;
+                  }, [])
+                  .map((page, index) =>
+                    typeof page === "number" ? (
+                      <button
+                        key={index}
+                        className={`p-1 md:px-3 md:py-1 border rounded-full ${
+                          allDrinksPage === page
+                            ? "bg-gold-500 text-brandDark font-bold"
+                            : "bg-[#4D4D4D] text-[#B0B0B0] font-bold"
+                        }`}
+                        onClick={() => setAllDrinksPage(page)}
+                      >
+                        {page}
+                      </button>
+                    ) : (
+                      <span key={index} className="md:px-3 py-1">
+                        {page}
+                      </span>
+                    )
+                  )}
               </div>
               <div className="flex space-x-2">
                 <button
-                  className={`px-4 py-1 border rounded-md flex gap-1 items-center ${
+                  className={` px-1 md:px-4 py-1 border rounded-md flex md:gap-1 items-center ${
                     allDrinksPage === 1
                       ? "bg-[#4D4D4D] text-[#B0B0B0]"
                       : "bg-gold-500 text-black"
@@ -143,7 +166,7 @@ const TabsDemo: React.FC = () => {
                   Previous
                 </button>
                 <button
-                  className={`px-4 py-1 border rounded-md flex gap-1 items-center ${
+                  className={`px-1 md:px-4 py-1 border rounded-md flex md:gap-1 items-center ${
                     allDrinksPage === totalPages(allDrinksData)
                       ? "bg-[#4D4D4D] text-[#B0B0B0]"
                       : "bg-gold-500 text-black"
@@ -166,45 +189,68 @@ const TabsDemo: React.FC = () => {
               ))}
             </div>
             {/* Pagination for Out of Stock Drinks */}
-            <div className="flex justify-between items-center mt-5 mx-2">
+            {/* Pagination for All Drinks */}
+            <div className="flex justify-between items-center mt-5 mx-0 md:mx-2">
               <div className="flex space-x-1">
-                {Array.from({ length: totalPages(outOfStockData) }).map(
-                  (_, index) => (
-                    <button
-                      key={index + 1}
-                      className={`px-3 py-1 border rounded-full ${
-                        outOfStockPage === index + 1
-                          ? "bg-gold-500 text-brandDark font-bold"
-                          : "bg-[#4D4D4D] text-[#B0B0B0] font-bold"
-                      }`}
-                      onClick={() => setOutOfStockPage(index + 1)}
-                    >
-                      {index + 1}
-                    </button>
-                  )
-                )}
+                {Array.from({ length: totalPages(allDrinksData) })
+                  .map((_, index) => index + 1)
+                  .filter((page) => {
+                    // Display first 3 pages, last 2 pages, and current page with neighbors
+                    return (
+                      page <= 3 ||
+                      page > totalPages(allDrinksData) - 2 ||
+                      (page >= allDrinksPage - 1 && page <= allDrinksPage + 1)
+                    );
+                  })
+                  .reduce<(number | string)[]>((acc, page, index, array) => {
+                    // Add ellipses where necessary
+                    if (index > 0 && page > array[index - 1] + 1) {
+                      acc.push("...");
+                    }
+                    acc.push(page);
+                    return acc;
+                  }, [])
+                  .map((page, index) =>
+                    typeof page === "number" ? (
+                      <button
+                        key={index}
+                        className={`p-1 md:px-3 md:py-1 border rounded-full ${
+                          allDrinksPage === page
+                            ? "bg-gold-500 text-brandDark font-bold"
+                            : "bg-[#4D4D4D] text-[#B0B0B0] font-bold"
+                        }`}
+                        onClick={() => setAllDrinksPage(page)}
+                      >
+                        {page}
+                      </button>
+                    ) : (
+                      <span key={index} className="md:px-3 py-1">
+                        {page}
+                      </span>
+                    )
+                  )}
               </div>
               <div className="flex space-x-2">
                 <button
-                  className={`px-4 py-1 border rounded-md flex gap-1 items-center ${
-                    outOfStockPage === 1
+                  className={` px-1 md:px-4 py-1 border rounded-md flex md:gap-1 items-center ${
+                    allDrinksPage === 1
                       ? "bg-[#4D4D4D] text-[#B0B0B0]"
                       : "bg-gold-500 text-black"
                   }`}
-                  disabled={outOfStockPage === 1}
-                  onClick={() => setOutOfStockPage(outOfStockPage - 1)}
+                  disabled={allDrinksPage === 1}
+                  onClick={() => setAllDrinksPage(allDrinksPage - 1)}
                 >
                   <ArrowBackIosNewIcon />
                   Previous
                 </button>
                 <button
-                  className={`px-4 py-1 border rounded-md flex gap-1 items-center ${
-                    outOfStockPage === totalPages(outOfStockData)
+                  className={`px-1 md:px-4 py-1 border rounded-md flex md:gap-1 items-center ${
+                    allDrinksPage === totalPages(allDrinksData)
                       ? "bg-[#4D4D4D] text-[#B0B0B0]"
                       : "bg-gold-500 text-black"
                   }`}
-                  disabled={outOfStockPage === totalPages(outOfStockData)}
-                  onClick={() => setOutOfStockPage(outOfStockPage + 1)}
+                  disabled={allDrinksPage === totalPages(allDrinksData)}
+                  onClick={() => setAllDrinksPage(allDrinksPage + 1)}
                 >
                   Next
                   <ArrowForwardIosIcon />
