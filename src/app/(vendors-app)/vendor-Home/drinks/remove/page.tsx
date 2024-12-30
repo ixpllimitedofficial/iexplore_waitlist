@@ -11,12 +11,12 @@ const Page = () => {
     <section className="">
       <Header title="Drinks" className="hidden md:block" />
 
-      <div className="flex items-center mt-5 mx-3">
+      <div className="flex items-center md:mt-5 mx-3">
         <Link href="/vendor-Home/drinks">
           <Image src={ArrowLeft} alt="ArrowLeft" className="justify-start" />
         </Link>
 
-        <div className=" mt-14 md:mt-0 flex justify-center items-center gap-3 w-full">
+        <div className="md:mt-0 flex justify-center items-center gap-3 w-full">
           <p className="font-bold text-lg md:text-3xl">Remove Drinks</p>
         </div>
       </div>

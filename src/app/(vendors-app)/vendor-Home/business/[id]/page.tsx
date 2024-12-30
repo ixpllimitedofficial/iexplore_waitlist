@@ -10,19 +10,20 @@ const page = () => {
   return (
     <>
       <Header title="Business" className="hidden md:block" />
-      <section className="px-7 py-6">
+      <section className="px-3 md:px-7 md:py-6">
         <div className="flex items-center">
           <Link href="/vendor-Home/business">
             <Image src={ArrowLeft} alt="ArrowLeft" className="justify-start" />
           </Link>
 
-          <div className="flex justify-center items-center gap-3 w-full">
+          <div className="hidden md:flex justify-center items-center gap-3 w-full">
             <p className=" font-bold text-3xl">Maxxa beach bar</p>
             <div className="bg-gold-500 py-1 px-3 rounded-3xl font-bold text-brandDark flex gap-1">
               <Image src={RatingStarIcon} alt="rating icons" />
               4.5
             </div>
           </div>
+          <p className="md:hidden font-bold text-2xl text-center mx-auto">Spot Details</p>
         </div>
 
         <SpotDetails />

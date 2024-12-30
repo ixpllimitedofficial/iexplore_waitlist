@@ -9,6 +9,12 @@ const NewDesktopNavbar = () => {
   const pathname = usePathname();
 
   const hiddenMobileBarRoutes = [
+    `${VENDOR_HOME_PREFIX}/dashboard/set-up`,
+    `${VENDOR_HOME_PREFIX}/business/1`,
+    `${VENDOR_HOME_PREFIX}/drinks/add`,
+    `${VENDOR_HOME_PREFIX}/drinks/remove`,
+    `${VENDOR_HOME_PREFIX}/drinks/discount`,
+    `${VENDOR_HOME_PREFIX}/drinks/request`,
     `${VENDOR_HOME_PREFIX}/profile/following`,
     `${VENDOR_HOME_PREFIX}/profile/edit`,
     `${VENDOR_HOME_PREFIX}/profile/1`,

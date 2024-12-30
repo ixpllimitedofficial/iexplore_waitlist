@@ -12,15 +12,17 @@ import FrameSix from "@/assets/img/VendorPage/Frame 20031 (1).png";
 import FrameSeven from "@/assets/img/VendorPage/Frame 20032 (1).png";
 import InsightsIcon from "@mui/icons-material/Insights";
 import GallerySlide from "@/components/vendor-components/GallerySlide";
+import MobileGallerySlider from "@/components/vendor-components/MobileGallerySlider";
+import RatingStarIcon from "@/assets/svg/VendorSvg/star.svg";
 import Link from "next/link";
 
 const slides = [
-  { src: FrameOne, alt: "frame one" },
-  { src: FrameTwo, alt: "frame two" },
-  { src: FrameThree, alt: "frame three" },
-  { src: FrameFour, alt: "frame four" },
-  { src: FrameFive, alt: "frame five" },
-  { src: FrameSix, alt: "frame six" },
+  { src: FrameOne, alt: "frame one", height: 50, width: 800 },
+  { src: FrameTwo, alt: "frame two", height: 50, width: 800 },
+  { src: FrameThree, alt: "frame three", height: 50, width: 800 },
+  { src: FrameFour, alt: "frame four", height: 50, width: 800 },
+  { src: FrameFive, alt: "frame five", height: 50, width: 800 },
+  { src: FrameSix, alt: "frame six", height: 50, width: 800 },
 ];
 interface spotProps {
   showInsight?: boolean;
@@ -29,7 +31,12 @@ const SpotDetails: React.FC<spotProps> = ({ showInsight }) => {
   return (
     <section className="mt-8">
       {/* images */}
-      <GallerySlide slides={slides} />
+      <div className="hidden md:block">
+        <GallerySlide slides={slides} />
+      </div>
+      <div className="md:hidden">
+        <MobileGallerySlider images={slides} />
+      </div>
       {showInsight && (
         <Link href="/vendor-Home/profile/insight">
           <p className="md:w-[30%] my-5 mx-auto bg-gold-500 text-center text-brandDark py-3 rounded-3xl flex gap-2 font-bold items-center justify-center cursor-pointer">
@@ -38,12 +45,30 @@ const SpotDetails: React.FC<spotProps> = ({ showInsight }) => {
           </p>
         </Link>
       )}
-
+      <div className="mt-5 flex justify-center items-center gap-3 w-full md:hidden">
+        <p className=" font-bold text-3xl">Maxxa beach bar</p>
+        <div className="bg-gold-500 py-1 px-3 rounded-3xl font-bold text-brandDark flex gap-1">
+          <Image src={RatingStarIcon} alt="rating icons" />
+          4.5
+        </div>
+      </div>
+      <div className="mt-3 flex flex-col gap-2 md:hidden">
+        <div className="flex gap-3 items-center">
+          <Image src={LocationStar} alt="location" width={30} height={30} />
+          <p className="text-sm font-semibold">
+            873 Ozumba Mbadiwe Ave, Victoria Island 106104, Lagos
+          </p>
+        </div>
+        <div className="flex gap-3 items-center">
+          <Image src={StopWatch} alt="location share" width={30} height={30} />
+          <p className="text-sm font-bold">4pm - 11pm</p>
+        </div>
+      </div>
       {/* details */}
       <div className="mt-7">
         <p className=" font-bold text-2xl">About</p>
 
-        <div className="mt-2 grid grid-cols-3 gap-20">
+        <div className="mt-2 grid grid-cols-1 md:grid-cols-3 gap-20">
           <p className="text-lg col-span-2">
             Maxx beach bar, where sun, sand, and sea come together to create the
             ultimate beach bar experience. Nestled along the pristine coastline,
@@ -56,7 +81,7 @@ const SpotDetails: React.FC<spotProps> = ({ showInsight }) => {
             good times and great vibes.
           </p>
 
-          <div className="col-span-1 flex flex-col gap-5">
+          <div className="hidden col-span-1 md:flex flex-col gap-5">
             <div className="flex gap-3 items-center">
               <Image src={LocationStar} alt="location" width={30} height={30} />
               <p className="text-lg font-semibold">

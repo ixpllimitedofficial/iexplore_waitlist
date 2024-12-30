@@ -11,10 +11,18 @@ import TopSearchBar from "@/components/vendor-components/BusinessRoute/TopSearch
 
 const Page = () => {
   const [query, setQuery] = useState<string>("");
+  const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
 
   const singlePage = () => {
     router.push("/vendor-Home/feed/1");
+  };
+  const handleOpen = () => {
+    setIsOpen(true);
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
   };
   const handleSearch = () => {};
   return (
@@ -29,7 +37,10 @@ const Page = () => {
         <div className="px-5 mt-14">
           <div className="flex gap-3 items-center">
             <p className="text-2xl md:text-3xl font-bold">Feeds</p>
-            <p className="hidden md:flex gap-1 items-center bg-gold-500 py-2 px-5 text-brandDark rounded-3xl cursor-pointer">
+            <p
+              onClick={handleOpen}
+              className="hidden md:flex gap-1 items-center bg-gold-500 py-2 px-5 text-brandDark rounded-3xl cursor-pointer"
+            >
               <PlusIcon /> Share moment
             </p>
           </div>
@@ -69,6 +80,30 @@ const Page = () => {
           <PlusIcon />
         </div>
       </div>
+      {isOpen && (
+        // Modal backdrop
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+          onClick={handleClose}
+        >
+          {/* // Modal container */}
+          <div
+            className="bg-white rounded-lg shadow-lg p-4 w-1/2 md:w-1/3 lg:w-1/4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            // Modal content
+            <h2 className="text-lg font-bold mb-2">Share Moment</h2>
+            <p className="text-gray-600 mb-4">Share your moment with others.</p>
+            // Single action button
+            <button
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              onClick={handleClose}
+            >
+              Share
+            </button>
+          </div>
+        </div>
+      )}
     </main>
   );
 };

@@ -222,7 +222,7 @@ const TabsDemo: React.FC = () => {
 
       {/* AlertDialog */}
       <AlertDialog open={openDialog} onOpenChange={setOpenDialog}>
-        <AlertDialogContent className="border-gold-500 flex flex-col justify-center items-center text-center">
+        <AlertDialogContent className="border-gold-500 flex flex-col justify-center items-center text-center w-[95%] md:w-full">
           <AlertDialogHeader>
             <AlertDialogTitle className="text-center text-2xl">
               Remove Drink
@@ -232,7 +232,7 @@ const TabsDemo: React.FC = () => {
               catalogue?
             </AlertDialogDescription>
           </AlertDialogHeader>
-          <AlertDialogFooter>
+          <AlertDialogFooter className="flex flex-row items-center gap-3">
             <AlertDialogAction
               onClick={handleConfirmDelete}
               className="bg-gold-500 text-brandDark px-6 rounded-full hover:bg-white"

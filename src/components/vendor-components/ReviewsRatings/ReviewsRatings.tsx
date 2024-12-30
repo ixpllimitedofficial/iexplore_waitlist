@@ -8,7 +8,7 @@ import DrinkCard from "@/components/vendor-components/ReviewsComponents/ReviewCa
 const ReviewsRatings = () => {
   return (
     <section>
-      <div className="flex items-center gap-3 mt-7 mb-1 bg-[#4D4D4D66] px-4 py-3">
+      <div className="hidden md:flex items-center gap-3 mt-7 mb-1 bg-[#4D4D4D66] px-4 py-3">
         <p className="text-xl font-bold">Reviews & Ratings</p>
 
         <div className="flex items-center gap-1">
@@ -17,6 +17,9 @@ const ReviewsRatings = () => {
           <p className="font-medium text-gold-500">(22 Reviews)</p>
         </div>
       </div>
+      <p className="md:hidden py-3 text-xl font-semibold border-b-2 border-[#4D4D4D66]">
+        Reviews
+      </p>
 
       {/*  */}
       <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-5 pr-5 ">
