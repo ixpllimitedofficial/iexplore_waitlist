@@ -92,8 +92,8 @@ const DashboardDesktopBar = () => {
 
         {/* Ads */}
         <Link
-          href="/admin/referral"
-          className={`${pathname.includes("referral")
+          href="/admin/ads-management"
+          className={`${pathname.includes("ads")
             ? "font-bold bg-gold-500 text-black px-3 rounded-xl"
             : "font-normal text-white"
           } pl-3 py-2 flex items-center gap-2 text-sm`}

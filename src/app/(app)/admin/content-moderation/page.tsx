@@ -13,7 +13,6 @@ const Page = () => {
   return (
     <div>
       {selectedCategory === 'Drinks' && <AllContentsTable />}
-      {selectedCategory === 'Venues' && <AllVenuesTable />}
       {selectedCategory === 'Spots' && <AllSpotsTable />}
     </div>
   );

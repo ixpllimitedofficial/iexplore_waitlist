@@ -1,75 +1,93 @@
 import React from "react";
-import AllReferralsTable from "@/components/admin/ReferralManagement/AllReferralsTable";
 import PeopleIconSvg from "@/assets/svg/AdminIconsSvg/PeopleIconSvg.svg";
-import { ArrowDownIcon, ArrowUpIcon } from "@radix-ui/react-icons";
+import ActiveUsersIconSvg from "@/assets/svg/AdminIconsSvg/ActiveUsersIconSvg.svg";
 import Image from "next/image";
-import AddAffliateDialog from "@/components/admin/ReferralManagement/AddAffliateDialog";
+import AllReferralsTable from "@/components/admin/ReferralManagement/AllReferralsTable";
+import AddAffliateDialog from "@/components/admin/ReferralManagement/AddAffliateDialog"
 
-const page = () => {
+const Page = () => {
   const divStyle =
-    "col-span-full md:col-span-4 lg:col-span-2 flex items-center gap-2 bg-brandDarkNeutral pr-5 py-5 rounded-2xl text-sm";
+    "flex items-center justify-between gap-2  xl:gap-4 bg-[#23232325] rounded-2xl border border-[#4D4D4D] w-full h-auto p-4 lg:px- min-h-[88px]";
 
   return (
-    <>
-      <div className="grid grid-cols-8 gap-4 mt-5">
+    <div className="">
+      {/* Responsive grid for stats */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-5">
+        {/* Card 1: Active Affiliates */}
         <div className={divStyle}>
-          <div className="bg-gold-500 p-1 h-full"></div>
-
-          <div className="flex-grow">
-            <p>TOTAL AFFILIATES</p>
-            <div className="flex gap-1 items-center">
-              <p className="font-bold text-base">200</p>
-
-              <div className="flex items-center">
-                <ArrowUpIcon color="#00AC4F" />
-                <p className="text-sm">
-                  <span className="text-sm text-[#00AC4F]"> 16% </span> this
-                  month
-                </p>
-              </div>
-            </div>
+          <div className="flex items-center justify-center">
+            <Image
+              src={PeopleIconSvg}
+              alt="People Icon"
+              width={40}
+              height={40}
+              className="object-contain"
+            />
           </div>
-
-          <Image src={PeopleIconSvg} alt="PeopleIconSvg" />
-        </div>
-        <div className={divStyle}>
-          <div className="bg-gold-500 p-1 h-full"></div>
-
           <div className="flex-grow">
-            <p>NEW AFFILIATES</p>
-            <div className="flex gap-1 items-center">
-              <p className="font-bold text-base">500</p>
-
-              <div className="flex items-center">
-                <ArrowDownIcon color="#FF1800" />
-                <p className="text-sm">
-                  <span className="text-sm text-[#FF1800]">1% </span> this month
-                </p>
-              </div>
-            </div>
+            <p className="text-sm font-normal text-gray-300">Active Affiliates</p>
+            <p className="font-bold text-xl text-white">2,000</p>
           </div>
-
-          <Image src={PeopleIconSvg} alt="PeopleIconSvg" />
-        </div>
-        <div className={divStyle}>
-          <div className="bg-gold-500 p-1 h-full"></div>
-
-          <div className="flex-grow">
-            <p>ACTIVE AFFILIATES</p>
-            <p className="font-bold text-base">20</p>
-          </div>
-
-          <Image src={PeopleIconSvg} alt="PeopleIconSvg" />
+          <span className="bg-[#008800] border border-[#b4ddb4] px-1 py-1.5 rounded-full text-white font-normal text-xs whitespace-nowrap">
+            +16% this month
+          </span>
         </div>
 
-        <div className="col-span-full md:col-span-4 lg:col-span-2 flex justify-end">
-          <AddAffliateDialog />
+        {/* Card 2: Total Affiliates */}
+        <div className={divStyle}>
+          <div className="flex items-center justify-center">
+            <Image
+              src={PeopleIconSvg}
+              alt="People Icon"
+              width={40}
+              height={40}
+              className="object-contain"
+            />
+          </div>
+          <div className="flex-grow">
+            <p className="text-sm font-normal text-gray-300">Total Affiliates</p>
+            <p className="font-bold text-xl text-white">2,000</p>
+          </div>
+          <span className="bg-[#E50000] border border-[#b4ddb4] px-2 py-1.5 rounded-full text-white font-normal text-xs whitespace-nowrap">
+            -2% last month
+          </span>
+        </div>
+
+        {/* Card 3: New Vendors */}
+        <div className={divStyle}>
+          <div className="flex items-center justify-center">
+            <Image
+              src={ActiveUsersIconSvg}
+              alt="New Vendors Icon"
+              width={40}
+              height={40}
+              className="object-contain"
+            />
+          </div>
+          <div className="flex-grow">
+            <p className="text-sm font-normal text-gray-300">New Vendors</p>
+            <p className="font-bold text-xl text-white">2,000</p>
+          </div>
         </div>
       </div>
 
-      <AllReferralsTable />
-    </>
+      {/* Add New Referrals Button */}
+      <div className="flex justify-center md:justify-end mt-6">
+        {/* <button className="w-auto px-6 py-2 bg-[#232323] rounded-2xl border border-[#4D4D4D] text-white text-sm font-medium hover:shadow-lg transition-shadow duration-300">
+          Add New Referrals
+        </button> */}
+        <AddAffliateDialog />
+      </div>
+
+      {/* Table section */}
+      <div className="mt-8">
+        <AllReferralsTable />
+      </div>
+    </div>
   );
 };
 
-export default page;
+export default Page;
+
+
+

@@ -32,7 +32,7 @@ const AllUsersTable = () => {
   };
 
   return (
-    <section className="mt-5 bg-[#4D4D4D] p-3 lg:p-5 rounded-2xl">
+    <section className="mt-5 bg-[#1A1A1A] p-3 lg:p-5 rounded-2xl">
       <div className="flex flex-col gap-5 lg:gap-0 lg:flex-row justify-between">
         <p className="font-bold text-lg text-white">All Explorers</p>
 
