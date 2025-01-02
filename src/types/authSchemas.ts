@@ -189,5 +189,9 @@ export const editProfileSchema = z
     message: "New Passwords don't match",
     path: ["confirm_new_password"],
   });
-
+  export const feedPostValidationSchema = z.object({
+    post_caption: z.string().min(1, {
+      message: "Post caption must not be empty.",
+    }),
+  })
 export type InputTypes = any;
