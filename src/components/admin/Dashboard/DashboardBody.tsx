@@ -23,9 +23,9 @@ const DashboardBody = () => {
     "flex items-center justify-between w-full bg-[#23232325] gap-2 pr- py-3 lg:py-5 lg:pl-5 pl-2 rounded-2xl border border-[#4D4D4D] text-sm";
 
   return (
-    <section className="px-3 lg:px-7 overflow-x-hidden">
+    <section className="px-3  overflow-x-hidden">
       {/* Body 1 */}
-      <div className="flex flex-col lg:flex-row gap-8">
+      <div className="flex flex-col md:flex-row gap-8">
         {/* Left Section */}
         <div className="flex-grow">
           {/* Stats Cards */}
@@ -83,8 +83,8 @@ const DashboardBody = () => {
           </div>
 
           {/* Traffic Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-8">
-            <div className="bg-[#23232325] p-5 rounded-2xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-2 mt-8 md:items-center">
+            <div className="bg-[#23232325] p-5 md:p-1 rounded-2xl">
               <div className="flex justify-between items-center text-xs pb-2">
                 <h2 className="text-base lg:text-lg font-bold">Vendors Traffic</h2>
                 <span className="bg-gold-500 px-4 p-2 rounded-full text-black font-semibold whitespace-nowrap">+13% from last week</span>
@@ -93,7 +93,7 @@ const DashboardBody = () => {
               <VendorTraffic />
             </div>
 
-            <div className="bg-[#23232325] p-5 rounded-2xl">
+            <div className="bg-[#23232325] p-5 md:p-1 rounded-2xl">
               <div className="flex justify-between items-center text-xs pb-2">
                 <h2 className="text-base lg:text-lg font-bold">Influencers Traffic</h2>
                 <span className="bg-gold-500 px-4 p-2 rounded-full text-black font-semibold whitespace-nowrap">+13% from last week</span>
@@ -105,7 +105,7 @@ const DashboardBody = () => {
         </div>
 
         {/* Right Section */}
-        <div className="flex flex-col bg-[#23232325] pt-5 rounded-2xl items-center gap-3">
+        <div className="max-h-full flex flex-col  pt-5 rounded-2xl items-center gap-3">
           <Calendar
             mode="single"
             selected={date}
@@ -118,7 +118,7 @@ const DashboardBody = () => {
       {/* Body 2 */}
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 mt-8">
         {/* User Traffic Section */}
-        <div className="col-span-1 lg:col-span-3 bg-[#23232325] p-5 rounded-2xl">
+        <div className="col-span-1 lg:col-span-3 bg-[#23232325] p-5 md:p-2 rounded-2xl">
           <div className="border-full my-3"></div>
           <UserTraffic />
         </div>

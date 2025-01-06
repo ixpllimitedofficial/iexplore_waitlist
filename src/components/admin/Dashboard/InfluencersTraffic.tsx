@@ -30,7 +30,7 @@ const VendorTraffic: FC = () => {
                 <p className="lg:text-sm text-white text-xs  font-normal">(12-17 Dec)</p>
             </div>
 
-            <div className="w-full md:w-[70%] border-none">
+            <div className="w-full  border-none">
                 <ChartContainer config={chartConfig}>
                     <BarChart
                         data={chartData}
@@ -52,7 +52,7 @@ const VendorTraffic: FC = () => {
                             dataKey="count"
                             fill={chartConfig.count.color}
                             radius={4} // Rounded corners
-                            barSize={10} // Reduce bar width
+                            barSize={8} // Reduce bar width
                         >
                             {/* Add the count below each bar */}
                             <LabelList
