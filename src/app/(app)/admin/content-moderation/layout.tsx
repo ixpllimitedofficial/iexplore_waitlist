@@ -9,7 +9,7 @@ import AddSpotDialog from '@/components/admin/ContentModeration/AddSpotDialog';
 export default function Layout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const selectedCategory = searchParams.get('category') || 'Drinks'; 
+  const selectedCategory = searchParams.get('category') || 'Drinks';
   // const selectedCategory = searchParams.get('category') || 'Drinks'; // Default to 'Drinks'
 
   const renderAddDialog = () => {
@@ -32,33 +32,32 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       </header>
 
       <div className="my-5 bg-[#1A1A1A] p-4 rounded-lg">
-  <div className="flex flex-col lg:flex-row justify-between items-center w-full gap-5">
-    {/* Category Section */}
-    <div className="flex flex-col lg:flex-row items-center gap-4">
-      <span className="text-gray-300 text-base font-bold">Category:</span>
-      <div className="flex items-center gap-2">
-        {['Drinks', 'Venues', 'Spots'].map((category) => (
-          <button
-            key={category}
-            onClick={() => handleCategoryChange(category)}
-            className={`px-4 py-2 rounded-full text-sm font-bold transition ${
-              selectedCategory === category
-                ? 'bg-gold-500 text-[#1A1A1A]'
-                : 'bg-transparent border border-gold-500 text-gray-300 hover:bg-gold-500 hover:text-[#1A1A1A]'
-            }`}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
-    </div>
+        <div className="flex flex-col lg:flex-row justify-between items-center w-full gap-5">
+          {/* Category Section */}
+          <div className="flex flex-col lg:flex-row items-center gap-4">
+            <span className="text-gray-300 text-base font-bold">Category:</span>
+            <div className="flex items-center gap-2">
+              {['Drinks', 'Spots'].map((category) => (
+                <button
+                  key={category}
+                  onClick={() => handleCategoryChange(category)}
+                  className={`px-4 py-2 rounded-full text-sm font-bold transition ${selectedCategory === category
+                      ? 'bg-gold-500 text-[#1A1A1A]'
+                      : 'bg-transparent border border-gold-500 text-gray-300 hover:bg-gold-500 hover:text-[#1A1A1A]'
+                    }`}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+          </div>
 
-    {/* Add Dialog Button */}
-    <div className="flex-shrink-0 ">
-      {renderAddDialog()}
-    </div>
-  </div>
-</div>
+          {/* Add Dialog Button */}
+          <div className="flex-shrink-0 ">
+            {renderAddDialog()}
+          </div>
+        </div>
+      </div>
 
       {children}
     </div>
