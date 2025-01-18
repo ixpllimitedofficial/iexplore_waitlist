@@ -52,7 +52,8 @@ const Page = () => {
   }, [isAdminLoggedin, router]);
 
   if (!isAdminLoggedin) {
-    return <p>Loading...</p>;
+    return <p>Loading...</p>; // Optionally display a loading message
+  }
   return (
     <div className="">
       {/* Responsive grid for stats */}
