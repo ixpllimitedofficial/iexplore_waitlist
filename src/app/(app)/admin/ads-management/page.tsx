@@ -1,19 +1,33 @@
 'use client'
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import AdProfile from "@/assets/svg/AdProfile.svg";
 import AdsIconSvg from "@/assets/svg/AdminIconsSvg/AdsIconSvg.svg";
 import { Button } from "@/components/UI/button";
 import { useRouter } from "next/navigation";
+import { adminStore } from "@/store/admin";
 
 type TabKey = "all" | "running" | "pending" | "stopped";
 
 const Page = () => {
+    const [date, setDate] = React.useState<Date | undefined>(new Date());
+    const isAdminLoggedin = adminStore((state) => state.isAdminLoggedin);
     const router = useRouter();
+
+    useEffect(() => {
+        // Redirect to login if admin is not logged in
+        if (!isAdminLoggedin) {
+            router.replace("/admin-login");
+        }
+    }, [isAdminLoggedin, router]);
+
+    if (!isAdminLoggedin) {
+        return <p>Loading...</p>;
+    }
 
     const handleCreateAd = () => {
         router.push("/admin/ads-management/create-ad");
-      };
+    };
     const divStyle =
         "flex items-center justify-between gap-2 xl:gap-4 bg-[#23232325] rounded-2xl border border-[#4D4D4D] w-full h-auto p-4 lg:px- min-h-[88px]";
 

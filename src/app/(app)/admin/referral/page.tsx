@@ -1,13 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PeopleIconSvg from "@/assets/svg/AdminIconsSvg/PeopleIconSvg.svg";
 import ActiveUsersIconSvg from "@/assets/svg/AdminIconsSvg/ActiveUsersIconSvg.svg";
 import Image from "next/image";
 import AllReferralsTable from "@/components/admin/ReferralManagement/AllReferralsTable";
 import AddAffliateDialog from "@/components/admin/ReferralManagement/AddAffliateDialog"
+import { adminStore } from "@/store/admin";
+import { useRouter } from "next/navigation";
 
 const Page = () => {
+  const isAdminLoggedin = adminStore((state) => state.isAdminLoggedin);
+  const router = useRouter();
+
   const divStyle =
     "flex items-center justify-between gap-2  xl:gap-4 bg-[#23232325] rounded-2xl border border-[#4D4D4D] w-full h-auto p-4 lg:px- min-h-[88px]";
+
+  useEffect(() => {
+
+    if (!isAdminLoggedin) {
+      router.replace("/admin-login");
+    }
+  }, [isAdminLoggedin, router]);
+
+  if (!isAdminLoggedin) {
+    return <p>Loading...</p>; 
+  }
 
   return (
     <div className="">

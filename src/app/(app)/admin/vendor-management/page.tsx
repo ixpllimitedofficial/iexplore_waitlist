@@ -1,14 +1,32 @@
+'use client'
+
 import React from "react";
 import PeopleIconSvg from "@/assets/svg/AdminIconsSvg/PeopleIconSvg.svg";
 import ActiveUsersIconSvg from "@/assets/svg/AdminIconsSvg/ActiveUsersIconSvg.svg";
-
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { adminStore } from "@/store/admin";
 import Image from "next/image";
 import AllVendorsTable from "@/components/admin/VendorManagement/AllVendorsTable";
 
 const Page = () => {
-  const divStyle =
-    "flex items-center justify-between gap-2  xl:gap-4 bg-[#23232325] rounded-2xl border border-[#4D4D4D] w-full h-auto p-4 lg:px- min-h-[88px]";
+  const isAdminLoggedin = adminStore((state) => state.isAdminLoggedin);
+  const router = useRouter();
 
+  
+  const divStyle =
+  "flex items-center justify-between gap-2  xl:gap-4 bg-[#23232325] rounded-2xl border border-[#4D4D4D] w-full h-auto p-4 lg:px- min-h-[88px]";
+
+  useEffect(() => {
+    // Redirect to login if admin is not logged in
+    if (!isAdminLoggedin) {
+      router.replace("/admin-login");
+    }
+  }, [isAdminLoggedin, router]);
+
+  if (!isAdminLoggedin) {
+    return <p>Loading...</p>; // Optionally display a loading message
+  }
   return (
     <div className="">
       {/* Responsive grid for stats */}

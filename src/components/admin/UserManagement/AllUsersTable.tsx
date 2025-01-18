@@ -1,6 +1,8 @@
+
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
+
 import {
   Table,
   TableBody,
@@ -18,18 +20,39 @@ import {
   SelectValue,
 } from "@/components/UI/select";
 import AppSearchInput from "@/components/UI/Inputs/AppSearchInput";
-
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import DownloadIcon from "@/assets/svg/AdminIconsSvg/DownloadIcon.svg";
 import { Badge } from "@/components/UI/badge";
+import { adminActions } from "@/app/adminActions";
+
 
 const AllUsersTable = () => {
   const router = useRouter();
+  const { users, isLoading, error, fetchUsers, sortUsers, searchUsers } = adminActions();
 
-  const handleClick = (id: number) => {
-    router.push(`/admin/user-management/${id}`);
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      fetchUsers(token);
+    }
+  }, [fetchUsers]);
+
+  const handleClick = (id: string) => {
+    router.push(`/admin/user-management/${encodeURIComponent(id)}`);
   };
+
+  // Updated to handle direct string value
+  const handleSearch = (value: string) => {
+    searchUsers(value);
+  };
+
+  const handleSort = (value: 'newest' | 'oldest') => {
+    sortUsers(value);
+  };
+
+  if (isLoading) return <div className="text-center p-4">Loading...</div>;
+  if (error) return <div className="text-center text-red-500 p-4">Error: {error}</div>;
 
   return (
     <section className="mt-5 bg-[#1A1A1A] p-3 lg:p-5 rounded-2xl">
@@ -40,16 +63,17 @@ const AllUsersTable = () => {
           <AppSearchInput
             className="bg-white border-none focus-visible:ring-0 w-full"
             inputClass="placeholder:text-[##4D4D4D] placeholder:text-sm"
+            onChange={handleSearch}
+            placeholder="Search users..."
           />
           <div className='w-full flex gap-2'>
-            <Select>
+            <Select onValueChange={handleSort}>
               <SelectTrigger className="w-full lg:w-auto bg-gold-500 text-black border-none focus-visible:ring-0">
                 <SelectValue placeholder="Sort by: Newest" />
               </SelectTrigger>
-              <SelectContent className="">
+              <SelectContent>
                 <SelectItem value="newest">Newest</SelectItem>
                 <SelectItem value="oldest">Oldest</SelectItem>
-                <SelectItem value="latest">Latest</SelectItem>
               </SelectContent>
             </Select>
 
@@ -58,47 +82,52 @@ const AllUsersTable = () => {
         </div>
       </div>
 
-      {/* TABLE */}
       <Table className="mt-4 w-[1000px] lg:w-full">
         <TableCaption className="text-[#B5B7C0]">
-          Showing data 1 to 8 of 256K entries{" "}
-          <span className="text-gold-500">(View all)</span>
+          Showing data 1 to {users.length} entries
         </TableCaption>
         <TableHeader>
           <TableRow className="bg-[#424242] border-none">
-            <TableHead className=" text-white">S/N</TableHead>
+            <TableHead className="text-white">S/N</TableHead>
             <TableHead className="text-white">NAME</TableHead>
             <TableHead className="text-white">PHONE NUMBER</TableHead>
             <TableHead className="text-white">LAST SEEN</TableHead>
-            <TableHead className="text-white">CITY</TableHead>
             <TableHead className="text-white">EMAIL</TableHead>
+            <TableHead className="text-white">ROLE</TableHead>
             <TableHead className="text-white">STATUS</TableHead>
           </TableRow>
         </TableHeader>
 
-        {[1, 2, 3, 4, 5, 6, 7].map((table) => {
-          return (
-            <TableBody
-              className="border-b-2 border-[#9797974b] "
-              key={table}
-              onClick={() => handleClick(table)}
+        <TableBody>
+          {users.map((user, index) => (
+            <TableRow
+              key={user.id}
+              onClick={() => handleClick(user.id)}
+              className="cursor-pointer hover:bg-[#424242] transition-colors"
             >
-              <TableRow>
-                <TableCell className="font-medium py-5">{table}</TableCell>
-                <TableCell>Christine Brooks</TableCell>
-                <TableCell>09123456789</TableCell>
-                <TableCell>1hr 30mins ago</TableCell>
-                <TableCell>Lagos</TableCell>
-                <TableCell>brookschristine.mail.com</TableCell>
-                <TableCell>
-                  <Badge className="bg-[#00b69b48] text-[#00B69B] text-sm">
-                    Active
-                  </Badge>
-                </TableCell>
-              </TableRow>
-            </TableBody>
-          );
-        })}
+              <TableCell className="font-medium py-5">{index + 1}</TableCell>
+              <TableCell>{`${user.first_name} ${user.last_name}`}</TableCell>
+              <TableCell>{user.phone || 'N/A'}</TableCell>
+              <TableCell>
+                {user.last_login
+                  ? new Date(user.last_login).toLocaleDateString()
+                  : 'Never'}
+              </TableCell>
+              <TableCell>{user.email}</TableCell>
+              <TableCell>{user.role}</TableCell>
+              <TableCell>
+                <Badge
+                  className={`${user.is_active
+                      ? 'bg-[#00b69b48] text-[#00B69B]'
+                      : 'bg-red-100 text-red-500'
+                    } text-sm`}
+                >
+                  {user.is_active ? 'Active' : 'Inactive'}
+                </Badge>
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
       </Table>
     </section>
   );

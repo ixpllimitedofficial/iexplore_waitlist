@@ -5,6 +5,7 @@ export function adminMiddleware(request: NextRequest) {
 
   // Allow access to the /user route itself (e.g., login page)
   if (request.nextUrl.pathname === "/admin") {
+    const token = request.cookies.get("adminToken")?.value;
     return NextResponse.next();
   }
 
@@ -14,7 +15,7 @@ export function adminMiddleware(request: NextRequest) {
   }
 
   // Redirect to login page if not authenticated
-  return NextResponse.redirect(new URL("/admin", request.url));
+  return NextResponse.redirect(new URL("/admin-login", request.url));
 }
 
 export const config = {

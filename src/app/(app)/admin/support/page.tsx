@@ -14,9 +14,25 @@
 
 // export default page;
 import SupportCard from "@/components/admin/Support/SupportCard";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { adminStore } from "@/store/admin";
+
 
 const page = () => {
-  // Sample notification data
+  const isAdminLoggedin = adminStore((state) => state.isAdminLoggedin);
+  const router = useRouter();
+  
+  useEffect(() => {
+    // Redirect to login if admin is not logged in
+    if (!isAdminLoggedin) {
+      router.replace("/admin-login");
+    }
+  }, [isAdminLoggedin, router]);
+
+  if (!isAdminLoggedin) {
+    return <p>Loading...</p>; // Optionally display a loading message
+  }
   const notifications = [
     {
       id: 1,
