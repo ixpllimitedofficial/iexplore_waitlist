@@ -1,11 +1,11 @@
 import { ZodError, z } from "zod";
 
 export const loginValidationSchema = z.object({
-  username_or_email: z
-    .string()
-    .min(1, { message: "Username must be not be empty." }),
   password: z.string().min(1, {
     message: "Password must be not be empty.",
+  }),
+  email: z.string().email({
+    message: "Please put in a valid email.",
   }),
 });
 
@@ -57,6 +57,32 @@ export const signupValidationSchema = z
     business_phone_number: z.string().min(11, { message: "Phone Number must be at least 11 chars." }),
     checkbox: z.boolean().refine((checked) => checked, {
       message: "You must check the checkbox.",
+    }),
+  })
+  .refine((data) => data.password === data.confirm_password, {
+    message: "Passwords don't match",
+    path: ["confirm_password"],
+  });
+
+  export const signupVendorValidationSchema = z
+  .object({
+    first_name: z
+      .string()
+      .min(2, { message: "First name must be at least 2 chars." }),
+    last_name: z
+      .string()
+      .min(2, { message: "Last name must be at least 2 chars." }),
+    email: z.string().email({
+      message: "Please put in a valid email.",
+    }),
+    phone: z
+    .string()
+    .min(11, { message: "Phone Number must be at least 11 chars." }),
+    password: z.string().min(1, {
+      message: "Password must be not be empty.",
+    }),
+    confirm_password: z.string().min(1, {
+      message: "Confirm Password must be not be empty.",
     }),
   })
   .refine((data) => data.password === data.confirm_password, {
@@ -135,24 +161,15 @@ export const setupBusinessValidationSchema = z
 });
 export const addDrinksValidationSchema = z
 .object({
-  profile_picture: z
-  .string()
-  .min(2, { message: "Add a profile picture" }),
   drinks_name: z
     .string()
     .min(2, { message: "Drinks name must be at least 2 chars." }),
   drinks_price: z.string().min(3, { message: "Drinks must be at least 3 chars." }),
-  select_Spot: z.string().min(1, {
-    message: "Drinks spot must not be empty.",
+  drink_location: z.string().min(1, {
+    message: "Drink location must not be empty.",
   }),
   drinks_description: z.string().min(1, {
     message: "Drinks description must not be empty.",
-  }),
-  category: z.string().min(1, {
-    message: "Please select a category.",
-  }),
-  drinks_volume: z.string().min(1, {
-    message: "Please select volumes.",
   }),
 });
 

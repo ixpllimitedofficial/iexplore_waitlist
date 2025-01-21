@@ -1,12 +1,31 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
 import NewPieChart from "@/components/vendor-components/Charts/NewPieChart";
 import NewBarChart from "@/components/vendor-components/Charts/NewBarChart";
 import Store from "@/assets/svg/VendorSvg/store-04.svg";
+import { getDrinksAnalytics } from "@/app/vendorAction";
+
 const Analytics = ({ hasAnotherContainer }) => {
+  const [drinksAnalytics, setDrinksAnalytics] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchDrinksAnalytics = async () => {
+      try {
+        const data = await getDrinksAnalytics();
+        console.log("response data:", data);
+        setDrinksAnalytics(data);
+      } catch (error) {
+        setError(error.message);
+      }
+    };
+    fetchDrinksAnalytics();
+  }, []);
+  console.log("drinksAnalytics:", drinksAnalytics); //remove this line
   return (
     <div className="w-full h-full">
       <h1 className={`${styles.analysis_title} text-4xl`}>Analytics</h1>

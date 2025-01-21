@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useCallback } from "react";
+import React, { useState, useRef, useCallback, useEffect } from "react";
 import { useDropzone } from "react-dropzone";
 import Header from "@/components/vendor-components/MiniHeader/Header";
 import Link from "next/link";
@@ -21,6 +21,14 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/UI/form";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/UI/select";
+
 import { ToggleGroup, ToggleGroupItem } from "@/components/UI/toggle-group";
 import { Toggle } from "@/components/UI/toggle";
 import { Checkbox } from "@/components/UI/checkbox";
@@ -31,29 +39,100 @@ import { Button } from "@/components/UI/button";
 import { toast } from "@/components/UI/use-toast";
 import { inputStyling } from "@/utils/constant";
 import { addDrinksValidationSchema } from "@/types/authSchemas";
+import {
+  createNewDrink,
+  getAllSpots,
+  getDrinksCategories,
+} from "@/app/vendorAction";
+
+import { vendorStore } from "@/store/vendor";
 
 type UploadedFile = {
   preview: string;
 } & File; // Extending the File type to include the preview property
 
+interface Token {
+  accessToken: string;
+}
+interface Spot {
+  id: number;
+  name: string;
+}
 const Page = () => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [btnState, setBtnState] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState<string>("");
+  const [selectedVolume, setSelectedVolume] = useState<number | null>(null);
+  const [spots, setSpots] = useState<Spot[]>([]);
+  const [drinksCategory, setDrinksCategory] = useState<any[]>([]);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [spotSelectedIndex, setSpotSelectedIndex] = useState<number | null>(
+    null
+  );
+  const token = vendorStore((state: any) => state.token) as Token;
+  const savedVendor = vendorStore((state: any) => state.savedVendor);
+  const vendorId = savedVendor.data.user.id;
 
+  useEffect(() => {
+    const fetchDrinkCategory = async () => {
+      try {
+        const responseData = await getDrinksCategories(token.accessToken);
+        const drinksCategoryData = responseData.results;
+        setDrinksCategory(
+          Array.isArray(drinksCategoryData) ? drinksCategoryData : []
+        );
+      } catch (error: any) {
+        console.error("Error fetching drink categories:", error.message);
+      }
+    };
+    fetchDrinkCategory();
+  }, [token]);
+  const handleValueChange = (value: string) => {
+    setSelectedCategory(value);
+    const index = drinksCategory.findIndex(
+      (category) => category.name === value
+    );
+    setSelectedIndex(index);
+    console.log("Selected Index:", index);
+  };
+  useEffect(() => {
+    const fetchSpots = async () => {
+      try {
+        const spots = await getAllSpots(token.accessToken);
+        setSpots(spots);
+      } catch (error: any) {
+        console.error("Error fetching spots:", error.message);
+      }
+    };
+    fetchSpots();
+  }, [token]);
+
+  const handleSelectChange = (value: string) => {
+    const spot = spots.find((spot) => spot.name === value);
+    if (spot) {
+      console.log("Selected Spot ID:", spot.id);
+      setSpotSelectedIndex(spot.id);
+    }
+  };
+  const handleVolumeChange = (value: string) => {
+    const numericValue = parseFloat(value.replace(/[^\d.]/g, ""));
+    setSelectedVolume(numericValue);
+    console.log("Selected Volume:", numericValue);
+  };
+  console.log(selectedVolume);
   const form = useForm<z.infer<typeof addDrinksValidationSchema>>({
     resolver: zodResolver(addDrinksValidationSchema),
     defaultValues: {
-      profile_picture: "",
       drinks_name: "",
       drinks_price: "",
-      select_Spot: "",
+      drink_location: "",
       drinks_description: "",
-      category: "",
-      drinks_volume: "",
     },
   });
+  const { handleSubmit } = form;
+
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files) {
       setSelectedFile(event.target.files[0]);
@@ -66,23 +145,52 @@ const Page = () => {
   };
 
   async function onSubmit(data: z.infer<typeof addDrinksValidationSchema>) {
-    // setBtnState(true);
-    // const result = await onSignup(data);
-    // if (result.status === "success") {
-    //   toast({
-    //     title: "Sign up successful",
-    //     description: "Please check your email and confirm your OTP!",
-    //     variant: "success",
-    //   });
-    //   router.push("/signup?flow=verifyOTP");
-    // } else {
-    //   toast({
-    //     title: "An error occured!",
-    //     description: result,
-    //     variant: "destructive",
-    //   });
-    //   setBtnState(false);
-    // }
+    console.log("Form Submitted");
+    try {
+      setBtnState(true);
+
+      // Initialize FormData for file and other fields
+      const formData = new FormData();
+      formData.append("name", data.drinks_name);
+      formData.append("description", data.drinks_description || "");
+      formData.append("location", data.drink_location);
+      formData.append("vendor", JSON.stringify(vendorId));
+      formData.append("spot", JSON.stringify(spotSelectedIndex));
+      formData.append("category", JSON.stringify(selectedIndex));
+      formData.append("volume", JSON.stringify(selectedVolume));
+      formData.append("price", data.drinks_price);
+
+      // Attach the selected file
+      if (selectedFile) {
+        formData.append("images[0][drink]", "0");
+        formData.append("images[0][image]", selectedFile);
+      }
+      // Send FormData to createNewDrink function
+      console.log(`formData`, formData);
+      const result = await createNewDrink(formData, token.accessToken);
+      console.log("API Response:", result);
+      if (result.status === "success") {
+        toast({
+          title: "Drink added successfully!",
+          variant: "success",
+        });
+      } else {
+        toast({
+          title: "An error occurred!",
+          description: result.message || "Unable to add drink.",
+          variant: "destructive",
+        });
+      }
+    } catch (error: any) {
+      console.error("Error adding drink:", error);
+      toast({
+        title: "An error occurred!",
+        description: error.message || "Something went wrong.",
+        variant: "destructive",
+      });
+    } finally {
+      setBtnState(false);
+    }
   }
 
   return (
@@ -103,7 +211,7 @@ const Page = () => {
         <div className="mt-10 w-[100%] md:w-[80%] mx-auto">
           <Form {...form}>
             <form
-              onSubmit={form.handleSubmit(onSubmit)}
+              onSubmit={handleSubmit(onSubmit)}
               className="mt-7 flex flex-col gap-4"
             >
               {/* profile picture */}
@@ -164,8 +272,22 @@ const Page = () => {
                   </FormItem>
                 )}
               />
-              {/* select spot */}
+              {/* drink location */}
               <FormField
+                control={form.control}
+                name="drink_location"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-lg">Drink Location</FormLabel>
+                    <FormControl>
+                      <Input className={`${inputStyling}`} {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              {/* select spot */}
+              {/* <FormField
                 control={form.control}
                 name="select_Spot"
                 render={({ field }) => (
@@ -181,11 +303,49 @@ const Page = () => {
                     <FormMessage />
                   </FormItem>
                 )}
-              />
+              /> */}
+              <p className="font-semibold text-lg">Select a spot</p>
+              <Select onValueChange={handleSelectChange}>
+                <SelectTrigger className={`${inputStyling}`}>
+                  <SelectValue placeholder="Select a spot" />
+                </SelectTrigger>
+                <SelectContent>
+                  {spots.map((spot: any) => (
+                    <SelectItem key={spot.id} value={spot.name}>
+                      {spot.name}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+
               <p className="text-lg md:text-lg mb-2 md:mb-5">Drinks category</p>
               {/*closing hour*/}
               <ToggleGroup
+                type="single"
+                value={selectedCategory}
+                onValueChange={handleValueChange}
+                className="gap-5 w-[100%] flex-wrap justify-center items-center mx-auto mb-5"
+              >
+                {" "}
+                {Array.isArray(drinksCategory) &&
+                  drinksCategory.map((category, index) => (
+                    <ToggleGroupItem
+                      key={category.id}
+                      value={category.name}
+                      aria-label={`Toggle ${category.name}`}
+                      className="border border-[#4D4D4D] text-[#4D4D4D] p-4 px-4 rounded-full hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
+                    >
+                      {" "}
+                      <p>{category.name}</p>{" "}
+                    </ToggleGroupItem>
+                  ))}{" "}
+              </ToggleGroup>
+              {/* <ToggleGroup
                 type="multiple"
+                value={selectedCategory}
+                onValueChange={(values: string[]) =>
+                  setSelectedCategory(values)
+                }
                 className="gap-5 w-[100%] flex-wrap justify-center items-center mx-auto mb-5"
               >
                 <ToggleGroupItem
@@ -272,7 +432,7 @@ const Page = () => {
                 >
                   <p>Whiskey</p>
                 </ToggleGroupItem>
-              </ToggleGroup>
+              </ToggleGroup> */}
               {/*drinks description*/}
               <FormField
                 control={form.control}
@@ -294,7 +454,9 @@ const Page = () => {
                 Drink Volume
               </p>
               <ToggleGroup
-                type="multiple"
+                type="single"
+                value={selectedVolume !== null ? `${selectedVolume}cl` : ""}
+                onValueChange={(value: string) => handleVolumeChange(value)}
                 className="gap-5 w-[100%] md:w-[60%] flex-wrap justify-center items-center mx-auto"
               >
                 <ToggleGroupItem

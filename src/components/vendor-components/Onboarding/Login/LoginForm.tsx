@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
-import { userStore } from "@/store/user";
+import { vendorStore } from "@/store/vendor";
 import { useEffect } from "react";
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -23,54 +23,55 @@ import { inputStyling } from "@/utils/constant";
 import { loginValidationSchema } from "@/types/authSchemas";
 import FilterButton from "@/components/UI/Button/FilterButton";
 import NewAppButton from "@/components/UI/Button/NewAppButton";
+import { toast } from "@/components/UI/use-toast";
 
 const LoginForm = () => {
   // router
   const router = useRouter();
 
   // zustand
-  const user = userStore((state: any) => state.user);
-  const isVendorLoggedin = userStore((state: any) => state.isVendorLoggedin);
-  const loginUser = userStore((state: any) => state.loginUser);
-
+  const vendor = vendorStore((state: any) => state.vendor);
+  const loginVendor = vendorStore((state: any) => state.loginVendor);
+  const isVendorLoggedin = vendorStore((state: any) => state.isVendorLoggedin);
+  const setIsVendorLoggedin = vendorStore(
+    (state: any) => state.setIsVendorLoggedin
+  );
   // react hook form
   const form = useForm<z.infer<typeof loginValidationSchema>>({
     resolver: zodResolver(loginValidationSchema),
     defaultValues: {
-      username_or_email: "",
+      email: "",
       password: "",
     },
   });
 
-  function onSubmit(data: z.infer<typeof loginValidationSchema>) {
-    console.log(data);
-    alert(
-      `Logged in with: Username: ${data.username_or_email}, Password: ${data.password} `
-    );
-    // loginUser(data);
-    router.push("/vendor-Home/dashboard");
-  }
+  const { handleSubmit } = form;
 
+  function onSubmit(data: z.infer<typeof loginValidationSchema>) {
+    loginVendor(data);
+  }
   useEffect(() => {
-    // console.log(user);
-    // console.log(isAdminLoggedin);
-    // if (isAdminLoggedin) {
-    //   router.push("/admin/dashboard");
-    // }
-  }, [user, router, isVendorLoggedin]);
+    if (isVendorLoggedin) {
+      router.push("/vendor-Home/dashboard");
+    }
+    // Cleanup function to be called when the component is unmounted
+    return () => {
+      // Set isvendorLoggedin to false
+      setIsVendorLoggedin(false);
+    };
+  }, [vendor, router, isVendorLoggedin, setIsVendorLoggedin]);
 
   return (
     <>
-    <p className="py-3 text-3xl text-center font-bold hidden lg:block">Login</p>
+      <p className="py-3 text-3xl text-center font-bold hidden lg:block">
+        Login
+      </p>
       <Form {...form}>
-        <form
-          onSubmit={form.handleSubmit(onSubmit)}
-          className="flex flex-col gap-4"
-        >
+        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
           {/* username */}
           <FormField
             control={form.control}
-            name="username_or_email"
+            name="email"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Username or Email address:</FormLabel>
@@ -119,9 +120,14 @@ const LoginForm = () => {
             Forgot Password
           </Link>
 
-          {user.message && <p>{user.message}</p>}
-          <NewAppButton btnText="Login" type="submit" className="text-sm"/>
-          <p className="text-center">Don&apos;t have an account? <span className="text-gold-500"><Link href="/vendor-Home?flow=signup">Signup</Link></span></p>
+          {/* {vendor.message && <p>{vendor.message}</p>} */}
+          <NewAppButton btnText="Login" type="submit" className="text-sm" />
+          <p className="text-center">
+            Don&apos;t have an account?{" "}
+            <span className="text-gold-500">
+              <Link href="/vendor-Home?flow=signup">Signup</Link>
+            </span>
+          </p>
         </form>
       </Form>
     </>
