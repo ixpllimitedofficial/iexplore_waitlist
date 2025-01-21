@@ -42,8 +42,7 @@ for the authenticated vendor.
 //GET All spot offer: /v1/spot-offers/
 
 //Get vendor drinks claim data: Drinks claim Analytics: GET /v1/vendor/drink-claims-analytics/
-//Get analytics for drinks including total drinks, drinks per category, and out-of-stock count.
-//GET /v1/vendor/drinks-analytics/
+
 
 
 interface Token {
@@ -124,6 +123,50 @@ export async function getDrinksCategories( token: string): Promise<any> {
 }
 
 //Spots section
+//get sports rating analytics
+export async function getSpotRatingAnalytics(token: string): Promise<any> {
+  try{
+    const response = await fetch(`${BASE_URL}/v1/vendor/spot-rating-analytics/`, {
+      method: "GET",
+      headers: {
+        "Accept": "application/json",
+        "Authorization": `Bearer ${token}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const responseData = await response.json();
+    console.log(`responseData`, responseData);
+    return responseData;
+  }catch(error: any){
+    console.error("Error fetching external data:", error.message);
+    throw error;
+  }
+}
+//get visitor traffic data for the vendor's spots
+export async function getSpotTrafficAnalytics(token: string): Promise<any> {
+  try{
+    const response = await fetch(`${BASE_URL}/v1/vendor/spot-traffic-analytics/`, {
+      method: "GET",
+      headers: {
+        "Accept": "application/json",
+        "Authorization": `Bearer ${token}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const responseData = await response.json();
+    console.log(`responseData`, responseData);
+    return responseData;
+  }catch(error: any){
+    console.error("Error fetching external data:", error.message);
+    throw error;
+  }
+}
 //get all spots
 export async function getAllSpots(token: string): Promise<any> {
   try{
