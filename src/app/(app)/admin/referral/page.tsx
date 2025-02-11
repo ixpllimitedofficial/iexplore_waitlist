@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect } from "react";
 import PeopleIconSvg from "@/assets/svg/AdminIconsSvg/PeopleIconSvg.svg";
 import ActiveUsersIconSvg from "@/assets/svg/AdminIconsSvg/ActiveUsersIconSvg.svg";

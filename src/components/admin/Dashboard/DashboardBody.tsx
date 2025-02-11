@@ -86,14 +86,13 @@ const DashboardBody = () => {
                 <p className='text-sm lg:text-[16px]  font-normal '>Total Users</p>
                 <p className="font-bold text-lg lg:text-2xl">{adminStats?.total_users || 0}</p>
               </div>
-
             </div>
 
             <div className={divStyle}>
               <Image src={TotalVendorIconSvg} alt="TotalVendorIconSvg" />
               <div className="flex-grow">
                 <p className='text-sm lg:text-[16px]  font-normal '>Total Vendors</p>
-                <p className="font-bold text-lg lg:text-2xl">{adminStats?.new_vendors || 0}</p>
+                <p className="font-bold text-lg lg:text-2xl">{adminStats?.total_vendors || 0}</p>
               </div>
             </div>
 
