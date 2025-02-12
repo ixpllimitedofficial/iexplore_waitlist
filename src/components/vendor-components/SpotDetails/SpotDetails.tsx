@@ -16,6 +16,16 @@ import MobileGallerySlider from "@/components/vendor-components/MobileGallerySli
 import RatingStarIcon from "@/assets/svg/VendorSvg/star.svg";
 import Link from "next/link";
 
+const convertTo12HourFormat = (time) => {
+  if (!time) {
+    return "";
+  }
+  const [hour, minute, second] = time.split(":");
+  const hourNumber = parseInt(hour, 10);
+  const ampm = hourNumber >= 12 ? "PM" : "AM";
+  const adjustedHour = hourNumber % 12 || 12; // Convert 0 to 12 for midnight
+  return `${adjustedHour}:${minute} ${ampm}`;
+};
 const slides = [
   { src: FrameOne, alt: "frame one", height: 50, width: 800 },
   { src: FrameTwo, alt: "frame two", height: 50, width: 800 },
@@ -25,9 +35,18 @@ const slides = [
   { src: FrameSix, alt: "frame six", height: 50, width: 800 },
 ];
 interface spotProps {
-  showInsight?: boolean;
+  showInsight: boolean;
+  singleInfo: {
+    name?: string;
+    description?: string;
+    location?: string;
+    opening_time?: string;
+    closing_time?: string;
+    rating?: number;
+  };
 }
-const SpotDetails: React.FC<spotProps> = ({ showInsight }) => {
+
+const SpotDetails: React.FC<spotProps> = ({ showInsight, singleInfo }) => {
   return (
     <section className="mt-8">
       {/* images */}
@@ -41,12 +60,12 @@ const SpotDetails: React.FC<spotProps> = ({ showInsight }) => {
         <Link href="/vendor-Home/profile/insight">
           <p className="md:w-[30%] my-5 mx-auto bg-gold-500 text-center text-brandDark py-3 rounded-3xl flex gap-2 font-bold items-center justify-center cursor-pointer">
             <InsightsIcon />
-            Business insight
+            Spot insight
           </p>
         </Link>
       )}
       <div className="mt-5 flex justify-center items-center gap-3 w-full md:hidden">
-        <p className=" font-bold text-3xl">Maxxa beach bar</p>
+        <p className=" font-bold text-3xl">{singleInfo?.name}</p>
         <div className="bg-gold-500 py-1 px-3 rounded-3xl font-bold text-brandDark flex gap-1">
           <Image src={RatingStarIcon} alt="rating icons" />
           4.5
@@ -55,13 +74,14 @@ const SpotDetails: React.FC<spotProps> = ({ showInsight }) => {
       <div className="mt-3 flex flex-col gap-2 md:hidden">
         <div className="flex gap-3 items-center">
           <Image src={LocationStar} alt="location" width={30} height={30} />
-          <p className="text-sm font-semibold">
-            873 Ozumba Mbadiwe Ave, Victoria Island 106104, Lagos
-          </p>
+          <p className="text-sm font-semibold">{singleInfo?.location}</p>
         </div>
         <div className="flex gap-3 items-center">
           <Image src={StopWatch} alt="location share" width={30} height={30} />
-          <p className="text-sm font-bold">4pm - 11pm</p>
+          <p className="text-sm font-bold">
+            {convertTo12HourFormat(singleInfo?.opening_time)} -{" "}
+            {convertTo12HourFormat(singleInfo?.closing_time)}
+          </p>
         </div>
       </div>
       {/* details */}
@@ -69,24 +89,12 @@ const SpotDetails: React.FC<spotProps> = ({ showInsight }) => {
         <p className=" font-bold text-2xl">About</p>
 
         <div className="mt-2 grid grid-cols-1 md:grid-cols-3 gap-20">
-          <p className="text-lg col-span-2">
-            Maxx beach bar, where sun, sand, and sea come together to create the
-            ultimate beach bar experience. Nestled along the pristine coastline,
-            our bar offers a laid-back atmosphere where you can unwind with a
-            refreshing cocktail in hand, savor fresh, locally-sourced bites, and
-            enjoy the soothing sounds of the ocean. Whether you&apos;re here to
-            catch the sunset, dance under the stars, or simply relax with
-            friends, MBB is your go-to destination for unforgettable moments by
-            the water. Come as you are, and let the beach be your backdrop for
-            good times and great vibes.
-          </p>
+          <p className="text-lg col-span-2">{singleInfo?.description}</p>
 
           <div className="hidden col-span-1 md:flex flex-col gap-5">
             <div className="flex gap-3 items-center">
               <Image src={LocationStar} alt="location" width={30} height={30} />
-              <p className="text-lg font-semibold">
-                873 Ozumba Mbadiwe Ave, Victoria Island 106104, Lagos
-              </p>
+              <p className="text-lg font-semibold">{singleInfo?.location}</p>
             </div>
             <div className="flex gap-3 items-center">
               <Image
@@ -95,7 +103,10 @@ const SpotDetails: React.FC<spotProps> = ({ showInsight }) => {
                 width={30}
                 height={30}
               />
-              <p className="text-lg font-bold">4pm - 11pm</p>
+              <p className="text-lg font-bold">
+                {convertTo12HourFormat(singleInfo?.opening_time)} -{" "}
+                {convertTo12HourFormat(singleInfo?.closing_time)}
+              </p>
             </div>
 
             <div className="bg-gold-500 py-1 px-5 rounded-3xl font-bold text-brandDark self-start flex gap-3 items-center">

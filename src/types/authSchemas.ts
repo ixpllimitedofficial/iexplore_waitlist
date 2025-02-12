@@ -123,18 +123,18 @@ export const verifyOTPSchema = z.object({
 
 export const setupBusinessValidationSchema = z
 .object({
-  profile_picture: z
-  .string()
-  .min(2, { message: "Add a profile picture" }),
-  business_name: z
+  spot_name: z
     .string()
-    .min(2, { message: "business name must be at least 2 chars." }),
-  email: z.string().email({
-    message: "Please put in a valid email.",
+    .min(2, { message: "Spot name must be at least 2 chars." }),
+
+  spot_address: z.string().min(1, {
+    message: "Spot address must not be empty.",
   }),
-  phone_number: z.string().min(11, { message: "Phone Number must be at least 11 chars." }),
-  business_address: z.string().min(1, {
-    message: "Business address must not be empty.",
+  spot_state: z.string().min(1, {
+    message: "Spot state must not be empty.",
+  }),
+  spot_description: z.string().min(1, {
+    message: "Spot description must not be empty.",
   }),
   opening_hour: z.string().min(1, {
     message: "Field must not be empty.",
@@ -142,22 +142,6 @@ export const setupBusinessValidationSchema = z
   closing_hour: z.string().min(1, {
     message: "Field must not be empty.",
   }),
-  category: z.string().min(1, {
-    message: "Please select a category.",
-  }),
-  photo_of_business: z.string().min(1, {
-    message: "Please upload a business picture.",
-  }),
-  utility_of_business: z.string().min(1, {
-    message: "Please upload your utility bill.",
-  }),
-  cac_of_business: z.string().min(1, {
-    message: "Please upload your CAC.",
-  }),
-  cac_number_of_business: z.string().min(1, {
-    message: "This field is required",
-  }),
-
 });
 export const addDrinksValidationSchema = z
 .object({

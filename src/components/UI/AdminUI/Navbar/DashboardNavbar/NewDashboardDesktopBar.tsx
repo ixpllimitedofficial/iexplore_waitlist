@@ -115,7 +115,7 @@ const NewDashboardDesktopBar = () => {
           ) : (
             <Image src={UsersIconSvg} alt="Users icon" className="w-7 h-7" />
           )}
-          <p>Business</p>
+          <p>Spot</p>
         </Link>
 
         {/* drinks */}

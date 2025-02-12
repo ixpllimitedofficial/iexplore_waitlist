@@ -1,6 +1,5 @@
 "use client";
-
-import React, { useState, useRef, useCallback } from "react";
+import React, { useState, useRef, useCallback, useEffect } from "react";
 import { useDropzone } from "react-dropzone";
 import Header from "@/components/vendor-components/MiniHeader/Header";
 import Link from "next/link";
@@ -21,20 +20,35 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/UI/form";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/UI/select";
 import { ToggleGroup, ToggleGroupItem } from "@/components/UI/toggle-group";
-import { Toggle } from "@/components/UI/toggle";
-import { Checkbox } from "@/components/UI/checkbox";
 import { Input } from "@/components/UI/input";
-import PasswordField from "@/components/UI/Inputs/PasswordField";
 import { Button } from "@/components/UI/button";
 import { toast } from "@/components/UI/use-toast";
 import { inputStyling } from "@/utils/constant";
+import { Textarea } from "@/components/UI/textarea";
 import { setupBusinessValidationSchema } from "@/types/authSchemas";
+import {
+  getSpotCategories,
+  getSpotFeatures,
+  getSpotOffers,
+  createNewSpot,
+  createNewSpotMedia,
+} from "@/app/vendorAction";
+import { vendorStore } from "@/store/vendor";
 
 type UploadedFile = {
   preview: string;
 } & File; // Extending the File type to include the preview property
-
+interface Token {
+  accessToken: string;
+}
 const useCreateOnDrop = (setFileState: Function, multiple: boolean = false) => {
   return useCallback(
     (acceptedFiles: File[]) => {
@@ -53,33 +67,30 @@ const useCreateOnDrop = (setFileState: Function, multiple: boolean = false) => {
 const Page = () => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [businessPhotos, setBusinessPhotos] = useState<UploadedFile[]>([]);
-  const [utilityBill, setUtilityBill] = useState<UploadedFile | null>(null);
-  const [registrationCertificate, setRegistrationCertificate] =
-    useState<UploadedFile | null>(null);
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [btnState, setBtnState] = useState(false);
+  const [spotCategory, setSpotCategory] = useState<any[]>([]);
+  const [spotFeatures, setSpotFeatures] = useState<any[]>([]);
+  const [spotOffers, setSpotOffers] = useState<any[]>([]);
+  const [selectedSpotCategory, setSelectedSpotCategory] = useState("");
+  const [selectedSpotFeatures, setSelectedSpotFeatures] = useState<any[]>([]);
+  const [selectedSpotOffer, setSelectedSpotOffer] = useState<any[]>([]);
+  const [selectedEntry, setSelectedEntry] = useState<string | null>(null);
 
   const onBusinessDrop = useCreateOnDrop(setBusinessPhotos, true);
-  const onUtilityDrop = useCreateOnDrop(setUtilityBill);
-  const onCertDrop = useCreateOnDrop(setRegistrationCertificate);
+
+  const token = vendorStore((state: any) => state.token) as Token;
 
   const form = useForm<z.infer<typeof setupBusinessValidationSchema>>({
     resolver: zodResolver(setupBusinessValidationSchema),
     defaultValues: {
-      profile_picture: "",
-      business_name: "",
-      email: "",
-      phone_number: "",
-      business_address: "",
+      spot_name: "",
+      spot_address: "",
+      spot_state: "",
+      spot_description: "",
       opening_hour: "",
       closing_hour: "",
-      category: "",
-      photo_of_business: "",
-      // location: "",
-      utility_of_business: "",
-      cac_of_business: "",
-      cac_number_of_business: "",
     },
   });
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -97,14 +108,59 @@ const Page = () => {
     getInputProps: getBusinessInputProps,
   } = useDropzone({ onDrop: onBusinessDrop, accept: { "image/*": [] } });
 
-  const {
-    getRootProps: getUtilityRootProps,
-    getInputProps: getUtilityInputProps,
-  } = useDropzone({ onDrop: onUtilityDrop, accept: { "image/*": [] } });
+  useEffect(() => {
+    const fetchSpotCategory = async () => {
+      try {
+        const responseData = await getSpotCategories(token.accessToken);
+        const spotCategory = responseData;
+        setSpotCategory(Array.isArray(spotCategory) ? spotCategory : []);
+      } catch (error: any) {
+        console.error("Error fetching spot categories:", error.message);
+      }
+    };
+    fetchSpotCategory();
+  }, [token]);
+  useEffect(() => {
+    const fetchSpotFeatures = async () => {
+      try {
+        const responseData = await getSpotFeatures(token.accessToken);
+        console.log(responseData);
+        const spotFeatures = responseData;
+        setSpotFeatures(Array.isArray(spotFeatures) ? spotFeatures : []);
+      } catch (error: any) {
+        console.error("Error fetching spot features:", error.message);
+      }
+    };
+    fetchSpotFeatures();
+  }, [token]);
+  console.log("spot features", spotFeatures);
+  useEffect(() => {
+    const fetchSpotOffers = async () => {
+      try {
+        const responseData = await getSpotOffers(token.accessToken);
+        const spotOffers = responseData;
+        setSpotOffers(Array.isArray(spotOffers) ? spotOffers : []);
+      } catch (error: any) {
+        console.error("Error fetching spot offers:", error.message);
+      }
+    };
+    fetchSpotOffers();
+  }, [token]);
 
-  const { getRootProps: getCertRootProps, getInputProps: getCertInputProps } =
-    useDropzone({ onDrop: onCertDrop, accept: { "image/*": [] } });
-
+  const handleSpotCategoryChange = (value: string) => {
+    setSelectedSpotCategory(value);
+  };
+  const handleSpotFeatureChange = (value: any[]) => {
+    setSelectedSpotFeatures(value);
+  };
+  const handleSpotOfferChange = (value: any[]) => {
+    setSelectedSpotOffer(value);
+  };
+  const handleEntryChange = (value: string) => {
+    setSelectedEntry(value);
+    console.log("Selected value:", value);
+  };
+  console.log(selectedEntry);
   // // Handle reset for previews
   const handleReset = (
     setFileState: Function,
@@ -117,24 +173,90 @@ const Page = () => {
     }
     setFileState(Array.isArray(file) ? [] : null);
   };
+
   async function onSubmit(data: z.infer<typeof setupBusinessValidationSchema>) {
-    // setBtnState(true);
-    // const result = await onSignup(data);
-    // if (result.status === "success") {
-    //   toast({
-    //     title: "Sign up successful",
-    //     description: "Please check your email and confirm your OTP!",
-    //     variant: "success",
-    //   });
-    //   router.push("/signup?flow=verifyOTP");
-    // } else {
-    //   toast({
-    //     title: "An error occured!",
-    //     description: result,
-    //     variant: "destructive",
-    //   });
-    //   setBtnState(false);
-    // }
+    setBtnState(true);
+    try {
+      // Create a FormData object for the spot details and profile picture
+      const spotDetailsFormData = new FormData();
+
+      // Append the profile picture to the FormData
+      if (selectedFile) {
+        spotDetailsFormData.append("primary_image", selectedFile);
+      }
+
+      // Append other spot details to the FormData
+      spotDetailsFormData.append("name", data.spot_name);
+      spotDetailsFormData.append("location", data.spot_address);
+      spotDetailsFormData.append("state", data.spot_state);
+      spotDetailsFormData.append("description", data.spot_description);
+      spotDetailsFormData.append("opening_time", data.opening_hour);
+      spotDetailsFormData.append("closing_time", data.closing_hour);
+      spotDetailsFormData.append("category", selectedSpotCategory);
+      spotDetailsFormData.append(
+        "features",
+        JSON.stringify(selectedSpotFeatures)
+      );
+      spotDetailsFormData.append("offers", JSON.stringify(selectedSpotOffer));
+      spotDetailsFormData.append("entry", selectedEntry || "");
+
+      // Log FormData for debugging
+      for (let [key, value] of spotDetailsFormData.entries()) {
+        console.log(key, value);
+      }
+
+      // Submit spot details and profile picture to the first endpoint
+      const spotDetailsResponse = await createNewSpot(
+        spotDetailsFormData,
+        token.accessToken
+      );
+      if (!spotDetailsResponse.ok) {
+        const error = await spotDetailsResponse.json();
+        throw new Error(
+          error.error.features ||
+            error.error.offers ||
+            "Failed to submit spot details"
+        );
+      }
+
+      const spotDetailsResult = await spotDetailsResponse.json();
+      const spotId = spotDetailsResult.slug; // Ensure this matches the backend response structure
+
+      // Submit business photos to the second endpoint
+      const photosFormData = new FormData();
+      businessPhotos.forEach((file) => {
+        photosFormData.append("photos", file);
+      });
+
+      // Log FormData for debugging
+      for (let [key, value] of photosFormData.entries()) {
+        console.log(key, value);
+      }
+
+      const photosResponse = await createNewSpotMedia(
+        photosFormData,
+        spotId,
+        token.accessToken
+      );
+
+      if (!photosResponse.ok) {
+        throw new Error("Failed to upload photos");
+      }
+
+      toast({
+        title: "Spot setup successful",
+        description: "Your spot has been successfully set up!",
+        variant: "success",
+      });
+    } catch (error: any) {
+      toast({
+        title: "An error occurred!",
+        description: error.message,
+        variant: "destructive",
+      });
+    } finally {
+      setBtnState(false);
+    }
   }
 
   return (
@@ -149,9 +271,7 @@ const Page = () => {
           </Link>
 
           <div className=" md:mt-0 flex justify-center items-center gap-3 w-full">
-            <p className="font-bold text-lg md:text-3xl">
-              Continue business setup
-            </p>
+            <p className="font-bold text-lg md:text-3xl">Continue Spot setup</p>
           </div>
         </div>
         <div className="mt-10 w-[100%] md:w-[80%] mx-auto">
@@ -190,16 +310,16 @@ const Page = () => {
               </div>
               {/* end of profile picture */}
               <p className="text-3xl font-semibold mt-5 text-center">
-                Business Details
+                Spot Details
               </p>
 
               {/* first name */}
               <FormField
                 control={form.control}
-                name="business_name"
+                name="spot_name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-lg">Business Name:</FormLabel>
+                    <FormLabel className="text-lg">Spot Name:</FormLabel>
                     <FormControl>
                       <Input className={`${inputStyling}`} {...field} />
                     </FormControl>
@@ -207,29 +327,13 @@ const Page = () => {
                   </FormItem>
                 )}
               />
-              {/* email */}
+              {/*business location*/}
               <FormField
                 control={form.control}
-                name="email"
+                name="spot_address"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-lg">Business Email:</FormLabel>
-                    <FormControl>
-                      <Input className={`${inputStyling}`} {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              {/* phone number */}
-              <FormField
-                control={form.control}
-                name="phone_number"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="text-lg">
-                      Business Phone Number:
-                    </FormLabel>
+                    <FormLabel className="text-lg">Spot Address:</FormLabel>
                     <FormControl>
                       <Input
                         className={`${inputStyling}`}
@@ -241,13 +345,13 @@ const Page = () => {
                   </FormItem>
                 )}
               />
-              {/*business address*/}
+              {/*business state*/}
               <FormField
                 control={form.control}
-                name="business_address"
+                name="spot_state"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-lg">Business Address:</FormLabel>
+                    <FormLabel className="text-lg">Spot State:</FormLabel>
                     <FormControl>
                       <Input
                         className={`${inputStyling}`}
@@ -259,6 +363,39 @@ const Page = () => {
                   </FormItem>
                 )}
               />
+              <FormField
+                control={form.control}
+                name="spot_description"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-lg">Spot description:</FormLabel>
+                    <FormControl>
+                      <Textarea className={`${inputStyling}`} {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <p className="font-semibold text-lg">Spot entry</p>
+              <Select>
+                <SelectTrigger className={`${inputStyling}`}>
+                  <SelectValue placeholder="Select an entry" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem
+                    value="free"
+                    onClick={() => handleEntryChange("free")}
+                  >
+                    free
+                  </SelectItem>
+                  <SelectItem
+                    value="paid"
+                    onClick={() => handleEntryChange("paid")}
+                  >
+                    paid
+                  </SelectItem>
+                </SelectContent>
+              </Select>
               <p className="text-2xl font-light">Operation hours</p>
               <div className="grid grid-cols-2 gap-3">
                 {/*opening hour*/}
@@ -304,139 +441,59 @@ const Page = () => {
               <ToggleGroup
                 type="single"
                 className="gap-5 justify-start flex-wrap"
+                onValueChange={handleSpotCategoryChange}
               >
-                <ToggleGroupItem
-                  value="bars & pubs"
-                  aria-label="Toggle bars & pubs"
-                  className="bg-[#4D4D4D66] text-[#4D4D4D] w-[46%] md:w-[30%] text-2xl py-10 text-left border border-[#4D4D4D] hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
-                >
-                  Bars & Pubs
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  value="clubs"
-                  aria-label="Toggle clubs"
-                  className="bg-[#4D4D4D66] text-[#4D4D4D] w-[46%] md:w-[30%] text-2xl py-10 text-left border border-[#4D4D4D] hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
-                >
-                  Clubs
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  value="hotels"
-                  aria-label="Toggle hotels"
-                  className="bg-[#4D4D4D66] text-[#4D4D4D] w-[46%] md:w-[33%] text-2xl py-10 text-left border border-[#4D4D4D] hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
-                >
-                  Hotels
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  value="resturants"
-                  aria-label="Toggle resturants"
-                  className="bg-[#4D4D4D66] text-[#4D4D4D] w-[46%] md:w-[30%] text-2xl py-10 text-left border border-[#4D4D4D] hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
-                >
-                  Resturants
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  value="lounges"
-                  aria-label="Toggle lounges"
-                  className="bg-[#4D4D4D66] text-[#4D4D4D] w-[46%] md:w-[30%] text-2xl py-10 text-left border border-[#4D4D4D] hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
-                >
-                  Lounges
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  value="beach parties"
-                  aria-label="Toggle beach parties"
-                  className="bg-[#4D4D4D66] text-[#4D4D4D] w-[46%] md:w-[33%] text-2xl py-10 text-left border border-[#4D4D4D] hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
-                >
-                  Beach Parties
-                </ToggleGroupItem>
+                {spotCategory.map((category) => (
+                  <ToggleGroupItem
+                    key={category.slug}
+                    value={category.slug}
+                    aria-label={`Toggle ${category.slug}`}
+                    className="bg-[#4D4D4D66] text-[#4D4D4D] w-[46%] md:w-[30%] text-2xl py-10 text-left border border-[#4D4D4D] hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
+                  >
+                    {category.slug}
+                  </ToggleGroupItem>
+                ))}
               </ToggleGroup>
-
               <p className="text-lg md:text-2xl font-bold text-center mb-2 md:mb-5 mt-10">
-                Business Features and Listings
+                Spot Features and Listings
               </p>
-              {/*closing hour*/}
               <ToggleGroup
                 type="multiple"
                 className="gap-5 w-[100%] md:w-[60%] flex-wrap justify-center items-center mx-auto"
+                onValueChange={handleSpotFeatureChange}
               >
-                <ToggleGroupItem
-                  value="beer"
-                  aria-label="Toggle beer"
-                  className="border broder-[#4D4D4D] text-[#4D4D4D] p-4 px-4 rounded-full hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
-                >
-                  <p>Beer</p>
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  value="cocktails"
-                  aria-label="Toggle cocktails"
-                  className="border broder-[#4D4D4D] text-[#4D4D4D] p-4 px-4 rounded-full hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
-                >
-                  <p>Cocktails</p>
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  value="security"
-                  aria-label="Toggle security"
-                  className="border broder-[#4D4D4D] text-[#4D4D4D] p-4 px-4 rounded-full hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
-                >
-                  <p>Security</p>
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  value="dinning"
-                  aria-label="Toggle dinning"
-                  className="border broder-[#4D4D4D] text-[#4D4D4D] p-4 px-4 rounded-full hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
-                >
-                  <p>Dinning</p>
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  value="takeaway"
-                  aria-label="Toggle takeaway"
-                  className="border broder-[#4D4D4D] text-[#4D4D4D] p-4 px-4 rounded-full hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
-                >
-                  <p>Takeaway</p>
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  value="spirits"
-                  aria-label="Toggle spirits"
-                  className="border broder-[#4D4D4D] text-[#4D4D4D] p-4 px-4 rounded-full hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
-                >
-                  <p>Spirits</p>
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  value="food"
-                  aria-label="Toggle food"
-                  className="border broder-[#4D4D4D] text-[#4D4D4D] p-4 px-4 rounded-full hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
-                >
-                  <p>Food</p>
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  value="strippers"
-                  aria-label="Toggle strippers"
-                  className="border broder-[#4D4D4D] text-[#4D4D4D] p-4 px-4 rounded-full hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
-                >
-                  <p>Strippers</p>
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  value="parking space"
-                  aria-label="Toggle parking space"
-                  className="border broder-[#4D4D4D] text-[#4D4D4D] p-4 px-4 rounded-full hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
-                >
-                  <p>Parking space</p>
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  value="reservation"
-                  aria-label="Toggle reservation"
-                  className="border broder-[#4D4D4D] text-[#4D4D4D] p-4 px-4 rounded-full hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
-                >
-                  <p>Reservation</p>
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  value="online payment"
-                  aria-label="Toggle online payment"
-                  className="border broder-[#4D4D4D] text-[#4D4D4D] p-4 px-4 rounded-full hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
-                >
-                  <p>Online Payment</p>
-                </ToggleGroupItem>
+                {spotFeatures.map((feature) => (
+                  <ToggleGroupItem
+                    key={feature.name}
+                    value={feature.name}
+                    aria-label={`Toggle ${feature.name}`}
+                    className="border border-[#4D4D4D] text-[#4D4D4D] p-4 px-4 rounded-full hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
+                  >
+                    <p>{feature.name}</p>
+                  </ToggleGroupItem>
+                ))}
+              </ToggleGroup>
+              <p className="text-lg md:text-2xl font-bold text-center mb-2 md:mb-5 mt-10">
+                Spot Offers
+              </p>
+              <ToggleGroup
+                type="multiple"
+                className="gap-5 w-[100%] md:w-[60%] flex-wrap justify-center items-center mx-auto"
+                onValueChange={handleSpotOfferChange}
+              >
+                {spotOffers.map((offer) => (
+                  <ToggleGroupItem
+                    key={offer.name}
+                    value={offer.name}
+                    aria-label={`Toggle ${offer.name}`}
+                    className="border border-[#4D4D4D] text-[#4D4D4D] p-4 px-4 rounded-full hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
+                  >
+                    <p>{offer.name}</p>
+                  </ToggleGroupItem>
+                ))}
               </ToggleGroup>
               <div className="max-w-lg mx-auto p-6">
-                {/* Business Photos */}
+                {/* Spot Photos */}
                 <section className="mb-10">
                   <p className="text-xl md:text-2xl font-bold text-center mb-5">
                     Add photos of business
@@ -482,92 +539,8 @@ const Page = () => {
                     </div>
                   )}
                 </section>
-
-                {/* Utility Bill */}
-                <section className="mb-10">
-                  <p className="text-xl md:text-2xl font-bold text-center mb-5">
-                    Add utility bill for business validation
-                  </p>
-                  {utilityBill === null ? (
-                    <div
-                      {...getUtilityRootProps()}
-                      className="border-2 border-dashed border-gold-500 bg-[#4D4D4D] rounded-lg p-6 text-center cursor-pointer"
-                    >
-                      <input {...getUtilityInputProps()} />
-                      <UploadCloud className="mx-auto text-gold-500 text-lg" />
-                      <p className="text-xl font-bold py-2">
-                        Choose a file or drag & drop
-                      </p>
-                      <p className="font-light">
-                        JPEG, PNG formats, up to 50MB
-                      </p>
-                    </div>
-                  ) : (
-                    <div className="mt-4 text-center">
-                      <Image
-                        src={utilityBill.preview}
-                        alt="Utility Bill Preview"
-                        width={120}
-                        height={120}
-                        className="w-full h-44 object-cover rounded-lg"
-                      />
-                    </div>
-                  )}
-                </section>
-
-                {/* Registration Certificate */}
-                <section>
-                  <p className="text-xl md:text-2xl font-bold text-center mb-5">
-                    Add CAC for business verification
-                  </p>
-                  {registrationCertificate === null ? (
-                    <div
-                      {...getCertRootProps()}
-                      className="border-2 border-dashed border-gold-500 bg-[#4D4D4D] rounded-lg p-6 text-center cursor-pointer"
-                    >
-                      <input {...getCertInputProps()} />
-                      <UploadCloud className="mx-auto text-gold-500 text-lg" />
-                      <p className="text-xl font-bold py-2">
-                        Choose a file or drag & drop
-                      </p>
-                      <p className="font-light">
-                        JPEG, PNG formats, up to 50MB
-                      </p>
-                    </div>
-                  ) : (
-                    <div className="mt-4 text-center">
-                      <Image
-                        src={registrationCertificate.preview}
-                        alt="Certification of Registration Preview"
-                        width={120}
-                        height={120}
-                        className="w-full h-44 object-cover rounded-lg"
-                      />
-                    </div>
-                  )}
-                </section>
               </div>
               <div className="w-[100%] md:w-[50%] mx-auto">
-                {/*cac number*/}
-                <FormField
-                  control={form.control}
-                  name="cac_number_of_business"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-lg">
-                        Type Business CAC number:
-                      </FormLabel>
-                      <FormControl>
-                        <Input
-                          className={`${inputStyling}`}
-                          type="text"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
                 <Button
                   className="bg-[#4D4D4D] w-full mt-10 hover:bg-white transition duration-200 text-[#B0B0B0] px-8 py-5 lg:py-6 rounded-3xl font-bold text-base flex-grow"
                   type="submit"

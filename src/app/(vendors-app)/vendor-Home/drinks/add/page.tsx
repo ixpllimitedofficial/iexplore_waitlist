@@ -63,7 +63,7 @@ const Page = () => {
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [btnState, setBtnState] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState<string>("");
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(""); // Store as string
   const [selectedVolume, setSelectedVolume] = useState<number | null>(null);
   const [spots, setSpots] = useState<Spot[]>([]);
   const [drinksCategory, setDrinksCategory] = useState<any[]>([]);
@@ -90,12 +90,7 @@ const Page = () => {
     fetchDrinkCategory();
   }, [token]);
   const handleValueChange = (value: string) => {
-    setSelectedCategory(value);
-    const index = drinksCategory.findIndex(
-      (category) => category.name === value
-    );
-    setSelectedIndex(index);
-    console.log("Selected Index:", index);
+    setSelectedCategory(value); // Update state with string value
   };
   useEffect(() => {
     const fetchSpots = async () => {
@@ -145,7 +140,6 @@ const Page = () => {
   };
 
   async function onSubmit(data: z.infer<typeof addDrinksValidationSchema>) {
-    console.log("Form Submitted");
     try {
       setBtnState(true);
 
@@ -154,21 +148,24 @@ const Page = () => {
       formData.append("name", data.drinks_name);
       formData.append("description", data.drinks_description || "");
       formData.append("location", data.drink_location);
-      formData.append("vendor", JSON.stringify(vendorId));
-      formData.append("spot", JSON.stringify(spotSelectedIndex));
-      formData.append("category", JSON.stringify(selectedIndex));
-      formData.append("volume", JSON.stringify(selectedVolume));
+      formData.append("vendor", vendorId);
+      formData.append("spot", spotSelectedIndex.toString());
+      if (selectedCategory !== null) {
+        formData.append("category_id", selectedCategory); // Pass as string
+      }
+      formData.append("volume", selectedVolume.toString()); // Ensure this is a string if required by the backend
       formData.append("price", data.drinks_price);
 
       // Attach the selected file
       if (selectedFile) {
-        formData.append("images[0][drink]", "0");
+        formData.append("images[0][drink]", "0"); // Replace "0" with a valid drink ID if required
         formData.append("images[0][image]", selectedFile);
       }
+
       // Send FormData to createNewDrink function
-      console.log(`formData`, formData);
       const result = await createNewDrink(formData, token.accessToken);
       console.log("API Response:", result);
+
       if (result.status === "success") {
         toast({
           title: "Drink added successfully!",
@@ -340,99 +337,6 @@ const Page = () => {
                     </ToggleGroupItem>
                   ))}{" "}
               </ToggleGroup>
-              {/* <ToggleGroup
-                type="multiple"
-                value={selectedCategory}
-                onValueChange={(values: string[]) =>
-                  setSelectedCategory(values)
-                }
-                className="gap-5 w-[100%] flex-wrap justify-center items-center mx-auto mb-5"
-              >
-                <ToggleGroupItem
-                  value="juice"
-                  aria-label="Toggle juice"
-                  className="border broder-[#4D4D4D] text-[#4D4D4D] p-4 px-4 rounded-full hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
-                >
-                  <p>Juice</p>
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  value="soft drinks"
-                  aria-label="Toggle soft drinks"
-                  className="border broder-[#4D4D4D] text-[#4D4D4D] p-4 px-4 rounded-full hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
-                >
-                  <p>Soft drinks</p>
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  value="energy drinks"
-                  aria-label="Toggle energy drinks"
-                  className="border broder-[#4D4D4D] text-[#4D4D4D] p-4 px-4 rounded-full hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
-                >
-                  <p>Energy drinks</p>
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  value="cocktails"
-                  aria-label="Toggle cocktails"
-                  className="border broder-[#4D4D4D] text-[#4D4D4D] p-4 px-4 rounded-full hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
-                >
-                  <p>Cocktails</p>
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  value="beer"
-                  aria-label="Toggle beer"
-                  className="border broder-[#4D4D4D] text-[#4D4D4D] p-4 px-4 rounded-full hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
-                >
-                  <p>Beer</p>
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  value="wine"
-                  aria-label="Toggle wine"
-                  className="border broder-[#4D4D4D] text-[#4D4D4D] p-4 px-4 rounded-full hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
-                >
-                  <p>Wine</p>
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  value="gin"
-                  aria-label="Toggle gin"
-                  className="border broder-[#4D4D4D] text-[#4D4D4D] p-4 px-4 rounded-full hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
-                >
-                  <p>Gin</p>
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  value="vodka"
-                  aria-label="Toggle vodka"
-                  className="border broder-[#4D4D4D] text-[#4D4D4D] p-4 px-4 rounded-full hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
-                >
-                  <p>Vodka</p>
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  value="spirits"
-                  aria-label="Toggle spirits"
-                  className="border broder-[#4D4D4D] text-[#4D4D4D] p-4 px-4 rounded-full hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
-                >
-                  <p>Spirits</p>
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  value="tequila"
-                  aria-label="Toggle tequila"
-                  className="border broder-[#4D4D4D] text-[#4D4D4D] p-4 px-4 rounded-full hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
-                >
-                  <p>Tequila</p>
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  value="liqueurs"
-                  aria-label="Toggle liqueurs"
-                  className="border broder-[#4D4D4D] text-[#4D4D4D] p-4 px-4 rounded-full hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
-                >
-                  <p>Liqueurs</p>
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  value="whiskey"
-                  aria-label="Toggle whiskey"
-                  className="border broder-[#4D4D4D] text-[#4D4D4D] p-4 px-4 rounded-full hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
-                >
-                  <p>Whiskey</p>
-                </ToggleGroupItem>
-              </ToggleGroup> */}
               {/*drinks description*/}
               <FormField
                 control={form.control}

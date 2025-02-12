@@ -51,13 +51,12 @@ interface Token {
 const BASE_URL = "https://ixpl-backend.vercel.app/api";
 //create new drink
 export async function createNewDrink(data: FormData, token: string): Promise<any> {
- 
   try {
     const response = await fetch(`${BASE_URL}/v1/drinks/`, {
       method: "POST",
       headers: {
         "Accept": "application/json",
-       "Authorization": `Bearer ${token}`,
+        "Authorization": `Bearer ${token}`,
       },
       body: data,
     });
@@ -68,13 +67,12 @@ export async function createNewDrink(data: FormData, token: string): Promise<any
       throw new Error(`Error: ${response.status} - ${errorText || "Unknown error"}`);
     }
     const responseData = await response.json();
-    console.log(`responseData`, responseData);
+    console.log("createNewDrink response:", responseData);
     return responseData;
   } catch (error: any) {
-    console.error("Error fetching external data:", error.message);
+    console.error("Error in createNewDrink:", error.message);
     throw error;
   }
-
 }
 
 // Get drinks analytics
@@ -123,6 +121,56 @@ export async function getDrinksCategories( token: string): Promise<any> {
 }
 
 //Spots section
+//create spot
+export async function createNewSpot(data: FormData, token: string): Promise<any> {
+  try {
+    const response = await fetch(`${BASE_URL}/v1/spots/`, {
+      method: "POST",
+      headers: {
+        "Accept": "application/json",
+        "Authorization": `Bearer ${token}`,
+      },
+      body: data,
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error("Error details:", errorText);
+      throw new Error(`Error: ${response.status} - ${errorText || "Unknown error"}`);
+    }
+    const responseData = await response.json();
+    console.log("createNewSpot response:", responseData);
+    return responseData;
+  } catch (error: any) {
+    console.error("Error in createNewSpot:", error.message);
+    throw error;
+  }
+}
+//create new spot media
+export async function createNewSpotMedia(data: FormData, slug: string, token: string): Promise<any> {
+  try {
+    const response = await fetch(`${BASE_URL}/v1/spots/${slug}`, {
+      method: "POST",
+      headers: {
+        "Accept": "application/json",
+        "Authorization": `Bearer ${token}`,
+      },
+      body: data,
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error("Error details:", errorText);
+      throw new Error(`Error: ${response.status} - ${errorText || "Unknown error"}`);
+    }
+    const responseData = await response.json();
+    console.log("createNewSpotMedia response:", responseData);
+    return responseData;
+  } catch (error: any) {
+    console.error("Error in createNewSpotMedia:", error.message);
+    throw error;
+  }
+}
 //get sports rating analytics
 export async function getSpotRatingAnalytics(token: string): Promise<any> {
   try{
@@ -189,10 +237,76 @@ export async function getAllSpots(token: string): Promise<any> {
     throw error;
   }
 }
+//get single spot
+export async function getSingleSpot(slug:string,  token: string): Promise<any> {
+  try{
+    const response = await fetch(`${BASE_URL}/v1/spots/${slug}/`, {
+      method: "GET",
+      headers: {
+        "Accept": "application/json",
+        "Authorization": `Bearer ${token}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const responseData = await response.json();
+    console.log(`responseData`, responseData);
+    return responseData;
+  }catch(error: any){
+    console.error("Error fetching external data:", error.message);
+    throw error;
+  }
+}
 //get all spot categories
 export async function getSpotCategories( token: string): Promise<any> {
   try{
     const response = await fetch(`${BASE_URL}/v1/spot-categories/`, {
+      method: "GET",
+      headers: {
+        "Accept": "application/json",
+        "Authorization": `Bearer ${token}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const responseData = await response.json();
+    console.log(`responseData`, responseData);
+    return responseData;
+  }catch(error: any){
+    console.error("Error fetching external data:", error.message);
+    throw error;
+  }
+}
+//get all spot features
+export async function getSpotFeatures( token: string): Promise<any> {
+  try{
+    const response = await fetch(`${BASE_URL}/v1/spot-features/`, {
+      method: "GET",
+      headers: {
+        "Accept": "application/json",
+        "Authorization": `Bearer ${token}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const responseData = await response.json();
+    console.log(`responseData`, responseData);
+    return responseData;
+  }catch(error: any){
+    console.error("Error fetching external data:", error.message);
+    throw error;
+  }
+}
+//get all spot offers
+export async function getSpotOffers( token: string): Promise<any> {
+  try{
+    const response = await fetch(`${BASE_URL}/v1/spot-offers/`, {
       method: "GET",
       headers: {
         "Accept": "application/json",
