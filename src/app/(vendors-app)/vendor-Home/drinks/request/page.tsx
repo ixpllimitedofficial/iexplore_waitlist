@@ -72,13 +72,13 @@ const Page = () => {
       <section className="">
         <Header title="Drinks" className="hidden md:block" />
       </section>
-      <section className="px-7 py-6 w-[100%]">
+      <section className="px-3 md:px-7 md:py-6 w-[100%]">
         <div className="flex items-center">
           <Link href="/vendor-Home/drinks">
             <Image src={ArrowLeft} alt="ArrowLeft" className="justify-start" />
           </Link>
 
-          <div className=" mt-14 md:mt-0 flex justify-center items-center gap-3 w-full">
+          <div className="md:mt-0 flex justify-center items-center gap-3 w-full">
             <p className="font-bold text-lg md:text-3xl">Drink requests</p>
           </div>
         </div>
@@ -206,7 +206,7 @@ const Page = () => {
 
         {/* AlertDialog */}
         <AlertDialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-          <AlertDialogContent className="border-gold-500 flex flex-col justify-center items-center text-center">
+          <AlertDialogContent className="border-gold-500 flex flex-col justify-center items-center text-center w-[95%] md:w-full">
             <AlertDialogHeader>
               <AlertDialogTitle className="text-center text-2xl">
                 {actionType === "accept" ? "Accept Request" : "Decline Request"}
@@ -217,7 +217,7 @@ const Page = () => {
                   : "Are you sure you want to decline this drink? claim request"}
               </AlertDialogDescription>
             </AlertDialogHeader>
-            <AlertDialogFooter>
+            <AlertDialogFooter className="flex flex-row items-center gap-3">
               <AlertDialogAction
                 onClick={confirmAction}
                 className="bg-gold-500 text-brandDark px-6 rounded-full hover:bg-white"

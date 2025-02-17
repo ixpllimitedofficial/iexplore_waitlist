@@ -17,11 +17,11 @@ const VendorsDrinksTable = () => {
   const router = useRouter();
 
   const handleClick = (id: number) => {
-    router.push(`/admin/vendor-management/${id}`);
+    router.push(`/admin/vendor-management/${id}/approve-drink`);
   };
 
   return (
-    <section className="mt-5 bg-brandDarkNeutral p-5 rounded-2xl">
+    <section className="mt-5  bg-[#1A1A1A] p-5 rounded-2xl">
       <p className="font-bold text-xl text-gold-500">Drinks</p>
 
       {/* TABLE */}

@@ -1,11 +1,11 @@
 import { ZodError, z } from "zod";
 
 export const loginValidationSchema = z.object({
-  username_or_email: z
-    .string()
-    .min(1, { message: "Username must be not be empty." }),
   password: z.string().min(1, {
     message: "Password must be not be empty.",
+  }),
+  email: z.string().email({
+    message: "Please put in a valid email.",
   }),
 });
 
@@ -64,6 +64,32 @@ export const signupValidationSchema = z
     path: ["confirm_password"],
   });
 
+  export const signupVendorValidationSchema = z
+  .object({
+    first_name: z
+      .string()
+      .min(2, { message: "First name must be at least 2 chars." }),
+    last_name: z
+      .string()
+      .min(2, { message: "Last name must be at least 2 chars." }),
+    email: z.string().email({
+      message: "Please put in a valid email.",
+    }),
+    phone: z
+    .string()
+    .min(11, { message: "Phone Number must be at least 11 chars." }),
+    password: z.string().min(1, {
+      message: "Password must be not be empty.",
+    }),
+    confirm_password: z.string().min(1, {
+      message: "Confirm Password must be not be empty.",
+    }),
+  })
+  .refine((data) => data.password === data.confirm_password, {
+    message: "Passwords don't match",
+    path: ["confirm_password"],
+  });
+
 export const emailSchema = z.object({
   email: z.string().email({
     message: "Please put in a valid email.",
@@ -97,18 +123,18 @@ export const verifyOTPSchema = z.object({
 
 export const setupBusinessValidationSchema = z
 .object({
-  profile_picture: z
-  .string()
-  .min(2, { message: "Add a profile picture" }),
-  business_name: z
+  spot_name: z
     .string()
-    .min(2, { message: "business name must be at least 2 chars." }),
-  email: z.string().email({
-    message: "Please put in a valid email.",
+    .min(2, { message: "Spot name must be at least 2 chars." }),
+
+  spot_address: z.string().min(1, {
+    message: "Spot address must not be empty.",
   }),
-  phone_number: z.string().min(11, { message: "Phone Number must be at least 11 chars." }),
-  business_address: z.string().min(1, {
-    message: "Business address must not be empty.",
+  spot_state: z.string().min(1, {
+    message: "Spot state must not be empty.",
+  }),
+  spot_description: z.string().min(1, {
+    message: "Spot description must not be empty.",
   }),
   opening_hour: z.string().min(1, {
     message: "Field must not be empty.",
@@ -116,43 +142,18 @@ export const setupBusinessValidationSchema = z
   closing_hour: z.string().min(1, {
     message: "Field must not be empty.",
   }),
-  category: z.string().min(1, {
-    message: "Please select a category.",
-  }),
-  photo_of_business: z.string().min(1, {
-    message: "Please upload a business picture.",
-  }),
-  utility_of_business: z.string().min(1, {
-    message: "Please upload your utility bill.",
-  }),
-  cac_of_business: z.string().min(1, {
-    message: "Please upload your CAC.",
-  }),
-  cac_number_of_business: z.string().min(1, {
-    message: "This field is required",
-  }),
-
 });
 export const addDrinksValidationSchema = z
 .object({
-  profile_picture: z
-  .string()
-  .min(2, { message: "Add a profile picture" }),
   drinks_name: z
     .string()
     .min(2, { message: "Drinks name must be at least 2 chars." }),
   drinks_price: z.string().min(3, { message: "Drinks must be at least 3 chars." }),
-  select_Spot: z.string().min(1, {
-    message: "Drinks spot must not be empty.",
+  drink_location: z.string().min(1, {
+    message: "Drink location must not be empty.",
   }),
   drinks_description: z.string().min(1, {
     message: "Drinks description must not be empty.",
-  }),
-  category: z.string().min(1, {
-    message: "Please select a category.",
-  }),
-  drinks_volume: z.string().min(1, {
-    message: "Please select volumes.",
   }),
 });
 
@@ -189,5 +190,9 @@ export const editProfileSchema = z
     message: "New Passwords don't match",
     path: ["confirm_new_password"],
   });
-
+  export const feedPostValidationSchema = z.object({
+    post_caption: z.string().min(1, {
+      message: "Post caption must not be empty.",
+    }),
+  })
 export type InputTypes = any;

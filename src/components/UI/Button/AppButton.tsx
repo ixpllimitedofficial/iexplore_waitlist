@@ -19,13 +19,13 @@ const AppButton = ({
 }: ButtonProps) => {
   return (
     <button
-      className={`${className} bg-brandGold text-brandDark py-2 px-4 rounded-xl font-bold flex items-center justify-center gap-1`}
+      className={`${className} bg-brandGold text-white py-2 px-4 md:px-10 rounded-xl font-bold flex items-center justify-center gap-1`}
       onClick={handleClick}
       type={type}
     >
-      {leftIcon && <Image src={leftIcon} alt="leftIcon" height={20} />}
+      {leftIcon && <Image src={leftIcon} alt="leftIcon" height={20}  color="white"/>}
       <p>{btnText}</p>{" "}
-      {rightIcon && <Image src={rightIcon} alt="rightIcon" height={15} />}
+      {rightIcon && <Image src={rightIcon} alt="rightIcon" height={15}  />}
     </button>
   );
 };

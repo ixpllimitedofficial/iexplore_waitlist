@@ -1,8 +1,14 @@
 import AppButton from "@/components/UI/Button/AppButton";
 import AppInput from "@/components/UI/Inputs/AppInput";
 import Link from "next/link";
+import { useStore } from "zustand";
+import { vendorStore } from "@/store/vendor";
 
+interface State {
+  emailForOTP: string;
+}
 const CheckCode = () => {
+  const { emailForOTP } = useStore(vendorStore) as State;
   return (
     <section className="h-full flex flex-col gap-4 pt-16 lg:pt-28">
       {/* <h1 className="text-gold-500 font-semibold text-2xl md:text-3xl text-center leading-snug self-center">
@@ -11,7 +17,7 @@ const CheckCode = () => {
 
       <h1 className="text-gold-500 text-lg md:text-xl md:w-[70%] text-center leading-snug self-center">
         We’ve sent an OTP code to
-        <span className="text-white"> Maxxconnect127@gmail.com</span>
+        <span className="text-white block">{emailForOTP}</span>
       </h1>
 
       {/* <Link href="/vendor-Home?flow=confirmOTP" className="mt-5 mx-10">

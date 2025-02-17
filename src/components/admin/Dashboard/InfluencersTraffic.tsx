@@ -23,14 +23,14 @@ const chartConfig = {
 const VendorTraffic: FC = () => {
     return (
         <Card className="bg-neutral border-none flex flex-row lg:flex-nowrap items-center justify-between gap-4">
-            <div className="w-[50%] lg:w-[30%] flex flex-col items-center text-center md:space-y-2 mt-5 md:mt-4">
+            <div className="w-[30%] lg:w-[30%] flex flex-col items-center text-center md:space-y-2 mt-5 md:mt-4">
                 <h1 className="text-3xl lg:text-4xl font-bold text-white">201</h1>
 
-                <p className=" mt-5 text-muted-foreground text-xs lg:text-sm">New Visitors</p>
+                <p className=" mt-5 text-muted-foreground text-xs lg:text-sm whitespace-nowrap">New Visitors</p>
                 <p className="lg:text-sm text-white text-xs  font-normal">(12-17 Dec)</p>
             </div>
 
-            <div className="w-full md:w-[70%] border-none">
+            <div className="w-full  border-none">
                 <ChartContainer config={chartConfig}>
                     <BarChart
                         data={chartData}
@@ -52,7 +52,7 @@ const VendorTraffic: FC = () => {
                             dataKey="count"
                             fill={chartConfig.count.color}
                             radius={4} // Rounded corners
-                            barSize={10} // Reduce bar width
+                            barSize={8} // Reduce bar width
                         >
                             {/* Add the count below each bar */}
                             <LabelList

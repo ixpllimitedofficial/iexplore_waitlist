@@ -1,106 +1,129 @@
 import React from "react";
 import Image from "next/image";
 import SignOutIconSvg from "@/assets/svg/AdminIconsSvg/SignOutIconSvg.svg";
-import ToggleOffSvg from "@/assets/svg/AdminIconsSvg/ToggleOffSvg.svg";
-import ToggleOnSvg from "@/assets/svg/AdminIconsSvg/ToggleOnSvg.svg";
 import AppButton from "@/components/UI/Button/AppButton";
 import AppInput from "@/components/UI/Inputs/AppInput";
 import Link from "next/link";
+import ProfileImage from "@/assets/img/AdminPageImages/ReferralProfileImage.png";
 
 const page = () => {
   return (
-    <>
-      <div className="mt-5 bg-brandDarkNeutral p-5 lg:p-8 rounded-2xl">
-        <div className="grid grid-cols-2 gap-10">
-          {/* edit profile */}
-          <div className="col-span-full md:col-span-1">
-            <p className="text-gold-500 text-lg font-bold">Profile details</p>
-
-            <div className="mt-3 flex flex-col gap-3">
-              <AppInput
-                value=""
-                type="text"
-                name="name"
-                label="Name:"
-                placeholder="Anita Cruz"
-                labelClassName="text-white"
+    <div className="w-full lg:w-[801px]  mx-auto px-4  lg:px-8 mt-6 md:mt-16">
+      <div className="flex flex-col justify-center gap-10">
+        {/* Profile Section */}
+        <div className="flex flex-col md:flex-row gap-4">
+          {/* Profile Card */}
+          <div className="flex flex-col items-start gap-3 rounded-2xl bg-[#23232325] border border-[#4D4D4D] p-4 w-full">
+            <div className="flex items-center gap-4">
+              {/* Profile Image */}
+              <Image
+                src={ProfileImage}
+                alt="Profile Image"
+                className="h-16 w-16 sm:h-20 sm:w-20 rounded-full object-cover"
               />
-
-              <AppInput
-                value=""
-                type="email"
-                name="email"
-                label="Email:"
-                placeholder="anitacruz@gmail.com"
-                labelClassName="text-white"
-              />
-
-              <AppInput
-                value=""
-                type="text"
-                name="number"
-                label="Phone Number:"
-                placeholder="09123456789"
-                labelClassName="text-white"
-              />
+              {/* Profile Details */}
+              <div className="flex flex-col text-left">
+                <p className="text-lg sm:text-xl font-extrabold text-white">
+                  Christine Brooks
+                </p>
+                <p className="text-sm text-gray-400">Joined 5 months ago</p>
+                <p className="text-sm text-gray-400">DOB: 04/09/1973</p>
+                <p className="text-sm text-gray-400">Last active: 2 hours ago</p>
+              </div>
             </div>
           </div>
 
-          {/* change password */}
-          <div className="col-span-full md:col-span-1">
-            <p className="text-gold-500 text-lg font-bold">Change Password</p>
-
-            <div className="mt-3 flex flex-col gap-3">
-              <AppInput
-                value=""
-                type="password"
-                name="currentPassword"
-                label="Current Password:"
-                labelClassName="text-white"
-              />
-
-              <AppInput
-                value=""
-                type="password"
-                name="newPassword"
-                label="New Password:"
-                labelClassName="text-white"
-              />
-
-              <AppInput
-                value=""
-                type="password"
-                name="confirmPassword"
-                label="Confirm Password:"
-                labelClassName="text-white"
-              />
+          {/* User Details Card */}
+          <div className="flex flex-col gap-3 rounded-2xl bg-[#23232325] border border-[#4D4D4D] p-4 w-full">
+            <div className="flex flex-col text-left space-y-2">
+              <p className="text-lg sm:text-xl font-extrabold text-white">
+                User Details
+              </p>
+              <p className="text-sm text-gray-400">Phone: +234 801 234 5678</p>
+              <p className="text-sm text-gray-400">City: Ikeja, Lagos state</p>
+              <p className="text-sm text-gray-400">
+                Email address: kunlejacob123@gmail.com
+              </p>
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="bg-brandDarkNeutral p-5 rounded-2xl mt-10 mb-5 flex flex-col gap-3 lg:w-[50%] mx-auto">
-        <p className="text-gold-500 font-bold">Appearance settings</p>
-
-        <div className="bg-brandDark flex justify-between items-center w-full border-[1px] border-[#424242] p-3 rounded-xl">
-          <p className="text-sm">Push Notification</p>
-          <Image src={ToggleOffSvg} alt="ToggleOffSvg" />
+        {/* Personal Details Section */}
+        <div>
+          <p className="text-2xl sm:text-3xl font-bold text-center mb-4">
+            Personal Details
+          </p>
+          <div className="flex flex-col gap-3">
+            <AppInput
+              value=""
+              type="text"
+              name="name"
+              label="Full Name:"
+              placeholder="Enter your name"
+              labelClassName="text-white"
+            />
+            <AppInput
+              value=""
+              type="email"
+              name="email"
+              label="Email Address:"
+              placeholder="Enter your email"
+              labelClassName="text-white"
+            />
+            <AppInput
+              value=""
+              type="text"
+              name="phone"
+              label="Phone Number:"
+              placeholder="Enter your phone number"
+              labelClassName="text-white"
+            />
+          </div>
         </div>
 
-        <div className="bg-brandDark flex justify-between items-center w-full border-[1px] border-[#424242] p-3 rounded-xl">
-          <p className="text-sm">Dark Mode</p>
-          <Image src={ToggleOnSvg} alt="ToggleOnSvg" />
+        {/* Change Password Section */}
+        <div>
+          <p className="text-2xl sm:text-3xl font-bold text-center mb-4">
+            Change Password
+          </p>
+          <div className="flex flex-col gap-3">
+            <AppInput
+              value=""
+              type="password"
+              name="currentPassword"
+              label="Current Password:"
+              placeholder="Enter current password"
+              labelClassName="text-white"
+            />
+            <AppInput
+              value=""
+              type="password"
+              name="newPassword"
+              label="New Password:"
+              placeholder="Enter new password"
+              labelClassName="text-white"
+            />
+            <AppInput
+              value=""
+              type="password"
+              name="confirmPassword"
+              label="Confirm Password:"
+              placeholder="Confirm new password"
+              labelClassName="text-white"
+            />
+          </div>
         </div>
-      </div>
 
-      <Link href="/admin" className="flex justify-center mt-5">
-        <AppButton
-          leftIcon={SignOutIconSvg}
-          btnText="Sign Out"
-          className="text-sm"
-        />
-      </Link>
-    </>
+        {/* Sign Out Button */}
+        <Link href="/admin" className="flex justify-center mt-5">
+          <AppButton
+            leftIcon={SignOutIconSvg}
+            btnText="Sign Out"
+            className="text-sm bg-red-600 text-white px-6 py-2 rounded-full"
+          />
+        </Link>
+      </div>
+    </div>
   );
 };
 

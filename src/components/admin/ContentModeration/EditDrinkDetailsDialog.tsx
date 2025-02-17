@@ -1,10 +1,10 @@
+
 import Image from "next/image";
-import EditOutlineIconSvg from "@/assets/svg/AdminIconsSvg/EditOutlineIconSvg.svg";
+import fileSvg from "@/assets/svg/AdminIconsSvg/fileSvg.svg";
 import { Button } from "@/components/UI/button";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -14,74 +14,100 @@ import {
 const EditDrinkDetailsDialog = () => {
   return (
     <Dialog>
-      <DialogTrigger asChild className="col-end-12">
-        <Button className="bg-gold-800 text-gold-500">
-          <p>Edit</p>
-          <Image src={EditOutlineIconSvg} alt="edit icon" className="ml-2" />
+      <DialogTrigger asChild>
+        <Button className="w-[196px] bg-transparent text-white rounded-full px-4 py-2 border hover:bg-transparent">
+          <p className="text-lg font-bold">Edit</p>
         </Button>
       </DialogTrigger>
-      <DialogContent className="w-[90%] md:max-w-[800px]  bg-[#212121]">
+      <DialogContent className="w-[90%] md:max-w-[800px] bg-[#212121] p-6 rounded-xl max-h-[90vh] overflow-y-auto scrollbar-hide">
+        {/* Drink Cover Section */}
         <DialogHeader>
-          <DialogTitle className="text-gold-500 text-2xl text-center">
-            Edit drink cover:
+          <DialogTitle className="text-xl text-center">
+            Edit Drink Cover
           </DialogTitle>
-          {/* <DialogDescription>
-                Make changes to your profile here. Click save when you are done.
-              </DialogDescription> */}
         </DialogHeader>
-        <div className="grid gap-2 py-2">
-          <div className="bg-[#33333399] border-2 border-gold-500 border-dotted p-[50px] rounded-xl"></div>
-          {/* <div className="grid grid-cols-4 items-center gap-4">
-                <Label htmlFor="name" className="text-right">
-                  Name
-                </Label>
-                <Input id="name" value="Pedro Duarte" className="col-span-3" />
-              </div>
-              <div className="grid grid-cols-4 items-center gap-4">
-                <Label htmlFor="username" className="text-right">
-                  Username
-                </Label>
-                <Input id="username" value="@peduarte" className="col-span-3" />
-              </div> */}
+        <div className="bg-[#33333399] border-2 border-gold-500 border-dotted p-6 rounded-xl text-center mb-6">
+          <div className="flex justify-center items-center">
+            <Image src={fileSvg} alt="svg" />
+          </div>
+          <p className="text-gray-400">
+            Choose a file or drag & drop it here
+          </p>
+          <p className="text-gray-500">JPEG, PNG, PDF, up to 50MB</p>
+          <span className="text-gold-500 cursor-pointer">Browse files</span>
         </div>
+
+        {/* Drink Details Section */}
         <DialogHeader>
-          <DialogTitle className="text-gold-500 text-2xl text-center">
-            Edit drink details:
+          <DialogTitle className="text-xl text-center">
+            Edit Drink Details
           </DialogTitle>
-          {/* <DialogDescription>
-                Make changes to your profile here. Click save when you are done.
-              </DialogDescription> */}
         </DialogHeader>
-        <div className="grid gap-2 py-2">
-          <div className="bg-[#33333399] p-[15px] rounded-xl">
-            <p>Drink name</p>
-            <p className="text-gold-500 font-bold">Hennessy</p>
+        <div className="grid gap-4">
+          <div className="grid grid-cols-2 gap-4 lg:gap-6">
+            <div className="">
+              <input
+                type="text"
+                placeholder="Drink Name"
+                defaultValue=""
+                className="w-full h-[48px] bg-[#333333] border border-gray-600 rounded-lg px-3 py-2 text-white focus:outline-none"
+              />
+            </div>
+            <div className="">
+              <input
+                type="text"
+                placeholder="Spot Added"
+                defaultValue=""
+                className="w-full h-[48px] bg-[#333333] border border-gray-600 rounded-lg px-3 py-2 text-white focus:outline-none"
+              />
+            </div>
           </div>
-          <div className="bg-[#33333399] p-[15px] rounded-xl">
-            <p>Drink price</p>
-            <p className="text-gold-500 font-bold">#2,000,000.00</p>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="">
+              <input
+                type="number"
+                placeholder="Drink Price"
+                className="w-full h-[48px] bg-[#333333] border border-gray-600 rounded-lg px-3 py-2 text-white focus:outline-none"
+              />
+            </div>
+            <div className="">
+              <input
+                type="text"
+                placeholder="Drink Category"
+                defaultValue="Alcoholic"
+                className="w-full h-[48px] bg-[#333333] border border-gray-600 rounded-lg px-3 py-2 text-white focus:outline-none"
+              />
+            </div>
           </div>
-          <div className="bg-[#33333399] p-[15px] rounded-xl">
-            <p>Quantity</p>
-            <p className="text-gold-500 font-bold">200</p>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="">
+              <input
+                type="text"
+                placeholder="Drink Quantity"
+                className="w-full h-[48px] bg-[#333333] border border-gray-600 rounded-lg px-3 py-2 text-white focus:outline-none"
+              />
+            </div>
+            <div className="">
+              <input
+                type="text"
+                placeholder="Drink Volume"
+                className="w-full h-[48px] bg-[#333333] border border-gray-600 rounded-lg px-3 py-2 text-white focus:outline-none"
+              />
+            </div>
           </div>
-          {/* <div className="grid grid-cols-4 items-center gap-4">
-                <Label htmlFor="name" className="text-right">
-                  Name
-                </Label>
-                <Input id="name" value="Pedro Duarte" className="col-span-3" />
-              </div>
-              <div className="grid grid-cols-4 items-center gap-4">
-                <Label htmlFor="username" className="text-right">
-                  Username
-                </Label>
-                <Input id="username" value="@peduarte" className="col-span-3" />
-              </div> */}
+          <div>
+            <textarea
+              placeholder="Description"
+              className="w-full h-[48px] bg-[#333333] border border-gray-600 rounded-lg px-3 py-2 text-white focus:outline-none"
+            />
+          </div>
         </div>
-        <DialogFooter className="mx-auto">
+
+        {/* Save Button */}
+        <DialogFooter className="mt-6 text-center">
           <Button
             type="submit"
-            className="bg-brandDarkNeutral text-gold-500  border-2 border-gold-500"
+            className="w-full bg-[#333333] text-white px-6 py-2 rounded-full hover:bg-gold-600 transition"
           >
             Save
           </Button>

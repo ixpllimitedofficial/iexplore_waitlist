@@ -21,7 +21,7 @@ const UserFavoritesTable = () => {
   };
 
   return (
-    <section className="mt-5 bg-[#23232325] p-5 rounded-2xl">
+    <section className="mt-5 bg-[#1A1A1A] p-5 rounded-2xl">
       <p className="font-bold text-xl text-white">Favorites</p>
 
       {/* TABLE */}
