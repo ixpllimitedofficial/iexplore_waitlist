@@ -1,8 +1,9 @@
 "use client";
 
+import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import iExploreLogoSvg from "@/assets/svg/NavbarSvg/iExploreTextLogoSvg.svg";
 import HomeIconSvg from "@/assets/svg/AdminIconsSvg/NavbarIcons/icons8-home.svg";
 import UsersIconSvg from "@/assets/svg/AdminIconsSvg/NavbarIcons/icons8-shop-48.png";
@@ -17,7 +18,7 @@ import FeedIcon from "@/assets/svg/UserIconsSvg/FeedIcon.svg";
 import ProfileIcon from "@/assets/svg/UserIconsSvg/ProfileIcon.svg";
 import LogoutLogo from "@/assets/img/icons8-logout-48.png";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/UI/avatar";
-
+import { vendorStore } from "@/store/vendor";
 //vendor icons
 import HomeSvg from "@/assets/svg/UserIconsSvg/HomeIcon.svg";
 import ActiveHomeSvg from "@/assets/svg/UserIconsSvg/ActiveHomeIcon.svg";
@@ -32,9 +33,43 @@ import ActiveDrinksIcon from "@/assets/svg/UserIconsSvg/ActiveDrinksIcon.svg";
 
 import ProfileIcons from "@/assets/svg/UserIconsSvg/ProfileIcon.svg";
 import ActiveProfileIcon from "@/assets/svg/UserIconsSvg/ActiveProfileIcon.svg";
+import { toast } from "@/components/UI/use-toast";
 
 const NewDashboardDesktopBar = () => {
+  const [btnState, setBtnState] = useState(false);
   const pathname = usePathname();
+  const vendor = vendorStore((state: any) => state.vendor);
+  const logoutVendor = vendorStore((state: any) => state.logoutVendor);
+  const isVendorLoggedOut = vendorStore(
+    (state: any) => state.isVendorLoggedOut
+  );
+  const setIsVendorLoggedOut = vendorStore(
+    (state: any) => state.setIsVendorLoggedOut
+  );
+  const token = vendorStore((state: any) => state.token);
+  const formData = { refreshToken: token.refreshToken };
+  // router
+  const router = useRouter();
+  const handleLogout = () => {
+    logoutVendor({ refreshToken: formData });
+  };
+  useEffect(() => {
+    console.log("useEffect triggered");
+    console.log("isVendorLoggedOut:", isVendorLoggedOut);
+    if (isVendorLoggedOut) {
+      toast({
+        title: "Logout successful",
+        variant: "success",
+      });
+      console.log("Redirecting to /vendor-Home");
+      router.push("/vendor-Home");
+    }
+    // Cleanup function to be called when the component is unmounted
+    return () => {
+      console.log("Cleanup function called");
+      setIsVendorLoggedOut(false);
+    };
+  }, [isVendorLoggedOut, router, setIsVendorLoggedOut]);
 
   return (
     <div className="hidden bg-brandDark lg:col-span-2 sticky overflow-y-scroll no-scrollbar top-0 h-screen py-5 space-x-4 lg:flex flex-col items-left gap-8">
@@ -80,7 +115,7 @@ const NewDashboardDesktopBar = () => {
           ) : (
             <Image src={UsersIconSvg} alt="Users icon" className="w-7 h-7" />
           )}
-          <p>Business</p>
+          <p>Spot</p>
         </Link>
 
         {/* drinks */}
@@ -168,7 +203,10 @@ const NewDashboardDesktopBar = () => {
         {/* divider */}
         <div className="border-t-2 border-[#e0e0e042] flex-grow"></div>
         {/*signout */}
-        <button className="w-[100%] mt-3  p-3 px-6 bg-[#E50000] rounded-full flex items-center justify-start gap-1 font-bold text-lg">
+        <button
+          onClick={handleLogout}
+          className="w-[100%] mt-3  p-3 px-6 bg-[#E50000] rounded-full flex items-center justify-start gap-1 font-bold text-lg"
+        >
           <Image src={LogoutLogo} className="w-6 h-6" alt="" /> SignOut
         </button>
       </nav>

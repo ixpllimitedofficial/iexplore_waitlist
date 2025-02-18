@@ -8,6 +8,7 @@ import ClubSection from "@/components/vendor-components/SportsDetails/ClubsSecti
 import DrinksSection from "@/components/vendor-components/Drinks/DrinksSection";
 import TabsDemo from "@/components/vendor-components/QuestionReviews/page";
 import AdvertSection from "@/components/vendor-components/AdvertSection/page";
+import { vendorStore } from "@/store/vendor";
 
 const DashboardBody = () => {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
@@ -16,16 +17,6 @@ const DashboardBody = () => {
 
   return (
     <section className="px-4 sm:px-7 mt-6">
-      {/* <div className={`grid grid-cols-${anotherContainer ? 3 : 1} gap-2 h-fit`}>
-        <div className={`col-span-${anotherContainer ? 2 : 3}`}>
-          <Analytics hasAnotherContainer={anotherContainer} />
-        </div>
-        {anotherContainer && (
-          <div className="md:col-span-1">
-            <SetUpBusiness />
-          </div>
-        )}
-      </div> */}
       <div
         className={`grid ${
           anotherContainer ? "grid-cols-1 lg:grid-cols-3" : "grid-cols-1"
