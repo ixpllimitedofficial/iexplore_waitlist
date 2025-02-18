@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import {
@@ -22,12 +22,36 @@ import {
 import AppSearchInput from "@/components/UI/Inputs/AppSearchInput";
 import DownloadIcon from "@/assets/svg/AdminIconsSvg/DownloadIcon.svg";
 import { Badge } from "@/components/UI/badge";
+import { adminActions } from "@/app/adminActions";
+import { formatTo12Hour } from "@/utils/functions/timeFormatter";
+
 
 const AllSpotsTable = () => {
   const router = useRouter();
+  const { spots, fetchSpots, searchSpots, sortSpots, isLoading, error } = adminActions()
 
-  const handleClick = (id: number) => {
-    router.push(`/admin/content-moderation/spots/${id}`);
+  console.log(spots)
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      fetchSpots(token)
+    }
+  }, [fetchSpots]);
+
+  const handleSearch = (value: string) => {
+    searchSpots(value)
+  }
+
+  const handleSort = (value: 'newest' | 'oldest') => {
+    sortSpots(value)
+  }
+
+  if (isLoading) return <div className="text-center p-4">Loading...</div>;
+  if (error) return <div className="text-center text-red-500 p-4">Error: {error}</div>;
+
+  const handleClick = (id: string) => {
+    router.push(`/admin/content-moderation/spots/${encodeURIComponent(id)}`);
   };
 
   return (
@@ -38,9 +62,11 @@ const AllSpotsTable = () => {
           <AppSearchInput
             className="bg-white border-none focus-visible:ring-0 w-full"
             inputClass="placeholder:text-[##4D4D4D] placeholder:text-sm"
+            onChange={handleSearch}
+               placeholder="Search spots..."
           />
           <div className='w-full flex gap-2'>
-            <Select>
+            <Select onValueChange={handleSort}>
               <SelectTrigger className="w-full lg:w-auto bg-gold-500 text-black border-none focus-visible:ring-0">
                 <SelectValue placeholder="Sort by: Newest" />
               </SelectTrigger>
@@ -72,34 +98,37 @@ const AllSpotsTable = () => {
             <TableHead className="text-white">STATUS</TableHead>
           </TableRow>
         </TableHeader>
-
-        {[1, 2, 3, 4, 5, 6, 7].map((table) => {
-          return (
-            <TableBody
-              className="border-b-2 border-[#9797974b]"
-              key={table}
-              onClick={() => handleClick(table)}
+        <TableBody className="border-b-2 border-[#9797974b]">
+          {spots.map((spot, index) => (
+            <TableRow
+              key={spot.id}
+              onClick={() => handleClick(spot.id)}
+              className="cursor-pointer hover:bg-[#424242] transition-colors"
             >
-              <TableRow>
-                <TableCell className="font-medium py-5">{table}</TableCell>
-                <TableCell>Club Quilox</TableCell>
-                <TableCell>
-                  873 Ozumba Mbadiwe Ave, Victoria Island 106104, Lagos
-                </TableCell>
-                <TableCell>4.0 (90)</TableCell>
-                <TableCell>6:00PM - 4:00AM</TableCell>
-                <TableCell>
-                  <Badge className="bg-[#008800] text-[#fff] text-sm rounded-full">
+              <TableCell className="font-medium py-5">{index + 1}</TableCell>
+              <TableCell>{spot.name}</TableCell>
+              <TableCell>{spot.location}</TableCell>
+              <TableCell>4.0 (90)</TableCell>
+              <TableCell>{`${formatTo12Hour(spot.opening_time)} - ${formatTo12Hour(spot.closing_time)}`}</TableCell>
+              <TableCell>
+                {/* <Badge className="bg-[#008800] text-[#fff] text-sm rounded-full">
                   Active
-                  </Badge>
-                </TableCell>
-              </TableRow>
-            </TableBody>
-          );
-        })}
+                </Badge> */}
+                <Badge
+                  className={`${spot.is_verified
+                    ? 'bg-[#008800] text-[#fff]'
+                    : 'bg-red-100 text-red-500'
+                    } text-sm`}
+                >
+                  {spot.is_verified ? 'Active' : 'Disabled'}
+                </Badge>
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
       </Table>
     </section>
-  );
+  )
 };
 
 export default AllSpotsTable;

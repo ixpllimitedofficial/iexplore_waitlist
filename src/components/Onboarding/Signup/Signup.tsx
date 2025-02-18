@@ -31,7 +31,7 @@ const Signup = () => {
               </p>
 
               <div className="">
-                <SignupForm />
+                <SignupFoorm />
 
                 <div className="flex items-center justify-center mt-5 gap-1">
                   <p className="text-lg font-medium">

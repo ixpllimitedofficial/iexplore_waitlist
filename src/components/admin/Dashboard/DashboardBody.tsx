@@ -15,9 +15,59 @@ import NotificationCard from "./Notification";
 import VendorTraffic from "./VendorTraffic";
 import InfluencersTraffic from "./InfluencersTraffic";
 import { Divider } from '@mui/material';
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { adminStore } from "@/store/admin";
+import { adminActions } from "@/app/adminActions";
 
 const DashboardBody = () => {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
+  const isAdminLoggedin = adminStore((state) => state.isAdminLoggedin);
+  const logoutAdmin = adminStore((state) => state.logoutAdmin);
+  const adminStats = adminActions((state) => state.adminStats);
+  const fetchAdminStats = adminActions((state) => state.fetchAdminStats);
+  const router = useRouter();
+
+  const handleLogout = () => {
+    // Clear token from cookies
+    document.cookie = "adminToken=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+    logoutAdmin();
+  };
+
+  useEffect(() => {
+    // Redirect to login if admin is not logged in
+    if (!isAdminLoggedin) {
+      router.replace("/admin-login");
+    }
+
+    const fetchStats = async () => {
+      try {
+        // Get token from cookie
+        const cookieValue = document.cookie
+          .split("; ")
+          .find((row) => row.startsWith("adminToken="));
+
+        const token = cookieValue ? cookieValue.split("=")[1] : null;
+
+        if (!token) {
+          console.error("No admin token found");
+          router.replace("/admin-login");
+          return;
+        }
+
+        await fetchAdminStats(token);
+      } catch (error) {
+        console.error("Error fetching admin stats:", error);
+      }
+    };
+
+    fetchStats();
+  }, [isAdminLoggedin, fetchAdminStats, router]);
+
+  if (!isAdminLoggedin) {
+    return <p>Loading...</p>; // Optionally display a loading message
+  }
+
 
   const divStyle =
     "flex items-center justify-between w-full bg-[#23232325] gap-2 pr- py-3 lg:py-5 lg:pl-5 pl-2 rounded-2xl border border-[#4D4D4D] text-sm";
@@ -34,16 +84,15 @@ const DashboardBody = () => {
               <Image src={PeopleIconSvg} alt="PeopleIconSvg" />
               <div className="flex-grow">
                 <p className='text-sm lg:text-[16px]  font-normal '>Total Users</p>
-                <p className="font-bold text-lg lg:text-2xl">2,000</p>
+                <p className="font-bold text-lg lg:text-2xl">{adminStats?.total_users || 0}</p>
               </div>
-
             </div>
 
             <div className={divStyle}>
               <Image src={TotalVendorIconSvg} alt="TotalVendorIconSvg" />
               <div className="flex-grow">
                 <p className='text-sm lg:text-[16px]  font-normal '>Total Vendors</p>
-                <p className="font-bold text-lg lg:text-2xl">2,000</p>
+                <p className="font-bold text-lg lg:text-2xl">{adminStats?.total_vendors || 0}</p>
               </div>
             </div>
 
@@ -51,7 +100,7 @@ const DashboardBody = () => {
               <Image src={TotalRevenueIconSvg} alt="TotalRevenueIconSvg" />
               <div className="flex-grow">
                 <p className='text-sm lg:text-[16px] font-normal'>Total Revenue</p>
-                <p className="font-bold text-lg lg:text-2xl">2,000</p>
+                <p className="font-bold text-lg lg:text-2xl">0</p>
               </div>
             </div>
 
@@ -59,7 +108,7 @@ const DashboardBody = () => {
               <Image src={ActiveUsersIconSvg} alt="ActiveUsersIconSvg" />
               <div className="flex-grow">
                 <p className='text-sm lg:text-[16px] font-normal'>Active Users</p>
-                <p className="font-bold text-lg lg:text-2xl">2,000</p>
+                <p className="font-bold text-lg lg:text-2xl">{adminStats?.active_users || 0}</p>
               </div>
 
             </div>
@@ -68,7 +117,7 @@ const DashboardBody = () => {
               <Image src={NewVendorIconSvg} alt="NewVendorIconSvg" />
               <div className="flex-grow">
                 <p className='text-sm lg:text-[16px]  font-normal'>New Vendors</p>
-                <p className="font-bold text-lg lg:text-2xl">2,000</p>
+                <p className="font-bold text-lg lg:text-2xl">{adminStats?.new_vendors || 0}</p>
               </div>
             </div>
 
@@ -76,7 +125,7 @@ const DashboardBody = () => {
               <Image src={TotalReferralIconSvg} alt="TTotalReferralIconSvg" />
               <div className="flex-grow">
                 <p className='text-sm lg:text-[16px]  font-normal '>Total Referrals</p>
-                <p className="font-bold text-lg lg:text-2xl">N2,000</p>
+                <p className="font-bold text-lg lg:text-2xl">{adminStats?.total_referrals || 0}</p>
               </div>
 
             </div>
@@ -114,7 +163,9 @@ const DashboardBody = () => {
           />
         </div>
       </div>
-
+      <button onClick={handleLogout} className="bg-red-500 text-white px-4 py-2">
+        Logout
+      </button>
       {/* Body 2 */}
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 mt-8">
         {/* User Traffic Section */}

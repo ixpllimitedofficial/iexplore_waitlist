@@ -5,8 +5,25 @@ import AppButton from "@/components/UI/Button/AppButton";
 import AppInput from "@/components/UI/Inputs/AppInput";
 import Link from "next/link";
 import ProfileImage from "@/assets/img/AdminPageImages/ReferralProfileImage.png";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { adminStore } from "@/store/admin";
+
 
 const page = () => {
+  const isAdminLoggedin = adminStore((state) => state.isAdminLoggedin);
+  const router = useRouter();
+
+  useEffect(() => {
+    // Redirect to login if admin is not logged in
+    if (!isAdminLoggedin) {
+      router.replace("/admin-login");
+    }
+  }, [isAdminLoggedin, router]);
+
+  if (!isAdminLoggedin) {
+    return <p>Loading...</p>; // Optionally display a loading message
+  }
   return (
     <div className="w-full lg:w-[801px]  mx-auto px-4  lg:px-8 mt-6 md:mt-16">
       <div className="flex flex-col justify-center gap-10">

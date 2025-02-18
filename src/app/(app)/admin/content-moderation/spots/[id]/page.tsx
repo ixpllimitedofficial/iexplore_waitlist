@@ -1,4 +1,6 @@
-import React from "react";
+'use client'
+
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import SpotImage from "@/assets/img/AdminPageImages/SpotImage.png";
 import RatingIconSvg from "@/assets/svg/SpotDetailsSvg/RatingIconSvg.svg";
@@ -7,9 +9,76 @@ import { Badge } from "@/components/UI/badge";
 import Divider from "@/components/UI/Divider";
 import dynamic from "next/dynamic";
 import { DownloadIcon } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { formatTo12Hour } from "@/utils/functions/timeFormatter";
+
+interface Creator {
+  id: string;
+  username: string;
+  email: string;
+}
+
+interface SpotData {
+  id: string;
+  creator: Creator;
+  category: string;
+  features: string[];
+  offers: string[];
+  primary_image: string;
+  name: string;
+  location: string;
+  state: string;
+  description: string;
+  slug: string;
+  entry: string;
+  is_verified: boolean;
+  created_at: string;
+  updated_at: string;
+  opening_time: string;
+  closing_time: string;
+}
 
 const UserTraffic = dynamic(() => import('@/components/admin/Dashboard/UserTraffic'), { ssr: false });
-const page = () => {
+const Page = () => {
+  const pathname = usePathname();
+  const spotId = pathname.split("/").pop() || "";
+  const [spotData, setSpotData] = useState<SpotData | null>(null);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (token && spotId) {
+      const fetchVendorData = async () => {
+        try {
+          const response = await fetch(
+            `https://ixpl-backend.vercel.app/api/v1/admin/contentmoderation/spot/${encodeURIComponent(spotId)}`,
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+                "Content-Type": "application/json",
+              },
+            }
+          );
+
+          if (!response.ok) {
+            throw new Error("Failed to fetch vendor data");
+          }
+
+          const data: SpotData = await response.json();
+          console.log("Parsed Spot Data:", data);
+          setSpotData(data);
+        } catch (error) {
+          console.error("Error fetching vendor details:", error);
+        }
+      };
+
+      fetchVendorData();
+    }
+  }, [spotId]);
+  console.log(spotData)
+  if (!spotData) {
+    return <p className="text-center text-gray-400">Loading spot details...</p>;
+  }
   return (
     <>
       <section className="mt-5 gap-5">
@@ -17,26 +86,24 @@ const page = () => {
         <div className="">
           <div className="flex flex-col justify-between lg:flex-row mt-5 gap-5">
             <div className='flex flex-col lg:flex-row gap-8 '>
-              <Image src={SpotImage} alt="spot image" className="rounded-xl w-full lg:w-[300px] h-[180px]" />
+              <Image src={spotData.primary_image || SpotImage} alt="spot image" width={300} height={400} className="rounded-xl w-full lg:w-[300px] h-[200px] lg:h-[180px]" />
 
               <div className="flex flex-col gap-2">
-                <p className="text-xl font-extrabold whitespace">Club Quilox</p>
+                <p className="text-xl font-extrabold whitespace">{spotData.name}</p>
                 <p className="text-sm">
-                  Located at the heart of Lagos is the King of entertainment and
-                  nightlife in the city. Experience the thrill of Lagos nightlife
-                  here.
+                  {spotData.description}
                 </p>
-                <p className="text-sm">Open now: <span>6:00pm - 4:00am</span></p>
-                <p>Venue: <span>873 Ozumba Mbadiwe Ave, Victoria Island 106104, Lagos</span></p>
+                Open now: <span>{`${formatTo12Hour(spotData.opening_time)} - ${formatTo12Hour(spotData.closing_time)}`}</span>
+                <p>Venue: <span>{spotData.location}</span></p>
               </div>
             </div>
 
             <div className="flex flex-col items-start lg:items-center justify-center gap-3 px- py-6 rounded-2xl h-auto ">
               <div className="flex flex-row lg:flex-col items-center justify-center gap-5">
-                <span className="w-full lg:w-[196px] bg-[#008800] border border-[#b4ddb4] whitespace-nowrap px-4 py-2 rounded-full text-white font-semibold text-center">
-                  Status: Active
+                <span className={`w-[60%] border md:w-full text-white text-sm md:text-lg  text-center  font-semibold px-4 py-2 rounded-full whitespace-nowrap ${spotData.is_verified ? "bg-[#008800] border-green-700" : "bg-red-500 border-red-700"}`}>
+                  Status: {spotData.is_verified ? "Active" : "Inactive"}
                 </span>
-                <EditSpotDetailsDialog />
+                <EditSpotDetailsDialog  spotId={spotId}  initialSpotData={spotData}/>
               </div>
             </div>
           </div>
@@ -44,7 +111,9 @@ const page = () => {
           <div className="flex flex-col gap-5 lg:flex-row justify-start mt-10">
             <div className='w-full lg:w-[267px] h-auto border border-[#4D4D4D] rounded-lg p-5'>
               <h2 className="text-lg font-bold">Features</h2>
-              <p className="mt-4 text-base">Strippers, Free wifi, Security, Car Park, Privacy</p>
+              <p className="mt-4 text-base">{spotData.features?.map((feature, index) => (
+                <li key={index}>{feature}</li>
+              ))}</p>
             </div>
             <div className='w-full lg:w-[267px] h-auto border border-[#4D4D4D] rounded-lg p-5'>
               <h2 className="text-lg font-bold">Drinks Available</h2>
@@ -100,4 +169,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

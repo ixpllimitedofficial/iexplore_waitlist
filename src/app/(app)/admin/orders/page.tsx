@@ -1,12 +1,21 @@
 import AllOrdersTable from "@/components/admin/Orders/AllOrdersTable";
 import Image from "next/image";
 import OrderIconSvg from "@/assets/svg/AdminIconsSvg/OrderIconSvg.svg";
-
-
+import { adminStore } from "@/store/admin";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 const Page = () => {
+  const router = useRouter();
+  const isAdminLoggedin = adminStore((state) => state.isAdminLoggedin);
+
   const divStyle =
     "flex items-center justify-between gap-2  xl:gap-4 bg-[#23232325] rounded-2xl border border-[#4D4D4D] w-full h-auto p-4 lg:px- min-h-[88px]";
 
+  useEffect(() => {
+    if (!isAdminLoggedin) {
+      router.replace ("/admin-login")
+    }
+  }, [isAdminLoggedin, router])
   return (
     <div className="">
       {/* Responsive grid for stats */}

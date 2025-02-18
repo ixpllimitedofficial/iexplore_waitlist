@@ -1,30 +1,51 @@
-
 "use client";
 
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 import React, { useState } from "react";
 import ProfileImage from "@/assets/img/AdminPageImages/ReferralProfileImage.png";
+import { adminActions } from "@/app/adminActions";
 
 const ApproveDrinkPage = () => {
+const { approveVendor } = adminActions();
     const { id } = useParams();
     const router = useRouter();
     const [status, setStatus] = useState("Pending");
 
-    const handleApprove = () => {
-        setStatus("Approved");
-        // Add API call logic here
+    const getAdminToken = () => {
+        const cookieValue = document.cookie
+            .split("; ")
+            .find((row) => row.startsWith("adminToken="));
+        return cookieValue ? cookieValue.split("=")[1] : null;
     };
+
+    const handleApprove = async () => {
+        const token = getAdminToken();
+
+        if (!token) {
+            console.error("No admin token found. Please log in.");
+            router.replace("/admin-login"); // Redirect to login if token is missing
+            return;
+        }
+
+        if (id) {
+            await approveVendor(id as string, token);
+            router.push("/admin/vendor-management"); // Navigate back after approval
+        }
+    };
+
 
     return (
         <div className="bg-[#121212] min-h-screen p-6 lg:p-10 flex flex-col gap-6 text-white">
             {/* Header */}
-
-
-            {/* Details Submitted Section */}
             <div className="flex justify-between">
                 <h2 className="text-2xl font-semibold">Details Submitted</h2>
-                <span className="px-6 py-1 bg-yellow-500 rounded-full text-center font normal text-black">pending</span>
+                <span
+                    className={`px-6 py-1 rounded-full text-center font-normal ${status === "Pending" ? "bg-yellow-500 text-black" : "bg-green-500 text-white"
+                        }`}
+                >
+                    {status.toLowerCase()}
+                </span>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -68,14 +89,15 @@ const ApproveDrinkPage = () => {
 
             {/* Action Button */}
             <div className="flex justify-center mt-6">
-
                 <button
                     onClick={handleApprove}
-                    className="w-[80%] lg:w-[50%] bg-[#FFD700] hover:bg-[#e6c200] text-black text-lg font-bold py-2 px-6 rounded-full transition"
+                  
+                    className={`w-[80%] lg:w-[50%] text-lg font-bold py-2 px-6 rounded-full transition 
+                            : "bg-[#FFD700] hover:bg-[#e6c200] text-black"
+                        }`}
                 >
-                    Approve
+                    {"Approve"}
                 </button>
-
             </div>
         </div>
     );

@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { userStore } from "@/store/user";
 import { useEffect } from "react";
-
+import { adminStore } from "@/store/admin";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import {
@@ -25,43 +25,45 @@ import FilterButton from "@/components/UI/Button/FilterButton";
 import NewAppButton from "@/components/UI/Button/NewAppButton";
 
 const LoginForm = () => {
-  // router
   const router = useRouter();
 
   // zustand
-  const user = userStore((state: any) => state.user);
-  const isVendorLoggedin = userStore((state: any) => state.isVendorLoggedin);
-  const loginUser = userStore((state: any) => state.loginUser);
+  const admin = adminStore((state: any) => state.admin);
+  const isAdminLoggedin = adminStore((state: any) => state.isAdminLoggedin);
+  const loginAdmin = adminStore((state: any) => state.loginAdmin);
 
   // react hook form
   const form = useForm<z.infer<typeof loginValidationSchema>>({
     resolver: zodResolver(loginValidationSchema),
     defaultValues: {
-      username_or_email: "",
+      username_or_email: "", 
       password: "",
     },
   });
 
   function onSubmit(data: z.infer<typeof loginValidationSchema>) {
-    console.log(data);
-    alert(
-      `Logged in with: Username: ${data.username_or_email}, Password: ${data.password} `
-    );
-    // loginUser(data);
-    router.push("/admin/dashboard");
+    const formData = {
+      username_or_email: data.username_or_email.trim(), 
+      password: data.password,
+    };
+    console.log("Form Data to Submit:", formData);
+    try {
+      loginAdmin(formData);
+    } catch (error: any) {
+      console.error("Error in onSubmit:", error);
+    }
   }
-
   useEffect(() => {
     // console.log(user);
-    // console.log(isAdminLoggedin);
-    // if (isAdminLoggedin) {
-    //   router.push("/admin/dashboard");
-    // }
-  }, [user, router, isVendorLoggedin]);
+    console.log(isAdminLoggedin);
+    if (isAdminLoggedin) {
+      router.push("/admin/dashboard");
+    }
+  }, [router, isAdminLoggedin]);
 
   return (
     <>
-    <p className="py-3 text-3xl text-center font-bold hidden lg:block">Login</p>
+      <p className="py-3 text-3xl text-center font-bold hidden lg:block">Login</p>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
@@ -73,17 +75,14 @@ const LoginForm = () => {
             name="username_or_email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Username or Email address:</FormLabel>
+                <FormLabel>Email address:</FormLabel>
                 <FormControl>
                   <Input
                     className={`${inputStyling} `}
-                    placeholder="Username or Email"
+                    placeholder="Email"
                     {...field}
                   />
                 </FormControl>
-                {/* <FormDescription>
-                This is your public display name.
-              </FormDescription> */}
                 <FormMessage />
               </FormItem>
             )}
@@ -104,9 +103,6 @@ const LoginForm = () => {
                     type="password"
                   />
                 </FormControl>
-                {/* <FormDescription>
-                This is your public display name.
-              </FormDescription> */}
                 <FormMessage />
               </FormItem>
             )}
@@ -119,8 +115,8 @@ const LoginForm = () => {
             Forgot Password
           </Link>
 
-          {user.message && <p>{user.message}</p>}
-          <NewAppButton btnText="Login" type="submit" className="text-sm"/>
+          {admin.message && <p>{admin.message}</p>}
+          <NewAppButton btnText="Login" type="submit" className="text-sm mb-10 md:mb-5" />
         </form>
       </Form>
     </>
