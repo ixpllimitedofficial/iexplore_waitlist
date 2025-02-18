@@ -1,3 +1,5 @@
+'use client'
+
 import React from "react";
 import Image from "next/image";
 import SignOutIconSvg from "@/assets/svg/AdminIconsSvg/SignOutIconSvg.svg";
@@ -10,9 +12,16 @@ import { useRouter } from "next/navigation";
 import { adminStore } from "@/store/admin";
 
 
-const page = () => {
+const Page = () => {
   const isAdminLoggedin = adminStore((state) => state.isAdminLoggedin);
+  const logoutAdmin = adminStore((state) => state.logoutAdmin);
   const router = useRouter();
+
+  const handleLogout = () => {
+    // Clear token from cookies
+    document.cookie = "adminToken=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+    logoutAdmin();
+  };
 
   useEffect(() => {
     // Redirect to login if admin is not logged in
@@ -132,16 +141,17 @@ const page = () => {
         </div>
 
         {/* Sign Out Button */}
-        <Link href="/admin" className="flex justify-center mt-5">
+        <div className="flex justify-center mt-5">
           <AppButton
+            handleClick={handleLogout}
             leftIcon={SignOutIconSvg}
             btnText="Sign Out"
             className="text-sm bg-red-600 text-white px-6 py-2 rounded-full"
           />
-        </Link>
+        </div>
       </div>
     </div>
   );
 };
 
-export default page;
+export default Page;

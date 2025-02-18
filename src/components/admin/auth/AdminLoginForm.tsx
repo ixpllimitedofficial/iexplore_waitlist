@@ -36,30 +36,52 @@ const LoginForm = () => {
   const form = useForm<z.infer<typeof loginValidationSchema>>({
     resolver: zodResolver(loginValidationSchema),
     defaultValues: {
-      username_or_email: "", 
+      username_or_email: "",
       password: "",
     },
   });
 
-  function onSubmit(data: z.infer<typeof loginValidationSchema>) {
+  // function onSubmit(data: z.infer<typeof loginValidationSchema>) {
+  //   const formData = {
+  //     username_or_email: data.username_or_email.trim(), 
+  //     password: data.password,
+  //   };
+  //   console.log("Form Data to Submit:", formData);
+  //   try {
+  //     loginAdmin(formData);
+  //   } catch (error: any) {
+  //     console.error("Error in onSubmit:", error);
+  //   }
+  // }
+  async function onSubmit(data: z.infer<typeof loginValidationSchema>) {
     const formData = {
-      username_or_email: data.username_or_email.trim(), 
+      username_or_email: data.username_or_email.trim(),
       password: data.password,
     };
-    console.log("Form Data to Submit:", formData);
+
     try {
-      loginAdmin(formData);
+      const success = await loginAdmin(formData);
+      if (success) {
+        router.push("/admin/dashboard");
+      }
     } catch (error: any) {
       console.error("Error in onSubmit:", error);
     }
   }
   useEffect(() => {
-    // console.log(user);
-    console.log(isAdminLoggedin);
-    if (isAdminLoggedin) {
+    // Check if token exists in localStorage
+    const token = localStorage.getItem("token");
+    if (token && isAdminLoggedin) {
       router.push("/admin/dashboard");
     }
-  }, [router, isAdminLoggedin]);
+  }, [isAdminLoggedin, router]);
+  // useEffect(() => {
+  //   // console.log(user);
+  //   console.log(isAdminLoggedin);
+  //   if (isAdminLoggedin) {
+  //     router.push("/admin/dashboard");
+  //   }
+  // }, [router, isAdminLoggedin]);
 
   return (
     <>

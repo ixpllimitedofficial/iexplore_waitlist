@@ -105,7 +105,7 @@ const EditVendorDetailsDialog: React.FC<EditVendorDetailsDialogProps> = ({
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <span className="w-full md:w-[70%] cursor-pointer border border-[#b4ddb4] px-10 py-2 rounded-full text-white text-center font-semibold whitespace-nowrap">
+        <span className="md:w-[70%] cursor-pointer border border-[#b4ddb4] px-10 py-2 rounded-full text-white text-center font-semibold whitespace-nowrap">
           Edit
         </span>
       </DialogTrigger>

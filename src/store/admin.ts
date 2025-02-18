@@ -8,7 +8,7 @@ interface AdminState {
   isAdminLoggedin: boolean;
   emailForOTP: string;
   isResetOTPSent: boolean;
-  loginAdmin: (formData: { email: string; password: string }) => Promise<void>;
+  loginAdmin: (formData: { email: string; password: string }) => Promise<boolean>;
   verifyAdminOTP: (formData: any) => Promise<void>;
   requestAdminResetPasswordOTP: (formData: any) => Promise<void>;
   logoutAdmin: () => void;
@@ -35,26 +35,31 @@ export const adminStore = create<AdminState>()(
             },
             body: JSON.stringify(formData),
           });
-      
+
           const responseData = await response.json();
-      
+
           if (!response.ok) {
             throw new Error(responseData.message || "Login failed");
           }
-      
-          // Store the access token - Note we're accessing the nested structure
+
           const accessToken = responseData.data.token.accessToken;
+
           localStorage.setItem("token", accessToken);
-          document.cookie = `adminToken=${accessToken}; path=/`;
-      
+          document.cookie = `adminToken=${accessToken}; path=/; max-age=86400`;
+
           showSimpleToast(responseData.msg, "success");
-      
+
           set(() => ({
             isAdminLoggedin: true,
             admin: responseData.data,
           }));
+
+          showSimpleToast("Login successful", "success");
+
+          return true; // Indicate successful login
         } catch (error: any) {
           showSimpleToast(error.message || "Login failed", "failed");
+          return false;
         }
       },
 
