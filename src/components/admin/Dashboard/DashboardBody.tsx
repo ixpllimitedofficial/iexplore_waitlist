@@ -28,12 +28,6 @@ const DashboardBody = () => {
   const fetchAdminStats = adminActions((state) => state.fetchAdminStats);
   const router = useRouter();
 
-  const handleLogout = () => {
-    // Clear token from cookies
-    document.cookie = "adminToken=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-    logoutAdmin();
-  };
-
   useEffect(() => {
     // Redirect to login if admin is not logged in
     if (!isAdminLoggedin) {
@@ -163,9 +157,6 @@ const DashboardBody = () => {
           />
         </div>
       </div>
-      <button onClick={handleLogout} className="bg-red-500 text-white px-4 py-2">
-        Logout
-      </button>
       {/* Body 2 */}
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 mt-8">
         {/* User Traffic Section */}

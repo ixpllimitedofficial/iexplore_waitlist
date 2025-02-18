@@ -1,3 +1,5 @@
+'use client'
+
 import NotificationCard from "@/components/admin/Notifications/NotificationCard";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";

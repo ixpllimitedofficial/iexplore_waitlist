@@ -71,6 +71,7 @@ const DashboardMobileBar = () => {
             pathname={pathname}
             icon={HomeIconSvg}
             label="Dashboard"
+            setshowNavState={setshowNavState}
           />
 
           {/* User Management */}
@@ -79,6 +80,7 @@ const DashboardMobileBar = () => {
             pathname={pathname}
             icon={UsersIconSvg}
             label="User Management"
+            setshowNavState={setshowNavState}
           />
 
           {/* Vendor Management */}
@@ -87,6 +89,7 @@ const DashboardMobileBar = () => {
             pathname={pathname}
             icon={VendorsIconSvg}
             label="Vendor Management"
+            setshowNavState={setshowNavState}
           />
 
           {/* Content Moderation */}
@@ -95,6 +98,7 @@ const DashboardMobileBar = () => {
             pathname={pathname}
             icon={ContentIconSvg}
             label="Content Moderation"
+            setshowNavState={setshowNavState}
           />
 
           {/* Referral Management */}
@@ -103,6 +107,7 @@ const DashboardMobileBar = () => {
             pathname={pathname}
             icon={ReferralIconSvg}
             label="Referral Management"
+            setshowNavState={setshowNavState}
           />
 
           {/* Notifications */}
@@ -111,6 +116,7 @@ const DashboardMobileBar = () => {
             pathname={pathname}
             icon={NotificationsIconSvg}
             label="Notifications"
+            setshowNavState={setshowNavState}
           />
 
           {/* Orders */}
@@ -119,6 +125,7 @@ const DashboardMobileBar = () => {
             pathname={pathname}
             icon={AnalyticsIconSvg}
             label="Orders"
+            setshowNavState={setshowNavState}
           />
 
           {/* Settings */}
@@ -127,6 +134,7 @@ const DashboardMobileBar = () => {
             pathname={pathname}
             icon={SettingsIconSvg}
             label="Settings"
+            setshowNavState={setshowNavState}
           />
 
           {/* Support */}
@@ -135,6 +143,7 @@ const DashboardMobileBar = () => {
             pathname={pathname}
             icon={SupportIconSvg}
             label="Support & Help Desk"
+            setshowNavState={setshowNavState}
           />
         </div>
       </nav>
@@ -143,13 +152,14 @@ const DashboardMobileBar = () => {
 };
 
 // Helper Component for NavLinks
-const NavLink = ({ href, pathname, icon, label }: any) => {
+const NavLink = ({ href, pathname, icon, label, setshowNavState }: any) => {
   const isActive = pathname.includes(href);
   return (
     <Link
       href={href}
       className={`flex items-center gap-3 px-3 py-2 rounded-lg ${isActive ? "bg-yellow-500 font-bold" : "hover:bg-gray-700"
         }`}
+        onClick={() => setshowNavState(false)}
     >
       <Image src={icon} alt={`${label} icon`} className="h-5 w-5" />
       <p>{label}</p>

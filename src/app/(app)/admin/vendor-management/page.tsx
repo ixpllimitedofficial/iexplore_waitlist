@@ -26,7 +26,7 @@ const Page = () => {
     const fetchStats = async () => {
       try {
         const cookieValue = document.cookie
-          .split(";")
+          .split("; ")
           .find((row) => row.startsWith("adminToken="))
         const token = cookieValue ? cookieValue.split("=")[1] : null;
         if (!token) {

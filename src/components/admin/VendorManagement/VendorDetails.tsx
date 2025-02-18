@@ -95,8 +95,8 @@ const VendorDetails = () => {
         <button className="hidden lg:flex gap-2 items-center bg-gold-500 text-black font-semibold border px-4 py-2 rounded-md whitespace-nowrap">
           <Image src={RequestIconSvg} alt="request" /> New Business Request
         </button>
-        <div className="flex items-center gap-4">
-          <span className={`w-[60%] border ] text-white text-sm font-semibold px-4 py-2 rounded-full whitespace-nowrap ${vendorData.is_active ? "bg-green-500 border-green-700" : "bg-red-500 border-red-700"}`}>
+        <div className="flex justify-between items-center gap-4">
+          <span className={`border text-white text-sm font-semibold px-4 py-2 rounded-full whitespace-nowrap ${vendorData.is_active ? "bg-[#13460f] border-[#13460f]" : "bg-red-500 border-red-700"}`}>
             Status: {vendorData.is_active ? "Active" : "Inactive"}
           </span>
           <EditVendorDetailsDialog vendorId={vendorId} initialVendorData={vendorData} />
@@ -151,7 +151,7 @@ const VendorDetails = () => {
       {/* Mobile View Actions */}
       <div className="lg:hidden flex justify-between items-center gap-4">
         <span
-          className={`border px-4 py-2 rounded-full text-white font-semibold ${vendorData.is_active ? "bg-green-500 border-green-700" : "bg-red-500 border-red-700"
+          className={`border px-4 py-2 rounded-full text-white font-semibold ${vendorData.is_active ? "bg-[#13460f] border-[#13460f]" : "bg-red-500 border-red-700"
             }`}
         >
           Status: {vendorData.is_active ? "Active" : "Inactive"}

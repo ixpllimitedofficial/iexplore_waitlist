@@ -1,3 +1,5 @@
+'use client'
+
 import AllOrdersTable from "@/components/admin/Orders/AllOrdersTable";
 import Image from "next/image";
 import OrderIconSvg from "@/assets/svg/AdminIconsSvg/OrderIconSvg.svg";
