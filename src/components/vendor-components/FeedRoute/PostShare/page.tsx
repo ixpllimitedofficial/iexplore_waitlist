@@ -50,7 +50,7 @@ const Page: React.FC<commentProps> = ({ closeShare, isSharePanelVisible }) => {
   };
   return (
     <div
-      className={`bg-[#0E0E0E] p-2 md:px-4 border border-[#4D4D4D66] rounded-lg w-[100%] md:w-[70%] absolute md:bottom-14 right-0 z-30 md:-right-[45%] transition-transform duration-500`}
+      className={`bg-[#0E0E0E] p-2 md:px-4 border border-[#4D4D4D66] rounded-lg w-[100%] md:w-[90%] absolute md:bottom-14 right-0 z-30 md:-right-[100%] transition-transform duration-500 hidden md:block`}
     >
       <div className="my-5 text-center flex justify-center items-center gap-10">
         <h1 className="text-2xl font-bold">Share post</h1>
