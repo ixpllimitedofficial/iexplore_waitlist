@@ -1,8 +1,8 @@
 import React from 'react'
 import AuthNav from './AuthNav'
 import Image from 'next/image'
-import SuccessLock from "@/assets/img/SuccessLock.png"
 import { Button } from '@/components/UI/button'
+import SuccessLock from '@/assets/img/sucess.png'
 import Link from 'next/link'
 
 const Success = () => {
