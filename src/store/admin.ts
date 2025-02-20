@@ -131,7 +131,7 @@ export const adminStore = create<AdminState>()(
           emailForOTP: "",
           isResetOTPSent: false,
         }));
-        showSimpleToast("Admin logged out successfully", "success");
+        // showSimpleToast("Admin logged out successfully", "success");
       }
     }),
     {
