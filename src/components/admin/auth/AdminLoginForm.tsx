@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { userStore } from "@/store/user";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { adminStore } from "@/store/admin";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -23,9 +23,12 @@ import { inputStyling } from "@/utils/constant";
 import { loginValidationSchema } from "@/types/authSchemas";
 import FilterButton from "@/components/UI/Button/FilterButton";
 import NewAppButton from "@/components/UI/Button/NewAppButton";
+import { loadBindings } from "next/dist/build/swc";
 
 const LoginForm = () => {
   const router = useRouter();
+  const [loading, setLoading] = useState(false)
+
 
   // zustand
   const admin = adminStore((state: any) => state.admin);
@@ -41,24 +44,12 @@ const LoginForm = () => {
     },
   });
 
-  // function onSubmit(data: z.infer<typeof loginValidationSchema>) {
-  //   const formData = {
-  //     username_or_email: data.username_or_email.trim(), 
-  //     password: data.password,
-  //   };
-  //   console.log("Form Data to Submit:", formData);
-  //   try {
-  //     loginAdmin(formData);
-  //   } catch (error: any) {
-  //     console.error("Error in onSubmit:", error);
-  //   }
-  // }
   async function onSubmit(data: z.infer<typeof loginValidationSchema>) {
     const formData = {
       username_or_email: data.username_or_email.trim(),
       password: data.password,
     };
-
+    setLoading(true)
     try {
       const success = await loginAdmin(formData);
       if (success) {
@@ -69,19 +60,14 @@ const LoginForm = () => {
     }
   }
   useEffect(() => {
-    // Check if token exists in localStorage
-    const token = localStorage.getItem("token");
+    const token = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("adminToken="));
+
     if (token && isAdminLoggedin) {
       router.push("/admin/dashboard");
     }
   }, [isAdminLoggedin, router]);
-  // useEffect(() => {
-  //   // console.log(user);
-  //   console.log(isAdminLoggedin);
-  //   if (isAdminLoggedin) {
-  //     router.push("/admin/dashboard");
-  //   }
-  // }, [router, isAdminLoggedin]);
 
   return (
     <>
@@ -138,7 +124,11 @@ const LoginForm = () => {
           </Link>
 
           {admin.message && <p>{admin.message}</p>}
-          <NewAppButton btnText="Login" type="submit" className="text-sm mb-10 md:mb-5" />
+          <NewAppButton btnText={loading ? "Loggin in..." : "Login"}
+            type="submit"
+            className="text-sm mb-10 md:mb-5"
+            // disabled={loading}
+          />
         </form>
       </Form>
     </>
