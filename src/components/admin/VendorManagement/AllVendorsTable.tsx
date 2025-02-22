@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Table,
   TableBody,
@@ -19,16 +19,35 @@ import {
 } from "@/components/UI/select";
 import AppSearchInput from "@/components/UI/Inputs/AppSearchInput";
 import DownloadIcon from "@/assets/svg/AdminIconsSvg/DownloadIcon.svg";
-
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Badge } from "@/components/UI/badge";
+import { adminActions } from "@/app/adminActions";
 
 const AllVendorsTable = () => {
   const router = useRouter();
+  const { vendors, isLoading, error, fetchVendors, searchVendors, sortVendors } = adminActions();
 
-  const handleClick = (id: number) => {
-    router.push(`/admin/vendor-management/${id}`);
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      fetchVendors(token);
+    }
+  }, [fetchVendors]);
+
+  const handleSearch = (value: string) => {
+    searchVendors(value);
+  };
+
+  const handleSort = (value: 'newest' | 'oldest') => {
+    sortVendors(value);
+  };
+
+  if (isLoading) return <div className="text-center p-4">Loading...</div>;
+  if (error) return <div className="text-center text-red-500 p-4">Error: {error}</div>;
+
+  const handleClick = (id: string) => {
+    router.push(`/admin/vendor-management/${encodeURIComponent(id)}`);
   };
 
   return (
@@ -40,9 +59,11 @@ const AllVendorsTable = () => {
           <AppSearchInput
             className="bg-white border-none focus-visible:ring-0 w-full"
             inputClass="placeholder:text-[##4D4D4D] placeholder:text-sm"
+            onChange={handleSearch}
+            placeholder="Search vendors..."
           />
           <div className='w-full flex gap-2'>
-            <Select>
+            <Select onValueChange={handleSort}>
               <SelectTrigger className="w-full lg:w-auto bg-gold-500 text-black border-none focus-visible:ring-0">
                 <SelectValue placeholder="Sort by: Newest" />
               </SelectTrigger>
@@ -76,29 +97,36 @@ const AllVendorsTable = () => {
           </TableRow>
         </TableHeader>
 
-        {[1, 2, 3, 4, 5, 6, 7].map((table) => {
-          return (
-            <TableBody
-              className="border-b-2 border-[#9797974b]"
-              key={table}
-              onClick={() => handleClick(table)}
+        <TableBody>
+          {vendors.map((vendor, index) => (
+            <TableRow
+              key={vendor.id}
+              onClick={() => handleClick(vendor.id)}
+              className="cursor-pointer hover:bg-[#424242] transition-colors"
             >
-              <TableRow>
-                <TableCell className="font-medium py-5">{table}</TableCell>
-                <TableCell>Christine Brooks</TableCell>
-                <TableCell>09123456789</TableCell>
-                <TableCell>1Hour ago</TableCell>
-                <TableCell>ikeja-Lagos</TableCell>
-                <TableCell>brookschristine.mail.com</TableCell>
-                <TableCell>
-                  <Badge className="bg-[#ffec4348] text-[#FFEC43] text-sm">
-                    Pending
-                  </Badge>
-                </TableCell>
-              </TableRow>
-            </TableBody>
-          );
-        })}
+              <TableCell className="font-medium py-5">{index + 1}</TableCell>
+              <TableCell>{`${vendor.first_name} ${vendor.last_name}`}</TableCell>
+              <TableCell>{vendor.phone || 'N/A'}</TableCell>
+              <TableCell>
+                {vendor.last_login
+                  ? new Date(vendor.last_login).toLocaleDateString()
+                  : 'Never'}
+              </TableCell>
+              <TableCell>{vendor.location || 'N/A'}</TableCell>
+              <TableCell>{vendor.email}</TableCell>
+              <TableCell>
+                <Badge
+                  className={`${vendor.is_active
+                    ? 'bg-[#00b69b48] text-[#00B69B]'
+                    : 'bg-red-100 text-red-500'
+                    } text-sm`}
+                >
+                  {vendor.is_active ? 'Active' : 'Disabled'}
+                </Badge>
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
       </Table>
     </section>
   );

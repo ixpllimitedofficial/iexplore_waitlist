@@ -4,7 +4,7 @@ export const loginValidationSchema = z.object({
   password: z.string().min(1, {
     message: "Password must be not be empty.",
   }),
-  email: z.string().email({
+  username_or_email: z.string().email({
     message: "Please put in a valid email.",
   }),
 });
@@ -61,7 +61,8 @@ export const signupValidationSchema = z
   })
   .refine((data) => data.password === data.confirm_password, {
     message: "Passwords don't match",
-    path: ["confirm_password"],
+    path: ["confirm_password"],                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+
   });
 
   export const signupVendorValidationSchema = z

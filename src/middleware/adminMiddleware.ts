@@ -1,22 +1,23 @@
+
 import { NextResponse, NextRequest } from "next/server";
 
-export function adminMiddleware(request: NextRequest) {
-  const isAuthenticated = false;
+export function middleware(request: NextRequest) {
+  const token = request.cookies.get("adminToken")?.value;
+  const isAdminLoginPage = request.nextUrl.pathname === "/admin-login";
 
-  // Allow access to the /user route itself (e.g., login page)
-  if (request.nextUrl.pathname === "/admin") {
+  // If the user is already authenticated, let them proceed
+  if (token) {
     return NextResponse.next();
   }
 
-  // If the user is authenticated, continue as normal
-  if (isAuthenticated) {
-    return NextResponse.next();
+  // If not authenticated and not already on the login page, redirect to /admin-login
+  if (!token && !isAdminLoginPage) {
+    return NextResponse.redirect(new URL("/admin-login", request.url));
   }
 
-  // Redirect to login page if not authenticated
-  return NextResponse.redirect(new URL("/admin", request.url));
+  return NextResponse.next();
 }
 
 export const config = {
-  matcher: "/admin/:path*",
+  matcher: ["/admin/:path*"], // Protects all /admin/* routes
 };

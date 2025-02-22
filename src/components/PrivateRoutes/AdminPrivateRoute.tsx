@@ -14,7 +14,7 @@ export default function UserPrivateRoute({ children }: any) {
   }
 
   // if (!isAdminLoggedin) {
-  //   return redirect("/admin");
+  //   return redirect("/admin-login");
   // }
 
   return (

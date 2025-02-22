@@ -1,3 +1,5 @@
+'use client'
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -7,8 +9,13 @@ import ProfileImage from "@/assets/img/AdminPageImages/ProfileImage.png";
 import AppButton from "@/components/UI/Button/AppButton";
 import { Badge } from "@/components/UI/badge";
 import AppInput from "@/components/UI/Inputs/AppInput";
-
+import { adminStore } from "@/store/admin";
 const ProfileDetails = () => {
+  const  logoutAdmin  = adminStore((state) => state.logoutAdmin)
+
+  const handleLogout = () => {
+    logoutAdmin()
+  }
   return (
     <>
       <div className="mt-5 grid grid-cols-6 gap-4">
@@ -138,11 +145,12 @@ const ProfileDetails = () => {
         </div>
       </div>
 
-      <Link href="/admin" className="flex justify-center mt-5">
+      <Link href="/admin-login" className="flex justify-center mt-5">
         <AppButton
           leftIcon={SignOutIconSvg}
           btnText="Sign Out"
           className="text-sm"
+         handleClick={handleLogout}
         />
       </Link>
     </>

@@ -1,27 +1,41 @@
 'use client'
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import AdProfile from "@/assets/svg/AdProfile.svg";
 import AdsIconSvg from "@/assets/svg/AdminIconsSvg/AdsIconSvg.svg";
 import { Button } from "@/components/UI/button";
 import { useRouter } from "next/navigation";
+import { adminStore } from "@/store/admin";
 
 type TabKey = "all" | "running" | "pending" | "stopped";
 
 const Page = () => {
+    const [date, setDate] = React.useState<Date | undefined>(new Date());
+    const [searchQuery, setSearchQuery] = useState("");
+    const [activeTab, setActiveTab] = useState<TabKey>("all");
+    const [showModal, setShowModal] = useState(false);
+    const [selectedAd, setSelectedAd] = useState<{ id: number; name: string } | null>(null);
+
+    const isAdminLoggedin = adminStore((state) => state.isAdminLoggedin);
     const router = useRouter();
+
+    useEffect(() => {
+        // Redirect to login if admin is not logged in
+        if (!isAdminLoggedin) {
+            router.replace("/admin-login");
+        }
+    }, [isAdminLoggedin, router]);
+
+    if (!isAdminLoggedin) {
+        return <p>Loading...</p>;
+    }
 
     const handleCreateAd = () => {
         router.push("/admin/ads-management/create-ad");
-      };
+    };
+
     const divStyle =
         "flex items-center justify-between gap-2 xl:gap-4 bg-[#23232325] rounded-2xl border border-[#4D4D4D] w-full h-auto p-4 lg:px- min-h-[88px]";
-
-    const [searchQuery, setSearchQuery] = useState("")
-    const [activeTab, setActiveTab] = useState<TabKey>("all");
-    const [showModal, setShowModal] = useState(false)
-    const [selectedAd, setSelectedAd] = useState<{ id: number; name: string } | null>(null);
-
 
     const statusColors: Record<"Running" | "Stopped" | "Pending", string> = {
         Running: "bg-[#008800]",
@@ -58,12 +72,12 @@ const Page = () => {
         ],
     };
 
-    //filter ads logic
+    // Filter ads logic
     const filteredAd = adsData[activeTab].filter(
         (ad) =>
             ad.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
             ad.vendor.toLowerCase().includes(searchQuery.toLowerCase())
-    )
+    );
 
     const handleRemoveClick = (ad: { id: number; name: string }) => {
         setSelectedAd(ad);
@@ -98,7 +112,6 @@ const Page = () => {
                             >
                                 Cancel
                             </button>
-
                         </div>
                     </div>
                 </div>
@@ -190,7 +203,6 @@ const Page = () => {
                         </div>
                     </div>
 
-
                     {/* Search Input */}
                     <input
                         type="text"
@@ -200,8 +212,6 @@ const Page = () => {
                         onChange={(e) => setSearchQuery(e.target.value)}
                     />
                 </div>
-
-
             </div>
 
             {/* Ads Display Section */}

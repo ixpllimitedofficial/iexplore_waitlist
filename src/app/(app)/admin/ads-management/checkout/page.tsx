@@ -74,7 +74,7 @@ const AdCheckout: React.FC<AdCheckoutProps> = ({ selectedPlan = defaultPlan }) =
                         <div className="mt-3 text-sm space-y-2">
                             <span className="text-yellow-500 text-base">Instructions:</span>
                             <p>1. Please transfer money to this account through ATM, Bank app, etc.</p>
-                            <p>2. Click "I have made this bank transfer" after making the transfer.</p>
+                            <p>2. Click  I have made this bank transfer  after making the transfer.</p>
                             <p>3. Payment usually takes 30 minutes or less to be confirmed.</p>
                         </div>
                     </div>

@@ -61,7 +61,7 @@ const AutoSlideCarousel = () => {
 
       {/* Custom Indicator */}
       <div
-        className={`${style.indicator} absolute md:left-0 md:right-0 flex flex-wrap justify-end md:justify-center gap-2 z-50`}
+        className={`${style.indicator} absolute md:left-0 md:right-0 flex flex-wrap justify-center gap-2 z-50`}
       >
         {slides.map((_, index) => (
           <span

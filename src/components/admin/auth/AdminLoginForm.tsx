@@ -4,8 +4,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { userStore } from "@/store/user";
-import { useEffect } from "react";
-
+import { useEffect, useState } from "react";
+import { adminStore } from "@/store/admin";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import {
@@ -23,15 +23,17 @@ import { inputStyling } from "@/utils/constant";
 import { loginValidationSchema } from "@/types/authSchemas";
 import FilterButton from "@/components/UI/Button/FilterButton";
 import NewAppButton from "@/components/UI/Button/NewAppButton";
+import { loadBindings } from "next/dist/build/swc";
 
 const LoginForm = () => {
-  // router
   const router = useRouter();
+  const [loading, setLoading] = useState(false)
+
 
   // zustand
-  const user = userStore((state: any) => state.user);
-  const isVendorLoggedin = userStore((state: any) => state.isVendorLoggedin);
-  const loginUser = userStore((state: any) => state.loginUser);
+  const admin = adminStore((state: any) => state.admin);
+  const isAdminLoggedin = adminStore((state: any) => state.isAdminLoggedin);
+  const loginAdmin = adminStore((state: any) => state.loginAdmin);
 
   // react hook form
   const form = useForm<z.infer<typeof loginValidationSchema>>({
@@ -42,26 +44,34 @@ const LoginForm = () => {
     },
   });
 
-  function onSubmit(data: z.infer<typeof loginValidationSchema>) {
-    console.log(data);
-    alert(
-      `Logged in with: Username: ${data.username_or_email}, Password: ${data.password} `
-    );
-    // loginUser(data);
-    router.push("/admin/dashboard");
+  async function onSubmit(data: z.infer<typeof loginValidationSchema>) {
+    const formData = {
+      username_or_email: data.username_or_email.trim(),
+      password: data.password,
+    };
+    setLoading(true)
+    try {
+      const success = await loginAdmin(formData);
+      if (success) {
+        router.push("/admin/dashboard");
+      }
+    } catch (error: any) {
+      console.error("Error in onSubmit:", error);
+    }
   }
-
   useEffect(() => {
-    // console.log(user);
-    // console.log(isAdminLoggedin);
-    // if (isAdminLoggedin) {
-    //   router.push("/admin/dashboard");
-    // }
-  }, [user, router, isVendorLoggedin]);
+    const token = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("adminToken="));
+
+    if (token && isAdminLoggedin) {
+      router.push("/admin/dashboard");
+    }
+  }, [isAdminLoggedin, router]);
 
   return (
     <>
-    <p className="py-3 text-3xl text-center font-bold hidden lg:block">Login</p>
+      <p className="py-3 text-3xl text-center font-bold hidden lg:block">Login</p>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
@@ -73,17 +83,14 @@ const LoginForm = () => {
             name="username_or_email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Username or Email address:</FormLabel>
+                <FormLabel>Email address:</FormLabel>
                 <FormControl>
                   <Input
                     className={`${inputStyling} `}
-                    placeholder="Username or Email"
+                    placeholder="Email"
                     {...field}
                   />
                 </FormControl>
-                {/* <FormDescription>
-                This is your public display name.
-              </FormDescription> */}
                 <FormMessage />
               </FormItem>
             )}
@@ -104,9 +111,6 @@ const LoginForm = () => {
                     type="password"
                   />
                 </FormControl>
-                {/* <FormDescription>
-                This is your public display name.
-              </FormDescription> */}
                 <FormMessage />
               </FormItem>
             )}
@@ -119,8 +123,12 @@ const LoginForm = () => {
             Forgot Password
           </Link>
 
-          {user.message && <p>{user.message}</p>}
-          <NewAppButton btnText="Login" type="submit" className="text-sm"/>
+          {admin.message && <p>{admin.message}</p>}
+          <NewAppButton btnText={loading ? "Loggin in..." : "Login"}
+            type="submit"
+            className="text-sm mb-10 md:mb-5"
+            // disabled={loading}
+          />
         </form>
       </Form>
     </>
