@@ -7,6 +7,16 @@ import BookmarkIcon from "@/assets/svg/BookmarkIcon.svg";
 import { Button } from "@/components/UI/button";
 import RatingsIcon from "@/assets/svg/UserIconsSvg/RatingsIcon.svg";
 import { DeleteIcon, Trash2Icon } from "lucide-react";
+
+// Define the type for the drink object
+type Drink = {
+  id: string;
+  image: string;
+  name: string;
+  price: string;
+  spot: string;
+  slug: string;
+}
 type EventProps = {
   handleClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   handleDelete?: (event: React.MouseEvent<HTMLButtonElement>) => void;
@@ -17,6 +27,7 @@ type EventProps = {
   }) => void;
   showDeleteButton?: boolean; // Add this prop
   hideDicountContent?: boolean;
+  drinks: Drink;
 };
 const DrinkCard = ({
   handleClick,
@@ -25,6 +36,7 @@ const DrinkCard = ({
   hideDicountContent,
   removeDiscount,
   onSaveDiscount,
+  drinks
 }: EventProps) => {
   const [selectedDiscount, setSelectedDiscount] = useState<number | null>(null);
   const [customDiscount, setCustomDiscount] = useState<string>("");
@@ -50,15 +62,17 @@ const DrinkCard = ({
 
       <div className="w-full h-[130px] md:h-[200px] overflow-hidden rounded-3xl">
         <Image
-          src={DrinkImage}
+          src={drinks?.image || DrinkImage}
           alt="drink image"
           className="w-full h-full object-cover"
+          width={100}
+          height={50}
         />
       </div>
 
       <div className="flex items-center justify-between mt-4 mb-1 px-2">
         <p className="text-sm md:text-lg font-semibold">
-          Johnnie Walker Black Label
+          {drinks?.name}
         </p>
 
         <div className="flex items-center gap-1">
@@ -79,13 +93,13 @@ const DrinkCard = ({
       </div>
 
       <div className="px-2 flex items-center my-1">
-        <p className=" text-sm md:text-xl font-bold">N232,000</p>
+        <p className=" text-sm md:text-xl font-bold">N{drinks?.price}</p>
         <p
           className={`${
             hideDicountContent ? "block" : "hidden"
           }pl-2 text-lg text-[#D1D1D1] hidden md:block`}
         >
-          Available at Club Quilox
+          Available at {drinks?.spot}
         </p>
       </div>
 

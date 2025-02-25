@@ -94,9 +94,8 @@ const Page = () => {
         ) : (
           feed.map((item, index) => {
             return (
-              <div className="-mt-5 md:mt-10 mb-5 flex flex-col justify-center items-center">
+              <div key={item.id} className="-mt-5 md:mt-10 mb-5 flex flex-col justify-center items-center">
                 <StatusCard
-                  key={index}
                   item={item}
                   onRemove={() => removeFeedItem(index)}
                   handleFollow={followMe}

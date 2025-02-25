@@ -120,11 +120,12 @@ const Page = () => {
     };
     fetchSpotCategory();
   }, [token]);
+  console.log("spot category: ", spotCategory);
   useEffect(() => {
     const fetchSpotFeatures = async () => {
       try {
         const responseData = await getSpotFeatures(token.accessToken);
-        console.log(responseData);
+        console.log("Fetched Spot Features:", responseData); // Log fetched features
         const spotFeatures = responseData;
         setSpotFeatures(Array.isArray(spotFeatures) ? spotFeatures : []);
       } catch (error: any) {
@@ -133,11 +134,12 @@ const Page = () => {
     };
     fetchSpotFeatures();
   }, [token]);
-  console.log("spot features", spotFeatures);
+  console.log(spotFeatures);
   useEffect(() => {
     const fetchSpotOffers = async () => {
       try {
         const responseData = await getSpotOffers(token.accessToken);
+        console.log("Fetched Spot Offers:", responseData); // Log fetched offers
         const spotOffers = responseData;
         setSpotOffers(Array.isArray(spotOffers) ? spotOffers : []);
       } catch (error: any) {
@@ -146,21 +148,50 @@ const Page = () => {
     };
     fetchSpotOffers();
   }, [token]);
-
+  console.log(spotOffers);
   const handleSpotCategoryChange = (value: string) => {
     setSelectedSpotCategory(value);
   };
   const handleSpotFeatureChange = (value: any[]) => {
     setSelectedSpotFeatures(value);
   };
+
   const handleSpotOfferChange = (value: any[]) => {
     setSelectedSpotOffer(value);
   };
+  // const handleSpotFeatureChange = (value: string[]) => {
+  //   const featureNames = value
+  //     .map((name) => {
+  //       const feature = spotFeatures.find((f) => f.name === name);
+  //       return feature ? feature.name : null;
+  //     })
+  //     .filter((name) => name !== null);
+
+  //   setSelectedSpotFeatures(featureNames as string[]);
+  //   console.log("Selected feature names:", featureNames); // Log selected feature names
+  // };
+  console.log(selectedSpotFeatures);
+  // const handleSpotOfferChange = (value: string[]) => {
+  //   const offerNames = value
+  //     .map((name) => {
+  //       const offer = spotOffers.find((o) => o.name === name);
+  //       return offer ? offer.name : null;
+  //     })
+  //     .filter((name) => name !== null);
+
+  //   setSelectedSpotOffer(offerNames as string[]);
+  //   console.log("Selected offer names:", offerNames); // Log selected offer names
+  // };
+  console.log(selectedSpotOffer);
+
   const handleEntryChange = (value: string) => {
     setSelectedEntry(value);
     console.log("Selected value:", value);
   };
   console.log(selectedEntry);
+  console.log("Selected features:", selectedSpotFeatures);
+  console.log("Selected offers:", selectedSpotOffer);
+
   // // Handle reset for previews
   const handleReset = (
     setFileState: Function,
@@ -177,15 +208,12 @@ const Page = () => {
   async function onSubmit(data: z.infer<typeof setupBusinessValidationSchema>) {
     setBtnState(true);
     try {
-      // Create a FormData object for the spot details and profile picture
       const spotDetailsFormData = new FormData();
 
-      // Append the profile picture to the FormData
       if (selectedFile) {
         spotDetailsFormData.append("primary_image", selectedFile);
       }
 
-      // Append other spot details to the FormData
       spotDetailsFormData.append("name", data.spot_name);
       spotDetailsFormData.append("location", data.spot_address);
       spotDetailsFormData.append("state", data.spot_state);
@@ -193,23 +221,33 @@ const Page = () => {
       spotDetailsFormData.append("opening_time", data.opening_hour);
       spotDetailsFormData.append("closing_time", data.closing_hour);
       spotDetailsFormData.append("category", selectedSpotCategory);
-      spotDetailsFormData.append(
-        "features",
-        JSON.stringify(selectedSpotFeatures)
-      );
-      spotDetailsFormData.append("offers", JSON.stringify(selectedSpotOffer));
+      // spotDetailsFormData.append(
+      //   "features",
+      //   JSON.stringify(selectedSpotFeatures)
+      // );
+      // spotDetailsFormData.append("offers", JSON.stringify(selectedSpotOffer));
+      // spotDetailsFormData.append("features", selectedSpotFeatures);
+      // spotDetailsFormData.append("offers", selectedSpotOffer);
+      // Appending features and offers individually
+      selectedSpotFeatures.forEach((feature, index) => {
+        spotDetailsFormData.append(`feature_${index}`, feature);
+      });
+
+      selectedSpotOffer.forEach((offer, index) => {
+        spotDetailsFormData.append(`offer_${index}`, offer);
+      });
       spotDetailsFormData.append("entry", selectedEntry || "");
 
-      // Log FormData for debugging
+      // Log form data for debugging
       for (let [key, value] of spotDetailsFormData.entries()) {
-        console.log(key, value);
+        console.log(key, ": ", value);
       }
 
-      // Submit spot details and profile picture to the first endpoint
       const spotDetailsResponse = await createNewSpot(
         spotDetailsFormData,
         token.accessToken
       );
+
       if (!spotDetailsResponse.ok) {
         const error = await spotDetailsResponse.json();
         throw new Error(
@@ -220,15 +258,13 @@ const Page = () => {
       }
 
       const spotDetailsResult = await spotDetailsResponse.json();
-      const spotId = spotDetailsResult.slug; // Ensure this matches the backend response structure
+      const spotId = spotDetailsResult.slug;
 
-      // Submit business photos to the second endpoint
       const photosFormData = new FormData();
       businessPhotos.forEach((file) => {
         photosFormData.append("photos", file);
       });
 
-      // Log FormData for debugging
       for (let [key, value] of photosFormData.entries()) {
         console.log(key, value);
       }
@@ -445,12 +481,12 @@ const Page = () => {
               >
                 {spotCategory.map((category) => (
                   <ToggleGroupItem
-                    key={category.slug}
-                    value={category.slug}
-                    aria-label={`Toggle ${category.slug}`}
+                    key={category.name}
+                    value={category.name}
+                    aria-label={`Toggle ${category.name}`}
                     className="bg-[#4D4D4D66] text-[#4D4D4D] w-[46%] md:w-[30%] text-2xl py-10 text-left border border-[#4D4D4D] hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
                   >
-                    {category.slug}
+                    {category.name}
                   </ToggleGroupItem>
                 ))}
               </ToggleGroup>
@@ -464,9 +500,9 @@ const Page = () => {
               >
                 {spotFeatures.map((feature) => (
                   <ToggleGroupItem
-                    key={feature.name}
-                    value={feature.name}
-                    aria-label={`Toggle ${feature.name}`}
+                    key={feature.slug}
+                    value={feature.slug}
+                    aria-label={`Toggle ${feature.slug}`}
                     className="border border-[#4D4D4D] text-[#4D4D4D] p-4 px-4 rounded-full hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
                   >
                     <p>{feature.name}</p>
@@ -483,9 +519,9 @@ const Page = () => {
               >
                 {spotOffers.map((offer) => (
                   <ToggleGroupItem
-                    key={offer.name}
-                    value={offer.name}
-                    aria-label={`Toggle ${offer.name}`}
+                    key={offer.slug}
+                    value={offer.slug}
+                    aria-label={`Toggle ${offer.slug}`}
                     className="border border-[#4D4D4D] text-[#4D4D4D] p-4 px-4 rounded-full hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
                   >
                     <p>{offer.name}</p>
