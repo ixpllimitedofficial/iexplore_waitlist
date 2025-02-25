@@ -17,7 +17,7 @@ interface Token {
 const Page = () => {
   const [spotDetails, setSpotDetails] = useState({});
   const { id } = useParams();
-  const slug = id;
+  const slug = Array.isArray(id) ? id[0] : id;
 
   console.log(`id`, id);
   const token = vendorStore((state: any) => state.token) as Token;

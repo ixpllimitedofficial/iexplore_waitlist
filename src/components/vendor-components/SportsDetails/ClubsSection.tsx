@@ -27,8 +27,8 @@ const ClubsSection = () => {
   const [spots, setSpots] = useState<Spot[]>([]);
   const [error, setError] = useState<string | null>(null);
 
-  const token = vendorStore((state: VendorState) => state.token);
-  
+  const token = vendorStore((state: any) => state.token) as Token;
+
   useEffect(() => {
     const fetchSpots = async () => {
       try {
@@ -63,7 +63,7 @@ const ClubsSection = () => {
       </div>
       <div className="mt-4 grid grid-col-1 lg:grid-cols-3 gap-5 md:pr-5">
         {spots &&
-          spots.map((spot) => {
+          spots.slice(0, 3).map((spot) => {
             return <ClubCard key={spot.id} spot={spot} />;
           })}
       </div>

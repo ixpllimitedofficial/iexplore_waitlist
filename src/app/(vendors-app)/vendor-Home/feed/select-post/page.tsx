@@ -12,7 +12,7 @@ interface File {
   name: string;
 }
 
-const page = () => {
+const Page = () => {
   const [uploadedFiles, setUploadedFiles] = useState<File[] | null>(null);
   const [checkedFiles, setCheckedFiles] = useState<{ [key: number]: boolean }>(
     {}
@@ -122,4 +122,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

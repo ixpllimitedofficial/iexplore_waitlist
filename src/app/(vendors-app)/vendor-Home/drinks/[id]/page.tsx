@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ArrowLeft from "@/assets/svg/ArrowLeft.svg";
@@ -10,7 +11,20 @@ import FrameThree from "@/assets/img/VendorPage/Frame 20031.png";
 import FrameFour from "@/assets/img/VendorPage/Frame 20032.png";
 import FrameFive from "@/assets/img/VendorPage/Frame 20027 (1).png";
 import FrameSix from "@/assets/img/VendorPage/Frame 20031 (1).png";
+import { getSingleDrink } from "@/app/vendorAction";
+import { vendorStore } from "@/store/vendor";
+import { useParams } from "next/navigation";
 
+interface Token {
+  accessToken: string;
+}
+
+interface DrinkDetails {
+  description?: string;
+  price?: string;
+  name?: string;
+  // Add other properties as needed
+}
 const slides = [
   { src: FrameOne, alt: "frame one", height: 50, width: 800 },
   { src: FrameTwo, alt: "frame two", height: 50, width: 800 },
@@ -26,6 +40,27 @@ const note =
   "You have 24 hours to get your drinks at this location after you claim it online";
 const title = "Johnnie Walker Black Label";
 const Page = () => {
+  const [drinkDetails, setDrinkDetails] = useState<DrinkDetails>({});
+  const { id } = useParams();
+  const slug = Array.isArray(id) ? id[0] : id;
+  console.log(`id: `, id);
+  const token = vendorStore((state: any) => state.token) as Token;
+
+  useEffect(() => {
+    const fetchDrinkDetails = async () => {
+      if (id) {
+        try {
+          const data = await getSingleDrink(slug, token.accessToken);
+          console.log(`data:`, data);
+          setDrinkDetails(data);
+        } catch (error: any) {
+          console.error(error.message);
+        }
+      }
+    };
+
+    fetchDrinkDetails();
+  }, [slug, token]);
   return (
     <>
       <Header title="Drinks" className="hidden md:block" />
@@ -36,18 +71,18 @@ const Page = () => {
           </Link>
 
           <div className="flex justify-center items-center gap-3 w-full">
-            <p className=" font-bold text-3xl">Johnnie Walker Black Label</p>
+            <p className=" font-bold text-3xl">{drinkDetails?.name}</p>
           </div>
         </div>
 
         <DrinksDetials
           slides={slides}
           images={slides}
-          description={description}
-          price={price}
+          description={drinkDetails?.description || description}
+          price={drinkDetails?.price || price}
           rating={rating}
           note={note}
-          title={title}
+          title={drinkDetails?.name || title}
         />
       </section>
     </>

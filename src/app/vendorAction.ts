@@ -34,17 +34,6 @@ for the authenticated vendor.
 //GET /v1/drink-categories/
 
 
-//get sport and create spot working
-//GET /v1/spots/
-//POST /v1/spots/
-//Get All spot Categories: /v1/spot-categories/
-//Get All spot Feature: /v1/spot-features/
-//GET All spot offer: /v1/spot-offers/
-
-//Get vendor drinks claim data: Drinks claim Analytics: GET /v1/vendor/drink-claims-analytics/
-
-
-
 interface Token {
   accessToken: string;
 }
@@ -119,11 +108,85 @@ export async function getDrinksCategories( token: string): Promise<any> {
     throw error;
   }
 }
+//get details of a particular drink category
+export async function getDetailDrinkCategory(slug:string,  token: string): Promise<any> {
+  try{
+    const response = await fetch(`${BASE_URL}/v1/drinks/${slug}/`, {
+      method: "GET",
+      headers: {
+        "Accept": "application/json",
+        "Authorization": `Bearer ${token}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const responseData = await response.json();
+    console.log(`responseData`, responseData);
+    return responseData;
+  }catch(error: any){
+    console.error("Error fetching external data:", error.message);
+    throw error;
+  }
+}
+//get all drinks
+export async function getAllDrinks( token: string): Promise<any> {
+  try{
+    const response = await fetch(`${BASE_URL}/v1/drinks/`, {
+      method: "GET",
+      headers: {
+        "Accept": "application/json",
+        "Authorization": `Bearer ${token}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const responseData = await response.json();
+    console.log(`responseData`, responseData);
+    return responseData;
+  }catch(error: any){
+    console.error("Error fetching external data:", error.message);
+    throw error;
+  }
+}
+//get single drink
+export async function getSingleDrink(slug:string,  token: string): Promise<any> {
+  try{
+    const response = await fetch(`${BASE_URL}/v1/drinks/${slug}/`, {
+      method: "GET",
+      headers: {
+        "Accept": "application/json",
+        "Authorization": `Bearer ${token}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const responseData = await response.json();
+    console.log(`responseData`, responseData);
+    return responseData;
+  }catch(error: any){
+    console.error("Error fetching external data:", error.message);
+    throw error;
+  }
+}
+
+
 
 //Spots section
 //create spot
 export async function createNewSpot(data: FormData, token: string): Promise<any> {
   try {
+    console.log("Request URL:", `${BASE_URL}/v1/spots/`);
+    console.log("Request Headers:", {
+      "Accept": "application/json",
+      "Authorization": `Bearer ${token}`,
+    });
+    console.log("Request Body:", data);
     const response = await fetch(`${BASE_URL}/v1/spots/`, {
       method: "POST",
       headers: {
@@ -149,6 +212,12 @@ export async function createNewSpot(data: FormData, token: string): Promise<any>
 //create new spot media
 export async function createNewSpotMedia(data: FormData, slug: string, token: string): Promise<any> {
   try {
+    console.log("Request URL:", `${BASE_URL}/v1/spots/${slug}`);
+    console.log("Request Headers:", {
+      "Accept": "application/json",
+      "Authorization": `Bearer ${token}`,
+    });
+    console.log("Request Body:", data);
     const response = await fetch(`${BASE_URL}/v1/spots/${slug}`, {
       method: "POST",
       headers: {
