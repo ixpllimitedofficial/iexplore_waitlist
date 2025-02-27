@@ -9,7 +9,7 @@ import VerifyUserOTP from "./VerifyUserOTP";
 
 import ExploreLogo from "@/assets/svg/NavbarSvg/iExploreTextLogoSvg.svg";
 
-type FlowType = "verifyOTP"
+type FlowType = "verifyOTP";
 
 const Signup = () => {
   const flowParams = useSearchParams().get("flow") as FlowType;
@@ -31,7 +31,7 @@ const Signup = () => {
               </p>
 
               <div className="">
-                <SignupFoorm />
+                {/* <SignupFoorm /> */}
 
                 <div className="flex items-center justify-center mt-5 gap-1">
                   <p className="text-lg font-medium">

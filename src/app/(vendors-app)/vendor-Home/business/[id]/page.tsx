@@ -36,7 +36,7 @@ const Page = () => {
     };
 
     fetchSpotDetails();
-  }, [slug, token]);
+  }, [id, slug, token]);
 
   return (
     <>

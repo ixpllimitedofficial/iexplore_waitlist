@@ -132,15 +132,15 @@ const Page = () => {
                 Help with sign up
               </AccordionTrigger>
               <AccordionContent className="text-[#D1D1D1] text-justify">
-                If you need help signing up, start by clicking the "Sign Up"
-                button on our homepage or app login screen. Enter your personal
-                details, such as your name and email, and follow the prompts to
-                complete the form. You will then receive the a verification code
-                via email or SMS- enter this code to confirm your account. After
-                verification, you can follow any additional steps to personalize
-                your profile, and you are all set! if you run into any issues
-                along the way, do not hesitate to contact our support team, and
-                we will be happy to assist you.
+                If you need help signing up, start by clicking the &quot;Sign
+                Up&quot; button on our homepage or app login screen. Enter your
+                personal details, such as your name and email, and follow the
+                prompts to complete the form. You will then receive the a
+                verification code via email or SMS- enter this code to confirm
+                your account. After verification, you can follow any additional
+                steps to personalize your profile, and you are all set! if you
+                run into any issues along the way, do not hesitate to contact
+                our support team, and we will be happy to assist you.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem
@@ -151,15 +151,15 @@ const Page = () => {
                 Help with sign up
               </AccordionTrigger>
               <AccordionContent className="text-[#D1D1D1] text-justify">
-                If you need help signing up, start by clicking the "Sign Up"
-                button on our homepage or app login screen. Enter your personal
-                details, such as your name and email, and follow the prompts to
-                complete the form. You will then receive the a verification code
-                via email or SMS- enter this code to confirm your account. After
-                verification, you can follow any additional steps to personalize
-                your profile, and you are all set! if you run into any issues
-                along the way, do not hesitate to contact our support team, and
-                we will be happy to assist you.
+                If you need help signing up, start by clicking the &quot;Sign
+                Up&quot; button on our homepage or app login screen. Enter your
+                personal details, such as your name and email, and follow the
+                prompts to complete the form. You will then receive the a
+                verification code via email or SMS- enter this code to confirm
+                your account. After verification, you can follow any additional
+                steps to personalize your profile, and you are all set! if you
+                run into any issues along the way, do not hesitate to contact
+                our support team, and we will be happy to assist you.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem
@@ -170,15 +170,15 @@ const Page = () => {
                 Help with sign up
               </AccordionTrigger>
               <AccordionContent className="text-[#D1D1D1] text-justify">
-                If you need help signing up, start by clicking the "Sign Up"
-                button on our homepage or app login screen. Enter your personal
-                details, such as your name and email, and follow the prompts to
-                complete the form. You will then receive the a verification code
-                via email or SMS- enter this code to confirm your account. After
-                verification, you can follow any additional steps to personalize
-                your profile, and you are all set! if you run into any issues
-                along the way, do not hesitate to contact our support team, and
-                we will be happy to assist you.
+                If you need help signing up, start by clicking the &quot;Sign
+                Up&quot; button on our homepage or app login screen. Enter your
+                personal details, such as your name and email, and follow the
+                prompts to complete the form. You will then receive the a
+                verification code via email or SMS- enter this code to confirm
+                your account. After verification, you can follow any additional
+                steps to personalize your profile, and you are all set! if you
+                run into any issues along the way, do not hesitate to contact
+                our support team, and we will be happy to assist you.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
