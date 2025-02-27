@@ -60,7 +60,7 @@ const Page = () => {
     };
 
     fetchDrinkDetails();
-  }, [slug, token]);
+  }, [id, slug, token]);
   return (
     <>
       <Header title="Drinks" className="hidden md:block" />

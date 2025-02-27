@@ -94,9 +94,10 @@ const Page = () => {
         <div className="w-full md:w-[90%] mt-5 md:mt-10 mx-auto">
           <p className="text-2xl font-bold mb-5">Running Ads</p>
           <div className=" grid grid-cols-1 md:grid-cols-2 gap-5">
-            {[1, 2, 3, 4, 5, 6].map((item) => {
+            {[1, 2, 3, 4, 5, 6].map((item, index) => {
               return (
                 <AdvertCard
+                  key={index}
                   profileImg={StoryImg}
                   title="DJ Maxx Party hard"
                   status="Running"
@@ -111,9 +112,10 @@ const Page = () => {
         <div className="w-full md:w-[90%] mt-5 md:mt-10 mx-auto">
           <p className="text-2xl font-bold mb-5">Expired Ads</p>
           <div className=" grid grid-cols-1 md:grid-cols-2 gap-5">
-            {[1, 2, 3, 4].map((item) => {
+            {[1, 2, 3, 4].map((item, index) => {
               return (
                 <AdvertCard
+                  key={index}
                   profileImg={StoryImg}
                   title="DJ Maxx Party hard"
                   status="Running"

@@ -7,7 +7,7 @@ import { useStore } from "zustand";
 import { vendorStore } from "@/store/vendor";
 import { isAuthenticated } from "@/utils/auth";
 import { useRouter } from "next/navigation";
-const page = () => {
+const Page = () => {
   const token = useStore(vendorStore, (state: any) => state.token);
 
   return (
@@ -19,4 +19,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

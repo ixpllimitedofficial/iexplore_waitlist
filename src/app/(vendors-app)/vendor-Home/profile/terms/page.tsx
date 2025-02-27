@@ -53,7 +53,7 @@ const Page = () => {
             </p>
             <p>-Violating any laws, regulations, or third-party rights.</p>
             <p>
-              -Interfering with or disrupting the app's functionality or
+              -Interfering with or disrupting the app&apos;s functionality or
               servers.
             </p>
             <p>
@@ -79,10 +79,10 @@ const Page = () => {
             </p>
             <p className="mb-3">Limitation of Liability</p>
             <p>
-              1.Disclaimer of Warranties: iexplore is provided on an "as is" and
-              "as available" basis, without any warranties of any kind, either
-              express or implied. We do not guarantee that the app will be
-              error-free, secure, or uninterrupted.
+              1.Disclaimer of Warranties: iexplore is provided on an&quot;as
+              is&quot; and &quot;as available&quot; basis, without any warranties of any
+              kind, either express or implied. We do not guarantee that the app
+              will be error-free, secure, or uninterrupted.
             </p>
             <p className="mb-3">
               2.Limitation of Liability: To the maximum extent permitted by law,
