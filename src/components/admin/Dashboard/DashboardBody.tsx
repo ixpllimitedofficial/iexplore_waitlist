@@ -36,7 +36,6 @@ const DashboardBody = () => {
 
     const fetchStats = async () => {
       try {
-        // Get token from cookie
         const cookieValue = document.cookie
           .split("; ")
           .find((row) => row.startsWith("adminToken="));
@@ -59,7 +58,7 @@ const DashboardBody = () => {
   }, [isAdminLoggedin, fetchAdminStats, router]);
 
   if (!isAdminLoggedin) {
-    return <p>Loading...</p>; // Optionally display a loading message
+    return <p>Loading...</p>; 
   }
 
 

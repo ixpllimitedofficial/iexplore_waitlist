@@ -21,7 +21,7 @@ const ProfileCard = () => {
     ? `${firstName} ${lastName}`
     : username || 'Admin';
 
-  // Get initials for avatar fallback
+
   const getInitials = (name: string) => {
     return name
       .split(' ')
@@ -35,7 +35,7 @@ const ProfileCard = () => {
       href="/admin/profile"
       className="hidden lg:flex items-center gap-3 bg-[#23232325] border border-[#4D4D4D] p-4 rounded-2xl hover:bg-[#23232340] transition-colors"
     >
-      <Avatar>
+      <Avatar className="text-black font-bold ">
         <AvatarImage src="" alt={displayName} />
         <AvatarFallback>{getInitials(displayName)}</AvatarFallback>
       </Avatar>
