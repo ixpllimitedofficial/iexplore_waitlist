@@ -38,6 +38,8 @@ const AllUsersTable = () => {
     }
   }, [fetchUsers]);
 
+  // console.log('users', users)
+
   const handleClick = (id: string) => {
     router.push(`/admin/user-management/${encodeURIComponent(id)}`);
   };

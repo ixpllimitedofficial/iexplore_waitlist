@@ -46,7 +46,7 @@ export default function DashboardPage() {
     } else {
       setIsLoading(false);
     }
-  }, [router]); // Removed isAdminLoggedin from dependencies to avoid unnecessary re-renders
+  }, [router]); 
 
   if (isLoading) {
     return <div>Loading...</div>;
