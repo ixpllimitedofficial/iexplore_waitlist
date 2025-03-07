@@ -7,7 +7,7 @@ import ProfileImage from "@/assets/img/AdminPageImages/ReferralProfileImage.png"
 import { adminActions } from "@/app/adminActions";
 
 const ApproveDrinkPage = () => {
-const { approveVendor } = adminActions();
+// const { approveVendor } = adminActions();
     const { id } = useParams();
     const router = useRouter();
     const [status, setStatus] = useState("Pending");
@@ -19,20 +19,20 @@ const { approveVendor } = adminActions();
         return cookieValue ? cookieValue.split("=")[1] : null;
     };
 
-    const handleApprove = async () => {
-        const token = getAdminToken();
+    // const handleApprove = async () => {
+    //     const token = getAdminToken();
 
-        if (!token) {
-            console.error("No admin token found. Please log in.");
-            router.replace("/admin-login"); // Redirect to login if token is missing
-            return;
-        }
+    //     if (!token) {
+    //         console.error("No admin token found. Please log in.");
+    //         router.replace("/admin-login"); // Redirect to login if token is missing
+    //         return;
+    //     }
 
-        if (id) {
-            await approveVendor(id as string, token);
-            router.push("/admin/vendor-management"); // Navigate back after approval
-        }
-    };
+    //     if (id) {
+    //         await approveVendor(id as string, token);
+    //         router.push("/admin/vendor-management"); // Navigate back after approval
+    //     }
+    // };
 
 
     return (
@@ -90,7 +90,7 @@ const { approveVendor } = adminActions();
             {/* Action Button */}
             <div className="flex justify-center mt-6">
                 <button
-                    onClick={handleApprove}
+                    // onClick={handleApprove}
                   
                     className={`w-[80%] lg:w-[50%] text-lg font-bold py-2 px-6 rounded-full transition 
                             : "bg-[#FFD700] hover:bg-[#e6c200] text-black"

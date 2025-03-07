@@ -44,7 +44,6 @@ const AllUsersTable = () => {
     router.push(`/admin/user-management/${encodeURIComponent(id)}`);
   };
 
-  // Updated to handle direct string value
   const handleSearch = (value: string) => {
     searchUsers(value);
   };
