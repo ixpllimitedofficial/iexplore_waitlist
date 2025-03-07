@@ -81,7 +81,7 @@ const DrinksSearchPage: React.FC = () => {
 
         {!isLoading && results.length === 0 && (
           <p className="text-gray-500 mt-4">
-            No results found for "{searchQuery}"
+            No results found for {searchQuery}
           </p>
         )}
       </div>

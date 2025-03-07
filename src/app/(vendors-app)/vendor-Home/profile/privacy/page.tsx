@@ -6,6 +6,7 @@ import ReviewsRatings from "@/components/vendor-components/ReviewsRatings/Review
 import Header from "@/components/vendor-components/MiniHeader/Header";
 import RatingsIcon from "@/assets/svg/UserIconsSvg/RatingsIcon.svg";
 import RatingStarIcon from "@/assets/svg/VendorSvg/star.svg";
+
 const Page = () => {
   return (
     <>
@@ -37,19 +38,20 @@ const Page = () => {
             <p className="mb-3">Information we collect</p>
             <p>1.Personal information</p>
             <p>
-              -When you create an account,we may collect your name,email
-              address, and other neccessary information to provide you with a
+              -When you create an account, we may collect your name, email
+              address, and other necessary information to provide you with a
               personalized experience.
             </p>
             <p className="mb-4">
               -We may collect payment information if you choose to make in-app
-              purchase or subscribe to premium features
+              purchases or subscribe to premium features.
             </p>
             <p>2.Location information</p>
             <p className="mb-4">
               iexplore uses location services to connect you with nearby
-              entertainment locations. We collect your device's location data to
-              enhance your experience and provide accurate recommendations.
+              entertainment locations. We collect your device&apos;s location
+              data to enhance your experience and provide accurate
+              recommendations.
             </p>
             <p>3.Usage Information:</p>
             <p className="mb-4">
@@ -85,7 +87,7 @@ const Page = () => {
             </p>
             <p>4.Improving Our Services:</p>
             <p className="mb-4">
-              We analyze user behavior and feedback to enhance our apps
+              We analyze user behavior and feedback to enhance our app&apos;s
               functionality, features, and overall user experience.
             </p>
             <p className="mb-4">Data Security</p>

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { vendorStore } from "@/store/vendor";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -47,9 +47,15 @@ const LoginForm = () => {
 
   const { handleSubmit } = form;
 
+  // State for button text
+  const [buttonText, setButtonText] = useState("Login");
+
   function onSubmit(data: z.infer<typeof loginValidationSchema>) {
+    console.log("Form submitted:", data); // Add this line
+    setButtonText("Logging in...");
     loginVendor(data);
   }
+
   useEffect(() => {
     if (isVendorLoggedin) {
       router.push("/vendor-Home/dashboard");
@@ -121,7 +127,11 @@ const LoginForm = () => {
           </Link>
 
           {/* {vendor.message && <p>{vendor.message}</p>} */}
-          <NewAppButton btnText="Login" type="submit" className="text-sm" />
+          <NewAppButton
+            btnText={buttonText}
+            type="submit"
+            className="text-sm"
+          />
           <p className="text-center">
             Don&apos;t have an account?{" "}
             <span className="text-gold-500">

@@ -79,6 +79,7 @@ const Page = () => {
     const fetchDrinkCategory = async () => {
       try {
         const responseData = await getDrinksCategories(token.accessToken);
+        console.log(responseData.results);
         const drinksCategoryData = responseData.results;
         setDrinksCategory(
           Array.isArray(drinksCategoryData) ? drinksCategoryData : []
@@ -92,6 +93,7 @@ const Page = () => {
   const handleValueChange = (value: string) => {
     setSelectedCategory(value); // Update state with string value
   };
+
   useEffect(() => {
     const fetchSpots = async () => {
       try {
@@ -128,10 +130,18 @@ const Page = () => {
   });
   const { handleSubmit } = form;
 
+  // const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   if (event.target.files) {
+  //     setSelectedFile(event.target.files[0]);
+  //     setImageUrl(URL.createObjectURL(event.target.files[0]));
+  //   }
+  // };
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files) {
-      setSelectedFile(event.target.files[0]);
-      setImageUrl(URL.createObjectURL(event.target.files[0]));
+      const file = event.target.files[0];
+      setSelectedFile(file);
+      const imageUrl = URL.createObjectURL(file);
+      setImageUrl(imageUrl);
     }
   };
 
@@ -139,6 +149,61 @@ const Page = () => {
     fileInputRef.current?.click();
   };
 
+  // async function onSubmit(data: z.infer<typeof addDrinksValidationSchema>) {
+  //   try {
+  //     setBtnState(true);
+
+  //     // Initialize FormData for file and other fields
+  //     const formData = new FormData();
+  //     formData.append("name", data.drinks_name);
+  //     formData.append("description", data.drinks_description || "");
+  //     formData.append("location", data.drink_location);
+  //     formData.append("vendor", vendorId);
+  //     formData.append("spot", spotSelectedIndex.toString());
+  //     if (selectedCategory !== null) {
+  //       formData.append("category", selectedCategory); // Pass as string
+  //     }
+  //     formData.append("volume", selectedVolume.toString()); // Ensure this is a string if required by the backend
+  //     formData.append("price", data.drinks_price);
+
+  //     // Attach the selected file
+  //     if (selectedFile) {
+  //       // Convert the file to a data URL
+  //       const reader = new FileReader();
+  //       reader.readAsDataURL(selectedFile);
+  //       reader.onloadend = () => {
+  //         formData.append("image", reader.result as string);
+
+  //       };
+  //     }
+
+  //     // Send FormData to createNewDrink function
+  //     const result = await createNewDrink(formData, token.accessToken);
+  //     console.log("API Response:", result);
+
+  //     if (result.status === "success") {
+  //       toast({
+  //         title: "Drink added successfully!",
+  //         variant: "success",
+  //       });
+  //     } else {
+  //       toast({
+  //         title: "An error occurred!",
+  //         description: result.message || "Unable to add drink.",
+  //         variant: "destructive",
+  //       });
+  //     }
+  //   } catch (error: any) {
+  //     console.error("Error adding drink:", error);
+  //     toast({
+  //       title: "An error occurred!",
+  //       description: error.message || "Something went wrong.",
+  //       variant: "destructive",
+  //     });
+  //   } finally {
+  //     setBtnState(false);
+  //   }
+  // }
   async function onSubmit(data: z.infer<typeof addDrinksValidationSchema>) {
     try {
       setBtnState(true);
@@ -151,15 +216,14 @@ const Page = () => {
       formData.append("vendor", vendorId);
       formData.append("spot", spotSelectedIndex.toString());
       if (selectedCategory !== null) {
-        formData.append("category_id", selectedCategory); // Pass as string
+        formData.append("category", selectedCategory); // Pass as string
       }
       formData.append("volume", selectedVolume.toString()); // Ensure this is a string if required by the backend
-      formData.append("price", data.drinks_price);
+      formData.append("price", parseFloat(data.drinks_price).toString()); // Ensure price is a valid number and string
 
       // Attach the selected file
       if (selectedFile) {
-        formData.append("images[0][drink]", "0"); // Replace "0" with a valid drink ID if required
-        formData.append("images[0][image]", selectedFile);
+        formData.append("image", selectedFile); // Directly append the file
       }
 
       // Send FormData to createNewDrink function
@@ -328,7 +392,7 @@ const Page = () => {
                   drinksCategory.map((category, index) => (
                     <ToggleGroupItem
                       key={category.id}
-                      value={category.name}
+                      value={category.slug}
                       aria-label={`Toggle ${category.name}`}
                       className="border border-[#4D4D4D] text-[#4D4D4D] p-4 px-4 rounded-full hover:bg-gold-500 data-[state=on]:bg-gold-500 data-[state=on]:border-none"
                     >

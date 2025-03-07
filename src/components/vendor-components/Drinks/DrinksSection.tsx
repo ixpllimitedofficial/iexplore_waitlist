@@ -3,12 +3,49 @@ import Link from "next/link";
 import { PlusIcon, ArrowRightIcon } from "@radix-ui/react-icons";
 import { Button } from "@/components/UI/button";
 import { useRouter, useSearchParams } from "next/navigation";
+import { getAllDrinks } from "@/app/vendorAction";
+import { vendorStore } from "@/store/vendor";
+import { useEffect, useState } from "react";
 
+interface Token {
+  accessToken: string;
+}
+
+interface VendorState {
+  token: Token;
+}
+interface Drink {
+  id: string;
+  image: string;
+  name: string;
+  price: string;
+  spot: string;
+  slug: string;
+}
 const DrinksSection = () => {
+  const [drinks, setDrinks] = useState<Drink[]>([]);
+  const [error, setError] = useState<string | null>(null);
+
+  const token = vendorStore((state: any) => state.token) as Token;
+
+  useEffect(() => {
+    const fetchDrinks = async () => {
+      try {
+        const data = await getAllDrinks(token.accessToken);
+        console.log("drinks data:", data);
+        setDrinks(data.results);
+      } catch (error: any) {
+        setError(error.message || "An error occurred");
+      }
+    };
+    fetchDrinks();
+  }, [token]);
+  console.log(drinks);
   const router = useRouter();
-  const singlePage = () => {
-    router.push("/vendor-Home/drinks/1");
-  };
+ const singlePage = (slug: string) => {
+  router.push(`/vendor-Home/drinks/${slug}`)
+  }
+
   return (
     <section className="md:ml-8 flex flex-col">
       <div className="flex justify-between items-center mb-3">
@@ -25,9 +62,16 @@ const DrinksSection = () => {
         </Link>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5 md:pr-5 ">
-        {[1, 2, 3].map((card) => {
-          return <DrinkCard key={card} handleClick={singlePage} />;
-        })}
+        {drinks &&
+          drinks.slice(0, 3).map((drink) => {
+            return (
+              <DrinkCard
+                key={drink.id}
+                drinks={drink}
+                handleClick={() => singlePage(drink.slug)}
+              />
+            );
+          })}
       </div>
       <Link
         href="/vendor-Home/drinks"

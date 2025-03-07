@@ -12,7 +12,7 @@ interface File {
   name: string;
 }
 
-const page = () => {
+const Page = () => {
   const [uploadedFiles, setUploadedFiles] = useState<File[] | null>(null);
   const [checkedFiles, setCheckedFiles] = useState<{ [key: number]: boolean }>(
     {}
@@ -28,10 +28,22 @@ const page = () => {
   }, []);
 
   useEffect(() => {
+    const handlePost = () => {
+      setPosting(true);
+      const selectedFiles = uploadedFiles?.filter(
+        (file, index) => checkedFiles[index]
+      );
+      localStorage.setItem("selectedFiles", JSON.stringify(selectedFiles));
+      setTimeout(() => {
+        // Redirect to post page
+        router.push("/vendor-Home/feed/post-feed");
+      }, 5000); // Wait for 2 seconds before redirecting
+    };
+
     if (Object.keys(checkedFiles).length > 0) {
       handlePost();
     }
-  }, [checkedFiles]);
+  }, [checkedFiles, uploadedFiles, router]);
 
   const handleFileSelect = (index: number) => {
     setCheckedFiles((prevCheckedFiles) => {
@@ -43,25 +55,6 @@ const page = () => {
       }
       return newCheckedFiles;
     });
-  };
-
-  // const handlePost = () => {
-  //   setPosting(true);
-  //   setTimeout(() => {
-  //     // Redirect to post page
-  //     router.push("/vendor-Home/feed/post-feed");
-  //   }, 2000); // Wait for 2 seconds before redirecting
-  // };
-  const handlePost = () => {
-    setPosting(true);
-    const selectedFiles = uploadedFiles?.filter(
-      (file, index) => checkedFiles[index]
-    );
-    localStorage.setItem("selectedFiles", JSON.stringify(selectedFiles));
-    setTimeout(() => {
-      // Redirect to post page
-      router.push("/vendor-Home/feed/post-feed");
-    }, 5000); // Wait for 2 seconds before redirecting
   };
 
   return (
@@ -122,4 +115,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
