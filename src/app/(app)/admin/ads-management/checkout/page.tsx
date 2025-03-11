@@ -4,22 +4,13 @@ import { ChevronLeft } from "lucide-react";
 import React from "react";
 import { useRouter } from 'next/navigation';
 
-interface SelectedPlan {
-    price: number;
-    duration: string;
-}
-
-interface AdCheckoutProps {
-    selectedPlan?: SelectedPlan;
-}
-
-const defaultPlan: SelectedPlan = {
-    price: 0,
-    duration: "N/A",
-};
-
-const AdCheckout: React.FC<AdCheckoutProps> = ({ selectedPlan = defaultPlan }) => {
+const AdCheckout = () => {
     const router = useRouter();
+    
+    // Hardcoded values
+    const price = 25000;
+    const duration = "30 Days";
+
     return (
         <div className="min-h-screen bg-transparent p-4 md:p-6">
             {/* Header Section */}
@@ -39,11 +30,11 @@ const AdCheckout: React.FC<AdCheckoutProps> = ({ selectedPlan = defaultPlan }) =
                     <div className="flex justify-between items-center">
                         <h2 className="text-lg md:text-xl font-bold">Premium Plan</h2>
                         <p className="text-base md:text-lg">
-                            Price: ₦{selectedPlan.price.toLocaleString()}
+                            Price: ₦{price.toLocaleString()}
                         </p>
                     </div>
                     <p className="py-2 px-4 border text-center rounded-full w-full">
-                        {selectedPlan.duration}
+                        {duration}
                     </p>
                 </div>
 
@@ -56,7 +47,7 @@ const AdCheckout: React.FC<AdCheckoutProps> = ({ selectedPlan = defaultPlan }) =
                         <div className="w-full bg-[#33333399] p-4 space-y-4 rounded my-5">
                             <div className="flex justify-between items-center">
                                 <p>Amount:</p>
-                                <span>₦{selectedPlan.price.toLocaleString()}</span>
+                                <span>₦{price.toLocaleString()}</span>
                             </div>
                             <div className="flex justify-between items-center">
                                 <p>Bank name:</p>
@@ -111,7 +102,7 @@ const AdCheckout: React.FC<AdCheckoutProps> = ({ selectedPlan = defaultPlan }) =
 
                     {/* Pay Button */}
                     <button className="mt-6 w-full bg-yellow-500 text-gray-900 font-semibold text-lg py-2 rounded-full shadow hover:bg-yellow-400 transition-colors">
-                        Pay ₦{selectedPlan.price.toLocaleString()}
+                        Pay ₦{price.toLocaleString()}
                     </button>
                 </div>
             </div>

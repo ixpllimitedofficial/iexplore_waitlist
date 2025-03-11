@@ -394,3 +394,26 @@ export async function getSpotOffers( token: string): Promise<any> {
     throw error;
   }
 }
+
+//get all spot reviews
+export async function getSpotReviews( token: string): Promise<any> {
+  try{
+    const response = await fetch(`${BASE_URL}/v1/reviews/`, {
+      method: "GET",
+      headers: {
+        "Accept": "application/json",
+        "Authorization": `Bearer ${token}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const responseData = await response.json();
+    console.log(`responseData`, responseData);
+    return responseData;
+  }catch(error: any){
+    console.error("Error fetching external data:", error.message);
+    throw error;
+  }
+}

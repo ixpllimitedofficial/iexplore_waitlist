@@ -10,31 +10,57 @@ import AppButton from "@/components/UI/Button/AppButton";
 import { Badge } from "@/components/UI/badge";
 import AppInput from "@/components/UI/Inputs/AppInput";
 import { adminStore } from "@/store/admin";
+
 const ProfileDetails = () => {
-  const  logoutAdmin  = adminStore((state) => state.logoutAdmin)
+  const admin = adminStore((state) => state.admin);
+  const logoutAdmin = adminStore((state) => state.logoutAdmin);
 
   const handleLogout = () => {
-    logoutAdmin()
-  }
+    logoutAdmin();
+  };
+
+
+  const username = admin?.user?.username || "";
+
+  const isVerified = admin?.user?.is_verified || false;
+
+  const firstLetter = username ? username.charAt(0).toUpperCase() : "";
+
+  const fullName =
+    admin?.user?.first_name && admin?.user?.last_name
+      ? `${admin.user.first_name} ${admin.user.last_name}`
+      : username;
+
   return (
     <>
       <div className="mt-5 grid grid-cols-6 gap-4">
         <div className="flex flex-col items-center gap-3 col-span-full md:col-span-3 lg:col-span-2">
           <div className="flex items-center bg-brandDarkNeutral p-4 rounded-2xl w-full gap-3">
             <div className="relative">
-              <Image src={ProfileImage} alt="profile image" height={100} />
-              <Image
-                src={VerifiedBadgeSvg}
-                alt="VerifiedBadgeSvg"
-                className="absolute bottom-0 right-1"
-              />
+              {/* {ProfileImage ? (
+                <Image src={ProfileImage} alt="profile image" height={100} />
+              ) : (
+                <div className="flex items-center justify-center bg-gold-500 text-black text-2xl font-bold rounded-full h-[100px] w-[100px]">
+                  {firstLetter}
+                </div>
+              )} */}
+              <div className="flex items-center justify-center bg-white  text-black text-2xl font-bold rounded-full h-[100px] w-[100px]">
+                {firstLetter}
+              </div>
+              {isVerified && (
+                <Image
+                  src={VerifiedBadgeSvg}
+                  alt="VerifiedBadgeSvg"
+                  className="absolute bottom-0 right-1"
+                />
+              )}
             </div>
 
             <div>
               <div className="flex flex-col gap-2">
-                <p className="font-bold text-xl text-gold-500">Anita Cruzzi</p>
+                <p className="font-bold text-xl text-gold-500">{fullName}</p>
                 <p className="text-gold-500 text-xs bg-[#5D5D5D] px-3 py-1 self-start rounded-lg">
-                  Admin
+                  {admin?.user?.role || "User"}
                 </p>
                 <Badge className="self-start bg-[#00b69b48] text-[#00B69B] text-xs">
                   Active
@@ -53,14 +79,14 @@ const ProfileDetails = () => {
               <div>
                 <p className="text-sm">Phone No:</p>
                 <p className="font-semibold text-sm text-gold-500">
-                  09123456789
+                  {admin?.user?.phone || "Not provided"}
                 </p>
               </div>
 
               <div>
                 <p className="text-sm">Email Address:</p>
                 <p className="font-semibold text-sm text-gold-500">
-                  brookschristine.mail.com
+                  {admin?.user?.email || "Not provided"}
                 </p>
               </div>
 
@@ -84,29 +110,29 @@ const ProfileDetails = () => {
 
             <div className="mt-3 flex flex-col gap-3">
               <AppInput
-                value=""
+                value={username}
                 type="text"
                 name="name"
                 label="Name:"
-                placeholder="Anita Cruz"
+                placeholder="name"
                 labelClassName="text-white"
               />
 
               <AppInput
-                value=""
+                value={admin?.user?.email || ""}
                 type="email"
                 name="email"
                 label="Email:"
-                placeholder="anitacruz@gmail.com"
+                placeholder="email"
                 labelClassName="text-white"
               />
 
               <AppInput
-                value=""
+                value={admin?.user?.phone || ""}
                 type="text"
                 name="number"
                 label="Phone Number:"
-                placeholder="09123456789"
+                placeholder="phone number"
                 labelClassName="text-white"
               />
             </div>
@@ -150,7 +176,7 @@ const ProfileDetails = () => {
           leftIcon={SignOutIconSvg}
           btnText="Sign Out"
           className="text-sm"
-         handleClick={handleLogout}
+          handleClick={handleLogout}
         />
       </Link>
     </>

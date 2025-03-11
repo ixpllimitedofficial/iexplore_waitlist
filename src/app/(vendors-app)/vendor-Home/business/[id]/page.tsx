@@ -7,19 +7,30 @@ import ReviewsRatings from "@/components/vendor-components/ReviewsRatings/Review
 import Header from "@/components/vendor-components/MiniHeader/Header";
 import RatingsIcon from "@/assets/svg/UserIconsSvg/RatingsIcon.svg";
 import RatingStarIcon from "@/assets/svg/VendorSvg/star.svg";
-import { useParams, useRouter, useSearchParams } from "next/navigation";
+import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { getSingleSpot } from "@/app/vendorAction";
 import { vendorStore } from "@/store/vendor";
+
 interface Token {
   accessToken: string;
 }
+
+interface SpotDetails {
+  name?: string;
+  description?: string;
+  location?: string;
+  opening_time?: string;
+  closing_time?: string;
+  rating?: number;
+}
+
 const Page = () => {
-  const [spotDetails, setSpotDetails] = useState({});
+  const [spotDetails, setSpotDetails] = useState<SpotDetails>({});
   const { id } = useParams();
   const slug = Array.isArray(id) ? id[0] : id;
 
-  console.log(`id`, id);
+  console.log("id", id);
   const token = vendorStore((state: any) => state.token) as Token;
 
   useEffect(() => {
@@ -27,7 +38,7 @@ const Page = () => {
       if (id) {
         try {
           const data = await getSingleSpot(slug, token.accessToken);
-          console.log(`data`, data);
+          console.log("data", data);
           setSpotDetails(data);
         } catch (error: any) {
           console.error(error.message);
@@ -48,7 +59,7 @@ const Page = () => {
           </Link>
 
           <div className="hidden md:flex justify-center items-center gap-3 w-full">
-            <p className=" font-bold text-3xl">{spotDetails?.name}</p>
+            <p className="font-bold text-3xl">{spotDetails.name}</p>
             <div className="bg-gold-500 py-1 px-3 rounded-3xl font-bold text-brandDark flex gap-1">
               <Image src={RatingStarIcon} alt="rating icons" />
               4.5
