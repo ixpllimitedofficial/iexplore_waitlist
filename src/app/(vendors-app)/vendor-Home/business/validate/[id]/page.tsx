@@ -29,7 +29,7 @@ import PasswordField from "@/components/UI/Inputs/PasswordField";
 import { Button } from "@/components/UI/button";
 import { toast } from "@/components/UI/use-toast";
 import { inputStyling } from "@/utils/constant";
-import { setupBusinessValidationSchema } from "@/types/authSchemas";
+import { setupSpotValidationSchema } from "@/types/authSchemas";
 
 type UploadedFile = {
   preview: string;
@@ -64,8 +64,8 @@ const Page = () => {
   const onUtilityDrop = useCreateOnDrop(setUtilityBill);
   const onCertDrop = useCreateOnDrop(setRegistrationCertificate);
 
-  const form = useForm<z.infer<typeof setupBusinessValidationSchema>>({
-    resolver: zodResolver(setupBusinessValidationSchema),
+  const form = useForm<z.infer<typeof setupSpotValidationSchema>>({
+    resolver: zodResolver(setupSpotValidationSchema),
     defaultValues: {
       utility_of_business: "",
       cac_of_business: "",
@@ -78,7 +78,6 @@ const Page = () => {
       setImageUrl(URL.createObjectURL(event.target.files[0]));
     }
   };
-
 
   const {
     getRootProps: getUtilityRootProps,
@@ -100,7 +99,7 @@ const Page = () => {
     }
     setFileState(Array.isArray(file) ? [] : null);
   };
-  async function onSubmit(data: z.infer<typeof setupBusinessValidationSchema>) {
+  async function onSubmit(data: z.infer<typeof setupSpotValidationSchema>) {
     // setBtnState(true);
     // const result = await onSignup(data);
     // if (result.status === "success") {
