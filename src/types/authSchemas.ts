@@ -144,6 +144,19 @@ export const setupBusinessValidationSchema = z
     message: "Field must not be empty.",
   }),
 });
+export const setupSpotValidationSchema = z
+.object({
+
+  utility_of_business: z.string().min(1, {
+    message: "Spot address must not be empty.",
+  }),
+  cac_of_business: z.string().min(1, {
+    message: "Spot state must not be empty.",
+  }),
+  cac_number_of_business: z.string().min(1, {
+    message: "Spot description must not be empty.",
+  }),
+});
 export const addDrinksValidationSchema = z
 .object({
   drinks_name: z
