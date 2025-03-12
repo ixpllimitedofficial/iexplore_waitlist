@@ -214,11 +214,15 @@ const Page = () => {
       formData.append("description", data.drinks_description || "");
       formData.append("location", data.drink_location);
       formData.append("vendor", vendorId);
-      formData.append("spot", spotSelectedIndex.toString());
-      if (selectedCategory !== null) {
-        formData.append("category", selectedCategory); // Pass as string
+      if (spotSelectedIndex !== null) {
+        formData.append("spot", spotSelectedIndex.toString());
       }
-      formData.append("volume", selectedVolume.toString()); // Ensure this is a string if required by the backend
+      if (selectedCategory !== null) {
+        formData.append("category", selectedCategory);
+      }
+      if (selectedVolume !== null) {
+        formData.append("volume", selectedVolume.toString());
+      }
       formData.append("price", parseFloat(data.drinks_price).toString()); // Ensure price is a valid number and string
 
       // Attach the selected file
@@ -383,7 +387,7 @@ const Page = () => {
               {/*closing hour*/}
               <ToggleGroup
                 type="single"
-                value={selectedCategory}
+                value={selectedCategory ?? ""}
                 onValueChange={handleValueChange}
                 className="gap-5 w-[100%] flex-wrap justify-center items-center mx-auto mb-5"
               >

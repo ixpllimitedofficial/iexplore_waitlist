@@ -239,9 +239,9 @@ const Page = () => {
       spotDetailsFormData.append("entry", selectedEntry || "");
 
       // Log form data for debugging
-      for (let [key, value] of spotDetailsFormData.entries()) {
-        console.log(key, ": ", value);
-      }
+      // for (let [key, value] of spotDetailsFormData.entries()) {
+      //   console.log(key, ": ", value);
+      // }
 
       const spotDetailsResponse = await createNewSpot(
         spotDetailsFormData,
@@ -265,9 +265,9 @@ const Page = () => {
         photosFormData.append("photos", file);
       });
 
-      for (let [key, value] of photosFormData.entries()) {
-        console.log(key, value);
-      }
+      // for (let [key, value] of photosFormData.entries()) {
+      //   console.log(key, value);
+      // }
 
       const photosResponse = await createNewSpotMedia(
         photosFormData,
