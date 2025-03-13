@@ -11,7 +11,7 @@ type TopSearchBarProps = {
   className?: string;
   inputClass?: string;
   value?: string;
-  onChange: (value: string) => void;
+  onChange?: (value: string) => void;
   debounceDelay?: number;
 };
 const TopSearchBar: React.FC<TopSearchBarProps> = ({

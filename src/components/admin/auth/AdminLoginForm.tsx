@@ -27,8 +27,7 @@ import { loadBindings } from "next/dist/build/swc";
 
 const LoginForm = () => {
   const router = useRouter();
-  const [loading, setLoading] = useState(false)
-
+  const [loading, setLoading] = useState(false);
 
   // zustand
   const admin = adminStore((state: any) => state.admin);
@@ -39,17 +38,17 @@ const LoginForm = () => {
   const form = useForm<z.infer<typeof loginValidationSchema>>({
     resolver: zodResolver(loginValidationSchema),
     defaultValues: {
-      username_or_email: "",
+      email: "",
       password: "",
     },
   });
 
   async function onSubmit(data: z.infer<typeof loginValidationSchema>) {
     const formData = {
-      username_or_email: data.username_or_email.trim(),
+      username_or_email: data.email.trim(),
       password: data.password,
     };
-    setLoading(true)
+    setLoading(true);
     try {
       const success = await loginAdmin(formData);
       if (success) {
@@ -71,7 +70,9 @@ const LoginForm = () => {
 
   return (
     <>
-      <p className="py-3 text-3xl text-center font-bold hidden lg:block">Login</p>
+      <p className="py-3 text-3xl text-center font-bold hidden lg:block">
+        Login
+      </p>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
@@ -80,7 +81,7 @@ const LoginForm = () => {
           {/* username */}
           <FormField
             control={form.control}
-            name="username_or_email"
+            name="email"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Email address:</FormLabel>
@@ -124,7 +125,8 @@ const LoginForm = () => {
           </Link>
 
           {admin.message && <p>{admin.message}</p>}
-          <NewAppButton btnText={loading ? "Loggin in..." : "Login"}
+          <NewAppButton
+            btnText={loading ? "Loggin in..." : "Login"}
             type="submit"
             className="text-sm mb-10 md:mb-5"
             // disabled={loading}

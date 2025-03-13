@@ -26,10 +26,17 @@ import { adminActions } from "@/app/adminActions";
 
 const AllVendorsTable = () => {
   const router = useRouter();
-  const { vendors, isLoading, error, fetchVendors, searchVendors, sortVendors } = adminActions();
+  const {
+    vendors,
+    isLoading,
+    error,
+    fetchVendors,
+    searchVendors,
+    sortVendors,
+  } = adminActions();
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem("token");
     if (token) {
       fetchVendors(token);
     }
@@ -39,12 +46,13 @@ const AllVendorsTable = () => {
     searchVendors(value);
   };
 
-  const handleSort = (value: 'newest' | 'oldest') => {
+  const handleSort = (value: "newest" | "oldest") => {
     sortVendors(value);
   };
 
   if (isLoading) return <div className="text-center p-4">Loading...</div>;
-  if (error) return <div className="text-center text-red-500 p-4">Error: {error}</div>;
+  if (error)
+    return <div className="text-center text-red-500 p-4">Error: {error}</div>;
 
   const handleClick = (id: string) => {
     router.push(`/admin/vendor-management/${encodeURIComponent(id)}`);
@@ -62,7 +70,7 @@ const AllVendorsTable = () => {
             onChange={handleSearch}
             placeholder="Search vendors..."
           />
-          <div className='w-full flex gap-2'>
+          <div className="w-full flex gap-2">
             <Select onValueChange={handleSort}>
               <SelectTrigger className="w-full lg:w-auto bg-gold-500 text-black border-none focus-visible:ring-0">
                 <SelectValue placeholder="Sort by: Newest" />
@@ -106,22 +114,23 @@ const AllVendorsTable = () => {
             >
               <TableCell className="font-medium py-5">{index + 1}</TableCell>
               <TableCell>{`${vendor.first_name} ${vendor.last_name}`}</TableCell>
-              <TableCell>{vendor.phone || 'N/A'}</TableCell>
+              <TableCell>{vendor.phone || "N/A"}</TableCell>
               <TableCell>
                 {vendor.last_login
                   ? new Date(vendor.last_login).toLocaleDateString()
-                  : 'Never'}
+                  : "Never"}
               </TableCell>
-              <TableCell>{vendor.location || 'N/A'}</TableCell>
+              <TableCell>{vendor.location || "N/A"}</TableCell>
               <TableCell>{vendor.email}</TableCell>
               <TableCell>
                 <Badge
-                  className={`${vendor.is_active
-                    ? 'bg-[#00b69b48] text-[#00B69B]'
-                    : 'bg-red-100 text-red-500'
-                    } text-sm`}
+                  className={`${
+                    vendor.is_active
+                      ? "bg-[#00b69b48] text-[#00B69B]"
+                      : "bg-red-100 text-red-500"
+                  } text-sm`}
                 >
-                  {vendor.is_active ? 'Active' : 'Disabled'}
+                  {vendor.is_active ? "Active" : "Disabled"}
                 </Badge>
               </TableCell>
             </TableRow>

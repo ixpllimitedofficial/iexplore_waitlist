@@ -7,11 +7,12 @@ import BookmarkIcon from "@/assets/svg/BookmarkIcon.svg";
 import { Button } from "@/components/UI/button";
 import RatingsIcon from "@/assets/svg/UserIconsSvg/RatingsIcon.svg";
 import { DeleteIcon, Trash2Icon } from "lucide-react";
+import { StaticImageData } from "next/image";
 
 // Define the type for the drink object
 type Drink = {
   id: string;
-  image: string;
+  image: string | StaticImageData;
   name: string;
   price: string;
   spot: string;
@@ -27,7 +28,7 @@ type EventProps = {
   }) => void;
   showDeleteButton?: boolean; // Add this prop
   hideDicountContent?: boolean;
-  drinks: Drink;
+  drinks?: Drink;
 };
 const DrinkCard = ({
   handleClick,
@@ -72,7 +73,7 @@ const DrinkCard = ({
 
       <div className="flex items-center justify-between mt-4 mb-1 px-2">
         <p className="text-sm md:text-lg font-semibold">
-          {drinks?.name}
+          {drinks?.name} 
         </p>
 
         <div className="flex items-center gap-1">

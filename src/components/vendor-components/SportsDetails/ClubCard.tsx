@@ -4,8 +4,8 @@ import Image from "next/image";
 import ClubImage from "@/assets/img/ClubImage.png";
 import RatingsIcon from "@/assets/svg/UserIconsSvg/RatingsIcon.svg";
 import { Button } from "@/components/UI/button";
-
-const convertTo12HourFormat = (time) => {
+import { StaticImageData } from "next/image";
+const convertTo12HourFormat = (time:string) => {
   if (!time) {
     return "";
   }
@@ -15,7 +15,17 @@ const convertTo12HourFormat = (time) => {
   const adjustedHour = hourNumber % 12 || 12; // Convert 0 to 12 for midnight
   return `${adjustedHour}:${minute} ${ampm}`;
 };
-const ClubCard = ({ spot }) => {
+// Define the type for the spot object
+type Spot = {
+  slug?: string;
+  primary_image?: string | StaticImageData;
+  name: string;
+  location: string;
+  category: string;
+  opening_time?: string;
+  closing_time?: string;
+};
+const ClubCard = ({ spot }: { spot: Spot }) => {
   const router = useRouter();
   const spotValidated = false;
 
@@ -67,8 +77,8 @@ const ClubCard = ({ spot }) => {
           <div className="flex items-center px-2 text-gold-500 text-sm md:text-lg gap-3">
             <p>{spot?.category}</p>
             <p>
-              {convertTo12HourFormat(spot?.opening_time)} -{" "}
-              {convertTo12HourFormat(spot?.closing_time)}
+              {convertTo12HourFormat(spot?.opening_time || "")} -{" "}
+              {convertTo12HourFormat(spot?.closing_time || "")}
             </p>
           </div>
         </div>

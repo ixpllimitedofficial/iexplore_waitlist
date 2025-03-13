@@ -14,7 +14,45 @@ import { useRouter } from "next/navigation";
 import ReviewCard from "@/components/vendor-components/ReviewsComponents/ReviewCard";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
+import DrinkImage from "@/assets/img/UserWebappImages/DrinkImage.png";
+import { StaticImageData } from "next/image";
+// Define the type for the drink object
+type Drink = {
+  id: string;
+  image: string | StaticImageData;
+  name: string;
+  price: string;
+  spot: string;
+  slug: string;
+};
 
+// Example list of drinks
+const drinksList: Drink[] = [
+  {
+    id: "1",
+    image: DrinkImage,
+    name: "Mojito",
+    price: "1500",
+    spot: "Maxxa Beach Bar",
+    slug: "mojito",
+  },
+  {
+    id: "2",
+    image: DrinkImage,
+    name: "Martini",
+    price: "2000",
+    spot: "Maxxa Beach Bar",
+    slug: "martini",
+  },
+  {
+    id: "3",
+    image: DrinkImage,
+    name: "Pina Colada",
+    price: "1800",
+    spot: "Maxxa Beach Bar",
+    slug: "pina-colada",
+  },
+];
 const ITEMS_PER_PAGE = 6;
 const allReviewsData = Array.from({ length: 20 }, (_, i) => i + 1); // Replace with real data
 const Page = () => {
@@ -76,8 +114,8 @@ const Page = () => {
         </div>
         <p className="text-2xl font-bold my-5">Most popular items</p>
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5 pr-1 md:pr-5">
-          {[1, 2, 3, 4, 5, 6].map((drink) => (
-            <DrinkCard key={drink} handleClick={singlePage} />
+          {drinksList.map((drink) => (
+            <DrinkCard key={drink.id} handleClick={singlePage} drinks={drink} />
           ))}
         </div>
 

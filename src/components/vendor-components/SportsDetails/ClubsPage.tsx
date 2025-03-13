@@ -1,5 +1,27 @@
 import ClubCard from "./ClubCard";
+import ClubImage from "@/assets/img/ClubImage.png";
 
+const spots = [
+  {
+    slug: "spot-1",
+    primary_image: ClubImage,
+    name: "Club One",
+    location: "Location One",
+    category: "Category One",
+    opening_time: "09:00:00",
+    closing_time: "23:00:00",
+  },
+  // Add more spot objects as needed
+  {
+    slug: "spot-2",
+    primary_image: ClubImage,
+    name: "Club Two",
+    location: "Location Two",
+    category: "Category Two",
+    opening_time: "10:00:00",
+    closing_time: "22:00:00",
+  },
+];
 
 const ClubsPage = () => {
   return (
@@ -9,9 +31,9 @@ const ClubsPage = () => {
       </div>
 
       <div className="flex flex-wrap justify-around mt-5 w-[80vw] mx-auto gap-5">
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((card) => {
-          return <ClubCard key={card} />;
-        })}
+        {spots.map((spot, index) => (
+          <ClubCard key={index} spot={spot} />
+        ))}
       </div>
     </section>
   );

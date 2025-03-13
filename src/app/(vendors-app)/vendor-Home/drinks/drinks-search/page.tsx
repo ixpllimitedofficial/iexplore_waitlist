@@ -73,11 +73,11 @@ const DrinksSearchPage: React.FC = () => {
           </div>
         )}
         {/* Search Results */}
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5 md:pr-5 mt-10">
+        {/* <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5 md:pr-5 mt-10">
           {[1, 2, 3, 4, 5, 6].map((card) => (
             <DrinkCard key={card} handleClick={singlePage} />
           ))}
-        </div>
+        </div> */}
 
         {!isLoading && results.length === 0 && (
           <p className="text-gray-500 mt-4">
