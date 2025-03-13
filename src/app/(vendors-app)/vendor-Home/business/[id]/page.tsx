@@ -31,7 +31,7 @@ const Page = () => {
   const slug = Array.isArray(id) ? id[0] : id;
 
   console.log("id", id);
-  const token = vendorStore((state: any) => state.token) as Token;
+  const token = vendorStore((state: any) => state?.token) as Token;
 
   useEffect(() => {
     const fetchSpotDetails = async () => {

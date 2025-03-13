@@ -8,7 +8,7 @@ import { vendorStore } from "@/store/vendor";
 import { isAuthenticated } from "@/utils/auth";
 import { useRouter } from "next/navigation";
 const Page = () => {
-  const token = useStore(vendorStore, (state: any) => state.token);
+  const token = useStore(vendorStore, (state: any) => state?.token);
 
   return (
     <section className="">

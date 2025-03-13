@@ -71,9 +71,9 @@ const Page = () => {
   const [spotSelectedIndex, setSpotSelectedIndex] = useState<number | null>(
     null
   );
-  const token = vendorStore((state: any) => state.token) as Token;
-  const savedVendor = vendorStore((state: any) => state.savedVendor);
-  const vendorId = savedVendor.data.user.id;
+  const token = vendorStore((state: any) => state?.token) as Token;
+  const savedVendor = vendorStore((state: any) => state?.savedVendor);
+  const vendorId = savedVendor?.data?.user?.id;
 
   useEffect(() => {
     const fetchDrinkCategory = async () => {

@@ -28,7 +28,7 @@ const BusinessBody = () => {
   const [spots, setSpots] = useState<Spot[]>([]);
   const [error, setError] = useState<string | null>(null);
 
-  const token = vendorStore((state: any) => state.token) as Token;
+  const token = vendorStore((state: any) => state?.token) as Token;
 
   useEffect(() => {
     const fetchSpots = async () => {
