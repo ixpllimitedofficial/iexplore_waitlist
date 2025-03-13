@@ -13,8 +13,8 @@ import { adminStore } from "@/store/admin";
 
 
 const Page = () => {
-  const isAdminLoggedin = adminStore((state) => state.isAdminLoggedin);
-  const logoutAdmin = adminStore((state) => state.logoutAdmin);
+  const isAdminLoggedin = adminStore((state) => state?.isAdminLoggedin);
+  const logoutAdmin = adminStore((state) => state?.logoutAdmin);
   const router = useRouter();
 
   const handleLogout = () => {

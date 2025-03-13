@@ -80,7 +80,7 @@ const Page = () => {
 
   const onBusinessDrop = useCreateOnDrop(setBusinessPhotos, true);
 
-  const token = vendorStore((state: any) => state.token) as Token;
+  const token = vendorStore((state: any) => state?.token) as Token;
 
   const form = useForm<z.infer<typeof setupBusinessValidationSchema>>({
     resolver: zodResolver(setupBusinessValidationSchema),
