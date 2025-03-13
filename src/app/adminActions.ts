@@ -11,6 +11,7 @@ interface Vendor {
     first_name: string;
     last_name: string;
     username: string;
+    location?: string;
     email: string;
     phone: string | null;
     last_login: string | null;

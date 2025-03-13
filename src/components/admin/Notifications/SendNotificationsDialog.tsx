@@ -89,7 +89,7 @@ const SendNotificationsDialog = () => {
             </label>
             <textarea
               placeholder="Type message"
-              rows="4"
+              rows={4}
               className="w-full bg-[#33333399] border border-[#3a3838] rounded-lg md:rounded-xl p-2 text-white placeholder-gray-400"
             ></textarea>
           </div>

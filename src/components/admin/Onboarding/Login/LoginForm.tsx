@@ -36,7 +36,7 @@ const LoginForm = () => {
   const form = useForm<z.infer<typeof loginValidationSchema>>({
     resolver: zodResolver(loginValidationSchema),
     defaultValues: {
-      username_or_email: "",
+      email: "",
       password: "",
     },
   });
@@ -44,7 +44,7 @@ const LoginForm = () => {
   function onSubmit(data: z.infer<typeof loginValidationSchema>) {
     console.log(data);
     alert(
-      `Logged in with: Username: ${data.username_or_email}, Password: ${data.password} `
+      `Logged in with: Username: ${data.email}, Password: ${data.password} `
     );
     // loginUser(data);
     router.push("/admin/dashboard");
@@ -68,7 +68,7 @@ const LoginForm = () => {
           {/* username */}
           <FormField
             control={form.control}
-            name="username_or_email"
+            name="email"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Username or Email:</FormLabel>

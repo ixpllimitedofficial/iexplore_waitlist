@@ -16,31 +16,31 @@ import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 
 interface Media {
   type: "image" | "video";
-  content: string;
+  content: string | StaticImageData;
 }
 
 interface User {
-  avatar: string;
+  avatar: string | StaticImageData;
   name: string;
 }
 
 interface Item {
   media: Media[];
   user: User;
-  likes: string;
-  comments: string;
+  likes: number;
+  comments: number;
   caption: string;
-  createdAt: Date | undefined; // Allowing createdAt to be undefined
+  createdAt: string | undefined; // Allowing createdAt to be undefined
 }
 
 interface StatusProps {
   item?: Item;
-  statusProfileImg: StaticImageData | string;
+  statusProfileImg?: StaticImageData | string;
   name?: string;
   timestamp?: string;
   statusMessage?: string;
   likes?: string;
-  comments?: string;
+  comments?: number;
   shares?: string;
   isFollowing: boolean;
   handleFollow?: () => void;
@@ -146,11 +146,13 @@ const Page: React.FC<StatusProps> = ({
 
   const renderMedia = () => {
     if (!media || media.length === 0) return <p>No media available.</p>;
+
     const currentMedia = media[currentIndex];
+
     if (currentMedia.type === "image") {
       return (
         <Image
-          src={currentMedia.content}
+          src={currentMedia.content} // StaticImageData is valid here
           width={400}
           height={700}
           alt="card media"
@@ -158,20 +160,28 @@ const Page: React.FC<StatusProps> = ({
         />
       );
     }
+
     if (currentMedia.type === "video") {
-      return (
-        <video
-          width={400}
-          height={700}
-          className="w-full h-screen md:h-[700px] object-cover rounded-2xl"
-          autoPlay
-          controls
-          loop
-        >
-          <source src={currentMedia.content} type="video/mp4" />
-        </video>
-      );
+      // Ensure content is a string before rendering the <source> element
+      if (typeof currentMedia.content === "string") {
+        return (
+          <video
+            width={400}
+            height={700}
+            className="w-full h-screen md:h-[700px] object-cover rounded-2xl"
+            autoPlay
+            controls
+            loop
+          >
+            <source src={currentMedia.content} type="video/mp4" />
+          </video>
+        );
+      } else {
+        // Handle the case where content is StaticImageData (invalid for video)
+        return <p>Invalid video source.</p>;
+      }
     }
+
     return null;
   };
 

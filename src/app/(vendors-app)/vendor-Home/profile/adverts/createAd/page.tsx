@@ -45,13 +45,9 @@ const Page = () => {
   const form = useForm<z.infer<typeof addDrinksValidationSchema>>({
     resolver: zodResolver(addDrinksValidationSchema),
     defaultValues: {
-      profile_picture: "",
       drinks_name: "",
       drinks_price: "",
-      select_Spot: "",
       drinks_description: "",
-      category: "",
-      drinks_volume: "",
     },
   });
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {

@@ -67,19 +67,10 @@ const Page = () => {
   const form = useForm<z.infer<typeof setupBusinessValidationSchema>>({
     resolver: zodResolver(setupBusinessValidationSchema),
     defaultValues: {
-      profile_picture: "",
-      business_name: "",
-      email: "",
-      phone_number: "",
-      business_address: "",
+      spot_name: "",
+      spot_address: "",
       opening_hour: "",
       closing_hour: "",
-      category: "",
-      photo_of_business: "",
-      // location: "",
-      utility_of_business: "",
-      cac_of_business: "",
-      cac_number_of_business: "",
     },
   });
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -174,16 +165,16 @@ const Page = () => {
               </div>
               {/* end of profile picture */}
               <p className="text-3xl font-semibold mt-5 text-center">
-                Business Details
+                Spot Details
               </p>
 
               {/* first name */}
               <FormField
                 control={form.control}
-                name="business_name"
+                name="spot_name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-lg">Business Name:</FormLabel>
+                    <FormLabel className="text-lg">Spot Name:</FormLabel>
                     <FormControl>
                       <Input className={`${inputStyling}`} {...field} />
                     </FormControl>
@@ -192,7 +183,7 @@ const Page = () => {
                 )}
               />
               {/* email */}
-              <FormField
+              {/* <FormField
                 control={form.control}
                 name="email"
                 render={({ field }) => (
@@ -204,9 +195,9 @@ const Page = () => {
                     <FormMessage />
                   </FormItem>
                 )}
-              />
+              /> */}
               {/* phone number */}
-              <FormField
+              {/* <FormField
                 control={form.control}
                 name="phone_number"
                 render={({ field }) => (
@@ -224,11 +215,11 @@ const Page = () => {
                     <FormMessage />
                   </FormItem>
                 )}
-              />
+              /> */}
               {/*business address*/}
               <FormField
                 control={form.control}
-                name="business_address"
+                name="spot_address"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="text-lg">Business Address:</FormLabel>
@@ -533,7 +524,7 @@ const Page = () => {
               </div>
               <div className="w-[100%] md:w-[50%] mx-auto">
                 {/*cac number*/}
-                <FormField
+                {/* <FormField
                   control={form.control}
                   name="cac_number_of_business"
                   render={({ field }) => (
@@ -551,7 +542,7 @@ const Page = () => {
                       <FormMessage />
                     </FormItem>
                   )}
-                />
+                /> */}
                 <Button
                   className="bg-[#4D4D4D] w-full mt-10 hover:bg-white transition duration-200 text-[#B0B0B0] px-8 py-5 lg:py-6 rounded-3xl font-bold text-base flex-grow"
                   type="submit"

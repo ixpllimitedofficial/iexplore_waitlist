@@ -16,7 +16,7 @@ import MobileGallerySlider from "@/components/vendor-components/MobileGallerySli
 import RatingStarIcon from "@/assets/svg/VendorSvg/star.svg";
 import Link from "next/link";
 
-const convertTo12HourFormat = (time) => {
+const convertTo12HourFormat = (time: string) => {
   if (!time) {
     return "";
   }
@@ -35,8 +35,8 @@ const slides = [
   { src: FrameSix, alt: "frame six", height: 50, width: 800 },
 ];
 interface spotProps {
-  showInsight: boolean;
-  singleInfo: {
+  showInsight?: boolean;
+  singleInfo?: {
     name?: string;
     description?: string;
     location?: string;
@@ -79,8 +79,8 @@ const SpotDetails: React.FC<spotProps> = ({ showInsight, singleInfo }) => {
         <div className="flex gap-3 items-center">
           <Image src={StopWatch} alt="location share" width={30} height={30} />
           <p className="text-sm font-bold">
-            {convertTo12HourFormat(singleInfo?.opening_time)} -{" "}
-            {convertTo12HourFormat(singleInfo?.closing_time)}
+            {convertTo12HourFormat(singleInfo?.opening_time || "")} -{" "}
+            {convertTo12HourFormat(singleInfo?.closing_time || "")}
           </p>
         </div>
       </div>
@@ -104,8 +104,8 @@ const SpotDetails: React.FC<spotProps> = ({ showInsight, singleInfo }) => {
                 height={30}
               />
               <p className="text-lg font-bold">
-                {convertTo12HourFormat(singleInfo?.opening_time)} -{" "}
-                {convertTo12HourFormat(singleInfo?.closing_time)}
+                {convertTo12HourFormat(singleInfo?.opening_time || "")} -{" "}
+                {convertTo12HourFormat(singleInfo?.closing_time || "")}
               </p>
             </div>
 

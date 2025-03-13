@@ -11,13 +11,34 @@ import StoryImg from "@/assets/img/UserWebappImages/StoryImg.png";
 import ShareCard from "@/components/vendor-components/FeedRoute/shareMomentCard/page";
 import Link from "next/link";
 import Image from "next/image";
+import { StaticImageData } from "next/image";
 import ArrowLeft from "@/assets/svg/ArrowLeft.svg";
+
+type Media = {
+  type: "image" | "video";
+  content: string | StaticImageData;
+};
+
+type User = {
+  name: string;
+  avatar: string | StaticImageData;
+};
+
+type Item = {
+  id: string;
+  media: Media[];
+  user: User;
+  caption: string;
+  likes: number;
+  comments: number;
+  createdAt: string | undefined; // Allowing createdAt to be undefined
+};
 const Page = () => {
   const [isFollowing, setIsFollowing] = useState(false);
   const [showMiniContent, setShowMiniContent] = useState(false);
   const [showPostShare, setShowPostShare] = useState(false);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const [feed, setFeed] = useState([
+  const [feed, setFeed] = useState<Item[]>([
     {
       id: "unique-id-1", // Unique identifier
       media: [

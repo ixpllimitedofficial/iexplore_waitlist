@@ -41,7 +41,7 @@ const LoginForm = () => {
   const form = useForm<z.infer<typeof loginValidationSchema>>({
     resolver: zodResolver(loginValidationSchema),
     defaultValues: {
-      username_or_email: "",
+      email: "",
       password: "",
     },
   });
@@ -67,7 +67,7 @@ const LoginForm = () => {
 
     await signIn("credentials", {
       redirect: false,
-      username: data.username_or_email,
+      username: data.email,
       password: data.password,
     }).then((res) => {
       console.log(res);
@@ -97,7 +97,7 @@ const LoginForm = () => {
           {/* username */}
           <FormField
             control={form.control}
-            name="username_or_email"
+            name="email"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Username or Email:</FormLabel>
