@@ -1,4 +1,4 @@
-'use client';
+you create 'use client';
 
 import React, { useState, ChangeEvent } from "react";
 import UploadSvgIcon from "@/assets/svg/AdminIconsSvg/UploadSvgIcon.svg";
