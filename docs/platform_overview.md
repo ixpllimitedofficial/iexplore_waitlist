@@ -26,6 +26,7 @@ iExplore is a dynamic and innovative mobile and web platform focused on redefini
 ## How It Works & User Journey
 
 ### For Users
+
 1. **Sign Up/Login:** Register via the app or website.
 2. **Discover Spots:** Browse and search for venues and events based on location and preferences.
 3. **View Details:** Access spot details, reviews, ratings, and available offers.
@@ -34,6 +35,7 @@ iExplore is a dynamic and innovative mobile and web platform focused on redefini
 6. **Get Discounts:** Redeem offers and discounts at partner venues.
 
 ### For Vendors
+
 1. **Business Onboarding:** Register and create a vendor profile.
 2. **Spot Management:** Add and manage venue details, offerings, and operation hours.
 3. **Run Ads:** Create and boost ads to reach more users.
@@ -41,23 +43,27 @@ iExplore is a dynamic and innovative mobile and web platform focused on redefini
 5. **Showcase Offers:** Highlight special deals and events to attract customers.
 
 ### For Admins
+
 1. **Content Moderation:** Review and verify new spots and user-generated content.
 2. **User Management:** Oversee user onboarding, support, and activity.
 3. **Vendor Management:** Approve and support business onboarding and ad campaigns.
 
 ## Platform Flow
+
 - **Landing Page:** Introduction, brand story, and call-to-action for users and vendors.
 - **User Dashboard:** Personalized feed of spots, events, and recommendations.
 - **Vendor Dashboard:** Tools for business management, analytics, and advertising.
 - **Admin Panel:** Controls for moderation, analytics, and platform management.
 
 ## Tech Stack
+
 - **Frontend:** React, Next.js, Tailwind CSS, ShadCN
 - **State Management:** Zustand
 - **Forms & Validation:** React-Hook-form, Zod
 - **Animations:** AOS
 
 ## Additional Information
+
 - **Mobile-first Design:** Fully responsive and optimized for mobile devices.
 - **Secure Accounts:** User authentication and data privacy.
 - **Community-driven:** Reviews, ratings, and social engagement drive platform value.
