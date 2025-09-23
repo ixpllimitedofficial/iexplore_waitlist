@@ -1,13 +1,10 @@
 import React from "react";
 
 const LegalFooter = () => (
-  <footer className="bg-brandDarkNeutral border-t border-gold-500 py-6 px-4 md:px-16 md:ml-[180px] ml-[70px]">
-    <div className="max-w-3xl mx-auto text-center">
-      <p className="text-[#F2F1E8] text-sm md:text-base">
+  <footer className="bg-brandDarkNeutral border-t border-gold-500/20 py-4 px-4 md:px-6 md:ml-[240px]">
+    <div className="text-center md:text-left">
+      <p className="text-[#B0B0B0] text-xs">
         © 2025 IXPL Limited. All rights reserved.
-      </p>
-      <p className="text-[#B0B0B0] text-xs md:text-sm mt-2">
-        iExplore - Your ultimate nightlife companion
       </p>
     </div>
   </footer>
