@@ -7,6 +7,8 @@ import { anton } from "@/app/fonts";
 
 const WaitlistHero = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -22,10 +24,41 @@ const WaitlistHero = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Waitlist submission:", formData);
-    // Add your waitlist submission logic here
+    setIsSubmitting(true);
+    
+    try {
+      console.log("Waitlist submission:", formData);
+      // Add your waitlist submission logic here
+      
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      // Show success message
+      setShowSuccess(true);
+      
+      // Reset form
+      setFormData({
+        firstName: "",
+        lastName: "",
+        phoneNumber: "",
+        email: "",
+        registerAs: "User"
+      });
+      
+      // Close modal if open
+      setIsModalOpen(false);
+      
+      // Hide success message after 5 seconds
+      setTimeout(() => setShowSuccess(false), 5000);
+      
+    } catch (error) {
+      console.error("Submission error:", error);
+      // Handle error state if needed
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -194,9 +227,10 @@ const WaitlistHero = () => {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full bg-white text-black font-bold py-4 px-6 rounded-lg hover:bg-gold-500 hover:text-white transition-all duration-300 transform hover:scale-105 mt-6"
+                  disabled={isSubmitting}
+                  className="w-full bg-white text-black font-bold py-4 px-6 rounded-lg hover:bg-gold-500 hover:text-white transition-all duration-300 transform hover:scale-105 mt-6 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                 >
-                  Sign up now
+                  {isSubmitting ? "Joining waitlist..." : "Sign up now"}
                 </button>
               </form>
 
@@ -270,7 +304,7 @@ const WaitlistHero = () => {
             </div>
 
             {/* Modal Form */}
-            <form onSubmit={(e) => { handleSubmit(e); setIsModalOpen(false); }} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               {/* First Row - Name Fields */}
               <div className="space-y-4">
                 <div>
@@ -360,9 +394,10 @@ const WaitlistHero = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-gold-500 text-black font-bold py-4 px-6 rounded-lg hover:bg-yellow-400 transition-all duration-300 transform hover:scale-105 mt-6"
+                disabled={isSubmitting}
+                className="w-full bg-gold-500 text-black font-bold py-4 px-6 rounded-lg hover:bg-yellow-400 transition-all duration-300 transform hover:scale-105 mt-6 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               >
-                Sign up now
+                {isSubmitting ? "Joining waitlist..." : "Sign up now"}
               </button>
             </form>
 
@@ -408,6 +443,27 @@ const WaitlistHero = () => {
                 </a>
               </div>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Success Message */}
+      {showSuccess && (
+        <div className="fixed top-4 right-4 z-50 bg-green-500 text-white px-6 py-4 rounded-lg shadow-lg animate-in slide-in-from-right duration-300">
+          <div className="flex items-center gap-3">
+            <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+            </svg>
+            <div>
+              <p className="font-bold">Success!</p>
+              <p className="text-sm">You've been added to the waitlist. We'll notify you when we launch!</p>
+            </div>
+            <button 
+              onClick={() => setShowSuccess(false)}
+              className="ml-2 text-white hover:text-gray-200"
+            >
+              <X className="w-4 h-4" />
+            </button>
           </div>
         </div>
       )}
