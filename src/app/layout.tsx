@@ -5,6 +5,7 @@ import "./globals.css";
 import { ToastContainer } from "react-toastify";
 import { Toaster } from "@/components/UI/toaster";
 import AOSinit from "@/components/AOS";
+import { AgeVerificationWrapper } from "@/components/MainWebsite/AgeVerification";
 
 export const metadata: Metadata = {
   title: "iExplore",
@@ -23,7 +24,9 @@ export default function RootLayout({
       </head>
       <body>
         <AOSinit />
-        {children}
+        <AgeVerificationWrapper>
+          {children}
+        </AgeVerificationWrapper>
         <Toaster />
         <ToastContainer />
       </body>
