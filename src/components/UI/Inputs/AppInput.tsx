@@ -25,7 +25,7 @@ const AppInput = ({
         id={label}
         type={type}
         placeholder={placeholder}
-        className={`${inputClass} px-3 py-6 rounded-lg  border-[1px] bg-[#33333399]  border-gray-500 focus:outline-none  placeholder:text-foreground placeholder:font-medium`}
+        className={`${inputClass} px-3 py-6 rounded-lg  border-[1px] bg-[#33333399]  border-gray-500 focus:outline-none  placeholder:text-[hsl(var(--foreground))] placeholder:font-medium`}
         // {...register(registerName, { required: isInputRequired })}
       />
       {errorMessage && <p className="text-gold-500 text-sm italic">{errorMessage}</p>}
