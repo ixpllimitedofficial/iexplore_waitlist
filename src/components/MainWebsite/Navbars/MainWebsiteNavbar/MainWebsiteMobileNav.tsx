@@ -32,12 +32,8 @@ const MainWebsiteMobileNav = () => {
   }, [showNavState]);
 
   return (
-    <header className="fixed top-0 w-full z-[60] lg:hidden flex items-center justify-between bg-transparent">
-      <div
-        className={`${
-          showNavState ? "bg-brandDark" : "bg-[#0000004D] backdrop-blur-2xl"
-        } px-7 py-5 flex items-center justify-between w-full`}
-      >
+    <header className="fixed top-0 w-full z-[60] lg:hidden flex items-center justify-between bg-black">
+      <div className="px-7 py-5 flex items-center justify-between w-full">
         {/* logo */}
         <Link href="/">
           <Image src={iExploreTextLogo} alt="iExploreTextLogo" height={40} />
@@ -54,7 +50,7 @@ const MainWebsiteMobileNav = () => {
 
       {/* navbar */}
       <nav
-        className={`-z-50 fixed top-0 h-screen w-screen bg-brandDark px-8 pt-10 flex flex-col gap-8 duration-1000 ${
+        className={`z-50 fixed top-0 h-screen w-screen bg-black px-8 pt-20 flex flex-col gap-8 duration-1000 ${
           showNavState ? "top-16 left-0" : "top-[-150vh] left-0"
         }`}
       >
