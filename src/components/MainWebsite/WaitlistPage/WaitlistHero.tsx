@@ -246,7 +246,7 @@ const WaitlistHero = () => {
               {/* Footer */}
               <div className="mt-8 pt-6 border-t border-white/20">
                 <p className="text-gray-400 text-sm text-center">
-                  All rights reserve. Maxx Technologies © 2025
+                  All rights reserve. IXPL Limited © 2025
                 </p>
               </div>
             </div>
