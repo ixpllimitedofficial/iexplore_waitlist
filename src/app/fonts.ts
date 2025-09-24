@@ -1,15 +1,20 @@
-// Temporary fallback fonts to avoid Google Fonts issues
-export const inter = {
-  className: '',
-  style: { fontFamily: 'Inter, system-ui, arial, sans-serif' },
-};
+import { Inter, Manrope, Anton } from "next/font/google";
 
-export const manrope = {
-  className: '',
-  style: { fontFamily: 'Manrope, system-ui, arial, sans-serif' },
-};
+export const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  fallback: ["system-ui", "arial"],
+});
 
-export const anton = {
-  className: '',
-  style: { fontFamily: 'Anton, system-ui, arial, sans-serif' },
-};
+export const manrope = Manrope({
+  subsets: ["latin"],
+  display: "swap",
+  fallback: ["system-ui", "arial"],
+});
+
+export const anton = Anton({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+  fallback: ["system-ui", "arial"],
+});
