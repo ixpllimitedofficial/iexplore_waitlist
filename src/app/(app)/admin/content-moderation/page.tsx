@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import AllContentsTable from '@/components/admin/ContentModeration/AllContentsTable';
 import AllSpotsTable from '@/components/admin/ContentModeration/AllSpotsTable';
@@ -9,13 +9,11 @@ import { adminStore } from '@/store/admin';
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const Page = () => {
+const ContentModerationContent = () => {
   const isAdminLoggedin = adminStore((state) => state.isAdminLoggedin);
   const router = useRouter();
   const searchParams = useSearchParams();
   const selectedCategory = searchParams?.get('category') || 'Drinks';
-
-
 
   useEffect(() => {
     if (!isAdminLoggedin) {
@@ -46,6 +44,14 @@ const Page = () => {
         theme="dark"
       />
     </div>
+  );
+};
+
+const Page = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ContentModerationContent />
+    </Suspense>
   );
 };
 

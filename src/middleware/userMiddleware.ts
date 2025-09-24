@@ -3,8 +3,9 @@
 import { NextResponse, NextRequest } from "next/server";
 import { cookies } from "next/headers";
 
-export function userMiddleware(request: NextRequest) {
-  const isUserAuthenticated = cookies().get("isUserAuth");
+export async function userMiddleware(request: NextRequest) {
+  const cookieStore = await cookies();
+  const isUserAuthenticated = cookieStore.get("isUserAuth");
   // Allow access to the /user route itself (e.g., login page)
   if (request.nextUrl.pathname === "/user") {
     return NextResponse.next();

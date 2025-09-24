@@ -35,9 +35,9 @@ const Page = () => {
 
   useEffect(() => {
     const fetchSpotDetails = async () => {
-      if (id) {
+      if (id && slug && token?.accessToken) {
         try {
-          const data = await getSingleSpot(slug, token.accessToken);
+          const data = await getSingleSpot(slug, token.accessToken!);
           console.log("data", data);
           setSpotDetails(data);
         } catch (error: any) {

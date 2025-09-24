@@ -48,7 +48,7 @@ const Page = () => {
 
   useEffect(() => {
     const fetchDrinkDetails = async () => {
-      if (id) {
+      if (id && slug && token?.accessToken) {
         try {
           const data = await getSingleDrink(slug, token.accessToken);
           console.log(`data:`, data);
