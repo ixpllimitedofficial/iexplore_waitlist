@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+@theme {
+  --color-gold-100: #cffafe;
+  --color-gold-200: #a5f3fc;
+  --color-gold-300: #67e8f9;
+  --color-gold-400: #22d3ee;
+  --color-gold-500: #FFC000;
+  --color-gold-600: #D7B500;
+  --color-gold-700: #E1B141;
+  --color-gold-800: #FFD7004D;
+}
+
 @layer base {
   :root {
     --background: 0 0% 5%;
