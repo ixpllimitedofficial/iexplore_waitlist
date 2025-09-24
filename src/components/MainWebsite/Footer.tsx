@@ -120,8 +120,8 @@ const Footer = () => {
           </p>
 
           <div className="flex justify-between gap-10">
-            <p className="underline">Privacy Policy</p>
-            <p className="underline">Terms of Use</p>
+            <Link href="/legal/privacy-policy" className="underline">Privacy Policy</Link>
+            <Link href="/legal/terms-of-use" className="underline">Terms of Use</Link>
           </div>
         </div>
       </footer>
