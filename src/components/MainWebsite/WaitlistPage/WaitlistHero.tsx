@@ -72,8 +72,8 @@ const WaitlistHero = () => {
       <div className="absolute inset-0 bg-black/60"></div>
 
       {/* Content Container */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 py-4 lg:py-8">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-20 xl:gap-24">
           
           {/* Left Content - Hero Text */}
           <div className="flex-1 text-center lg:text-left">
@@ -132,7 +132,7 @@ const WaitlistHero = () => {
 
           {/* Right Content - Waitlist Form (Desktop Only) */}
           <div className="hidden lg:block w-full lg:w-auto lg:min-w-[400px] xl:min-w-[450px]">
-            <div className="bg-transparent rounded-2xl p-6 sm:p-8">
+            <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/10">
               <h2 className={`text-white text-2xl sm:text-3xl font-bold mb-6 text-center ${anton.className}`}>
                 Join Waitlist
               </h2>
@@ -150,7 +150,7 @@ const WaitlistHero = () => {
                       placeholder="First Name"
                       value={formData.firstName}
                       onChange={handleInputChange}
-                      className="w-full px-2 py-3 bg-transparent border-0 border-b-2 border-gold-500 text-white placeholder-gray-400 focus:outline-none focus:border-gold-400"
+                      className="w-full px-3 py-3 bg-white/20 backdrop-blur-sm border-0 border-b-2 border-gold-500 text-white placeholder-gray-300 focus:outline-none focus:border-gold-400 focus:bg-white/25 transition-all duration-300 rounded-t"
                       required
                     />
                   </div>
@@ -164,7 +164,7 @@ const WaitlistHero = () => {
                       placeholder="Last Name"
                       value={formData.lastName}
                       onChange={handleInputChange}
-                      className="w-full px-2 py-3 bg-transparent border-0 border-b-2 border-gold-500 text-white placeholder-gray-400 focus:outline-none focus:border-gold-400"
+                      className="w-full px-3 py-3 bg-white/20 backdrop-blur-sm border-0 border-b-2 border-gold-500 text-white placeholder-gray-300 focus:outline-none focus:border-gold-400 focus:bg-white/25 transition-all duration-300 rounded-t"
                       required
                     />
                   </div>
@@ -182,7 +182,7 @@ const WaitlistHero = () => {
                       placeholder="Phone number"
                       value={formData.phoneNumber}
                       onChange={handleInputChange}
-                      className="w-full px-2 py-3 bg-transparent border-0 border-b-2 border-gold-500 text-white placeholder-gray-400 focus:outline-none focus:border-gold-400"
+                      className="w-full px-3 py-3 bg-white/20 backdrop-blur-sm border-0 border-b-2 border-gold-500 text-white placeholder-gray-300 focus:outline-none focus:border-gold-400 focus:bg-white/25 transition-all duration-300 rounded-t"
                       required
                     />
                   </div>
@@ -194,10 +194,10 @@ const WaitlistHero = () => {
                       name="registerAs"
                       value={formData.registerAs}
                       onChange={handleInputChange}
-                      className="w-full px-2 py-3 bg-transparent border-0 border-b-2 border-gold-500 text-white focus:outline-none focus:border-gold-400 appearance-none cursor-pointer"
+                      className="w-full px-3 py-3 bg-white/20 backdrop-blur-sm border-0 border-b-2 border-gold-500 text-white focus:outline-none focus:border-gold-400 focus:bg-white/25 transition-all duration-300 rounded-t appearance-none cursor-pointer"
                       style={{
                         backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23FFC000' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e")`,
-                        backgroundPosition: 'right 0.5rem center',
+                        backgroundPosition: 'right 0.75rem center',
                         backgroundRepeat: 'no-repeat',
                         backgroundSize: '1.2em 1.2em'
                       }}
@@ -219,7 +219,7 @@ const WaitlistHero = () => {
                     placeholder="Email Address"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-2 py-3 bg-transparent border-0 border-b-2 border-gold-500 text-white placeholder-gray-400 focus:outline-none focus:border-gold-400"
+                    className="w-full px-3 py-3 bg-white/20 backdrop-blur-sm border-0 border-b-2 border-gold-500 text-white placeholder-gray-300 focus:outline-none focus:border-gold-400 focus:bg-white/25 transition-all duration-300 rounded-t"
                     required
                   />
                 </div>

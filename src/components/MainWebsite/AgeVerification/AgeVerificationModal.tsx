@@ -44,37 +44,37 @@ const AgeVerificationModal: React.FC<AgeVerificationModalProps> = ({ onVerified 
   };
 
   return (
-    <div className="fixed inset-0 bg-black/95 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
-      <div className="bg-gradient-to-br from-brandDark to-black border border-gold-500/30 rounded-2xl p-8 md:p-12 max-w-md w-full text-center shadow-2xl">
+    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
+      <div className="bg-black/80 backdrop-blur-md border border-gold-500/20 rounded-2xl p-6 md:p-8 max-w-sm w-full max-h-[85vh] overflow-y-auto text-center shadow-xl">
         {/* Logo */}
-        <div className="mb-8">
+        <div className="mb-6">
           <Image 
             src={iExploreLogo} 
             alt="iExplore Logo" 
-            width={80} 
-            height={80} 
-            className="mx-auto mb-4"
+            width={60} 
+            height={60} 
+            className="mx-auto mb-3"
           />
-          <h1 className={`text-gold-500 text-2xl md:text-3xl font-bold ${anton.className}`}>
+          <h1 className={`text-gold-500 text-xl md:text-2xl font-bold ${anton.className}`}>
             iExplore
           </h1>
-          <p className="text-gold-500/80 text-sm mt-2">Your Nightlife Companion</p>
+          <p className="text-gold-500/80 text-xs mt-1">Your Nightlife Companion</p>
         </div>
 
         {/* Age Verification Content */}
-        <div className="mb-8">
-          <h2 className="text-[#F2F1E8] text-xl md:text-2xl font-bold mb-4">
+        <div className="mb-6">
+          <h2 className="text-[#F2F1E8] text-lg md:text-xl font-bold mb-3">
             Welcome to the Night Scene
           </h2>
-          <p className="text-[#D1D1D1] mb-6 text-sm md:text-base leading-relaxed">
+          <p className="text-[#D1D1D1] mb-4 text-sm leading-relaxed">
             You must be 18 or older to explore nightlife venues, events, and experiences on iExplore.
           </p>
-          <p className="text-[#D1D1D1] mb-6 font-semibold">
+          <p className="text-[#D1D1D1] mb-4 font-semibold text-sm">
             Please enter your birth year to continue
           </p>
 
           {/* Birth Year Input */}
-          <div className="mb-6">
+          <div className="mb-4">
             <input
               type="number"
               placeholder="YYYY (e.g., 1995)"
@@ -84,17 +84,17 @@ const AgeVerificationModal: React.FC<AgeVerificationModalProps> = ({ onVerified 
                 setError("");
               }}
               onKeyPress={handleKeyPress}
-              className="w-full px-4 py-3 bg-[#FFFFFF1A] border border-gold-500/50 rounded-lg text-[#F2F1E8] placeholder-[#666] focus:border-gold-500 focus:outline-none focus:ring-1 focus:ring-gold-500/20 text-center text-lg"
+              className="w-full px-3 py-2 bg-[#FFFFFF1A] border border-gold-500/50 rounded-lg text-[#F2F1E8] placeholder-[#666] focus:border-gold-500 focus:outline-none focus:ring-1 focus:ring-gold-500/20 text-center text-base"
               min="1900"
               max={new Date().getFullYear()}
             />
             {error && (
-              <p className="text-red-400 text-sm mt-2">{error}</p>
+              <p className="text-red-400 text-xs mt-1">{error}</p>
             )}
           </div>
 
           {/* Remember Me Checkbox */}
-          <div className="flex items-center justify-center mb-6">
+          <div className="flex items-center justify-center mb-3">
             <label className="flex items-center cursor-pointer">
               <input
                 type="checkbox"
@@ -102,35 +102,35 @@ const AgeVerificationModal: React.FC<AgeVerificationModalProps> = ({ onVerified 
                 onChange={(e) => setRememberMe(e.target.checked)}
                 className="hidden"
               />
-              <div className={`w-5 h-5 border-2 border-gold-500 rounded mr-3 flex items-center justify-center ${
+              <div className={`w-4 h-4 border-2 border-gold-500 rounded mr-2 flex items-center justify-center ${
                 rememberMe ? 'bg-gold-500' : 'bg-transparent'
               }`}>
                 {rememberMe && (
-                  <svg className="w-3 h-3 text-black" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-2.5 h-2.5 text-black" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 )}
               </div>
-              <span className="text-[#D1D1D1] text-sm">Remember me on this device</span>
+              <span className="text-[#D1D1D1] text-xs">Remember me on this device</span>
             </label>
           </div>
 
           {/* Warning Text */}
-          <p className="text-[#999] text-xs mb-6 leading-relaxed">
+          <p className="text-[#999] text-xs mb-4 leading-relaxed">
             Don't check this if you're using a shared or public computer accessible by people under 18.
           </p>
 
           {/* Enter Button */}
           <button
             onClick={handleVerification}
-            className="w-full bg-gold-500 hover:bg-gold-600 text-black font-bold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
+            className="w-full bg-gold-500 hover:bg-gold-600 text-black font-bold py-2.5 px-4 rounded-lg transition-all duration-300 text-sm"
           >
             Enter iExplore
           </button>
         </div>
 
         {/* Legal Links */}
-        <div className="border-t border-gold-500/20 pt-6">
+        <div className="border-t border-gold-500/20 pt-4 mt-4">
           <p className="text-[#999] text-xs leading-relaxed">
             By entering this site, you agree to our{" "}
             <a href="/legal/terms-of-use" className="text-gold-500 hover:text-gold-400 underline">
@@ -142,7 +142,7 @@ const AgeVerificationModal: React.FC<AgeVerificationModalProps> = ({ onVerified 
             </a>
             .
           </p>
-          <p className="text-[#999] text-xs mt-2">
+          <p className="text-[#999] text-xs mt-1">
             iExplore promotes responsible nightlife experiences.
           </p>
         </div>
