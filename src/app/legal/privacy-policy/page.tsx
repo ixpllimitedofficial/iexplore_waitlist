@@ -108,6 +108,16 @@ const PrivacyPolicy = () => (
                 <li>Withdraw consent at any time</li>
                 <li>Lodge a complaint with Nigeria's Data Protection Commission</li>
               </ul>
+              <div className="mt-4 p-3 bg-red-500/10 rounded border border-red-500/30">
+                <p className="text-sm font-medium text-red-400 mb-2">Account Deletion</p>
+                <p className="text-sm text-[#D1D1D1]">
+                  To permanently delete your account and all associated data, visit our dedicated{" "}
+                  <a href="/legal/account-deletion" className="text-gold-500 hover:underline font-medium">
+                    Account Deletion page
+                  </a>{" "}
+                  for step-by-step instructions and important information.
+                </p>
+              </div>
               <p className="mt-4 text-sm">
                 Contact: <a href="mailto:privacy@iexploreonline.com" className="text-gold-500 hover:underline">privacy@iexploreonline.com</a>
               </p>

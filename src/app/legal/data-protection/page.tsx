@@ -125,8 +125,14 @@ const DataProtection = () => (
 
               <div className="bg-red-500/10 p-4 rounded-lg border border-red-500/30">
                 <h3 className="text-lg font-medium mb-2 text-red-400">Right to Erasure</h3>
-                <p className="text-sm md:text-base text-[#D1D1D1]">
+                <p className="text-sm md:text-base text-[#D1D1D1] mb-3">
                   You can request deletion of your personal data under certain circumstances.
+                </p>
+                <p className="text-sm text-[#D1D1D1]">
+                  For complete account deletion instructions, visit our{" "}
+                  <a href="/legal/account-deletion" className="text-gold-500 hover:underline font-medium">
+                    Account Deletion page
+                  </a>.
                 </p>
               </div>
 
