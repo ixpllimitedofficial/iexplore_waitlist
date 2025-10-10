@@ -5,9 +5,9 @@ import LegalFooter from "../LegalFooter";
 
 const AccountDeletion = () => (
   <>
-    <LegalNavbar />
-    <main className="min-h-screen bg-brandDarkNeutral text-[#F2F1E8] px-4 md:px-16 py-10">
-      <section className="max-w-4xl mx-auto">
+    <LegalNavbar active="/legal/account-deletion" />
+    <main className="min-h-screen bg-brandDarkNeutral text-[#F2F1E8] px-4 md:px-8 py-4 md:ml-[240px] pt-[140px] md:pt-20">
+      <div className="max-w-4xl mx-auto">
         <header className="mb-8">
           <h1 className="text-gold-500 text-3xl md:text-4xl font-bold mb-4">Account Deletion Request</h1>
           <p className="text-base md:text-lg text-[#D1D1D1] leading-relaxed">
@@ -34,33 +34,24 @@ const AccountDeletion = () => (
             </ul>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
-            <div className="bg-brandDarkNeutral/50 p-6 rounded-lg border border-gold-500/20">
-              <h3 className="text-lg font-medium mb-3 text-gold-500">Option 1: In-App Deletion</h3>
-              <ol className="list-decimal list-inside text-sm md:text-base space-y-2 text-[#D1D1D1]">
-                <li>Open the iExplore mobile app</li>
-                <li>Go to <strong>Profile</strong> → <strong>Settings</strong></li>
-                <li>Select <strong>Account & Privacy</strong></li>
-                <li>Tap <strong>Delete Account</strong></li>
-                <li>Follow the confirmation steps</li>
-                <li>Enter your password to confirm</li>
-              </ol>
-            </div>
-
-            <div className="bg-brandDarkNeutral/50 p-6 rounded-lg border border-gold-500/20">
-              <h3 className="text-lg font-medium mb-3 text-gold-500">Option 2: Email Request</h3>
-              <p className="text-sm md:text-base text-[#D1D1D1] mb-4">
-                Send an email to our support team with the following information:
-              </p>
-              <ul className="list-disc list-inside text-sm md:text-base space-y-1 text-[#D1D1D1] mb-4">
-                <li>Subject: "Account Deletion Request"</li>
-                <li>Your registered email address</li>
-                <li>Your full name (as registered)</li>
-                <li>Phone number (for verification)</li>
-                <li>Reason for deletion (optional)</li>
-              </ul>
-              <p className="text-sm">
-                Email: <a href="mailto:privacy@iexploreonline.com" className="text-gold-500 hover:underline">privacy@iexploreonline.com</a>
+          <div className="bg-brandDarkNeutral/50 p-6 rounded-lg border border-gold-500/20 mb-8">
+            <h3 className="text-lg font-medium mb-3 text-gold-500">How to Request Account Deletion</h3>
+            <p className="text-sm md:text-base text-[#D1D1D1] mb-4">
+              To delete your account, send an email to our support team with the following information:
+            </p>
+            <ul className="list-disc list-inside text-sm md:text-base space-y-2 text-[#D1D1D1] mb-4">
+              <li><strong>Subject:</strong> "Account Deletion Request"</li>
+              <li><strong>Your registered email address</strong></li>
+              <li><strong>Your full name</strong> (as registered)</li>
+              <li><strong>Phone number</strong> (for verification)</li>
+              <li><strong>Reason for deletion</strong> (optional)</li>
+            </ul>
+            <div className="bg-gold-500/10 p-4 rounded border border-gold-500/30">
+              <p className="text-sm font-medium text-gold-500 mb-1">Email Address:</p>
+              <p className="text-base">
+                <a href="mailto:privacy@iexploreonline.com" className="text-gold-500 hover:underline font-medium">
+                  privacy@iexploreonline.com
+                </a>
               </p>
             </div>
           </div>
@@ -204,7 +195,7 @@ const AccountDeletion = () => (
             ← Back to Legal Center
           </Link>
         </footer>
-      </section>
+      </div>
     </main>
     <LegalFooter />
   </>
