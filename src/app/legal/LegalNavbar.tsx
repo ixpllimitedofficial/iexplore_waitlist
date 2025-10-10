@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, Scale, Shield, Cookie, Users, Building, Lock, Eye, Phone, Search, Home } from "lucide-react";
+import { Menu, X, Scale, Shield, Cookie, Users, Building, Lock, Eye, Phone, Search, Home, Trash2 } from "lucide-react";
 import iExploreTextLogo from "@/assets/svg/NavbarSvg/iExploreTextLogoSvg.svg";
 
 interface LegalNavbarProps {
@@ -17,6 +17,7 @@ const legalPages = [
   { href: "/legal/community-guidelines", label: "Community Guidelines", icon: Users },
   { href: "/legal/vendor-policy", label: "Vendor Policy", icon: Building },
   { href: "/legal/data-protection", label: "Data Protection", icon: Lock },
+  { href: "/legal/account-deletion", label: "Account Deletion", icon: Trash2 },
   { href: "/legal/accessibility", label: "Accessibility", icon: Eye },
   { href: "/legal/contact", label: "Contact & Legal", icon: Phone },
 ];
