@@ -10,6 +10,7 @@ const legalPages = [
   { href: "/legal/community-guidelines", label: "Community Guidelines" },
   { href: "/legal/vendor-policy", label: "Vendor Policy" },
   { href: "/legal/data-protection", label: "Data Protection" },
+  { href: "/legal/account-deletion", label: "Account Deletion" },
   { href: "/legal/accessibility", label: "Accessibility" },
   { href: "/legal/contact", label: "Contact & Legal Inquiries" },
 ];
