@@ -9,6 +9,7 @@ const WaitlistHero = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -27,35 +28,71 @@ const WaitlistHero = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+    setErrorMsg(null);
+
     try {
-      console.log("Waitlist submission:", formData);
-      // Add your waitlist submission logic here
-      
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Show success message
-      setShowSuccess(true);
-      
-      // Reset form
-      setFormData({
-        firstName: "",
-        lastName: "",
-        phoneNumber: "",
-        email: "",
-        registerAs: "User"
-      });
-      
-      // Close modal if open
-      setIsModalOpen(false);
-      
-      // Hide success message after 5 seconds
-      setTimeout(() => setShowSuccess(false), 5000);
-      
-    } catch (error) {
-      console.error("Submission error:", error);
-      // Handle error state if needed
+      const res = await fetch(
+        "https://apiv1.iexploreonline.com/api/v1/waitlist/signup/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+            phoneNumber: formData.phoneNumber,
+            email: formData.email,
+            registerAs: formData.registerAs,
+          }),
+        }
+      );
+
+      const data = await res.json().catch(() => ({}));
+
+      if (res.ok) {
+        // Success (201)
+        setShowSuccess(true);
+
+        // Reset form
+        setFormData({
+          firstName: "",
+          lastName: "",
+          phoneNumber: "",
+          email: "",
+          registerAs: "User",
+        });
+
+        // Close modal if open
+        setIsModalOpen(false);
+
+        // Hide success message after 5 seconds
+        setTimeout(() => setShowSuccess(false), 5000);
+      } else {
+        // API returned an error (validation or other)
+        // Try to extract meaningful message
+        let message = "Failed to join waitlist.";
+        if (data) {
+          if (data.message) message = data.message;
+          else if (data.error) {
+            // If error is an object of field errors, join them
+            if (typeof data.error === "string") message = data.error;
+            else if (typeof data.error === "object") {
+              const parts: string[] = [];
+              Object.entries(data.error).forEach(([k, v]) => {
+                if (Array.isArray(v)) parts.push(`${k}: ${v.join(", ")}`);
+                else parts.push(`${k}: ${String(v)}`);
+              });
+              if (parts.length) message = parts.join(" | ");
+            }
+          }
+        }
+
+        setErrorMsg(message);
+      }
+    } catch (err: any) {
+      setErrorMsg(err?.message || "Network error. Please try again.");
+      console.error("Submission error:", err);
     } finally {
       setIsSubmitting(false);
     }
@@ -232,6 +269,9 @@ const WaitlistHero = () => {
                 >
                   {isSubmitting ? "Joining waitlist..." : "Sign up now"}
                 </button>
+                {errorMsg && (
+                  <p className="text-red-400 text-sm mt-3">{errorMsg}</p>
+                )}
               </form>
 
               {/* Social Links */}
@@ -399,6 +439,9 @@ const WaitlistHero = () => {
               >
                 {isSubmitting ? "Joining waitlist..." : "Sign up now"}
               </button>
+              {errorMsg && (
+                <p className="text-red-400 text-sm mt-3">{errorMsg}</p>
+              )}
             </form>
 
             {/* Social Links in Modal */}
