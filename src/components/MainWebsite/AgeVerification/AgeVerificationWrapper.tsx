@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import AgeVerificationModal from "./AgeVerificationModal";
 
 interface AgeVerificationWrapperProps {
@@ -8,8 +9,12 @@ interface AgeVerificationWrapperProps {
 }
 
 const AgeVerificationWrapper: React.FC<AgeVerificationWrapperProps> = ({ children }) => {
+  const pathname = usePathname();
   const [isVerified, setIsVerified] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+
+  // Skip age verification for legal pages
+  const isLegalPage = pathname?.startsWith("/legal");
 
   useEffect(() => {
     // Check if user was previously verified
@@ -40,6 +45,11 @@ const AgeVerificationWrapper: React.FC<AgeVerificationWrapperProps> = ({ childre
   const handleVerified = () => {
     setIsVerified(true);
   };
+
+  // Skip age verification for legal pages
+  if (isLegalPage) {
+    return <>{children}</>;
+  }
 
   if (isLoading) {
     // Loading state - could be a spinner or nothing
