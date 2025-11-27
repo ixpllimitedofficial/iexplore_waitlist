@@ -18,6 +18,9 @@ const WaitlistHero = () => {
     registerAs: "User"
   });
 
+  // API base can be configured via env var (see .env.example)
+  const API_BASE = (process.env.NEXT_PUBLIC_WAITLIST_API_BASE as string | undefined) || "https://apiv1.iexploreonline.com/api/v1/";
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
@@ -31,9 +34,10 @@ const WaitlistHero = () => {
     setErrorMsg(null);
 
     try {
-      const res = await fetch(
-        "https://apiv1.iexploreonline.com/api/v1/waitlist/signup/",
-        {
+      const base = API_BASE;
+      const endpoint = base.endsWith("/") ? `${base}waitlist/signup/` : `${base}/waitlist/signup/`;
+
+      const res = await fetch(endpoint, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
