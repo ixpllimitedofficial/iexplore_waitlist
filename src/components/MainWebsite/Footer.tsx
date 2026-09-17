@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { anton } from "@/app/fonts";
+import { socialLinks } from "@/utils/constant";
 import { Button } from "@/components/UI/button";
 import { Input } from "@/components/UI/input";
 
@@ -88,18 +89,30 @@ const Footer = () => {
                 />
               </div>
 
-              <div className="footerIcon">
+              <a
+                href={socialLinks.x}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X (Twitter)"
+                className="footerIcon"
+              >
                 <Image src={XIcon} alt="XIcon" width={35} height={35} />
-              </div>
+              </a>
 
-              <div className="footerIcon">
+              <a
+                href={socialLinks.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="footerIcon"
+              >
                 <Image
                   src={InstagramIcon}
                   alt="InstagramIcon"
                   width={35}
                   height={35}
                 />
-              </div>
+              </a>
 
               {/* <div className="footerIcon">
                 <Image

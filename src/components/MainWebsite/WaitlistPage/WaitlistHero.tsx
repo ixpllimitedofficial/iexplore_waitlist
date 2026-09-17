@@ -1,4 +1,5 @@
 "use client";
+import { socialLinks } from "@/utils/constant";
 
 import React, { useState } from "react";
 import Image from "next/image";
@@ -292,7 +293,9 @@ const WaitlistHero = () => {
                     </svg>
                   </a>
                   <a 
-                    href="#" 
+                    href={socialLinks.x}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-10 h-10 bg-white/80 rounded-full flex items-center justify-center hover:bg-white transition-colors"
                     aria-label="X (Twitter)"
                   >
@@ -301,7 +304,9 @@ const WaitlistHero = () => {
                     </svg>
                   </a>
                   <a 
-                    href="#" 
+                    href={socialLinks.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-10 h-10 bg-white/80 rounded-full flex items-center justify-center hover:bg-white transition-colors"
                     aria-label="Instagram"
                   >
@@ -310,7 +315,9 @@ const WaitlistHero = () => {
                     </svg>
                   </a>
                   <a 
-                    href="#" 
+                    href={socialLinks.tiktok}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-10 h-10 bg-white/80 rounded-full flex items-center justify-center hover:bg-white transition-colors"
                     aria-label="TikTok"
                   >
@@ -462,7 +469,9 @@ const WaitlistHero = () => {
                   </svg>
                 </a>
                 <a 
-                  href="#" 
+                  href={socialLinks.x}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-8 h-8 bg-white/80 rounded-full flex items-center justify-center hover:bg-white transition-colors"
                   aria-label="X (Twitter)"
                 >
@@ -471,7 +480,9 @@ const WaitlistHero = () => {
                   </svg>
                 </a>
                 <a 
-                  href="#" 
+                  href={socialLinks.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-8 h-8 bg-white/80 rounded-full flex items-center justify-center hover:bg-white transition-colors"
                   aria-label="Instagram"
                 >
@@ -480,7 +491,9 @@ const WaitlistHero = () => {
                   </svg>
                 </a>
                 <a 
-                  href="#" 
+                  href={socialLinks.tiktok}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-8 h-8 bg-white/80 rounded-full flex items-center justify-center hover:bg-white transition-colors"
                   aria-label="TikTok"
                 >
