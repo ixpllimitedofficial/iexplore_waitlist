@@ -51,15 +51,6 @@ const AgeVerificationWrapper: React.FC<AgeVerificationWrapperProps> = ({ childre
     return <>{children}</>;
   }
 
-  // Render shared pages on the server so previews and not-found responses can
-  // resolve. Keep their content hidden and inert until the age gate is passed.
-  if (/^\/(spots|posts|live)\//.test(pathname || "")) {
-    return <>
-      <div hidden={!isVerified} inert={!isVerified}>{children}</div>
-      {!isLoading && !isVerified && <AgeVerificationModal onVerified={handleVerified} />}
-    </>;
-  }
-
   if (isLoading) {
     // Loading state - could be a spinner or nothing
     return null;
