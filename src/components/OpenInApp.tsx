@@ -1,12 +1,10 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import {
-  ANDROID_PACKAGE,
   APP_STORE_URL,
   LinkEntity,
   PLAY_STORE_URL,
-  androidIntentUrl,
   schemeUrl,
 } from "@/lib/links";
 
@@ -30,20 +28,12 @@ export default function OpenInApp({
   subtitle?: string;
 }) {
   const [tried, setTried] = useState(false);
-  const appHref = useMemo(() => {
-    return isAndroid() ? androidIntentUrl(entity) : schemeUrl(entity);
-  }, [entity]);
+  const appHref = useMemo(() => schemeUrl(entity), [entity]);
 
   const openApp = () => {
     setTried(true);
     window.location.href = appHref;
   };
-
-  useEffect(() => {
-    const timer = window.setTimeout(openApp, 400);
-    return () => window.clearTimeout(timer);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return (
     <div className="min-h-screen bg-black text-white flex items-center justify-center px-6">
@@ -52,13 +42,9 @@ export default function OpenInApp({
           iExplore
         </p>
         <h1 className="text-2xl font-bold mb-3">{title}</h1>
-        {subtitle ? (
-          <p className="text-zinc-400 text-sm mb-8">{subtitle}</p>
-        ) : (
-          <p className="text-zinc-400 text-sm mb-8">
-            Open this in the iExplore app for the full experience.
-          </p>
-        )}
+        <p className="text-zinc-400 text-sm mb-8">
+          {subtitle || "Open this in the iExplore app for the full experience."}
+        </p>
 
         <button
           onClick={openApp}
