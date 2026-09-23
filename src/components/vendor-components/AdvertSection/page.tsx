@@ -22,7 +22,7 @@ const AdvertSection = () => {
           Mainland hottes bar and lounge is here. get the best lagos mainland
           nightlife and experience at club max.
         </p>
-        <Button btnText="Visit Spot" className="rounded-full !p-2 md:!p-3" />
+        <Button btnText="Visit Spot" className="rounded-full p-2! md:p-3!" />
       </div>
     </div>
   );

@@ -28,6 +28,8 @@ interface Item {
   media: Media[];
   user: User;
   likes: number;
+  id?: string;
+  post_id?: string;
   comments: number;
   caption: string;
   createdAt: string | undefined; // Allowing createdAt to be undefined
@@ -58,15 +60,17 @@ interface StatusProps {
 const Page: React.FC<StatusProps> = ({
   item = {
     media: [],
+    id: "",
+    post_id: "",
     user: {
       avatar: "",
       name: "",
-      likes: "",
-      comments: "",
-      caption: "",
-      createdAt: undefined,
     },
-  },
+    likes: 0,
+    comments: 0,
+    caption: "",
+    createdAt: undefined,
+},
   statusProfileImg,
   name = "Unknown User",
   timestamp = "N/A",
@@ -93,6 +97,8 @@ const Page: React.FC<StatusProps> = ({
   const {
     media,
     user,
+    id,
+    post_id,
     likes: itemLikes,
     comments: itemComments,
     caption,
@@ -134,13 +140,13 @@ const Page: React.FC<StatusProps> = ({
 
   const handleNext = () => {
     setCurrentIndex((prev) =>
-      media.length > 1 ? (prev + 1) % media.length : 0
+      media.length > 1 ? (prev + 1) % media.length : 0,
     );
   };
 
   const handlePrev = () => {
     setCurrentIndex((prev) =>
-      media.length > 1 ? (prev === 0 ? media.length - 1 : prev - 1) : 0
+      media.length > 1 ? (prev === 0 ? media.length - 1 : prev - 1) : 0,
     );
   };
 
@@ -156,7 +162,7 @@ const Page: React.FC<StatusProps> = ({
           width={400}
           height={700}
           alt="card media"
-          className="w-full h-screen md:h-[700px] object-cover rounded-2xl"
+          className="w-full h-screen md:h-175 object-cover rounded-2xl"
         />
       );
     }
@@ -168,7 +174,7 @@ const Page: React.FC<StatusProps> = ({
           <video
             width={400}
             height={700}
-            className="w-full h-screen md:h-[700px] object-cover rounded-2xl"
+            className="w-full h-screen md:h-175 object-cover rounded-2xl"
             autoPlay
             controls
             loop
@@ -187,7 +193,7 @@ const Page: React.FC<StatusProps> = ({
 
   return (
     <section className="md:relative md:mx-auto md:w-[50%]">
-      <div className="relative w-full h-screen md:w-[400px] md:h-[700px] rounded-lg">
+      <div className="relative w-full h-screen md:w-100 md:h-175 rounded-lg">
         {renderMedia()}
         {media.length > 1 && (
           <div className="absolute top-[50%] w-full flex justify-between items-center">
@@ -258,12 +264,16 @@ const Page: React.FC<StatusProps> = ({
         {showMiniContent && <MobileCommentCard closeComment={closeComment} />}
         {showPostShare && (
           <PostShare
+            postId={item.id || item?.post_id}
+            caption={caption}
             closeShare={closeShare}
             isSharePanelVisible={isSharePanelVisible}
           />
         )}
         {showPostShare && (
           <MobilePostShare
+            postId={item.id || item?.post_id}
+            caption={caption}
             closeShare={closeShare}
             isSharePanelVisible={isSharePanelVisible}
           />
