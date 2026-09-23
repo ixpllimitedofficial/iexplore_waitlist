@@ -23,6 +23,7 @@ const AgeVerificationWrapper: React.FC<AgeVerificationWrapperProps> = ({
     pathname?.startsWith("/feeds") ||
     pathname?.startsWith("/drinks") ||
     pathname?.startsWith("/make-reservation") ||
+    pathname?.startsWith("/posts") ||
     pathname?.startsWith("/.well-known");
 
   useEffect(() => {
